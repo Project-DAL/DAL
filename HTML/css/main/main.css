@@ -1,0 +1,9 @@
+/* 1. Overriding */
+.ct_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+/* Search Wrap */
+.ct_search-wrap {}
