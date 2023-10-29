@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- 1. Common Head -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community</title>
+  </head>
+
+  <!-- 2. Page JS, CSS -->
+  <link rel="stylesheet" href="/css/common/layout.css" />
+  <link rel="stylesheet" href="/css/common/reset.css" />
+  <link rel="stylesheet" href="/css/common/element.css" />
+  <link rel="stylesheet" href="/css/comm/comm-layout.css" />
+  <link rel="stylesheet" href="/css/comm/commList.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <body>
+    <div id="wrapper">
+      <!-- 3. Header -->
+      <header>
+        <div class="user-wrap">사용자 관련 바로가기 영역</div>
+        <div class="cate-wrap">로고 및 카테고리 영역</div>
+      </header>
+
+      <!-- 4. Main -->
+      <main>
+        <div class="ct_main">
+          <!-- 4.1 Aside -->
+          <aside>
+            <div class="ct_left-menu">
+              <h4 class="menu-tit">COMMUNITY</h4>
+              <ul>
+                <ul>
+                    <li><a href="#">ALL</a></li>
+                    <li><a href="#">NOTICE</a></li>
+                    <li><a href="#">REVIEW</a></li>
+                    <li><a href="#">DAILY</a></li>
+                </ul>
+              </ul>
+            </div>
+          </aside>
+          <!-- 4.2 Content -->
+          <section>
+            <div class="ct_content-wrap">
+              <!-- 4.2.1 Subtitle -->
+              <div class="ct_subtitle">
+                <h3>NOTICE</h3>
+              </div>
+              <!-- 4.2.2 Board Content -->
+              <div class="ct_content">
+                <table class="board-list">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>등록일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>[문의] 문의드립니다</td>
+                            <td>홍길동</td>
+                            <td>2023.10.29</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+              <!-- 4.2.3 Pagination -->
+              <div class="ct_pagination-wrap">pagination</div>
+              <!-- 4.2.4 Search -->
+              <div class="ct_search-wrap">
+                <select>
+                    <option>제목</option>
+                    <option>내용</option>
+                </select>
+                <input type="text">
+                <a href="#" class="btn btnSearch">검색</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- 5. Footer -->
+      <footer>
+        <div class="ct_footer">
+          <div class="footer-menu">
+            <div class="footer-shortcut">
+              <table>
+                <tr>
+                  <td><a href="#">ABOUT</a></td>
+                  <td><a href="#">NOTICE</a></td>
+                  <td><a href="#">CS CENTER</a></td>
+                </tr>
+              </table>
+            </div>
+            <div class="footer-sns">
+              <a href="#"><img src="./img/instagram.png" alt="인스타그램" /></a>
+              <a href="#"><img src="./img/facebook.png" alt="페이스북" /></a>
+              <a href="#"><img src="./img/youtube.png" alt="유튜브" /></a>
+            </div>
+          </div>
+          <div class="footer-block">
+            <div class="footer-block-left">
+              <ul>
+                <h4>INFORMATION</h4>
+                <li><i>company.</i>&nbsp;&nbsp;주식회사 달</li>
+                <li><i>owner.</i>&nbsp;&nbsp;김문</li>
+                <li><i>email.</i>&nbsp;&nbsp;drinkallliquor@gmail.com</li>
+                <li>
+                  <i>corporate registration num.</i>&nbsp;&nbsp;123-45-67890
+                </li>
+                <li><i>online license.</i>&nbsp;&nbsp;제 2023-달구-0123호</li>
+                <li><i>address.</i>&nbsp;&nbsp;서울특별시 서초구 서운로 22</li>
+                <br />
+                <li class="footer-right">
+                  copyright© drinkallliquor All rights reserved.
+                </li>
+              </ul>
+            </div>
+            <div class="footer-block-right">
+              <ul>
+                <h4>C/S CENTER</h4>
+                <li class="cs_tel">070-1234-1234</li>
+                <li>MON - FRI AM 09:00 - PM 17:00</li>
+                <li>BREAK PM 12:00 - PM 13:00</li>
+                <li>
+                  SAT, SUN, HOLIDAY
+                  <span style="color: #ce5c5c">closed</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-guide">
+            <div><a href="#">ABOUT US</a></div>
+            <div>|</div>
+            <div><a href="#">TERMS</a></div>
+            <div>|</div>
+            <div><a href="#">FINANCE POLICY</a></div>
+            <div>|</div>
+            <div><a href="#">LOCATION POLICY</a></div>
+            <div>|</div>
+            <div><a href="#">PRIVACY POLICY</a></div>
+            <div>|</div>
+            <div><a href="#">SHOPPING GUIDE</a></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
