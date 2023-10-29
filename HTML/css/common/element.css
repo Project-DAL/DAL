@@ -1,0 +1,11 @@
+/* Button */
+.btn {
+    display: inline-block;
+    width: 72px;
+    height: 38px;
+    line-height: 36px;
+    font-size: 13px;
+    border: 1px solid #84868b;
+    background: #84868b;
+    color: #fff;
+}

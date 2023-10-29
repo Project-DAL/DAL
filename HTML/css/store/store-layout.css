@@ -1,0 +1,39 @@
+/* Main Banner */
+.ct_banner-wrap {
+  width: 100%;
+}
+.bx-wrapper {
+    margin: 0 auto;
+}
+
+/* Search Wrap */
+.ct_search-wrap {
+  border: 1px solid;
+  width: 100%;
+  margin: 50px 0 20px 0;
+}
+.search-bar {
+  background: #e8e8e8;
+  height: 50px;
+}
+.hashtag-bar {
+  margin: 10px;
+}
+
+/* Cate Wrap */
+.ct_cate-wrap {
+  width: 100%;
+  border: 1px solid;
+  height: 50px;
+}
+
+/* Content Wrap */
+.ct_content-wrap {
+    width: 100%;
+}
+.sale-tit {
+    background: #e8e8e8;
+    width: 100%;
+    margin: 50px 0 30px 0;
+}
+
