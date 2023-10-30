@@ -1,0 +1,23 @@
+/* Background Video */
+#wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Index Title */
+.ct_index-title {
+    position: absolute;
+    z-index: 9999;
+    top: -2%;
+    color: #fff;
+    font-size: 152px;
+    line-height: 1;
+    opacity: 60%;
+}
+
+.ct_index-title div {
+    font-family: 'Montserrat', sans-serif;
+}
+

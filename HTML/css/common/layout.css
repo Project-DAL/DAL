@@ -7,11 +7,11 @@
 header {
   width: 100vw;
   position: fixed;
-    height: auto;
-    top: 0;
-    z-index: 10000;
-    background: #fff;
-    box-shadow: 0 10px 20px 0 rgb(0 0 0 / 5%);
+  height: auto;
+  top: 0;
+  z-index: 10000;
+  background: #fff;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 5%);
 }
 .user-wrap {
   height: 40px;
@@ -20,13 +20,54 @@ header {
   border: 1px solid;
   text-align: right;
 }
+.user-wrap div {
+  background: #f5f5f5;
+  padding: 0 10px;
+  float: right;
+  height: 100%;
+  border: 1px solid #f5f5f5;
+  border-radius: 21px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.user-wrap a {
+  border: 1px solid #f5f5f5;
+  background: #f5f5f5;
+  border-radius: 21px;
+  padding: 2px 13px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.user-wrap .clicked {
+  border: 1px solid #4358BE;
+  background: #4358BE;
+  color: #fff;
+}
 .cate-wrap {
   height: 90px;
   width: calc(100vw - 188px);
   margin: 0 auto;
   border: 1px solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
 }
-
+.cate-wrap > .cate-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+}
+.cate-wrap > .cate-menu {
+  display: flex;
+  font-size: 16px;
+  gap: 20px;
+  flex-direction: row;
+  align-items: center;
+}
 /* main */
 main {
   width: 100vw;
