@@ -10,12 +10,18 @@
     <!-- 2. Page JS, CSS -->
     <link rel="stylesheet" href="/css/common/layout.css" />
     <link rel="stylesheet" href="/css/common/reset.css" />
+    <link rel="stylesheet" href="/css/common/select_input.css" />
     <link rel="stylesheet" href="/css/main/main.css" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
-    
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
     <body>
         <div id="wrapper">
         <!-- 3. Header -->
@@ -47,19 +53,29 @@
             <div class="ct_guide-wrap">
                 <table>
                 <tr>
-                    <th>나의 술 취향을 알고 싶다면?</th>
-                    <td>(술 취향 찾기)</td>
+                    <th><div class="guide-q">나의 술 취향을 알고 싶다면?</div></th>
+                    <td><a href="#"><div class="guide-a">술취향찾기</div></a></td>
                 </tr>
                 <tr>
-                    <th>무슨 술이 있는지 알고 싶다면?</th>
-                    <td>(주류 박물관)</td>
+                    <th><div class="guide-q">무슨 술이 있는지 알고 싶다면?</div></th>
+                    <td><a href="#"><div class="guide-a">주류박물관</div></a></td>
                 </tr>
                 </table>
             </div>
             <!-- 4.2 Search Wrap -->
             <div class="ct_search-wrap">
-                <div class="search-bar">검색</div>
-                <div class="hashtag-bar"># 해시태그</div>
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass" style="color: #9c9c9c;"></i>
+                    <input type="text" class="input" placeholder="Search...">
+                </div>
+                <div class="hashtag-bar">
+                    <span>Searching for</span>
+                    <div class="hashtag-list">
+                        <p># 해시태그</p>
+                        <p># 해시태그</p>
+                        <p># 해시태그</p>
+                    </div>
+                </div>
             </div>
             <!-- 4.3 Cotent Wrap -->
             <div class="ct_content-wrap">
