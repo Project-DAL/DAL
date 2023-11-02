@@ -39,3 +39,33 @@
     text-align: center;
     padding: 15px 0;
 }
+
+
+.my-summary2 {
+    border: 1px solid #e8e8e8;
+    color: #404040;
+    padding: 20px 30px;
+}
+
+.my-summary2-headcontent{
+}
+
+.my-content2-headtit{
+
+}
+
+.my-summary2-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.my-summary2-tit {
+    color: #404040;
+}
+.my-summary2 table td {
+    text-align: center;
+    padding: 15px 0;
+}
