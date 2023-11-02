@@ -1,0 +1,48 @@
+/* login wrap */
+.ct_login-wrap {
+    width: 100%;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* login title */
+.login-title {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* login form */
+.login-form {
+
+}
+
+/* login input */
+.login-id > input {
+    width: 300px;
+    font: 500 15px 'Noto Sans Kr';
+    border: 1px solid #d3d3d3;
+    border-radius: 5px 5px 0 0;
+    font-size: 15px;
+    padding: 13px 15px;
+    border-bottom: none;
+}
+
+.login-pw > input {
+    width: 300px;
+    font: 500 15px 'Noto Sans Kr';
+    border: 1px solid #d3d3d3;
+    border-radius: 0 0 5px 5px;
+    font-size: 15px;
+    padding: 13px 15px;
+}
+
+/* remember id */
+.remember-id {font: 500 14px 'Noto Sans Kr';
+    color: #767676;
+    margin-top: 4px;
+}
+
+/* sns login */
