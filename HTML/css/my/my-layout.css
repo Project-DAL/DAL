@@ -2,7 +2,8 @@
 .ct_main {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 10px;
 }
 
 /*  aside */
@@ -41,8 +42,9 @@ aside {
 
 /* content */
 section {
-    width: calc(100vw - 400px);
+    width: 100%;
     border: 1px solid;
+
 }
 .ct_content-wrap {}
 .ct_subtitle {
