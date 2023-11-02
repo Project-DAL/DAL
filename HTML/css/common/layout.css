@@ -39,8 +39,6 @@ header {
 }
 .cate-wrap {
   height: 90px;
-    background: #A9B3E3;
-    color: #fff;
     padding: 0 95px;
     display: flex;
     flex-direction: row;
@@ -88,12 +86,12 @@ main {
   gap: 10px;
   justify-content: center;
   margin-top: 130px;
-  background: #A9B3E3;
 }
 .ct_main {
   width: calc(100vw - 60px);
   margin: 0 auto;
   border: 1px solid;
+  padding: 50px 10px;
 }
 
 /* pagination */
