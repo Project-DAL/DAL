@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 1. Common Head -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Index</title>
+    </head>
+
+    <!-- 2. Page JS, CSS -->
+    <link rel="stylesheet" href="/css/common/layout.css" />
+    <link rel="stylesheet" href="/css/common/reset.css" />
+    <link rel="stylesheet" href="/css/main/index.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <style>
+    @-webkit-keyframes typing { from { width: 0; } }
+    @-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+    @keyframes move-background {
+        from {
+            -webkit-transform: translate3d(0px, 0px, 0px);
+        }
+        to { 
+            -webkit-transform: translate3d(1000px, 0px, 0px);
+        }
+    }
+    @-webkit-keyframes move-background {
+        from {
+            -webkit-transform: translate3d(0px, 0px, 0px);
+        }
+        to { 
+            -webkit-transform: translate3d(1000px, 0px, 0px);
+        }
+    }
+    
+    @-moz-keyframes move-background {    
+        from {
+            -webkit-transform: translate3d(0px, 0px, 0px);
+        }
+        to { 
+            -webkit-transform: translate3d(1000px, 0px, 0px);
+        }
+    }
+    
+        @-webkit-keyframes move-background {
+        from {
+            -webkit-transform: translate3d(0px, 0px, 0px);
+        }
+        to { 
+            -webkit-transform: translate3d(1000px, 0px, 0px);
+        }
+    }
+    
+    .background-container{
+        position: fixed;
+        top: 0;
+        left:0;
+        bottom: 0;
+        right: 0;
+    }
+    
+    .stars {
+    background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+    position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+            z-index: 0;
+    }
+    
+    .twinkling{
+        width:10000px;
+        height: 100%;
+        background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+        background-size: 1000px 1000px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        
+        -moz-animation:move-background 70s linear infinite;
+        -ms-animation:move-background 70s linear infinite;
+        -o-animation:move-background 70s linear infinite;
+        -webkit-animation:move-background 70s linear infinite;
+        animation:move-background 70s linear infinite;
+        
+    }
+    
+    .clouds{
+        width:10000px;
+        height: 100%;
+        background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat;
+        background-size: 1000px 1000px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+    
+        -moz-animation:move-background 150s linear infinite;
+        -ms-animation:move-background 150s linear infinite;
+        -o-animation:move-background 150s linear infinite;
+        -webkit-animation:move-background 150s linear infinite;
+        animation:move-background 150s linear infinite;
+    }
+    img{
+        height: 70vh;
+        width:70vh;
+        position: absolute;
+        z-index: 3;
+        right: 20px;
+    }
+
+    h1 { 
+        font: bold 300% Consolas, Monaco, monospace;
+        border-right: .1em solid black;
+        width: 16.5em; 
+        width: 21ch;
+        margin: 2em 1em;
+        white-space: nowrap;
+        overflow: hidden;
+        -webkit-animation: typing 7s steps(21, end),
+            blink-caret .5s step-end infinite alternate;
+    }
+    
+    </style>
+
+    <body>
+        <div id="wrapper">
+                <div class="background-container">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png" alt="">
+                    <div class="stars"></div>
+                    <div class="twinkling"></div>
+                    <div class="clouds"></div>
+                    <div class="tit">
+                        <h1>Drink All Liquor</h1>
+                    </div>
+        </div>
+    </body>
+</html>
