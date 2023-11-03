@@ -1,10 +1,10 @@
 /* login wrap */
 .ct_login-wrap {
     width: 100%;
-    border: 1px solid;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
 }
 
 /* login title */
@@ -40,9 +40,84 @@
 }
 
 /* remember id */
-.remember-id {font: 500 14px 'Noto Sans Kr';
+.remember-id {
+    font: 500 14px 'Noto Sans Kr';
     color: #767676;
     margin-top: 4px;
 }
 
+/* login button */
+.loginBtn {
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 20px;
+    background: #1B37AA;
+    border: none;
+    border-radius: 5px;
+    font: 400 16px 'Noto Sans Kr';
+    color: #fff;
+
+}
+
+/* find login */
+.login-find {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font: 400 15px 'Noto Sans Kr';
+    color: #818181;
+    margin-top: 10px;
+}
+.find-id {}
+.find-pw {}
+
 /* sns login */
+.login-sns {
+    font: 400 15px 'Noto Sans Kr';
+    color: #818181;
+    text-align: center;
+    margin-top: 40px;
+}
+.other-login-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+}
+.other-login {
+    display: flex;
+    height: 45px;
+    line-height: 45px;
+    font: 400 14px 'Noto Sans Kr';
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 13px;
+    border-radius: 5px;
+    flex-direction: row;
+}
+.other-login img {
+    vertical-align: middle;
+}
+.other-login strong {
+    width: 90%;
+    text-align: center;
+}
+.login-kakao {
+    background: #FEEA00;
+    color: #381E1F;
+    
+}
+.login-naver {
+    background: #1CCB69;
+    color: #fff;
+}
+.login-google {
+    background: #fff;
+    color: #381E1F;
+    border: 1px solid #381E1F;
+}
+.login-google img {
+    width: 24px;
+}

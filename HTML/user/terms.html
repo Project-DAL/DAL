@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 1. Common Head -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TEMRS</title>
+    </head>
+
+    <!-- 2. Page JS, CSS -->
+    <link rel="stylesheet" href="/css/common/layout.css" />
+    <link rel="stylesheet" href="/css/common/reset.css" />
+    <link rel="stylesheet" href="/css/common/select_input.css" />
+    <link rel="stylesheet" href="/css/common/helper.css" />
+    <link rel="stylesheet" href="/css/user/terms.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+
+    <body>
+        <div id="wrapper">
+            <!-- 3. Header -->
+            <header>
+                <div class="user-wrap">
+                    <div>
+                        <a class="clicked">LOGIN</a>
+                        <a>JOIN</a>
+                        <a>MY PAGE</a>
+                        <a>CART</a>
+                    </div>
+                </div>
+                <div class="cate-wrap">
+                    <div class="cate-logo">Drink All Liquor</div>
+                    <div class="cate-menu">
+                        <a>홈</a>
+                        <a>스토어</a>
+                        <a>커뮤니티</a>
+                        <a>주류박물관</a>
+                    </div>
+                    
+                </div>
+            </header>
+
+            <!-- 4. Main -->
+            <main>
+                <div class="ct_main">
+                    <div class="ct_terms-wrap">
+                        <div class="terms-title">
+                            <div class="terms-title1">환영해요!</div>
+                            <div class="terms-title2">지금 회원가입하면 최대 4,000p를 드려요</div>
+                        </div>
+                        <div class="terms-box mt40">
+                            <form action="termsForm">
+                                <div>
+                                    <label class="chk-all-label">
+                                        <input type="checkbox" id="checkAll">
+                                        <span>이용약관, 전자금융 이용약관, 개인정보 수집 및 이용, 위치정보 이용약관에 모두 동의합니다.</span>
+                                    </label>
+                                </div>
+                                <table border="1">
+                                    <caption>
+                                        <label><input type="checkbox" class="terms" name="agree" id="chk01"></label>
+                                        <span>(필수)</span>
+                                        사이트 이용약관
+                                    </caption>
+                                    <tr>
+                                        <td>
+                                            <textarea class="terms-text"></textarea>
+                                        </td>
+                                    </tr>
+                                    <caption>
+                                        <label><input type="checkbox" class="terms" name="agree" id="chk01"></label>
+                                        <span>(필수)</span>
+                                        전자금융 이용약관
+                                    </caption>
+                                    <tr>
+                                        <td>
+                                            <textarea class="terms-text"></textarea>
+                                        </td>
+                                    </tr>
+                                    <caption>
+                                        <label><input type="checkbox" class="terms" name="agree" id="chk01"></label>
+                                        <span>(필수)</span>
+                                        개인정보 수집 및 이용
+                                    </caption>
+                                    <tr>
+                                        <td>
+                                            <textarea class="terms-text"></textarea>
+                                        </td>
+                                    </tr>
+                                    <caption>
+                                        <label><input type="checkbox" class="terms" name="agree" id="chk01"></label>
+                                        <span>(선택)</span>
+                                        위치정보 이용약관
+                                    </caption>
+                                    <tr>
+                                        <td>
+                                            <textarea class="terms-text"></textarea>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <span class="errorMsg mt30">
+                                    필수 이용약관에 모두 동의해주세요.
+                                </span>
+                                <p class="mt15">
+                                    <a href="#" class="btn btnCancel">취소</a>
+                                    <a href="#" class="btn btnNext">다음</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </body>
+</html>
