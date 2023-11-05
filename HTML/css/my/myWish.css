@@ -52,5 +52,20 @@
 }
 
 
+.ct_list-bottom {
+    margin-top: 3%;
+    margin-left:80%;
+}
 
-/*푸시용 삭제해도됨*/
+.ct_list-bottom-bt{
+    float:right;
+    margin-right:10%;
+    
+}
+
+.ct_list-bottom-bt .btn{
+    border:1px solid black;
+    margin-left:5px;
+    margin-right:5px;
+}
+
