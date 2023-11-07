@@ -1,0 +1,83 @@
+
+.board-content{
+	margin-left:3%;
+    margin-right:3%;
+}
+
+ul.tabs{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+ul.tabs li{
+	background: none;
+	color: #222;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+ul.tabs li.current{
+	background: #ededed;
+	color: #222;
+}
+
+.tab-content{
+	display: none;
+	background: #ededed;
+	padding: 15px;
+}
+
+.tab-content.current{
+	display: inherit;
+}
+
+/* 위쪽은 전부 탭관련 */
+
+.board-write{
+    width:100%;
+    text-align:center
+}
+
+.board-write{
+    border:1px solid black;
+}
+
+.board-write th,td{
+    border:1px solid black;
+}
+
+.board-write td:nth-child(4){
+    text-align:left;
+}
+
+
+.deletebox-area{
+    float:right;
+    border:1px solid black;
+    margin-top:1%;
+    margin-right:3%;
+}
+
+
+.paging-area{
+    display:flex;
+    flex-direction:row;
+    margin-top:5%;
+    margin-left:46.5%;
+}
+
+
+.board-reply{
+    width:100%;
+    border:1px solid black;
+}
+
+
+.board-reply th,td{
+    border:1px solid black;
+}
+
+.board-reply th:nth-child(2){
+    text-align:left;
+}
