@@ -1,0 +1,52 @@
+
+
+.allstts{
+    display:flex;
+    flex-direction:row;
+}
+
+
+.datestts{
+    display:flex;
+    flex-direction:row;
+}
+
+.datestts div{
+    border:1px solid black;
+}
+
+.searchbox{
+    border:1px solid black;
+}
+
+
+.myorder-content{
+    margin-left:3%;
+    margin-right:3%;
+}
+
+.myorder-table{
+    width:100%;
+    border:1px solid black;
+    margin-top:3%;
+
+}
+
+.myorder-table th, td{
+    border:1px solid black;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.myorder-table td:nth-child(3){
+    text-align: left;
+    
+}
+
+.paging-area{
+    display:flex;
+    flex-direction:row;
+    margin-top:5%;
+    margin-left:46.5%;
+}
+
