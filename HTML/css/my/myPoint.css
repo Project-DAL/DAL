@@ -1,0 +1,88 @@
+.savedmoney-content{
+    background-color:gray;
+    text-align:center;
+    padding-top:20px;
+    margin-left:3%;
+    margin-right:3%;
+    height:100px;
+}
+
+.useable{
+    font-size:x-large;
+}
+
+.useable-view{  
+    font-size:large;
+    color:red;
+}
+
+.savedmoney-tableview{
+    margin-top:3%;
+    margin-left:3%;
+    margin-right:3%;
+    font-size:xx-large;
+}
+
+.savedmoney-table{
+    width:94%;
+    height:130px;
+    margin-top:1%;
+    margin-left:3%;
+    border:1px solid black;
+
+}
+
+.savedmoney-table tr td{
+    border:1px solid black;
+}
+
+
+.savedmoney-table td:nth-child(1){
+    text-align:center;
+    vertical-align: middle;
+}
+
+.savedmoney-table td:nth-child(2){
+    text-align:left;
+    vertical-align: middle;
+}
+
+.savedmoney-table td:nth-child(3){
+    text-align:center;
+    vertical-align: middle;
+}
+
+
+.savedmoney-count-date{
+    color:red;
+}
+
+.forrow{
+    display:flex;
+    flex-direction:row;
+}
+
+.savedmoney-reason{
+    color:red;
+}
+
+.savedmoney-item-name{
+    color:blue;
+}
+
+.savedmoney-until{
+    color:gray;
+}
+
+.savedmoney-count{
+    color:blue;
+}
+
+
+
+.paging-area{
+    display:flex;
+    flex-direction:row;
+    margin-top:5%;
+    margin-left:46.5%;
+}
