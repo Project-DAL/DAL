@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!----------------------------------------------------------------------------------------------------------------------
+©Copyright 2023. DAL. All rights reserved.
+
+File Name       : _header.html
+Program Name    : 웹 페이지 헤드(Head) 부분
+Description     : 웹 페이지의 헤드(Head) 부분에는 메타 정보와 스타일 시트, 스크립트 파일 등이 포함되어 있습니다.
+                  페이지의 제목(title)과 페이지를 설명하는 간단한 내용(description)이 정의되어 있으며,
+                  웹 페이지 제작 시 필요한 외부 라이브러리들(Jquery, Jquery-UI, Jquery SelectBox, Font Icon 등)이 로드되어 있습니다.
+Draft Author    : 이원정
+Draft Date      : 2023.11.10
+
+Revision History
+Ver.   Date          Revised By    Description
+------------------------------------------------------------------------------------------------------------------------
+0.1    2023.11.10    이원정         최초개발
+----------------------------------------------------------------------------------------------------------------------->
+
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="headFragment">
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- media="all" : 모든 미디어 유형(컴퓨터 모니터, 태블릿, 스마트폰 등)에 스타일을 적용 (모든 기기와 미디어에 동일 적용 ) -->
+        <!-- media="screen" : 스크린 미디어 타입에 따라 웹 페이지가 해당 기기에 맞게 최적화된 스타일로 표현 -->
+        <link rel="stylesheet" th:href="@{/common/css/co.kr.dal.cmn.css}">
+
+        <!-- Jquery, Jquery-UI -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+        <!-- Common -->
+        <link rel="shortcut icon" type="image/x-icon" href="" />
+        <script type="text/javascript" th:src="@{/common/js/Common.js}"></script>
+
+        <!-- Font Icon -->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+        <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        />
+    </head>
+</th:block>
+</html>

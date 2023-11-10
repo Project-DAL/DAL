@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!----------------------------------------------------------------------------------------------------------------------
+©Copyright 2023. DAL. All rights reserved.
+
+File Name       : _header.html
+Program Name    : 상담메인 헤더프레임 HTML
+Description     : 상담메인 헤더프레임 HTML
+Draft Author    : 이원정
+Draft Date      : 2023.11.10
+
+Revision History
+Ver.   Date          Revised By    Description
+------------------------------------------------------------------------------------------------------------------------
+0.1    2023.11.10    이원정         최초개발
+----------------------------------------------------------------------------------------------------------------------->
+
+<!--
+Contents
+
+1. Common Header
+
+-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<!-- 1. Common Header -->
+<th:block th:fragment="headerFragment">
+    <header>
+        <div class="user-wrap">
+            <div>
+                <a class="clicked">LOGIN</a>
+                <a>JOIN</a>
+                <a>MY PAGE</a>
+                <a>CART</a>
+            </div>
+        </div>
+        <div class="cate-wrap">
+            <div class="cate-logo">Drink All Liquor</div>
+            <div class="cate-menu">
+                <a>홈</a>
+                <a>스토어</a>
+                <a>커뮤니티</a>
+                <a>주류박물관</a>
+            </div>
+        </div>
+    </header>
+</th:block>
+</html>
