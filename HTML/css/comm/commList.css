@@ -1,64 +1,57 @@
-/* Content*/ 
-.ct_content {
-    width: 100%;
-    height: auto;
-}
-.ct_content .board-list {
-    border-top: 1px solid #dbdbdb;
-    width: 100%;
-    margin: 10px 0 0;
-    border-left: 0;
-    border-right: 0;
-    line-height: 1.5;
-}
-.ct_content .board-list th {
-    padding: 13px 0 12px;
-    border-bottom: 1px solid #f2f2f2;
-    color: #353535;
-    vertical-align: middle;
-    font-size: 14px;
-    border-right-width: 0;
-    background: #f7f7f7;
-    word-wrap: break-word;
-    word-break: break-all;
-}
-.ct_content .board-list td {
-    padding: 13px 0 12px;
-    text-align: center;
-    color: #555;
-    vertical-align: middle;
-    border-bottom: 1px solid #eee;
-}
-.ct_content .board-list td:nth-of-type(2) {
-    text-align: left;
-}
-
-/* Search */
-.ct_search-wrap {
-    padding: 20px 0 20px 10px;
-    color: #2e2e2e;
-    text-align: center;
-    margin: 50px 0 0;
+/* ct_main */
+.ct_main {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
+    justify-content: space-between;
 }
-.ct_search-wrap select {
-    font-size: 14px;
-    width: 100px;
-    height: 38px;
-    border: 1px solid #dbdbdb;
-    border-radius: 2px;
-    padding-left: 5px;
+
+/*  aside */
+aside {
+    width: 200px;
+    border: 1px solid;
 }
-.ct_search-wrap input {
-    width: 280px;
-    height: 38px;
-    line-height: 34px;
+.ct_left-menu {
+    padding-top: 30px;
+}
+.menu-tit {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.ct_left-menu li {
+    text-align: left;
+    padding: 7px 0;
+}
+.ct_left-menu li a {
+    display: block;
     font-size: 15px;
-    padding: 0 40px 0 10px;
-    border: 1px solid #dbdbdb;
-    color: #353535;
+    color: #4d4d4d;
+    font-weight: 400;
+}
+.menu-susbit {
+    border-bottom: 1px solid #eee;
+    margin: 24px 0 4px 0;
+}
+.menu-susbit a {
+    font-size: 20px !important;
+    font-weight: 400;
+    color: #000 !important;
+}
+
+/* content */
+section {
+    width: calc(100vw - 400px);
+    border: 1px solid;
+}
+
+.ct_subtitle {
+    min-height: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    width: 80%;
+    margin: 25px auto;
+
 }
