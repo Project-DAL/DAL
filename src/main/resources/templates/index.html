@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!----------------------------------------------------------------------------------------------------------------------
+©Copyright 2023. DAL. All rights reserved.
+
+File Name       : Head.html
+Program Name    : 웹 페이지 헤드(Head) 부분
+Description     : 웹 페이지의 헤드(Head) 부분에는 메타 정보와 스타일 시트, 스크립트 파일 등이 포함되어 있습니다.
+                  페이지의 제목(title)과 페이지를 설명하는 간단한 내용(description)이 정의되어 있으며,
+                  웹 페이지 제작 시 필요한 외부 라이브러리들(Jquery, Jquery-UI, Jquery SelectBox, Font Icon 등)이 로드되어 있습니다.
+Draft Author    : 이원정
+Draft Date      : 2023.11.10
+
+Revision History
+Ver.   Date          Revised By    Description
+------------------------------------------------------------------------------------------------------------------------
+0.1    2023.11.10    이원정         최초개발
+----------------------------------------------------------------------------------------------------------------------->
+
+<!--
+Contents
+
+1. Common Head
+
+2. Page JS, CSS
+2.1 Kakao MAP API
+
+-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main-layout}">
+
+    <!-- 2. Page JS, CSS -->
+    <th:block layout:fragment="css-js">
+        <link rel="stylesheet" th:href="@{/main/css/main.css}">
+        <link rel="stylesheet" th:href="@{/main/js/main.js}">
+    </th:block>
+    <th:block layout:fragment="content">
+        <!-- 4. Main -->
+        <main>
+            <div class="ct_main">
+                <!-- 4.1 Guide Wrap -->
+                <div class="ct_guide-wrap">
+                    <table>
+                        <tr>
+                            <th><div class="guide-q">나의 술 취향을 알고 싶다면?</div></th>
+                            <td><a href="#"><div class="guide-a">술취향찾기</div></a></td>
+                        </tr>
+                        <tr>
+                            <th><div class="guide-q">무슨 술이 있는지 알고 싶다면?</div></th>
+                            <td><a href="#"><div class="guide-a">주류박물관</div></a></td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 4.2 Search Wrap -->
+                <div class="ct_search-wrap">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #9c9c9c;"></i>
+                        <input type="text" class="input" placeholder="Search...">
+                    </div>
+                    <div class="hashtag-bar">
+                        <span>Searching for</span>
+                        <div class="hashtag-list">
+                            <p># 해시태그</p>
+                            <p># 해시태그</p>
+                            <p># 해시태그</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4.3 Cotent Wrap -->
+                <div class="ct_content-wrap">
+                    <div class="map-box">
+                        <div class="map-list">map list</div>
+                        <div class="map-view">
+                            <div id="map"></div>
+                        </div>
+                        <div class="prod-pic">pic</div>
+                    </div>
+                    <div class="review-box">review</div>
+                </div>
+            </div>
+        </main>
+    </th:block>
+    <th:block layout:fragment="script">
+        <!-- Kakao MAP API -->
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=663e42ce0c9aff3c878dcb5e58b0c164"></script>
+        <script>
+            var container = document.getElementById('map');             //지도를 담을 영역의 DOM 레퍼런스
+            var options = {                                             //지도를 생성할 때 필요한 기본 옵션
+                center: new kakao.maps.LatLng(33.450701, 126.570667),   //지도의 중심좌표
+                level: 3                                                //지도의 레벨(확대, 축소 정도)
+            };
+
+            var map = new kakao.maps.Map(container, options);           //지도 생성 및 객체 리턴
+        </script>
+    </th:block>
+</html>

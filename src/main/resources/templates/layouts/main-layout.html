@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+  <!-- 1. 공통 Head -->
+  <th:block th:replace="~{fragments/_head::headFragment}"></th:block>
+  <th:block layout:fragment="css-js"></th:block>
+
+  <body>
+      <div id="wrapper">
+        <!-- 2. 공통 Header -->
+        <th:block th:replace="~{fragments/_header::headFragment}"></th:block>
+        <!-- 3. 개별 Content -->
+        <th:block layout:fragment="content"></th:block>
+        <!-- 4. 공통 Footer-->
+        <th:block th:replace="~{fragments/_footer::footerFragment}"></th:block>
+      </div>
+      <th:block layout:fragment="script"></th:block>
+  </body>
