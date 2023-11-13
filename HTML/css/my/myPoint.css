@@ -1,4 +1,4 @@
-.savedmoney-content{
+.content-top{
     background-color:gray;
     text-align:center;
     padding-top:20px;
@@ -16,7 +16,7 @@
     color:red;
 }
 
-.savedmoney-tableview{
+.content-middle{
     margin-top:3%;
     margin-left:3%;
     margin-right:3%;
@@ -80,7 +80,7 @@
 
 
 
-.paging-area{
+.content-bottom{
     display:flex;
     flex-direction:row;
     margin-top:5%;
