@@ -1,4 +1,4 @@
-.ct_list-cotent {
+.content-middle {
     background: yellow;
     width: 100%;
     padding: 20px;
@@ -43,29 +43,23 @@
     justify-content: space-between;
     text-align: center;
 }
-.prod-btn .btn {
-    width: 30%;
-    height: 40px;
-    line-height: 38px;
-    border: 1px solid;
-    border-radius: 5px;
-}
 
 
-.ct_list-bottom {
+.content-bottom {
     margin-top: 3%;
     margin-left:80%;
+    display: flex;
+    flex-direction: row;
 }
 
-.ct_list-bottom-bt{
+.content-bottom-bt{
     float:right;
     margin-right:10%;
+    display: flex;
+    flex-direction: row;
     
 }
 
-.ct_list-bottom-bt .btn{
-    border:1px solid black;
-    margin-left:5px;
-    margin-right:5px;
-}
+
+
 
