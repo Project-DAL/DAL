@@ -1,5 +1,5 @@
 
-.board-content{
+.content-top{
 	margin-left:3%;
     margin-right:3%;
 }
@@ -22,13 +22,13 @@ ul.tabs li.current{
 	color: #222;
 }
 
-.tab-content{
+.content-middle{
 	display: none;
 	background: #ededed;
 	padding: 15px;
 }
 
-.tab-content.current{
+.content-middle.current{
 	display: inherit;
 }
 
