@@ -81,13 +81,13 @@
               <div class="ct_subtitle">
                 <h3>내 게시글</h3>
               </div>
-               <div class="board-content">
+               <div class="content-top">
                  <ul class="tabs">
                     <li class="tab-link current" data-tab="tab-1">내가 쓴 게시글</li>
                     <li class="tab-link" data-tab="tab-2">내가 쓴 댓글</li> 
                  </ul>
                  <!-- 내가 쓴 게시글 (탭1) -->
-                 <div id="tab-1" class="tab-content current">
+                 <div id="tab-1" class="content-middle current">
                    <table class="board-write">
                       <colgroup>
                          <col style="width: 5px;">
@@ -123,7 +123,7 @@
                    </table>
                  </div>
                  <!-- 내가 쓴 댓글 (탭2) -->
-                 <div id="tab-2" class="tab-content">
+                 <div id="tab-2" class="content-middle">
                   <div class="board-reply-top">
                     <input type="checkbox" name="cb-all" class="cb-all">      
                     <hr>
@@ -152,8 +152,9 @@
                    </table>
                  </div>
                </div>
+               <div class="content-bottom">
                  <div class="deletebox-area">
-                      <a href="#" class="btn">삭제하기</a>
+                  <a id="btnDelete" href="#" class="btn large blue">삭제하기</a>
                  </div>
                 <div class="paging-area">
                    <a href="#" class="paging-before5""><<</a> &nbsp;&nbsp;
@@ -162,6 +163,7 @@
                    <a href="#" class="paging-foward">></a> &nbsp;&nbsp;
                    <a href="#" class="paging-foward5">>></a>
                 </div>
+              </div> 
             </div>  
           </section>
         </div>
