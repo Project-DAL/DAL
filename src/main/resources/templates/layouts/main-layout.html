@@ -10,7 +10,7 @@
   <body>
       <div id="wrapper">
         <!-- 2. 공통 Header -->
-        <th:block th:replace="~{fragments/_header::headFragment}"></th:block>
+        <th:block th:replace="~{fragments/_header::headerFragment}"></th:block>
         <!-- 3. 개별 Content -->
         <th:block layout:fragment="content"></th:block>
         <!-- 4. 공통 Footer-->
@@ -18,3 +18,4 @@
       </div>
       <th:block layout:fragment="script"></th:block>
   </body>
+</html>

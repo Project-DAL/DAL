@@ -20,28 +20,31 @@ Contents
 1. Common Header
 
 -->
+
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-<!-- 1. Common Header -->
-<th:block th:fragment="headerFragment">
-    <header>
-        <div class="user-wrap">
-            <div>
-                <a class="clicked">LOGIN</a>
-                <a>JOIN</a>
-                <a>MY PAGE</a>
-                <a>CART</a>
+
+    <!-- 1. Common Header -->
+    <th:block th:fragment="headerFragment">
+        <header>
+            <div class="user-wrap">
+                <div>
+                    <a class="clicked">LOGIN</a>
+                    <a>JOIN</a>
+                    <a>MY PAGE</a>
+                    <a>CART</a>
+                </div>
             </div>
-        </div>
-        <div class="cate-wrap">
-            <div class="cate-logo">Drink All Liquor</div>
-            <div class="cate-menu">
-                <a>홈</a>
-                <a>스토어</a>
-                <a>커뮤니티</a>
-                <a>주류박물관</a>
+            <div class="cate-wrap">
+                <div class="cate-logo">Drink All Liquor</div>
+                <div class="cate-menu">
+                    <a>홈</a>
+                    <a>스토어</a>
+                    <a>커뮤니티</a>
+                    <a>주류박물관</a>
+                </div>
             </div>
-        </div>
-    </header>
-</th:block>
+        </header>
+    </th:block>
+
 </html>

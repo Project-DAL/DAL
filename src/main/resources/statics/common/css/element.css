@@ -1,8 +1,9 @@
+@charset "utf-8";
 /***********************************************************************************************************************
 ©Copyright 2023. DAL. All rights reserved.
 
-File Name       : co.kr.dal.cmn.css
-Description     : 공통 css import
+File Name       : element.css
+Description     : 공통 element css
 Draft Author    : 이원정
 Draft Date      : 2023.11.10
 
@@ -18,21 +19,18 @@ Ver.    Date         Revised By   Description
 /*
 Contents
 
-1. 공통 helper css
-2. 공통 element css
+1. Button
 
 */
 
-/* 1. 공통 helper css */
-@import url(co.kr.dal.helper.css);
-
-/* 2. 공통 element css */
-@import url(co.kr.dal.element.css);
-
-/* 3. 공통 layout css */
-@import url(co.kr.dal.layout.css);
-
-/* 4. 공통 select + input css */
-@import url(co.kr.dal.selet_input.css);
-
-
+/* 1. Button **********************************************************************************************************/
+.btn {
+    display: inline-block;
+    width: 72px;
+    height: 38px;
+    line-height: 36px;
+    font-size: 13px;
+    border: 1px solid #84868b;
+    background: #84868b;
+    color: #fff;
+}
