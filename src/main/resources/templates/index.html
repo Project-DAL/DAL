@@ -27,8 +27,11 @@ Contents
 
     <!-- 1. Page JS, CSS -->
     <th:block layout:fragment="css-js">
-        <link rel="stylesheet" href="/main/css/main.css">
-        <script src="/main/js/main.js" defer></script>
+        <link rel="stylesheet" type="text/css" th:href="@{/main/css/main.css}">
+        <!--<script src="/main/js/main.js" defer></script>-->
+        <style>
+
+        </style>
     </th:block>
 
     <!-- 2. Page Content -->
@@ -81,16 +84,6 @@ Contents
 
     <!-- 3. Page Script -->
     <th:block layout:fragment="script">
-        <!-- Kakao MAP API -->
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=663e42ce0c9aff3c878dcb5e58b0c164"></script>
-        <script>
-            var container = document.getElementById('map');             //지도를 담을 영역의 DOM 레퍼런스
-            var options = {                                             //지도를 생성할 때 필요한 기본 옵션
-                center: new kakao.maps.LatLng(33.450701, 126.570667),   //지도의 중심좌표
-                level: 3                                                //지도의 레벨(확대, 축소 정도)
-            };
 
-            var map = new kakao.maps.Map(container, options);           //지도 생성 및 객체 리턴
-        </script>
     </th:block>
 </html>
