@@ -1,0 +1,48 @@
+/* 상품 카테고리 영역 */
+.ct_cate-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.ct_cate-title {
+  width: 200px;
+  height: 50px;
+  background-color: #ce5c5c;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* 상품 썸네일 이미지*/
+.bxslider_card {
+  border-radius: 15px;
+}
+.bxslider_title {
+  text-align: center;
+}
+.bxslider_title2 {
+  text-align: center;
+}
+.bxslider_title2 > p:nth-child(2),
+p:nth-child(3),
+p:nth-child(4),
+p:nth-child(5) {
+  text-align: left;
+}
+
+/* 검색어 입력바 */
+.search-box {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+/* 검색창 영역 */
+.search-bar {
+  border-radius: 10px;
+  position: relative;
+}
+/* 검색창 돋보기 아이콘 */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translate(-50%, -50%);
+}
