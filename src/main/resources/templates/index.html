@@ -19,21 +19,19 @@ Ver.   Date          Revised By    Description
 <!--
 Contents
 
-1. Common Head
-
-2. Page JS, CSS
-2.1 Kakao MAP API
 
 -->
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/main-layout}">
 
-    <!-- 2. Page JS, CSS -->
+    <!-- 1. Page JS, CSS -->
     <th:block layout:fragment="css-js">
-        <link rel="stylesheet" th:href="@{/main/css/main.css}">
-        <link rel="stylesheet" th:href="@{/main/js/main.js}">
+        <link rel="stylesheet" href="/main/css/main.css">
+        <script src="/main/js/main.js" defer></script>
     </th:block>
+
+    <!-- 2. Page Content -->
     <th:block layout:fragment="content">
         <!-- 4. Main -->
         <main>
@@ -80,6 +78,8 @@ Contents
             </div>
         </main>
     </th:block>
+
+    <!-- 3. Page Script -->
     <th:block layout:fragment="script">
         <!-- Kakao MAP API -->
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=663e42ce0c9aff3c878dcb5e58b0c164"></script>
