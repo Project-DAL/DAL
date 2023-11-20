@@ -8,8 +8,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CommService {
 
-    // 고객정보 갱신
-    public void insertCust(CommVO commVO) {
-
+    // ex
+    public void updateComm(CommVO commVO) {
+        CommVO comm = CommVO.builder().bardCn(commVO.getBardCn()).build();
+        commVO.setBardRdate(comm.getBardRdate());
     }
 }

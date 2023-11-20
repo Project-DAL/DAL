@@ -5,3 +5,5 @@
 
 -->
 
+<mapper namespace="kr.co.Dal.comm.mapper.CommMapper">
+</mapper>

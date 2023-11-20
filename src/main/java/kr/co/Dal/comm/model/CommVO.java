@@ -1,15 +1,13 @@
 package kr.co.Dal.comm.model;
 
 import kr.co.Dal.cmmn.CmmnVO;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.sql.Date;
 
 @Getter
 @EqualsAndHashCode(callSuper = false)
+@Builder
 public class CommVO extends CmmnVO {
     private int bardId;
     private int userId;
@@ -24,4 +22,13 @@ public class CommVO extends CmmnVO {
     @Setter
     private Date bardRdate;
 
+    // bardId, bardTit, bardRdate 필드만을 포함한 toString() 메서드 직접 작성
+    @Override
+    public String toString() {
+        return "CommVO{" +
+                "bardId=" + bardId +
+                ", bardTit='" + bardTit + '\'' +
+                ", bardRdate=" + bardRdate +
+                '}';
+    }
 }
