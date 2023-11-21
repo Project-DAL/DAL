@@ -34,7 +34,7 @@ Contents
 
 /* 2. header **********************************************************************************************************/
 header {
-    width: 100vw;
+    width: 100%;
     position: fixed;
     height: auto;
     top: 0;
@@ -105,7 +105,7 @@ header {
 
 /* 3. main ************************************************************************************************************/
 main {
-    width: 100vw;
+    width: 100%;
     height: auto;
     margin: auto 0;
     display: flex;
@@ -131,12 +131,11 @@ main {
 
 /* 5. footer **********************************************************************************************************/
 footer {
-    width: 100vw;
+    width: 100%;
 }
 .ct_footer {
     background: #E7E7E7;
-    padding: 10px 94px;
-    border: 1px solid;
+    padding: 10px 20px;
     color: #292962;
     font: 500 15px 'Noto Sans Kr';
 }
