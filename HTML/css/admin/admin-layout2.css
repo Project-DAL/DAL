@@ -1,0 +1,111 @@
+/* 전체 wrapper */
+#wrapper {
+  min-width: 1340px;
+}
+
+/* main */
+main {
+  width: 100vw;
+  height: auto;
+}
+
+.ct_main {
+  display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.ct_left-menu {
+  width: 200px;
+  height: 100vh;
+  background: #03012d;
+}
+.menu-logo {
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  line-height: 44px !important;
+  font: 500 15px 'Noto Sans Kr';
+}
+.ct_left-menu ul {
+  border-bottom: 1px solid #20242c;
+}
+.ct_left-menu ul:nth-of-type(1) {
+  margin-top: 0px;
+}
+.ct_left-menu a {
+  color: #fff;
+}
+.ct_left-menu ul li:last-child {
+  margin-bottom: 15px;
+}
+.menu-tit {
+  background: #4a4e5a;
+  padding: 10px;
+  margin-bottom: 10px;
+  font: 500 15px 'Noto Sans Kr';
+}
+.menu-sub {
+  padding: 5px 10px;
+  font: 400 15px 'Noto Sans Kr';
+}
+.menu-sub.on {
+  background: #4bb6fa;
+}
+section {
+  width: 100%;
+  height: 100vh;
+}
+.ct_content-top {
+  background: #FCFCFC;
+  height: 50px;
+  border-bottom: 1px solid #d6d6d6;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.favorite {
+  width: 50px;
+  height: 100%;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  border-right: 1px solid #d6d6d6;
+}
+.cate-list {}
+.cate-list ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cate-list li {
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-right: 1px solid #d6d6d6;
+}
+.cate-list li a {
+  font: 500 15px 'Noto Sans Kr';
+  color: #000;
+}
+.cate-list li a:hover {
+  color: #4bb6fa;
+}
+.cate-list .f-cate.on {
+  border-bottom: 2px solid #4bb6fa;
+}
+.cate-list .f-cate.on a {
+  color: #4bb6fa;
+}
+
+.ct_content-wrap {
+  height: calc(100vh - 50px);
+  background: #F7F7F7;
+  padding: 15px 20px;
+}
+
+.ct_content {
+  border: 1px solid #DFDFDF;
+  background: #fff;
+  height: 100%;
+}
