@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 1. Common Head -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my Page</title>
+</head>
+
+<!-- 2. Page JS, CSS -->
+<link rel="stylesheet" href="/css/common/layout.css" />
+<link rel="stylesheet" href="/css/common/reset.css" />
+<link rel="stylesheet" href="/css/my/my-layout.css" />
+<link rel="stylesheet" href="/css/my/myPageMain.css" />
+<link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet"
+/>
+
+<body>
+<div id="wrapper">
+    <!-- 3. Header -->
+    <header>
+        <div class="user-wrap">사용자 관련 바로가기 영역</div>
+        <div class="cate-wrap">로고 및 카테고리 영역</div>
+    </header>
+
+    <!-- 4. Main -->
+    <main>
+        <div class="ct_main">
+            <!-- 4.1 Aside -->
+            <aside>
+                <div class="ct_left-menu">
+                    <h4 class="menu-tit">MY PAGE</h4>
+                    <ul>
+                        <ul>
+                            <li class="menu-susbit"><a href="#">나의 쇼핑</a></li>
+                            <li><a href="#">주문/배송</a></li>
+                            <li><a href="#">위시리스트</a></li>
+                            <li class="menu-susbit"><a href="#">나의 혜택</a></li>
+                            <li><a href="#">쿠폰</a></li>
+                            <li><a href="#">적립금</a></li>
+                            <li class="menu-susbit"><a href="#">나의 활동</a></li>
+                            <li><a href="#">게시글</a></li>
+                            <li><a href="#">나의 리뷰</a></li>
+                            <li><a href="#">1:1 문의내역</a></li>
+                            <li class="menu-susbit"><a href="#">나의 정보</a></li>
+                            <li><a href="#">로그아웃</a></li>
+                            <li><a href="#">회원정보 수정</a></li>
+                            <li><a href="#">회원 탈퇴</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </aside>
+            <!-- 4.2 Content -->
+            <section>
+                <div class="ct_content-wrap">
+                    <div class="ct_subtitle">
+                        <h3>MY PAGE</h3>
+                    </div>
+                    <div class="content-top">
+                        <div class="my-summary">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>
+                                        <div class="my-summary-content">
+                                            <div class="my-summary-tit">등급</div>
+                                            <div class="my-summary-btn">
+                                                <a href="#" class="btn">조회</a>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="my-summary-content">
+                                            <div class="my-summary-tit">적립금</div>
+                                            <div class="my-summary-btn">
+                                                <a href="#" class="btn">조회</a>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="my-summary-content">
+                                            <div class="my-summary-tit">쿠폰</div>
+                                            <div class="my-summary-btn">
+                                                <a href="#" class="btn">조회</a>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="my-summary-content">
+                                            <div class="my-summary-tit">위시리스트</div>
+                                            <div class="my-summary-btn">
+                                                <a href="#" class="btn">조회</a>
+                                            </div>
+                                        </div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1등급</td>
+                                    <td>300원</td>
+                                    <td>2개</td>
+                                    <td>0개</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="content-middle">
+                            <div class="table-info">
+                                나의 주문처리 현황 (최근 3개월)
+                            </div>
+                            <table class="orderview">
+                                <tbody>
+                                <tr>
+                                    <td>입금대기</td>
+                                    <td>0</td>
+                                    <td>구매확정</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>결제완료</td>
+                                    <td>0</td>
+                                    <td>취소</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>배송준비중</td>
+                                    <td>0</td>
+                                    <td>교환</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>배송중</td>
+                                    <td>0</td>
+                                    <td>반품</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>배송완료</td>
+                                    <td>0</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 5. Footer -->
+    <footer>
+        <div class="ct_footer">
+            <div class="footer-menu">
+                <div class="footer-shortcut">
+                    <table>
+                        <tr>
+                            <td><a href="#">ABOUT</a></td>
+                            <td><a href="#">NOTICE</a></td>
+                            <td><a href="#">CS CENTER</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="footer-sns">
+                    <a href="#"><img src="./img/instagram.png" alt="인스타그램" /></a>
+                    <a href="#"><img src="./img/facebook.png" alt="페이스북" /></a>
+                    <a href="#"><img src="./img/youtube.png" alt="유튜브" /></a>
+                </div>
+            </div>
+            <div class="footer-block">
+                <div class="footer-block-left">
+                    <ul>
+                        <h4>INFORMATION</h4>
+                        <li><i>company.</i>&nbsp;&nbsp;주식회사 달</li>
+                        <li><i>owner.</i>&nbsp;&nbsp;김문</li>
+                        <li><i>email.</i>&nbsp;&nbsp;drinkallliquor@gmail.com</li>
+                        <li>
+                            <i>corporate registration num.</i>&nbsp;&nbsp;123-45-67890
+                        </li>
+                        <li><i>online license.</i>&nbsp;&nbsp;제 2023-달구-0123호</li>
+                        <li><i>address.</i>&nbsp;&nbsp;서울특별시 서초구 서운로 22</li>
+                        <br />
+                        <li class="footer-right">
+                            copyright© drinkallliquor All rights reserved.
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-block-right">
+                    <ul>
+                        <h4>C/S CENTER</h4>
+                        <li class="cs_tel">070-1234-1234</li>
+                        <li>MON - FRI AM 09:00 - PM 17:00</li>
+                        <li>BREAK PM 12:00 - PM 13:00</li>
+                        <li>
+                            SAT, SUN, HOLIDAY
+                            <span style="color: #ce5c5c">closed</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-guide">
+                <div><a href="#">ABOUT US</a></div>
+                <div>|</div>
+                <div><a href="#">TERMS</a></div>
+                <div>|</div>
+                <div><a href="#">FINANCE POLICY</a></div>
+                <div>|</div>
+                <div><a href="#">LOCATION POLICY</a></div>
+                <div>|</div>
+                <div><a href="#">PRIVACY POLICY</a></div>
+                <div>|</div>
+                <div><a href="#">SHOPPING GUIDE</a></div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
