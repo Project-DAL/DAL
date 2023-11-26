@@ -8,27 +8,140 @@
 
 }
 
-.ct_content-wrap{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+/* Content*/ 
+section {
+    width: 100%;
+    border: 1px solid;
 }
 
-
-/* Content*/ 
 .ct_content {
-    width: 45%;
-    height: 700px;
-    margin: 10px 74px 0 0;
-    float: left;
+    width: 90%;
+    margin: auto;
     border: 1px solid #2e8eb4;
 }
+
+table {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+th div:nth-child(1) {
+    background-color: #3498db; /* 파랑 배경색 */
+    border-radius: 10px; /* 둥근 모서리 */
+    padding: 10px; /* 내용과 경계 사이의 간격 */
+    color: #fff; /* 텍스트 색상 */
+    transition: background-color 0.3s ease; /* 호버 효과를 부드럽게 만듦 */
+  }
+
+th div:nth-child(2) {
+font-weight: bold; /* 강조 효과 - 글꼴을 두껍게 만듦 */
+}
+
+.checkboxGroup {
+    margin-right: 8px;
+}
+
+label {
+    margin: 0 20px 0px 0px; 
+    font-size: 16px; 
+    color: #333; 
+}    
+
+label:hover {
+    cursor: pointer;
+    background-color: #f5f5f5; 
+    border-radius: 5px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .styled-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #2e8eb4;
+    color: white; 
+    border: 2px solid #2e8eb4; 
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .styled-button:hover {
+    background-color: white;
+    color: #2e8eb4;
+  }
+
 
 /* Result*/ 
 .ct_result {
-    width: 45%;
+    width: 90%;
     height: 700px;
-    margin: 10px 0 0 74px;
-    float: left;
+    margin: 20px auto;
     border: 1px solid #2e8eb4;
 }
+
+/* 상품 row 영역 */
+.prod-row {
+    display: flex;
+    padding: 4.8px;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 2px solid grey;
+  }
+
+/* 상품 썸네일 이미지*/
+.prod-card {
+    border-radius: 15px;
+    width: 300px;
+    margin-top: 100px;
+  }
+  .card-title {
+    text-align: center;
+  }
+  .card-title2 {
+    text-align: center;
+    background-color: aqua;
+    width: 80%;
+    margin: auto;
+  }
+  .card-title2 > p:nth-child(2),
+  .card-title2 > p:nth-child(3),
+  .card-title2 > p:nth-child(4),
+  .card-title2 > p:nth-child(5) {
+    text-align: left;
+  }
+  
+
+/* 페이지바 */
+.pagination {
+    display: flex;
+    list-style: none;
+    margin: 30px auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pagination li {
+    margin: 0 5px;
+  }
+
+  .pagination a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #333;
+  }
+
+  .pagination a:hover {
+    background-color: #f0f0f0;
+  }
