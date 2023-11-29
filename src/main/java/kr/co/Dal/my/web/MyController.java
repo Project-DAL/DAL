@@ -22,38 +22,43 @@ public class MyController {
     }
 
     // My Coupon
-    @GetMapping("/my/myCoupon")
+    @GetMapping("/my/MyCoupon")
     public String mycoupon(){
+
         return "my/MyCoupon";
     }
 
     // My Info
-    @GetMapping("/my/myInfo")
+    @GetMapping("/my/MyInfo")
     public String myinfo(){
+
         return "my/MyInfo";
     }
 
     // My Order
-    @GetMapping("/my/myOrder")
+    @GetMapping("/my/MyOrder")
     public String myorder(){
         return "my/MyOrder";
     }
 
     // My Point
-    @GetMapping("/my/myPoint")
+    @GetMapping("/my/MyPoint")
     public String mypoint(){
+
         return "my/MyPoint";
     }
 
     // My Wish
-    @GetMapping("/my/myWish")
+    @GetMapping("/my/MyWish")
     public String mywish(){
+
         return "my/MyWish";
     }
 
     // My Withdraw
-    @GetMapping("/my/myWithdraw")
+    @GetMapping("/my/MyWithdraw")
     public String mywithdraw(){
+
         return "my/MyWithdraw";
     }
 

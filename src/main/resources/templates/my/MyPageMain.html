@@ -4,140 +4,139 @@
       layout:decorate="~{layouts/my-layout}">
 
 
-<!-- 2. Page JS, CSS -->
-<th:block layout:fragment="css-js">
-    <link rel="stylesheet" type="text/css" th:href="@{/my/css/my-layout.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/my/css/myPageMain.css}">
-    <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
-</th:block>
+    <!-- 2. Page JS, CSS -->
+    <th:block layout:fragment="css-js">
+        <link rel="stylesheet" type="text/css" th:href="@{/my/css/my-layout.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/my/css/myPageMain.css}">
+        <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+    </th:block>
 
 
-<th:block layout:fragment="content">
+    <th:block layout:fragment="content">
 
-    <main>
-        <div class="ct_main">
-            <!-- 4.1 Aside -->
-            <aside>
-                <div class="ct_left-menu">
-                    <h4 class="menu-tit">MY PAGE</h4>
-                    <ul>
+        <main>
+            <div class="ct_main">
+                <!-- 4.1 Aside -->
+                <aside>
+                    <div class="ct_left-menu">
+                        <h4 class="menu-tit">MY PAGE</h4>
                         <ul>
-                            <li class="menu-susbit">나의 쇼핑</li>
-                            <li><a th:href="@{/my/MyOrder}">주문/배송</a></li>
-                            <li><a th:href="@{/my/MyWish}">위시리스트</a></li>
-                            <li class="menu-susbit">나의 혜택</li>
-                            <li><a th:href="@{/my/MyCoupon}">쿠폰</a></li>
-                            <li><a th:href="@{/my/MyPoint}">적립금</a></li>
-                            <li class="menu-susbit">나의 활동</li>
-                            <li><a th:href="@{/my/MyBoard}">게시글</a></li>
-                            <li><a href="#">1:1 문의내역</a></li>
-                            <li class="menu-susbit">나의 정보</li>
-                            <li><a href="#">로그아웃</a></li>
-                            <li><a th:href="@{/my/MyInfo}">회원정보 수정</a></li>
-                            <li><a th:href="@{/my/MyWithdraw}">회원 탈퇴</a></li>
+                            <ul>
+                                <li class="menu-susbit">나의 쇼핑</li>
+                                <li><a th:href="@{/my/MyOrder}">주문/배송</a></li>
+                                <li><a th:href="@{/my/MyWish}">위시리스트</a></li>
+                                <li class="menu-susbit">나의 혜택</li>
+                                <li><a th:href="@{/my/MyCoupon}">쿠폰</a></li>
+                                <li><a th:href="@{/my/MyPoint}">적립금</a></li>
+                                <li class="menu-susbit">나의 활동</li>
+                                <li><a th:href="@{/my/MyBoard}">게시글</a></li>
+                                <li><a href="#">1:1 문의내역</a></li>
+                                <li class="menu-susbit">나의 정보</li>
+                                <li><a href="#">로그아웃</a></li>
+                                <li><a th:href="@{/my/MyInfo}">회원정보 수정</a></li>
+                                <li><a th:href="@{/my/MyWithdraw}">회원 탈퇴</a></li>
+                            </ul>
                         </ul>
-                    </ul>
-                </div>
-            </aside>
-            <!-- 4.2 Content -->
-            <section>
-                <div class="ct_content-wrap">
-                    <div class="ct_subtitle">
-                        <h3>MY PAGE</h3>
                     </div>
-                    <div class="content-top">
-                        <div class="my-summary">
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th>
-                                        <div class="my-summary-content">
-                                            <div class="my-summary-tit">등급</div>
-                                            <div class="my-summary-btn">
-                                                <a href="#" class="btn">조회</a>
-                                            </div>
-                                        </div>
-                                    </th>
-                                    <th>
-                                        <div class="my-summary-content">
-                                            <div class="my-summary-tit">적립금</div>
-                                            <div class="my-summary-btn">
-                                                <a href="#" class="btn">조회</a>
-                                            </div>
-                                        </div>
-                                    </th>
-                                    <th>
-                                        <div class="my-summary-content">
-                                            <div class="my-summary-tit">쿠폰</div>
-                                            <div class="my-summary-btn">
-                                                <a href="#" class="btn">조회</a>
-                                            </div>
-                                        </div>
-                                    </th>
-                                    <th>
-                                        <div class="my-summary-content">
-                                            <div class="my-summary-tit">위시리스트</div>
-                                            <div class="my-summary-btn">
-                                                <a href="#" class="btn">조회</a>
-                                            </div>
-                                        </div>
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1등급</td>
-                                    <td>300원</td>
-                                    <td>2개</td>
-                                    <td>0개</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                </aside>
+                <!-- 4.2 Content -->
+                <section>
+                    <div class="ct_content-wrap">
+                        <div class="ct_subtitle">
+                            <h3>MY PAGE</h3>
                         </div>
-                        <div class="content-middle">
-                            <div class="table-info">
-                                나의 주문처리 현황 (최근 3개월)
+                        <div class="content-top">
+                            <div class="my-summary">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            <div class="my-summary-content">
+                                                <div class="my-summary-tit">등급</div>
+                                                <div class="my-summary-btn">
+                                                    <a href="#" class="btn">조회</a>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="my-summary-content">
+                                                <div class="my-summary-tit">적립금</div>
+                                                <div class="my-summary-btn">
+                                                    <a href="#" class="btn">조회</a>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="my-summary-content">
+                                                <div class="my-summary-tit">쿠폰</div>
+                                                <div class="my-summary-btn">
+                                                    <a href="#" class="btn">조회</a>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="my-summary-content">
+                                                <div class="my-summary-tit">위시리스트</div>
+                                                <div class="my-summary-btn">
+                                                    <a href="#" class="btn">조회</a>
+                                                </div>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1등급</td>
+                                        <td>300원</td>
+                                        <td>2개</td>
+                                        <td>0개</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <table class="orderview">
-                                <tbody>
-                                <tr>
-                                    <td>입금대기</td>
-                                    <td>0</td>
-                                    <td>구매확정</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>결제완료</td>
-                                    <td>0</td>
-                                    <td>취소</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>배송준비중</td>
-                                    <td>0</td>
-                                    <td>교환</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>배송중</td>
-                                    <td>0</td>
-                                    <td>반품</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>배송완료</td>
-                                    <td>0</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <div class="content-middle">
+                                <div class="table-info">
+                                    나의 주문처리 현황 (최근 3개월)
+                                </div>
+                                <table class="orderview">
+                                    <tbody>
+                                    <tr>
+                                        <td>입금대기</td>
+                                        <td>0</td>
+                                        <td>구매확정</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>결제완료</td>
+                                        <td>0</td>
+                                        <td>취소</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>배송준비중</td>
+                                        <td>0</td>
+                                        <td>교환</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>배송중</td>
+                                        <td>0</td>
+                                        <td>반품</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>배송완료</td>
+                                        <td>0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-</th:block>
+                </section>
+            </div>
+        </main>
+    </th:block>
 
 
 
