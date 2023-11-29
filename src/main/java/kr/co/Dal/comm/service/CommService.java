@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 public class CommService {
 
     // ex
+    /*
     public void updateComm(CommVO commVO) {
         CommVO comm = CommVO.builder().bardCn(commVO.getBardCn()).build();
         commVO.setBardRdate(comm.getBardRdate());
     }
+    */
 }

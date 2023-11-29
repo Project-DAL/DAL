@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="진형 push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/Dal.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/Dal.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/mapper/CommMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/mapper/CommMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/mapper/Commmapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/mapper/Commmapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/service/CommService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/service/CommService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,6 +104,9 @@
       <workItem from="1699421827262" duration="2518000" />
       <workItem from="1699489233153" duration="3268000" />
       <workItem from="1700443647083" duration="12215000" />
+      <workItem from="1701066906959" duration="1187000" />
+      <workItem from="1701158556845" duration="1493000" />
+      <workItem from="1701220194912" duration="1094000" />
     </task>
     <task id="LOCAL-00001" summary="진형 push">
       <created>1700461796485</created>
