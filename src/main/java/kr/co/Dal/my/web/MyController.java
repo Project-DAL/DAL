@@ -1,3 +1,9 @@
+/*
+    파일명        : MyController
+    최초 작성자    : 박제형
+    최초 작성날짜   : 2023.11.28
+*/
+
 package kr.co.Dal.my.web;
 
 
