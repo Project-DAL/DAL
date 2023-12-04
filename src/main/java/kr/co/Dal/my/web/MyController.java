@@ -7,29 +7,38 @@
 package kr.co.Dal.my.web;
 
 
+import kr.co.Dal.my.model.MyCouponVO;
+import kr.co.Dal.my.service.MyCouponService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @RequiredArgsConstructor
 public class MyController {
 
+    private final MyCouponService myCouponService;
+
     // My Page Main
     @GetMapping("/my/MyPageMain")
     public String mypagemain() {
+
         return "my/MyPageMain";
     }
 
     // MY Board
     @GetMapping("/my/MyBoard")
     public String myboard(){
+
         return "my/MyBoard";
     }
 
     // My Coupon
     @GetMapping("/my/MyCoupon")
-    public String mycoupon(){
+    public String mycoupon(Model model){
+        MyCouponVO mycouponVO = new MyCouponVO();
+        model.addAttribute("couponList", myCouponService.selectCouponList(mycouponVO));
 
         return "my/MyCoupon";
     }
@@ -44,6 +53,7 @@ public class MyController {
     // My Order
     @GetMapping("/my/MyOrder")
     public String myorder(){
+
         return "my/MyOrder";
     }
 
