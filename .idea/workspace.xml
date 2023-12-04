@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="진형 push">
+    <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="2023.12.14 김진형 커뮤니티 목록 업데이트">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/comm/css/comm-layout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/comm/css/commList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/comm/commList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/service/CommService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/service/CommService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/Dal.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/Dal.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/web/CommController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/web/CommController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/service/MyCouponService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/service/MyCouponService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +44,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -57,6 +64,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -66,6 +74,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -77,7 +86,10 @@
       <recent name="C:\Users\DataLogics\Desktop\Workspace\DAL\DAL\src\main\resources\templates" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.DalApplication">
+    <configuration name="commList.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/DAL/HTML/comm/commList.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="DalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="DAL.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="kr.co.Dal.DalApplication" />
@@ -85,6 +97,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.commList.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -107,6 +124,7 @@
       <workItem from="1701066906959" duration="1187000" />
       <workItem from="1701158556845" duration="1493000" />
       <workItem from="1701220194912" duration="1094000" />
+      <workItem from="1701677890900" duration="2421000" />
     </task>
     <task id="LOCAL-00001" summary="진형 push">
       <created>1700461796485</created>
@@ -134,7 +152,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="진형 push" />
-    <option name="LAST_COMMIT_MESSAGE" value="진형 push" />
+    <MESSAGE value="2023.12.14 김진형 커뮤니티 목록 업데이트" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.12.14 김진형 커뮤니티 목록 업데이트" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
