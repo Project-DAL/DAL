@@ -14,7 +14,7 @@ import java.util.List;
 public interface MyCouponMapper {
 
 
-    /* 1. 쿠폰 리스트 조회 */
+    /* 1. 쿠폰 리스트 조회 1*/
     List<MyCouponVO> selectCouponList(MyCouponVO mycouponVO);
 
 }

@@ -10,18 +10,18 @@
 <mapper namespace="kr.co.Dal.my.mapper.MyCouponMapper">
     <select id="selectCouponList" resultType="kr.co.Dal.my.model.MyCouponVO">
         SELECT
-            CP_ID,
-            CP_NAME,
-            CP_CODE,
-            CP_TYPE,
-            CP_DISCT,
-            CP_WDATE,
-            CP_GRADE,
-            CP_CNT,
-            CP_RDATE,
-            CP_DISCT_TYP,
-            CP_MIN_PRICE
-        FROM CP_TB
+            cp_id,
+            cp_name,
+            cp_code,
+            cp_type,
+            cp_disct,
+            cp_wdate,
+            cp_grade,
+            cp_cnt,
+            cp_rdate,
+            cp_disct_type,
+            cp_min_price
+        FROM cp_tb
     </select>
 
 

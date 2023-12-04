@@ -46,7 +46,7 @@ public class MyController {
         return "my/MyCoupon";
     }
 
-    // My Info
+    // My Info1
     @GetMapping("/my/MyInfo")
     public String myinfo(){
 
