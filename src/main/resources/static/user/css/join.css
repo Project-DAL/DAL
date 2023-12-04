@@ -1,0 +1,69 @@
+.ct_join-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+.join-title {
+    font: 700 30px 'Noto Sans Kr';
+    width: 100%;
+    text-align: center;
+}
+.join-content {
+    width: 98%;
+}
+.join-content section {
+    border-bottom: 1px solid #e8e8e8;
+}
+.join-content table {
+    border-left: none;
+    border-right: none;
+    line-height: 1.5;
+    width: 100%;
+}
+.join-content table th {
+    width: 15%;
+    text-align: left;
+    padding: 17px 20px;
+    font: 500 15px 'Noto Sans Kr';
+    color: #555;
+    background: #fbfafa;
+    border-top: 1px solid #e8e8e8;
+}
+.join-content table td {
+    padding: 13px 10px 12px;
+    text-align: left;
+    font: 500 15px 'Noto Sans Kr';
+    color: #555;
+    border-top: 1px solid #e8e8e8;
+}
+.join-content table td input {
+    height: 30px;
+    padding: 2px 4px;
+    font: 400 15px 'Noto Sans Kr';
+    border: 1px solid #e8e8e8;
+}
+.join-content table .mobile select {
+    width: 90px;
+    height: 30px;
+    border: 1px solid #e8e8e8;
+}
+.join-msg {
+    font: 400 13px 'Noto Sans Kr';
+    color: #555;
+}
+.join-content p {
+    width: 100%;
+    text-align: center;
+}
+.btn {
+    display: inline-block;
+    width: 200px;
+    background: #000;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    padding: 8px;
+    margin-right: 10px;
+}

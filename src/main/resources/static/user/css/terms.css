@@ -1,0 +1,68 @@
+/* terms wrap */
+.ct_terms-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+.terms-title {
+    width: 100%;
+}
+.terms-title1 {
+    font: 600 26px 'Noto Sans Kr';
+}
+.terms-title2 {
+    font: 500 20px 'Noto Sans Kr';
+}
+.terms-box {
+    width: 100%;
+}
+.terms-box table {
+    width: 100%;
+    text-align: left;
+}
+.terms-box .chk-all-label span {
+    font: 500 15px 'Noto Sans Kr';
+}
+.terms-box table caption {
+    display: inline-block;
+    font: 500 16px 'Noto Sans Kr';
+    margin-top: 22px;
+}
+.terms-box table caption span {
+    color: #f2552c;
+    font: 500 15px 'Noto Sans Kr';
+    margin-right: 4px;
+    margin-left: 3px;
+}
+.terms-box .terms-text {
+    overflow: hidden;
+    height: 200px;
+    margin-top: 10px;
+    padding: 12px;
+    box-sizing: border-box;
+    width: 98%;
+    border: 1px solid #cdcdcd;
+    resize: none;
+}
+.errorMsg {
+    font: 500 15px 'Noto Sans Kr';
+    color: #f2552c;
+    display: block;
+    text-align: center;
+}
+.terms-box p {
+    width: 100%;
+    text-align: center;
+}
+.btn {
+    display: inline-block;
+    width: 200px;
+    background: #000;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    padding: 8px;
+    margin-right: 10px;
+}
