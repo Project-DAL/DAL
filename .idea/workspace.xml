@@ -4,13 +4,59 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="진형 push">
+    <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="20231204 신호준 Spring Security JWT OAuth2(구글,네이버,카카오)완료">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/jwt/filter/JwtAuthenticationProcessingFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/jwt/service/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/jwt/util/PasswordUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/login/Entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/login/Entity/SocialType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/login/Entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/login/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/login/dto/UserSignUpDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/login/filter/CustomJsonUsernamePasswordAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/login/handler/LoginFailureHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/login/handler/LoginSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/login/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/login/service/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/login/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/oauth2/CustomOAuth2User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/oauth2/OAuthAttributes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/oauth2/handler/OAuth2LoginFailureHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/oauth2/handler/OAuth2LoginSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/oauth2/service/CustomOAuth2UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/oauth2/userinfo/GoogleOAuth2UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/oauth2/userinfo/KakaoOAuth2UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/oauth2/userinfo/NaverOAuth2UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/oauth2/userinfo/OAuth2UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/web/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/web/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-oauth.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/common/css/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/common/css/select_input.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/join.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/terms.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/google_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/kakao_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/naver_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/register_essential_icon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/findId.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/findPw.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/join.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/sns/join.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/sns/terms.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/terms.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/Dal.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/Dal.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/mapper/CommMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/mapper/CommMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/mapper/Commmapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/mapper/Commmapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/service/CommService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/service/CommService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/DalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/DalApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/main/web/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/main/web/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/_header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,40 +91,75 @@
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Interface" />
+        <option value="spring-beans.schema" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "yjklp10"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="419bb020-5268-4995-8a6e-dd43138c4f25" />
+        <option name="url" value="https://github.com/Project-DAL/DAL.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2WVy5LOyZqwrYkBgRPxwgMijDq1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "hojun",
+    "last_opened_file_path": "C:/Users/yjklp/IdeaProjects/DAL/src/main/resources/mapper",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yjklp\IdeaProjects\DAL\src\main\resources\mapper" />
+      <recent name="C:\Users\yjklp\IdeaProjects\DAL\src\main\resources\static\common\css" />
+      <recent name="C:\Users\yjklp\IdeaProjects\DAL\src\main\resources\templates\user" />
+      <recent name="C:\Users\yjklp\IdeaProjects\DAL\src\main\resources\static\user" />
+      <recent name="C:\Users\yjklp\IdeaProjects\DAL\src\main\resources\static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yjklp\IdeaProjects\DAL\src\main\resources\mappers\user" />
       <recent name="C:\Users\DataLogics\Desktop\Workspace\DAL\DAL\src\main\resources\statics\main\js" />
       <recent name="C:\Users\DataLogics\Desktop\Workspace\DAL\DAL\src\main\resources\templates" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="kr.co.Dal.user.web" />
     </key>
   </component>
   <component name="RunManager">
@@ -108,6 +189,12 @@
       <workItem from="1699421827262" duration="2518000" />
       <workItem from="1699489233153" duration="3268000" />
       <workItem from="1700443647083" duration="12215000" />
+      <workItem from="1701324188787" duration="6595000" />
+      <workItem from="1701332407666" duration="826000" />
+      <workItem from="1701582117507" duration="4076000" />
+      <workItem from="1701607240767" duration="11546000" />
+      <workItem from="1701651820863" duration="5474000" />
+      <workItem from="1701667071666" duration="11805000" />
     </task>
     <task id="LOCAL-00001" summary="진형 push">
       <created>1700461796485</created>
@@ -135,7 +222,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="진형 push" />
-    <option name="LAST_COMMIT_MESSAGE" value="진형 push" />
+    <MESSAGE value="20231204 신호준 Spring Security JWT OAuth2(구글,네이버,카카오)완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="20231204 신호준 Spring Security JWT OAuth2(구글,네이버,카카오)완료" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
