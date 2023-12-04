@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="2023.12.14 김진형 커뮤니티 목록 업데이트">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/comm/css/comm-layout.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/comm/css/commList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/comm/commList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/Dal.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/Dal.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/web/CommController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/web/CommController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/DalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/DalApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper/MyCouponMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper/MyCouponMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/model/MyCouponVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/model/MyCouponVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/service/MyCouponService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/service/MyCouponService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyCoupon.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyCoupon.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,24 +64,21 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "last_opened_file_path": "/Users/yiwonjeong/Desktop/Workspace/DAL/DAL/src/main/resources/mappers",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/mappers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\DataLogics\Desktop\Workspace\DAL\DAL\src\main\resources\statics\main\js" />
       <recent name="C:\Users\DataLogics\Desktop\Workspace\DAL\DAL\src\main\resources\templates" />

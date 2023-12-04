@@ -7,13 +7,15 @@
 package kr.co.Dal.my.model;
 
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
 
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class MyCouponVO {
 
     private String cp_id;             // 쿠폰ID
@@ -23,12 +25,12 @@ public class MyCouponVO {
     private String cp_grade;          // 사용등급
     private String cp_cnt;            // 발급개수(선착순 쿠폰)
     private String cp_min_price;      // 최소주문금액
+    private String cp_type;           // 쿠폰유형(1:등급 / 2:이벤트)
+    private String cp_disct_type;      // 쿠폰할인유형(1:할인율 / 2:할인금액)
+    private String cp_wdate;          // 만료날짜
+    private String cp_rdate;          // 생성날짜
 
-    private Date cp_wdate;            // 만료날짜
-    private Date cp_rdate;            // 생성날짜
 
-    private boolean cp_type;          // 쿠폰유형(1:등급 / 2:이벤트)
-    private boolean cp_disct_typ;     // 쿠폰할인유형(1:할인율 / 2:할인금액)
 
 
 }
