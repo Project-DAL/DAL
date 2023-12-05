@@ -9,16 +9,12 @@ package kr.co.Dal.my.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-
-import java.util.Date;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class MyCouponVO {
 
-    private String cp_id;             // 쿠폰ID1
+    private String cp_id;             // 쿠폰ID
     private String cp_name;           // 쿠폰명
     private String cp_code;           // 쿠폰코드
     private String cp_disct;          // 할인율 또는 할인금
