@@ -39,14 +39,13 @@ public class MyController {
     // My Coupon
     @GetMapping("/my/MyCoupon")
     public String mycoupon(Model model, MyCouponVO mycouponVO){
-        //MyCouponVO mycouponVO = new MyCouponVO();
         List<MyCouponVO> couponList = myCouponService.selectCouponList(mycouponVO);
         model.addAttribute("couponList", couponList);
 
         return "my/MyCoupon";
     }
 
-    // My Info1
+    // My Info
     @GetMapping("/my/MyInfo")
     public String myinfo(){
 

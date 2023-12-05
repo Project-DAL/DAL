@@ -10,6 +10,7 @@
   <!-- 2. Page JS, CSS -->
   <link rel="stylesheet" href="/css/common/layout.css" />
   <link rel="stylesheet" href="/css/common/reset.css" />
+  <link rel="stylesheet" href="/css/common/helper.css" />
   <link rel="stylesheet" href="/css/store/store-layout.css" />
   <link rel="stylesheet" href="/css/store/storeMain.css" />
   <link
@@ -52,7 +53,7 @@
 
       <!-- 4. Main -->
       <main>
-        <div class="ct_main" style="padding-left: 50px; padding-right: 50px">
+        <div class="ct_main">
           <!-- 4.1 Main Banner -->
           <div class="ct_banner-wrap">
             <div class="slider">
@@ -124,7 +125,9 @@
               <img src="#" class="search-icon" />
             </div>
             <div class="hashtag-bar">
-              <a href=""># 해시태그</a>
+              <a href="#"># 해시태그</a>
+              <a href="#"># 해시태그</a>
+              <a href="#"># 해시태그</a>
             </div>
           </div>
           <!-- 4.3 Cate Wrap -->
@@ -139,12 +142,15 @@
           <div class="ct_content-wrap">
             <!-- 4.4.1 Sale Row -->
             <div class="sale-row">
-              <div class="sale-tit">sub title</div>
+              <!-- First Prod Row-->
+              <div class="sale-tit">
+                <p>크리스마스만을 위해 태어난 크리스마스 와인</p>
+              </div>
               <ul class="bxslider">
                 <li>
                   <img
                     src="http://placehold.it/630x700&text=Prod1"
-                    class="bxslider_card"
+                    class="bxslider-card"
                   />
                   <div>
                     <p>진로소주</p>
@@ -157,7 +163,7 @@
                 <li>
                   <img
                     src="http://placehold.it/630x700&text=Prod2"
-                    class="bxslider_card"
+                    class="bxslider-card"
                   />
                   <div>
                     <p>진로소주</p>
@@ -170,9 +176,9 @@
                 <li>
                   <img
                     src="http://placehold.it/630x700&text=Prod3"
-                    class="bxslider_card"
+                    class="bxslider-card"
                   />
-                  <div class="bxslider_title">
+                  <div class="bxslider-title">
                     <p>진로소주</p>
                     <p>#해시태그1</p>
                     <p>#해시태그2</p>
@@ -183,10 +189,93 @@
                 <li>
                   <img
                     src="http://placehold.it/630x700&text=Prod4"
-                    class="bxslider_card"
+                    class="bxslider-card"
+                  />
+                  <div class="bxslider-title">
+                    <p>진로소주</p>
+                    <p>#해시태그1</p>
+                    <p>#해시태그2</p>
+                    <p>10,000원 - 할인가격</p>
+                    <p>20,000원 - 정상가격</p>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="http://placehold.it/630x700&text=Prod5"
+                    class="bxslider-card"
+                  />
+                  <div class="bxslider-title">
+                    <p>진로소주</p>
+                    <p>#해시태그1</p>
+                    <p>#해시태그2</p>
+                    <p>10,000원 - 할인가격</p>
+                    <p>20,000원 - 정상가격</p>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="http://placehold.it/630x700&text=Prod6"
+                    class="bxslider-card"
+                  />
+                  <div class="bxslider-title">
+                    <p>진로소주</p>
+                    <p>#해시태그1</p>
+                    <p>#해시태그2</p>
+                    <p>10,000원 - 할인가격</p>
+                    <p>20,000원 - 정상가격</p>
+                  </div>
+                </li>
+              </ul>
+              </div>
+              <!-- Second Prod Row-->
+              <div class="sale-tit">sub title</div>
+              <ul class="bxslider">
+                <li>
+                  <img
+                    src="http://placehold.it/630x700&text=Prod1"
+                    class="bxslider-card"
+                  />
+                  <div>
+                    <p>진로소주</p>
+                    <p>#해시태그1</p>
+                    <p>#해시태그2</p>
+                    <p>10,000원 - 할인가격</p>
+                    <p>20,000원 - 정상가격</p>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="http://placehold.it/630x700&text=Prod2"
+                    class="bxslider-card"
+                  />
+                  <div>
+                    <p>진로소주</p>
+                    <p>#해시태그1</p>
+                    <p>#해시태그2</p>
+                    <p>10,000원 - 할인가격</p>
+                    <p>20,000원 - 정상가격</p>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="http://placehold.it/630x700&text=Prod3"
+                    class="bxslider-card"
+                  />
+                  <div class="bxslider-title">
+                    <p>진로소주</p>
+                    <p>#해시태그1</p>
+                    <p>#해시태그2</p>
+                    <p>10,000원 - 할인가격</p>
+                    <p>20,000원 - 정상가격</p>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="http://placehold.it/630x700&text=Prod4"
+                    class="bxslider-card"
                   />
                   <div
-                    class="bxslider_title2"
+                    class="bxslider-title2"
                     style="background-color: aqua; width: 80%; margin: auto"
                   >
                     <p>진로소주</p>
@@ -199,7 +288,64 @@
                 <li>
                   <img
                     src="http://placehold.it/630x700&text=Prod5"
-                    class="bxslider_card"
+                    class="bxslider-card"
+                  />
+                  <div class="bxslider-title">
+                    <p>진로소주</p>
+                    <p>#해시태그1</p>
+                    <p>#해시태그2</p>
+                    <p>10,000원 - 할인가격</p>
+                    <p>20,000원 - 정상가격</p>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="http://placehold.it/630x700&text=Prod6"
+                    class="bxslider-card"
+                  />
+                  <div class="bxslider-title">
+                    <p>진로소주</p>
+                    <p>#해시태그1</p>
+                    <p>#해시태그2</p>
+                    <p>10,000원 - 할인가격</p>
+                    <p>20,000원 - 정상가격</p>
+                  </div>
+                </li>
+              </ul>
+              </div>
+              <!-- Third Prod Row-->
+              <div class="sale-tit">sub title</div>
+              <ul class="bxslider">
+                <li>
+                  <img
+                    src="http://placehold.it/630x700&text=Prod1"
+                    class="bxslider-card"
+                  />
+                  <div>
+                    <p>진로소주</p>
+                    <p>#해시태그1</p>
+                    <p>#해시태그2</p>
+                    <p>10,000원 - 할인가격</p>
+                    <p>20,000원 - 정상가격</p>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="http://placehold.it/630x700&text=Prod2"
+                    class="bxslider-card"
+                  />
+                  <div>
+                    <p>진로소주</p>
+                    <p>#해시태그1</p>
+                    <p>#해시태그2</p>
+                    <p>10,000원 - 할인가격</p>
+                    <p>20,000원 - 정상가격</p>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="http://placehold.it/630x700&text=Prod3"
+                    class="bxslider-card"
                   />
                   <div class="bxslider_title">
                     <p>진로소주</p>
@@ -211,10 +357,39 @@
                 </li>
                 <li>
                   <img
-                    src="http://placehold.it/630x700&text=Prod6"
-                    class="bxslider_card"
+                    src="http://placehold.it/630x700&text=Prod4"
+                    class="bxslider-card"
                   />
-                  <div class="bxslider_title">
+                  <div
+                    class="bxslider-title2"
+                    style="background-color: aqua; width: 80%; margin: auto"
+                  >
+                    <p>진로소주</p>
+                    <p>#해시태그1</p>
+                    <p>#해시태그2</p>
+                    <p>10,000원 - 할인가격</p>
+                    <p>20,000원 - 정상가격</p>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="http://placehold.it/630x700&text=Prod5"
+                    class="bxslider-card"
+                  />
+                  <div class="bxslider-title">
+                    <p>진로소주</p>
+                    <p>#해시태그1</p>
+                    <p>#해시태그2</p>
+                    <p>10,000원 - 할인가격</p>
+                    <p>20,000원 - 정상가격</p>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="http://placehold.it/630x700&text=Prod6"
+                    class="bxslider-card"
+                  />
+                  <div class="bxslider-title">
                     <p>진로소주</p>
                     <p>#해시태그1</p>
                     <p>#해시태그2</p>
@@ -223,9 +398,9 @@
                   </div>
                 </li>
               </ul>
+              </div>
             </div>
           </div>
-        </div>
       </main>
 
       <!-- 5. Footer -->
