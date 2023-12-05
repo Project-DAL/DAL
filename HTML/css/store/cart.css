@@ -1,0 +1,44 @@
+/* 장바구니 상단 타이틀 영역 */
+.cart-title-wrap {
+  text-align: center;
+}
+.cart-title {
+  height: 160px;
+}
+/* 장바구니 품목 영역 */
+.cart-list-wrap {
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+}
+th,
+td {
+  border: 1px solid black;
+  vertical-align: middle;
+}
+tr > td:nth-child(2) {
+  border-right: none;
+  width: 15%;
+}
+tr > td:nth-child(3) {
+  border-left: none;
+  text-align: left;
+}
+.cart-price {
+  font-size: large;
+  font-weight: bold;
+  padding-top: 40px;
+}
+.cart-btn-wrap {
+  height: 50px;
+}
+.cart-btn-wrap > a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #333;
+}
+.cart-list-wrap > tr > td:nth-child(4) > a {
+  color: aqua;
+}

@@ -1,9 +1,13 @@
+/* 메인 페이지 영역 */
+#wrapper {
+  /* background-color: #0f1e57; */
+}
 /* Main Banner */
 .ct_banner-wrap {
   width: 100%;
 }
 .bx-wrapper {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 /* Search Wrap */
@@ -29,11 +33,5 @@
 
 /* Content Wrap */
 .ct_content-wrap {
-    width: 100%;
+  width: 100%;
 }
-.sale-tit {
-    background: #e8e8e8;
-    width: 100%;
-    margin: 50px 0 30px 0;
-}
-
