@@ -1,0 +1,10 @@
+tr,
+td {
+  border: 1px solid black;
+  vertical-align: middle;
+  height: 50px;
+  padding-left: 15px;
+}
+.order-address-wrap {
+  margin: 0 auto;
+}
