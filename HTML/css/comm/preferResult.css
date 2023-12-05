@@ -1,0 +1,90 @@
+.ct_subtitle {
+    min-height: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    width: 100%;
+    margin: 25px 10px;
+
+}
+
+/* Content*/ 
+section {
+    width: 100%;
+    border: 1px solid;
+}
+
+.ct_content {
+    width: 90%;
+    margin: auto;
+    border: 1px solid #2e8eb4;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+th div {
+    padding-bottom: 50px;
+  }
+
+td label {
+    margin: 0 20px 0 0;
+    background-color: #3498db; /* 파랑 배경색 */
+    border-radius: 10px; /* 둥근 모서리 */
+    padding: 10px; /* 내용과 경계 사이의 간격 */
+    color: #fff; /* 텍스트 색상 */
+  }
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+.styled-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #2e8eb4;
+    color: white; 
+    border: 2px solid #2e8eb4; 
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.styled-button:hover {
+    background-color: white;
+    color: #2e8eb4; 
+}
+
+/* 페이지바 */
+.pagination {
+    display: flex;
+    list-style: none;
+    margin: 30px auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pagination li {
+    margin: 0 5px;
+  }
+
+  .pagination a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #333;
+  }
+
+  .pagination a:hover {
+    background-color: #f0f0f0;
+  }
