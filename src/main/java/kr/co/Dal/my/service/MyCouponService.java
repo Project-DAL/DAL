@@ -21,7 +21,7 @@ public class MyCouponService {
 
     private final MyCouponMapper myCouponMapper;
 
-    /* 1. 쿠폰 리스트 조회 1*/
+    /* 1. 쿠폰 리스트 조회 */
     public List<MyCouponVO> selectCouponList(MyCouponVO mycouponVO) {
         return myCouponMapper.selectCouponList(mycouponVO);
     }
