@@ -17,7 +17,32 @@ Ver.   Date          Revised By    Description
 ----------------------------------------------------------------------------------------------------------------------->
 
 <!--
-Contents
+HTML Contents
+
+1. Page JS, CSS
+2. Page Content
+3. Main
+3.1 Guide Wrap
+3.2 Search Wrap
+3.3 Cotent Wrap
+4. Page Script
+
+JS Contents
+
+1. Kakao Map 생성
+2. GeoLocation API
+이벤트1) 중심 좌표, 영역 좌표 얻기
+이벤트2) 지도 컨트롤
+함수1) 지도에 마커와 인포윈도우를 표시하는 함수
+함수2) 키워드 검색을 요청하는 함수
+함수3) 장소검색이 완료됐을 때 호출되는 콜백함수
+함수4) 검색 결과 목록과 마커를 표출하는 함수
+함수5) 검색결과 항목을 Element로 반환하는 함수
+함수6) 마커를 생성하고 지도 위에 마커를 표시하는 함수
+함수7) 지도 위에 표시되고 있는 마커를 모두 제거
+함수8) 검색결과 목록 하단에 페이지번호를 표시는 함수
+함수9) 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수
+함수10) 검색결과 목록의 자식 Element를 제거하는 함수
 
 
 -->
@@ -33,10 +58,10 @@ Contents
 
     <!-- 2. Page Content -->
     <th:block layout:fragment="content">
-        <!-- 4. Main -->
+        <!-- 3. Main -->
         <main>
             <div class="ct_main">
-                <!-- 4.1 Guide Wrap -->
+                <!-- 3.1 Guide Wrap -->
                 <div class="ct_guide-wrap">
                     <table>
                         <tr>
@@ -49,7 +74,7 @@ Contents
                         </tr>
                     </table>
                 </div>
-                <!-- 4.2 Search Wrap -->
+                <!-- 3.2 Search Wrap -->
                 <div class="ct_search-wrap">
                     <div class="search-bar">
                         <i class="fa-solid fa-magnifying-glass" style="color: #9c9c9c;"></i>
@@ -67,7 +92,7 @@ Contents
                         </div>
                     </div>
                 </div>
-                <!-- 4.3 Cotent Wrap -->
+                <!-- 3.3 Cotent Wrap -->
                 <div class="ct_content-wrap">
                     <div class="map-box">
                         <div class="map-list" id="menu_wrap">
@@ -85,11 +110,12 @@ Contents
         </main>
     </th:block>
 
-    <!-- 3. Page Script -->
+    <!-- 4. Page Script -->
     <th:block layout:fragment="script">
         <!-- Kakao MAP API -->
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=663e42ce0c9aff3c878dcb5e58b0c164&libraries=services"></script>
         <script>
+            // 경도, 위도
             let latitude, longitude;
 
             // 마커를 담을 배열입니다
@@ -98,18 +124,21 @@ Contents
             // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
             var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
-            // (1) Kakao Map 생성
+            <!-- 1. Kakao Map 생성----------------------------------------------------------------------------------- -->
+            // Kakao Map 생성
             var container = document.getElementById('map');             //지도를 담을 영역의 DOM 레퍼런스
             let options = {                                                     //지도를 생성할 때 필요한 기본 옵션
                 center: new kakao.maps.LatLng(33.450701, 126.570667),           //지도의 중심좌표
-                level: 3                                                        //지도의 레벨(확대, 축소 정도)
+                draggable: true,                                                // 지도 드래그
+                level: 3                                                        //지도의 확대 레벨
             };
             let keyword = document.getElementById('keyword').value;
             var map = new kakao.maps.Map(container, options);           //지도 생성 및 객체 리턴
 
-            <!-- GeoLocation API -->
+            <!-- 2. GeoLocation API -------------------------------------------------------------------------------- -->
             // 현재 사용자 접속 위치 확인
             // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
+            /*
             if(navigator.geolocation && keyword == '') {
 
                 document.getElementById('keyword').placeholder = "현재 위치";
@@ -136,8 +165,38 @@ Contents
 
                 displayMarker(locPosition, message);
             }
+            */
 
-            // 지도에 마커와 인포윈도우를 표시하는 함수입니다
+            <!-- 이벤트1) 중심 좌표, 영역 좌표 얻기 --------------------------------------------------------------------- -->
+            // 지도가 이동, 확대, 축소로 인해 중심좌표가 변경되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
+            kakao.maps.event.addListener(map, 'center_changed', function() {
+
+                // 지도의  레벨을 얻어옵니다
+                var level = map.getLevel();
+
+                // 지도의 중심좌표를 얻어옵니다
+                var latlng = map.getCenter();
+
+                // 지도 영역정보를 얻어옵니다
+                var bounds = map.getBounds();
+
+                // 영역정보의 남서쪽 정보를 얻어옵니다
+                var swLatlng = bounds.getSouthWest();
+
+                // 영역정보의 북동쪽 정보를 얻어옵니다
+                var neLatlng = bounds.getNorthEast();
+
+                console.log("map level is: " + level);
+                console.log("중심 좌표 위도, 경도: " + latlng.getLat() + "," + latlng.getLng());
+
+                console.log("남서쪽 포인트: " + swLatlng.toString());
+                console.log("북동쪽 포인트: " + neLatlng.toString());
+
+            });
+
+
+
+            // 함수1) 지도에 마커와 인포윈도우를 표시하는 함수입니다
             function displayMarker(locPosition, message) {
 
                 // 마커를 생성합니다
@@ -162,7 +221,7 @@ Contents
                 map.setCenter(locPosition);
             }
 
-            // (2) 지도 컨트롤
+            <!-- 이벤트2) 지도 컨트롤 --------------------------------------------------------------------------------- -->
             // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
             var mapTypeControl = new kakao.maps.MapTypeControl();
 
@@ -174,11 +233,29 @@ Contents
             var zoomControl = new kakao.maps.ZoomControl();
             map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-            // (3) 키워드로 장소 검색 + 목록 표시하기
+            // 키워드로 장소 검색 + 목록 표시하기
             // 장소 검색 객체를 생성합니다
             var ps = new kakao.maps.services.Places();
 
-            // (3-1) 키워드 검색을 요청하는 함수입니다
+
+            <!-- 이벤트3) 주소-좌표간 변환 서비스 ----------------------------------------------------------------------- -->
+            // 주소-좌표 변환 객체를 생성합니다
+            var geocoder = new kakao.maps.services.Geocoder();
+
+            // 검색 버튼을 눌렀을 때 callback 실행1
+            var callback = function(result, status) {
+                // 정상적으로 검색이 완료됐으면
+                if (status === kakao.maps.services.Status.OK) {
+                    console.log("result: ", result);
+                    console.log("result count: " + result.)
+                    console.log("result x point: " + result[0].x);
+                    console.log("result y point: " + result[0].y);
+                }
+            };
+
+            geocoder.addressSearch('중원구 은행동', callback);
+
+            // 함수2) 키워드 검색을 요청하는 함수입니다
             function searchPlaces() {
 
                 keyword = document.getElementById('keyword').value;
@@ -194,7 +271,7 @@ Contents
                 ps.keywordSearch(keyword, placesSearchCB);
             }
 
-            // (3-2) 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
+            // 함수3) 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
             function placesSearchCB(data, status, pagination) {
                 if (status === kakao.maps.services.Status.OK) {
 
@@ -218,7 +295,7 @@ Contents
                 }
             }
 
-            // (3-3) 검색 결과 목록과 마커를 표출하는 함수입니다
+            // 함수4) 검색 결과 목록과 마커를 표출하는 함수입니다
             function displayPlaces(places) {
 
                 var listEl = document.getElementById('placesList'),
@@ -276,7 +353,7 @@ Contents
                 map.setBounds(bounds);
             }
 
-            // (3-4) 검색결과 항목을 Element로 반환하는 함수입니다
+            // 함수5) 검색결과 항목을 Element로 반환하는 함수입니다
             function getListItem(index, places) {
 
                 var el = document.createElement('li'),
@@ -300,7 +377,7 @@ Contents
                 return el;
             }
 
-            // (3-5) 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
+            // 함수6) 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
             function addMarker(position, idx, title) {
                 var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
                     imageSize = new kakao.maps.Size(36, 37),  // 마커 이미지의 크기
@@ -321,7 +398,7 @@ Contents
                 return marker;
             }
 
-            // (3-6) 지도 위에 표시되고 있는 마커를 모두 제거합니다
+            // 함수7) 지도 위에 표시되고 있는 마커를 모두 제거합니다
             function removeMarker() {
                 for ( var i = 0; i < markers.length; i++ ) {
                     markers[i].setMap(null);
@@ -329,7 +406,7 @@ Contents
                 markers = [];
             }
 
-            // (3-7) 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
+            // 함수8) 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
             function displayPagination(pagination) {
                 var paginationEl = document.getElementById('pagination'),
                     fragment = document.createDocumentFragment(),
@@ -360,7 +437,7 @@ Contents
                 paginationEl.appendChild(fragment);
             }
 
-            // (3-8) 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
+            // 함수9) 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
             // 인포윈도우에 장소명을 표시합니다
             function displayInfowindow(marker, title) {
                 var content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
@@ -369,12 +446,14 @@ Contents
                 infowindow.open(map, marker);
             }
 
-            // 검색결과 목록의 자식 Element를 제거하는 함수입니다
+            // 함수10) 검색결과 목록의 자식 Element를 제거하는 함수입니다
             function removeAllChildNods(el) {
                 while (el.hasChildNodes()) {
                     el.removeChild (el.lastChild);
                 }
             }
+
+
 
 
 
