@@ -29,7 +29,7 @@
             <header>
                 <div class="user-wrap">
                     <div>
-                        <a class="clicked" href="/login">LOGIN</a>
+                        <a class="clicked" href="/loginForm">LOGIN</a>
                         <a>JOIN</a>
                         <a>MY PAGE</a>
                         <a>CART</a>
@@ -52,13 +52,13 @@
                 <div class="ct_main">
                     <div class="ct_login-wrap">
                         <div class="login-title">LOGIN</div>
-                        <form class="login-form" action="/login">
+                        <form class="login-form" action="/login" method="POST">
                             <!-- 일반 회원 로그인 -->
                             <div class="login-id">
-                                <input type="text" placeholder="아이디">
+                                <input type="text" name="email" placeholder="이메일을 입력하세요">
                             </div>
                             <div class="login-pw">
-                                <input type="text" placeholder="비밀번호">
+                                <input type="text" name="password" placeholder="비밀번호">
                             </div>
                             <div class="remember-id">
                                 <label>
@@ -79,7 +79,7 @@
                                 </div>
                                 <div>|</div>
                                 <div class="register">
-                                    <a class="btn" href="/join">회원가입</a>
+                                    <a class="btn" href="/joinForm">회원가입</a>
                                 </div>
                             </div>
                             <!-- SNS 연동 로그인 -->
