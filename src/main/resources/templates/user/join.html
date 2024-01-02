@@ -53,7 +53,7 @@
                     <div class="ct_join-wrap">
                         <div class="join-title">JOIN</div>
                         <div class="join-content mt25">
-                            <form action="#">
+                            <form method="post" action="/join">
                                 <section>
                                     <table>
                                         <tr>
@@ -61,8 +61,8 @@
                                                 <img src="/user/img/register_essential_icon.gif" alt="필수 입력">
                                             </th>
                                             <td>
-                                                <input class="input" type="text" name="uid" required>
-                                                <span class="join-msg">&nbsp;&nbsp;(영문소문자 4~12자)</span>
+                                                <input class="input" type="email" name="email" required>
+                                                <span class="user_lgin_id">&nbsp;&nbsp;(이메일로 입력하세요)</span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -70,7 +70,7 @@
                                                 <img src="/user/img/register_essential_icon.gif" alt="필수 입력">
                                             </th>
                                             <td>
-                                                <input class="input" type="password" name="pass" required>
+                                                <input class="input" type="password" name="password" required>
                                                 <span class="join-msg">&nbsp;&nbsp;(영문소문자/숫자/특수문자 조합 8~16자)</span>
                                             </td>
                                         </tr>
@@ -96,7 +96,7 @@
                                                 <img src="/user/img/register_essential_icon.gif" alt="필수 입력">
                                             </th>
                                             <td>
-                                                <input class="input" type="text" name="nick" required>
+                                                <input class="text" type="text" name="username" required>
                                             </td>
                                         </tr>
 <!--                                        <tr>-->
