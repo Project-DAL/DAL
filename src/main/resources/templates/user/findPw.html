@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 1. Common Head -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOGIN</title>
+</head>
+
+<!-- 2. Page JS, CSS -->
+<link rel="stylesheet" href="/common/css/layout.css" />
+<link rel="stylesheet" href="/common/css/reset.css" />
+<link rel="stylesheet" href="/common/css/select_input.css" />
+<link rel="stylesheet" href="/common/css/helper.css" />
+<link rel="stylesheet" href="/user/css/findPw.css" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+<link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+/>
+
+
+<body>
+<div id="wrapper">
+    <!-- 3. Header -->
+    <header>
+        <div class="user-wrap">
+            <div>
+                <a class="clicked" href="/loginForm">LOGIN</a>
+                <a>JOIN</a>
+                <a>MY PAGE</a>
+                <a>CART</a>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- 4. Main -->
+    <!-- 4. Main -->
+    <main>
+        <div class="findPw_main">
+            <div class="findPw-wrap">
+                <div class="findPw-title">비밀번호찾기</div>
+                <div class="findPw-content mt25">
+                    <form method="post" action="/join">
+
+                            <table>
+                                <tr>
+                                    <th>아이디
+                                        <img src="/user/img/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td>
+                                        <input class="input" type="email" name="email" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>이메일
+                                        <img src="/user/img/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td>
+                                        <input class="input" type="email" name="email" required>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        <p class="mt15">
+                            <input type="submit" class="btn2" value="취소" >
+                            <input type="submit" class="btn1" value="찾기">
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</div>
+
+</body>
+</html>

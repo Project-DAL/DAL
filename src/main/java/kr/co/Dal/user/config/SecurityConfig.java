@@ -28,7 +28,7 @@ public class SecurityConfig {
         http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers("/user/**","/common/**","/main/**","/test/**").permitAll()
-                .antMatchers("/joinForm","/loginForm","/auth/**", "/oauth2/**","/my/**","/join").permitAll() // 회원가입 접근 가능
+                .antMatchers("/joinForm","/loginForm","/auth/**", "/oauth2/**","/my/**","/join","/findIdForm","/findPwForm").permitAll() // 회원가입 접근 가능
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
