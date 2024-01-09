@@ -1,70 +1,69 @@
-.join_main{
-    width: calc(90vw - 60px);
+.findPw_main{
+    width: calc(57vw - 60px);
     margin: 0 auto;
     border: 1px;
     padding: 50px 10px;
 }
 
-.ct_join-wrap {
+.findPw-wrap {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-left: 20px;
 }
-.join-title {
+.findPw-title {
     font: 700 30px 'Noto Sans Kr';
     width: 100%;
     text-align: center;
 }
-.join-content {
+.findPw-content {
     width: 98%;
 }
-.join-content section {
+.findPw-content tr {
     border: 1px solid #e8e8e8;
 }
-.join-content table {
+.findPw-content table {
     border-left: none;
     border-right: none;
     line-height: 1.5;
     width: 100%;
 }
-.join-content table th {
+.findPw-content table th {
     width: 15%;
     text-align: left;
     padding: 17px 20px;
     font: 500 15px 'Noto Sans Kr';
     color: #555;
     background: #fbfafa;
-    border-top: 1px solid #e8e8e8;
+
 }
-.join-content table td {
+.findPw-content table td {
     padding: 13px 10px 12px;
     text-align: left;
     font: 500 15px 'Noto Sans Kr';
     color: #555;
-    border-top: 1px solid #e8e8e8;
 }
-.join-content table td input {
+.findPw-content table td input {
     height: 30px;
     padding: 2px 4px;
     font: 400 15px 'Noto Sans Kr';
     border: 1px solid #e8e8e8;
 }
-.join-content table .mobile select {
+.findPw-content table .mobile select {
     width: 90px;
     height: 30px;
     border: 1px solid #e8e8e8;
 }
-.join-msg {
+.findPw-msg {
     font: 400 13px 'Noto Sans Kr';
     color: #555;
 }
-.join-content p {
+.findPw-content p {
     width: 100%;
     text-align: center;
 }
-.btn {
+.btn1 {
     display: inline-block;
     width: 200px;
     background: #000;
@@ -73,4 +72,18 @@
     text-align: center;
     padding: 8px;
     margin-right: 10px;
+    margin-top: 21px;
+}
+.btn2 {
+    display: inline-block;
+    width: 200px;
+    background: white;
+    color: black;
+    font-size: 17px;
+    text-align: center;
+    padding: 8px;
+    margin-right: 55px;
+    margin-top: 21px;
+    border: 1px solid #e8e8e8;
+
 }
