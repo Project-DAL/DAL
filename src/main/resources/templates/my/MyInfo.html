@@ -4,15 +4,15 @@
       layout:decorate="~{layouts/my-layout}">
 
 
-    <!-- 2. Page JS, CSS -->
-    <th:block layout:fragment="css-js">
-        <link rel="stylesheet" type="text/css" th:href="@{/my/css/my-layout.css}">
-        <link rel="stylesheet" type="text/css" th:href="@{/my/css/myInfo.css}">
-        <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
-    </th:block>
+<!-- 2. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+    <link rel="stylesheet" type="text/css" th:href="@{/my/css/my-layout.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/my/css/myInfo.css}">
+    <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+</th:block>
 
 
-    <th:block layout:fragment="content">
+<th:block layout:fragment="content">
 
     <main>
         <div class="ct_main">
@@ -40,74 +40,115 @@
                 </div>
             </aside>
             <!-- 4.2 Content -->
-              <section>
-                <div class="ct_content-wrap">
-                      <div class="ct_subtitle">
-                        <h3>내 정보</h3>
-                      </div>
-                  <div class="content-middle">
-                      <div class="info">
-                          <div class="basicinfo">기본정보</div>
-                            <table class=infotable>
-                              <tbody>
-                                 <tr>
-                                  <td>이메일</td>
-                                  <td><input type="text"></input></td>
-                                  <td>이메일을 입력해 주세요</td>
-                                 </tr>
-                                 <tr>
-                                  <td>비밀번호</td>
-                                  <td><input type="text"></input></td>
-                                  <td>(영문 대소문자/숫자/특수문자 중 3가지 이상 조합,8자~16자)</td>
-                                 </tr>
-                                 <tr>
-                                  <td>비밀번호 확인</td>
-                                  <td><input type="text"></input></td>
-                                 </tr>
-                                 <tr>
-                                  <td>이름</td>
-                                  <td><input type="text"></input></td>
-                                 </tr>
-                                 <tr>
-                                  <td></td>
-                                  <td><input type="text"></td>
-                                  <a id="btnAddress" href="#" class="btn large blue">우편번호</a>
-                                 </tr>
-                                 <tr>
-                                  <td>주소</td>
-                                  <td><input type="text"></input></td>
-                                  <td>기본주소</td>
-                                 </tr>
-                                 <tr>
-                                  <td></td>
-                                  <td><input type="text"></input></td>
-                                  <td>나머지주소(선택입력가능)</td>
-                                 </tr>
-                              </tbody>
-                            </table>
-                            <div>추가 정보</div>
-                            <talbe class=infotable>
-                              <tbody>
+            <div class="ct_join-wrap">
+                <div class="join-content mt25">
+                    <div class="join-title">내 정보 수정</div>
+                    <form action="#">
+                        <section>
+                            <table>
                                 <tr>
-                                  <td>생년월일</td>
-                                  <td><input type="text">년</input></td>
-                                  <td><input type="text">월</input></td>
-                                  <td><input type="text">일</input></td>
+                                    <th>아이디
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td>
+                                        <input class="input" type="text" name="uid" required>
+                                        <span class="join-msg">&nbsp;&nbsp;(영문소문자 4~12자)</span>
+                                    </td>
                                 </tr>
-                              </tbody>
-                            </talbe>
-                            <div>
-                              동의해야 될것들 이용약관 개인정보 수집 등등
-                            </div>
-                            <div>
-                              <a id="btnJoin" href="#" class="btn large blue">회원가입</a>
-                          </div>
-                     </div>
-                  </div>
+                                <tr>
+                                    <th>비밀번호
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td>
+                                        <input class="input" type="password" name="pass" required>
+                                        <span class="join-msg">&nbsp;&nbsp;(영문소문자/숫자/특수문자 조합 8~16자)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>비밀번호 확인
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td>
+                                        <input class="input" type="password" name="pass" required>
+                                        <span class="join-msg">&nbsp;&nbsp;영문, 숫자, 특수문자를 조합하여 8~16자까지 설정해 주세요.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>이름
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td>
+                                        <input class="input" type="text" name="name" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>닉네임
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td>
+                                        <input class="input" type="text" name="nick" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>휴대전화
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td class="mobile">
+                                        <select name="mobile1" id="mobile1">
+                                            <option value="010">010</option>
+                                            <option value="011">011</option>
+                                            <option value="016">016</option>
+                                            <option value="017">017</option>
+                                            <option value="018">018</option>
+                                            <option value="019">019</option>
+                                        </select>
+                                        &nbsp;&nbsp;&nbsp;-&nbsp;
+                                        <input class="input" type="text" name="mobile2" required>
+                                        &nbsp;-&nbsp;
+                                        <input class="input" type="text" name="mobile3" required>
+                                        <span class="join-msg">&nbsp;&nbsp;(미기입 시 SMS 수신이 불가합니다.)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>이메일
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td>
+                                        <input class="input" type="email" name="email" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>생년월일</th>
+                                    <td>
+                                        <input class="input" type="datetime" name="birthday">
+                                    </td>
+                                </tr>
+                                <tr class="addr">
+                                    <th>주소
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td>
+                                        <div>
+                                            <input type="text" name="zip" placeholder="우편번호 입력 클릭" readonly>
+                                        </div>
+                                        <div>
+                                            <input class="input mt5" type="text" name="addr1" size="50" placeholder="주소를 검색하세요." readonly>
+                                        </div>
+                                        <div>
+                                            <input class="input mt5" type="text" name="addr2" size="50" placeholder="상세주소를 입력하세요.">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </section>
+                        <p class="mt15">
+                            <input type="submit" class="btn btnJoin" value="회원가입">
+                        </p>
+                    </form>
                 </div>
-              </section>
-         </div>
-      </main>
-    </th:block>
+            </div>
+        </div>
+    </main>
+</th:block>
 
 </html>
