@@ -1,3 +1,10 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+
 .ct_subtitle {
     min-height: 30px;
     text-align: center;
@@ -5,19 +12,21 @@
     font-weight: 700;
     width: 100%;
     margin: 25px 10px;
-
+    color: #3498db;
 }
 
-/* Content*/ 
+/* Content*/
 section {
     width: 100%;
     border: 1px solid;
 }
 
 .ct_content {
-    width: 90%;
+    width: 40%;
     margin: auto;
     border: 1px solid #2e8eb4;
+    border-radius: 25px; /* 둥근 모서리 */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 table {
@@ -27,9 +36,31 @@ table {
     margin-top: 20px;
 }
 
-th div {
-    padding-bottom: 50px;
-  }
+th {
+    text-align: center; /* 가운데 정렬 */
+    padding: 15px; /* 안쪽 여백 */
+}
+
+.name-result {
+    margin: 30px auto;
+    font-size: 30px; /* 제목 폰트 크기 조절 */
+    font-weight: bold; /* 제목 볼드체 */
+    border: 1px solid #2e8eb4;
+    border-radius: 25px; /* 둥근 모서리 */
+    color: #fff;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #3498db;
+    width: 630px;
+}
+
+.result-list {
+    margin: 50px 0px 0px 0px;
+
+}
+
+.prod-card {
+    border-radius: 25px;
+}
 
 td label {
     margin: 0 20px 0 0;
@@ -37,12 +68,12 @@ td label {
     border-radius: 10px; /* 둥근 모서리 */
     padding: 10px; /* 내용과 경계 사이의 간격 */
     color: #fff; /* 텍스트 색상 */
-  }
+}
 
 .button-container {
     text-align: center;
     margin-top: 20px;
-  }
+}
 
 .styled-button {
     display: inline-block;
@@ -51,40 +82,16 @@ td label {
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    background-color: #2e8eb4;
-    color: white; 
-    border: 2px solid #2e8eb4; 
-    border-radius: 5px; 
+    background-color: white;
+    color: #2e8eb4;
+    border: 1px solid #2e8eb4;
+    border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s;
+
 }
 
 .styled-button:hover {
-    background-color: white;
-    color: #2e8eb4; 
+    background-color: #3498db;
+    color: white;
 }
-
-/* 페이지바 */
-.pagination {
-    display: flex;
-    list-style: none;
-    margin: 30px auto;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .pagination li {
-    margin: 0 5px;
-  }
-
-  .pagination a {
-    text-decoration: none;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    color: #333;
-  }
-
-  .pagination a:hover {
-    background-color: #f0f0f0;
-  }
