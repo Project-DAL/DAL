@@ -1,0 +1,139 @@
+/* 그리드 배치 */
+.ct_content {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr ;
+    grid-template-rows: 80px 1fr 1fr 1fr;
+    grid-template-areas:
+    "header header header"
+    "   a    main   main "
+    "   a    main   main "
+    "   a    main   main ";
+    gap: 5px;
+    border: 1px solid #DFDFDF;
+    background: #fff;
+    height: 100%;
+}
+
+.grid-header, .grid-sidebar, .grid-main {
+    border: 1px solid #000; /* 외곽선 스타일 및 색상을 원하는 대로 설정하세요 */
+}
+
+/* grid-header 배치 */
+.grid-header {
+    grid-area: header;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas:
+    "title btn";
+    height: 100%;
+}
+
+/* grid -sidebar 배치 */
+.grid-sidebar {
+    grid-area: a;
+}
+
+/* grid main 배치 */
+.grid-main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-rows: 80px 100px 1fr;
+    grid-template-areas:
+    "header   header    header"
+    "search   search    search"
+    "content  content   content"
+;
+    gap: 5px;
+    border: 1px solid #DFDFDF;
+    background: #fff;
+    height: 100%;
+}
+
+.main-header, .main-search, .main-content {
+    border: 1px solid #000;
+}
+
+.main-header {
+    grid-area: header;
+}
+
+.main-search {
+    grid-area : search;
+}
+
+.main-content {
+    grid-area : content;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.data-table th, .data-table td {
+    padding: 8px;
+    text-align: center;
+}
+
+.data-table th {
+    background-color: #f2f2f2; /* 헤더 배경색 지정 */
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* 짝수 행 배경색 지정 */
+}
+
+.data-table tbody tr:hover {
+    background-color: #e0e0e0; /* 마우스 오버 행 배경색 지정 */
+}
+
+/* 기존 스타일 유지 */
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list li {
+    padding: 5px;
+}
+
+.category-list a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.category-list a:hover {
+    background-color: #f0f0f0; /* 마우스 오버 시 배경색 지정 */
+}
+
+.category-list a[data-category="all"] {
+    background-color: #3498db; /* 전체 카테고리의 배경색 지정 */
+    color: #fff; /* 전체 카테고리의 텍스트 색상 지정 */
+}
+
+.category-list a[data-category="soju"] {
+    background-color: #2ecc71; /* 소주 카테고리의 배경색 지정 */
+    color: #fff; /* 소주 카테고리의 텍스트 색상 지정 */
+}
+
+.category-list a[data-category="beer"] {
+    background-color: #e74c3c; /* 맥주 카테고리의 배경색 지정 */
+    color: #fff; /* 맥주 카테고리의 텍스트 색상 지정 */
+}
+
+.category-list a[data-category="liquor"] {
+    background-color: #f39c12; /* 양주 카테고리의 배경색 지정 */
+    color: #fff; /* 양주 카테고리의 텍스트 색상 지정 */
+}
+
+/* 선택된 카테고리에 대한 스타일 지정 */
+.category-list a.active {
+    background-color: #34495e; /* 선택된 카테고리의 배경색 지정 */
+    color: #fff; /* 선택된 카테고리의 텍스트 색상 지정 */
+}

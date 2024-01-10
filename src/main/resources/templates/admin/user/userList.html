@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin-layout}">
+<!-- 3. content -->
+<th:block layout:fragment="content">
+    <th:block layout:fragment="css-js">
+        <link rel="stylesheet" type="text/css" th:href="@{/common/css/reset.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/admin/css/grid/user-grid.css}">
+        <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+        <script type="text/javascript" th:src="@{/admin/js/store/storeList.js}"></script>
+    </th:block>
+    <div class="ct_content">
+        <div class="grid-header">
+            <h2>고객목록</h2>
+        </div>
+        <div class="grid-search">
+        </div>
+        <div class="grid-main">
+            <div class="main-header">
+                <h2>검색결과/13/총13의 검색결과</h2>
+            </div>
+            <div class="main-content">
+                <table class="data-table">
+                    <thead>
+                    <tr>
+                        <th>NO</th>
+                        <th>아이디</th>
+                        <th>성함</th>
+                        <th>전화번호</th>
+                        <th>고객등급</th>
+                        <th>가입날자</th>
+                        <th>수신동의</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>10101010</td>
+                        <td>맛있는새로</td>
+                        <td>2024-01-10</td>
+                        <td>김진형</td>
+                        <td>210 신용카드</td>
+                        <td>배송중</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>10101010</td>
+                        <td>맛있는새로</td>
+                        <td>2024-01-10</td>
+                        <td>김진형</td>
+                        <td>210 신용카드</td>
+                        <td>배송중</td>
+                    </tr>
+                    <!-- 추가적인 상품 행들 -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="main-pagingBtn">
+                <ul class="pagination">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</th:block>
+
+</html>

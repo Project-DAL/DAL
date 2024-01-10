@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin-layout}">
+<th:block layout:fragment="content">
+    <th:block layout:fragment="css-js">
+        <link rel="stylesheet" type="text/css" th:href="@{/common/css/reset.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/admin/css/grid/stas-grid.css}">
+        <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+        <script type="text/javascript" th:src="@{/admin/js/store/storeList.js}"></script>
+    </th:block>
+    <div class="ct_content">
+        <div class="grid-header">
+            <h2>통계메인</h2>
+        </div>
+        <div class="grid-main">
+            <div class="main-content">
+                <div class="stas-content"></div>
+                <div class="stas-title"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-content"></div>
+                <div class="stas-title"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-content"></div>
+                <div class="stas-title"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-content"></div>
+                <div class="stas-title"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-content"></div>
+                <div class="stas-title"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-content"></div>
+                <div class="stas-title"></div>
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>

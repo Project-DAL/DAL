@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- 1. Layout -->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin-layout}">
+
+<th:block layout:fragment="content">
+    <!-- 2. Page JS, CSS -->
+    <th:block layout:fragment="css-js">
+        <link rel="stylesheet" type="text/css" th:href="@{/admin/css/grid/main-grid.css}">
+        <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+
+        <script type="text/javascript" th:src="@{/admin/js/adminMain.js}"></script>
+    </th:block>
+    <div class="ct_content">
+        <div class="grid-header">
+            <h2>관리자 메인</h2>
+        </div>
+        <div class="grid-main">
+            <div class="main-content">
+                <div class="stas-title">
+                    <h2>공지사항</h2>
+                </div>
+                <div class="stas-content"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-title">
+                    <h2>오늘의 이벤트</h2>
+                </div>
+                <div class="stas-content"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-title">
+                    <h2>방문현황</h2>
+                </div>
+                <div class="stas-content"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-title">
+                    <h2>결제 정보</h2>
+                </div>
+                <div class="stas-content"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-title">
+                    <h2>배송내역</h2>
+                </div>
+                <div class="stas-content"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-title">
+                    <h2>민원현황</h2>
+                </div>
+                <div class="stas-content"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-title">
+                    <h2>통계</h2>
+                </div>
+                <div class="stas-content"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-title">
+                    <h2>통계</h2>
+                </div>
+                <div class="stas-content"></div>
+            </div>
+            <div class="main-content">
+                <div class="stas-title">
+                    <h2>통계</h2>
+                </div>
+                <div class="stas-content"></div>
+            </div>
+        </div>
+    </div>
+</th:block>
+
+</html>

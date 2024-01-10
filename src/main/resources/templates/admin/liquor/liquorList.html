@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin-layout}">
+
+
+<!-- 3. content -->
+<th:block layout:fragment="content">
+    <th:block layout:fragment="css-js">
+        <link rel="stylesheet" type="text/css" th:href="@{/common/css/reset.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/admin/css/grid/list-grid.css}">
+        <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+        <script type="text/javascript" th:src="@{/admin/js/store/storeList.js}"></script>
+    </th:block>
+    <div class="ct_content">
+        <div class="grid-header">
+            <h2>주류목록</h2>
+        </div>
+        <div class="grid-sidebar">
+            <div class="category-menu">
+                <div class="category-header">
+                    <span>카테고리 관리</span>
+                </div>
+                <ul id="categoryList" class="category-list">
+                    <li><a href="#" data-category="all">전체 카테고리</a></li>
+                    <li><a href="#" data-category="soju">소주</a></li>
+                    <li><a href="#" data-category="beer">맥주</a></li>
+                    <li><a href="#" data-category="liquor">양주</a></li>
+                    <!-- 추가적인 카테고리 아이템들 -->
+                </ul>
+            </div>
+        </div>
+        <div class="grid-main">
+            <div class="main-header"></div>
+            <div class="main-search"></div>
+            <div class="main-content">
+                <table class="data-table">
+                    <thead>
+                    <tr>
+                        <th>NO</th>
+                        <th>상품명</th>
+                        <th>판매가</th>
+                        <th>분류</th>
+                        <th>상태</th>
+                        <th>재고</th>
+                        <th>등록일</th>
+                        <th>수정일</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>상품 1(사진넣을듯)</td>
+                        <td>10000원</td>
+                        <td>증류주</td>
+                        <td>판매 중</td>
+                        <td>50</td>
+                        <td>2024-01-01</td>
+                        <td>2024-01-02</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>상품 2</td>
+                        <td>20000원</td>
+                        <td>그냥저냥</td>
+                        <td>품절</td>
+                        <td>20</td>
+                        <td>2024-01-03</td>
+                        <td>2024-01-04</td>
+                    </tr>
+                    <!-- 추가적인 상품 행들 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</th:block>
+
+</html>
