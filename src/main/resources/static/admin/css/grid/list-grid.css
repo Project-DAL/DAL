@@ -21,10 +21,9 @@
 /* grid-header 배치 */
 .grid-header {
     grid-area: header;
-    grid-template-columns: 1fr 200px;
-    grid-template-areas:
-    "title btn";
-    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* grid -sidebar 배치 */

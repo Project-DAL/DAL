@@ -10,14 +10,16 @@
     <!-- 3. content -->
     <th:block layout:fragment="content">
         <th:block layout:fragment="css-js">
-            <link rel="stylesheet" type="text/css" th:href="@{/common/css/reset.css}">
             <link rel="stylesheet" type="text/css" th:href="@{/admin/css/grid/list-grid.css}">
-            <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
             <script type="text/javascript" th:src="@{/admin/js/store/storeList.js}"></script>
         </th:block>
             <div class="ct_content">
                 <div class="grid-header">
-                    <h2>스토어 상품 목록</h2>
+                    <h2 class="ml5">스토어 상품 목록</h2>
+                    <div class="parent-container">
+                        <button class="custom-btn btn-3 mr5"><span>Read More</span></button>
+                        <button class="custom-btn btn-3 mr5"><span>Read More</span></button>
+                    </div>
                 </div>
                 <div class="grid-sidebar">
                     <div class="category-menu">

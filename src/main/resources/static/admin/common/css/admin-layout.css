@@ -1,0 +1,110 @@
+:root {
+    --fiori-font: #32363A;
+    --fiori-header: #354A5F;
+    --fiori-default-bg: #F7F7F7;
+    --fiori-table-header: #F2F2F2;
+    --fiori-line-between: #D9D9D9;
+    /* opacity : 0.7 적용한 연한 컬러 */
+    --fiori-line-opacity:  rgb(217, 217, 217, 0.7);
+
+    --fiori-button-deepblue: #354A5F;
+    --fiori-button-lightblue: #0A6ED1;
+    --fiori-kakao-bg: #B2C7D9;
+    --fiori-button-red: #BB0000;
+    --fiori-button-green: #107E3E;
+    --fiori-menu-selected: #E5F0FA;
+
+    --defaul-white: #FFFFFF;
+}
+html {
+    height:100%;
+    font-family: 'NanumGothicExtraBold', serif;
+}
+body {
+    background-color: #f3f4f7;
+    height: calc(100% - 60px);
+}
+
+/* a */
+a {
+    text-decoration: none;
+    color: var(--fiori-font);
+}
+* a:link, * a:focus, * a:active, * a:hover {
+    color: black;
+    background: none;
+    text-decoration: none;
+}
+
+/* button */
+* button:focus, * button:active, * button:hover {
+    outline: none;
+}
+
+/* input */
+* input:focus, * input:active, * input:hover {
+    outline: none;
+}
+
+/* select */
+* select:focus, * select:active, * select:hover {
+    outline: none;
+}
+
+/* list */
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* margin-right */
+.mr50 { margin-right: 50px; }
+.mr45 { margin-right: 45px; }
+.mr40 { margin-right: 40px; }
+.mr35 { margin-right: 35px; }
+.mr30 { margin-right: 30px; }
+.mr25 { margin-right: 25px; }
+.mr20 { margin-right: 20px; }
+.mr15 { margin-right: 15px; }
+.mr10 { margin-right: 10px; }
+.mr5  { margin-right:  5px; }
+.mr3  { margin-right:  3px; }
+.mr2  { margin-right:  2px; }
+
+.aic-loading-bar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.0);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 15px solid #e5e5e5; /* Light grey */
+    border-top: 15px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spinner 1s linear infinite;
+}
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+

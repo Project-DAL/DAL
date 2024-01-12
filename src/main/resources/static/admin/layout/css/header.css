@@ -1,0 +1,57 @@
+.lay_hd {
+    width:100%;
+    min-width: 800px;
+    height: 60px;
+    background-color: #19234b;
+    color: white;
+    line-height: 60px;
+    position: fixed;
+    top: 0;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    z-index: 999;
+}
+
+.lay_hd_toggle {
+    float: left;
+    width: 50px;
+    padding-left: 11px;
+    font-size: 20px;
+}
+.lay_hd_toggle span:hover {
+    cursor: pointer;
+}
+
+.lay_hd_title {
+    float: left;
+    width: 300px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.lay_hd_icons {
+    float: right;
+    font-size: 18px;
+    color: white;
+}
+.lay_hd_icons {
+    font-size: 12px;
+}
+.lay_hd_icons div {
+    font-family: Noto Sans KR,sans-serif;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    float: right;
+    margin-right:30px;
+}
+.lay_hd_icons button {
+    font-family: Noto Sans KR,sans-serif;
+    color: white;
+    font-size: 12px;
+}
+.lay_hd_icons button:hover {
+    color: white;
+}
