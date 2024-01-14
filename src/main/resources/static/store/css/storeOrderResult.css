@@ -1,0 +1,27 @@
+.orderResult-icon {
+    width: 430px;
+    height: 160px;
+}
+.ct_result-title {
+    font-size: 35px;
+}
+.result-table tr,
+.result-table th,
+.result-table td {
+    border: 1px solid black;
+    vertical-align: middle;
+    height: 50px;
+    padding: 0px 15px;
+}
+.btn {
+    display: block;
+    width: 60px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #0f1e57;
+    border: solid 1px #0f1e57;
+    color: #fff;
+}
+/* .ct_result-wrap {
+  text-align: center;
+} */

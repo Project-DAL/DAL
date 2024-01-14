@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main-layout}">
+
+
+<!-- 2. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+  <link rel="stylesheet" type="text/css" th:href="@{/common/css/layout.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/store/css/storeCart.css}">
+  <link rel="stylesheet"  href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+  <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
+  />
+
+  <script type="text/javascript" th:src="@{/store/js/storeCart.js}"></script>
+</th:block>
+
+
+<th:block layout:fragment="content">
+  <main>
+    <div class="ct_main">
+      <!-- 4.2 Cart Title IMG -->
+      <div>
+        <div class="cart-title-wrap center">
+          <img
+              src="../../css/img/store/cart-icon.png"
+              alt="장바구니"
+              class="cart-title mb40"
+          />
+        </div>
+      </div>
+      <!-- 4.3 Cart List -->
+      <div>
+        <table class="cart-list-wrap w80ph center">
+          <tr>
+            <th><input type="checkbox" /></th>
+            <th colspan="2">상품 정보</th>
+            <th>수량</th>
+            <th>적립금</th>
+            <th>가격</th>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td><img src="http://placehold.it/120x140&text=Prod1" /></td>
+            <td>참이슬</td>
+            <td>
+              <div class="prod-count-wrap">
+                <a href="#" class="btn">-</a>
+                <span class="prod-count">3</span>
+                <a href="#" class="btn">+</a>
+              </div>
+            </td>
+            <td>3,000원</td>
+            <td>60,000원</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td><img src="http://placehold.it/120x140&text=Prod2" /></td>
+            <td>참이슬</td>
+            <td>
+              <div class="prod-count-wrap">
+                <a href="#" class="btn">-</a>
+                <span class="prod-count">3</span>
+                <a href="#" class="btn">+</a>
+              </div>
+            </td>
+            <td>3,000원</td>
+            <td>60,000원</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td><img src="http://placehold.it/120x140&text=Prod3" /></td>
+            <td>참이슬</td>
+            <td>
+              <div class="prod-count-wrap">
+                <a href="#" class="btn">-</a>
+                <span class="prod-count">3</span>
+                <a href="#" class="btn">+</a>
+              </div>
+            </td>
+            <td>3,000원</td>
+            <td>60,000원</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td><img src="http://placehold.it/120x140&text=Prod4" /></td>
+            <td>참이슬</td>
+            <td>
+              <div class="prod-count-wrap">
+                <a href="#" class="btn">-</a>
+                <span class="prod-count">3</span>
+                <a href="#" class="btn">+</a>
+              </div>
+            </td>
+            <td>3,000원</td>
+            <td>60,000원</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td><img src="http://placehold.it/120x140&text=Prod5" /></td>
+            <td>참이슬</td>
+            <td>
+              <div class="prod-count-wrap">
+                <a href="#" class="btn">-</a>
+                <span class="prod-count">3</span>
+                <a href="#" class="btn">+</a>
+              </div>
+            </td>
+            <td>3,000원</td>
+            <td>60,000원</td>
+          </tr>
+        </table>
+      </div>
+      <!-- 4.4  -->
+      <div class="center mt40 mb25">
+        <p class="cart-price">총 2개 | 120,000원</p>
+      </div>
+      <!-- 4.5 삭제 버튼, 구매 버튼 -->
+      <div class="center cart-btn-wrap">
+        <a href="#" class="btn" style="display: inline-block; width: 100px"
+        >구매하기</a
+        >
+        <a
+            href="#"
+            class="btn"
+            style="
+                background-color: black;
+                display: inline-block;
+                width: 100px;
+              "
+        >삭제하기</a
+        >
+      </div>
+    </div>
+  </main>
+</th:block>
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main-layout}">
+
+
+<!-- 2. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+  <link rel="stylesheet" type="text/css" th:href="@{/common/css/layout.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/store/css/storeList.css}">
+  <link rel="stylesheet"  href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+
+
+  <script type="text/javascript" th:src="@{/store/js/storeList.js}"></script>
+</th:block>
+
+
+<th:block layout:fragment="content">
+  <main>
+    <div class="ct_main">
+      <!-- 4.2 Search Wrap -->
+      <div class="ct_search-wrap">
+        <div class="search-bar">
+          <input
+              type="text"
+              placeholder="원하시는 술을 검색해보세요."
+              class="search-box"
+          />
+          <img src="#" class="search-icon" />
+        </div>
+        <div class="hashtag-bar">
+          <a href="">#달달함</a>
+          <a href="">#간단하게 마시기 좋은</a>
+        </div>
+      </div>
+      <!-- 4.3 Cate Wrap -->
+      <div class="ct_cate-wrap">
+        <div class="ct_cate-title"><a href="#">전체</a></div>
+        <div class="ct_cate-title"><a href="#">탁주</a></div>
+        <div class="ct_cate-title"><a href="#">증류주</a></div>
+        <div class="ct_cate-title"><a href="#">과실주</a></div>
+        <div class="ct_cate-title"><a href="#">와인</a></div>
+      </div>
+      <!-- 4.4 Cotent Wrap -->
+      <div class="ct_content-wrap">
+        <!-- 4.4.1 Sale Row -->
+        <div class="sale-row">
+          <!-- <div><select></select></div> -->
+          <!-- First Row -->
+          <ul class="prod-row">
+            <li class="prod-wrap">
+              <img
+                  src="http://placehold.it/630x700&text=Prod1"
+                  class="prod-card"
+              />
+              <div>
+                <p>진로소주</p>
+                <span>#깔끔한 맛</span>
+                <span>#구수한 풍미</span>
+                <p>10,000원 - 할인가격</p>
+                <p>20,000원 - 정상가격</p>
+              </div>
+            </li>
+            <li class="prod-wrap">
+              <img
+                  src="http://placehold.it/630x700&text=Prod2"
+                  class="prod-card"
+              />
+              <div>
+                <p>진로소주</p>
+                <p>#깔끔한 맛</p>
+                <p>#구수한 풍미</p>
+                <p>10,000원 - 할인가격</p>
+                <p>20,000원 - 정상가격</p>
+              </div>
+            </li>
+            <li class="prod-wrap">
+              <img
+                  src="http://placehold.it/630x700&text=Prod3"
+                  class="prod-card"
+              />
+              <div class="card-title">
+                <p>진로소주</p>
+                <span>#깔끔한 맛</span>
+                <span>#구수한 풍미</span>
+                <p>10,000원 - 할인가격</p>
+                <p>20,000원 - 정상가격</p>
+              </div>
+            </li>
+            <li class="prod-wrap">
+              <img
+                  src="http://placehold.it/630x700&text=Prod4"
+                  class="prod-card"
+              />
+              <div class="card-title2">
+                <p>진로소주</p>
+                <p>#깔끔한 맛</p>
+                <p>#구수한 풍미</p>
+                <p>10,000원 - 할인가격</p>
+                <p>20,000원 - 정상가격</p>
+              </div>
+            </li>
+          </ul>
+          <!-- Second Row -->
+          <ul
+              class="prod-row"
+              style="
+                  display: flex;
+                  padding: 4.8px;
+                  width: 100%;
+                  justify-content: space-between;
+                "
+          >
+            <li class="prod-wrap">
+              <img
+                  src="http://placehold.it/630x700&text=Prod1"
+                  class="prod-card"
+              />
+              <div>
+                <p>진로소주</p>
+                <p>#해시태그1</p>
+                <p>#해시태그2</p>
+                <p>10,000원 - 할인가격</p>
+                <p>20,000원 - 정상가격</p>
+              </div>
+            </li>
+            <li class="prod-wrap">
+              <img
+                  src="http://placehold.it/630x700&text=Prod2"
+                  class="prod-card"
+              />
+              <div>
+                <p>진로소주</p>
+                <p>#해시태그1</p>
+                <p>#해시태그2</p>
+                <p>10,000원 - 할인가격</p>
+                <p>20,000원 - 정상가격</p>
+              </div>
+            </li>
+            <li class="prod-wrap">
+              <img
+                  src="http://placehold.it/630x700&text=Prod3"
+                  class="prod-card"
+              />
+              <div class="card-title">
+                <p>진로소주</p>
+                <p>#해시태그1</p>
+                <p>#해시태그2</p>
+                <p>10,000원 - 할인가격</p>
+                <p>20,000원 - 정상가격</p>
+              </div>
+            </li>
+            <li class="prod-wrap">
+              <img
+                  src="http://placehold.it/630x700&text=Prod4"
+                  class="prod-card"
+              />
+              <div class="card-title2">
+                <p>진로소주</p>
+                <p>#해시태그1</p>
+                <p>#해시태그2</p>
+                <p>10,000원 - 할인가격</p>
+                <p>20,000원 - 정상가격</p>
+              </div>
+            </li>
+          </ul>
+          <!-- Third Row -->
+          <ul
+              class="prod-row"
+              style="
+                  display: flex;
+                  padding: 4.8px;
+                  width: 100%;
+                  justify-content: space-between;
+                "
+          >
+            <li class="prod-wrap">
+              <img
+                  src="http://placehold.it/630x700&text=Prod1"
+                  class="prod-card"
+              />
+              <div>
+                <p>진로소주</p>
+                <p>#해시태그1</p>
+                <p>#해시태그2</p>
+                <p>10,000원 - 할인가격</p>
+                <p>20,000원 - 정상가격</p>
+              </div>
+            </li>
+            <li class="prod-wrap">
+              <img
+                  src="http://placehold.it/630x700&text=Prod2"
+                  class="prod-card"
+              />
+              <div>
+                <p>진로소주</p>
+                <p>#해시태그1</p>
+                <p>#해시태그2</p>
+                <p>10,000원 - 할인가격</p>
+                <p>20,000원 - 정상가격</p>
+              </div>
+            </li>
+            <li class="prod-wrap">
+              <img
+                  src="http://placehold.it/630x700&text=Prod3"
+                  class="prod-card"
+              />
+              <div class="card-title">
+                <p>진로소주</p>
+                <p>#해시태그1</p>
+                <p>#해시태그2</p>
+                <p>10,000원 - 할인가격</p>
+                <p>20,000원 - 정상가격</p>
+              </div>
+            </li>
+            <li class="prod-wrap">
+              <img
+                  src="http://placehold.it/630x700&text=Prod4"
+                  class="prod-card"
+              />
+              <div class="card-title2">
+                <p>진로소주</p>
+                <p>#해시태그1</p>
+                <p>#해시태그2</p>
+                <p>10,000원 - 할인가격</p>
+                <p>20,000원 - 정상가격</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</th:block>
+
+</html>
