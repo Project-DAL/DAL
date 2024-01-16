@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main-layout}">
+
+
+<!-- 2. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+  <link rel="stylesheet" type="text/css" th:href="@{/common/css/layout.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/store/css/storeOrder.css}">
+  <link rel="stylesheet"  href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+  <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
+  />
+
+  <script type="text/javascript" th:src="@{/store/js/storeOrder.js}"></script>
+</th:block>
+
+
+<th:block layout:fragment="content">
+  <main>
+    <div class="ct_main">
+      <!-- 4.2 Order Title IMG -->
+      <div>
+        <div class="order-title-wrap center">
+          <img
+              src="../../css/img/store/order-icon.png"
+              alt="주문 진행"
+              class="order-title mb40"
+          />
+        </div>
+      </div>
+      <!-- 4.3 Cart List -->
+      <div>
+        <div class="order-address-wrap w80ph">
+          <p class="mb25">배송정보</p>
+          <table class="w100ph order-table">
+            <colgroup>
+              <col style="width: 250px" />
+              <col />
+            </colgroup>
+            <tr>
+              <td>배송지</td>
+              <td>
+                <input type="radio" class="mr10" />회사<input
+                  type="radio"
+              />집
+                <a
+                    href="#"
+                    class="btn ml10"
+                    style="display: inline-block; width: 100px"
+                >배송지 변경</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>이름 / 연락처</td>
+              <td>김아무개 | 010 - 1111 - 2222</td>
+            </tr>
+            <tr>
+              <td>주소</td>
+              <td>서울특별시 서초구 서운로22 js빌딩 7층</td>
+            </tr>
+            <tr>
+              <td>배송 요청사항</td>
+              <td>
+                <select>
+                  <option>문 앞에 놔주세요.</option>
+                  <option>배송 출발 하실 때 문자주세요.</option>
+                  <option>경비실에 맡겨주세요.</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="order-address-wrap w80ph">
+          <p class="mb25 mt40">상품정보</p>
+          <table class="w100ph order-table">
+            <colgroup>
+              <col style="width: 15%" />
+              <col style="width: 45%" />
+              <col style="width: 10%" />
+              <col style="width: 15%" />
+              <col style="width: 15%" />
+            </colgroup>
+            <tr>
+              <th colspan="2">상품정보</th>
+              <th>수량</th>
+              <th>적립금</th>
+              <th>가격</th>
+            </tr>
+            <tr>
+              <td style="padding: 5px 0px 0px 25px; border-right: none">
+                <img
+                    src="http://placehold.it/150x210&text=Prod2"
+                    class="prod-img w120px"
+                />
+              </td>
+              <td style="border-left: none">오미투게더</td>
+              <td>2</td>
+              <td>1,000원</td>
+              <td>20,000원</td>
+            </tr>
+          </table>
+        </div>
+        <div class="order-address-wrap w80ph">
+          <p class="mb25 mt40">등급할인 / 쿠폰 / 적립금 / 주문금액</p>
+          <table class="w100ph order-table">
+            <colgroup>
+              <col style="width: 15%" />
+              <col style="width: 50%" />
+              <col style="width: 16%" />
+              <col style="width: 10%" />
+              <col style="width: 9%" />
+            </colgroup>
+            <tr>
+              <th>등급할인</th>
+              <th>쿠폰 사용</th>
+              <th>적립금 사용</th>
+              <th>배송비</th>
+              <th>주문 금액</th>
+            </tr>
+            <tr>
+              <td>
+                <p>-300원</p>
+                <p>(SILVER)</p>
+              </td>
+              <td>
+                <div style="display: flex; line-height: 30px">
+                  <p>- 10,000원</p>
+                  <a href="#" class="btn" style="width: 80px">쿠폰 사용</a>
+                </div>
+              </td>
+              <td>
+                <span>-</span>
+                <input type="text" style="width: 80px" />
+                <span>원</span>
+                <p>보유 적립금 5,320원</p>
+              </td>
+              <td>무료</td>
+              <td>20,000원</td>
+            </tr>
+          </table>
+          <p>적립금은 5,000원 이상 보유시 사용 가능합니다.</p>
+        </div>
+        <div class="order-address-wrap w80ph">
+          <p class="mb25 mt40">결제정보</p>
+          <input type="radio" />
+          <span>신용카드</span>
+          <input type="radio" />
+          <span>카카오 페이</span>
+          <input type="radio" />
+          <span>실시간 계좌이체</span>
+        </div>
+      </div>
+      <!-- 4.4  -->
+      <div class="center mt40 mb25">
+        <p class="cart-price">총 2개 | 120,000원</p>
+      </div>
+      <!-- 4.5 삭제 버튼, 구매 버튼 -->
+      <div class="center cart-btn-wrap">
+        <a
+            href="#"
+            class="btn mr30"
+            style="display: inline-block; width: 100px"
+        >구매하기</a
+        >
+        <a
+            href="#"
+            class="btn"
+            style="
+                background-color: black;
+                display: inline-block;
+                width: 100px;
+              "
+        >취소하기</a
+        >
+      </div>
+    </div>
+  </main>
+</th:block>
+
+</html>

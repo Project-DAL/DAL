@@ -17,4 +17,29 @@ public class StoreController {
         return "store/storeMain";
     }
 
+    @GetMapping("/storeList")
+    public String storeList() {
+        return "store/storeList";
+    }
+
+    @GetMapping("/storeView")
+    public String storeView() {
+        return "store/storeView";
+    }
+
+    @GetMapping("/storeCart")
+    public String storeCart() {
+        return "store/order/storeCart";
+    }
+
+    @GetMapping("/storeOrder")
+    public String storeOrder() {
+        return "store/order/storeOrder";
+    }
+
+    @GetMapping("/storeOrderResult")
+    public String storeOrderResult() {
+        return "store/order/storeOrderResult";
+    }
+
 }

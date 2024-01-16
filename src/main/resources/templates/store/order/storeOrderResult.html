@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main-layout}">
+
+
+<!-- 2. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+  <link rel="stylesheet" type="text/css" th:href="@{/common/css/layout.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/store/css/storeOrderResult.css}">
+  <link rel="stylesheet"  href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+
+  <script type="text/javascript" th:src="@{/store/js/storeOrderResult.js}"></script>
+</th:block>
+
+
+<th:block layout:fragment="content">
+  <main>
+    <div class="ct_main">
+      <!-- 4.2 Result Title IMG -->
+      <div>
+        <div class="order-title-wrap center">
+          <img
+              src="../../css/img/store/orderResult-icon.png"
+              alt="주문 완료"
+              class="orderResult-icon mb40"
+          />
+        </div>
+      </div>
+      <!-- 4.3 Result List -->
+      <div class="ct_result-wrap">
+        <p class="ct_result-title center mb40">주문 완료</p>
+        <div
+            class="mt40"
+            style="display: flex; justify-content: space-between"
+        >
+          <span>NO.20240112330040</span>
+          <span>2024-01-12</span>
+        </div>
+        <table class="w100ph result-table">
+          <colgroup>
+            <col style="width: 15%" />
+            <col style="width: 45%" />
+            <col style="width: 10%" />
+            <col style="width: 15%" />
+            <col style="width: 15%" />
+          </colgroup>
+          <tr>
+            <th colspan="2">상품정보</th>
+            <th>수량</th>
+            <th>적립금</th>
+            <th>가격</th>
+          </tr>
+          <tr>
+            <td style="padding: 5px 0px 0px 25px; border-right: none">
+              <img
+                  src="http://placehold.it/150x210&text=Prod2"
+                  class="prod-img w120px"
+              />
+            </td>
+            <td style="border-left: none">오미투게더</td>
+            <td class="center">2</td>
+            <td class="center">1,000원</td>
+            <td class="center">20,000원</td>
+          </tr>
+        </table>
+      </div>
+      <!-- 4.4  -->
+      <div class="center mt40 mb25">
+        <p class="cart-price">총 2개 | 120,000원</p>
+      </div>
+      <!-- 4.5 삭제 버튼, 구매 버튼 -->
+      <div class="center cart-btn-wrap">
+        <a
+            href="#"
+            class="btn mr30"
+            style="display: inline-block; width: 100px"
+        >상세내역</a
+        >
+        <a
+            href="#"
+            class="btn"
+            style="
+                background-color: black;
+                display: inline-block;
+                width: 100px;
+              "
+        >확인</a
+        >
+      </div>
+    </div>
+  </main>
+</th:block>
+
+</html>

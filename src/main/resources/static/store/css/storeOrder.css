@@ -1,0 +1,21 @@
+.order-table tr,
+.order-table th,
+.order-table td {
+    border: 1px solid black;
+    vertical-align: middle;
+    height: 50px;
+    padding: 0px 15px;
+}
+.order-address-wrap {
+    margin: 0 auto;
+}
+/* 배송지 변경 버튼 */
+.btn {
+    display: block;
+    width: 60px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #0f1e57;
+    border: solid 1px #0f1e57;
+    color: #fff;
+}
