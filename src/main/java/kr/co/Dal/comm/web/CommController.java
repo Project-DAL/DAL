@@ -16,12 +16,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CommController {
 
     /**
-     * 커뮤니티 목록
+     *  게시판 목록
      */
     @GetMapping("/commList")
     public String commList() {
         return "comm/commList";
     }
 
+
+    /**
+     * 게시판 등록
+     */
+    @GetMapping("/commWrite")
+    public String commWrite() {
+        return "comm/commWrite";
+    }
 
 }

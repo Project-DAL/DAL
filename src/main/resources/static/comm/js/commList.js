@@ -9,7 +9,7 @@ Draft Date     : 2023.12.04
 /* 1. Variables *******************************************************************************************************/
 
 /* 1.1 전역변수 */
-let iSelectedId     = null; // 선택된 행의 ID
+let iSelectedId = null; // 선택된 행의 ID
 
 /* 1.2 Page Navigation Variables */
 let jsonPageNavigation = {

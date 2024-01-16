@@ -1,3 +1,11 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -39,6 +47,7 @@ table {
 }
 
 table {
+    width: 80%;
     margin: auto;
     text-align: center;
     margin-top: 20px;
