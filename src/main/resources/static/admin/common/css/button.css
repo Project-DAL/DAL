@@ -128,3 +128,50 @@
 .bt-rr[aria-hidden="true"] {
     display: none;
 }
+
+/* Container for the tabs */
+.nbt-group {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style for each tab */
+.nbt {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Style for the active tab */
+.nbt.active {
+    color: #007bff;
+    border-bottom: 1px solid #007bff;
+}
+
+.nbt span {
+    color: #007bff;
+}
+
+.mbt-group {
+    display: flex;
+    justify-content: start;
+    padding: 0;
+}
+
+.mbt-group .mbt {
+    background-color: #f4f4f4;
+    border: 1px solid #d4d4d4;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.mbt-group .mbt.active,
+.mbt-group .mbt:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}

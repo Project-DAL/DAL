@@ -1356,3 +1356,11 @@ Contents
 .hide {display: none;}
 
 .show {display: block;}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}

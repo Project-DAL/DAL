@@ -8,69 +8,253 @@
 </head>
 
 <!-- 2. Page JS, CSS -->
-<link rel="stylesheet" th:href="@{/admin/css/admin-layout.css}" />
 <link rel="stylesheet" type="text/css" th:href="@{/common/css/reset.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/common/vendor/bootstrap.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/common/vendor/bootstrap-icons.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/common/css/helper.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/button.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/grid.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/paging.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/popup.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/search.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/table.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/layout/css/aside.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/layout/css/font.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/layout/css/header.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/layout/css/main.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/cate-sidebar.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/admin-layout.css}">
 <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+
+<script type="text/javascript" th:src="@{/admin/common/vendor/jquery-3.6.0.min.js}"></script>
+<script type="text/javascript" th:src="@{/admin/common/vendor/bootstrap-treeview.min.js}"></script>
+<script type="text/javascript" th:src="@{/admin/common/vendor/bootstrap.js}"></script>
 
 <body>
-<div id="wrapper">
-  <main>
-    <div class="ct_main">
-      <!-- Aside -->
-      <div class="ct_left-menu">
-        <div class="menu-logo">><a th:href="@{/admin/adminMain}">DAL ADMIN PAGE</a></div>
-        <ul>
-          <li class="menu-tit"><a href="#">스토어관리</a></li>
-          <li class="menu-sub on"><a th:href="@{/admin/store/storeList}">스토어목록</a></li>
-          <li class="menu-sub"><a th:href="@{/admin/store/storeOrder}">스토어주문목록</a></li>
-        </ul>
-        <ul>
-          <li class="menu-tit"><a href="#">주류관리</a></li>
-          <li class="menu-sub"><a th:href="@{/admin/liquor/liquorList}">주류목록</a></li>
-        </ul>
-        <ul>
-          <li class="menu-tit"><a href="#">고객관리</a></li>
-          <li class="menu-sub"><a th:href="@{/admin/user/userList}">고객 목록</a></li>
-        </ul>
-        <ul>
-          <li class="menu-tit"><a href="#">통계</a></li>
-          <li class="menu-sub"><a th:href="@{/admin/stas/stasMain}">메인통계</a></li>
-          <li class="menu-sub"><a href="#">주류통계</a></li>
-        </ul>
-        <ul>
-          <li class="menu-tit"><a href="#">메인관리</a></li>
-          <li class="menu-sub"><a href="#">메인관리</a></li>
-          <li class="menu-sub"><a href="#">선호도관리</a></li>
-        </ul>
-        <ul>
-          <li class="menu-tit"><a href="#">정산관리</a></li>
-          <li class="menu-sub"><a href="#">정산메인</a></li>
-          <li class="menu-sub"><a href="#">영수증관리</a></li>
-        </ul>
-        <ul>
-          <li class="menu-tit"><a href="#">고객센터</a></li>
-          <li class="menu-sub"><a href="#">민원관리</a></li>
-        </ul>
+    <header class="lay_hd" xmlns:sec="http://www.w3.org/1999/xhtml">
+      <div class="lay_hd_toggle">
+        <span class="bi bi-list" id="headerToggle" aria-expanded="false"></span>
       </div>
-      <!-- Content -->
-      <section>
-        <div class="ct_content-top">
-          <div class="favorite">+</div>
-          <div class="cate-list">
-            <ul>
-              <li class="f-cate on"><a href="#">favorite</a></li>
-              <li class="f-cate"><a href="#">favorite</a></li>
-              <li class="f-cate"><a href="#">favorite</a></li>
-              <li class="f-cate"><a href="#">favorite</a></li>
-            </ul>
+
+      <div class="lay_hd_title">
+        <span>Dal Home</span>
+      </div>
+      <div class="lay_hd_icons" style="float:right">
+        <div>
+          <span style="font-size:14px; margin-right:80px">DAL 관리자페이지</span>
+          <div style="cursor:pointer; margin-right:0" onclick="fnMenuToggle()">
+            <i class="bi bi-person"></i>&nbsp;
+            <span sec:authentication="name"></span>&nbsp;
+            <i id="tgBtnUp" class="bi bi-chevron-up" style="display:none"></i>
+            <i id="tgBtnDown" class="bi bi-chevron-down"></i>
           </div>
         </div>
-        <div class="ct_content-wrap">
-          <th:block layout:fragment="content"></th:block>
+      </div>
+
+      <div class="lay_tg" id="tgMenu">
+        <div class="lay_tg_body">
+          <div style="cursor:pointer" onclick="location.href='/logout'">로그아웃</div>
+          <div style="cursor:pointer" onclick="location.href='https://i.kakao.com/'">관리자센터</div>
         </div>
-      </section>
-    </div>
-  </main>
-</div>
+      </div>
+
+      <div class="aic-loading-bar">
+        <div class="spinner"></div>
+      </div>
+    </header>
+    <aside class="lay_sd" id="sidebar" aria-expanded="false">
+      <ul>
+        <li>
+          <a class="collapsed" data-bs-target="#asideScn" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-book side-icon"></i>
+            <span>스토어관리</span>
+            <i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="asideScn" class="collapse" data-bs-parent="#sidebar" aria-visible="false">
+            <li onclick="location.href='/admin/store/storeList'"><span>스토어목록</span></li>
+            <li onclick="location.href='/admin/store/storeOrder'"><span>스토어주문목록</span></li>
+          </ul>
+        </li>
+        <li>
+          <a class="collapsed" data-bs-target="#asideQna" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-question-circle side-icon"></i>
+            <span>주류관리</span>
+            <i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="asideQna" class="collapse" data-bs-parent="#sidebar" aria-collapsed="true">
+            <li onclick="location.href='/admin/liquor/liquorList'"><span>주류목록</span></li>
+          </ul>
+        </li>
+        <li>
+          <a class="collapsed" data-bs-target="#asideBotAns" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-body-text side-icon"></i>
+            <span>고객관리</span>
+            <i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="asideBotAns" class="collapse" data-bs-parent="#sidebar">
+            <li onclick="location.href='/admin/user/userList'"><span>고객목록</span></li>
+          </ul>
+        </li>
+        <li>
+          <a class="collapsed" data-bs-target="#asideCnt" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-body-text side-icon"></i>
+            <span>메인관리</span>
+            <i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="asideCnt" class="collapse" data-bs-parent="#sidebar">
+            <li onclick="location.href='/cnt/cntsList'"><span>메인</span></li>
+            <li onclick="location.href='/tmpl/tmplList'"><span>선호도관리</span></li>
+          </ul>
+        </li>
+        <li>
+          <a class="collapsed" data-bs-target="#asideSdb" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-clipboard-data side-icon"></i>
+            <span>통계관리</span>
+            <i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="asideSdb" class="collapse" data-bs-parent="#sidebar">
+            <li onclick="location.href='/admin/stas/stasMain'"><span>메인통계</span></li>
+            <li onclick="location.href='/admin/stas/stasLiquor'"><span>주류통계</span></li>
+          </ul>
+        </li>
+        <li>
+          <a class="collapsed" data-bs-target="#asideCbt" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-chat-dots side-icon"></i>
+            <span>정산관리</span>
+            <i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="asideCbt" class="collapse" data-bs-parent="#sidebar">
+            <li onclick="location.href='/admin/ws/wsMain'"><span>정산메인</span></li>
+            <li onclick="location.href='/admin/ws/wsRept'"><span>영수증관리</span></li>
+          </ul>
+        </li>
+        <li>
+          <a class="collapsed" data-bs-target="#asideStt" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-bar-chart-line side-icon"></i>
+            <span>고객센터관리</span>
+            <i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="asideStt" class="collapse" data-bs-parent="#sidebar">
+            <li onclick="location.href='/admin/cs/csMain'"><span>고객센터</span></li>
+          </ul>
+        </li>
+        <li>
+          <a class="collapsed" data-bs-target="#asidechn" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-megaphone side-icon"></i>
+            <span>커뮤니티관리</span>
+            <i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="asidechn" class="collapse" data-bs-parent="#sidebar">
+            <li onclick="location.href='/admin/comm/commList'"><span>커뮤니티목록</span></li>
+          </ul>
+        </li>
+        <li>
+          <a class="collapsed" data-bs-target="#asideSys" data-bs-toggle="collapse" href="#">
+            <i class="bi bi bi-motherboard side-icon"></i>
+            <span>dddd</span>
+            <i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="asideSys" class="collapse" data-bs-parent="#sidebar">
+            <li onclick="location.href=''"><span>ddd</span></li>
+            <li onclick="location.href=''"><span>ddd</span></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <main class="lay_ma" id="main" aria-expanded="false">
+      <th:block layout:fragment="content"></th:block>
+    </main>
+    <script type="text/javascript">
+      function fnMenuToggle() {
+        let tgMenu = $("#tgMenu");
+        if(tgMenu.is(":visible")) {
+          tgMenu.hide();
+          $("#tgBtnUp").hide();
+          $("#tgBtnDown").show();
+        } else {
+          tgMenu.show();
+          $("#tgBtnUp").show();
+          $("#tgBtnDown").hide();
+        }
+      }
+
+
+
+      /*** Global Variable **********************************************************/
+
+
+      let headerToggle = document.getElementById('headerToggle');
+      let sidebar = document.getElementById('sidebar');
+      let main = document.getElementById('main');
+      let sideIcons = document.querySelectorAll('.side-icon');
+      let windowWidth;
+
+
+      /*** Event ********************************************************************/
+
+      try {
+        headerToggle.addEventListener('click',setToggle)
+      } catch(e) {
+        // header.html을 사용하지 않는 화면을 위한 예외처리
+      }
+
+      sideIcons.forEach( (e) => {
+        e.addEventListener('click', setToggle)
+      });
+
+      window.addEventListener('resize', computeWindow);
+
+
+      /*** Function *****************************************************************/
+
+
+      function setToggle() {
+        let isToggled = sidebar.getAttribute('aria-expanded');
+        if( isToggled === 'true') {
+          openToggle()
+        } else {
+          closeToggle()
+        }
+      }
+
+      function computeWindow() {
+        if(window.innerWidth < 900) {
+          if(window.innerWidth < windowWidth) {
+            closeToggle()
+            windowWidth = window.innerWidth
+          }
+        } else {
+          windowWidth = 900
+        }
+      }
+
+      function openToggle() {
+        headerToggle.setAttribute('aria-expanded', false);
+        sidebar.setAttribute('aria-expanded', false);
+        main.setAttribute('aria-expanded', false);
+      }
+
+      function closeToggle() {
+        headerToggle.setAttribute('aria-expanded', true);
+        sidebar.setAttribute('aria-expanded', true);
+        main.setAttribute('aria-expanded', true);
+      }
+    </script>
+    <style>
+      .lay_tg {
+        display:none; position: absolute; right:28px; top:50px
+      }
+      .lay_tg_body {
+        width:120px; height:100px; border:0; border-radius:4px; background-color: #fff; box-shadow: 0 0 8px 2px rgb(3 9 35 / 15%);
+      }
+      .lay_tg_body div {
+        color:#222222; font-size:14px; font-weight:bold; padding-left:20px; height:40px
+      }
+      .lay_tg_body div:hover {
+        color:gray;
+      }
+    </style>
 </body>
 </html>
