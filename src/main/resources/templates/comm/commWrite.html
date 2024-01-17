@@ -2,10 +2,10 @@
 <html lang="en">
     <!-- 1. Common Head -->
     <head>
+        <script type="text/javascript" src="/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script type="text/javascript" src="../resources/static/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
-    </head>
+        </head>
 
     <!-- 2. Page JS, CSS -->
     <link rel="stylesheet" href="/common/css/layout.css" />
@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="/common/css/element.css" />
     <link rel="stylesheet" href="/comm/css/comm-layout.css" />
     <link rel="stylesheet" href="/comm/css/commList.css" />
-
-
 
     <body>
         <div id="wrapper">
@@ -49,23 +47,23 @@
 
                             <!-- 4.2.2 Board Content -->
                             <div class="ct_content">
-                                <form action="insertCommImfoForm" method="post">
+                                <form action="insertStudentInfoForm" method="post">
                                     <div id="smarteditor">
-                                        <textarea name="editerTxt" id="editerTxt"></textarea>
+                                    <textarea name="editorTxt" id="editorTxt"
+                                              rows="20" cols="10"
+                                              placeholder="내용을 입력해주세요"
+                                              style="width: 500px"></textarea>
                                     </div>
-                                    <input type="button">
+                                    <input type="button" />
                                 </form>
+                         <!--       <label for="post_title">제목:</label>
+                                <input type="text" id="post_title" name="post_title" required><br>
+
+                                <label for="post_content">내용:</label>
+                                <textarea id="post_content" name="post_content" rows="4" required></textarea><br>
+
+                                <input type="submit" value="등록">-->
                             </div>
-
-                            <!-- 4.2.3 Pagination -->
-                            <ul class="pagination">
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                            </ul>
-
                         </div>
                     </section>
                 </div>
@@ -148,12 +146,13 @@
       nhn.husky.EZCreator.createInIFrame({
         oAppRef: oEditors,
         elPlaceHolder: "editorTxt",
-        sSkinURI: "../resources/static/smarteditor/SmartEditor2Skin.html",
+        sSkinURI: "/smarteditor/SmartEditor2Skin.html",
         fCreator: "createSEditor2"
       })
     }
 
-   document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
         smartEditor();
     });
+
 </script>

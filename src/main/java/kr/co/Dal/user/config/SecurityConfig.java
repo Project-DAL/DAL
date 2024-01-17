@@ -25,9 +25,10 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.headers().frameOptions().disable();
         http.csrf().disable();
         http.authorizeRequests()
-                .antMatchers("/user/**","/common/**","/main/**","/test/**").permitAll()
+                .antMatchers("/user/**","/common/**","/main/**","/test/**","/smarteditor/**").permitAll()
                 .antMatchers("/joinForm","/loginForm","/auth/**", "/oauth2/**","/my/**","/join","/findIdForm","/findPwForm", "/comm/**").permitAll() // 회원가입 접근 가능
                 .anyRequest().authenticated()
                 .and()
