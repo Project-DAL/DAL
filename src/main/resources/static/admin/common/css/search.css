@@ -1,0 +1,122 @@
+.com_sc form{
+    background-color:#f7f7f7;
+    height: 30px;
+    margin: 10px 0 20px 0;
+    display: flex;
+}
+.com_sc label {
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    min-width: 77px;
+}
+.com_sc input {
+    width: 90px;
+    border: none;
+    border-left:1px solid #ced4da;
+    height:28px;
+    padding-left:10px;
+    color:#32363a;
+}
+.com_sc input:read-only {
+    background: #eee;
+}
+.com_sc *:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.com_sc_date {
+    height: 30px;
+    background: #E9ECEF;
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+.com_sc_date input[type="date"]::-webkit-calendar-picker-indicator,
+.com_sc_date input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+.com_sc_type {
+    height: 30px;
+    background: #E9ECEF;
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+.com_sc_type select {
+    width: 100px;
+    padding-left: 5px;
+    border: none;
+    border-left: 1px solid #ced4da;
+    height: 28px;
+}
+.com_sc_view {
+    height: 30px;
+    background: #E9ECEF;
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+    border: 1px solid #ced4da;
+    border-radius: 0px;
+    border-bottom:0px;
+    box-shadow: 2px 2px 2px #e5e5e5
+}
+.com_sc_view label {
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    min-width: 77px;
+}
+.com_sc_view select {
+    width: 100px;
+    padding-left: 5px;
+    border: none;
+    border-left: 1px solid #ced4da;
+    height: 29px;
+    border-radius: 0px;
+}
+.com_sc_view span {
+    font-weight: normal;
+    line-height: 28px;
+    text-align: right;
+    padding-right: 20px;
+    background: #fff;
+    border-left: 1px solid #ced4da;
+}
+.com_sc_type select:disabled {
+    background: #eee;
+}
+
+form input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+form input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+/* 2024.01.16 추가 */
+.inpL {
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 15px 12px;
+    font-size: 17px;
+}
+.inpM {
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 17px;
+}
+
+.gl {
+    width: 30px;
+    top: 14px;
+    right: 12px;
+}

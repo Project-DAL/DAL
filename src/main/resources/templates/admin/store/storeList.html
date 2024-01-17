@@ -10,32 +10,47 @@
     <!-- 3. content -->
     <th:block layout:fragment="content">
         <th:block layout:fragment="css-js">
-            <link rel="stylesheet" type="text/css" th:href="@{/common/css/reset.css}">
             <link rel="stylesheet" type="text/css" th:href="@{/admin/css/grid/list-grid.css}">
-            <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
             <script type="text/javascript" th:src="@{/admin/js/store/storeList.js}"></script>
         </th:block>
             <div class="ct_content">
                 <div class="grid-header">
-                    <h2>스토어 상품 목록</h2>
+                    <h2 class="ml5">스토어 상품 목록</h2>
+                    <div class="mbt-group">
+                        <button class="mbt active"><span>상품추가</span></button>
+                        <button class="mbt"><span>초기화</span></button>
+                    </div>
                 </div>
                 <div class="grid-sidebar">
                     <div class="category-menu">
                         <div class="category-header">
-                            <span>카테고리 관리</span>
+                            <span>카테고리</span>
                         </div>
-                        <ul id="categoryList" class="category-list">
-                            <li><a href="#" data-category="all">전체 카테고리</a></li>
-                            <li><a href="#" data-category="soju">소주</a></li>
-                            <li><a href="#" data-category="beer">맥주</a></li>
-                            <li><a href="#" data-category="liquor">양주</a></li>
-                            <!-- 추가적인 카테고리 아이템들 -->
-                        </ul>
+                        <div class="category-content">
+                            <ul>
+                                <li><a href="#" data-category="all">ALL</a></li>
+                                <li><a href="#" data-category="soju">소주</a></li>
+                                <li><a href="#" data-category="beer">맥주</a></li>
+                                <li><a href="#" data-category="liquor">양주</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="grid-main">
-                    <div class="main-header"></div>
-                    <div class="main-search"></div>
+                    <div class="main-header">
+                        <div class="nbt-group mt15">
+                            <div class="nbt active">전체 <span>10</span></div>
+                            <div class="nbt">판매중 <span>9</span></div>
+                            <div class="nbt">품절 <span>0</span></div>
+                            <div class="nbt">숨김 <span>0</span></div>
+                        </div>
+                    </div>
+                    <div class="main-search">
+                        <div class="relative w80ph ml10 mt20">
+                            <input class="inpL" type="text" placeholder="검색어를 입력해주세요" >
+                            <img class="gl absolute" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+                        </div>
+                    </div>
                     <div class="main-content">
                         <table class="data-table">
                             <thead>

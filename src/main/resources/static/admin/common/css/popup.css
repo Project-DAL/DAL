@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+.pop-container {
+    width: 100%;
+    height: 100%;
+}
+#pop-closer {
+    float: right;
+}
+
+#pop-closer:hover {
+    cursor: pointer;
+}
+.pop-header {
+    background-color: #354a5f;
+    width: 100%;
+    color: white;
+    font-weight: 800;
+    padding: 10px 15px 10px 15px;
+}
+.pop-content {
+    padding: 10px 15px 10px 15px;
+}
+.pop-content table {
+    width:100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    font-size:13px;
+}
+.pop-content table tr {
+    height:50px;
+}
+.pop-content input {
+    width: 100%;
+    height:30px;
+    border:1px solid #ced4da;
+    border-radius: 5px;
+    padding: 0px 0px 1px 5px;
+}
+.pop-content input:hover {
+    border:1px dashed #0854A0;
+}
+.pop-content input:focus {
+    border:1px solid #0854A0;
+}
+.pop-content textarea {
+    width: 100%;
+    border:1px solid #ced4da;
+    border-radius: 5px;
+}
+.pop-content textarea:hover {
+    border:1px dashed #0854A0;
+}
+.pop-content textarea:focus {
+    outline: none;
+    border:1px solid #0854A0;
+}
+.pop-content select {
+    width: 100%;
+    height:30px;
+    border:1px solid #ced4da;
+    border-radius: 5px;
+    padding: 0px 0px 1px 3px;
+}
+.pop-content select:hover {
+    border:1px dashed #0854A0;
+}
+.pop-content select:focus {
+    border:1px solid #0854A0;
+}
+.pop-content select:disabled {
+    background-color: rgba(239, 239, 239, 0.3);
+}

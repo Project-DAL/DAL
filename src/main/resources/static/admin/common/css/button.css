@@ -1,0 +1,177 @@
+.com_btn_insert {
+    width: 65px;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    background-color: #0854A0;
+    color: white;
+    border: none;
+
+}
+
+.com_btn_update {
+    width: 65px;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    border : 2px solid #0854A0;
+    color : #0854A0;
+    font-weight: 700;
+
+}
+
+.com_btn_delete {
+    width: 65px;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    color: #BB0000;
+    border: 2px solid #BB0000;
+    font-weight: 700;
+}
+
+.bt-b {
+    float:right;
+    width:80px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(0,101,206);
+    color: #Ffffff;
+    font-weight: 700;
+    border: none;
+}
+.bt-b:hover {
+    background-color: #0854a0;
+}
+.bt-b:disabled {
+    background-color: #4f5050;
+}
+.bt-b[aria-hidden="true"] {
+    display: none;
+}
+.bt-r {
+    float:right;
+    width:80px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: darkred;
+    color: #Ffffff;
+    font-weight: 700;
+    border: none;
+}
+.bt-r:hover {
+    background-color: #6a1a21;
+}
+.bt-r:disabled {
+    background-color: #4f5050;
+}
+.bt-r[aria-hidden="true"] {
+    display: none;
+}
+.bt-g  {
+    float:right;
+    width:80px;
+    min-width:60px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: green;
+    color: #Ffffff;
+    font-weight: 700;
+    border: none;
+}
+.bt-g:hover {
+    background-color: darkgreen;
+}
+.bt-g:disabled {
+    background-color: #4f5050;
+}
+.bt-g[aria-hidden="true"] {
+    display: none;
+}
+.bt-i {
+    float:right;
+    width:35px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(0,101,206);
+    color: #Ffffff;
+    font-weight: 700;
+    border: none;
+}
+.bt-i:hover {
+    background-color: #0854a0;
+}
+.bt-i:disabled {
+    background-color: #4f5050;
+}
+
+/* 2023.03.24 신규 버튼 추가 */
+.bt-rr  {
+    float:right;
+    width:80px;
+    min-width:60px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: green;
+    color: #Ffffff;
+    font-weight: 700;
+    border: none;
+}
+.bt-rr:hover {
+    background-color: darkgreen;
+}
+.bt-rr:disabled {
+    background-color: #4f5050;
+}
+.bt-rr[aria-hidden="true"] {
+    display: none;
+}
+
+/* Container for the tabs */
+.nbt-group {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style for each tab */
+.nbt {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Style for the active tab */
+.nbt.active {
+    color: #007bff;
+    border-bottom: 1px solid #007bff;
+}
+
+.nbt span {
+    color: #007bff;
+}
+
+.mbt-group {
+    display: flex;
+    justify-content: start;
+    padding: 0;
+}
+
+.mbt-group .mbt {
+    background-color: #f4f4f4;
+    border: 1px solid #d4d4d4;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.mbt-group .mbt.active,
+.mbt-group .mbt:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
