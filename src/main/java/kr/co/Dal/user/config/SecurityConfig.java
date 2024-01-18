@@ -25,7 +25,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.headers().frameOptions().disable();
+        http.headers().frameOptions().sameOrigin();
         http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers("/user/**","/common/**","/main/**","/test/**","/smarteditor/**").permitAll()

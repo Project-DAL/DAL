@@ -7,8 +7,14 @@
     <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="20230106 스마트에디터 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/Dal.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/Dal.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/mapper/CommMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/mapper/CommMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/mapper/Commmapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/mapper/Commmapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/service/CommService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/service/CommService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/web/CommController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/web/CommController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/MyCouponMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/comm/js/commWrite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/comm/js/commWrite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/SmartEditor2Skin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/smarteditor/SmartEditor2Skin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/comm/commWrite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/comm/commWrite.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705393721798</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="20230106 스마트에디터 추가">
+      <option name="closed" value="true" />
+      <created>1705481624900</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705481624900</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

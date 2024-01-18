@@ -6,19 +6,9 @@ Draft Author   :
 Draft Date     : 2023.12.04
 */
 
+    let bard_tit = document.getElementById('bard_tit');
+    let bard_cn = document.getElementById('bard_cn');
 
-    let oEditors = []
+    document.addEventListener('DOMContentLoaded', function() {
 
-    smartEditor = function() {
-      console.log("Naver SmartEditor")
-      nhn.husky.EZCreator.createInIFrame({
-        oAppRef: oEditors,
-        elPlaceHolder: "editorTxt",
-        sSkinURI: "/smarteditor/SmartEditor2Skin.html",
-        fCreator: "createSEditor2"
-      })
-    }
-
-   document.addEventListener('DOMContentLoaded', function() {
-        smartEditor();
     });

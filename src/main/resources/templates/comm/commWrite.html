@@ -5,7 +5,7 @@
         <script type="text/javascript" src="/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        </head>
+    </head>
 
     <!-- 2. Page JS, CSS -->
     <link rel="stylesheet" href="/common/css/layout.css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/common/css/element.css" />
     <link rel="stylesheet" href="/comm/css/comm-layout.css" />
     <link rel="stylesheet" href="/comm/css/commList.css" />
+    <script src="/comm/js/commWrite.js"></script>
 
     <body>
         <div id="wrapper">
@@ -47,22 +48,15 @@
 
                             <!-- 4.2.2 Board Content -->
                             <div class="ct_content">
-                                <form action="insertStudentInfoForm" method="post">
-                                    <div id="smarteditor">
-                                    <textarea name="editorTxt" id="editorTxt"
-                                              rows="20" cols="10"
-                                              placeholder="내용을 입력해주세요"
-                                              style="width: 500px"></textarea>
-                                    </div>
-                                    <input type="button" />
-                                </form>
-                         <!--       <label for="post_title">제목:</label>
-                                <input type="text" id="post_title" name="post_title" required><br>
+                                <!-- 제목 -->
+                                <label for="bard_tit">제목:</label>
+                                <input type="text" id="bard_tit" name="bard_tit" placeholder="제목을 입력해주세요" style="width: 531px; margin-bottom: 10px;">
 
-                                <label for="post_content">내용:</label>
-                                <textarea id="post_content" name="post_content" rows="4" required></textarea><br>
+                                <!-- 내용 -->
+                                <textarea id="bard_cn" name="bard_cn" rows="20" cols="10" placeholder="내용을 입력해주세요" style="width: 500px"></textarea>
 
-                                <input type="submit" value="등록">-->
+                                <!-- 등록 또는 수정 버튼 -->
+                                <input type="submit" id="submit" value="저장" class="btn">
                             </div>
                         </div>
                     </section>
@@ -142,7 +136,6 @@
     let oEditors = []
 
     smartEditor = function() {
-      console.log("Naver SmartEditor")
       nhn.husky.EZCreator.createInIFrame({
         oAppRef: oEditors,
         elPlaceHolder: "editorTxt",
@@ -154,5 +147,4 @@
     document.addEventListener('DOMContentLoaded', function() {
         smartEditor();
     });
-
 </script>
