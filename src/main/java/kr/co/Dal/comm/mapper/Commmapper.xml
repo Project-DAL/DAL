@@ -7,6 +7,23 @@
 
 <mapper namespace="kr.co.Dal.comm.mapper.CommMapper">
 
+    <select id="commList" parameterType="CommVO" resultType="CommVO">
+        SELECT
+             BARD_ID
+            ,USER_ID
+            ,BARD_TYPE
+            ,BARD_TIT
+            ,BARD_CN
+            ,BARD_RDATE
+            ,BARD_CNT
+            ,BARD_LIKE_CNT
+            ,BARD_STTS
+            ,CATE_TYPE
+        FROM BARD_TB
+    </select>
+
+
+<!--
     <insert id="insertComm">
         insert into bard_tb
         (
@@ -35,6 +52,7 @@
         ,#{CATE_TYPE}
         )
     </insert>
+-->
 
 
 </mapper>

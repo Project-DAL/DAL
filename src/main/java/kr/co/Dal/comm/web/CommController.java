@@ -8,9 +8,11 @@ import kr.co.Dal.comm.service.CommService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -25,8 +27,9 @@ public class CommController {
      *  게시판 목록 페이지
      */
     @GetMapping("/commList")
-    public String commList() {
-        return "comm/commList";
+    public ResponseEntity<List<CommVO>> commList(CommVO commVO) throws Exception {
+
+        return ResponseEntity.ok(commService.commList(commVO));
     }
 
 
@@ -39,10 +42,18 @@ public class CommController {
     }
 
     /**
+     * 게시판 목록
+     */
+
+    
+    
+    
+    
+    /**
      * 게시판 등록
      */
-    public void insertComm(CommVO comm) throws Exception {
+/*    public void insertComm(CommVO comm) throws Exception {
         return commService.insertComm(comm);
-    }
+    }*/
 
 }
