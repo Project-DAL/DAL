@@ -24,14 +24,12 @@ public class CommController {
     private CommService commService;
 
     /**
-     *  게시판 목록 페이지
+     *  게시판 페이지
      */
     @GetMapping("/commList")
-    public ResponseEntity<List<CommVO>> commList(CommVO commVO) throws Exception {
-
-        return ResponseEntity.ok(commService.commList(commVO));
+    public String commList() {
+        return "comm/commList";
     }
-
 
     /**
      * 게시판 등록/수정 페이지
@@ -41,10 +39,14 @@ public class CommController {
         return "comm/commWrite";
     }
 
+
     /**
      * 게시판 목록
      */
-
+    @RequestMapping("/commSelectList")
+    public ResponseEntity<List<CommVO>> commList(CommVO commVO) throws Exception {
+        return ResponseEntity.ok(commService.commList(commVO));
+    }
     
     
     
