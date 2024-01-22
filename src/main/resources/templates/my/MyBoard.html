@@ -54,7 +54,7 @@
                      </ul>
                      <!-- 내가 쓴 게시글 (탭1) -->
                      <div id="tab-1" class="content-middle current">
-                       <table class="board-write">
+                       <table class="board-write" th:each="board : ${boardList}">
                           <colgroup>
                              <col style="width: 5px;">
                              <col style="width: 50px;">
@@ -77,10 +77,10 @@
                             <tr>
                               <td><input type="checkbox"></td>
                               <td>1</td>
-                              <td>술 후기</td>
-                              <td>ㅋㅋ새로 존맛탱탱구리임</td>
-                              <td>2023-11-07 11:23:30</td>
-                              <td>3</td>
+                              <td th:text="${board.cate_type}"></td>
+                              <td th:text="${board.bard_tit}"></td>
+                              <td th:text="${board.bard_rdate}"></td>
+                              <td th:text="${board.bard_cnt}"></td>
                             </tr>
                           </tbody>
                        </table>

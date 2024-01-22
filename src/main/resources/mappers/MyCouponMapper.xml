@@ -4,7 +4,7 @@
 <!--
  파일명        : MyCouponMapper.xml
  최초 작성자    : 박제형
- 최초 작성날짜   : 2023.12.011
+ 최초 작성날짜   : 2023.12.11
 -->
 
 <mapper namespace="kr.co.Dal.my.mapper.MyCouponMapper">
@@ -23,6 +23,9 @@
             cp_min_price
         FROM cp_tb
     </select>
+
+
+
 
 
 </mapper>
