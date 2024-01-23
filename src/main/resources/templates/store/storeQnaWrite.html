@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{store/popup-layout}">
+
+<!-- 헤더와 푸터가 없는 layout을 만들거나 순수 html로 작성해야 할 듯 -->
+
+<!-- 2. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+  <link rel="stylesheet" type="text/css" th:href="@{/common/css/layout.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/store/css/storeQnaWrite.css}">
+  <link rel="stylesheet"  href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+
+  <script type="text/javascript" th:src="@{/store/js/storeQnaWrite.js}"></script>
+</th:block>
+
+
+<th:block layout:fragment="content">
+  <main>
+    <div class="ct_main">
+      <div class="ct_main-topbar mb15">
+        <span>상품 문의하기</span>
+        <span>x</span>
+      </div>
+      <div class="mb15">
+        <p class="font mb10">상품정보</p>
+        <div class="ct_main-prod-wrap">
+          <img src="./img/instagram.png" class="prod-img mr20" />
+          <span>복분자주</span>
+        </div>
+      </div>
+      <div class="mb15">
+        <p class="font mb10">문의유형</p>
+        <select class="ct_main-cate">
+          <option disabled hidden selected>문의유형을 선택해주세요.</option>
+          <option>배송</option>
+          <option>교환</option>
+          <option>상품</option>
+        </select>
+      </div>
+      <div class="mb15">
+        <p class="font mb10">제목</p>
+        <input
+            type="text"
+            placeholder="제목을 입력해주세요."
+            class="ct_main-tit"
+        />
+      </div>
+      <div class="mb15">
+        <p class="font mb10">문의내용</p>
+        <textarea
+            placeholder="내용을 입력해주세요."
+            class="ct_main-cn"
+        ></textarea>
+        <input type="checkbox" />
+        <span>비공개</span>
+      </div>
+      <div class="ct_main-btn-wrap mb15">
+        <a href="#" class="btn">등록하기</a>
+      </div>
+      <div>
+        <span>상품문의 시 주의사항</span>
+        <span>여기에 기타 안내사항 문구 작성(폰트크기 작게, 색상 회색)</span>
+      </div>
+    </div>
+  </main>
+</th:block>
+
+</html>
