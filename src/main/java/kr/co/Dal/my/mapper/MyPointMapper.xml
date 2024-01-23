@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+ 파일명        : MyPointMapper.xml
+ 최초 작성자    : 박제형
+ 최초 작성날짜   : 2024.01.22
+-->
+
+<mapper namespace="kr.co.Dal.my.mapper.MyPointMapper">
+    <select id="selectPointList" resultType="kr.co.Dal.my.model.MyPointVO">
+        SELECT
+            point_price
+        FROM point_tb
+    </select>
+
+
+
+
+
+
+
+</mapper>

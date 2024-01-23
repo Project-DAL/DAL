@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="20230106 스마트에디터 추가">
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/main/model/MainVO.java" afterDir="false" />
+    <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="20230123 wonjeong main kakao map ~ing">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/Dal.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/Dal.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/cmmn/CmmnVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/cmmn/model/CmmnVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/cmmn/model.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper/MyCouponMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper/MyCouponMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/main/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/main/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/main/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/main/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyBoard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyBoard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyPoint.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyPoint.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyWish.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +150,7 @@
       <workItem from="1701158556845" duration="1493000" />
       <workItem from="1701220194912" duration="1094000" />
       <workItem from="1701750788528" duration="4339000" />
-      <workItem from="1705913814373" duration="10762000" />
+      <workItem from="1705913814373" duration="12366000" />
     </task>
     <task id="LOCAL-00001" summary="진형 push">
       <created>1700461796485</created>
@@ -207,7 +203,8 @@
     <MESSAGE value="진형 push" />
     <MESSAGE value="20231205 yiwonjeong git ignore" />
     <MESSAGE value="20230106 스마트에디터 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="20230106 스마트에디터 추가" />
+    <MESSAGE value="20230123 wonjeong main kakao map ~ing" />
+    <option name="LAST_COMMIT_MESSAGE" value="20230123 wonjeong main kakao map ~ing" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

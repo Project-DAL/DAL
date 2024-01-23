@@ -53,7 +53,7 @@
               <div class="content-middle">
                 적립금 내역
               </div>
-              <table class="savedmoney-table">
+              <table class="savedmoney-table" th:each="point : ${pointList}">
                 <colgroup>
                   <col style="width:180px;">
                   <col style="">
@@ -67,10 +67,10 @@
                        <div class="savedmoney-img"><a href="#">적립</a></div>
                        <div class="savedmoney-reason">사진 리뷰 작성(구매)</div>
                       </div>
-                       <div class="savedmoney-item-name"> 처음처럼</div>
+                       <div class="savedmoney-item-name">처음처럼</div>
                        <div class="savedmoney-until"> 유효기간 2023-12-08 까지</div>
                     </td>
-                    <td class="savedmoney-count">+500P</td>
+                    <td class="savedmoney-count" th:text="${point.point_price}"></td>
                   </tr>
                 </tbody>
               </table>

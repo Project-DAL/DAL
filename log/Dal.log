@@ -676,3 +676,872 @@ Query is:
 2024-01-23 16:21:05.763  INFO 2569 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2024-01-23 16:21:05.781  INFO 2569 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8282 (http) with context path ''
 2024-01-23 16:21:05.787  INFO 2569 --- [restartedMain] kr.co.Dal.DalApplication                 : Started DalApplication in 5.227 seconds (JVM running for 5.664)
+2024-01-23 16:26:22.189  INFO 2569 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-23 16:26:22.190 DEBUG 2569 --- [SpringApplicationShutdownHook] o.hibernate.internal.SessionFactoryImpl  : HHH000031: Closing
+2024-01-23 16:26:22.191 DEBUG 2569 --- [SpringApplicationShutdownHook] o.h.type.spi.TypeConfiguration$Scope     : Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@487f862e] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@5fa7aad0]
+2024-01-23 16:26:22.191 DEBUG 2569 --- [SpringApplicationShutdownHook] o.h.s.i.AbstractServiceRegistryImpl      : Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2024-01-23 16:26:22.192 DEBUG 2569 --- [SpringApplicationShutdownHook] o.h.b.r.i.BootstrapServiceRegistryImpl   : Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+2024-01-23 16:26:22.193  INFO 2569 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-23 16:26:22.195  INFO 2569 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-23 16:26:23.827  INFO 2871 --- [restartedMain] kr.co.Dal.DalApplication                 : Starting DalApplication using Java 17.0.7 on iwonjeong-ui-noteubug.local with PID 2871 (/Users/yiwonjeong/Desktop/Workspace/DAL/DAL/out/production/classes started by yiwonjeong in /Users/yiwonjeong/Desktop/Workspace/DAL/DAL)
+2024-01-23 16:26:23.828 DEBUG 2871 --- [restartedMain] kr.co.Dal.DalApplication                 : Running with Spring Boot v2.7.9, Spring v5.3.25
+2024-01-23 16:26:23.828  INFO 2871 --- [restartedMain] kr.co.Dal.DalApplication                 : The following 1 profile is active: "oauth"
+2024-01-23 16:26:23.828 DEBUG 2871 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-01-23 16:26:23.829 DEBUG 2871 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-01-23 16:26:23.829 DEBUG 2871 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-01-23 16:26:23.829 DEBUG 2871 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-01-23 16:26:23.831 DEBUG 2871 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-01-23 16:26:23.832 DEBUG 2871 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-01-23 16:26:23.843 DEBUG 2871 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-01-23 16:26:23.882 DEBUG 2871 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-01-23 16:26:23.884 DEBUG 2871 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-01-23 16:26:23.884 DEBUG 2871 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-01-23 16:26:23.884 DEBUG 2871 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-01-23 16:26:23.884 DEBUG 2871 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-01-23 16:26:23.884 DEBUG 2871 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-01-23 16:26:23.970  INFO 2871 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-23 16:26:23.970  INFO 2871 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-23 16:26:24.387  INFO 2871 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-01-23 16:26:24.388  INFO 2871 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-01-23 16:26:24.404  INFO 2871 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface kr.co.Dal.user.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-01-23 16:26:24.405  INFO 2871 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JDBC repository interfaces.
+2024-01-23 16:26:24.410  INFO 2871 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-01-23 16:26:24.411  INFO 2871 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-23 16:26:24.430  INFO 2871 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interfaces.
+2024-01-23 16:26:24.826  INFO 2871 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8282 (http)
+2024-01-23 16:26:24.834  INFO 2871 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-23 16:26:24.835  INFO 2871 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-01-23 16:26:24.897  INFO 2871 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-23 16:26:24.898  INFO 2871 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 927 ms
+2024-01-23 16:26:24.994 DEBUG 2871 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : PersistenceUnitInfo [
+	name: default
+	persistence provider classname: null
+	classloader: org.springframework.boot.devtools.restart.classloader.RestartClassLoader@ca25616
+	excludeUnlistedClasses: true
+	JTA datasource: null
+	Non JTA datasource: HikariDataSource (null)
+	Transaction type: RESOURCE_LOCAL
+	PU root URL: file:/Users/yiwonjeong/Desktop/Workspace/DAL/DAL/out/production/classes/
+	Shared Cache Mode: UNSPECIFIED
+	Validation Mode: AUTO
+	Jar files URLs []
+	Managed classes names [
+		kr.co.Dal.user.model.User]
+	Mapping files names []
+	Properties []
+2024-01-23 16:26:25.003 DEBUG 2871 --- [restartedMain] o.h.i.internal.IntegratorServiceImpl     : Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+2024-01-23 16:26:25.004 DEBUG 2871 --- [restartedMain] o.h.i.internal.IntegratorServiceImpl     : Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+2024-01-23 16:26:25.006 DEBUG 2871 --- [restartedMain] o.h.i.internal.IntegratorServiceImpl     : Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+2024-01-23 16:26:25.024  INFO 2871 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2024-01-23 16:26:25.025 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2024-01-23 16:26:25.090 DEBUG 2871 --- [restartedMain] o.hibernate.service.spi.ServiceBinding   : Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+2024-01-23 16:26:25.095 DEBUG 2871 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+2024-01-23 16:26:25.095 DEBUG 2871 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+2024-01-23 16:26:25.099  INFO 2871 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-01-23 16:26:25.109 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BooleanType@6590662
+2024-01-23 16:26:25.109 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BooleanType@6590662
+2024-01-23 16:26:25.110 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@6590662
+2024-01-23 16:26:25.110 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@6b4501b3
+2024-01-23 16:26:25.110 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration true_false -> org.hibernate.type.TrueFalseType@731e40b4
+2024-01-23 16:26:25.110 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration yes_no -> org.hibernate.type.YesNoType@5579c5d4
+2024-01-23 16:26:25.110 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.ByteType@5cba6043
+2024-01-23 16:26:25.110 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.ByteType@5cba6043
+2024-01-23 16:26:25.110 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@5cba6043
+2024-01-23 16:26:25.111 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration character -> org.hibernate.type.CharacterType@34b46c18
+2024-01-23 16:26:25.111 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration char -> org.hibernate.type.CharacterType@34b46c18
+2024-01-23 16:26:25.111 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@34b46c18
+2024-01-23 16:26:25.111 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.ShortType@5c7a41e4
+2024-01-23 16:26:25.111 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.ShortType@5c7a41e4
+2024-01-23 16:26:25.111 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Short -> org.hibernate.type.ShortType@5c7a41e4
+2024-01-23 16:26:25.111 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration integer -> org.hibernate.type.IntegerType@3d94aa83
+2024-01-23 16:26:25.111 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration int -> org.hibernate.type.IntegerType@3d94aa83
+2024-01-23 16:26:25.111 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@3d94aa83
+2024-01-23 16:26:25.112 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.LongType@760075a4
+2024-01-23 16:26:25.112 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.LongType@760075a4
+2024-01-23 16:26:25.112 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Long -> org.hibernate.type.LongType@760075a4
+2024-01-23 16:26:25.112 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.FloatType@7dc7b01d
+2024-01-23 16:26:25.112 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.FloatType@7dc7b01d
+2024-01-23 16:26:25.112 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Float -> org.hibernate.type.FloatType@7dc7b01d
+2024-01-23 16:26:25.112 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.DoubleType@5b0bac06
+2024-01-23 16:26:25.112 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.DoubleType@5b0bac06
+2024-01-23 16:26:25.112 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@5b0bac06
+2024-01-23 16:26:25.113 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@1a3f6663
+2024-01-23 16:26:25.113 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@1a3f6663
+2024-01-23 16:26:25.113 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_integer -> org.hibernate.type.BigIntegerType@11880e
+2024-01-23 16:26:25.113 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@11880e
+2024-01-23 16:26:25.113 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration string -> org.hibernate.type.StringType@57a31a98
+2024-01-23 16:26:25.114 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.String -> org.hibernate.type.StringType@57a31a98
+2024-01-23 16:26:25.114 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration nstring -> org.hibernate.type.StringNVarcharType@7fd47d6e
+2024-01-23 16:26:25.114 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@78d5d63d
+2024-01-23 16:26:25.114 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration url -> org.hibernate.type.UrlType@17aea46a
+2024-01-23 16:26:25.114 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.net.URL -> org.hibernate.type.UrlType@17aea46a
+2024-01-23 16:26:25.115 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> org.hibernate.type.DurationType@3f530352
+2024-01-23 16:26:25.115 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> org.hibernate.type.DurationType@3f530352
+2024-01-23 16:26:25.115 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration Instant -> org.hibernate.type.InstantType@318cdb12
+2024-01-23 16:26:25.115 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Instant -> org.hibernate.type.InstantType@318cdb12
+2024-01-23 16:26:25.115 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@9aee59c
+2024-01-23 16:26:25.115 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@9aee59c
+2024-01-23 16:26:25.116 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDate -> org.hibernate.type.LocalDateType@203e2dcb
+2024-01-23 16:26:25.116 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@203e2dcb
+2024-01-23 16:26:25.116 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@46631f86
+2024-01-23 16:26:25.116 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@46631f86
+2024-01-23 16:26:25.117 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@54c254a9
+2024-01-23 16:26:25.117 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@54c254a9
+2024-01-23 16:26:25.117 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@20437e8a
+2024-01-23 16:26:25.117 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@20437e8a
+2024-01-23 16:26:25.117 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@406f8873
+2024-01-23 16:26:25.117 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@406f8873
+2024-01-23 16:26:25.118 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration date -> org.hibernate.type.DateType@23f6bae6
+2024-01-23 16:26:25.118 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Date -> org.hibernate.type.DateType@23f6bae6
+2024-01-23 16:26:25.118 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration time -> org.hibernate.type.TimeType@29dfd988
+2024-01-23 16:26:25.118 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Time -> org.hibernate.type.TimeType@29dfd988
+2024-01-23 16:26:25.118 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration timestamp -> org.hibernate.type.TimestampType@28dcf834
+2024-01-23 16:26:25.118 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@28dcf834
+2024-01-23 16:26:25.118 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Date -> org.hibernate.type.TimestampType@28dcf834
+2024-01-23 16:26:25.119 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@60c86747
+2024-01-23 16:26:25.119 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar -> org.hibernate.type.CalendarType@320b1369
+2024-01-23 16:26:25.119 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@320b1369
+2024-01-23 16:26:25.119 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@320b1369
+2024-01-23 16:26:25.120 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@5ec30774
+2024-01-23 16:26:25.120 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@77ee8be0
+2024-01-23 16:26:25.120 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration locale -> org.hibernate.type.LocaleType@1d8e76e7
+2024-01-23 16:26:25.120 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@1d8e76e7
+2024-01-23 16:26:25.120 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration currency -> org.hibernate.type.CurrencyType@14f8a38e
+2024-01-23 16:26:25.120 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@14f8a38e
+2024-01-23 16:26:25.121 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration timezone -> org.hibernate.type.TimeZoneType@97558a7
+2024-01-23 16:26:25.121 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@97558a7
+2024-01-23 16:26:25.121 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration class -> org.hibernate.type.ClassType@15e559ea
+2024-01-23 16:26:25.121 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Class -> org.hibernate.type.ClassType@15e559ea
+2024-01-23 16:26:25.121 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@63023eb6
+2024-01-23 16:26:25.121 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@63023eb6
+2024-01-23 16:26:25.122 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@14ffef6e
+2024-01-23 16:26:25.122 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary -> org.hibernate.type.BinaryType@6685714b
+2024-01-23 16:26:25.122 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte[] -> org.hibernate.type.BinaryType@6685714b
+2024-01-23 16:26:25.122 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration [B -> org.hibernate.type.BinaryType@6685714b
+2024-01-23 16:26:25.122 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@1b10b159
+2024-01-23 16:26:25.122 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@1b10b159
+2024-01-23 16:26:25.122 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@1b10b159
+2024-01-23 16:26:25.122 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration row_version -> org.hibernate.type.RowVersionType@2cc4d5bc
+2024-01-23 16:26:25.123 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration image -> org.hibernate.type.ImageType@3dec9183
+2024-01-23 16:26:25.123 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration characters -> org.hibernate.type.CharArrayType@65188211
+2024-01-23 16:26:25.123 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration char[] -> org.hibernate.type.CharArrayType@65188211
+2024-01-23 16:26:25.123 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration [C -> org.hibernate.type.CharArrayType@65188211
+2024-01-23 16:26:25.124 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@2149e5a
+2024-01-23 16:26:25.124 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@2149e5a
+2024-01-23 16:26:25.124 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@2149e5a
+2024-01-23 16:26:25.124 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration text -> org.hibernate.type.TextType@8f2efdd
+2024-01-23 16:26:25.124 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ntext -> org.hibernate.type.NTextType@ae7ec4b
+2024-01-23 16:26:25.124 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration blob -> org.hibernate.type.BlobType@36b2ac87
+2024-01-23 16:26:25.124 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@36b2ac87
+2024-01-23 16:26:25.124 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@79e6a79a
+2024-01-23 16:26:25.125 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration clob -> org.hibernate.type.ClobType@136166ab
+2024-01-23 16:26:25.125 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@136166ab
+2024-01-23 16:26:25.125 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration nclob -> org.hibernate.type.NClobType@49cd7ec8
+2024-01-23 16:26:25.125 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@49cd7ec8
+2024-01-23 16:26:25.126 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@345e8916
+2024-01-23 16:26:25.126 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@18d0ec2d
+2024-01-23 16:26:25.126 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration serializable -> org.hibernate.type.SerializableType@2168b3f1
+2024-01-23 16:26:25.128 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration object -> org.hibernate.type.ObjectType@5fd06e6c
+2024-01-23 16:26:25.128 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@5fd06e6c
+2024-01-23 16:26:25.128 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@5ea4422
+2024-01-23 16:26:25.128 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@115dca6
+2024-01-23 16:26:25.128 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@15d28035
+2024-01-23 16:26:25.128 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@6322761f
+2024-01-23 16:26:25.128 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@34bef50d
+2024-01-23 16:26:25.128 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@1b61ffd0
+2024-01-23 16:26:25.128 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@1a3317a1
+2024-01-23 16:26:25.128 DEBUG 2871 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@6a510876
+2024-01-23 16:26:25.132 DEBUG 2871 --- [restartedMain] o.h.boot.internal.BootstrapContextImpl   : Injecting JPA temp ClassLoader [org.springframework.instrument.classloading.SimpleThrowawayClassLoader@45f913b7] into BootstrapContext; was [null]
+2024-01-23 16:26:25.132 DEBUG 2871 --- [restartedMain] o.h.boot.internal.ClassLoaderAccessImpl  : ClassLoaderAccessImpl#injectTempClassLoader(org.springframework.instrument.classloading.SimpleThrowawayClassLoader@45f913b7) [was null]
+2024-01-23 16:26:25.132 DEBUG 2871 --- [restartedMain] o.h.boot.internal.BootstrapContextImpl   : Injecting ScanEnvironment [org.hibernate.jpa.boot.internal.StandardJpaScanEnvironmentImpl@3f8a8856] into BootstrapContext; was [null]
+2024-01-23 16:26:25.132 DEBUG 2871 --- [restartedMain] o.h.boot.internal.BootstrapContextImpl   : Injecting ScanOptions [org.hibernate.boot.archive.scan.internal.StandardScanOptions@81f7a47] into BootstrapContext; was [org.hibernate.boot.archive.scan.internal.StandardScanOptions@4f3d6cb1]
+2024-01-23 16:26:25.138 DEBUG 2871 --- [restartedMain] o.h.boot.internal.BootstrapContextImpl   : Injecting JPA temp ClassLoader [null] into BootstrapContext; was [org.springframework.instrument.classloading.SimpleThrowawayClassLoader@45f913b7]
+2024-01-23 16:26:25.138 DEBUG 2871 --- [restartedMain] o.h.boot.internal.ClassLoaderAccessImpl  : ClassLoaderAccessImpl#injectTempClassLoader(null) [was org.springframework.instrument.classloading.SimpleThrowawayClassLoader@45f913b7]
+2024-01-23 16:26:25.142 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+2024-01-23 16:26:25.142 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+2024-01-23 16:26:25.143 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+2024-01-23 16:26:25.143 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+2024-01-23 16:26:25.143 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+2024-01-23 16:26:25.143 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+2024-01-23 16:26:25.143 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+2024-01-23 16:26:25.144 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2024-01-23 16:26:25.145 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+2024-01-23 16:26:25.145 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+2024-01-23 16:26:25.145 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+2024-01-23 16:26:25.145 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+2024-01-23 16:26:25.145 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2024-01-23 16:26:25.146 DEBUG 2871 --- [restartedMain] .i.f.i.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+2024-01-23 16:26:25.148  INFO 2871 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-23 16:26:26.479  INFO 2871 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-23 16:26:26.494 DEBUG 2871 --- [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : Database ->
+       name : MySQL
+    version : 10.6.14-MariaDB
+      major : 10
+      minor : 6
+2024-01-23 16:26:26.494 DEBUG 2871 --- [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : Driver ->
+       name : MariaDB connector/J
+    version : 2.1.2
+      major : 2
+      minor : 1
+2024-01-23 16:26:26.494 DEBUG 2871 --- [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : JDBC version : 4.2
+2024-01-23 16:26:26.533  INFO 2871 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2024-01-23 16:26:26.746 DEBUG 2871 --- [restartedMain] o.h.e.j.env.spi.IdentifierHelperBuilder  : JDBC driver metadata reported database stores unquoted identifiers in neither upper, lower nor mixed case
+2024-01-23 16:26:26.746 DEBUG 2871 --- [restartedMain] o.h.e.j.env.spi.IdentifierHelperBuilder  : JDBC driver metadata reported database stores quoted identifiers in neither upper, lower nor mixed case
+2024-01-23 16:26:26.757 DEBUG 2871 --- [restartedMain] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@3de8a168] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@5856fbd]
+2024-01-23 16:26:26.773 DEBUG 2871 --- [restartedMain] o.h.boot.model.relational.Namespace      : Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+2024-01-23 16:26:26.778 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.AnnotationBinder       : Binding entity from annotated class: kr.co.Dal.user.model.User
+2024-01-23 16:26:26.785 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+2024-01-23 16:26:26.787 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.EntityBinder         : Import with entity name User
+2024-01-23 16:26:26.789 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.EntityBinder         : Bind entity kr.co.Dal.user.model.User on table user
+2024-01-23 16:26:26.796 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(user), mappingColumn=id, insertable=true, updatable=true, unique=false}
+2024-01-23 16:26:26.797 DEBUG 2871 --- [restartedMain] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [kr.co.Dal.user.model.User] is safe
+2024-01-23 16:26:26.797 DEBUG 2871 --- [restartedMain] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : kr.co.Dal.user.model.User
+2024-01-23 16:26:26.798 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property id with lazy=false
+2024-01-23 16:26:26.799 DEBUG 2871 --- [restartedMain] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [kr.co.Dal.user.model.User:id]
+2024-01-23 16:26:26.800 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for id
+2024-01-23 16:26:26.801 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : Building property id
+2024-01-23 16:26:26.802 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.BinderHelper           : #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, identity, , ...)
+2024-01-23 16:26:26.802 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(user), mappingColumn=create_date, insertable=true, updatable=true, unique=false}
+2024-01-23 16:26:26.802 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property createDate with lazy=false
+2024-01-23 16:26:26.802 DEBUG 2871 --- [restartedMain] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [kr.co.Dal.user.model.User:createDate]
+2024-01-23 16:26:26.802 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for createDate
+2024-01-23 16:26:26.802 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : Building property createDate
+2024-01-23 16:26:26.804 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(user), mappingColumn=email, insertable=true, updatable=true, unique=false}
+2024-01-23 16:26:26.804 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property email with lazy=false
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [kr.co.Dal.user.model.User:email]
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for email
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : Building property email
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(user), mappingColumn=password, insertable=true, updatable=true, unique=false}
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property password with lazy=false
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [kr.co.Dal.user.model.User:password]
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for password
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : Building property password
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(user), mappingColumn=provider, insertable=true, updatable=true, unique=false}
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property provider with lazy=false
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [kr.co.Dal.user.model.User:provider]
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for provider
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : Building property provider
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(user), mappingColumn=provider_id, insertable=true, updatable=true, unique=false}
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property providerId with lazy=false
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [kr.co.Dal.user.model.User:providerId]
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for providerId
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : Building property providerId
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(user), mappingColumn=role, insertable=true, updatable=true, unique=false}
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property role with lazy=false
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [kr.co.Dal.user.model.User:role]
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for role
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : Building property role
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Ejb3Column             : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(user), mappingColumn=username, insertable=true, updatable=true, unique=false}
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : MetadataSourceProcessor property username with lazy=false
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.hibernate.cfg.AbstractPropertyHolder   : Attempting to locate auto-apply AttributeConverter for property [kr.co.Dal.user.model.User:username]
+2024-01-23 16:26:26.805 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : building SimpleValue for username
+2024-01-23 16:26:26.806 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.PropertyBinder       : Building property username
+2024-01-23 16:26:26.808 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for id
+2024-01-23 16:26:26.808 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for createDate
+2024-01-23 16:26:26.808 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for email
+2024-01-23 16:26:26.808 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for password
+2024-01-23 16:26:26.808 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for provider
+2024-01-23 16:26:26.808 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for providerId
+2024-01-23 16:26:26.808 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for role
+2024-01-23 16:26:26.809 DEBUG 2871 --- [restartedMain] o.h.cfg.annotations.SimpleValueBinder    : Starting fillSimpleValue for username
+2024-01-23 16:26:26.809 DEBUG 2871 --- [restartedMain] org.hibernate.mapping.PrimaryKey         : Forcing column [id] to be non-null as it is part of the primary key for table [user]
+2024-01-23 16:26:26.823 DEBUG 2871 --- [restartedMain] o.hibernate.internal.SessionFactoryImpl  : Building session factory
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : SessionFactory name : null
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Automatic flush during beforeCompletion(): enabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Automatic session close at end of transaction: disabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Statistics: disabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Deleted entity synthetic identifier rollback: disabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Default entity-mode: pojo
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Allow initialization of lazy state outside session : disabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Using BatchFetchStyle : LEGACY
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Default batch fetch size: -1
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Maximum outer join fetch depth: 2
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Default null ordering: NONE
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Order SQL updates by primary key: disabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Order SQL inserts for batching: disabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : multi-tenancy strategy : NONE
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : JTA Track by Thread: enabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Query language substitutions: {}
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Named query checking : enabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Second-level cache: disabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Second-level query cache: disabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Second-level query cache factory: null
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Second-level cache region prefix: null
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Optimize second-level cache for minimal puts: disabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Structured second-level cache entries: disabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Second-level cache direct-reference entries: disabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Automatic eviction of collection cache: disabled
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : JDBC batch size: 15
+2024-01-23 16:26:26.824 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : JDBC batch updates for versioned data: enabled
+2024-01-23 16:26:26.825 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Scrollable result sets: enabled
+2024-01-23 16:26:26.825 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Wrap result sets: disabled
+2024-01-23 16:26:26.825 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : JDBC3 getGeneratedKeys(): enabled
+2024-01-23 16:26:26.825 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : JDBC result set fetch size: null
+2024-01-23 16:26:26.825 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Connection release mode: ON_CLOSE
+2024-01-23 16:26:26.825 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : Generate SQL with comments: disabled
+2024-01-23 16:26:26.825 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : JPA compliance - query : disabled
+2024-01-23 16:26:26.825 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : JPA compliance - closed-handling : disabled
+2024-01-23 16:26:26.825 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : JPA compliance - lists : disabled
+2024-01-23 16:26:26.825 DEBUG 2871 --- [restartedMain] org.hibernate.cfg.Settings               : JPA compliance - transactions : disabled
+2024-01-23 16:26:26.841 DEBUG 2871 --- [restartedMain] .h.s.i.SessionFactoryServiceRegistryImpl : EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+2024-01-23 16:26:26.841 DEBUG 2871 --- [restartedMain] .h.s.i.SessionFactoryServiceRegistryImpl : EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+2024-01-23 16:26:26.851 DEBUG 2871 --- [restartedMain] o.hibernate.internal.SessionFactoryImpl  : Session factory constructed with filter configurations : {}
+2024-01-23 16:26:26.851 DEBUG 2871 --- [restartedMain] o.hibernate.internal.SessionFactoryImpl  : Instantiating session factory with properties: {hibernate.format_sql=true, hibernate.id.new_generator_mappings=true, java.specification.version=17, hibernate.resource.beans.container=org.springframework.orm.hibernate5.SpringBeanContainer@142d6a8a, hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_HOLD, sun.jnu.encoding=UTF-8, hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect, hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy, java.class.path=/Users/yiwonjeong/Desktop/Workspace/DAL/DAL/out/production/classes:/Users/yiwonjeong/Desktop/Workspace/DAL/DAL/out/production/resources:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jdbc/2.7.9/974d9fb3115b5b9d819431c73245c3c551b16e44/spring-boot-starter-data-jdbc-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/2.7.9/5af4a206fd4eaac881b7d96ca1ef19b2111a355c/spring-boot-starter-data-jpa-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.mybatis.spring.boot/mybatis-spring-boot-starter/2.3.0/f4d9f73a2fb0adc56664c6febd66f98433fca7f5/mybatis-spring-boot-starter-2.3.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-jdbc/2.7.9/e09f4ac40a09826c3eff01369d5b56e2abcea9c9/spring-boot-starter-jdbc-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-security/2.7.9/ca8e422a56493e99a7c8c9d56d92091256d9fed7/spring-boot-starter-security-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-thymeleaf/2.7.9/4bceaabd964cfa20ebc8464dd3c257fe74e18ecf/spring-boot-starter-thymeleaf-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect/3.0.0/901115ad80d4928d1d15f7dfa0bad99c1a006cc2/thymeleaf-layout-dialect-3.0.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.7.9/e745a069e2b7ca51e378fcbc397d14dd82178199/spring-boot-starter-web-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.thymeleaf.extras/thymeleaf-extras-springsecurity5/3.0.5.RELEASE/8ac42b63d03d7ccbfdcb4fc8c4322001e6081515/thymeleaf-extras-springsecurity5-3.0.5.RELEASE.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.mariadb.jdbc/mariadb-java-client/2.1.2/2484a99a6a86491531d17d491c931de8942ae0/mariadb-java-client-2.1.2.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-validation/2.7.9/7cfc9801c13eefd3d20499c2371d921eb11c328/spring-boot-starter-validation-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.analytics/google-analytics-data/0.27.0/91701eceeee67e49fa42408298cfb87c0cc357e3/google-analytics-data-0.27.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.13/e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada/httpclient-4.5.13.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.auth0/java-jwt/4.2.1/904306772bb7d43750527f84d7b23589a1f9ab12/java-jwt-4.2.1.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-oauth2-client/2.7.9/f4549de02f690218f5f649c3653ffe186e304a33/spring-boot-starter-oauth2-client-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jdbc/2.4.8/ddead003d1fc616325b86a89d76df9cf8df666f3/spring-data-jdbc-2.4.8.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-aop/2.7.9/9bd6ddd1f956f44dc954ec6915123998c3afe7ce/spring-boot-starter-aop-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/jakarta.transaction/jakarta.transaction-api/1.3.3/c4179d48720a1e87202115fbed6089bdc4195405/jakarta.transaction-api-1.3.3.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/jakarta.persistence/jakarta.persistence-api/2.2.3/8f6ea5daedc614f07a3654a455660145286f024e/jakarta.persistence-api-2.2.3.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-core/5.6.15.Final/ab14b7cef1fdff654ca81923048a6034d6c7cfa7/hibernate-core-5.6.15.Final.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/2.7.8/feb737f6eda0f40b8170d19e87df0fe7b58004d5/spring-data-jpa-2.7.8.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aspects/5.3.25/7afc5817a53aaccb2d71858cc5dceba716dba1db/spring-aspects-5.3.25.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/2.7.9/19f855d327f68690cf630698e4e41c3afe134a83/spring-boot-starter-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.mybatis.spring.boot/mybatis-spring-boot-autoconfigure/2.3.0/8b26983776e4dd7ab49d5cf272870224d5e89f94/mybatis-spring-boot-autoconfigure-2.3.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis/3.5.11/980273395d508c02d6359f3b6503ffbe319e23b0/mybatis-3.5.11.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis-spring/2.1.0/79810054bca442ec4c994916be82ed67efc417fb/mybatis-spring-2.1.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.zaxxer/HikariCP/4.0.3/107cbdf0db6780a065f895ae9d8fbf3bb0e1c21f/HikariCP-4.0.3.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/5.3.25/809f5841b13d42e5d4d14eb13346958cc9e9e187/spring-jdbc-5.3.25.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-config/5.7.7/3a7b700d07513be4361c9024ec4cc21f93f7f65a/spring-security-config-5.7.7.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-web/5.7.7/be60a596a263be507c590710ea6aaf7e5b64cf57/spring-security-web-5.7.7.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.3.25/722e30759b29331726f9deed76f80b22345ee627/spring-aop-5.3.25.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.thymeleaf/thymeleaf-spring5/3.0.15.RELEASE/7170e1bcd1588d38c139f7048ebcc262676441c3/thymeleaf-spring5-3.0.15.RELEASE.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.thymeleaf.extras/thymeleaf-extras-java8time/3.0.4.RELEASE/36e7175ddce36c486fff4578b5af7bb32f54f5df/thymeleaf-extras-java8time-3.0.4.RELEASE.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy/3.0.15/472c60adeb4e62e3a516e7c76da2df7c65348a9a/groovy-3.0.15.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/2.7.9/671b3611eeb2fb315281ae17242ef082666e4262/spring-boot-starter-json-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.25/62a8258bcc4f7a58dd69af5140481b64653c90/spring-webmvc-5.3.25.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.7.9/a1076e6ffa1d771d3ccd18e72280317a152323e8/spring-boot-starter-tomcat-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.25/c69815e7931cd3ce7f19cc8028fd1c36626120d6/spring-web-5.3.25.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.36/6c62681a2f655b49963a5983b8b0950a6120ae14/slf4j-api-1.7.36.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/9.0.71/8fe43848c27ec921c8c5d6dcbd8b959076d7bf99/tomcat-embed-el-9.0.71.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.hibernate.validator/hibernate-validator/6.2.5.Final/a68959c06e5f8ff45faff469aa16f232c04af620/hibernate-validator-6.2.5.Final.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.16/51cf043c87253c9f58b539c9f7e44c8894223850/httpcore-4.4.16.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.15/49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d/commons-codec-1.15.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-api/1.54.0/bc7f8f9203dcf9e79d5735fb7b9e99053385e19d/grpc-api-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.54.0/e5c681b37ce85b8b6347603887a8943737151518/grpc-context-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-analytics-data-v1beta/0.27.0/188846165eb7690f4a5af29e50c6831271178d03/proto-google-analytics-data-v1beta-0.27.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.18.0/89b684257096f548fa39a7df9fdaa409d4d4df91/error_prone_annotations-2.18.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-stub/1.54.0/e0469129d71ad06b025b5eb24d2279410a7b85b7/grpc-stub-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf/1.54.0/d0d38ae1def135fa14784e9192919d8e001ead1a/grpc-protobuf-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-protobuf-lite/1.54.0/7a5f88c180260fa024106e8fc7ae39a9ba7b285d/grpc-protobuf-lite-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.api/api-common/2.9.0/549017ecec77083249e62dd73e9f69be90c604bd/api-common-2.9.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.auto.value/auto-value-annotations/1.10.1/9e5162c15f6033c524134cba05a5e93dc1d37c4b/auto-value-annotations-1.10.1.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.3.2/934c04d3cfef185a8008e7bf34331b79730a9d43/javax.annotation-api-1.3.2.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.21.12/5589e79a33cb6509f7e681d7cf4fc59d47c51c71/protobuf-java-3.21.12.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-common-protos/2.17.0/7edf1e3aa96dc3861f7a8f24556c714e9c5b292/proto-google-common-protos-2.17.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-analytics-data-v1alpha/0.27.0/a8856c90a94e931ec3e88f6b1d61b468cea4567e/proto-google-analytics-data-v1alpha-0.27.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/31.1-jre/60458f877d055d0c9114d9e1a2efb737b4bc282c/guava-31.1-jre.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.32.0/54ebd61f46b58b862c779e034073a93489ab3faf/checker-qual-3.32.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.api/gax/2.26.0/8dabca624d4617388e8f995634fb6eece9c073a/gax-2.26.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-credentials/1.16.0/8ae88acbd572253c99c36e22b17efff388db3d12/google-auth-library-credentials-1.16.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-api/0.31.1/66a60c7201c2b8b20ce495f0295b32bb0ccbbc57/opencensus-api-0.31.1.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-oauth2-http/1.16.0/4eeb81450d4f61725cbd047393ff5243c7cc6bd7/google-auth-library-oauth2-http-1.16.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.api/gax-grpc/2.26.0/4186e97d427d1f1b5f1276d1c410a7f76fe52582/gax-grpc-2.26.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-alts/1.54.0/dca14ffbbd3523c5bbf864126d289b1d720f3690/grpc-alts-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-grpclb/1.54.0/43483a71c5f332fc6daf4c08bbfc3a25fee18419/grpc-grpclb-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.conscrypt/conscrypt-openjdk-uber/2.5.2/d858f142ea189c62771c505a6548d8606ac098fe/conscrypt-openjdk-uber-2.5.2.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-auth/1.54.0/d4f76fade0dbd79893e2aa99a1176a95047c23d1/grpc-auth-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-netty-shaded/1.54.0/d804b9173008af4c1c90800e13408907cf563be0/grpc-netty-shaded-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-core/1.54.0/4202e6edb763b4210be9b0990f4565e90c63884b/grpc-core-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.api/gax-httpjson/0.111.0/bf48d8d3e876f546d04f46794696dd44ac08ea50/gax-httpjson-0.111.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.9.1/2cc2131b98ebfb04e2b2c7dfb84431f4045096b/gson-2.9.1.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.43.1/2ef9413e65319ac448534b424522a2c48087d884/google-http-client-1.43.1.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-contrib-http-util/0.31.1/3c13fc5715231fadb16a9b74a44d9d59c460cfa8/opencensus-contrib-http-util-0.31.1.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-gson/1.43.1/6f000784f9813ee33f976e42822d98ffacf3dbd/google-http-client-gson-1.43.1.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java-util/3.21.12/1a800bf7976d939217c8d91ed9a17d7a78bf2187/protobuf-java-util-3.21.12.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.threeten/threetenbp/1.6.8/4c65b7b43f3fe31350f74cb7d0b2461e111e8dd0/threetenbp-1.6.8.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-oauth2-client/5.7.7/1436a5c8a5c9b63ae888eee5132cc97db5b5c7ce/spring-security-oauth2-client-5.7.7.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-oauth2-jose/5.7.7/7492e98525d76b580c74b826e1468abc11835cd8/spring-security-oauth2-jose-5.7.7.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/5.7.7/4502c4ac0d63b12fa5162e622f1b5ea2483f1b6b/spring-security-core-5.7.7.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-relational/2.4.8/cd657252d38c2976b042f406898628f6cd25da7b/spring-data-relational-2.4.8.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.3.25/268a70ce4f44333ce0f13304c5f8c53b3df5f5f4/spring-context-5.3.25.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/2.7.8/ee07f3fa279f4980d03a9ad65241cea752ae64dd/spring-data-commons-2.7.8.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.3.25/b459d0b755c9614a55ebd39ce353748c4b210be2/spring-tx-5.3.25.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.3.25/b3aeae036b4ea1abfa1f9604d452e19664efe5f6/spring-beans-5.3.25.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.3.25/85382e86321227506bf7f97ed80e2ab88bce25f0/spring-core-5.3.25.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.aspectj/aspectjweaver/1.9.7/158f5c255cd3e4408e795b79f7c3fbae9b53b7ca/aspectjweaver-1.9.7.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.hibernate.common/hibernate-commons-annotations/5.1.2.Final/e59ffdbc6ad09eeb33507b39ffcf287679a498c8/hibernate-commons-annotations-5.1.2.Final.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.4.3.Final/c4bd7e12a745c0e7f6cf98c45cdcdf482fd827ea/jboss-logging-3.4.3.Final.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.12.23/d470526e8c4566c04e9ae5d3ccb62d1a7aa58986/byte-buddy-1.12.23.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/antlr/antlr/2.7.7/83cd2cd674a217ade95a4bb83a8a14f351f48bd0/antlr-2.7.7.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.jboss/jandex/2.4.2.Final/1e1c385990b258ff1a24c801e84aebbacf70eb39/jandex-2.4.2.Final.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.5.1/3fe0bed568c62df5e89f4f174c101eab25345b6c/classmate-1.5.1.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.8/c90a335a07c60db986f29d35b0f8ac0a18f0f989/jaxb-runtime-2.3.8.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/5.3.25/b0fb2911a5d528037149240c8b4f2c820d90405b/spring-orm-5.3.25.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.7.9/849b238dd024101cad8d107b4a8b0906f75003d5/spring-boot-autoconfigure-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.7.9/788d60e73e0f7bbbf11b30c3fb0a9cbaa073446b/spring-boot-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/2.7.9/4b1afa6083581924606c7cc892933b63ec5810d3/spring-boot-starter-logging-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/1.3.5/59eb84ee0d616332ff44aba065f3888cf002cd2d/jakarta.annotation-api-1.3.5.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.30/8fde7fe2586328ac3c68db92045e1c8759125000/snakeyaml-1.30.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.3.25/d681cdb86611f03d8ef29654edde219fe5afef1d/spring-expression-5.3.25.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.thymeleaf/thymeleaf/3.0.15.RELEASE/13e3296a03d8a597b734d832ed8656139bf9cdd8/thymeleaf-3.0.15.RELEASE.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.13.5/8ba3b868e81d7fc6ead686bd2353859b111d9eaf/jackson-datatype-jsr310-2.13.5.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.13.5/a401a99e7a45450fd3ef76e82ba39005fd1a8c22/jackson-module-parameter-names-2.13.5.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.13.5/1278f38160812811c56eb77f67213662ed1c7a2e/jackson-datatype-jdk8-2.13.5.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.13.5/aa95e46dbc32454f3983221d420e78ef19ddf844/jackson-databind-2.13.5.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/9.0.71/987b6460af04b08bc9914788d2762080afb09541/tomcat-embed-websocket-9.0.71.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/9.0.71/adaed61b4eaa5b52448336c0881fcd828fd51a2f/tomcat-embed-core-9.0.71.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/jakarta.validation/jakarta.validation-api/2.0.2/5eacc6522521f7eacb081f95cee1e231648461e7/jakarta.validation-api-2.0.2.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-oauth2-core/5.7.7/3c5a2f698b04f922c3753799bbd0a6507e02ebe5/spring-security-oauth2-core-5.7.7.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.nimbusds/oauth2-oidc-sdk/9.35/7bfdf91bc4ae265f6c49a367bc0ed0e47d0e3a97/oauth2-oidc-sdk-9.35.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.nimbusds/nimbus-jose-jwt/9.22/bed63628cd31d8641c5a1b29609a965179ef91ec/nimbus-jose-jwt-9.22.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-crypto/5.7.7/ed4ba8723f0c4c7abf420eae7714aa5391410be8/spring-security-crypto-5.7.7.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.25/2e65a986dc7f98b40faed8df1d50db77c0b96c61/spring-jcl-5.3.25.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/2.3.3/48e3b9cfc10752fba3521d6511f4165bea951801/jakarta.xml.bind-api-2.3.3.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/2.3.8/66e0297f1196f0d15a776e699de1b8e6ac5d44dd/txw2-2.3.8.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/3.0.12/cbbe1a62b0cc6c85972e99d52aaee350153dc530/istack-commons-runtime-3.0.12.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.11/4741689214e9d1e8408b206506cbe76d1c6a7d60/logback-classic-1.2.11.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-to-slf4j/2.17.2/17dd0fae2747d9a28c67bc9534108823d2376b46/log4j-to-slf4j-2.17.2.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.36/ed46d81cef9c412a88caef405b58f93a678ff2ca/jul-to-slf4j-1.7.36.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/ognl/ognl/3.1.26/922d3d922b8aa40146d842114c184c8b403d2f4f/ognl-3.1.26.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.attoparser/attoparser/2.0.5.RELEASE/a93ad36df9560de3a5312c1d14f69d938099fa64/attoparser-2.0.5.RELEASE.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.unbescape/unbescape/1.1.6.RELEASE/7b90360afb2b860e09e8347112800d12c12b2a13/unbescape-1.1.6.RELEASE.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.13.5/136f77ab424f302c9e27230b4482e8000e142edf/jackson-annotations-2.13.5.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.13.5/d07c97d3de9ea658caf1ff1809fd9de930a286a/jackson-core-2.13.5.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.github.stephenc.jcip/jcip-annotations/1.0-1/ef31541dd28ae2cefdd17c7ebf352d93e9058c63/jcip-annotations-1.0-1.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.nimbusds/content-type/2.2/9a894bce7646dd4086652d85b88013229f23724b/content-type-2.2.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/net.minidev/json-smart/2.4.8/7c62f5f72ab05eb54d40e2abf0360a2fe9ea477f/json-smart-2.4.8.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.nimbusds/lang-tag/1.6/ba96ae591bf885f130a772794f07209e2bdb9fb5/lang-tag-1.6.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.2.11/a01230df5ca5c34540cdaa3ad5efb012f1f1f792/logback-core-1.2.11.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.17.2/f42d6afa111b4dec5d2aea0fe2197240749a4ea6/log4j-api-2.17.2.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.20.0-GA/a9cbcdfb7e9f86fbc74d3afae65f2248bfbf82a0/javassist-3.20.0-GA.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/net.minidev/accessors-smart/2.4.8/6e1bee5a530caba91893604d6ab41d0edcecca9a/accessors-smart-2.4.8.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.1/a99500cf6eea30535eeac6be73899d048f8d12a8/asm-9.1.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/2.7.9/8f9dc8b555c7938433f9df66ea0d889edb70bd7/spring-boot-devtools-2.7.9.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.mysql/mysql-connector-j/8.0.32/41ec3f8cdaccf6c46a47d7cd628eeb59a926d9d4/mysql-connector-j-8.0.32.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/nz.net.ultraq.extensions/groovy-extensions/1.1.0/cb0ecf5713794f6a91b266e1c7f0df06c16ffbea/groovy-extensions-1.1.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/nz.net.ultraq.thymeleaf/thymeleaf-expression-processor/3.0.0/a9ec91287cdcdaa9f8c4bdcb19e0edeecd5dc23d/thymeleaf-expression-processor-3.0.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.perfmark/perfmark-api/0.26.0/ef65452adaf20bf7d12ef55913aba24037b82738/perfmark-api-0.26.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.android/annotations/4.1.1.4/a1678ba907bf92691d879fef34e1a187038f9259/annotations-4.1.1.4.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.23/3c0daebd5f0e1ce72cc50c818321ac957aeb5d70/animal-sniffer-annotations-1.23.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-googleapis/1.54.0/2c4c5c2175d35d21c375267fae1659c51befaa96/grpc-googleapis-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-xds/1.54.0/74dd395a45edc02021c64c8c96ed2c2f1cbf83db/grpc-xds-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-proto/0.2.0/c05b6b32b69d5d9144087ea0ebc6fab183fb9151/opencensus-proto-0.2.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-services/1.54.0/53ba634410923003bb064b53b7e2f4eeb180d48c/grpc-services-1.54.0.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.google.re2j/re2j/1.6/a13e879fd7971738d06020fefeb108cc14e14169/re2j-1.6.jar:/Users/yiwonjeong/.gradle/caches/modules-2/files-2.1/com.sun.activation/jakarta.activation/1.2.2/74548703f9851017ce2f556066659438019e7eb5/jakarta.activation-1.2.2.jar, java.vm.vendor=Oracle Corporation, sun.arch.data.model=64, java.vendor.url=https://java.oracle.com/, catalina.useNaming=false, user.timezone=Asia/Seoul, jakarta.persistence.sharedCache.mode=UNSPECIFIED, java.vm.specification.version=17, os.name=Mac OS X, javax.persistence.validation.mode=AUTO, jakarta.persistence.nonJtaDataSource=HikariDataSource (HikariPool-1), sun.java.launcher=SUN_STANDARD, user.country=KR, sun.boot.library.path=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/lib, sun.java.command=kr.co.Dal.DalApplication, javax.persistence.nonJtaDataSource=HikariDataSource (HikariPool-1), hibernate.transaction.jta.platform=org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform@41529425, http.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, javax.persistence.sharedCache.mode=UNSPECIFIED, jdk.debug=release, sun.cpu.endian=little, user.home=/Users/yiwonjeong, user.language=ko, java.specification.vendor=Oracle Corporation, java.version.date=2023-04-18, java.home=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home, file.separator=/, java.vm.compressedOopsMode=Zero based, line.separator=
+, hibernate.persistenceUnitName=default, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, FILE_LOG_CHARSET=UTF-8, hibernate.transaction.coordinator_class=class org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorBuilderImpl, java.awt.headless=true, jakarta.persistence.validation.mode=AUTO, hibernate.hbm2ddl.auto=update, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, ftp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, java.runtime.version=17.0.7+8-LTS-224, user.name=yiwonjeong, path.separator=:, os.version=13.5.2, java.runtime.name=Java(TM) SE Runtime Environment, file.encoding=UTF-8, hibernate.ejb.persistenceUnitName=default, spring.beaninfo.ignore=true, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, hibernate.show_sql=true, LOG_FILE=log/Dal.log, java.vendor.url.bug=https://bugreport.java.com/bugreport/, java.io.tmpdir=/var/folders/k2/fss9nxrx52s1c_hznyj_gtrr0000gn/T/, catalina.home=/private/var/folders/k2/fss9nxrx52s1c_hznyj_gtrr0000gn/T/tomcat.8282.17047531918563766617, java.version=17.0.7, hibernate.physical_naming_strategy=org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy, user.dir=/Users/yiwonjeong/Desktop/Workspace/DAL/DAL, os.arch=aarch64, java.vm.specification.name=Java Virtual Machine Specification, PID=2871, CONSOLE_LOG_CHARSET=UTF-8, catalina.base=/private/var/folders/k2/fss9nxrx52s1c_hznyj_gtrr0000gn/T/tomcat.8282.17047531918563766617, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.registry.StandardServiceRegistryBuilder$1@595c0a1c, native.encoding=UTF-8, java.library.path=/Users/yiwonjeong/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:., java.vendor=Oracle Corporation, java.vm.info=mixed mode, sharing, java.vm.version=17.0.7+8-LTS-224, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeBig, hibernate.archive.scanner=org.hibernate.boot.archive.scan.internal.DisabledScanner, hibernate.connection.datasource=HikariDataSource (HikariPool-1), socksNonProxyHosts=local|*.local|169.254/16|*.169.254/16, java.class.version=61.0}
+2024-01-23 16:26:26.860 DEBUG 2871 --- [restartedMain] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-01-23 16:26:26.860 DEBUG 2871 --- [restartedMain] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-01-23 16:26:26.860 DEBUG 2871 --- [restartedMain] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-01-23 16:26:26.860 DEBUG 2871 --- [restartedMain] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-01-23 16:26:26.860 DEBUG 2871 --- [restartedMain] o.h.v.i.e.resolver.TraversableResolvers  : Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-01-23 16:26:26.860 DEBUG 2871 --- [restartedMain] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-01-23 16:26:26.861 DEBUG 2871 --- [restartedMain] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-01-23 16:26:26.863 DEBUG 2871 --- [restartedMain] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-01-23 16:26:26.864 DEBUG 2871 --- [restartedMain] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-01-23 16:26:26.864 DEBUG 2871 --- [restartedMain] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-01-23 16:26:26.864 DEBUG 2871 --- [restartedMain] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-01-23 16:26:26.864 DEBUG 2871 --- [restartedMain] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-01-23 16:26:26.864 DEBUG 2871 --- [restartedMain] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-01-23 16:26:26.865 DEBUG 2871 --- [restartedMain] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [kr.co.Dal.user.model.User] is safe
+2024-01-23 16:26:26.865 DEBUG 2871 --- [restartedMain] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : kr.co.Dal.user.model.User
+2024-01-23 16:26:26.881 DEBUG 2871 --- [restartedMain] .h.s.i.SessionFactoryServiceRegistryImpl : EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+2024-01-23 16:26:26.881 DEBUG 2871 --- [restartedMain] org.hibernate.secure.spi.JaccIntegrator  : Skipping JACC integration as it was not enabled
+2024-01-23 16:26:26.881 DEBUG 2871 --- [restartedMain] o.hibernate.internal.SessionFactoryImpl  : Instantiated session factory
+2024-01-23 16:26:26.881 DEBUG 2871 --- [restartedMain] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@3de8a168] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@4e3466c]
+2024-01-23 16:26:26.902 DEBUG 2871 --- [restartedMain] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [kr.co.Dal.user.model.User] is safe
+2024-01-23 16:26:26.902 DEBUG 2871 --- [restartedMain] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : kr.co.Dal.user.model.User
+2024-01-23 16:26:26.992 DEBUG 2871 --- [restartedMain] o.h.p.entity.AbstractEntityPersister     : Static SQL for entity: kr.co.Dal.user.model.User
+2024-01-23 16:26:26.992 DEBUG 2871 --- [restartedMain] o.h.p.entity.AbstractEntityPersister     :  Version select: select id from user where id =?
+2024-01-23 16:26:26.992 DEBUG 2871 --- [restartedMain] o.h.p.entity.AbstractEntityPersister     :  Snapshot select: select user_.id, user_.create_date as create_d2_0_, user_.email as email3_0_, user_.password as password4_0_, user_.provider as provider5_0_, user_.provider_id as provider6_0_, user_.role as role7_0_, user_.username as username8_0_ from user user_ where user_.id=?
+2024-01-23 16:26:26.992 DEBUG 2871 --- [restartedMain] o.h.p.entity.AbstractEntityPersister     :  Insert 0: insert into user (create_date, email, password, provider, provider_id, role, username, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+2024-01-23 16:26:26.992 DEBUG 2871 --- [restartedMain] o.h.p.entity.AbstractEntityPersister     :  Update 0: update user set create_date=?, email=?, password=?, provider=?, provider_id=?, role=?, username=? where id=?
+2024-01-23 16:26:26.992 DEBUG 2871 --- [restartedMain] o.h.p.entity.AbstractEntityPersister     :  Delete 0: delete from user where id=?
+2024-01-23 16:26:26.992 DEBUG 2871 --- [restartedMain] o.h.p.entity.AbstractEntityPersister     :  Identity insert: insert into user (create_date, email, password, provider, provider_id, role, username) values (?, ?, ?, ?, ?, ?, ?)
+2024-01-23 16:26:27.005 DEBUG 2871 --- [restartedMain] o.h.l.p.b.i.spaces.QuerySpacesImpl       : Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2af0751f]
+2024-01-23 16:26:27.006 DEBUG 2871 --- [restartedMain] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : createDate
+2024-01-23 16:26:27.006 DEBUG 2871 --- [restartedMain] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : email
+2024-01-23 16:26:27.006 DEBUG 2871 --- [restartedMain] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : password
+2024-01-23 16:26:27.006 DEBUG 2871 --- [restartedMain] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : provider
+2024-01-23 16:26:27.006 DEBUG 2871 --- [restartedMain] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : providerId
+2024-01-23 16:26:27.006 DEBUG 2871 --- [restartedMain] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : role
+2024-01-23 16:26:27.006 DEBUG 2871 --- [restartedMain] o.h.p.walking.spi.MetamodelGraphWalker   : Visiting attribute path : username
+2024-01-23 16:26:27.006 DEBUG 2871 --- [restartedMain] lanBuildingAssociationVisitationStrategy : Building LoadPlan...
+2024-01-23 16:26:27.010 DEBUG 2871 --- [restartedMain] h.l.p.e.i.LoadQueryJoinAndFetchProcessor : processing queryspace <gen:0>
+2024-01-23 16:26:27.012 DEBUG 2871 --- [restartedMain] o.h.l.p.build.spi.LoadPlanTreePrinter    : LoadPlan(entity=kr.co.Dal.user.model.User)
+    - Returns
+       - EntityReturnImpl(entity=kr.co.Dal.user.model.User, querySpaceUid=<gen:0>, path=kr.co.Dal.user.model.User)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=kr.co.Dal.user.model.User)
+          - SQL table alias mapping - user0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2024-01-23 16:26:27.013 DEBUG 2871 --- [restartedMain] o.h.loader.entity.plan.EntityLoader      : Static select for entity kr.co.Dal.user.model.User [NONE]: select user0_.id as id1_0_0_, user0_.create_date as create_d2_0_0_, user0_.email as email3_0_0_, user0_.password as password4_0_0_, user0_.provider as provider5_0_0_, user0_.provider_id as provider6_0_0_, user0_.role as role7_0_0_, user0_.username as username8_0_0_ from user user0_ where user0_.id=?
+2024-01-23 16:26:27.600 DEBUG 2871 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table user (
+       id integer not null auto_increment,
+        create_date datetime,
+        email varchar(255),
+        password varchar(255),
+        provider varchar(255),
+        provider_id varchar(255),
+        role varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2024-01-23 16:26:27.809  WARN 2871 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table user (
+       id integer not null auto_increment,
+        create_date datetime,
+        email varchar(255),
+        password varchar(255),
+        provider varchar(255),
+        provider_id varchar(255),
+        role varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) engine=InnoDB" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table user (
+       id integer not null auto_increment,
+        create_date datetime,
+        email varchar(255),
+        password varchar(255),
+        provider varchar(255),
+        provider_id varchar(255),
+        role varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) engine=InnoDB" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:581) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:526) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:293) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:74) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:220) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:196) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.9.jar:2.7.9]
+	at kr.co.Dal.DalApplication.main(DalApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.9.jar:2.7.9]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=43391) Table 'user' already exists
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:163) ~[mariadb-java-client-2.1.2.jar:na]
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.getException(ExceptionMapper.java:106) ~[mariadb-java-client-2.1.2.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeExceptionEpilogue(MariaDbStatement.java:235) ~[mariadb-java-client-2.1.2.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeInternal(MariaDbStatement.java:332) ~[mariadb-java-client-2.1.2.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.execute(MariaDbStatement.java:383) ~[mariadb-java-client-2.1.2.jar:na]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	... 39 common frames omitted
+Caused by: java.sql.SQLException: Table 'user' already exists
+Query is: 
+    create table user (
+       id integer not null auto_increment,
+        create_date datetime,
+        email varchar(255),
+        password varchar(255),
+        provider varchar(255),
+        provider_id varchar(255),
+        role varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+	at org.mariadb.jdbc.internal.util.LogQueryTool.exceptionWithQuery(LogQueryTool.java:113) ~[mariadb-java-client-2.1.2.jar:na]
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:162) ~[mariadb-java-client-2.1.2.jar:na]
+	at org.mariadb.jdbc.MariaDbStatement.executeInternal(MariaDbStatement.java:326) ~[mariadb-java-client-2.1.2.jar:na]
+	... 43 common frames omitted
+
+2024-01-23 16:26:27.810  INFO 2871 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-23 16:26:27.818 DEBUG 2871 --- [restartedMain] .h.s.i.SessionFactoryServiceRegistryImpl : EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+2024-01-23 16:26:27.820 DEBUG 2871 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : QueryTranslatorFactory: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory@3740ea94
+2024-01-23 16:26:27.822 DEBUG 2871 --- [restartedMain] o.h.query.spi.NamedQueryRepository       : Checking 0 named HQL queries
+2024-01-23 16:26:27.823 DEBUG 2871 --- [restartedMain] o.h.query.spi.NamedQueryRepository       : Checking 0 named SQL queries
+2024-01-23 16:26:27.823 DEBUG 2871 --- [restartedMain] o.h.internal.SessionFactoryRegistry      : Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@14cfc8c5
+2024-01-23 16:26:27.823 DEBUG 2871 --- [restartedMain] o.h.internal.SessionFactoryRegistry      : Registering SessionFactory: 2af03ec7-b9c1-4f21-9a73-15a127f6ffd9 (<unnamed>)
+2024-01-23 16:26:27.823 DEBUG 2871 --- [restartedMain] o.h.internal.SessionFactoryRegistry      : Not binding SessionFactory to JNDI, no JNDI name configured
+2024-01-23 16:26:27.824  INFO 2871 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-23 16:26:27.979 DEBUG 2871 --- [restartedMain] o.h.stat.internal.StatisticsInitiator    : Statistics initialized [enabled=false]
+2024-01-23 16:26:28.034 DEBUG 2871 --- [restartedMain] o.h.e.t.internal.TransactionImpl         : On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2024-01-23 16:26:28.058 DEBUG 2871 --- [restartedMain] o.h.e.t.internal.TransactionImpl         : On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2024-01-23 16:26:28.165 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/user/**']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/common/**']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/main/**']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/test/**']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/smarteditor/**']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/joinForm']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/loginForm']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/auth/**']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/oauth2/**']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/my/**']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/join']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/findIdForm']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/findPwForm']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/comm/**']
+2024-01-23 16:26:28.173 DEBUG 2871 --- [restartedMain] edFilterInvocationSecurityMetadataSource : Adding web access control expression [authenticated] for any request
+2024-01-23 16:26:28.179  INFO 2871 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@160ab693, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a38e674, org.springframework.security.web.context.SecurityContextPersistenceFilter@5be19ca1, org.springframework.security.web.header.HeaderWriterFilter@63262778, org.springframework.security.web.authentication.logout.LogoutFilter@69ddc904, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@25f5e2ad, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@2f8e7c0a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4d215474, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@223795cd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7556a95f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5877bdf5, org.springframework.security.web.session.SessionManagementFilter@d91c21e, org.springframework.security.web.access.ExceptionTranslationFilter@635a79b9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@f63a7b9]
+2024-01-23 16:26:28.192 DEBUG 2871 --- [restartedMain] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-01-23 16:26:28.193 DEBUG 2871 --- [restartedMain] o.h.v.i.e.AbstractConfigurationImpl      : Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+2024-01-23 16:26:28.193 DEBUG 2871 --- [restartedMain] o.h.v.i.e.AbstractConfigurationImpl      : Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+2024-01-23 16:26:28.193 DEBUG 2871 --- [restartedMain] o.h.v.i.e.AbstractConfigurationImpl      : Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+2024-01-23 16:26:28.194 DEBUG 2871 --- [restartedMain] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-01-23 16:26:28.194 DEBUG 2871 --- [restartedMain] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via user class loader
+2024-01-23 16:26:28.194 DEBUG 2871 --- [restartedMain] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-01-23 16:26:28.194 DEBUG 2871 --- [restartedMain] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-01-23 16:26:28.194 DEBUG 2871 --- [restartedMain] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-01-23 16:26:28.194 DEBUG 2871 --- [restartedMain] o.h.v.i.e.resolver.TraversableResolvers  : Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-01-23 16:26:28.194 DEBUG 2871 --- [restartedMain] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-01-23 16:26:28.195 DEBUG 2871 --- [restartedMain] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-01-23 16:26:28.195 DEBUG 2871 --- [restartedMain] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-01-23 16:26:28.195 DEBUG 2871 --- [restartedMain] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-01-23 16:26:28.195 DEBUG 2871 --- [restartedMain] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-01-23 16:26:28.195 DEBUG 2871 --- [restartedMain] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-01-23 16:26:28.195 DEBUG 2871 --- [restartedMain] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-01-23 16:26:28.290  INFO 2871 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-01-23 16:26:28.730  INFO 2871 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-23 16:26:28.748  INFO 2871 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8282 (http) with context path ''
+2024-01-23 16:26:28.753  INFO 2871 --- [restartedMain] kr.co.Dal.DalApplication                 : Started DalApplication in 5.152 seconds (JVM running for 5.438)
+2024-01-23 16:30:05.057  INFO 2871 --- [http-nio-8282-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-23 16:30:05.058  INFO 2871 --- [http-nio-8282-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-01-23 16:30:05.060  INFO 2871 --- [http-nio-8282-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-01-23 16:30:05.067 DEBUG 2871 --- [http-nio-8282-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /
+2024-01-23 16:30:05.069 DEBUG 2871 --- [http-nio-8282-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2024-01-23 16:30:05.070 DEBUG 2871 --- [http-nio-8282-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-01-23 16:30:05.071 DEBUG 2871 --- [http-nio-8282-exec-1] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 4372879441352874BEB6A2919A3D8BE1
+2024-01-23 16:30:05.075 DEBUG 2871 --- [http-nio-8282-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Failed to authorize filter invocation [GET /] with attributes [authenticated]
+2024-01-23 16:30:05.090 DEBUG 2871 --- [http-nio-8282-exec-1] o.s.s.w.s.HttpSessionRequestCache        : Saved request http://localhost:8282/ to session
+2024-01-23 16:30:05.090 DEBUG 2871 --- [http-nio-8282-exec-1] s.w.a.DelegatingAuthenticationEntryPoint : Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.HeaderContentNegotiationStrategy@10609b4d, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-01-23 16:30:05.090 DEBUG 2871 --- [http-nio-8282-exec-1] s.w.a.DelegatingAuthenticationEntryPoint : Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@4525515f
+2024-01-23 16:30:05.090 DEBUG 2871 --- [http-nio-8282-exec-1] o.s.s.web.DefaultRedirectStrategy        : Redirecting to http://localhost:8282/loginForm
+2024-01-23 16:30:05.091 DEBUG 2871 --- [http-nio-8282-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store empty SecurityContext
+2024-01-23 16:30:05.092 DEBUG 2871 --- [http-nio-8282-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store empty SecurityContext
+2024-01-23 16:30:05.092 DEBUG 2871 --- [http-nio-8282-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:05.096 DEBUG 2871 --- [http-nio-8282-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /loginForm
+2024-01-23 16:30:05.097 DEBUG 2871 --- [http-nio-8282-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2024-01-23 16:30:05.097 DEBUG 2871 --- [http-nio-8282-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-01-23 16:30:05.097 DEBUG 2871 --- [http-nio-8282-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /loginForm] with attributes [permitAll]
+2024-01-23 16:30:05.097 DEBUG 2871 --- [http-nio-8282-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /loginForm
+2024-01-23 16:30:05.239 DEBUG 2871 --- [http-nio-8282-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.240 DEBUG 2871 --- [http-nio-8282-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.240 DEBUG 2871 --- [http-nio-8282-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:05.258 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /common/css/layout.css
+2024-01-23 16:30:05.258 DEBUG 2871 --- [http-nio-8282-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2024-01-23 16:30:05.258 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-01-23 16:30:05.260 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /common/css/layout.css] with attributes [permitAll]
+2024-01-23 16:30:05.260 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /common/css/layout.css
+2024-01-23 16:30:05.267 DEBUG 2871 --- [http-nio-8282-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /common/css/helper.css
+2024-01-23 16:30:05.268 DEBUG 2871 --- [http-nio-8282-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2024-01-23 16:30:05.268 DEBUG 2871 --- [http-nio-8282-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-01-23 16:30:05.270 DEBUG 2871 --- [http-nio-8282-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /user/css/login.css
+2024-01-23 16:30:05.271 DEBUG 2871 --- [http-nio-8282-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2024-01-23 16:30:05.271 DEBUG 2871 --- [http-nio-8282-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /common/css/helper.css] with attributes [permitAll]
+2024-01-23 16:30:05.271 DEBUG 2871 --- [http-nio-8282-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /common/css/helper.css
+2024-01-23 16:30:05.271 DEBUG 2871 --- [http-nio-8282-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-01-23 16:30:05.271 DEBUG 2871 --- [http-nio-8282-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /user/css/login.css] with attributes [permitAll]
+2024-01-23 16:30:05.271 DEBUG 2871 --- [http-nio-8282-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /user/css/login.css
+2024-01-23 16:30:05.285 DEBUG 2871 --- [http-nio-8282-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /common/css/reset.css
+2024-01-23 16:30:05.295 DEBUG 2871 --- [http-nio-8282-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2024-01-23 16:30:05.296 DEBUG 2871 --- [http-nio-8282-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-01-23 16:30:05.296 DEBUG 2871 --- [http-nio-8282-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /common/css/select_input.css
+2024-01-23 16:30:05.296 DEBUG 2871 --- [http-nio-8282-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2024-01-23 16:30:05.297 DEBUG 2871 --- [http-nio-8282-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-01-23 16:30:05.297 DEBUG 2871 --- [http-nio-8282-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /common/css/select_input.css] with attributes [permitAll]
+2024-01-23 16:30:05.297 DEBUG 2871 --- [http-nio-8282-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /common/css/select_input.css
+2024-01-23 16:30:05.297 DEBUG 2871 --- [http-nio-8282-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /user/img/kakao_icon.png
+2024-01-23 16:30:05.298 DEBUG 2871 --- [http-nio-8282-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2024-01-23 16:30:05.298 DEBUG 2871 --- [http-nio-8282-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-01-23 16:30:05.298 DEBUG 2871 --- [http-nio-8282-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /user/img/kakao_icon.png] with attributes [permitAll]
+2024-01-23 16:30:05.298 DEBUG 2871 --- [http-nio-8282-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /user/img/kakao_icon.png
+2024-01-23 16:30:05.299 DEBUG 2871 --- [http-nio-8282-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /common/css/reset.css] with attributes [permitAll]
+2024-01-23 16:30:05.299 DEBUG 2871 --- [http-nio-8282-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /common/css/reset.css
+2024-01-23 16:30:05.320 DEBUG 2871 --- [http-nio-8282-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.320 DEBUG 2871 --- [http-nio-8282-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.321 DEBUG 2871 --- [http-nio-8282-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.321 DEBUG 2871 --- [http-nio-8282-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:05.320 DEBUG 2871 --- [http-nio-8282-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.322 DEBUG 2871 --- [http-nio-8282-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.322 DEBUG 2871 --- [http-nio-8282-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:05.322 DEBUG 2871 --- [http-nio-8282-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.322 DEBUG 2871 --- [http-nio-8282-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:05.323 DEBUG 2871 --- [http-nio-8282-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.321 DEBUG 2871 --- [http-nio-8282-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.324 DEBUG 2871 --- [http-nio-8282-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.324 DEBUG 2871 --- [http-nio-8282-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:05.325 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /user/img/google_icon.png
+2024-01-23 16:30:05.325 DEBUG 2871 --- [http-nio-8282-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2024-01-23 16:30:05.326 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-01-23 16:30:05.326 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /user/img/google_icon.png] with attributes [permitAll]
+2024-01-23 16:30:05.326 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /user/img/google_icon.png
+2024-01-23 16:30:05.326 DEBUG 2871 --- [http-nio-8282-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /user/img/naver_icon.png
+2024-01-23 16:30:05.326 DEBUG 2871 --- [http-nio-8282-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2024-01-23 16:30:05.320 DEBUG 2871 --- [http-nio-8282-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.327 DEBUG 2871 --- [http-nio-8282-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.327 DEBUG 2871 --- [http-nio-8282-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:05.326 DEBUG 2871 --- [http-nio-8282-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-01-23 16:30:05.327 DEBUG 2871 --- [http-nio-8282-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.329 DEBUG 2871 --- [http-nio-8282-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:05.329 DEBUG 2871 --- [http-nio-8282-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /user/img/naver_icon.png] with attributes [permitAll]
+2024-01-23 16:30:05.329 DEBUG 2871 --- [http-nio-8282-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /user/img/naver_icon.png
+2024-01-23 16:30:05.329 DEBUG 2871 --- [http-nio-8282-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.330 DEBUG 2871 --- [http-nio-8282-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.330 DEBUG 2871 --- [http-nio-8282-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:05.331 DEBUG 2871 --- [http-nio-8282-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.331 DEBUG 2871 --- [http-nio-8282-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2024-01-23 16:30:05.331 DEBUG 2871 --- [http-nio-8282-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:06.227 DEBUG 2871 --- [http-nio-8282-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /oauth2/authorization/kakao
+2024-01-23 16:30:06.228 DEBUG 2871 --- [http-nio-8282-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2024-01-23 16:30:06.248 DEBUG 2871 --- [http-nio-8282-exec-3] o.s.s.web.DefaultRedirectStrategy        : Redirecting to https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=d84bfc873870332092e20fa92e5bbac7&scope=profile_nickname&state=4z3Xx6tfziiJvQZ-LZIEEPJVEBq05Lh34cTYIQrQViE%3D&redirect_uri=http://localhost:8282/login/oauth2/code/kakao
+2024-01-23 16:30:06.248 DEBUG 2871 --- [http-nio-8282-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store empty SecurityContext
+2024-01-23 16:30:06.248 DEBUG 2871 --- [http-nio-8282-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store empty SecurityContext
+2024-01-23 16:30:06.248 DEBUG 2871 --- [http-nio-8282-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:06.323 DEBUG 2871 --- [http-nio-8282-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /login/oauth2/code/kakao?code=-Z7vjm9jLdwLVAPx_qww0LbLWxknP4CyST-qtOSTPeY7MKFL_GG-48vmAg0KPXLrAAABjTU58bhyxKx5jTsi9A&state=4z3Xx6tfziiJvQZ-LZIEEPJVEBq05Lh34cTYIQrQViE%3D
+2024-01-23 16:30:06.323 DEBUG 2871 --- [http-nio-8282-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2024-01-23 16:30:06.658 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.q.c.internal.CriteriaQueryImpl       : Rendered criteria query -> select generatedAlias0 from User as generatedAlias0 where ( generatedAlias0.provider=:param0 ) and ( generatedAlias0.providerId=:param1 )
+2024-01-23 16:30:06.674 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.h.internal.ast.QueryTranslatorImpl   : parse() - HQL: select generatedAlias0 from kr.co.Dal.user.model.User as generatedAlias0 where ( generatedAlias0.provider=:param0 ) and ( generatedAlias0.providerId=:param1 )
+2024-01-23 16:30:06.675 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.hql.internal.ast.ErrorTracker        : throwQueryException() : no errors
+2024-01-23 16:30:06.678 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.h.internal.ast.QueryTranslatorImpl   : --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[DOT] Node: '.'
+    |  |     |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  |  |  +-[IDENT] Node: 'kr'
+    |  |     |  |  |  |  |  \-[IDENT] Node: 'co'
+    |  |     |  |  |  |  \-[IDENT] Node: 'Dal'
+    |  |     |  |  |  \-[IDENT] Node: 'user'
+    |  |     |  |  \-[IDENT] Node: 'model'
+    |  |     |  \-[IDENT] Node: 'User'
+    |  |     \-[ALIAS] Node: 'generatedAlias0'
+    |  \-[SELECT] Node: 'select'
+    |     \-[IDENT] Node: 'generatedAlias0'
+    \-[WHERE] Node: 'where'
+       \-[AND] Node: 'and'
+          +-[EQ] Node: '='
+          |  +-[DOT] Node: '.'
+          |  |  +-[IDENT] Node: 'generatedAlias0'
+          |  |  \-[IDENT] Node: 'provider'
+          |  \-[COLON] Node: ':'
+          |     \-[IDENT] Node: 'param0'
+          \-[EQ] Node: '='
+             +-[DOT] Node: '.'
+             |  +-[IDENT] Node: 'generatedAlias0'
+             |  \-[IDENT] Node: 'providerId'
+             \-[COLON] Node: ':'
+                \-[IDENT] Node: 'param1'
+
+2024-01-23 16:30:06.685 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.hql.internal.antlr.HqlSqlBaseWalker  : select << begin [level=1, statement=select]
+2024-01-23 16:30:06.689 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.hql.internal.ast.tree.FromElement    : FromClause{level=1} : kr.co.Dal.user.model.User (generatedAlias0) -> user0_
+2024-01-23 16:30:06.690 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.h.i.ast.tree.FromReferenceNode       : Resolved : generatedAlias0 -> user0_.id
+2024-01-23 16:30:06.691 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.h.i.ast.tree.FromReferenceNode       : Resolved : generatedAlias0 -> user0_.id
+2024-01-23 16:30:06.691 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.hql.internal.ast.tree.DotNode        : getDataType() : provider -> org.hibernate.type.StringType@57a31a98
+2024-01-23 16:30:06.691 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.h.i.ast.tree.FromReferenceNode       : Resolved : generatedAlias0.provider -> user0_.provider
+2024-01-23 16:30:06.692 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.h.i.ast.tree.FromReferenceNode       : Resolved : generatedAlias0 -> user0_.id
+2024-01-23 16:30:06.692 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.hql.internal.ast.tree.DotNode        : getDataType() : providerId -> org.hibernate.type.StringType@57a31a98
+2024-01-23 16:30:06.692 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.h.i.ast.tree.FromReferenceNode       : Resolved : generatedAlias0.providerId -> user0_.provider_id
+2024-01-23 16:30:06.692 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.hql.internal.antlr.HqlSqlBaseWalker  : select : finishing up [level=1, statement=select]
+2024-01-23 16:30:06.692 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.hql.internal.ast.HqlSqlWalker        : processQuery() :  ( SELECT ( {select clause} user0_.id ) ( FromClause{level=1} user user0_ ) ( where ( and ( = ( user0_.provider user0_.id provider ) ? ) ( = ( user0_.provider_id user0_.id providerId ) ? ) ) ) )
+2024-01-23 16:30:06.694 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.hql.internal.ast.util.JoinProcessor  : Tables referenced from query nodes:
+ \-QueryNode
+    +-SelectClause
+    | referencedTables(entity User): [user]
+    |  +-IdentNode
+    |  | persister: SingleTableEntityPersister(kr.co.Dal.user.model.User)
+    |  | originalText: generatedAlias0
+    |  \-SqlFragment
+    +-FromClause
+    |  \-FromElement
+    \-SqlNode
+       \-SqlNode
+          +-BinaryLogicOperatorNode
+          |  +-DotNode
+          |  | persister: SingleTableEntityPersister(kr.co.Dal.user.model.User)
+          |  | path: generatedAlias0.provider
+          |  |  +-IdentNode
+          |  |  | persister: SingleTableEntityPersister(kr.co.Dal.user.model.User)
+          |  |  | originalText: generatedAlias0
+          |  |  \-IdentNode
+          |  |    persister: null
+          |  |    originalText: provider
+          |  \-ParameterNode
+          \-BinaryLogicOperatorNode
+             +-DotNode
+             | persister: SingleTableEntityPersister(kr.co.Dal.user.model.User)
+             | path: generatedAlias0.providerId
+             |  +-IdentNode
+             |  | persister: SingleTableEntityPersister(kr.co.Dal.user.model.User)
+             |  | originalText: generatedAlias0
+             |  \-IdentNode
+             |    persister: null
+             |    originalText: providerId
+             \-ParameterNode
+
+2024-01-23 16:30:06.695 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.hql.internal.ast.util.JoinProcessor  : Using FROM fragment [user user0_]
+2024-01-23 16:30:06.696 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.hql.internal.antlr.HqlSqlBaseWalker  : select >> end [level=1, statement=select]
+2024-01-23 16:30:06.696 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.h.internal.ast.QueryTranslatorImpl   : --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (user)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'user0_.id as id1_0_' {alias=generatedAlias0, className=kr.co.Dal.user.model.User, tableAlias=user0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'user0_.create_date as create_d2_0_, user0_.email as email3_0_, user0_.password as password4_0_, user0_.provider as provider5_0_, user0_.provider_id as provider6_0_, user0_.role as role7_0_, user0_.username as username8_0_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[generatedAlias0], fromElementByTableAlias=[user0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'user user0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=generatedAlias0,role=null,tableName=user,tableAlias=user0_,origin=null,columns={,className=kr.co.Dal.user.model.User}}
+    \-[WHERE] SqlNode: 'where'
+       \-[AND] SqlNode: 'and'
+          +-[EQ] BinaryLogicOperatorNode: '='
+          |  +-[DOT] DotNode: 'user0_.provider' {propertyName=provider,dereferenceType=PRIMITIVE,getPropertyPath=provider,path=generatedAlias0.provider,tableAlias=user0_,className=kr.co.Dal.user.model.User,classAlias=generatedAlias0}
+          |  |  +-[ALIAS_REF] IdentNode: 'user0_.id' {alias=generatedAlias0, className=kr.co.Dal.user.model.User, tableAlias=user0_}
+          |  |  \-[IDENT] IdentNode: 'provider' {originalText=provider}
+          |  \-[NAMED_PARAM] ParameterNode: '?' {name=param0, expectedType=org.hibernate.type.StringType@57a31a98}
+          \-[EQ] BinaryLogicOperatorNode: '='
+             +-[DOT] DotNode: 'user0_.provider_id' {propertyName=providerId,dereferenceType=PRIMITIVE,getPropertyPath=providerId,path=generatedAlias0.providerId,tableAlias=user0_,className=kr.co.Dal.user.model.User,classAlias=generatedAlias0}
+             |  +-[ALIAS_REF] IdentNode: 'user0_.id' {alias=generatedAlias0, className=kr.co.Dal.user.model.User, tableAlias=user0_}
+             |  \-[IDENT] IdentNode: 'providerId' {originalText=providerId}
+             \-[NAMED_PARAM] ParameterNode: '?' {name=param1, expectedType=org.hibernate.type.StringType@57a31a98}
+
+2024-01-23 16:30:06.696 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.hql.internal.ast.ErrorTracker        : throwQueryException() : no errors
+2024-01-23 16:30:06.698 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.h.internal.ast.QueryTranslatorImpl   : HQL: select generatedAlias0 from kr.co.Dal.user.model.User as generatedAlias0 where ( generatedAlias0.provider=:param0 ) and ( generatedAlias0.providerId=:param1 )
+2024-01-23 16:30:06.698 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.h.internal.ast.QueryTranslatorImpl   : SQL: select user0_.id as id1_0_, user0_.create_date as create_d2_0_, user0_.email as email3_0_, user0_.password as password4_0_, user0_.provider as provider5_0_, user0_.provider_id as provider6_0_, user0_.role as role7_0_, user0_.username as username8_0_ from user user0_ where user0_.provider=? and user0_.provider_id=?
+2024-01-23 16:30:06.698 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.hql.internal.ast.ErrorTracker        : throwQueryException() : no errors
+2024-01-23 16:30:06.720 DEBUG 2871 --- [http-nio-8282-exec-2] org.hibernate.SQL                        : 
+    select
+        user0_.id as id1_0_,
+        user0_.create_date as create_d2_0_,
+        user0_.email as email3_0_,
+        user0_.password as password4_0_,
+        user0_.provider as provider5_0_,
+        user0_.provider_id as provider6_0_,
+        user0_.role as role7_0_,
+        user0_.username as username8_0_ 
+    from
+        user user0_ 
+    where
+        user0_.provider=? 
+        and user0_.provider_id=?
+2024-01-23 16:30:06.721  WARN 2871 --- [http-nio-8282-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.MariaDbConnection@608d4bdd (Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2024-01-23 16:30:06.722  WARN 2871 --- [http-nio-8282-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.MariaDbConnection@3288bd13 (Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2024-01-23 16:30:06.722  WARN 2871 --- [http-nio-8282-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.MariaDbConnection@3851db3c (Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2024-01-23 16:30:06.722  WARN 2871 --- [http-nio-8282-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.MariaDbConnection@5a2da947 (Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2024-01-23 16:30:06.722  WARN 2871 --- [http-nio-8282-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.MariaDbConnection@36186d14 (Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2024-01-23 16:30:06.722  WARN 2871 --- [http-nio-8282-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.MariaDbConnection@418f3ee1 (Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2024-01-23 16:30:06.722  WARN 2871 --- [http-nio-8282-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.MariaDbConnection@773185d7 (Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2024-01-23 16:30:06.722  WARN 2871 --- [http-nio-8282-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.MariaDbConnection@40e17de7 (Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2024-01-23 16:30:06.723  WARN 2871 --- [http-nio-8282-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.MariaDbConnection@35e4d822 (Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2024-01-23 16:30:06.723  WARN 2871 --- [http-nio-8282-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.mariadb.jdbc.MariaDbConnection@da48049 (Connection.setNetworkTimeout cannot be called on a closed connection). Possibly consider using a shorter maxLifetime value.
+2024-01-23 16:30:07.863 DEBUG 2871 --- [http-nio-8282-exec-2] org.hibernate.loader.Loader              : Result set row: 0
+2024-01-23 16:30:07.866 DEBUG 2871 --- [http-nio-8282-exec-2] org.hibernate.loader.Loader              : Result row: EntityKey[kr.co.Dal.user.model.User#4]
+2024-01-23 16:30:07.872 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Resolving attributes for [kr.co.Dal.user.model.User#4]
+2024-01-23 16:30:07.872 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `createDate` : value = 2024-01-22 18:12:20.0
+2024-01-23 16:30:07.872 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`createDate`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:07.872 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `email` : value = null
+2024-01-23 16:30:07.872 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`email`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:07.872 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `password` : value = null
+2024-01-23 16:30:07.872 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`password`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:07.872 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `provider` : value = kakao
+2024-01-23 16:30:07.872 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`provider`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:07.872 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `providerId` : value = 3210228143
+2024-01-23 16:30:07.873 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`providerId`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:07.873 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `role` : value = ROLE_USER
+2024-01-23 16:30:07.873 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`role`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:07.873 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `username` : value = kakao_3210228143
+2024-01-23 16:30:07.873 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`username`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:07.873 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Done materializing entity [kr.co.Dal.user.model.User#4]
+2024-01-23 16:30:07.879 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.e.t.internal.TransactionImpl         : On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2024-01-23 16:30:07.879 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.e.t.internal.TransactionImpl         : begin
+2024-01-23 16:30:08.083 DEBUG 2871 --- [http-nio-8282-exec-2] h.e.i.EntityCopyObserverFactoryInitiator : Configured EntityCopyObserver strategy: disallow
+2024-01-23 16:30:08.100 DEBUG 2871 --- [http-nio-8282-exec-2] org.hibernate.loader.Loader              : Static select for action ACTION_MERGE on entity kr.co.Dal.user.model.User: select user0_.id as id1_0_0_, user0_.create_date as create_d2_0_0_, user0_.email as email3_0_0_, user0_.password as password4_0_0_, user0_.provider as provider5_0_0_, user0_.provider_id as provider6_0_0_, user0_.role as role7_0_0_, user0_.username as username8_0_0_ from user user0_ where user0_.id=?
+2024-01-23 16:30:08.100 DEBUG 2871 --- [http-nio-8282-exec-2] org.hibernate.loader.Loader              : Loading entity: [kr.co.Dal.user.model.User#4]
+2024-01-23 16:30:08.100 DEBUG 2871 --- [http-nio-8282-exec-2] org.hibernate.SQL                        : 
+    select
+        user0_.id as id1_0_0_,
+        user0_.create_date as create_d2_0_0_,
+        user0_.email as email3_0_0_,
+        user0_.password as password4_0_0_,
+        user0_.provider as provider5_0_0_,
+        user0_.provider_id as provider6_0_0_,
+        user0_.role as role7_0_0_,
+        user0_.username as username8_0_0_ 
+    from
+        user user0_ 
+    where
+        user0_.id=?
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] org.hibernate.loader.Loader              : Result set row: 0
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] org.hibernate.loader.Loader              : Result row: EntityKey[kr.co.Dal.user.model.User#4]
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Resolving attributes for [kr.co.Dal.user.model.User#4]
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `createDate` : value = 2024-01-22 18:12:20.0
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`createDate`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `email` : value = null
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`email`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `password` : value = null
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`password`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `provider` : value = kakao
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`provider`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `providerId` : value = 3210228143
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`providerId`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `role` : value = ROLE_USER
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`role`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Processing attribute `username` : value = kakao_3210228143
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Attribute (`username`)  - enhanced for lazy-loading? - false
+2024-01-23 16:30:08.282 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.engine.internal.TwoPhaseLoad         : Done materializing entity [kr.co.Dal.user.model.User#4]
+2024-01-23 16:30:08.283 DEBUG 2871 --- [http-nio-8282-exec-2] org.hibernate.loader.Loader              : Done entity load
+2024-01-23 16:30:08.284 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.e.t.internal.TransactionImpl         : committing
+2024-01-23 16:30:08.285 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.e.i.AbstractFlushingEventListener    : Processing flush-time cascades
+2024-01-23 16:30:08.285 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.e.i.AbstractFlushingEventListener    : Dirty checking collections
+2024-01-23 16:30:08.287 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.e.i.AbstractFlushingEventListener    : Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2024-01-23 16:30:08.287 DEBUG 2871 --- [http-nio-8282-exec-2] o.h.e.i.AbstractFlushingEventListener    : Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2024-01-23 16:30:08.287 DEBUG 2871 --- [http-nio-8282-exec-2] o.hibernate.internal.util.EntityPrinter  : Listing entities:
+2024-01-23 16:30:08.287 DEBUG 2871 --- [http-nio-8282-exec-2] o.hibernate.internal.util.EntityPrinter  : kr.co.Dal.user.model.User{password=null, role=ROLE_USER, provider=kakao, providerId=3210228143, id=4, email=null, createDate=2024-01-22 18:12:20.0, username=kakao_3210228143}
+2024-01-23 16:30:08.656 DEBUG 2871 --- [http-nio-8282-exec-2] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 5C9EE0B2F62ADE2D3CB89041E03C4556
+2024-01-23 16:30:08.656 DEBUG 2871 --- [http-nio-8282-exec-2] .s.o.c.w.OAuth2LoginAuthenticationFilter : Set SecurityContextHolder to OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]
+2024-01-23 16:30:08.656 DEBUG 2871 --- [http-nio-8282-exec-2] o.s.s.web.DefaultRedirectStrategy        : Redirecting to http://localhost:8282/
+2024-01-23 16:30:08.657 DEBUG 2871 --- [http-nio-8282-exec-2] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@44933d83]
+2024-01-23 16:30:08.657 DEBUG 2871 --- [http-nio-8282-exec-2] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@44933d83]
+2024-01-23 16:30:08.657 DEBUG 2871 --- [http-nio-8282-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:08.661 DEBUG 2871 --- [http-nio-8282-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /
+2024-01-23 16:30:08.661 DEBUG 2871 --- [http-nio-8282-exec-8] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.662 DEBUG 2871 --- [http-nio-8282-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.662 DEBUG 2871 --- [http-nio-8282-exec-8] o.s.s.w.s.HttpSessionRequestCache        : Loaded matching saved request http://localhost:8282/
+2024-01-23 16:30:08.663 DEBUG 2871 --- [http-nio-8282-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /] with attributes [authenticated]
+2024-01-23 16:30:08.663 DEBUG 2871 --- [http-nio-8282-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /
+2024-01-23 16:30:08.900 DEBUG 2871 --- [http-nio-8282-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:08.918 DEBUG 2871 --- [http-nio-8282-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /common/css/common.css
+2024-01-23 16:30:08.918 DEBUG 2871 --- [http-nio-8282-exec-7] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.918 DEBUG 2871 --- [http-nio-8282-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.919 DEBUG 2871 --- [http-nio-8282-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /common/css/common.css] with attributes [permitAll]
+2024-01-23 16:30:08.919 DEBUG 2871 --- [http-nio-8282-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /common/css/common.css
+2024-01-23 16:30:08.926 DEBUG 2871 --- [http-nio-8282-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:08.927 DEBUG 2871 --- [http-nio-8282-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /common/js/Common.js
+2024-01-23 16:30:08.927 DEBUG 2871 --- [http-nio-8282-exec-6] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.927 DEBUG 2871 --- [http-nio-8282-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.927 DEBUG 2871 --- [http-nio-8282-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /main/css/main.css
+2024-01-23 16:30:08.927 DEBUG 2871 --- [http-nio-8282-exec-9] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.927 DEBUG 2871 --- [http-nio-8282-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.928 DEBUG 2871 --- [http-nio-8282-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /main/css/main.css] with attributes [permitAll]
+2024-01-23 16:30:08.927 DEBUG 2871 --- [http-nio-8282-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /common/js/Common.js] with attributes [permitAll]
+2024-01-23 16:30:08.928 DEBUG 2871 --- [http-nio-8282-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /common/js/Common.js
+2024-01-23 16:30:08.928 DEBUG 2871 --- [http-nio-8282-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /main/css/main.css
+2024-01-23 16:30:08.929 DEBUG 2871 --- [http-nio-8282-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /common/css/select_input.css
+2024-01-23 16:30:08.929 DEBUG 2871 --- [http-nio-8282-exec-5] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.929 DEBUG 2871 --- [http-nio-8282-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.929 DEBUG 2871 --- [http-nio-8282-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /common/css/helper.css
+2024-01-23 16:30:08.929 DEBUG 2871 --- [http-nio-8282-exec-1] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.929 DEBUG 2871 --- [http-nio-8282-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /common/css/select_input.css] with attributes [permitAll]
+2024-01-23 16:30:08.929 DEBUG 2871 --- [http-nio-8282-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.929 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /common/css/layout.css
+2024-01-23 16:30:08.930 DEBUG 2871 --- [http-nio-8282-exec-4] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.930 DEBUG 2871 --- [http-nio-8282-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /common/css/helper.css] with attributes [permitAll]
+2024-01-23 16:30:08.930 DEBUG 2871 --- [http-nio-8282-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /common/css/helper.css
+2024-01-23 16:30:08.930 DEBUG 2871 --- [http-nio-8282-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.929 DEBUG 2871 --- [http-nio-8282-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /common/css/select_input.css
+2024-01-23 16:30:08.930 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /common/css/layout.css] with attributes [permitAll]
+2024-01-23 16:30:08.930 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /common/css/layout.css
+2024-01-23 16:30:08.930 DEBUG 2871 --- [http-nio-8282-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:08.931 DEBUG 2871 --- [http-nio-8282-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:08.931 DEBUG 2871 --- [http-nio-8282-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:08.932 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /common/css/element.css
+2024-01-23 16:30:08.932 DEBUG 2871 --- [http-nio-8282-exec-4] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.932 DEBUG 2871 --- [http-nio-8282-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:08.933 DEBUG 2871 --- [http-nio-8282-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:08.933 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /common/css/element.css] with attributes [permitAll]
+2024-01-23 16:30:08.933 DEBUG 2871 --- [http-nio-8282-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /common/css/element.css
+2024-01-23 16:30:08.933 DEBUG 2871 --- [http-nio-8282-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:08.935 DEBUG 2871 --- [http-nio-8282-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2024-01-23 16:30:09.075 DEBUG 2871 --- [http-nio-8282-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /main/js/main.js
+2024-01-23 16:30:09.075 DEBUG 2871 --- [http-nio-8282-exec-3] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:09.075 DEBUG 2871 --- [http-nio-8282-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=OAuth2AuthenticationToken [Principal=kr.co.Dal.user.config.auth.PrincipalDetails@8c91d37, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=5C9EE0B2F62ADE2D3CB89041E03C4556], Granted Authorities=[kr.co.Dal.user.config.auth.PrincipalDetails$1@3a25bf0b]]]
+2024-01-23 16:30:09.075 DEBUG 2871 --- [http-nio-8282-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /main/js/main.js] with attributes [permitAll]
+2024-01-23 16:30:09.075 DEBUG 2871 --- [http-nio-8282-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /main/js/main.js
+2024-01-23 16:30:09.078 DEBUG 2871 --- [http-nio-8282-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
