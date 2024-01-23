@@ -24,4 +24,32 @@
         )
     </select>
 
+    <!-- 위치+주류 검색에 따른 검색 -->
+    <select id="selectStoreList3" resultType="kr.co.Dal.main.model.MainVO">
+        SELECT * FROM st_tb
+        WHERE MBRContains(
+                GeomFromText('Polygon((127.1584453870334 37.44970642456682, 127.1737567762993 37.44970642456682, 127.1737567762993 37.45373946178755, 127.1584453870334 37.45373946178755, 127.1584453870334 37.44970642456682))'),
+                st_xy
+              )
+          AND st_liquorNo LIKE '%7%'
+    </select>
+
+    <!-- 셀렉트: 지역 가져오기 (location_tb) -->
+    <select id="selectProvinceList" resultType="kr.co.Dal.main.model.MainVO">
+        SELECT province_id ,province_nm FROM location_tb
+        GROUP BY province_id
+    </select>
+    <select id="selectCityList" resultType="kr.co.Dal.main.model.MainVO">
+        SELECT city_id, city_nm FROM location_tb
+        WHERE province_id = '11'
+        GROUP BY city_id
+    </select>
+    <select id="selectTownList" resultType="kr.co.Dal.main.model.MainVO">
+        SELECT city_id, city_nm FROM location_tb
+        WHERE province_id = '11'
+          AND city_id = '200'
+        GROUP BY town_id
+    </select>
+
+
 </mapper>

@@ -15,4 +15,7 @@ public interface MainMapper {
     // 남서경도 남서위도 북동경도 북동위도
     List<MainVO> selectStoreList2(MainVO mainVO);
 
+    /** 셀렉트: 지역 가져오기 (location_tb) */
+    List<MainVO> selectProvinceList(MainVO mainVO);
+
 }

@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class MainVO {
 
-    /** st_tb */
+    /* st_tb */
     private int st_id;              // 스토어 ID
     private int location_id;        // 지역 ID
     private int st_type_id;         // 스토어 유형
@@ -27,5 +27,13 @@ public class MainVO {
     private String st_wdate;        // 삭제일자
     private String st_hours;        // 영업시간
     private String st_liquorNo;     // 판매주류
+
+    /* location_tb */
+    private String province_id;     // 시/도 코드
+    private String province_nm;     // 시/도명
+    private String city_id;         // 시/군/구 코드
+    private String city_nm;         // 시/군/구명
+    private String town_id;         // 읍/면/동 코드
+    private String town_nm;         // 읍/면/동명
 
 }

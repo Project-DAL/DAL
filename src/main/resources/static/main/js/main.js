@@ -1,5 +1,13 @@
 "use strict";
 
+/* 1. Variables *******************************************************************************************************/
+/* 1.1 Service Url String */
+const strProvinceList = '/provinceList';    // 셀렉트 지역 목록 URL
+
+/* 1.6 Etc Variables (Json Object, HTML String, Temporary) */
+let jsonParam       = {};   // 요청 파라미터
+
+
 /** Kakao Map API 생성 */
 let mapContainer = document.getElementById('map');      //지도를 담을 영역의 DOM 레퍼런스
 let mapOption = {                          //지도를 생성할 때 필요한 기본 옵션
@@ -20,8 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
     /* CRUD 버튼 이벤트 등록 */
     addEventListenerCRUDBtn();
 
+    /* 셀렉트박스 행정 구역 목록 */
+    fnSelectProvince();
+
     /* GeoLocation 현재 접속 위치 조회 */
     fnGeoLocation();
+
+
 
 });
 
@@ -137,5 +150,14 @@ function fnCornerCoordinates(){
     message += '북동쪽 위도, 경도는  ' + neLatlng.toString() + '입니다 </p>';
     var resultDiv = document.getElementById('result');
     resultDiv.innerHTML = message;
+
+}
+
+/** 셀렉트 박스 지역 선택하기 */
+function fnSelectProvince(){
+    ajaxAPI(strProvinceList, null, "GET").then(response => {
+        console.log("response: " + response);
+    });
+
 
 }
