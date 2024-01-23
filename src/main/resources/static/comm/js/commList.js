@@ -25,10 +25,10 @@ let jsonPageNavigation = {
 /* 2.1 Initialize */
 document.addEventListener('DOMContentLoaded', function() {
     /** 1) CRUD 버튼 이벤트 등록 */
-    addEventListenerCRUDBtn()
+    // addEventListenerCRUDBtn()
 
     /** 2) Search Condition 이벤트 등록 */
-    addEventListenerSearchCondition();
+    // addEventListenerSearchCondition();
 
     /** 3) 최초 목록조회 실행 */
     fnAjaxList();
@@ -39,14 +39,15 @@ document.addEventListener('DOMContentLoaded', function() {
 /* 3.1 fnAjaxList() - 목록조회 */
 function fnAjaxList() {
     /** 1) Search Condition - jsonParam 세팅 */
-    jsonParam.pageStart  = jsonPageNavigation.recordCountPerPage * (jsonPageNavigation.currentPageNo - 1);  // 페이지 시작
+/*    jsonParam.pageStart  = jsonPageNavigation.recordCountPerPage * (jsonPageNavigation.currentPageNo - 1);  // 페이지 시작
     jsonParam.pageSize   = jsonPageNavigation.recordCountPerPage;                                           // 페이지 사이즈
     jsonParam.searchType = selectObjSearchType.value;                                                       // 검색 유형
-    jsonParam.searchText = inputObjSearchText.value;                                                        // 검색어
+    jsonParam.searchText = inputObjSearchText.value;                                                        // 검색어*/
 
     /** 2) Ajax 요청 실행 */
-    Common.ajax(strListUrl, jsonParam, function(result) {
+    const strListUrl = "/commSelectList";
 
+    common.ajax(strListUrl, jsonParam, function(result) {
 
         /** 2-1) json 요청결과를 파싱하여 전역변수에 저장 */
         jsonGridList = result.list;
@@ -144,14 +145,6 @@ function appendGridListHtml() {
 
                 /** 2-3-4) 전역변수로 선택된 item 번호 세팅 */
                 iSelectedId = item.bardId;
-
-                if(inputObjGblAuthCd.value == "USER"){
-                    btnUpdate.style.display     = 'none';   // 수정버튼 숨김
-                    btnDelete.style.display     = 'none';   // 삭제버튼 숨김
-                }else {
-                    btnUpdate.style.display     = 'inline-block';   // 수정버튼
-                    btnDelete.style.display     = 'inline-block';   // 삭제버튼
-                }
 
 
                 /** 2-3-5) 상세조회 실행 */
