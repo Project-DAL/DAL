@@ -4,8 +4,10 @@ import kr.co.Dal.main.model.MainVO;
 import kr.co.Dal.main.service.MainService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -18,11 +20,12 @@ public class MainController {
 
     /* 셀렉트: 지역 가져오기 (location_tb) */
 
-    @GetMapping("/provinceList")
-    public String selectProvinceList(MainVO mainVO) {
+    @GetMapping("/rest/provinceList")
+    @ResponseBody
+    public ResponseEntity<List<MainVO>> selectProvinceList(MainVO mainVO) {
         log.warn("selectProvinceList controller");
         List<MainVO> provinceList = mainService.selectProvinceList(mainVO);
         log.warn("provinceList: " + provinceList);
-        return "/index";
+        return ResponseEntity.ok().body(provinceList);
     }
 }
