@@ -2,7 +2,7 @@
 
 /* 1. Variables *******************************************************************************************************/
 /* 1.1 Service Url String */
-const strProvinceList = '/provinceList';    // 셀렉트 지역 목록 URL
+const strProvinceList = '/rest/provinceList';    // 셀렉트 지역 목록 URL
 
 /* 1.6 Etc Variables (Json Object, HTML String, Temporary) */
 let jsonParam       = {};   // 요청 파라미터
@@ -156,7 +156,7 @@ function fnCornerCoordinates(){
 /** 셀렉트 박스 지역 선택하기 */
 function fnSelectProvince(){
     ajaxAPI(strProvinceList, null, "GET").then(response => {
-        console.log("response: " + response);
+        console.log("response: ", response);
     });
 
 
