@@ -1,6 +1,6 @@
 package kr.co.Dal.comm.model;
 
-import kr.co.Dal.cmmn.CmmnVO;
+import kr.co.Dal.cmmn.model.CmmnVO;
 import lombok.*;
 
 import java.sql.Date;
