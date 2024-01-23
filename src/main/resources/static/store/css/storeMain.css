@@ -47,15 +47,16 @@ p:nth-child(5) {
 .search-box {
     width: 95%;
     height: 100%;
-    border-radius: 10px;
     font-size: medium;
     padding-left: 15px;
     font-weight: bold;
-    border: 2px solid green;
-}
-.search-box:focus {
+    border: none;
+    border-radius: 10px;
     outline: none;
 }
+/*.search-box:focus {*/
+/*    outline: none;*/
+/*}*/
 /* 검색창 영역 */
 .search-bar {
     border-radius: 10px;

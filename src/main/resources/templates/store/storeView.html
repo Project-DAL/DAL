@@ -15,7 +15,132 @@
 
 
 <th:block layout:fragment="content">
+  <main>
+    <div class="ct_main">
+      <!-- 4.1 Main Topbar -->
+      <div class="ct_topbar">
+        <a href="#">전체</a>
+        <span>-></span>
+        <a href="#">과실주</a>
+      </div>
+      <!-- 4.2 Prod Thumbnail, Prod Info -->
+      <div class="ct_thumbnail-wrap w100ph">
+        <div class="ct_prod-img">
+          <img
+              src="http://placehold.it/580x650&text=Prod2"
+              class="prod-img w300px"
+          />
+        </div>
+        <div class="ct_prod-info">
+          <p class="prod-title">려 고구마 증류소주</p>
+          <div class="prod-hashtag-wrap">
+            <a href="#" class="prod-hashtag">#해시태그1</a>
+            <a href="#" class="prod-hashtag">#해시태그2</a>
+          </div>
+          <div class="prod-like-wrap">
+            <div style="display: flex; align-items: center">
+              <img src="../../css/img/store/free-icon-love-4397571.png" /
+              style="height: 30px; width: 30px; margin-right: 10px;">
+              <span>777</span>
+            </div>
+            <div style="display: flex; align-items: center">
+              <img src="../../css/img/store/free-icon-star-4369505.png" /
+              style="height: 30px; width: 30px; margin-right: 10px;">
+              <span>4.3(113개)</span>
+            </div>
+          </div>
+          <div class="prod-price-wrap">
+            <div class="prod-count-wrap">
+              <a href="#" class="btn">-</a>
+              <span class="prod-count">3</span>
+              <a href="#" class="btn">+</a>
+            </div>
+            <div class="prod-price">
+              <p>20,000원</p>
+            </div>
+          </div>
 
+          <div class="center prod-price-wrap">
+            <a
+                href="#"
+                class="btn"
+                style="display: inline-block; width: 100px"
+            >구매하기</a
+            >
+            <a
+                href="#"
+                class="btn"
+                style="
+                    background-color: black;
+                    display: inline-block;
+                    width: 100px;
+                  "
+            >장바구니</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- 4.3 Prod Detail, Delivery Info -->
+      <div class="ct_midbar mt40">
+        <!-- <ul class="ct_midbar mt40">
+          <li><a href="#">상품상세정보</a></li>
+          <li><a href="#">배송안내</a></li>
+          <li><a href="#">교환 및 환불안내</a></li>
+          <li><a href="#">상품후기</a></li>
+          <li><a href="#">상품문의</a></li>
+        </ul> -->
+        <div class="ct_cate-title"><a href="#">상품상세정보</a></div>
+        <div class="ct_cate-title"><a href="#">배송안내</a></div>
+        <div class="ct_cate-title"><a href="#">교환 및 환불안내</a></div>
+        <div class="ct_cate-title"><a href="#">상품후기</a></div>
+        <div class="ct_cate-title"><a href="#">상품문의</a></div>
+      </div>
+      <div>
+        <div class="prod-detail"><h1>상세정보 이미지</h1></div>
+        <div class="prod-detail"><h1>배송안내</h1></div>
+        <div class="prod-detail"><h1>교환 및 환불안내</h1></div>
+        <div class="prod-detail"><h1>상품후기</h1></div>
+        <div class="prod-detail">
+          <h1>상품문의</h1>
+          <a href="#" class="btn qnaBtn mb15" style="width: 80px">문의 남기기</a>
+          <table style="border: 1px solid black; width: 100%;" class="center">
+            <tr>
+              <th>
+                <input type="checkbox">
+                <span>답변완료만 보기</span>
+              </th>
+              <th></th>
+              <th colspan="2"></th>
+            </tr>
+            <tr>
+              <td></td>
+              <td>답변완료</td>
+              <td>비밀글입니다.</td>
+              <td>2024.01.17</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>답변완료</td>
+              <td>비밀글입니다.</td>
+              <td>2024.01.17</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>답변완료</td>
+              <td>비밀글입니다.</td>
+              <td>2024.01.17</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>답변완료</td>
+              <td>비밀글입니다.</td>
+              <td>2024.01.17</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
 </th:block>
 
 </html>

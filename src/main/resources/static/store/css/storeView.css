@@ -97,3 +97,6 @@
     display: flex;
     justify-content: space-around;
 }
+.qnaBtn {
+    margin: 0 auto;
+}

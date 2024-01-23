@@ -9,7 +9,7 @@ $(document).ready(function () {
     $(".bxslider").bxSlider({
         minSlides: 4,
         maxSlides: 4,
-        slideWidth: 340,
+        slideWidth: 1376,
         slideMargin: 50,
     });
 });
