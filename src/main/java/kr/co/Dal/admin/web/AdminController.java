@@ -1,5 +1,18 @@
 package kr.co.Dal.admin.web;
 
+/*
+File Name      : AdminController.js
+Program Name   : 동기방식 관리자 컨트롤러
+Draft Author   : 김진형
+Draft Date     : 2024.01.17
+
+Revision History
+Ver.  Date          Revised By   Description
+------------------------------------------------------------------------------------------------------------------------
+0.1   2024.01.17    김진형       최초개발
+----------------------------------------------------------------------------------------------------------------------->
+*/
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
