@@ -28,6 +28,21 @@ Ver.   Date          Revised By    Description
         <!-- charset=utf-8 : 유니코드(Unicode)를 표현하는 가변 길이 문자 인코딩 방식 -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+        <!-- Ajax Token -->
+        <meta name="_csrf" th:if="${_csrf}" th:content="${_csrf.token}" />
+        <meta name="_csrf_header" th:if="${_csrf}" th:content="${_csrf.headerName}" />
+        <script>
+            const tokenMeta = document.head.querySelector("meta[name='_csrf']");
+            const headerMeta = document.head.querySelector("meta[name='_csrf_header']");
+
+            const token = tokenMeta ? tokenMeta.content : '';
+            const header = headerMeta ? headerMeta.content : '';
+
+            console.log("header: " + header);
+            console.log("token: " + token);
+        </script>
+        <script type="text/javascript" th:src="@{/common/js/ajaxAPI.js}"></script>
+
         <!-- Common CSS -->
         <!-- media="all" : 모든 미디어 유형(컴퓨터 모니터, 태블릿, 스마트폰 등)에 스타일을 적용 (모든 기기와 미디어에 동일 적용 ) -->
         <!-- media="screen" : 스크린 미디어 타입에 따라 웹 페이지가 해당 기기에 맞게 최적화된 스타일로 표현 -->
@@ -50,6 +65,9 @@ Ver.   Date          Revised By    Description
                 rel="stylesheet"
                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         />
+
+
+
     </head>
 </th:block>
 </html>

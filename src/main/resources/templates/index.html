@@ -78,11 +78,22 @@ JS Contents
                 <!-- 3.2 Search Wrap -->
                 <div class="ct_search-wrap">
                     <div class="search-bar">
-                        <i class="fa-solid fa-magnifying-glass" style="color: #9c9c9c;"></i>
-                        <form onsubmit="searchPlaces(); return false;">
+                        <div class="search-location">
+                            <select>
+                                <option>시/도</option>
+                            </select>
+                            <select>
+                                <option>시/군/구</option>
+                            </select>
+                            <select>
+                                <option>읍/면/동</option>
+                            </select>
+                        </div>
+                        <div class="search-prod">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #9c9c9c;"></i>
                             <input type="text" class="input" id="keyword">
                             <button type="submit">검색</button>
-                        </form>
+                        </div>
                     </div>
                     <div class="hashtag-bar">
                         <span>Searching for</span>

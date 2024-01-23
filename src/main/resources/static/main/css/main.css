@@ -70,46 +70,55 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
 }
 .search-bar {
     background: #fff;
-    width: 90%;
+    width: 100%;
     height: 40px;
     margin: 0 auto;
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 10px;
 }
-.search-bar form {
-    width: 100%;
-
+.search-location {
+}
+.search-location select {
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 8px;
+    border: 1px solid #dddcdd;
+    border-radius: 12px;
+}
+.search-prod {
+    position: relative;
 }
 .search-bar .input {
     border: 1px solid #dddcdd;
     border-radius: 12px;
-    padding: 0 10px 0 48px;
+    padding: 0 10px 0 43px;
     height: 40px;
     font: 500 14px 'Noto Sans Kr';
 }
 .search-bar i {
     position: absolute;
-    top: 12px;
+    top: 15px;
     left: 15px;
 }
 .hashtag-bar {
-    width: 90%;
-    margin: 10px auto;
+    width: calc(100% - 20px);
     border: 1px solid #dddcdd;
     border-radius: 12px;
-    padding: 15px 15px;
+    padding: 10px;
 }
 .hashtag-bar span {
     font: 500 14px 'Noto Sans Kr';
 }
 .hashtag-bar > .hashtag-list {
-    margin: 10px 0 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
