@@ -5,211 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="20230106 스마트에디터 추가">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/smarteditor/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/smarteditor/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/smarteditor/release_notes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/main/model/MainVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/Dal.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/Dal.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/comm/js/commList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/comm/js/commList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/SmartEditor2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/smarteditor/SmartEditor2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/SmartEditor2Skin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/smarteditor/SmartEditor2Skin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/SmartEditor2_noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/smarteditor/SmartEditor2_noframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/css/smart_editor2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/css/smart_editor2_in.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/css/smart_editor2_items.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/css/smart_editor2_out.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/bg_b1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/bg_button.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/bg_button_left.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/bg_button_right.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/bg_find_h3.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/bg_help.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/bg_icon_tool.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/bg_line1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/bg_quote2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/bg_set.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/bg_text_tool.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/bg_tool2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/editor_guideline_698.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/editor_guideline_890.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/ico_extend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/icon_set.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/ko_KR/btn_set.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/ko_KR/bx_set_110302.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/ko_KR/text_tool_set.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/img/text_tool_set2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/js/HuskyEZCreator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/js/SE2BasicCreator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/js/SE2M_Configuration.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/js/lib/jindo2.all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/js/lib/jindo_component.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/js/smarteditor2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/js/smarteditor2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/js/plugin/hp_SE2M_AttachQuickPhoto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/attach_photo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/callback.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/file_uploader.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/file_uploader_html5.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/img/bg_drag_image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/img/btn_cancel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/img/btn_confirm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/img/btn_confirm2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/img/btn_del.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/img/btn_find.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/jindo.fileuploader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/jindo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/photo_uploader/photo_uploader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/HTMLPurifier.standalone.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder/Xml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Exception.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Directive.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Id.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/InterchangeBuilder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Validator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/ValidatorAtom.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedClasses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRev.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ClassUseCDATA.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultImageAlt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImage.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ForbiddenClasses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ID.HTML5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Linkify.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.DocURL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.Predicate.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowDuplicates.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.ForbiddenProperties.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.Trusted.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.AllowHostnameUnderscore.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.DisableExcludes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeNonASCIICharacters.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.HiddenElements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.Language.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.NormalizeNewlines.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedComments.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.BlockWrapper.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.CoreModules.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.CustomDoctype.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionID.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionRev.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Doctype.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.FlashAllowFullScreen.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Nofollow.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeIframe.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeScripting.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TargetNoreferrer.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.FixInnerHTML.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Base.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefinitionID.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefinitionRev.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Disable.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternal.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternalResources.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableResources.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Host.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.HostBlacklist.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MakeAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/info.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer/HTML/4.8.0,b6889960956c877d241a7e8f87e613efc7a3611d,1.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/EntityLookup/entities.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Filter/ExtractStyleBlocks.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Filter/YouTube.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Language/classes/en-x-test.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Language/messages/en-x-test.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Language/messages/en-x-testmini.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Language/messages/en.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Lexer/PH5P.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Printer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Printer/CSSDefinition.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/htmlpurifier/standalone/HTMLPurifier/Printer/HTMLDefinition.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/smarteditor/sample/viewer/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/comm/commList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/comm/commList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/comm/commWrite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/comm/commWrite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/cmmn/CmmnVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/cmmn/model/CmmnVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/cmmn/model.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper/MyCouponMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper/MyCouponMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/main/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/main/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/main/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/main/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,9 +47,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -267,20 +73,27 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.DAL.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/study/DAL/src/main/resources/static/comm/js&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DAL.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/yiwonjeong/Desktop/Workspace/DAL/DAL",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\study\DAL\src\main\resources\static\comm\js" />
@@ -293,12 +106,20 @@
       <recent name="C:\Users\DataLogics\Desktop\Workspace\DAL\DAL\src\main\resources\templates" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.DAL">
     <configuration name="DAL" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="kr.co.Dal.DalApplication" />
-      <module name="kr.co.Dal.DAL.test" />
+      <module name="DAL.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="DAL.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="kr.co.Dal.DalApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -307,7 +128,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
+        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-203781b8" />
       </set>
     </attachedChunks>
   </component>
@@ -333,6 +154,7 @@
       <workItem from="1701158556845" duration="1493000" />
       <workItem from="1701220194912" duration="1094000" />
       <workItem from="1701750788528" duration="4339000" />
+      <workItem from="1705913814373" duration="10762000" />
     </task>
     <task id="LOCAL-00001" summary="진형 push">
       <created>1700461796485</created>

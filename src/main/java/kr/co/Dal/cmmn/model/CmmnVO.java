@@ -1,4 +1,4 @@
-package kr.co.Dal.cmmn;
+package kr.co.Dal.cmmn.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

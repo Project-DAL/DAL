@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.Dal.main.mapper.MainMapper">
+
+    <!-- 방법1) 반경 300km이내 검색 (Point type 사용 X) -->
+    <select id="selectStoreList" resultType="kr.co.Dal.main.model.MainVO">
+        <![CDATA[
+        select *, (6371*acos(cos(radians(st_lattitude))*cos(radians(st_lattitude))*cos(radians(st_longtitude)-radians(st_longtitude))
+        +sin(radians(st_lattitude))*sin(radians(st_lattitude)))) AS distance
+        from st_tb
+        having distance < 300
+        order by distance DESC
+        ]]>
+    </select>
+
+    <!-- 방법2) 지도 각 모서리 좌표를 통해 데이터 검색 (Point type 사용) -->
+    <!-- 남서경도 남서위도 북동경도 북동위도 -->
+    <select id="selectStoreList2" resultType="kr.co.Dal.main.model.MainVO">
+        SELECT * FROM st_tb
+        WHERE MBRContains(
+            GeomFromText('Polygon((127.1584453870334 37.44970642456682, 127.1737567762993 37.44970642456682, 127.1737567762993 37.45373946178755, 127.1584453870334 37.45373946178755, 127.1584453870334 37.44970642456682))'),
+            st_xy
+        )
+    </select>
+
+</mapper>
