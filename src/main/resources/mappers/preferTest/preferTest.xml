@@ -5,5 +5,5 @@
 
 -->
 
-<mapper namespace="kr.co.Dal.preferTest.mapper.preferTestMapper">
+<mapper namespace="kr.co.Dal.preferTest.mapper.preferTest">
 </mapper>
