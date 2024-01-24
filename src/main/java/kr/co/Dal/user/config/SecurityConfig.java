@@ -26,17 +26,17 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.headers().frameOptions().sameOrigin();
-        //http.csrf().disable();
+//        http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers( "/rest/**","/user/**","/common/**","/main/**","/test/**","/smarteditor/**").permitAll()
-                .antMatchers("/joinForm","/loginForm","/auth/**", "/oauth2/**","/my/**","/join","/findIdForm","/findPwForm", "/comm/**").permitAll() // 회원가입 접근 가능
+                .antMatchers("/joinForm","/loginForm","/check/findPw","/check/findPw/sendEmail","/auth/**", "/oauth2/**","/my/**","/join","/findIdForm","/findPwForm", "/comm/**").permitAll() // 회원가입 접근 가능
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/loginForm")
                 .loginProcessingUrl("/login") // login 주소가 호출이 되면 시큐리티가 낚아채서 대신 로그인을 진행해준다.
                 .usernameParameter("email")
-                .defaultSuccessUrl("/index")
+                .defaultSuccessUrl("/")
                 .and()
                 .oauth2Login()
                 .loginPage("/loginForm")
