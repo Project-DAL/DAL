@@ -17,5 +17,7 @@ public interface MainMapper {
 
     /** 셀렉트: 지역 가져오기 (location_tb) */
     List<MainVO> selectProvinceList(MainVO mainVO);
+    List<MainVO> selectCityList(String province_id);
+    List<MainVO> selectTownList(String province_id, String city_id);
 
 }

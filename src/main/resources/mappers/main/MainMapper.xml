@@ -39,15 +39,15 @@
         SELECT province_id ,province_nm FROM location_tb
         GROUP BY province_id
     </select>
-    <select id="selectCityList" resultType="kr.co.Dal.main.model.MainVO">
+    <select id="selectCityList" parameterType="String" resultType="kr.co.Dal.main.model.MainVO">
         SELECT city_id, city_nm FROM location_tb
-        WHERE province_id = '11'
+        WHERE province_id = #{province_id}
         GROUP BY city_id
     </select>
-    <select id="selectTownList" resultType="kr.co.Dal.main.model.MainVO">
-        SELECT city_id, city_nm FROM location_tb
-        WHERE province_id = '11'
-          AND city_id = '200'
+    <select id="selectTownList" parameterType="kr.co.Dal.main.model.MainVO" resultType="kr.co.Dal.main.model.MainVO">
+        SELECT town_id, town_nm FROM location_tb
+        WHERE province_id = #{province_id}
+          AND city_id = #{city_id}
         GROUP BY town_id
     </select>
 
