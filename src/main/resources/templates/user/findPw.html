@@ -8,6 +8,9 @@
 </head>
 
 <!-- 2. Page JS, CSS -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 <link rel="stylesheet" href="/common/css/layout.css" />
 <link rel="stylesheet" href="/common/css/reset.css" />
 <link rel="stylesheet" href="/common/css/select_input.css" />
@@ -22,63 +25,89 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 />
 
-
 <body>
-<div id="wrapper">
-    <!-- 3. Header -->
-    <header>
-        <div class="user-wrap">
-            <div>
-                <a class="clicked" href="/loginForm">LOGIN</a>
-                <a>JOIN</a>
-                <a>MY PAGE</a>
-                <a>CART</a>
-            </div>
-        </div>
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
 
-    </header>
-
-    <!-- 4. Main -->
-    <!-- 4. Main -->
-    <main>
-        <div class="findPw_main">
-            <div class="findPw-wrap">
-                <div class="findPw-title">비밀번호찾기</div>
-                <div class="findPw-content mt25">
-                    <form method="post" action="/join">
-
-                            <table>
-                                <tr>
-                                    <th>아이디
-                                        <img src="/user/img/register_essential_icon.gif" alt="필수 입력">
-                                    </th>
-                                    <td>
-                                        <input class="input" type="email" name="email" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>이메일
-                                        <img src="/user/img/register_essential_icon.gif" alt="필수 입력">
-                                    </th>
-                                    <td>
-                                        <input class="input" type="email" name="email" required>
-                                    </td>
-                                </tr>
-
-                            </table>
-
-                        <p class="mt15">
-                            <input type="submit" class="btn2" value="취소" >
-                            <input type="submit" class="btn1" value="찾기">
-                        </p>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <h4><span class="glyphicon glyphicon-lock"></span> 비밀번호 찾기</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <div style="color: #ac2925">
+                        <center>입력된 정보로 임시 비밀번호가 전송됩니다.</center>
+                    </div>
+                    <hr>
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="userEmail"><span class="glyphicon glyphicon-user"></span>email</label>
+                            <input type="text" class="form-control" id="userEmail" placeholder="가입시 등록한 이메일을 입력하세요.">
+                        </div>
+                        <button type="button" class="btn btn-success btn-block" id="checkEmail">OK</button>
                     </form>
+                    <hr>
+                    <div class="text-center small mt-2" id="checkMsg" style="color: red"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span
+                            class="glyphicon glyphicon-remove"></span> Cancel
+                    </button>
                 </div>
             </div>
 
         </div>
-    </main>
-
+    </div>
 </div>
-
 </body>
+<script>
+
+    $('.modal').on('hidden.bs.modal', function (e) {
+        console.log('modal close');
+        $(this).find('form')[0].reset()
+    });
+
+    $("#checkEmail").click(function () {
+        let userEmail = $("#userEmail").val();
+
+        $.ajax({
+            type: "GET",
+            url: "/check/findPw",
+            data: {
+                "userEmail": userEmail
+            },
+            success: function (res) {
+                if (res['check']) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: '발송 완료!',
+                        text: '입력하신 이메일로 임시비밀번호가 발송되었습니다.'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $.ajax({
+                                type: "POST",
+                                url: "/check/findPw/sendEmail",
+                                data: {
+                                    "userEmail": userEmail
+                                },
+                                success: function (response) {
+                                    window.location = "/loginForm";
+                                },
+                                error: function (error) {
+                                    console.error("Error sending email:", error);
+                                }
+                            });
+                        }
+                    });
+                    $('#checkMsg').html('<p style="color:darkblue"></p>');
+                } else {
+                    $('#checkMsg').html('<p style="color:red">일치하는 정보가 없습니다.</p>');
+                }
+            }
+
+        })
+    })
+</script>
 </html>

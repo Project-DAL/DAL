@@ -46,3 +46,6 @@ bin/
 .idea/
 log/
 *.log
+
+### oauth2 ###
+src/main/resources/application-properties
