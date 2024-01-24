@@ -4,8 +4,13 @@
 /* 1.1 Service Url String */
 const strProvinceList = '/rest/provinceList';    // 셀렉트 지역 목록 URL
 
+/* 1.4 Search Object */
+let selectObjProvince = document.getElementById("search-province");     // 시/도 셀렉트
+let selectObjCity     = document.getElementById("search-city");         // 시/군/구 셀렉트
+let selectObjTown     = document.getElementById("search-town");         // 읍/면/동 셀렉트
+
 /* 1.6 Etc Variables (Json Object, HTML String, Temporary) */
-let jsonParam       = {};   // 요청 파라미터
+let jsonData       = {};   // 요청 파라미터
 
 
 /** Kakao Map API 생성 */
@@ -41,6 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
 /** CRUD 버튼 이벤트 등록 */
 function addEventListenerCRUDBtn(){
     //btnSearch.addEventListener("click", fnSearchLocation2);
+    selectObjProvince.addEventListener("change", fnSelectCity);
+    selectObjCity.addEventListener("change", fnSelectTown);
 }
 
 /** Kakao MAP function */
@@ -154,10 +161,64 @@ function fnCornerCoordinates(){
 }
 
 /** 셀렉트 박스 지역 선택하기 */
+// 시/도 목록
 function fnSelectProvince(){
     ajaxAPI(strProvinceList, null, "GET").then(response => {
-        console.log("response: ", response);
+        for(let i = 0; i < response.length; i++) {
+            // option add
+            let optionElement = document.createElement('option');
+            optionElement.value = response[i].province_id;
+            optionElement.text = response[i].province_nm;
+            selectObjProvince.add(optionElement);
+        }
     });
+}
+// 시/도 선택에 따른 시/군/구 목록
+function  fnSelectCity() {
+    console.log("selectObjProvince id : " + selectObjProvince.value);
+    console.log("selectObjProvince text : " + selectObjProvince.options[selectObjProvince.selectedIndex].text);
+
+    jsonData.province_id = selectObjProvince.value;
+
+    // 기존 시/군/구 비우기
+    while (selectObjCity.options.length > 1) {
+        selectObjCity.remove(1);
+    }
+
+    // 기존 읍/면/동 비우기
+    while (selectObjTown.options.length > 1) {
+        selectObjTown.remove(1);
+    }
+
+    ajaxAPI('/rest/cityList?province_id='+selectObjProvince.value, null, "GET").then(response => {
+       for(let i=0; i < response.length; i++){
+           // option add
+           let optionElement = document.createElement('option');
+           optionElement.value = response[i].city_id;
+           optionElement.text = response[i].city_nm;
+           selectObjCity.add(optionElement);
+       }
+    });
+}
+// 시/군/구 선택에 따른 읍/면/동 목록
+function fnSelectTown () {
+    console.log("fnSelectTown");
+
+    // 기존 읍/면/동 비우기
+    while (selectObjTown.options.length > 1) {
+        selectObjTown.remove(1);
+    }
+
+    console.log("province_id: " +  selectObjProvince.value);
+    console.log("city_id: " +  selectObjCity.value);
+
+    ajaxAPI('/rest/townList?province_id=' + selectObjProvince.value + '&city_id=' + selectObjCity.value, null, "GET").then(response => {
+        // option add
+        let optionElement = document.createElement('option');
+        optionElement.value = response[i].town_id;
+        optionElement.text = response[i].town_nm;
+        selectObjTown.add(optionElement);
+    })
 
 
 }
