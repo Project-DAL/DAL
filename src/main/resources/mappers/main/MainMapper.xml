@@ -3,35 +3,16 @@
 
 <mapper namespace="kr.co.Dal.main.mapper.MainMapper">
 
-    <!-- 방법1) 반경 300km이내 검색 (Point type 사용 X) -->
-    <select id="selectStoreList" resultType="kr.co.Dal.main.model.MainVO">
-        <![CDATA[
-        select *, (6371*acos(cos(radians(st_lattitude))*cos(radians(st_lattitude))*cos(radians(st_longtitude)-radians(st_longtitude))
-        +sin(radians(st_lattitude))*sin(radians(st_lattitude)))) AS distance
-        from st_tb
-        having distance < 300
-        order by distance DESC
-        ]]>
-    </select>
-
-    <!-- 방법2) 지도 각 모서리 좌표를 통해 데이터 검색 (Point type 사용) -->
+    <!-- 위치+주류 검색에 따른 검색 - 지도 각 모서리 좌표를 통해 데이터 검색 (Point type 사용) -->
     <!-- 남서경도 남서위도 북동경도 북동위도 -->
-    <select id="selectStoreList2" resultType="kr.co.Dal.main.model.MainVO">
+    <select id="selectStoreList" parameterType="map" resultType="kr.co.Dal.main.model.MainVO">
+    <![CDATA[
         SELECT * FROM st_tb
-        WHERE MBRContains(
-            GeomFromText('Polygon((127.1584453870334 37.44970642456682, 127.1737567762993 37.44970642456682, 127.1737567762993 37.45373946178755, 127.1584453870334 37.45373946178755, 127.1584453870334 37.44970642456682))'),
-            st_xy
-        )
-    </select>
-
-    <!-- 위치+주류 검색에 따른 검색 -->
-    <select id="selectStoreList3" resultType="kr.co.Dal.main.model.MainVO">
-        SELECT * FROM st_tb
-        WHERE MBRContains(
-                GeomFromText('Polygon((127.1584453870334 37.44970642456682, 127.1737567762993 37.44970642456682, 127.1737567762993 37.45373946178755, 127.1584453870334 37.45373946178755, 127.1584453870334 37.44970642456682))'),
-                st_xy
-              )
-          AND st_liquorNo LIKE '%7%'
+                          INNER JOIN prod_tb ON st_liquorNo = prod_id
+        WHERE MBRContains(ST_GeomFromText
+                          ('LineString(127.15928252699662 37.45010174497221, 127.17852713696566 37.45412879725502)'), `st_xy`)
+          AND prod_tit LIKE '%새로%'
+    ]]>
     </select>
 
     <!-- 셀렉트: 지역 가져오기 (location_tb) -->
@@ -44,12 +25,14 @@
         WHERE province_id = #{province_id}
         GROUP BY city_id
     </select>
-    <select id="selectTownList" parameterType="kr.co.Dal.main.model.MainVO" resultType="kr.co.Dal.main.model.MainVO">
+    <select id="selectTownList" parameterType="map" resultType="kr.co.Dal.main.model.MainVO">
         SELECT town_id, town_nm FROM location_tb
         WHERE province_id = #{province_id}
           AND city_id = #{city_id}
         GROUP BY town_id
     </select>
+
+
 
 
 </mapper>
