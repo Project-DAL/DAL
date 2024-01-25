@@ -9,9 +9,11 @@ package kr.co.Dal.my.web;
 
 import kr.co.Dal.my.model.MyBoardVO;
 import kr.co.Dal.my.model.MyCouponVO;
+import kr.co.Dal.my.model.MyInfoVO;
 import kr.co.Dal.my.model.MyPointVO;
 import kr.co.Dal.my.service.MyBoardService;
 import kr.co.Dal.my.service.MyCouponService;
+import kr.co.Dal.my.service.MyInfoService;
 import kr.co.Dal.my.service.MyPointService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -27,6 +29,7 @@ public class MyController {
     private final MyCouponService myCouponService;
     private final MyPointService myPointService;
     private final MyBoardService myBoardService;
+    private final MyInfoService myInfoService;
 
 
     // My Page Main
@@ -55,8 +58,9 @@ public class MyController {
 
     // My Info
     @GetMapping("/my/MyInfo")
-    public String myinfo(){
-
+    public String myinfo(Model model, MyInfoVO myInfoVO){
+        List<MyInfoVO> infoList = myInfoService.selectMyInfoList(myInfoVO);
+        model.addAttribute("infoList", infoList);
         return "my/MyInfo";
     }
 
