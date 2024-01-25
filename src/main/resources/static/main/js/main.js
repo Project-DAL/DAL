@@ -4,10 +4,16 @@
 /* 1.1 Service Url String */
 const strProvinceList = '/rest/provinceList';    // 셀렉트 지역 목록 URL
 
+/* 1.3 Search Condition Object */
+let inputObjSearchText  = document.getElementById('searchText'); // 검색어
+
 /* 1.4 Search Object */
 let selectObjProvince = document.getElementById("search-province");     // 시/도 셀렉트
 let selectObjCity     = document.getElementById("search-city");         // 시/군/구 셀렉트
 let selectObjTown     = document.getElementById("search-town");         // 읍/면/동 셀렉트
+
+/* 1.5 Process(CRUD) Button Object */
+let btnList     = document.getElementById('btnList');       // 검색 버튼
 
 /* 1.6 Etc Variables (Json Object, HTML String, Temporary) */
 let jsonData       = {};   // 요청 파라미터
@@ -25,6 +31,15 @@ let lon = "";           // 경도
 let bounds = "";        // 지도 영역 정보
 let swLatlng = "";      // 영역정보의 남서쪽 정보
 let neLatlng = "";      // 영역정보의 북동쪽 정보
+let swLat = "";         // 영역정보의 남서위도
+let swLng = "";         // 영역정보의 남서경도
+let neLat = "";         // 영역정보의 북동위도
+let neLng = "";         // 영역정보의 북동경도
+let swLatstr = "";      // 영역정보의 남서위도
+let swLngstr = "";      // 영역정보의 남서경도
+let neLatstr = "";      // 영역정보의 북동위도
+let neLngstr = "";      // 영역정보의 북동경도
+
 
 
 /** Initialize */
@@ -45,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /** CRUD 버튼 이벤트 등록 */
 function addEventListenerCRUDBtn(){
-    //btnSearch.addEventListener("click", fnSearchLocation2);
+    btnList.addEventListener("click", fnAjaxList);
     selectObjProvince.addEventListener("change", fnSelectCity);
     selectObjCity.addEventListener("change", fnSelectTown);
 }
@@ -148,10 +163,6 @@ function fnCornerCoordinates(){
     // 영역정보의 북동쪽 정보를 얻어옵니다
     neLatlng = bounds.getNorthEast();
 
-    console.log("bounds: " + bounds);
-    console.log("swLatlng: " + swLatlng);
-    console.log("neLatlng: " + neLatlng);
-
     // 확인용 (개발 완료 이후 삭제)
     var message = '<p>영역좌표는 남서쪽 위도, 경도는  ' + swLatlng.toString() + '이고 <br>';
     message += '북동쪽 위도, 경도는  ' + neLatlng.toString() + '입니다 </p>';
@@ -213,12 +224,84 @@ function fnSelectTown () {
     console.log("city_id: " +  selectObjCity.value);
 
     ajaxAPI('/rest/townList?province_id=' + selectObjProvince.value + '&city_id=' + selectObjCity.value, null, "GET").then(response => {
-        // option add
-        let optionElement = document.createElement('option');
-        optionElement.value = response[i].town_id;
-        optionElement.text = response[i].town_nm;
-        selectObjTown.add(optionElement);
+        for(let i=0; i < response.length; i++){
+            // option add
+            let optionElement = document.createElement('option');
+            optionElement.value = response[i].town_id;
+            optionElement.text = response[i].town_nm;
+            selectObjTown.add(optionElement);
+        }
     })
 
+}
+
+/** 지역 및 주류에 따른 검색 결과 조회 */
+function fnAjaxList(){
+    console.log("fnAjaxList");
+
+    let province_ = selectObjProvince.options[selectObjProvince.selectedIndex].text;
+    let city_ = selectObjCity.options[selectObjCity.selectedIndex].text;
+    let town_ = selectObjTown.options[selectObjTown.selectedIndex].text;
+    let locationText = province_ + " " + city_ + " " + town_;
+
+    console.log("locationText:  " + locationText);
+    //console.log("swLatlng: " + swLatlng);
+    //console.log("neLatlng: " + neLatlng);
+
+    // 주소-좌표 변환 객체를 생성합니다
+    let geocoder = new kakao.maps.services.Geocoder();
+
+    // 주소로 좌표를 검색합니다
+    geocoder.addressSearch(locationText, function (result, status) {
+        // 정상적으로 검색이 완료됐으면
+        if (status === kakao.maps.services.Status.OK) {
+
+            console.log("정상적으로 검색");
+
+            // 위도, 경도
+            let xValue = parseFloat(result[0].x);
+            let yValue = parseFloat(result[0].y);
+
+            console.log("xValue: " + xValue);
+            console.log("yValue: " + yValue);
+
+            lat = xValue;   // 위도
+            lon = yValue;   // 경도
+
+            var coords = new kakao.maps.LatLng(yValue, xValue);
+
+            map.setCenter(coords);
+
+            // 지도 영역정보를 얻어옵니다
+            bounds = map.getBounds();
+
+            // 영역정보의 남서쪽 정보를 얻어옵니다
+            swLatlng = bounds.getSouthWest();
+
+            // 영역정보의 북동쪽 정보를 얻어옵니다
+            neLatlng = bounds.getNorthEast();
+
+            console.log("swLatlng2: " + swLatlng);
+            console.log("neLatlng: " + neLatlng);
+
+            swLat = swLatlng.getLat().toString();         // 영역정보의 남서위도
+            swLng = swLatlng.getLng().toString();         // 영역정보의 남서경도
+            neLat = neLatlng.getLat().toString();         // 영역정보의 북동위도
+            neLng = neLatlng.getLng().toString();         // 영역정보의 북동경도
+
+            console.log("type: " + typeof swLatstr);
+
+
+            // 확인용 (개발 완료 이후 삭제)
+            var message = '<p>영역좌표는 남서쪽 위도, 경도는  ' + swLatlng.toString() + '이고 <br>';
+            message += '북동쪽 위도, 경도는  ' + neLatlng.toString() + '입니다 </p>';
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = message;
+
+            ajaxAPI('/rest/storeList?swLat='+ swLat + '&swLng='+ swLng + '&neLat='+ neLat + '&neLng='+ neLng, null, "GET").then(response => {
+                console.log("storeList ajax success");
+            })
+        }
+    })
 
 }

@@ -7,9 +7,12 @@
     <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="20230123 wonjeong main kakao map ~ing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/main/mapper/MainMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/main/mapper/MainMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/main/model/MainVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/main/model/MainVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/main/service/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/main/service/MainService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/main/web/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/main/web/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/main/MainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/main/MainMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/common/css/element.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/common/css/element.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/main/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/main/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
@@ -71,27 +74,27 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.DAL.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/yiwonjeong/Desktop/Workspace/DAL/DAL",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DAL.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/yiwonjeong/Desktop/Workspace/DAL/DAL&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\study\DAL\src\main\resources\static\comm\js" />
@@ -154,7 +157,8 @@
       <workItem from="1701158556845" duration="1493000" />
       <workItem from="1701220194912" duration="1094000" />
       <workItem from="1701750788528" duration="4339000" />
-      <workItem from="1705913814373" duration="36166000" />
+      <workItem from="1705913814373" duration="40250000" />
+      <workItem from="1706092684149" duration="15246000" />
     </task>
     <task id="LOCAL-00001" summary="진형 push">
       <created>1700461796485</created>

@@ -36,4 +36,12 @@ public class MainVO {
     private String town_id;         // 읍/면/동 코드
     private String town_nm;         // 읍/면/동명
 
+    /* 추가: 영역정보에 따른 모서리 좌표 */
+    private String swLat;           // 영역정보의 남서위도
+    private String swLng;           // 영역정보의 남서경도
+    private String neLat;           // 영역정보의 북동위도
+    private String neLng;           // 영역정보의 북동경도
+
+
+
 }
