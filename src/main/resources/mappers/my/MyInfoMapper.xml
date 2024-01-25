@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+ 파일명        : MyInfoMapper.xml
+ 최초 작성자    : 박제형
+ 최초 작성날짜   : 2024.01.25
+-->
+
+<mapper namespace="kr.co.Dal.my.mapper.MyInfoMapper">
+    <select id="selectMyInfoList" resultType="kr.co.Dal.my.model.MyInfoVO">
+        SELECT
+            user_lgin_id,
+            user_pw,
+            user_nick,
+            user_hp,
+            user_email
+        FROM
+            user_tb
+    </select>
+
+
+</mapper>

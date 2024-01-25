@@ -54,7 +54,7 @@
                      </ul>
                      <!-- 내가 쓴 게시글 (탭1) -->
                      <div id="tab-1" class="content-middle current">
-                        <table class="board-write" th:each="board : ${boardList}">
+                        <table class="board-write">
                           <colgroup>
                              <col style="width: 5px;">
                              <col style="width: 50px;">
@@ -73,9 +73,9 @@
                                 <th>조회수</th>
                               </tr>
                           </thead>
-                          <tbody>
+                          <tbody th:each="board : ${boardList}">
                             <tr>
-                              <td><input type="checkbox"></td>
+                              <td><input type="checkbox" th:value="${board.bard_id}" id="checkboxes"></td>
                               <td>1</td>
                               <td th:text="${board.cate_type}"></td>
                               <td th:text="${board.bard_tit}"></td>

@@ -9,6 +9,8 @@
 -->
 
 <mapper namespace="kr.co.Dal.my.mapper.MyBoardMapper">
+
+    <!-- 게시글 목록 -->
     <select id="selectBoardList" resultType="kr.co.Dal.my.model.MyBoardVO">
         SELECT
             bard_id,
@@ -21,7 +23,26 @@
             cate_type
         FROM
             bard_tb
+        WHERE
+            bard_stts = 1
     </select>
+
+    <!-- 게시글 삭제 -->
+    <update id="deleteBoardList" parameterType="kr.co.Dal.my.model.MyBoardVO">
+        UPDATE
+            bard_tb
+        SET
+            bard_stts = 0
+    </update>
+
+
+
+
+
+
+
+
+
 
 
 

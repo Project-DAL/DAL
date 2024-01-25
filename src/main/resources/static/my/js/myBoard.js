@@ -1,13 +1,22 @@
+let btnDelete = document.getElementById('btnDelete') // 삭제버튼
 
 
-    $(document).ready(function(){
-    $('ul.tabs li').click(function(){
-        var tab_id = $(this).attr('data-tab');
 
-        $('ul.tabs li').removeClass('current');
-        $('.tab-content').removeClass('current');
 
-        $(this).addClass('current');
-        $("#" + tab_id).addClass('current');
-    });
-});
+document.addEventListener('DOMContentLoaded', function(){
+    addEventListnerCRUDbtn();
+})
+
+
+function addEventListnerCRUDbtn(){
+    btnDelete.addEventListener('click', fnDelete);
+}
+
+
+
+
+function fnDelete(){
+
+}
+
+

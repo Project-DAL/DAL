@@ -25,6 +25,9 @@ public class MyBoardService {
     }
 
 
-
+    /* 게시글 삭제 */
+    public void deleteBoardList(MyBoardVO myBoardVO){
+        myBoardMapper.deleteBoardList(myBoardVO);
+    }
 
 }
