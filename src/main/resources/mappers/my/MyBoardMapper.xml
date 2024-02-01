@@ -19,8 +19,7 @@
             bard_tit,
             bard_cnt,
             bard_rdate,
-            bard_stts,
-            cate_type
+            bard_stts
         FROM
             bard_tb
         WHERE
@@ -34,13 +33,6 @@
         SET
             bard_stts = 0
     </update>
-
-
-
-
-
-
-
 
 
 
