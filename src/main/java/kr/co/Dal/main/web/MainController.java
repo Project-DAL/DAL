@@ -26,13 +26,16 @@ public class MainController {
     @GetMapping("/rest/storeList")
     @ResponseBody
     public ResponseEntity<List<MainVO>> selectStoreList(@Param("swLat") String swLat, @Param("swLng") String swLng,
-                                                        @Param("neLat") String neLat, @Param("neLng") String neLng) {
+                                                        @Param("neLat") String neLat, @Param("neLng") String neLng,
+                                                        @Param("prod_tit") String prod_tit) {
 
         log.warn("selectStoreList controller");
 
         log.warn("param : " + swLat + "," + swLng + "," + neLat + "," + neLng);
+        log.warn("prod_tit: " + prod_tit);
 
-        List<MainVO> storeList = mainService.selectStoreList(swLat, swLng, neLat, neLng);
+
+        List<MainVO> storeList = mainService.selectStoreList(swLat, swLng, neLat, neLng, prod_tit);
 
         return ResponseEntity.ok().body(storeList);
     }
