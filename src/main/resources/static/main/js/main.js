@@ -248,6 +248,11 @@ function fnAjaxList(){
     //console.log("swLatlng: " + swLatlng);
     //console.log("neLatlng: " + neLatlng);
 
+    if(province_ == "시/도") {
+        alert("검색할 지역을 선택하세요.");
+        return false;
+    }
+
     // 주소-좌표 변환 객체를 생성합니다
     let geocoder = new kakao.maps.services.Geocoder();
 
