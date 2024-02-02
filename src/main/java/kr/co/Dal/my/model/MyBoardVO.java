@@ -23,5 +23,6 @@ public class MyBoardVO {
     private int bard_like_cn;
     private int bard_stts;
 
-
+    private String[] bardidArray;
+    private String[] bardtypeArray;
 }

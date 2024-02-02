@@ -1,3 +1,10 @@
+<!--
+파일명        : MyWish.html
+최초 작성자    : 박제형
+최초 작성날짜   : 2024.02.02
+-->
+
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
@@ -8,6 +15,7 @@
     <th:block layout:fragment="css-js">
         <link rel="stylesheet" type="text/css" th:href="@{/my/css/my-layout.css}">
         <link rel="stylesheet" type="text/css" th:href="@{/my/css/myWish.css}">
+        <script src="/my/js/myWish.js" defer></script>
         <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
     </th:block>
 
@@ -45,31 +53,34 @@
                   <div class="ct_subtitle">
                      <h3>위시 리스트</h3>
                   </div>
-                    <div class="content-top">
-                        <input type="checkbox" name="cb-all" class="cb-all">
-                        <hr>
-                      </div>
                       <div class="content-middle">
-                        <div class="card-wrap">
-                         <input type="checkbox">
-                          <div class="card-prod">
-                              <div class="prod-pic"><p>img</p></div>
-                              <div class="prod-name">물품이름</div>
-                                <div class="prod-btn">
-                                  <a id="btnBasket" href="#" class="btn large blue">장바구니</a>
-                                  <a id="btnOrder" href="#" class="btn large blue">주문하기</a>
-                                  <a id="btnDelete" href="#" class="btn large blue">삭제하기</a>
-                                </div>
+                        <div th:each="wish : ${wishList}" class="card-wrap">
+                         <input type="checkbox" class="checkboxes" th:data-prodid="${wish.prod_id}" style="display: none;">
+                          <div class="card-prod" id="clickContent" th:data-prodid="${wish.prod_id}" onclick="fnClickContent(this.getAttribute('data-prodid'))">
+                              <div th:text="${wish.prod_img}" class="prod-pic"></div>
+                          </div>
+                          <div class="prodInfo">
+                            <div th:text="${wish.prod_tit}" class="prod-name"></div>
+                              <div class="wonFlex">
+                                <div th:text="${wish.prod_ori_price}" class="prod-name">원</div>
+                                <div>원</div>
+                              </div>
+                              <div class="wonFlex">
+                                <div th:text="${wish.prod_sale_price}" class="prod-name">원</div>
+                                <div>원</div>
+                              </div>
+                              <div class="wonFlex">
+                                  <div>좋아요</div>
+                                  <div th:text="${wish.prod_like}" class="prod-name"></div>
+                              </div>
                           </div>
                         </div>
                       </div>
-                      <div class="content-bottom">
-                        <div>선택상품</div>
-                        <div class="content-bottom-bt">
-                          <a id="btnDelete" href="#" class="btn large blue">삭제하기</a>
-                          <a id="btnBasket" href="#" class="btn large blue">장바구니에 담기</a>
-                        </div>
-                    </div>
+                </div>
+                <div class="btnBottomArea" th:if="${#lists.size(wishList) > 0}">
+                    <a id="btnEdit" class="btn">편집</a>
+                    <a id="btnDel" class="btn" style="display: none;">삭제</a>
+                    <a id="btnCancel" class="btn" style="display: none;">취소</a>
                 </div>
               </section>
            </div>

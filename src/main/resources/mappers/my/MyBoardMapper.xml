@@ -10,7 +10,7 @@
 
 <mapper namespace="kr.co.Dal.my.mapper.MyBoardMapper">
 
-    <!-- 게시글 목록 -->
+    <!-- 내 게시글 목록 -->
     <select id="selectBoardList" resultType="kr.co.Dal.my.model.MyBoardVO">
         SELECT
             bard_id,
@@ -26,12 +26,44 @@
             bard_stts = 1
     </select>
 
-    <!-- 게시글 삭제 -->
-    <update id="deleteBoardList" parameterType="kr.co.Dal.my.model.MyBoardVO">
+
+    <!-- 내 게시글 삭제 -->
+    <update id="deleteBoard" parameterType="kr.co.Dal.my.model.MyBoardVO">
         UPDATE
             bard_tb
         SET
             bard_stts = 0
+        WHERE
+            bard_id = #{bard_id}
+        AND
+            bard_type = #{bard_type}
+    </update>
+
+    <!-- 내 댓글 목록 -->
+    <select id="selectAnsList" resultType="kr.co.Dal.my.model.MyAnsVO">
+        SELECT
+            ans_id,
+            user_id,
+            ans_cn,
+            ans_rdate,
+            ans_udate,
+            ans_stts,
+            ans_type
+        FROM
+            ans_tb
+        WHERE
+            ans_stts = 1
+    </select>
+
+
+    <!-- 내 댓글 삭제 -->
+    <update id="deleteAns" parameterType="kr.co.Dal.my.model.MyAnsVO">
+        UPDATE
+            ans_tb
+        SET
+            ans_stts = 0
+        WHERE
+            ans_id = #{ans_id}
     </update>
 
 

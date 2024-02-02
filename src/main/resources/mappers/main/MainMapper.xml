@@ -5,14 +5,13 @@
 
     <!-- 위치+주류 검색에 따른 검색 - 지도 각 모서리 좌표를 통해 데이터 검색 (Point type 사용) -->
     <!-- 남서경도 남서위도 북동경도 북동위도 -->
-    <!-- swLng swLat neLng neLat -->
     <select id="selectStoreList" parameterType="map" resultType="kr.co.Dal.main.model.MainVO">
     <![CDATA[
-    SELECT * FROM st_tb
-          INNER JOIN prod_tb ON st_liquorNo = prod_id
-    WHERE MBRContains(ST_GeomFromText
-          ('LineString(${swLng} ${swLat}, ${neLng} ${neLat})'), st_xy)
-      AND prod_tit LIKE CONCAT('%', #{prod_tit}, '%')
+        SELECT * FROM st_tb
+                          INNER JOIN prod_tb ON st_liquorNo = prod_id
+        WHERE MBRContains(ST_GeomFromText
+                          ('LineString(#{swLng} #{swLat}, #{neLng} #{neLat})'), `st_xy`)
+          AND prod_tit LIKE '%새로%'
     ]]>
     </select>
 
@@ -25,14 +24,12 @@
         SELECT city_id, city_nm FROM location_tb
         WHERE province_id = #{province_id}
         GROUP BY city_id
-        ORDER BY city_nm
     </select>
     <select id="selectTownList" parameterType="map" resultType="kr.co.Dal.main.model.MainVO">
         SELECT town_id, town_nm FROM location_tb
         WHERE province_id = #{province_id}
           AND city_id = #{city_id}
         GROUP BY town_id
-        ORDER BY town_id
     </select>
 
 

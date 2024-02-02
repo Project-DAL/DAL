@@ -17,4 +17,6 @@ public interface MyCouponMapper {
     /* 1. 쿠폰 리스트 조회 */
     List<MyCouponVO> selectCouponList(MyCouponVO mycouponVO);
 
+
+
 }

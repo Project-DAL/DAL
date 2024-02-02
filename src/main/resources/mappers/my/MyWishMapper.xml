@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!--
+    파일명        : MyWishMapper.xml
+    최초 작성자    : 박제형
+    최초 작성날짜   : 2024.02.02
+-->
+
+<mapper namespace="kr.co.Dal.my.mapper.MyWishMapper">
+
+    <!-- 위시리스트 목록 -->
+    <select id="selectWishList" resultType="kr.co.Dal.my.model.MyWishVO">
+        SELECT
+            pt.prod_id,
+            pt.prod_img,
+            pt.prod_tit,
+            pt.prod_ori_price,
+            pt.prod_sale_price,
+            pt.prod_like
+        FROM
+            like_tb lt
+        JOIN
+            prod_tb pt
+        ON
+            lt.prod_id = pt.prod_id
+        WHERE
+            lt.user_id = 1
+    </select>
+
+
+
+    <!-- 위시리스트 삭제 -->
+    <delete id="deleteWish" parameterType="kr.co.Dal.my.model.MyWishVO">
+        DELETE
+        FROM
+            like_tb
+        WHERE
+            prod_id = #{prod_id}
+    </delete>
+
+
+
+</mapper>
