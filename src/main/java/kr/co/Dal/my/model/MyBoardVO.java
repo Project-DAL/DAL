@@ -22,7 +22,6 @@ public class MyBoardVO {
     private int bard_cnt;
     private int bard_like_cn;
     private int bard_stts;
-    private int cate_type;
 
 
 }

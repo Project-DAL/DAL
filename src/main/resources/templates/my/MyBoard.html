@@ -8,9 +8,8 @@
     <th:block layout:fragment="css-js">
         <link rel="stylesheet" type="text/css" th:href="@{/my/css/my-layout.css}">
         <link rel="stylesheet" type="text/css" th:href="@{/my/css/myBoard.css}">
+        <script src="/my/js/myBoard.js" defer></script>
         <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
-
-        <script type="text/javascript" th:src="@{/my/js/myBoard.js}"></script>
     </th:block>
 
 
@@ -65,7 +64,9 @@
                           </colgroup>
                           <thead>
                               <tr>
-                                <th><input type="checkbox"></th>
+                                <th>
+                                    <input type="checkbox" id="all_checkboxes">
+                                </th>
                                 <th>글 번호</th>
                                 <th>카테고리</th>
                                 <th>제목</th>
@@ -75,9 +76,9 @@
                           </thead>
                           <tbody th:each="board : ${boardList}">
                             <tr>
-                              <td><input type="checkbox" th:value="${board.bard_id}" id="checkboxes"></td>
+                              <td><input type="checkbox" th:value="${board.bard_id}" class="checkboxes"></td>
                               <td>1</td>
-                              <td th:text="${board.cate_type}"></td>
+                              <td th:text="${board.bard_type}"></td>
                               <td th:text="${board.bard_tit}"></td>
                               <td th:text="${board.bard_rdate}"></td>
                               <td th:text="${board.bard_cnt}"></td>
