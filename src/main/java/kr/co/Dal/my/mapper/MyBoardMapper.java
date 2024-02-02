@@ -7,6 +7,7 @@
 package kr.co.Dal.my.mapper;
 
 
+import kr.co.Dal.my.model.MyAnsVO;
 import kr.co.Dal.my.model.MyBoardVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -20,5 +21,20 @@ public interface MyBoardMapper {
 
 
     /* 게시글 삭제 */
-    public void deleteBoardList(MyBoardVO myBoardVO);
+    public void deleteBoard(MyBoardVO myBoardVO);
+
+
+    /* 내가 쓴 댓글 조회 */
+    List<MyAnsVO> selectAnsList(MyAnsVO myAnsVO);
+
+
+    /* 댓글 삭제 */
+    public void deleteAns(MyAnsVO myAnsVO);
+
+
+
+
+
+
+
 }

@@ -1,65 +1,65 @@
 .content-middle {
-    background: yellow;
     width: 100%;
-    padding: 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
 }
+
 .card-wrap {
-    border: 1px solid;
-    border-radius: 5px;
-    width: 25%;
+    width: 330px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    margin-left: 60px;
+    margin-top: 40px;
 }
+
 .card-prod {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
     align-items: center;
-    padding: 10px 20px 10px 10px;
     gap: 5px;
 }
+
 .prod-pic {
-    width: 100%;
-    background: #fff;
+    width: 150px;
     border: 1px solid;
     border-radius: 5px;
     text-align: center;
     vertical-align: middle;
-    height: 200px;
+    height: 145px;
 }
-.prod-btn {
+
+
+.prodInfo {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 157px;
+    gap: 10px;
+
+}
+
+.wonFlex{
+    display:flex;
+    gap:3px;
+}
+
+
+.btnBottomArea{
+    margin-top: 30px;
+    margin-left: 60px;
+
+}
+
+.btn{
+    background-color: #131348;
+    width: 70px;
+    border-radius: 5px;
     text-align: center;
+    line-height: 40px;
 }
-
-
-.content-bottom {
-    margin-top: 3%;
-    margin-left:80%;
-    display: flex;
-    flex-direction: row;
-}
-
-.content-bottom-bt{
-    float:right;
-    margin-right:10%;
-    display: flex;
-    flex-direction: row;
-    
-}
-
-
-
-

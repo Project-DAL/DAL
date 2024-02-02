@@ -1,36 +1,17 @@
-
-.content-top{
-	margin-left:3%;
-    margin-right:3%;
+.tabs{
+    display: flex;
+    gap:1px;
+    padding-left: 0px;
+    margin-bottom: 0px;
 }
 
-ul.tabs{
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-}
-ul.tabs li{
-	background: none;
-	color: #222;
-	display: inline-block;
-	padding: 10px 15px;
-	cursor: pointer;
+
+.tab-link{
+    border:1px solid black;
+    padding: 15px 15px;
+
 }
 
-ul.tabs li.current{
-	background: #ededed;
-	color: #222;
-}
-
-.content-middle{
-	display: none;
-	background: #ededed;
-	padding: 15px;
-}
-
-.content-middle.current{
-	display: inherit;
-}
 
 /* 위쪽은 전부 탭관련 */
 

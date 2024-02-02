@@ -21,10 +21,9 @@ public class MainService {
 
     /* 위치+주류 검색에 따른 검색 */
     public List<MainVO> selectStoreList(@RequestParam("swLat") String swLat, @RequestParam("swLng") String swLng,
-                                        @RequestParam("neLat") String neLat, @RequestParam("neLng") String neLng,
-                                        @RequestParam("prod_tit") String prod_tit) {
+                                        @RequestParam("neLat") String neLat, @RequestParam("neLng") String neLng) {
         log.warn("selectStoreList service");
-        return mainMapper.selectStoreList(swLat, swLng, neLat, neLng, prod_tit);
+        return mainMapper.selectStoreList(swLat, swLng, neLat, neLng);
     }
 
 

@@ -7,21 +7,17 @@
 package kr.co.Dal.my.web;
 
 
-import kr.co.Dal.my.model.MyBoardVO;
-import kr.co.Dal.my.model.MyCouponVO;
-import kr.co.Dal.my.model.MyInfoVO;
-import kr.co.Dal.my.model.MyPointVO;
-import kr.co.Dal.my.service.MyBoardService;
-import kr.co.Dal.my.service.MyCouponService;
-import kr.co.Dal.my.service.MyInfoService;
-import kr.co.Dal.my.service.MyPointService;
+import kr.co.Dal.my.model.*;
+import kr.co.Dal.my.service.*;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class MyController {
@@ -30,6 +26,7 @@ public class MyController {
     private final MyPointService myPointService;
     private final MyBoardService myBoardService;
     private final MyInfoService myInfoService;
+    private final MyWishService myWishService;
 
 
     // My Page Main
@@ -41,11 +38,14 @@ public class MyController {
 
     // MY Board
     @GetMapping("/my/MyBoard")
-    public String myboard(Model model, MyBoardVO myBoardVO){
+    public String myboard(Model model, MyBoardVO myBoardVO, MyAnsVO myAnsVO){
         List<MyBoardVO> boardList = myBoardService.selectBoardList(myBoardVO);
+        List<MyAnsVO> ansList = myBoardService.selectAnsList(myAnsVO);
         model.addAttribute("boardList", boardList);
+        model.addAttribute("ansList", ansList);
         return "my/MyBoard";
     }
+
 
     // My Coupon
     @GetMapping("/my/MyCoupon")
@@ -82,8 +82,9 @@ public class MyController {
 
     // My Wish
     @GetMapping("/my/MyWish")
-    public String mywish(){
-
+    public String mywish(Model model, MyWishVO myWishVO){
+        List<MyWishVO> wishList = myWishService.selectWishList(myWishVO);
+        model.addAttribute("wishList", wishList);
         return "my/MyWish";
     }
 
