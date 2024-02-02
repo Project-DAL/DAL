@@ -10,7 +10,7 @@
         SELECT * FROM st_tb
                           INNER JOIN prod_tb ON st_liquorNo = prod_id
         WHERE MBRContains(ST_GeomFromText
-                          ('LineString(127.15928252699662 37.45010174497221, 127.17852713696566 37.45412879725502)'), `st_xy`)
+                          ('LineString(#{swLng} #{swLat}, #{neLng} #{neLat})'), `st_xy`)
           AND prod_tit LIKE '%새로%'
     ]]>
     </select>
