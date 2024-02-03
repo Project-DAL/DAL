@@ -28,13 +28,12 @@ Contents
 /* 1. Button **********************************************************************************************************/
 .btn {
     display: inline-block;
-    width: 72px;
-    height: 38px;
-    line-height: 36px;
-    font-size: 13px;
-    border: 1px solid #84868b;
-    background: #84868b;
-    color: #fff;
+    border: 1px solid #293485;
+    background: #2E3888;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
 }
 
 /* 2. a ***************************************************************************************************************/
