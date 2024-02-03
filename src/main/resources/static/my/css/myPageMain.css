@@ -1,71 +1,105 @@
-/* summary */
-.my-summary {
-    border: 1px solid #e8e8e8;
-    color: #404040;
-    padding: 20px 0;
-}
-.my-summary table {
+.title-area {
     width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-.my-summary table th {
+    height: 100px;
     text-align: center;
-    padding: 15px 0;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 30px;
 }
-.my-summary-content {
+
+.summary-wrap {
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    margin-top: 15px;
 }
-.my-summary-tit {
-    color: #404040;
-}
-.my-summary-btn {}
-.my-summary-btn .btn {
-    border: 1px solid #d1d1d1;
-    font-size: 12px;
-    font-weight: 300;
-    vertical-align: middle;
-    padding: 2px 5px;
-    /* border-radius: 5px; */
+
+.summary-content {
+    display: flex;
+    border-right: 1px solid #e7e7e7;
+    width: 240px;
+    height: 50px;
     text-align: center;
-    background: #fff;
-    color: #222;
+    line-height: 75px;
 }
-.my-summary table td {
+
+.summary-wrap a:nth-of-type(4){
+    border-right: none;
+}
+
+.size{
+    width: 30px;
+    height: 30px;
+    margin-left: 22px;
+
+}
+
+.summary-text{
+    font-size: 18px;
+    line-height: 58px;
+    margin-left: 10px;
+}
+
+.summary-text{
+    color:black;
+}
+
+.summary-value{
+    color:#293485;
+}
+
+
+.order-select{
+    padding: 30px 80px;
+    display: flex;
+    gap: 3px;
+    margin-top: 20px;
+
+}
+
+.enter-btn{
+    width: 50px;
+    height: 30px;
+    background: #03012D;
+    color: white;
+    border-radius: 5px;
     text-align: center;
-    padding: 15px 0;
+    line-height: 30px;
 }
 
-.content-middle {
-    width:100%;
+.order-info{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 80px;
+
 }
 
-.table-info{
-    width:100%;
-    margin-top:2%;
-    margin-bottom:2%;
-    text-align: center;
+.order-info-date{
+    padding: 10px;
+
 }
 
-.orderview{
-    width:100%;
-    height:420px;
+.order-box{
+    border: 1px solid #e7e7e7;
+    padding: 0px 15px;
 }
 
+.order-info-spec{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px;
 
-.orderview td{
-    text-align: center;
 }
 
-.orderview td:nth-child(2){
-    text-align:left;
+.order-info-spec-detail{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
 }
 
-
-.orderview td:nth-child(4){
-    text-align:left;
+.order-img{
+    width: 95px;
+    height: 95px;
 }

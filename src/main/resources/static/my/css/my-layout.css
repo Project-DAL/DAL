@@ -1,28 +1,39 @@
 /* ct_main */
 .ct_main {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    gap: 10px;
+    padding: 50px 20px;
 }
 
 /*  aside */
 aside {
-    width: 200px;
-    border: 1px solid;
+    width: 210px;
 }
-.ct_left-menu {
-    padding-top: 30px;
-}
+
+
 .menu-tit {
+
+}
+.menu-tit p {
     font-size: 25px;
     font-weight: 700;
-    padding: 0 0 14px;
-    margin: 0 0 14px;
+    text-align: center;
+    background-color: #03012D;
+    height: 70px;
+    line-height: 70px;
+    color: white;
+}
+.ct_left-menu {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 .ct_left-menu li {
-    text-align: left;
-    padding: 7px 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-start;
 }
 .ct_left-menu li a {
     display: block;
@@ -33,6 +44,10 @@ aside {
 .menu-susbit {
     border-bottom: 1px solid #eee;
     margin: 24px 0 4px 0;
+    line-height: 25px;
+    font-size: 20px;
+    font-weight: 600;
+
 }
 .menu-susbit a {
     font-size: 20px !important;
@@ -42,9 +57,8 @@ aside {
 
 /* content */
 section {
-    width: 100%;
-    border: 1px solid;
-
+    width: calc(100% - 210px);
+    padding: 0px 50px;
 }
 .ct_content-wrap {}
 .ct_subtitle {
@@ -54,3 +68,9 @@ section {
 }
 
 
+.img-size{
+    width:20px;
+    height:20px;
+    margin-right: 10px;
+
+}

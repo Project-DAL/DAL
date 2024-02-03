@@ -15,8 +15,51 @@
         <!-- 2. 공통 Header -->
         <th:block th:replace="~{fragments/_header::headerFragment}"></th:block>
         <!-- 3. 개별 Content -->
-        <th:block layout:fragment="content"></th:block>
-        <!-- 4. 공통 Footer-->
+            <main>
+                <div class="ct_main">
+                    <!-- 4.1 Aside -->
+                    <aside>
+                        <div class="ct_left-menu">
+                            <div class="menu-tit">
+                                <p>MY PAGE</p>
+                            </div>
+                            <!--<h4 class="menu-tit">MY PAGE</h4>-->
+                            <ul>
+                                <ul>
+                                    <li class="menu-susbit">
+                                        <img class="img-size" th:src="@{/my/img/shopping.png}" alt="">
+                                        나의 쇼핑
+                                    </li>
+                                    <li><a th:href="@{/my/MyPageMain}">주문/배송</a></li>
+                                    <li><a th:href="@{/my/MyWish}">위시리스트</a></li>
+                                    <li class="menu-susbit">
+                                        <img class="img-size" th:src="@{/my/img/coin.png}" alt="">
+                                        나의 혜택
+                                    </li>
+                                    <li><a th:href="@{/my/MyCoupon}">쿠폰</a></li>
+                                    <li><a th:href="@{/my/MyPoint}">적립금</a></li>
+                                    <li class="menu-susbit">
+                                        <img class="img-size" th:src="@{/my/img/docs.png}" alt="">
+                                        나의 활동
+                                    </li>
+                                    <li><a th:href="@{/my/MyBoard}">게시글</a></li>
+                                    <li><a href="#">1:1 문의내역</a></li>
+                                    <li class="menu-susbit">
+                                        <img class="img-size" th:src="@{/my/img/info.png}" alt="">
+                                        나의 정보
+                                    </li>
+                                    <li><a href="#">로그아웃</a></li>
+                                    <li><a th:href="@{/my/MyInfo}">회원정보 수정</a></li>
+                                    <li><a th:href="@{/my/MyWithdraw}">회원 탈퇴</a></li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </aside>
+                    <!-- 4.2 Content -->
+                    <th:block layout:fragment="content"></th:block>
+                </div>
+            </main>
+        <!-- 5. 공통 Footer-->
         <th:block th:replace="~{fragments/_footer::footerFragment}"></th:block>
       </div>
       <th:block layout:fragment="script"></th:block>

@@ -22,35 +22,29 @@
         <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
     </th:block>
 
-
     <th:block layout:fragment="content">
-
-      <main>
-        <div class="ct_main">
         <!-- 4.2 Content -->
-          <section>
+        <section>
             <div class="ct_content-wrap">
-               <div class="content-top">
-                  <div class="widthdraw-img">
-                    <a href="#">이미지 자리 엉엉 울고있는 엉엉엉</a>
-                  </div>
-                   <div class="left-point">
-                       <div>현재 사용가능한 포인트: <span th:text="${pointGross}"></span> p</div>
-                       <div>현재 사용가능한 쿠폰: <span th:text="${couponGross}"></span> 장</div>
-                   </div>
-                  <div class="widthdraw-text">
-                    탈퇴하게되면 지금까지 모은 포인트 및 쿠폰은 사용할 수 없게 됩니다
-                      정말로 탈퇴하시겠습니까?
-                  </div>
-               </div>
-               <div class="content-bottom">
-                  <a id="btnWidthDraw" href="#" class="btn">탈퇴하기</a>
-                  <a id="btnMainPage" th:href="@{/}" class="btn">메인화면으로 가기</a>
-               </div>
+                <div class="content-top">
+                    <div class="widthdraw-img">
+                        <a href="#">이미지 자리 엉엉 울고있는 엉엉엉</a>
+                    </div>
+                    <div class="left-point">
+                        <div>현재 사용가능한 포인트: <span th:text="${pointGross}"></span> p</div>
+                        <div>현재 사용가능한 쿠폰: <span th:text="${couponGross}"></span> 장</div>
+                    </div>
+                    <div class="widthdraw-text">
+                        탈퇴하게되면 지금까지 모은 포인트 및 쿠폰은 사용할 수 없게 됩니다
+                        정말로 탈퇴하시겠습니까?
+                    </div>
+                </div>
+                <div class="content-bottom">
+                    <a id="btnWidthDraw" href="#" class="btn">탈퇴하기</a>
+                    <a id="btnMainPage" th:href="@{/}" class="btn">메인화면으로 가기</a>
+                </div>
             </div>
-          </section>
-        </div>
-      </main>
+        </section>
     </th:block>
 
 </html>

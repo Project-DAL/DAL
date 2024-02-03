@@ -13,52 +13,24 @@
 
 
     <th:block layout:fragment="content">
-
-        <main>
-            <div class="ct_main">
-                <!-- 4.1 Aside -->
-                <aside>
-                  <div class="ct_left-menu">
-                      <h4 class="menu-tit">MY PAGE</h4>
-                      <ul>
-                        <ul>
-                          <li class="menu-susbit">나의 쇼핑</li>
-                          <li><a th:href="@{/my/MyOrder}">주문/배송</a></li>
-                          <li><a th:href="@{/my/MyWish}">위시리스트</a></li>
-                          <li class="menu-susbit">나의 혜택</li>
-                          <li><a th:href="@{/my/MyCoupon}">쿠폰</a></li>
-                          <li><a th:href="@{/my/MyPoint}">적립금</a></li>
-                          <li class="menu-susbit">나의 활동</li>
-                          <li><a th:href="@{/my/MyBoard}">게시글</a></li>
-                          <li><a href="#">1:1 문의내역</a></li>
-                          <li class="menu-susbit">나의 정보</li>
-                          <li><a href="#">로그아웃</a></li>
-                          <li><a th:href="@{/my/MyInfo}">회원정보 수정</a></li>
-                          <li><a th:href="@{/my/MyWithdraw}">회원 탈퇴</a></li>
-                        </ul>
-                      </ul>
-                  </div>
-                </aside>
-                <!-- 4.2 Content -->
-                <section>
-                    <div class="ct_content-wrap">
-                        <div class="ct_subtitle">
-                            <h3>내 쿠폰</h3>
+        <!-- 4.2 Content -->
+        <section>
+            <div class="ct_content-wrap">
+                <div class="ct_subtitle">
+                    <h3>내 쿠폰</h3>
+                </div>
+                <div class="content-middle">
+                    <div class="coupon-size" th:each="coupon : ${couponList}">
+                        <div class="coupon-name" th:text="${coupon.cp_name}">
                         </div>
-                        <div class="content-middle">
-                            <div class="coupon-size" th:each="coupon : ${couponList}">
-                                <div class="coupon-name" th:text="${coupon.cp_name}">
-                                </div>
-                                <div class="coupon-date" th:text="${coupon.cp_wdate}">
-                                </div>
-                                <div class="coupon-percent" th:text="${coupon.cp_disct_type}">
-                                </div>
-                            </div>
+                        <div class="coupon-date" th:text="${coupon.cp_wdate}">
+                        </div>
+                        <div class="coupon-percent" th:text="${coupon.cp_disct_type}">
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
-        </main>
+        </section>
     </th:block>
 
 </html>

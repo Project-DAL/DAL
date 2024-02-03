@@ -20,122 +20,94 @@
 
 
 <th:block layout:fragment="content">
-
-    <main>
-        <div class="ct_main">
-            <!-- 4.1 Aside -->
-            <aside>
-                <div class="ct_left-menu">
-                    <h4 class="menu-tit">MY PAGE</h4>
-                    <ul>
-                        <ul>
-                            <li class="menu-susbit">나의 쇼핑</li>
-                            <li><a th:href="@{/my/MyOrder}">주문/배송</a></li>
-                            <li><a th:href="@{/my/MyWish}">위시리스트</a></li>
-                            <li class="menu-susbit">나의 혜택</li>
-                            <li><a th:href="@{/my/MyCoupon}">쿠폰</a></li>
-                            <li><a th:href="@{/my/MyPoint}">적립금</a></li>
-                            <li class="menu-susbit">나의 활동</li>
-                            <li><a th:href="@{/my/MyBoard}">게시글</a></li>
-                            <li><a href="#">1:1 문의내역</a></li>
-                            <li class="menu-susbit">나의 정보</li>
-                            <li><a href="#">로그아웃</a></li>
-                            <li><a th:href="@{/my/MyInfo}">회원정보 수정</a></li>
-                            <li><a th:href="@{/my/MyWithdraw}">회원 탈퇴</a></li>
-                        </ul>
-                    </ul>
+    <!-- 4.2 Content -->
+    <section>
+        <div class="ct_content-wrap">
+            <div class="ct_subtitle">
+                <div id="title1"><h3>내 게시글</h3></div>
+                <div id="title2" style="display: none;"><h3>내 댓글</h3></div>
+            </div>
+            <div class="content-top">
+                <ul class="tabs">
+                    <li id="myBoardTab" class="tab-link">내가 쓴 게시글</li>
+                    <li id="myReplyTab" class="tab-link">내가 쓴 댓글</li>
+                </ul>
+                <!-- 내가 쓴 게시글 (탭1) -->
+                <div id="boardTab" class="content-middle">
+                    <table class="board-write">
+                        <colgroup>
+                            <col style="width: 5px;">
+                            <col style="width: 50px;">
+                            <col style="width: 70px;">
+                            <col style="width: 250px;">
+                            <col style="width: 100px;">
+                            <col style="width: 30px;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" id="all_checkboxes"></th>
+                            <th>글 번호</th>
+                            <th>카테고리</th>
+                            <th>제목</th>
+                            <th>작성일시</th>
+                            <th>조회수</th>
+                        </tr>
+                        </thead>
+                        <tbody th:each="board : ${boardList}">
+                        <tr>
+                            <td><input type="checkbox" th:data-bardid="${board.bard_id}" th:data-bardtype="${board.bard_type}" class="checkboxes"></td>
+                            <td th:text="${board.bard_id}"></td>
+                            <td th:text="${board.bard_type}"></td>
+                            <td th:text="${board.bard_tit}"></td>
+                            <td th:text="${board.bard_rdate}"></td>
+                            <td th:text="${board.bard_cnt}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </aside>
-            <!-- 4.2 Content -->
-            <section>
-                <div class="ct_content-wrap">
-                    <div class="ct_subtitle">
-                        <div id="title1"><h3>내 게시글</h3></div>
-                        <div id="title2" style="display: none;"><h3>내 댓글</h3></div>
-                    </div>
-                    <div class="content-top">
-                        <ul class="tabs">
-                            <li id="myBoardTab" class="tab-link">내가 쓴 게시글</li>
-                            <li id="myReplyTab" class="tab-link">내가 쓴 댓글</li>
-                        </ul>
-                        <!-- 내가 쓴 게시글 (탭1) -->
-                        <div id="boardTab" class="content-middle">
-                            <table class="board-write">
-                                <colgroup>
-                                    <col style="width: 5px;">
-                                    <col style="width: 50px;">
-                                    <col style="width: 70px;">
-                                    <col style="width: 250px;">
-                                    <col style="width: 100px;">
-                                    <col style="width: 30px;">
-                                </colgroup>
-                                <thead>
-                                <tr>
-                                    <th><input type="checkbox" id="all_checkboxes"></th>
-                                    <th>글 번호</th>
-                                    <th>카테고리</th>
-                                    <th>제목</th>
-                                    <th>작성일시</th>
-                                    <th>조회수</th>
-                                </tr>
-                                </thead>
-                                <tbody th:each="board : ${boardList}">
-                                <tr>
-                                    <td><input type="checkbox" th:data-bardid="${board.bard_id}" th:data-bardtype="${board.bard_type}" class="checkboxes"></td>
-                                    <td th:text="${board.bard_id}"></td>
-                                    <td th:text="${board.bard_type}"></td>
-                                    <td th:text="${board.bard_tit}"></td>
-                                    <td th:text="${board.bard_rdate}"></td>
-                                    <td th:text="${board.bard_cnt}"></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- 내가 쓴 댓글 (탭2) -->
-                        <div id="replyTab" class="content-middle" style="display: none;">
-                            <table class="board-reply">
-                                <colgroup>
-                                    <col style="width: 50px;">
-                                    <col style="width: 70px;">
-                                    <col style="width: 250px;">
-                                    <col style="width: 100px;">
-                                </colgroup>
-                                <thead>
-                                <tr>
-                                    <th><input type="checkbox" id="all_checkboxes2"></th>
-                                    <th>카테고리</th>
-                                    <th>댓글 내용</th>
-                                    <th>작성일시</th>
-                                </tr>
-                                </thead>
-                                <tbody th:each="ans : ${ansList}">
-                                <tr>
-                                    <td><input type="checkbox" th:data-ansid="${ans.ans_id}" class="checkboxes2"></td>
-                                    <td th:text="${ans.ans_type}"></td>
-                                    <td th:text="${ans.ans_cn}"></td>
-                                    <td th:text="${ans.ans_rdate}"></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="content-bottom">
-                        <div class="deletebox-area">
-                            <a id="btnDelete" href="#" class="btn large blue">삭제하기</a>
-                            <a id="btnDelete2" href="#" class="btn large blue" style="display: none;">삭제하기</a>
-                        </div>
-                        <div class="paging-area">
-                            <a href="#" class="paging-before5"><<</a> &nbsp;&nbsp;
-                            <a href="#" class="paging-before"><</a> &nbsp;&nbsp;
-                            <div class="current-page">1</div> &nbsp;&nbsp;
-                            <a href="#" class="paging-foward">></a> &nbsp;&nbsp;
-                            <a href="#" class="paging-foward5">>></a>
-                        </div>
-                    </div>
+                <!-- 내가 쓴 댓글 (탭2) -->
+                <div id="replyTab" class="content-middle" style="display: none;">
+                    <table class="board-reply">
+                        <colgroup>
+                            <col style="width: 50px;">
+                            <col style="width: 70px;">
+                            <col style="width: 250px;">
+                            <col style="width: 100px;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" id="all_checkboxes2"></th>
+                            <th>카테고리</th>
+                            <th>댓글 내용</th>
+                            <th>작성일시</th>
+                        </tr>
+                        </thead>
+                        <tbody th:each="ans : ${ansList}">
+                        <tr>
+                            <td><input type="checkbox" th:data-ansid="${ans.ans_id}" class="checkboxes2"></td>
+                            <td th:text="${ans.ans_type}"></td>
+                            <td th:text="${ans.ans_cn}"></td>
+                            <td th:text="${ans.ans_rdate}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </section>
+            </div>
+            <div class="content-bottom">
+                <div class="deletebox-area">
+                    <a id="btnDelete" href="#" class="btn large blue">삭제하기</a>
+                    <a id="btnDelete2" href="#" class="btn large blue" style="display: none;">삭제하기</a>
+                </div>
+                <div class="paging-area">
+                    <a href="#" class="paging-before5"><<</a> &nbsp;&nbsp;
+                    <a href="#" class="paging-before"><</a> &nbsp;&nbsp;
+                    <div class="current-page">1</div> &nbsp;&nbsp;
+                    <a href="#" class="paging-foward">></a> &nbsp;&nbsp;
+                    <a href="#" class="paging-foward5">>></a>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
 </th:block>
 
 </html>

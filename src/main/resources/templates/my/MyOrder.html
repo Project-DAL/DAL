@@ -13,120 +13,91 @@
 
 
     <th:block layout:fragment="content">
-
-      <main>
-        <div class="ct_main">
-          <!-- 4.1 Aside -->
-          <aside>
-            <div class="ct_left-menu">
-              <h4 class="menu-tit">MY PAGE</h4>
-              <ul>
-                <ul>
-                  <li class="menu-susbit">나의 쇼핑</li>
-                  <li><a th:href="@{/my/MyOrder}">주문/배송</a></li>
-                  <li><a th:href="@{/my/MyWish}">위시리스트</a></li>
-                  <li class="menu-susbit">나의 혜택</li>
-                  <li><a th:href="@{/my/MyCoupon}">쿠폰</a></li>
-                  <li><a th:href="@{/my/MyPoint}">적립금</a></li>
-                  <li class="menu-susbit">나의 활동</li>
-                  <li><a th:href="@{/my/MyBoard}">게시글</a></li>
-                  <li><a href="#">1:1 문의내역</a></li>
-                  <li class="menu-susbit">나의 정보</li>
-                  <li><a href="#">로그아웃</a></li>
-                  <li><a th:href="@{/my/MyInfo}">회원정보 수정</a></li>
-                  <li><a th:href="@{/my/MyWithdraw}">회원 탈퇴</a></li>
-                </ul>
-              </ul>
-            </div>
-          </aside>
-          <!-- 4.2 Content -->
-          <section>
+        <section>
             <div class="ct_content-wrap">
-              <div class="ct_subtitle">
-                <h3>주문 내역</h3>
-              </div>
-              <div class="content-top">
-                <div class="allstts">
-                  <select class="orderstts">
-                    <option>전체 주문처리상태</option>
-                    <option>주문확인중</option>
-                    <option>배송준비중</option>
-                    <option>배송중</option>
-                    <option>배송완료</option>
-                    <option>취소</option>
-                    <option>교환</option>
-                    <option>반품</option>
-                    <option>주문확정</option>
-                  </select>
-                  <div class="datestts">
-                    <div class="today"><a>오늘</a></div>
-                    <div class="onemonth"><a>1개월</a></div>
-                    <div class="threemonth"><a>3개월</a></div>
-                    <div class="sixmonth"><a>6개월</a></div>
-                  </div>
-                  <div class="startdate">
-                    <input type="date">
-                  </div>
-                  <div> - </div>
-                  <div class="enddate">
-                    <input type="date">
-                  </div>
-                  <div class="searchbox">
-                    <a id="btnSearch" href="#" class="btn large blue">조회</a>
-                  </div>
+                <div class="ct_subtitle">
+                    <h3>주문 내역</h3>
                 </div>
-               </div>
-               <div class="content-middle">
-                 <table class="myorder-table">
-                    <colgroup>
-                        <col style="">
-                        <col style="">
-                        <col style="">
-                        <col style="">
-                        <col style="">
-                        <col style="">
-                        <col style="">
-                        <col style="">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                          <th>주문일자<br>[주문번호]</th>
-                          <th>이미지</th>
-                          <th>상품정보</th>
-                          <th>수량</th>
-                          <th>상품구매금액</th>
-                          <th>주문처리상태</th>
-                          <th>취소/교환/반품</th>
-                          <th>주문 확정</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                          <td>231107<br>[59838710]</td>
-                          <td><a href="#">사진들어갈곳</a></td>
-                          <td>상품에 관한 정보가 쓰일 곳</td>
-                          <td>1</td>
-                          <td>58300원</td>
-                          <td>주문확인 중</td>
-                          <td>-</td>
-                          <td>-</td>
-                        </tr>
-                    </tbody>
-                 </table>
-              </div>
-              <div class="content-bottom">
-                <div class="paging-area">
-                 <a href="#" class="paging-before5"><<</a> &nbsp;&nbsp;
-                 <a href="#" class="paging-before"><</a> &nbsp;&nbsp;
-                 <div class="current-page">1</div> &nbsp;&nbsp;
-                 <a href="#" class="paging-foward">></a> &nbsp;&nbsp;
-                 <a href="#" class="paging-foward5">>></a>
+                <div class="content-top">
+                    <div class="allstts">
+                        <select class="orderstts">
+                            <option>전체 주문처리상태</option>
+                            <option>주문확인중</option>
+                            <option>배송준비중</option>
+                            <option>배송중</option>
+                            <option>배송완료</option>
+                            <option>취소</option>
+                            <option>교환</option>
+                            <option>반품</option>
+                            <option>주문확정</option>
+                        </select>
+                        <div class="datestts">
+                            <div class="today"><a>오늘</a></div>
+                            <div class="onemonth"><a>1개월</a></div>
+                            <div class="threemonth"><a>3개월</a></div>
+                            <div class="sixmonth"><a>6개월</a></div>
+                        </div>
+                        <div class="startdate">
+                            <input type="date">
+                        </div>
+                        <div> - </div>
+                        <div class="enddate">
+                            <input type="date">
+                        </div>
+                        <div class="searchbox">
+                            <a id="btnSearch" href="#" class="btn large blue">조회</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="content-middle">
+                    <table class="myorder-table">
+                        <colgroup>
+                            <col style="">
+                            <col style="">
+                            <col style="">
+                            <col style="">
+                            <col style="">
+                            <col style="">
+                            <col style="">
+                            <col style="">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>주문일자<br>[주문번호]</th>
+                            <th>이미지</th>
+                            <th>상품정보</th>
+                            <th>수량</th>
+                            <th>상품구매금액</th>
+                            <th>주문처리상태</th>
+                            <th>취소/교환/반품</th>
+                            <th>주문 확정</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>231107<br>[59838710]</td>
+                            <td><a href="#">사진들어갈곳</a></td>
+                            <td>상품에 관한 정보가 쓰일 곳</td>
+                            <td>1</td>
+                            <td>58300원</td>
+                            <td>주문확인 중</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-bottom">
+                    <div class="paging-area">
+                        <a href="#" class="paging-before5"><<</a> &nbsp;&nbsp;
+                        <a href="#" class="paging-before"><</a> &nbsp;&nbsp;
+                        <div class="current-page">1</div> &nbsp;&nbsp;
+                        <a href="#" class="paging-foward">></a> &nbsp;&nbsp;
+                        <a href="#" class="paging-foward5">>></a>
+                    </div>
+                </div>
             </div>
-          </section>
-        </div>
-      </main>
+        </section>
     </th:block>
 
 </html>
