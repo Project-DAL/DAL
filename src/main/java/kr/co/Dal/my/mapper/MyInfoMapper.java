@@ -17,4 +17,12 @@ public interface MyInfoMapper {
 
     /* 회원 정보 */
     List<MyInfoVO> selectMyInfoList(MyInfoVO myInfoVO);
+
+
+    /* 회원 정보 수정 */
+    public void updateMyInfoList(MyInfoVO myInfoVO);
+
+
+
+
 }

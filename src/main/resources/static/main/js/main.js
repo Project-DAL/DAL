@@ -12,14 +12,10 @@ let selectObjProvince = document.getElementById("search-province");     // 시/�
 let selectObjCity     = document.getElementById("search-city");         // 시/군/구 셀렉트
 let selectObjTown     = document.getElementById("search-town");         // 읍/면/동 셀렉트
 
-/* 1.5 List & ViewPage Object */
-let divObjStoreList = document.getElementById("store-list");        // 가게 목록 전체 박스
-let divObjStoreBox = document.getElementById("store-box");          // 가게 목록 개별 박스
-
-/* 1.6 Process(CRUD) Button Object */
+/* 1.5 Process(CRUD) Button Object */
 let btnList     = document.getElementById('btnList');       // 검색 버튼
 
-/* 1.7 Etc Variables (Json Object, HTML String, Temporary) */
+/* 1.6 Etc Variables (Json Object, HTML String, Temporary) */
 let jsonData       = {};   // 요청 파라미터
 let positions = [];     // 검색 결과 가게 장소 표시
 
@@ -313,7 +309,6 @@ function fnAjaxList(){
 
             ajaxAPI('/rest/storeList?swLat='+ swLat + '&swLng='+ swLng + '&neLat='+ neLat + '&neLng='+ neLng + '&prod_tit='+ inputObjSearchText.value, null, "GET").then(response => {
                 console.log("storeList ajax success");
-                console.log("response: ", response);
 
                 // 기존 positions 배열 비우기
                 positions = [];
@@ -327,30 +322,6 @@ function fnAjaxList(){
                         content: '<div>' + response[i].st_nm + '</div>',
                         latlng: new kakao.maps.LatLng(response[i].st_lattitude, response[i].st_longtitude)
                     })
-
-                    // 가게 목록 HTML 추가하기
-                    // divObjStoreList
-                    // divObjStoreBox
-                    divObjStoreList.insertAdjacentHTML('beforeend', `
-                        <div class="store-box" id="store-box">
-                            <div class="store-info">
-                                <div class="store-info-img">img</div>
-                                <div class="store-info-txt">
-                                    <div class="store-info-name">restaurant name</div>
-                                    <div class="store-info-score">
-                                        <div>★★★★★</div>
-                                        <div>4/8</div>
-                                        <div>(185 reviews)</div>
-                                    </div>
-                                    <div class="store-info-hour">
-                                        <div class="store-info-open">OPEN</div>
-                                        <div class="store-info-closed">CLOSED</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `);
-
                 }
 
                 console.log("positions: ", positions);
@@ -378,7 +349,7 @@ function fnAjaxList(){
                     infowindow.open(map, marker);
 
                     // 마커 클릭 이벤트
-                    kakao.maps.event.addListener(marker, 'click', makeClickListener(marker.stId, response));
+                    kakao.maps.event.addListener(marker, 'click', makeClickListener(marker.stId));
 
                     // 마커에 mouseover 이벤트를 등록한다
                     kakao.maps.event.addListener(marker, 'mouseover', function() {
@@ -410,10 +381,9 @@ function fnAjaxList(){
 }
 
 /** 마커 클릭 이벤트 */
-function makeClickListener(clickedStId, response) {
+function makeClickListener(clickedStId) {
     return function() {
-        console.log('마커를 클릭했습니다1' + clickedStId);
-        console.log('마커를 클릭했습니다2', response);
+        alert('마커를 클릭했습니다!' + clickedStId);
     };
 }
 

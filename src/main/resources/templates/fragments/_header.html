@@ -28,29 +28,21 @@ Contents
     <th:block th:fragment="headerFragment">
         <header>
             <div class="user-wrap">
-                <div class="cate-logo">
-                    <!--<a th:href="@{/}">Drink All Liquor</a>-->
-                    <a th:href="@{/}"><img th:src="@{/common/img/dalLogo.png}"></a>
+                <div>
+                    <a class="clicked" href="/loginForm">LOGIN</a>
+                    <a href="/joinForm">JOIN</a>
+                    <a th:href="@{/my/MyPageMain}">MY PAGE</a>
+                    <a>CART</a>
                 </div>
-                <div class="cate-short">
+            </div>
+            <div class="cate-wrap">
+                <div class="cate-logo"><a th:href="@{/}">Drink All Liquor</a></div>
+                <div class="cate-menu">
+                    <a>홈</a>
                     <a>스토어</a>
                     <a>커뮤니티</a>
-                    <a>술테스트</a>
                     <a>주류박물관</a>
-                </div>
-                <div class="user-menu">
-                    <a href="/joinForm">
-                        <p>회원가입</p>
-                    </a>
-                    <a th:href="@{/my/myWish}">
-                        <img th:src="@{/main/img/heart-shape.png}">
-                    </a>
-                    <a th:href="@{/store/order/storeCart}">
-                        <img th:src="@{/main/img/shopping-bag.png}">
-                    </a>
-                    <a href="#">
-                        <img th:src="@{/main/img/user.png}">
-                    </a>
+                    <a th:href="@{/test/test}">Test</a>
                 </div>
             </div>
         </header>

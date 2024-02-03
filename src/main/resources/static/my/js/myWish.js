@@ -36,8 +36,9 @@ function addEventListenerBtn() {
 // 이미지 클릭시 상품정보로 이동 함수
 function fnClickContent(dataProdid){
     let prodId = dataProdid;
-
+    console.log("prodId =" + prodId);
     window.location.href = "http://localhost:8282/store/StoreView?prodId=" + prodId;
+
 }
 
 

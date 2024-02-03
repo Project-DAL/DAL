@@ -31,5 +31,8 @@ public class MyInfoVO {
     private int user_gender;
     private String user_hp;
     private String user_email;
+    private String zip;
+    private String addr1;
+    private String addr2;
 
 }
