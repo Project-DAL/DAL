@@ -34,9 +34,7 @@ public class MainController {
         log.warn("param : " + swLat + "," + swLng + "," + neLat + "," + neLng);
         log.warn("prod_tit: " + prod_tit);
 
-
         List<MainVO> storeList = mainService.selectStoreList(swLat, swLng, neLat, neLng, prod_tit);
-
         return ResponseEntity.ok().body(storeList);
     }
 
