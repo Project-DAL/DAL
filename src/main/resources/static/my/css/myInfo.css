@@ -4,12 +4,11 @@
 
 
 .ct_join-wrap {
-    width: 100%;
+    width: calc(100% - 210px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-left: 20px;
-    border: 1px solid black;
 
 }
 .join-title {

@@ -13,78 +13,50 @@
 
 
   <th:block layout:fragment="content">
-
-    <main>
-      <div class="ct_main">
-        <!-- 4.1 Aside -->
-        <aside>
-          <div class="ct_left-menu">
-            <h4 class="menu-tit">MY PAGE</h4>
-            <ul>
-              <ul>
-                <li class="menu-susbit">나의 쇼핑</li>
-                <li><a th:href="@{/my/MyOrder}">주문/배송</a></li>
-                <li><a th:href="@{/my/MyWish}">위시리스트</a></li>
-                <li class="menu-susbit">나의 혜택</li>
-                <li><a th:href="@{/my/MyCoupon}">쿠폰</a></li>
-                <li><a th:href="@{/my/MyPoint}">적립금</a></li>
-                <li class="menu-susbit">나의 활동</li>
-                <li><a th:href="@{/my/MyBoard}">게시글</a></li>
-                <li><a href="#">1:1 문의내역</a></li>
-                <li class="menu-susbit">나의 정보</li>
-                <li><a href="#">로그아웃</a></li>
-                <li><a th:href="@{/my/MyInfo}">회원정보 수정</a></li>
-                <li><a th:href="@{/my/MyWithdraw}">회원 탈퇴</a></li>
-              </ul>
-            </ul>
-          </div>
-        </aside>
-        <!-- 4.2 Content -->
-          <section>
-            <div class="ct_content-wrap">
-              <div class="ct_subtitle">
-                <h3>적립금</h3>
+    <!-- 4.2 Content -->
+    <section>
+      <div class="ct_content-wrap">
+        <div class="ct_subtitle">
+          <h3>적립금</h3>
+        </div>
+        <div class="content-top">
+          <div class="useable">사용 가능한 적립금</div>
+          <div class="useable-view"> 2,290p </div>
+          <div class="until-view"><span>30일 이내 소멸 예정 적립금</span> 100p</div>
+        </div>
+        <div class="content-middle">
+          적립금 내역
+        </div>
+        <table class="savedmoney-table" th:each="point : ${pointList}">
+          <colgroup>
+            <col style="width:180px;">
+            <col style="">
+            <col style="width:500px;">
+          </colgroup>
+          <tbody>
+          <tr>
+            <td class="savedmoney-count-date">2023-11-08</td>
+            <td>
+              <div class="forrow">
+                <div class="savedmoney-img"><a href="#">적립</a></div>
+                <div class="savedmoney-reason">사진 리뷰 작성(구매)</div>
               </div>
-              <div class="content-top">
-                <div class="useable">사용 가능한 적립금</div>
-                <div class="useable-view"> 2,290p </div>
-                <div class="until-view"><span>30일 이내 소멸 예정 적립금</span> 100p</div>
-              </div>
-              <div class="content-middle">
-                적립금 내역
-              </div>
-              <table class="savedmoney-table" th:each="point : ${pointList}">
-                <colgroup>
-                  <col style="width:180px;">
-                  <col style="">
-                  <col style="width:500px;">
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <td class="savedmoney-count-date">2023-11-08</td>
-                    <td>
-                      <div class="forrow">
-                       <div class="savedmoney-img"><a href="#">적립</a></div>
-                       <div class="savedmoney-reason">사진 리뷰 작성(구매)</div>
-                      </div>
-                       <div class="savedmoney-item-name">처음처럼</div>
-                       <div class="savedmoney-until"> 유효기간 2023-12-08 까지</div>
-                    </td>
-                    <td class="savedmoney-count" th:text="${point.point_price}"></td>
-                  </tr>
-                </tbody>
-              </table>
-                <div class="content-bottom">
-                   <a href="#" class="paging-before5"><<</a> &nbsp;&nbsp;
-                   <a href="#" class="paging-before"><</a> &nbsp;&nbsp;
-                   <div class="current-page">1</div> &nbsp;&nbsp;
-                   <a href="#" class="paging-foward">></a> &nbsp;&nbsp;
-                   <a href="#" class="paging-foward5">>></a>
-                </div>
-            </div>
-          </section>
+              <div class="savedmoney-item-name">처음처럼</div>
+              <div class="savedmoney-until"> 유효기간 2023-12-08 까지</div>
+            </td>
+            <td class="savedmoney-count" th:text="${point.point_price}"></td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="content-bottom">
+          <a href="#" class="paging-before5"><<</a> &nbsp;&nbsp;
+          <a href="#" class="paging-before"><</a> &nbsp;&nbsp;
+          <div class="current-page">1</div> &nbsp;&nbsp;
+          <a href="#" class="paging-foward">></a> &nbsp;&nbsp;
+          <a href="#" class="paging-foward5">>></a>
+        </div>
       </div>
-    </main>
+    </section>
   </th:block>
 
 </html>
