@@ -19,16 +19,27 @@ Ver.    Date         Revised By   Description
 /*
 Contents
 
-1. input
+1. select
+2. input
+
 
 */
 
-/* 1. input ***********************************************************************************************************/
+/* 1. select ***********************************************************************************************************/
+.select {
+    border: 1px solid #293485;
+    border-radius: 12px;
+    color: #293485;
+    font-weight: 600;
+}
+
+/* 2. input ***********************************************************************************************************/
 .input {
-    border: 1px solid;
-    border-radius: 2px;
+    border: 1px solid #293485;
+    border-radius: 12px;
     letter-spacing: 0;
     vertical-align: middle;
+    color: #293485;
 }
 
 .input:focus {
