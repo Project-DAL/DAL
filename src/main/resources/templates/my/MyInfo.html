@@ -1,3 +1,10 @@
+<!--
+파일명        : MyInfo.html
+최초 작성자    : 박제형
+최초 작성날짜   : 2023.11.28
+-->
+
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
@@ -6,6 +13,8 @@
 
 <!-- 2. Page JS, CSS -->
 <th:block layout:fragment="css-js">
+    <script src="/my/js/myInfo.js" defer></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <link rel="stylesheet" type="text/css" th:href="@{/my/css/my-layout.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/my/css/myInfo.css}">
     <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
@@ -43,12 +52,11 @@
             <div class="ct_join-wrap">
                 <div class="join-content mt25">
                     <div class="join-title">내 정보 수정</div>
-                    <form action="#">
                         <section>
                             <table th:each="info : ${infoList}">
                                 <tr>
                                     <th>아이디
-                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력"/>
                                     </th>
                                     <td>
                                         <input class="input" type="text" name="uid" required th:value="${info.user_lgin_id}">
@@ -57,7 +65,7 @@
                                 </tr>
                                 <tr>
                                     <th>비밀번호
-                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력"/>
                                     </th>
                                     <td>
                                         <input class="input" type="password" name="pass" required th:value="${info.user_pw}">
@@ -65,16 +73,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>이름
-                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
-                                    </th>
-                                    <td>
-                                        <input class="input" type="text" name="name" required>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <th>닉네임
-                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력"/>
                                     </th>
                                     <td>
                                         <input class="input" type="text" name="nick" required th:value="${info.user_nick}">
@@ -82,60 +82,50 @@
                                 </tr>
                                 <tr>
                                     <th>휴대전화
-                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력"/>
                                     </th>
                                     <td class="mobile">
-                                        <select name="mobile1" id="mobile1">
-                                            <option value="010">010</option>
-                                            <option value="011">011</option>
-                                            <option value="016">016</option>
-                                            <option value="017">017</option>
-                                            <option value="018">018</option>
-                                            <option value="019">019</option>
+                                        <select id="mobile1" th:value="${hp1}">
+                                            <option value="010" th:selected="${hp1 == '010'}">010</option>
+                                            <option value="011" th:selected="${hp1 == '011'}">011</option>
                                         </select>
                                         &nbsp;&nbsp;&nbsp;-&nbsp;
-                                        <input class="input" type="text" name="mobile2" required>
+                                        <input class="input" type="text" th:value="${hp2}" required>
                                         &nbsp;-&nbsp;
-                                        <input class="input" type="text" name="mobile3" required>
+                                        <input class="input" type="text" th:value="${hp3}" required>
                                         <span class="join-msg">&nbsp;&nbsp;(미기입 시 SMS 수신이 불가합니다.)</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>이메일
-                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력"/>
                                     </th>
                                     <td>
                                         <input class="input" type="email" name="email" required th:value="${info.user_email}">
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th>생년월일</th>
-                                    <td>
-                                        <input class="input" type="datetime" name="birthday">
-                                    </td>
-                                </tr>
                                 <tr class="addr">
                                     <th>주소
-                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력">
+                                        <img src="/css/img/user/register_essential_icon.gif" alt="필수 입력"/>
                                     </th>
                                     <td>
-                                        <div>
-                                            <input type="text" name="zip" placeholder="우편번호 입력 클릭" readonly>
-                                        </div>
-                                        <div>
-                                            <input class="input mt5" type="text" name="addr1" size="50" placeholder="주소를 검색하세요." readonly>
-                                        </div>
-                                        <div>
-                                            <input class="input mt5" type="text" name="addr2" size="50" placeholder="상세주소를 입력하세요.">
+                                        <div class="post_code">
+                                            <input type="text" id="regist_postcode" class="post_code_write" placeholder="우편번호" th:value="${info.zip}" readonly>
+                                            <input type="button" id="post_code" class="post_code_box" value="우편번호">
                                         </div>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th>기본주소</th>
+                                    <td><input type="text" class="input_address" id="regist_addr" placeholder="기본주소" th:value="${info.addr1}" readonly></td>
+                                </tr>
+                                <tr>
+                                    <th>상세주소</th>
+                                    <td><input type="text" id="regist_addr2" placeholder="나머지주소 (선택입력 가능)" th:value="${info.addr2}"></td>
                                 </tr>
                             </table>
                         </section>
-                        <p class="mt15">
-                            <input type="submit" class="btn btnJoin" value="회원가입">
-                        </p>
-                    </form>
+                    <div id="btnUpdate" class="btn">수정하기</div>
                 </div>
             </div>
         </div>

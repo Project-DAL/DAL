@@ -63,7 +63,6 @@ JS Contents
     <main>
         <div class="ct_main">
             <!-- 3.1 Guide Wrap -->
-            <!--
             <div class="ct_guide-wrap">
                 <table>
                     <tr>
@@ -76,25 +75,32 @@ JS Contents
                     </tr>
                 </table>
             </div>
-            -->
             <!-- 3.2 Search Wrap -->
             <div class="ct_search-wrap">
                 <div class="search-bar">
                     <div class="search-location">
-                        <select class="select" id="search-province">
+                        <select id="search-province">
                             <option>시/도</option>
                         </select>
-                        <select class="select"  id="search-city">
+                        <select id="search-city">
                             <option>시/군/구</option>
                         </select>
-                        <select class="select"  id="search-town">
+                        <select id="search-town">
                             <option>읍/면/동</option>
                         </select>
                     </div>
                     <div class="search-prod">
                         <i class="fa-solid fa-magnifying-glass" style="color: #9c9c9c;"></i>
-                        <input type="text" class="input" id="searchText" placeholder="오늘은 어떤 술을 마셔볼까?">
-                        <a class="btn btnList" id="btnList">검색</a>
+                        <input type="text" class="input" id="searchText">
+                        <a id="btnList">검색</a>
+                    </div>
+                </div>
+                <div class="hashtag-bar">
+                    <span>Searching for</span>
+                    <div class="hashtag-list">
+                        <p># 해시태그</p>
+                        <p># 해시태그</p>
+                        <p># 해시태그</p>
                     </div>
                 </div>
             </div>
@@ -112,53 +118,12 @@ JS Contents
                         <span onclick="zoomIn()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>
                         <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
                     </div>
-                    <div class="prod-list">
-                        <div class="hashtag-bar">
-                            <div class="hashtag-list">
-                                <p># 해시태그</p>
-                                <p># 해시태그</p>
-                                <p># 해시태그</p>
-                            </div>
-                        </div>
-                        <div class="store-list" id="store-list">
-                            <div class="store-box" id="store-box">
-                                <div class="store-info">
-                                    <div class="store-info-img">img</div>
-                                    <div class="store-info-txt">
-                                        <div class="store-info-name">restaurant name</div>
-                                        <div class="store-info-score">
-                                            <div>★★★★★</div>
-                                            <div>4/8</div>
-                                            <div>(185 reviews)</div>
-                                        </div>
-                                        <div class="store-info-hour">
-                                            <div class="store-info-open">OPEN</div>
-                                            <div class="store-info-closed">CLOSED</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="store-reviews">
-                                    <div class="store-review" id="store-review">
-                                        <img th:src="@{/main/img/speech-bubble.png}" alt="">
-                                        <div class="store-review-txt">Lorem ipsum dolor sit amet, consecteur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                                    </div>
-                                    <div class="store-review">
-                                        <img th:src="@{/main/img/speech-bubble.png}" alt="">
-                                        <div class="store-review-txt">Lorem ipsum dolor sit amet, consecteur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                                    </div>
-                                    <div class="store-review">
-                                        <img th:src="@{/main/img/speech-bubble.png}" alt="">
-                                        <div class="store-review-txt">Lorem ipsum dolor sit amet, consecteur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="prod-list">list</div>
                     <div class="prod-pic">pic</div>
                 </div>
-                <!--<div class="review-box">review</div>-->
+                <!—<div class="review-box">review</div>—>
             </div>
-            <!-- 확인용 (개발 완료 이후 삭제) -->
+            <!— 확인용 (개발 완료 이후 삭제) —>
             <div>
                 <p id="result"></p>
             </div>

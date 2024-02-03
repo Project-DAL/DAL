@@ -14,10 +14,34 @@
             user_pw,
             user_nick,
             user_hp,
-            user_email
+            user_email,
+            zip,
+            addr1,
+            addr2
         FROM
             user_tb
+        WHERE
+            user_id = 1
     </select>
+
+
+    <update id="updateMyInfoList" parameterType="kr.co.Dal.my.model.MyInfoVO">
+        UPDATE
+             user_tb
+        SET
+            user_lgin_id = #{user_lgin_id},
+            user_pw = #{user_pw},
+            user_nick = #{user_nick},
+            user_hp = #{user_hp},
+            user_email = #{user_email},
+            zip = #{zip},
+            addr1 = #{addr1},
+            addr2 = #{addr2},
+            user_udate = NOW()
+        WHERE
+            user_id = 1
+    </update>
+
 
 
 </mapper>

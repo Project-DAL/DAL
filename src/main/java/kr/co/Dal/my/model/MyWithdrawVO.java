@@ -1,18 +1,13 @@
-/*
-    파일명        : MyCouponVO
-    최초 작성자    : 박제형
-    최초 작성날짜   : 2023.12.01
-*/
-
 package kr.co.Dal.my.model;
-
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class MyCouponVO {
+public class MyWithdrawVO extends MyInfoVO{
+
+
 
     /* coupon VO */
 
@@ -36,5 +31,18 @@ public class MyCouponVO {
     private String cp_wdate; // 만료날짜
     private String cp_rdate; // 생성날짜
 
+    private int point_calu;
+
+    /* point VO */
+
+    private String point_id;             // 적립금ID
+    private String point_price;          // 적립 금액
+    private String point_type;           // 적립 유형 (1:등급 / 2:사용)
+    private int point_stat;              // 적립 상태 (0:무효 / 1:적립 / 2:사용)
+    private String point_edate;          // 적립금 사용일
+
+
+
 
 }
+

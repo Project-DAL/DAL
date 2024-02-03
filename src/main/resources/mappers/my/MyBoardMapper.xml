@@ -39,6 +39,7 @@
             bard_type = #{bard_type}
     </update>
 
+
     <!-- 내 댓글 목록 -->
     <select id="selectAnsList" resultType="kr.co.Dal.my.model.MyAnsVO">
         SELECT

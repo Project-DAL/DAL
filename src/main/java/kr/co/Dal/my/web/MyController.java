@@ -15,6 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.swing.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -27,6 +29,7 @@ public class MyController {
     private final MyBoardService myBoardService;
     private final MyInfoService myInfoService;
     private final MyWishService myWishService;
+    private final MyWithdrawService myWithdrawService;
 
 
     // My Page Main
@@ -56,13 +59,34 @@ public class MyController {
         return "my/MyCoupon";
     }
 
+
+
     // My Info
     @GetMapping("/my/MyInfo")
     public String myinfo(Model model, MyInfoVO myInfoVO){
         List<MyInfoVO> infoList = myInfoService.selectMyInfoList(myInfoVO);
+
+        log.warn("infoList: " + infoList);
+        log.warn("infoList hp: " + infoList.get(0).getUser_hp());
+
+        String hp1 = infoList.get(0).getUser_hp().substring(0,3);
+        String hp2 = infoList.get(0).getUser_hp().substring(3,7);
+        String hp3 = infoList.get(0).getUser_hp().substring(7);
+
+        log.warn("hp1: " + hp1);
+        log.warn("hp2: " + hp2);
+        log.warn("hp3: " + hp3);
+
+
         model.addAttribute("infoList", infoList);
+        model.addAttribute("hp1", hp1);
+        model.addAttribute("hp2", hp2);
+        model.addAttribute("hp3", hp3);
+
         return "my/MyInfo";
     }
+
+
 
     // My Order
     @GetMapping("/my/MyOrder")
@@ -70,6 +94,8 @@ public class MyController {
 
         return "my/MyOrder";
     }
+
+
 
     // My Point
     @GetMapping("/my/MyPoint")
@@ -90,7 +116,12 @@ public class MyController {
 
     // My Withdraw
     @GetMapping("/my/MyWithdraw")
-    public String mywithdraw(){
+    public String mywithdraw(Model model, MyWithdrawVO myWithdrawVO){
+        int pointGross = myWithdrawService.pointGross(myWithdrawVO);
+        int couponGross = myWithdrawService.couponGross(myWithdrawVO);
+
+        model.addAttribute("pointGross", pointGross);
+        model.addAttribute("couponGross", couponGross);
 
         return "my/MyWithdraw";
     }

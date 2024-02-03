@@ -1,3 +1,13 @@
+<!--
+
+파일명        : MyWithdraw.html
+최초 작성자    : 박제형
+최초 작성날짜   : 2024.01.22
+
+-->
+
+
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
@@ -8,6 +18,7 @@
     <th:block layout:fragment="css-js">
         <link rel="stylesheet" type="text/css" th:href="@{/my/css/my-layout.css}">
         <link rel="stylesheet" type="text/css" th:href="@{/my/css/myWithdraw.css}">
+        <script src="/my/js/myWithdraw.js" defer></script>
         <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
     </th:block>
 
@@ -19,22 +30,22 @@
         <!-- 4.2 Content -->
           <section>
             <div class="ct_content-wrap">
-               <div class="cotent-top">
+               <div class="content-top">
                   <div class="widthdraw-img">
                     <a href="#">이미지 자리 엉엉 울고있는 엉엉엉</a>
                   </div>
                    <div class="left-point">
-                       <div>현재 사용가능한 포인트: <span>300</span> p</div>
-                       <div>현재 사용가능한 쿠폰: <span>3</span> 장</div>
+                       <div>현재 사용가능한 포인트: <span th:text="${pointGross}"></span> p</div>
+                       <div>현재 사용가능한 쿠폰: <span th:text="${couponGross}"></span> 장</div>
                    </div>
                   <div class="widthdraw-text">
-                    지금 탈퇴하면 지금까지 쌔빠지게 모은 포인트 쿠폰 전부 ㅃㅇㅃㅇ 인데 ㄹㅇ ㄱㅊㄱㅊ?? ㅋㅋㅋ;;;; <br>
-                    다시 회원가입해도 돌려주지도 않음 ㄹㅇ 개손해인 부분 ㅇㅈ? 어ㅇㅈ 동의 ? 어 보감
+                    탈퇴하게되면 지금까지 모은 포인트 및 쿠폰은 사용할 수 없게 됩니다
+                      정말로 탈퇴하시겠습니까?
                   </div>
                </div>
-               <div class="cotent-bottom">
-                  <a id="btnWidthdraw" href="#" class="btn large blue">탈퇴하기</a>
-                  <a id="btnMainPage" href="#" class="btn large blue">메인화면으로 가기</a>
+               <div class="content-bottom">
+                  <a id="btnWidthDraw" href="#" class="btn">탈퇴하기</a>
+                  <a id="btnMainPage" th:href="@{/}" class="btn">메인화면으로 가기</a>
                </div>
             </div>
           </section>
