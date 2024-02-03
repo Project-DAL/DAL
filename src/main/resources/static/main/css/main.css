@@ -112,7 +112,8 @@
     left: 15px;
 }
 .hashtag-bar {
-    width: 100%;
+    width: 94%;
+    margin-top: 15px;
     border-radius: 12px;
 }
 .hashtag-bar > .hashtag-list {
@@ -132,18 +133,29 @@
     margin: 0;
 }
 .store-list {
-    width: 100%;
+    width: 97%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    gap: 1px;
-    height: 563px;
+    gap: 3px;
+    height: 555px;
     overflow-y: scroll;
+}
+.store-list::-webkit-scrollbar {
+    width: 10px;
+}
+.store-list::-webkit-scrollbar-thumb {
+    background: #2E3888; /* 스크롤바 막대 색상 */
+    border: 1px solid #293485; /* 스크롤바 막대 테두리 설정  */
+    border-radius: 12px 12px 12px 12px;
+}
+.store-list::-webkit-scrollbar-track {
+    backdrop-filter: blur(15px);
 }
 .store-box {
     background: #ffffff;
-    width: 100%;
+    width: 97%;
     padding: 15px;
     box-sizing: border-box;
     display: flex;
@@ -151,6 +163,12 @@
     gap: 15px;
     border: 1px solid #F7F7F7;
     border-radius: 10px;
+    transition: box-shadow 0.3s;
+    opacity: 90%;
+}
+.store-box:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    opacity: 100%;
 }
 .store-info {
     width: 100%;
@@ -167,13 +185,10 @@
 .store-info-txt {
     width: calc(100% - 125px);
 }
-.store-info-score {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
 .store-info-hour {
     display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .store-info-open {
     border: 1px solid #FFAE00;
@@ -181,6 +196,7 @@
     color: #FFF;
     border-radius: 9px;
     padding: 1px 10px;
+    margin-left: 5px;
 }
 .store-info-closed {
     border: 1px solid #D6221E;
@@ -188,6 +204,7 @@
     color: #FFF;
     border-radius: 9px;
     padding: 1px 10px;
+    margin-left: 5px;
 }
 .store-reviews {
     display: flex;
@@ -362,7 +379,6 @@
     box-sizing: border-box;
 }
 .prod-list {
-    padding: 10px;
     box-sizing: border-box;
     position: absolute;
     top: 0;
@@ -373,8 +389,7 @@
     backdrop-filter: blur(15px);
     display: flex;
     flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 15px;
 }

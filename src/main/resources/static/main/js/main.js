@@ -318,6 +318,9 @@ function fnAjaxList(){
                 // 기존 positions 배열 비우기
                 positions = [];
 
+                // 가게 목록 HTML 비우기
+                divObjStoreList.innerHTML = '';
+
                 // 조건에 따른 st_tb의 검색 결과의 개수만큼 가게 표시하기
                 for (let i=0; i < response.length; i++) {
 
@@ -336,13 +339,11 @@ function fnAjaxList(){
                             <div class="store-info">
                                 <div class="store-info-img">img</div>
                                 <div class="store-info-txt">
-                                    <div class="store-info-name">restaurant name</div>
-                                    <div class="store-info-score">
-                                        <div>★★★★★</div>
-                                        <div>4/8</div>
-                                        <div>(185 reviews)</div>
-                                    </div>
+                                    <a name="${response[i].st_id}">
+                                        <div class="store-info-name">${response[i].st_nm}</div>
+                                    </a>
                                     <div class="store-info-hour">
+                                        <div class="store-info-hours">${response[i].st_hours}</div>
                                         <div class="store-info-open">OPEN</div>
                                         <div class="store-info-closed">CLOSED</div>
                                     </div>
@@ -355,11 +356,22 @@ function fnAjaxList(){
 
                 console.log("positions: ", positions);
 
+                // 마커 이미지의 이미지 주소입니다
+                var imageSrc = "/main/img/marker.png";
+
                 for(let i=0; i < positions.length; i++) {
+
+                    // 마커 이미지의 이미지 크기 입니다
+                    var imageSize = new kakao.maps.Size(30, 33);
+
+                    // 마커 이미지를 생성합니다
+                    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
                     // 마커를 생성합니다
                     var marker = new kakao.maps.Marker({
                         map: map, // 마커를 표시할 지도
-                        position: positions[i].latlng // 마커의 위치
+                        position: positions[i].latlng, // 마커의 위치
+                        image : markerImage // 마커 이미지
                     });
 
                     marker.stId = positions[i].stId;
@@ -414,6 +426,24 @@ function makeClickListener(clickedStId, response) {
     return function() {
         console.log('마커를 클릭했습니다1' + clickedStId);
         console.log('마커를 클릭했습니다2', response);
+
+        for(let i=0; i<response.length; i++) {
+            if(clickedStId == response[i].st_id){
+                console.log("st_id: " + clickedStId + ", " + response[i].st_id);
+
+                // 해당 st_id를 가진 a 태그를 찾아서 스크롤
+                let anchorElement = document.querySelector(`a[name="${clickedStId}"]`);
+                if (anchorElement) {
+                    anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    // anchorElement의 위치와 스크롤 위치 계산
+                    let anchorTop = anchorElement.getBoundingClientRect().top;
+                    let containerTop = divObjStoreList.getBoundingClientRect().top;
+                    divObjStoreList.scrollTop = anchorTop - containerTop + divObjStoreList.scrollTop;
+                }
+
+            }
+        }
     };
 }
 
