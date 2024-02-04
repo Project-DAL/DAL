@@ -2,6 +2,7 @@
 * {
     box-sizing: border-box;
     -webkit-text-size-adjust: none;
+    font-family: 'Noto Sans Kr';
 }
 
 /* 2. Reset styles for the following elements */
@@ -118,6 +119,7 @@ ul {
 /* 5. a style */
 a {
     text-decoration: none;
+    color: #000;
 }
 a:hover {
     text-decoration: none;

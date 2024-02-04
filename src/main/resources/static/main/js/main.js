@@ -381,13 +381,29 @@ function fnAjaxList(){
                     // 마커에 스토어 아이디 추가하기
                     console.log("marker: ", marker);
 
-                    // 마커에 표시할 인포윈도우를 생성합니다
-                    var infowindow = new kakao.maps.InfoWindow({
-                        content: positions[i].content // 인포윈도우에 표시할 내용
+                    // 커스텀 오버레이에 표시할 내용입니다
+                    // HTML 문자열 또는 Dom Element 입니다
+                    var content = '<span class="infoMsg"><p>' + positions[i].content + '</p></span>'
+
+                    // 커스텀 오버레이를 생성합니다
+                    var customOverlay = new kakao.maps.CustomOverlay({
+                        content: content,
+                        map: map,
+                        position: marker.getPosition()
                     });
 
+                    // 커스텀 오버레이를 지도에 표시합니다
+                    customOverlay.setMap(map);
+
+                    // 마커에 표시할 인포윈도우를 생성합니다
+                    /*
+                    var infowindow = new kakao.maps.InfoWindow({
+                        content: '<span class="infoMsg">' + positions[i].content + '</span>' // 인포윈도우에 표시할 내용
+                    });
+                    */
+
                     // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-                    infowindow.open(map, marker);
+                    //infowindow.open(map, marker);
 
                     // 마커 클릭 이벤트
                     kakao.maps.event.addListener(marker, 'click', makeClickListener(marker.stId, response));

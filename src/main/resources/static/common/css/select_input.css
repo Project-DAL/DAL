@@ -28,18 +28,14 @@ Contents
 /* 1. select ***********************************************************************************************************/
 .select {
     border: 1px solid #293485;
-    border-radius: 12px;
-    color: #293485;
     font-weight: 600;
 }
 
 /* 2. input ***********************************************************************************************************/
 .input {
     border: 1px solid #293485;
-    border-radius: 12px;
     letter-spacing: 0;
     vertical-align: middle;
-    color: #293485;
 }
 
 .input:focus {

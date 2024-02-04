@@ -434,3 +434,30 @@
     height: 40px;
     line-height: 40px;
 }
+
+/* infoWindow Msg */
+.infoMsg {
+    position: relative;
+}
+.infoMsg div {
+    position: absolute;
+    top: -63px;
+    left: -33px;
+    background: linear-gradient(-135deg, transparent 10px, #eb3941, #f15e64, #e14e53 0);
+    box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
+    color: #FFF;
+    padding: 5px 24px 5px 10px;
+}
+.infoMsg div:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) #d6221e #d6221e;
+    background: rgba(255, 255, 255, 0);
+    display: block;
+    width: 0;
+}
+.infoMsg p {}
