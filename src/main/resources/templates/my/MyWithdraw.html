@@ -25,24 +25,31 @@
     <th:block layout:fragment="content">
         <!-- 4.2 Content -->
         <section>
-            <div class="ct_content-wrap">
-                <div class="content-top">
-                    <div class="widthdraw-img">
-                        <a href="#">이미지 자리 엉엉 울고있는 엉엉엉</a>
-                    </div>
-                    <div class="left-point">
-                        <div>현재 사용가능한 포인트: <span th:text="${pointGross}"></span> p</div>
-                        <div>현재 사용가능한 쿠폰: <span th:text="${couponGross}"></span> 장</div>
-                    </div>
-                    <div class="widthdraw-text">
-                        탈퇴하게되면 지금까지 모은 포인트 및 쿠폰은 사용할 수 없게 됩니다
-                        정말로 탈퇴하시겠습니까?
-                    </div>
-                </div>
-                <div class="content-bottom">
-                    <a id="btnWidthDraw" href="#" class="btn">탈퇴하기</a>
-                    <a id="btnMainPage" th:href="@{/}" class="btn">메인화면으로 가기</a>
-                </div>
+            <div class="widthdraw-img">
+                <img th:src="@{/my/img/sad.png}">
+            </div>
+            <div class="content-top">
+                <div class="left-view">현재 사용 가능한 포인트 및 쿠폰</div>
+                    <div class="left-view-detail">
+                       <div class="left-view-point">
+                         <div><img th:src="@{/my/img/coin.png}"></div>
+                         <div class="fontsize" th:text="${pointGross}"></div>
+                         <span class="fontsize">P</span>
+                       </div>
+                       <div class="left-view-coupon">
+                           <div><img th:src="@{/my/img/coupon.png}"></div>
+                           <div class="fontsize" th:text="${couponGross}"></div>
+                           <span class="fontsize">개</span>
+                       </div>
+                 </div>
+            </div>
+            <div class="content-middle">
+                회원 탈퇴 후 새롭게 회원가입을 해도 현재 모은 포인트와 쿠폰은 사용할 수 없습니다.
+                <p>정말 탈퇴하시겠습니까?
+            </div>
+            <div class="content-bottom">
+                <a id="btnWidthDraw" href="#" class="btn-withdraw">탈퇴하기</a>
+                <a id="btnMainPage" th:href="@{/}" class="btn-main">메인화면으로 가기</a>
             </div>
         </section>
     </th:block>

@@ -67,6 +67,7 @@ function fnMyReplyTab(){
     btnDelete2.style.display = '';
     title1.style.display = 'none';
     title2.style.display = '';
+
 }
 
 
@@ -204,9 +205,10 @@ function fnDelete() {
     }
 
     ajaxAPI("/my/MyBoard/deleteBoard", jsonData, "POST").then(response => {
-        confirm("정말 삭제 하시겠습니까?");
-        window.location.href = '/my/MyBoard';
-    })
+        if(confirm("정말 삭제 하시겠습니까?")) {
+            window.location.href = '/my/MyBoard';
+        }
+    });
 }
 
 
@@ -233,9 +235,10 @@ function fnDelete2(){
 
 
       ajaxAPI("/my/MyBoard/deleteAns", jsonData, "POST").then(response => {
-        confirm("정말 삭제 하시겠습니까?");
-        window.location.href = '/my/MyBoard';
-    })
+          if(confirm("정말 삭제 하시겠습니까?")) {
+              window.location.href = '/my/MyBoard';
+          }
+      });
 }
 
 
