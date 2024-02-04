@@ -51,7 +51,8 @@ function fnUpdate(){
 */
 
     ajaxAPI("/my/MyInfo/update", null, "POST").then(response => {
-        confirm("정말 수정 하시겠습니까?");
-        window.location.href = '/my/MyInfo';
-    })
+        if(confirm("정말 수정 하시겠습니까?")) {
+            window.location.href = '/my/MyInfo';
+        }
+    });
 }

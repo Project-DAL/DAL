@@ -102,8 +102,9 @@ function fnDelete(){
     }
 
     ajaxAPI("/my/MyWish/deleteWish", jsonData, "POST").then(response => {
-        confirm("정말 삭제 하시겠습니까?");
-        window.location.href = '/my/MyWish';
-    })
+        if(confirm("정말 삭제 하시겠습니까?")) {
+            window.location.href = '/my/MyWish';
+        }
+    });
 
 }

@@ -25,7 +25,7 @@
         <section>
             <div class="ct_content-wrap">
                 <div class="ct_subtitle">
-                    <h3>위시 리스트</h3>
+                    위시 리스트
                 </div>
                 <div class="content-middle">
                     <div th:each="wish : ${wishList}" class="card-wrap">
@@ -34,17 +34,17 @@
                             <div th:text="${wish.prod_img}" class="prod-pic"></div>
                         </div>
                         <div class="prodInfo">
-                            <div th:text="${wish.prod_tit}" class="prod-name"></div>
+                            <div th:text="${wish.prod_tit}" class="prod-tit"></div>
                             <div class="wonFlex">
-                                <div th:text="${wish.prod_ori_price}" class="prod-name">원</div>
+                                <div th:text="${wish.prod_ori_price}" class="prod-ori"></div>
+                                <div class="prod-ori">원</div>
+                            </div>
+                            <div class="wonFlex">
+                                <div th:text="${wish.prod_sale_price}" class="prod-name"></div>
                                 <div>원</div>
                             </div>
                             <div class="wonFlex">
-                                <div th:text="${wish.prod_sale_price}" class="prod-name">원</div>
-                                <div>원</div>
-                            </div>
-                            <div class="wonFlex">
-                                <div>좋아요</div>
+                                <div><img class="img-size-wish" th:src="@{/my/img/heart.png}"></div>
                                 <div th:text="${wish.prod_like}" class="prod-name"></div>
                             </div>
                         </div>

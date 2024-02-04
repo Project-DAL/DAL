@@ -29,7 +29,8 @@ function fnWidthDraw(){
     }*/
 
     ajaxAPI("/my/MyWithdraw/deleteUser", null, "POST").then(response => {
-        confirm("정말 탈퇴 하시겠습니까?");
-        window.location.href = '/';
-    })
+        if(confirm("정말 삭제 하시겠습니까?")) {
+            window.location.href = '/';
+        }
+    });
 }

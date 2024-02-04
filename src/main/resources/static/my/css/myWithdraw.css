@@ -1,38 +1,104 @@
-.ct_main{
-    width:100%;
-}
-
-
-.ct_content-wrap{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .widthdraw-img{
-    text-align:center;
+    margin-top:50px;
+    text-align: center;
 }
 
-.left-point{
-    text-align:center;
-    border: 1px solid black;
-    width: 500px;
+
+.widthdraw-img img{
+    width:400px;
 }
 
-.widthdraw-text{
-    text-align:center;
+
+.left-view{
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+
+}
+
+
+.left-view-detail{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    margin-top: 10px;}
+
+
+.left-view-point{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+
+.left-view-point img{
+    width:40px;
+    height:40px;
+}
+
+
+.left-view-coupon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+
+.left-view-coupon img{
+    width:40px;
+    height:40px;
+}
+
+
+.fontsize{
+    font-size: 25px;
+    color: #2E3888;
+
+}
+
+
+.content-middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    color: red;
+    font-size: large;
+    font-weight: 500;
+    margin-top: 20px;
 }
 
 .content-bottom{
-    width: 100%;
-    margin-top: 5%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap:5px;
+}
+
+.btn-withdraw{
+    background-color: #03012D;
+    color: white;
+    border: 1px solid #293485;
+    border-radius: 3px;
+    width: 80px;
+    height: 40px;
     text-align: center;
-    gap: 10px;
+    line-height: 40px;
 }
 
 
+.btn-main{
+    background-color: #03012D;
+    color: white;
+    border: 1px solid #293485;
+    border-radius: 3px;
+    width: 135px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}

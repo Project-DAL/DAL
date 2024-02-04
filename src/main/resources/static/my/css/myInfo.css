@@ -15,13 +15,14 @@
     font: 700 30px 'Noto Sans Kr';
     width: 100%;
     text-align: center;
+    margin-top: 40px;
+
 }
 .join-content {
     width: 98%;
 }
-.join-content section {
-    border-bottom: 1px solid #e8e8e8;
-}
+
+
 .join-content table {
     border-left: none;
     border-right: none;
@@ -33,9 +34,10 @@
     text-align: left;
     padding: 17px 20px;
     font: 500 15px 'Noto Sans Kr';
-    color: #555;
-    background: #fbfafa;
+    color: white;
+    background: #03012D;
     border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
 }
 .join-content table td {
     padding: 13px 10px 12px;
@@ -43,6 +45,7 @@
     font: 500 15px 'Noto Sans Kr';
     color: #555;
     border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
 }
 .join-content table td input {
     height: 30px;
@@ -63,13 +66,44 @@
     width: 100%;
     text-align: center;
 }
-.btn {
-    display: inline-block;
-    width: 200px;
-    background: #000;
-    color: #fff;
-    font-size: 17px;
+
+.bottom-area{
+    display: flex;
+    gap: 3px;
+    justify-content: flex-end;
+}
+
+
+
+.btn-update {
+    background-color: #03012D;
+    color: white;
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
     text-align: center;
-    padding: 8px;
-    margin-right: 10px;
+    border-radius: 5px;
+    margin-top: 30px;
+    float: right;
+}
+
+
+.btn-cancel{
+    background-color: #03012D;
+    color: white;
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 30px;
+    float: right;
+}
+
+.btn-cancel a{
+    color: white;
+}
+
+.input_address{
+    width: 300px;
 }

@@ -1,3 +1,13 @@
+.ct_subtitle{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
 .content-middle {
     width: 100%;
     display: flex;
@@ -7,12 +17,14 @@
 }
 
 .card-wrap {
-    width: 330px;
+    width: 320px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     margin-left: 60px;
     margin-top: 40px;
+    gap: 5px;
+
 }
 
 .card-prod {
@@ -34,10 +46,26 @@
 }
 
 
+
+.prod-tit{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+
+
+
+.prod-ori{
+    text-decoration: line-through;
+    color: gray;
+}
+
+
+
 .prodInfo {
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    padding-top: 13px;
     padding-left: 10px;
     width: 157px;
     gap: 10px;
@@ -45,8 +73,15 @@
 }
 
 .wonFlex{
-    display:flex;
-    gap:3px;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+
+.img-size-wish{
+    width:20px;
+    height:20px;
 }
 
 
