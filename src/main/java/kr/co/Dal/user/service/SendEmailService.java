@@ -1,6 +1,7 @@
 package kr.co.Dal.user.service;
 
 import kr.co.Dal.user.model.MailDto;
+import kr.co.Dal.user.model.User;
 import kr.co.Dal.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,21 +24,25 @@ public class SendEmailService {
     private static final String FROM_ADDRESS = "aaa@gmail.com";
 
 
-    public MailDto createMailAndChangePassword(String userEmail, String userName) {
+    public MailDto createMailAndChangePassword(User user) {
         String str = getTempPassword();
         MailDto dto = new MailDto();
-        dto.setAddress(userEmail);
-        dto.setTitle(userName + "님의 HOTTHINK 임시비밀번호 안내 이메일 입니다.");
-        dto.setMessage("안녕하세요. HOTTHINK 임시비밀번호 안내 관련 이메일 입니다." + "[" + userName + "]" + "님의 임시 비밀번호는 "
+        dto.setAddress(user.getEmail());
+        dto.setTitle(user.getUsername() + "님의 DAL 임시비밀번호 안내 이메일 입니다.");
+        dto.setMessage("안녕하세요.  임시비밀번호 안내 관련 이메일 입니다." + "[" + user.getUsername() + "]" + "님의 임시 비밀번호는 "
                 + str + " 입니다.");
-//        updatePassword(str, userEmail);
+       updatePassword(str, user);
         return dto;
     }
 
-//    public void updatePassword(String str) {
-//        String pw = bCryptPasswordEncoder.password(str);
-//        userRepository.save(pw);
-//    }
+    public void updatePassword(String str, User user) {
+        String password = bCryptPasswordEncoder.encode(str);
+        String email = user.getEmail(); // 이 부분 수정
+        userRepository.updatePw(password, email);
+    }
+
+
+
 
 
     public String getTempPassword() {

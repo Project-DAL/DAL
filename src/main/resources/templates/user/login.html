@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-    <!-- 1. Common Head -->
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>LOGIN</title>
-    </head>
+<!----------------------------------------------------------------------------------------------------------------------
+©Copyright 2023. DAL. All rights reserved.
 
-    <!-- 2. Page JS, CSS -->
-    <link rel="stylesheet" href="/common/css/layout.css" />
-    <link rel="stylesheet" href="/common/css/reset.css" />
-    <link rel="stylesheet" href="/common/css/select_input.css" />
-    <link rel="stylesheet" href="/common/css/helper.css" />
-    <link rel="stylesheet" href="/user/css/login.css" />
+File Name       : login.html
+Program Name    : 로그인 페이지
+Description     : 일반로그인과, 소셜로그인 및 아이디 찾기,비밀번호 찾기, 회원가입을 할 수 있게 기능했습니다.
+Draft Author    : 신호준
+Draft Date      : 2024.02.05
 
+Revision History
+Ver.   Date          Revised By    Description
+------------------------------------------------------------------------------------------------------------------------
+0.1    2024.02.05    신호준         최초개발
+----------------------------------------------------------------------------------------------------------------------->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main-layout}">
+
+<th:block th:replace="~{fragments/_head::headFragment}"></th:block>
+<!-- 2. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/layout.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/reset.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/select_input.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/helper.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/user/css/login.css}">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+</th:block>
 
 
-    <body>
+
+<th:block layout:fragment="content">
+
         <div id="wrapper">
 <!--            &lt;!&ndash; 3. Header &ndash;&gt;-->
 <!--            <header>-->
@@ -117,5 +131,5 @@
 
 
         </div>
-    </body>
+</th:block>>
 </html>

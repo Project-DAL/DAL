@@ -5,6 +5,10 @@ import kr.co.Dal.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -21,4 +25,20 @@ public class UserService {
             return false;
         }
     }
+
+    public boolean userUsernameCheck(String username) {
+
+        User user = userRepository.findByUsername(username);
+        if(user!=null) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public User findUserByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
 }

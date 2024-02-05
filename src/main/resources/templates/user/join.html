@@ -1,90 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-    <!-- 1. Common Head -->
-    <th:block th:fragment="headFragment">
-        <head>
-            <!-- X-UA-Compatible : IE간 버전이 다르더라도 같은 웹 화면을 볼 수 있도록 특정 IE 버전의 렌더링 엔진 모드를 강제로 지정 -->
-            <!-- "ID=Edge" : IE 브라우저 각 버전 중 가장 최신 표준 모드를 선택하는 문서 모드 -->
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <!-- HTML 문서 문자 인코딩 -->
-            <!-- Content-Type : 서버가 전송하는 리소스의 유형과 문자 인코딩 방식을 나타냄 -->
-            <!-- content="text/html" : HTML문서의 MIME 타입을 text/html로 설정 -->
-            <!-- charset=utf-8 : 유니코드(Unicode)를 표현하는 가변 길이 문자 인코딩 방식 -->
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!----------------------------------------------------------------------------------------------------------------------
+©Copyright 2023. DAL. All rights reserved.
 
-            <!-- Ajax Token -->
-            <meta name="_csrf" th:if="${_csrf}" th:content="${_csrf.token}" />
-            <meta name="_csrf_header" th:if="${_csrf}" th:content="${_csrf.headerName}" />
-            <script>
-                const tokenMeta = document.head.querySelector("meta[name='_csrf']");
-                const headerMeta = document.head.querySelector("meta[name='_csrf_header']");
+File Name       : join.html
+Program Name    : 회원가입 페이지
+Description     : 일반회원가입을 할 수 있게 하였습니다.
+Draft Author    : 신호준
+Draft Date      : 2024.02.05
 
-                const token = tokenMeta ? tokenMeta.content : '';
-                const header = headerMeta ? headerMeta.content : '';
+Revision History
+Ver.   Date          Revised By    Description
+------------------------------------------------------------------------------------------------------------------------
+0.1    2024.02.05    신호준         최초개발
+----------------------------------------------------------------------------------------------------------------------->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main-layout}">
 
-                console.log("header: " + header);
-                console.log("token: " + token);
-            </script>
-            <script type="text/javascript" th:src="@{/common/js/ajaxAPI.js}"></script>
-
-            <!-- Common CSS -->
-            <!-- media="all" : 모든 미디어 유형(컴퓨터 모니터, 태블릿, 스마트폰 등)에 스타일을 적용 (모든 기기와 미디어에 동일 적용 ) -->
-            <!-- media="screen" : 스크린 미디어 타입에 따라 웹 페이지가 해당 기기에 맞게 최적화된 스타일로 표현 -->
-            <link rel="stylesheet" type="text/css" th:href="@{/common/css/common.css}" media="all">
-
-            <!-- Jquery, Jquery-UI -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-            <script src="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-
-            <!-- Common JS -->
-            <link rel="shortcut icon" type="image/x-icon" href="" />
-            <script type="text/javascript" th:src="@{/common/js/Common.js}"></script>
-
-            <!-- Font Icon -->
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
-            <link
-                    rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-            />
+<th:block th:replace="~{fragments/_head::headFragment}"></th:block>
+<!-- 2. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/layout.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/reset.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/select_input.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/helper.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/user/css/join.css}">
+    <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+</th:block>
 
 
 
-        </head>
-    </th:block>
-
-    <!-- 2. Page JS, CSS -->
-    <link rel="stylesheet" href="/common/css/layout.css" />
-    <link rel="stylesheet" href="/common/css/reset.css" />
-    <link rel="stylesheet" href="/common/css/select_input.css" />
-    <link rel="stylesheet" href="/common/css/helper.css" />
-    <link rel="stylesheet" href="/user/css/join.css" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-
-
-    <body>
-        <div id="wrapper">
-            <!-- 3. Header -->
-            <header>
-                <div class="user-wrap">
-                    <div>
-                        <a class="clicked" href="/loginForm">LOGIN</a>
-                        <a>JOIN</a>
-                        <a>MY PAGE</a>
-                        <a>CART</a>
-                    </div>
-                </div>
-            </header>
-
+<th:block layout:fragment="content">
             <!-- 4. Main -->
             <main>
                 <div class="join_main">
@@ -200,5 +146,5 @@
             </main>
 
         </div>
-    </body>
+</th:block>
 </html>

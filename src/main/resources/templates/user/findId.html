@@ -1,71 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-<!-- 1. Common Head -->
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LOGIN</title>
-</head>
+<!----------------------------------------------------------------------------------------------------------------------
+©Copyright 2023. DAL. All rights reserved.
 
+File Name       : findId.html
+Program Name    : 아이디찾기 페이지
+Description     : 이름으로 이메일을 찾을 수 있게 ajax로 기능 구현을 하였습니다.
+Draft Author    : 신호준
+Draft Date      : 2024.02.05
+
+Revision History
+Ver.   Date          Revised By    Description
+------------------------------------------------------------------------------------------------------------------------
+0.1    2024.02.05    신호준         최초개발
+----------------------------------------------------------------------------------------------------------------------->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main-layout}">
+
+<th:block th:replace="~{fragments/_head::headFragment}"></th:block>
 <!-- 2. Page JS, CSS -->
-<link rel="stylesheet" href="/common/css/layout.css" />
-<link rel="stylesheet" href="/common/css/reset.css" />
-<link rel="stylesheet" href="/common/css/select_input.css" />
-<link rel="stylesheet" href="/common/css/helper.css" />
-<link rel="stylesheet" href="/user/css/findId.css" />
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
-<link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-/>
+<th:block layout:fragment="css-js">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/layout.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/reset.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/select_input.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/helper.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/user/css/findId.css}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+</th:block>
 
 
-<body>
-<div id="wrapper">
-    <!-- 3. Header -->
-    <header>
-        <div class="user-wrap">
-            <div>
-                <a class="clicked" href="/loginForm">LOGIN</a>
-                <a>JOIN</a>
-                <a>MY PAGE</a>
-                <a>CART</a>
-            </div>
-        </div>
 
-    </header>
-
+<th:block layout:fragment="content">
     <!-- 4. Main -->
     <!-- 4. Main -->
     <main>
         <div class="findId_main">
-            <div class="findId-wrap">
-                <div class="findId-title">아이디찾기</div>
+            <div class="findId-wrap" id="findIdContent">
+                <div class="findId-content-title">아이디찾기</div>
                 <div class="findId-content mt25">
-                    <form method="post" action="/join">
-                            <table>
-                                <tr>
-                                    <th>이름</th>
-                                    <td>
-                                        <input class="input" type="text" name="email" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>전화번호</th>
-                                    <td>
-                                        <input class="input" type="text" name="email" required>
-                                    </td>
-                                </tr>
+                    <form>
+                        <table>
+                            <tr>
+                                <th>이름</th>
+                                <td>
+                                    <input class="input" type="text" id="username" required>
+                                </td>
+                            </tr>
+<!--                            <tr>-->
+<!--                                <th>이메일</th>-->
+<!--                                <td>-->
+<!--                                    <input class="input" type="text" id="email" required>-->
+<!--                                </td>-->
+<!--                            </tr>-->
 
-                            </table>
+                        </table>
                         <p class="mt15">
                             <input type="submit" class="btn2" value="취소" >
-                            <input type="submit" class="btn1" value="찾기">
+                            <button type="button" class="btn1" id="checkName" value="찾기">찾기</button>
+
                         </p>
                     </form>
+                    <hr>
+                    <div class="text-center small mt-2" id="checkMsg" style="color: red"></div>
                 </div>
             </div>
 
@@ -74,5 +72,49 @@
 
 </div>
 
-</body>
+<script>
+
+    // $('.modal').on('hidden.bs.modal', function (e) {
+    //     console.log('modal close');
+    //     $(this).find('form')[0].reset()
+    // });
+
+    $("#checkName").click(function () {
+        let username = $("#username").val();
+        // let email = $("#email").val();
+
+        $.ajax({
+            type: "GET",
+            url: "/check/findId",
+            data: {
+                "username": username
+            },
+            success: function (res) {
+                if (res['check']) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/check/findId/successId",
+                        data: {
+                            "username": username
+                        },
+                        success: function (response) {
+                            // 서버에서 받은 이메일 정보를 동적으로 업데이트
+                            $('#findIdContent').html('<div class="findId-content-title">아이디찾기</div>' +
+                                '<div class="findId-content mt25">' +
+                                '    <p class="mt15">이메일: ' + response.email + '</p>' +
+                                '</div>');
+                        },
+                        error: function (error) {
+                            console.error("Error sending email:", error);
+                        }
+                    });
+                    $('#checkMsg').html('<p style="color:darkblue"></p>');
+                } else {
+                    $('#checkMsg').html('<p style="color:red">일치하는 정보가 없습니다.</p>');
+                }
+            }
+        });
+    });
+</script>
+</th:block>
 </html>
