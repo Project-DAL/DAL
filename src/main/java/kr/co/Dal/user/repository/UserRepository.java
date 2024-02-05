@@ -1,8 +1,12 @@
 package kr.co.Dal.user.repository;
 
 import kr.co.Dal.user.model.User;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -14,9 +18,16 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     // select * from user where  username =? 조회한다.
      User findByEmail(String email);
 
+     User findByUsername(String username);
+
 
     // SELECT * FROM user WHERE provider = ?1 and providerId = ?2
     Optional<User> findByProviderAndProviderId(String provider, String providerId);
 
-    User save(String passward);
+    // 비밀번호찾기 임시 비밀번호로 변경되는 쿼리문
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE User u SET u.password = :password WHERE u.email = :email" )
+    void updatePw(@Param("password") String password,@Param("email") String email);
+
 }
