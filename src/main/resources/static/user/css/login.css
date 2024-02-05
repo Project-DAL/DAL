@@ -126,3 +126,14 @@
 a {
     text-decoration-line: none;
 }
+
+div.login-pw{
+    position: relative;
+}
+
+div.login-pw i{
+    position: absolute;
+    left: 90%;
+    top: 27px;
+    color: orange;
+}
