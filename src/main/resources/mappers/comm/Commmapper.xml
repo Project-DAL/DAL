@@ -7,19 +7,9 @@
 
 <mapper namespace="kr.co.Dal.comm.mapper.CommMapper">
 
-    <select id="commList" parameterType="kr.co.Dal.comm.model.CommVO" resultType="kr.co.Dal.comm.model.CommVO">
-        SELECT
-             BARD_ID
-            ,USER_ID
-            ,BARD_TYPE
-            ,BARD_TIT
-            ,BARD_CN
-            ,BARD_RDATE
-            ,BARD_CNT
-            ,BARD_LIKE_CNT
-            ,BARD_STTS
-            ,CATE_TYPE
-        FROM BARD_TB
+    <select id="commList" resultType="kr.co.Dal.comm.model.CommVO">
+        SELECT *
+        FROM bard_tb
     </select>
 
 

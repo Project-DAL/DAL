@@ -21,27 +21,43 @@
             <div class="content-top-info">
               사용 가능한 적립금
             </div>
-            <div class="content-top-view">3,000<span>P</span></div>
+            <div class="p-flex1">
+                <div class="content-top-view" th:text="${pointGross}"></div>
+                <span>P</span>
+            </div>
             <div class="content-top-till-wrap">
-                <div class="content-top-till">
-                  30일 이내 소멸 예정 적립금
+                <div class="content-top-till">30일 이내 소멸 예정 적립금</div>
+                <div class="p-flex2">
+                  <div class="content-top-till-view" th:text="${pointGross30}"></div>
+                  <span>P</span>
                 </div>
-                <div class="content-top-till-view">300<span>P</span></div>
             </div>
           </div>
        </div>
       <div class="content-middle">적립금 내역</div>
         <div class="middle-wrap" th:each="point : ${pointList}">
             <div class="content-middle-box">
-              <div class="content-middle-box-date">2024.02.04</div>
-              <div class="content-middle-box-info">
+              <div class="content-middle-box-date" th:if="${point.point_stat != 2}" th:text="${point.point_rdate}"></div>
+                <div class="content-middle-box-date" th:if="${point.point_stat == 2}" th:text="${point.point_edate}"></div>
+                <div class="content-middle-box-info">
                 <div class="box-info-wrap">
-                  <div class="box-point">적립</div>
-                  <div class="box-stts">구매확정</div>
+                    <div class="box-gone" th:if="${point.point_stat == 0}">유효기간 만료</div>
+                    <div class="box-point" th:if="${point.point_stat == 1}">적립</div>
+                    <div class="box-use" th:if="${point.point_stat == 2}">사용</div>
+                  <div class="box-stts" th:if="${point.point_stat != 2}">구매</div>
                 </div>
-                <div class="box-info-name">상품명</div>
-                <div class="box-info-till">유효기간</div><span>까지</span></div>
-              <span class="color">+</span><div class="content-middle-box-point" th:text="${point.point_price}"></div><span class="color">P</span>
+                <div class="box-info-name" th:text="${point.prod_tit}">상품명</div>
+                  <div class="f-flex">
+                    <div class="box-info-till" th:if="${point.point_stat != 2}"  th:text="${point.point_till}"></div>
+                    <span th:if="${point.point_stat != 2}">까지</span>
+                  </div>
+               </div>
+              <span class="color" th:if="${point.point_stat != 2}">+</span>
+              <span class="color-use" th:if="${point.point_stat == 2}">-</span>
+              <div class="content-middle-box-point" th:if="${point.point_stat != 2}" th:text="${point.point_price}"></div>
+              <div class="color-use" th:if="${point.point_stat == 2}" th:text="${point.od_use_point}"></div>
+              <span class="color" th:if="${point.point_stat != 2}">P</span>
+              <span class="color-use" th:if="${point.point_stat == 2}">P</span>
             </div>
          </div>
     </section>

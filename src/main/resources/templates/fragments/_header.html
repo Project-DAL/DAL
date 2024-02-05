@@ -37,6 +37,7 @@ Contents
                 <a th:href="@{/comm/commList}">커뮤니티</a>
                 <a th:href="@{/preferTest/preferTest}">술테스트</a>
                 <a th:href="@{/museum/MuseumMain}">주류박물관</a>
+                <a th:href="@{/admin/adminMain}">(임시)관리자</a>
             </div>
             <div class="user-menu">
                 <a  sec:authorize="isAnonymous()" th:href="@{/loginForm}">로그인</a>
@@ -63,5 +64,4 @@ Contents
         </div>
     </header>
 </th:block>
-
 </html>

@@ -30,11 +30,20 @@ public class MyController {
     private final MyInfoService myInfoService;
     private final MyWishService myWishService;
     private final MyWithdrawService myWithdrawService;
+    private final MyMainService myMainService;
 
 
     // My Page Main
     @GetMapping("/my/MyPageMain")
-    public String mypagemain() {
+    public String mypagemain(Model model, MyMainVO myMainVO) {
+
+        int pointGross = myMainService.pointGross(myMainVO);
+        int couponGross = myMainService.couponGross(myMainVO);
+        int wishGross = myMainService.wishGross(myMainVO);
+
+        model.addAttribute("pointGross", pointGross);
+        model.addAttribute("couponGross", couponGross);
+        model.addAttribute("wishGross", wishGross);
 
         return "my/MyPageMain";
     }
@@ -54,7 +63,12 @@ public class MyController {
     @GetMapping("/my/MyCoupon")
     public String mycoupon(Model model, MyCouponVO mycouponVO){
         List<MyCouponVO> couponList = myCouponService.selectCouponList(mycouponVO);
+        List<MyCouponVO> getCouponList = myCouponService.getCouponList(mycouponVO);
+
+
         model.addAttribute("couponList", couponList);
+        model.addAttribute("getCouponList", getCouponList);
+
 
         return "my/MyCoupon";
     }
@@ -101,7 +115,12 @@ public class MyController {
     @GetMapping("/my/MyPoint")
     public String mypoint(Model model, MyPointVO myPointVO){
         List<MyPointVO> pointList = myPointService.selectPointList(myPointVO);
+        int pointGross = myPointService.pointGross(myPointVO);
+        int pointGross30 = myPointService.pointGross30(myPointVO);
+
         model.addAttribute("pointList", pointList);
+        model.addAttribute("pointGross", pointGross);
+        model.addAttribute("pointGross30", pointGross30);
         return "my/MyPoint";
     }
 

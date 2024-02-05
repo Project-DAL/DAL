@@ -102,9 +102,19 @@
     color: rgb(53, 197, 240);
 }
 
+.box-use{
+    color: red;
+}
+
+
+.box-gone{
+    color: gray;
+}
+
+
+
 
 .content-middle-box-point{
-    padding: 0px 5px;
     color: rgb(53, 197, 240);
 }
 
@@ -124,4 +134,39 @@
 .color{
     color: rgb(53, 197, 240);
 
+}
+
+.p-flex1{
+    display: flex;
+    gap: 5px;
+}
+
+
+.p-flex2{
+    display: flex;
+    gap: 5px;
+}
+
+.p-flex1 span{
+
+    color:darkblue;
+}
+
+
+.p-flex2 span{
+    color:white;
+}
+
+.f-flex{
+    display:flex;
+    gap: 5px;
+}
+
+.f-flex span{
+    color:gray;
+}
+
+
+.color-use{
+    color:red;
 }
