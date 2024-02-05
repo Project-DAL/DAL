@@ -19,5 +19,11 @@ public class MyPointVO {
     private String point_type;           // 적립 유형 (1:등급 / 2:사용)
     private int point_stat;              // 적립 상태 (0:무효 / 1:적립 / 2:사용)
     private String point_edate;          // 적립금 사용일
+    private String point_rdate;         //적립일
 
+
+
+    private String point_till;           //유효기간 +60일
+    private String od_use_point;
+    private String prod_tit;
 }

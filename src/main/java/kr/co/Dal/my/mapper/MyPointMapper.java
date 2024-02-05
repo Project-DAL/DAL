@@ -16,4 +16,13 @@ public interface MyPointMapper {
 
     /* 포인트 리스트 조회 */
     List<MyPointVO> selectPointList(MyPointVO myPointVO);
+
+
+    /* 사용가능한 적립금*/
+    int pointGross(MyPointVO myPointVO);
+
+    /* 30일 이내 소멸 예정 적립금 */
+    int pointGross30(MyPointVO myPointVO);
+
+
 }
