@@ -1,5 +1,6 @@
 package kr.co.Dal.store.mapper;
 
+import kr.co.Dal.store.model.QnaVO;
 import kr.co.Dal.store.model.StoreVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,5 +11,7 @@ public interface StoreMapper {
 
     List<StoreVO> selectStoreList(StoreVO storeVO);
 
-    void insertStoreQna(StoreVO storeVO);
+    void insertStoreQna(QnaVO qnaVO);
+
+//    QnaVO selectProdQna(QnaVO qnaVO);
 }

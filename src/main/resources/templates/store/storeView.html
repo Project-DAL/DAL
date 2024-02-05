@@ -8,11 +8,24 @@
 <th:block layout:fragment="css-js">
   <link rel="stylesheet" type="text/css" th:href="@{/common/css/layout.css}">
   <link rel="stylesheet" type="text/css" th:href="@{/store/css/storeView.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/store/css/storeQnaWrite.css}">
   <link rel="stylesheet"  href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
 
   <script type="text/javascript" th:src="@{/store/js/storeView.js}"></script>
+  <script type="text/javascript" th:src="@{/store/js/storeQnaWrite.js}"></script>
 </th:block>
+/*
+File Name      : storeView.html
+Program Name   : 상품 상세 페이지
+Draft Author   : 김석진
+Draft Date     : 2024.01.14
 
+Revision History
+Ver.  Date          Revised By   Description
+------------------------------------------------------------------------------------------------------------------------
+0.1   2024.01.14    김석진       최초개발
+----------------------------------------------------------------------------------------------------------------------->
+*/
 
 <th:block layout:fragment="content">
   <main>
@@ -62,7 +75,7 @@
 
           <div class="center prod-price-wrap">
             <a
-                href="#"
+                href="order/storeOrder.html"
                 class="btn"
                 style="display: inline-block; width: 100px"
             >구매하기</a
@@ -102,7 +115,7 @@
         <div class="prod-detail"><h1>상품후기</h1></div>
         <div class="prod-detail">
           <h1>상품문의</h1>
-          <a href="#" class="btn qnaBtn mb15" style="width: 80px">문의 남기기</a>
+          <a href="javascript:void(0);" id="popup_btn" class="btn qnaBtn mb15" style="width: 100px" onclick="modal('ct_qna');">문의 남기기</a>
           <table style="border: 1px solid black; width: 100%;" class="center">
             <tr>
               <th>
@@ -137,6 +150,54 @@
               <td>2024.01.17</td>
             </tr>
           </table>
+        </div>
+      </div>
+    </div>
+    <div id="ct_qna">
+      <div class="ct_qna-topbar mb15">
+        <span>상품 문의하기</span>
+        <a class="modal_close_btn">X</a>
+      </div>
+      <div class="ct_qna-mid">
+        <div class="mb15">
+          <p class="qna-font mb10">상품정보</p>
+          <div class="ct_qna-prod-wrap">
+            <img src="./img/instagram.png" class="qna-prod-img mr20" />
+            <span>복분자주</span>
+          </div>
+        </div>
+        <div class="mb15">
+          <p class="qna-font mb10">문의유형</p>
+          <select class="ct_qna-cate">
+            <option disabled hidden selected>문의유형을 선택해주세요.</option>
+            <option>배송</option>
+            <option>교환</option>
+            <option>상품</option>
+          </select>
+        </div>
+        <div class="mb15">
+          <p class="qna-font mb10">제목</p>
+          <input
+              type="text"
+              placeholder="제목을 입력해주세요."
+              class="ct_qna-tit"
+          />
+        </div>
+        <div class="mb15">
+          <p class="qna-font mb10">문의내용</p>
+          <textarea
+              placeholder="내용을 입력해주세요."
+              class="ct_qna-cn"
+          ></textarea>
+          <input type="checkbox" />
+          <span>비공개</span>
+        </div>
+        <div class="ct_qna-btn-wrap mb15">
+          <a href="#" class="qna-btn" onclick="fnInsertQna()">등록하기</a>
+        </div>
+        <div>
+          <span>상품문의 시 주의사항</span>
+          <span>여기에 기타 안내사항 문구 작성(폰트크기 작게, 색상 회색)</span>
         </div>
       </div>
     </div>
