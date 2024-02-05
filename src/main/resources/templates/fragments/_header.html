@@ -37,29 +37,44 @@ Contents
                 <a th:href="@{/comm/commList}">커뮤니티</a>
                 <a th:href="@{/preferTest/preferTest}">술테스트</a>
                 <a th:href="@{/museum/MuseumMain}">주류박물관</a>
+                <a th:href="@{/admin/adminMain}">(임시)관리자</a>
             </div>
             <div class="user-menu">
-                <a href="/joinForm">
-                    <p>회원가입</p>
-                </a>
-                <a th:href="@{/my/myWish}">
-                    <span data-tooltip="위시리스트">
-                        <img th:src="@{/main/img/heart-shape.png}">
-                    </span>
-                </a>
-                <a th:href="@{/store/order/storeCart}">
-                    <span data-tooltip="장바구니">
-                        <img th:src="@{/main/img/shopping-bag.png}">
-                    </span>
-                </a>
-                <a th:href="@{/my/MyPageMain}">
-                    <span data-tooltip="내정보">
-                        <img th:src="@{/main/img/user.png}">
-                    </span>
-                </a>
+                <th:block th:unless="${#authorization.expression('isAuthenticated()')}">
+                    <a th:href="@{/joinForm}">
+                        <p>회원가입</p>
+                    </a>
+                    <a th:href="@{/loginForm}">
+                        <p>로그인</p>
+                    </a>
+                </th:block>
+                <th:block th:if="${#authorization.expression('isAuthenticated()')}">
+                    <div>
+                        <span sec:authentication="name"></span> 님
+                    </div>
+                    <a th:href="@{/my/MyWish}">
+                        <span data-tooltip="위시리스트">
+                            <img th:src="@{/main/img/heart-shape.png}">
+                        </span>
+                    </a>
+                    <a th:href="@{/store/order/storeCart}">
+                        <span data-tooltip="장바구니">
+                            <img th:src="@{/main/img/shopping-bag.png}">
+                        </span>
+                    </a>
+                    <a href="#" class="dropdown">
+                        <span data-tooltip="내정보" >
+                            <img id="dropdown" th:src="@{/main/img/user.png}">
+                        </span>
+                    </a>
+                    <div class="dropdownMenu" id="dropdownMenu" style="display: none;">
+                        <a th:href="@{/my/MyPageMain}">마이페이지</a>
+                        <a href="#">고객센터</a>
+                        <a th:href="@{/logout}">로그아웃</a>
+                    </div>
+                </th:block>
             </div>
         </div>
     </header>
 </th:block>
-
 </html>
