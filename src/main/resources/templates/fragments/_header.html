@@ -39,20 +39,22 @@ Contents
                 <a th:href="@{/museum/MuseumMain}">주류박물관</a>
             </div>
             <div class="user-menu">
-                <a href="/joinForm">
-                    <p>회원가입</p>
-                </a>
+                <a  sec:authorize="isAnonymous()" th:href="@{/loginForm}">로그인</a>
+                <span sec:authorize="isAuthenticated()">
+                    <span sec:authentication="name"></span>
+                </span>
+                <a  sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
                 <a th:href="@{/my/myWish}">
                     <span data-tooltip="위시리스트">
-                        <img th:src="@{/main/img/heart-shape.png}">
+                        <img  sec:authorize="isAuthenticated()" th:src="@{/main/img/heart-shape.png}">
                     </span>
                 </a>
-                <a th:href="@{/store/order/storeCart}">
+                <a  sec:authorize="isAuthenticated()" th:href="@{/store/order/storeCart}">
                     <span data-tooltip="장바구니">
                         <img th:src="@{/main/img/shopping-bag.png}">
                     </span>
                 </a>
-                <a th:href="@{/my/MyPageMain}">
+                <a  sec:authorize="isAuthenticated()" th:href="@{/my/MyPageMain}">
                     <span data-tooltip="내정보">
                         <img th:src="@{/main/img/user.png}">
                     </span>
