@@ -26,4 +26,14 @@ public class MyPointService {
     }
 
 
+    /* 사용가능한 적립금*/
+    public int pointGross(MyPointVO myPointVO){
+        return myPointMapper.pointGross(myPointVO);
+    }
+
+    /* 30일 이내 소멸 예정 적립금 */
+    public int pointGross30(MyPointVO myPointVO){
+        return myPointMapper.pointGross30(myPointVO);
+    }
+
 }

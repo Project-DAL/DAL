@@ -10,14 +10,64 @@
 <mapper namespace="kr.co.Dal.my.mapper.MyPointMapper">
     <select id="selectPointList" resultType="kr.co.Dal.my.model.MyPointVO">
         SELECT
-            point_price
-        FROM point_tb
+            ot.od_stts,
+            pt.point_stat,
+            CAST(ot.od_sell_price * 0.01 AS UNSIGNED) AS point_price,
+            pt.point_rdate,
+            pt.point_edate ,
+            pt.od_id,
+            ot.prod_id,
+            prt.prod_tit,
+            DATE_ADD(point_rdate, INTERVAL 60 DAY) AS point_till,
+            pt.od_use_point
+        FROM
+            point_tb pt
+                JOIN
+            od_tb ot
+            ON
+                pt.od_id = ot.od_id
+                JOIN
+            prod_tb prt
+            ON
+                ot.prod_id = prt.prod_id
+        ORDER BY
+            pt.od_id DESC;
     </select>
 
 
+    <!-- 사용가능한 포인트-->
+    <select id="pointGross" resultType="int">
+        SELECT
+            CAST(
+                  SUM(CASE WHEN pt.point_stat = 1 AND ot.od_stts IN (2, 3, 4, 5, 6) THEN ot.od_sell_price * 0.01 ELSE 0 END) -
+                  SUM(CASE WHEN pt.point_stat IN (0, 2) THEN pt.od_use_point ELSE 0 END) AS SIGNED
+                ) AS point_calu
+        FROM
+            point_tb pt
+                JOIN od_tb ot ON pt.od_id = ot.od_id
+        WHERE
+            pt.user_id = 1;
+
+    </select>
 
 
-
-
+    <!-- 30일 이내 소멸 예정 적립금 -->
+    <select id="pointGross30" resultType="int">
+        <![CDATA[
+        SELECT
+            CAST(SUM(CASE WHEN pt.point_stat = 1 THEN ot.od_sell_price * 0.01 ELSE 0 END) -
+                 SUM(CASE WHEN pt.point_stat IN (0, 2) THEN pt.od_use_point ELSE 0 END) AS SIGNED) AS point_calu
+        FROM
+            point_tb pt
+        JOIN
+                od_tb ot
+        ON
+            pt.od_id = ot.od_id
+        WHERE
+            pt.point_stat =1
+          AND
+            (pt.point_rdate + INTERVAL 60 DAY) < (CURRENT_DATE + INTERVAL 30 DAY)
+        ]]>
+    </select>
 
 </mapper>
