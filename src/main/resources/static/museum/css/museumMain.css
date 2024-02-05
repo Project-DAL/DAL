@@ -9,23 +9,13 @@
     border-radius: 20px;
 }
 /* 술 종류 */
-.liq-typeList1 {
+.liq-typeList {
     width: 10%;
     height: 750px;
     overflow-y: scroll;
     border-radius: 20px 0 0 20px;
 }
-.liq-typeList1 div {
-    background: #DDDFEC;
-    height: 200px;
-    margin-bottom: 5px;
-}
-.liq-typeList2 {
-    width: 10%;
-    height: 750px;
-    overflow-y: scroll;
-}
-.liq-typeList2 div {
+.liq-typeList div {
     background: #DDDFEC;
     height: 200px;
     margin-bottom: 5px;
@@ -44,7 +34,7 @@
 }
 /* 술 상세보기 */
 .liq-box {
-    width: 70%;
+    width: 80%;
     height: 750px;
     display: flex;
     flex-direction: column;
@@ -54,7 +44,6 @@
 }
 .liq-msg {}
 .liq-view {
-    border: 1px solid;
     display: flex;
     flex-direction: row;
     padding: 40px;
@@ -62,10 +51,71 @@
     height: 94%;
 }
 .liq-pic {
-    border: 1px solid;
     width: 40%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
+}
+.liq-pic img {
+    width: 230px;
 }
 .liq-info {
-    border: 1px solid;
     width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
+.liq-info-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 30px 15px 80px;
+}
+.liq-info-box .liq-nm {
+    font-size: 30px;
+    color: #293485;
+    font-weight: 600;
+}
+.liq-info-box .liq-memo {
+    font-size: 21px;
+    color: #293485;
+    font-weight: 400;
+    margin-top: 5px;
+}
+.liq-features {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 25px;
+}
+.liq-feature {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.liq-feature div:nth-of-type(1){
+    width: 45px;
+    font-size: 14px;
+    color: #293485;
+    text-align: center;
+}
+.liq-feature div:nth-of-type(2){
+    width: 150px;
+    margin-left: 40px;
+    color: #FFB101;
+}
+.liq-info-view {
+    margin-top: 30px;
+}
+.liq-info-view .btnView {
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 200;
+}
+
