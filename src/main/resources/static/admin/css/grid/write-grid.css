@@ -1,0 +1,379 @@
+/*
+File Name      : write-gird.css
+Program Name   : 등록 레이아웃
+Draft Author   : 김진형
+Draft Date     : 2024.02.06
+
+Revision History
+Ver.  Date          Revised By   Description
+------------------------------------------------------------------------------------------------------------------------
+0.1   2024.02.06    김진형       최초개발
+----------------------------------------------------------------------------------------------------------------------->
+*/
+
+body {
+    font-size: 12px;
+    font-family: "Noto Sans KR","맑은 고딕","malgun gothic","Apple SD Gothic Neo",sans-serif;
+    color: #1b1e26;
+    -webkit-text-size-adjust: none;
+    background-color: #f4f5f8;
+}
+
+div {
+    display: block;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+colgroup {
+    display: table-column-group;
+}
+
+col {
+    display: table-column;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+th, td {
+    border: 0;
+    word-wrap: break-word;
+}
+
+label {
+    cursor: default;
+}
+
+a {
+    text-decoration: none;
+    color: #1b1e26;
+}
+
+strong {
+    font-weight: bold;
+}
+
+html:lang(ko) body {
+    font-size: 13px;
+    letter-spacing: -0.5px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.ct_content {
+    min-height: 750px;
+    min-width: 960px;
+    padding: 24px 24px 100px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.mTitle {
+    position: relative;
+    margin: 0 0 8px;
+}
+
+.section {
+    margin: 0 0 24px;
+}
+
+.icoPrint, .icoNew, .icoFile, .icoUp, .icoDown, .icoShop, .icoDot, .icoDepth, .icoFix, .icoChecked, .icoLock {
+    display: inline-block;
+    overflow: hidden;
+    margin: -3px 0 0 0;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    background: url(//img.echosting.cafe24.com/ec/v2/sfix_icon_image.png) 0 0 no-repeat;
+}
+
+.btnNormal, .btnNormal span, .btnCtrl, .btnCtrl span, .btnDate, .btnDate span, .btnGeneral, .btnGeneral span, .btnStrong, .btnStrong span, .btnSubmit, .btnSubmit span, .btnEm, .btnEm span, .btnSearch, .btnSearch span, .btnToggle {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.btnNormal span, .btnCtrl span, .btnDate span, .btnGeneral span, .btnStrong span, .btnSubmit span, .btnEm span, .btnSearch span {
+    vertical-align: top;
+}
+
+.mToggleBar {
+    margin: 0 0 -1px 0;
+    border: 1px solid #d9dadc;
+    background-color: #fff;
+}
+
+.mToggleBar h2 {
+    float: left;
+    padding: 0 0 0 8px;
+    font-size: 14px;
+    line-height: 44px;
+    color: #1b1e26;
+}
+
+.eToggleTitle {
+    cursor: pointer;
+}
+
+/* 추후 스크립트 추가할 것 */
+/*.toggleArea {*/
+/*    display: none;*/
+/*}*/
+
+.mBoard .gDivision {
+    margin: -1px 0 0;
+}
+
+.mBoard table {
+    border-top: 1px solid #d9dadc;
+    line-height: 1.5;
+    background-color: #fff;
+}
+
+.mBoard col.product {
+    width: 193px;
+}
+
+.mBoard tbody th {
+    border: 1px solid #d9dadc;
+    text-align: left;
+}
+
+.mBoard th {
+    font-weight: normal;
+    background-color: #fafafb;
+}
+
+.mBoard th, .mBoard td {
+    padding: 9px 9px 7px;
+    vertical-align: top;
+}
+
+.mBoard tbody td {
+    border: 1px solid #d9dadc;
+}
+
+.mBoard .right {
+    text-align: right;
+}
+
+label.gLabel {
+    display: inline-block;
+    padding: 0 24px 0 0;
+    outline: 0 none;
+}
+
+label.eSelected {
+    font-weight: bold;
+}
+
+.btnNormal, .btnNormal span {
+    height: 28px;
+}
+
+[class^="btn"], [class^="btn"] span {
+    cursor: pointer;
+}
+
+[class^="btn"].disabled, [class^="btn"].disabled span {
+    cursor: default;
+}
+
+.btnNormal span {
+    padding: 0 8px;
+    border: 1px solid #aeb4c6;
+    font-size: 12px;
+    line-height: 26px;
+    color: #1b1e26;
+    font-weight: normal;
+    background-color: #fff;
+}
+
+.mSearchSelect.theme1 .state {
+    min-height: 0;
+    margin-top: 8px;
+    padding: 10px 16px;
+    border: 1px solid #d9dadc;
+    color: #667084;
+    line-height: 18px;
+    background-color: #fafafb;
+}
+
+.txtEm, .txtEm a {
+    color: #3971ff;
+    font-style: normal;
+}
+
+.mSearchSelect.theme1 table {
+    border-right: 1px solid #d9dadc;
+    border-bottom: 1px solid #d9dadc;
+}
+
+.mSearchSelect.theme1 .state + table {
+    margin: -1px 0 0;
+}
+.mSearchSelect.theme1 .list ul {
+    padding: 0;
+}
+
+.mSearchSelect.typeCategory .list li {
+    cursor: pointer;
+}
+
+.mSearchSelect.theme1 .list li {
+    position: relative;
+    overflow: hidden;
+    padding: 12px 32px 12px 16px;
+    border-bottom: 1px solid #e2e5ea;
+    line-height: 18px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mSearchSelect.theme1 .list li .right {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    font-weight: bold;
+}
+
+.mSearchSelect.theme1 td:last-child {
+    padding: 17px;
+    border: none;
+    text-align: center;
+}
+
+.mSearchSelect.theme1 td.displaynone + td {
+    text-align: left;
+}
+
+.mSearchSelect.typeCategory.theme1 .list li.selected {
+    color: #3971ff;
+    background: none;
+}
+
+.mSearchSelect .list {
+    overflow: auto;
+    height: 200px;
+}
+
+.mSearchSelect.theme1 td.displaynone {
+    display: none;
+}
+
+.mNewRemind {
+    position: relative;
+    display: inline-block;
+}
+
+.btnCtrl, .btnCtrl span {
+    height: 28px;
+}
+
+.btnCtrl span {
+    padding: 0 8px;
+    border: 1px solid transparent;
+    font-size: 12px;
+    line-height: 26px;
+    color: #fff;
+    font-weight: normal;
+    background-color: #444b59;
+}
+
+.mBoard .disabled {
+    color: #bababa;
+}
+
+.gDouble {
+    display: block;
+    margin-top: 10px !important;
+}
+
+.mBoard tbody th[scope*='col'] {
+    text-align: center;
+}
+
+.mBoard thead th {
+    border: 1px solid #d9dadc;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.mBoard .icoFix, .mBoard .icoFix.undo {
+    margin-top: 0;
+}
+
+.icoFix.undo {
+    background-position: -150px -50px;
+}
+
+.icoFix {
+    width: 20px;
+    height: 17px;
+    background-position: -100px -50px;
+}
+
+.mBoard .left {
+    text-align: left;
+}
+
+.mBoard tfoot > tr > th, .mBoard tbody > tr > td {
+    border-top-width: 0;
+}
+
+ul.mList {
+    margin: 8px 0 0;
+}
+
+ul.mForm {
+    margin: -8px 0 0;
+}
+
+.mForm li {
+    margin: 8px 0 0;
+}
+
+label .fChk[type="checkbox"]:checked:disabled, label.eSelected .fChk[type="checkbox"]:checked.disabled {
+    background-position: -150px 0;
+}
+
+.btnNormal em.icoDel {
+    width: 8px;
+    height: 10px;
+    background-position: 0 -150px;
+}
+
+.gSingle {
+    display: block;
+    margin-top: 5px !important;
+}
