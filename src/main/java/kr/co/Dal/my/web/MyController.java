@@ -147,6 +147,13 @@ public class MyController {
 
 
 
+    /* My rank*/
+    @GetMapping("/my/MyRank")
+    public String myrank(Model model){
+
+        return "my/MyRank";
+
+    }
 
 
 
