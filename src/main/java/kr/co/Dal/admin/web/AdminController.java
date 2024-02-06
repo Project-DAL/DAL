@@ -42,6 +42,15 @@ public class AdminController {
     }
 
     /**
+     * 관리자 스토어 등록
+     */
+    @GetMapping("/store/storeWrite")
+    public String storeWrite() {
+        return "/admin/store/storeWrite";
+    }
+
+
+    /**
      * 관리자 스토어 주문 목록
      */
     @GetMapping("/store/storeOrder")
@@ -72,6 +81,5 @@ public class AdminController {
     public String stasMain() {
         return "admin/stas/stasMain";
     }
-
 
 }
