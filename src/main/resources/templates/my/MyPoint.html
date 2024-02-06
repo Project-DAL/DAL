@@ -44,7 +44,7 @@
                     <div class="box-gone" th:if="${point.point_stat == 0}">유효기간 만료</div>
                     <div class="box-point" th:if="${point.point_stat == 1}">적립</div>
                     <div class="box-use" th:if="${point.point_stat == 2}">사용</div>
-                  <div class="box-stts" th:if="${point.point_stat != 2}">구매</div>
+                    <div class="box-stts" th:if="${point.point_stat != 0 and point.point_stat != 2}">구매</div>
                 </div>
                 <div class="box-info-name" th:text="${point.prod_tit}">상품명</div>
                   <div class="f-flex">
@@ -52,12 +52,14 @@
                     <span th:if="${point.point_stat != 2}">까지</span>
                   </div>
                </div>
-              <span class="color" th:if="${point.point_stat != 2}">+</span>
+              <span class="color" th:if="${point.point_stat == 1}">+</span>
               <span class="color-use" th:if="${point.point_stat == 2}">-</span>
-              <div class="content-middle-box-point" th:if="${point.point_stat != 2}" th:text="${point.point_price}"></div>
+              <div class="content-middle-box-point" th:if="${point.point_stat == 1}" th:text="${point.point_price}"></div>
+              <div class="box-gone" th:if="${point.point_stat == 0}" th:text="${point.point_price}"></div>
               <div class="color-use" th:if="${point.point_stat == 2}" th:text="${point.od_use_point}"></div>
-              <span class="color" th:if="${point.point_stat != 2}">P</span>
+              <span class="color" th:if="${point.point_stat == 1}">P</span>
               <span class="color-use" th:if="${point.point_stat == 2}">P</span>
+              <span class="box-gone" th:if="${point.point_stat == 0}">P</span>
             </div>
          </div>
     </section>

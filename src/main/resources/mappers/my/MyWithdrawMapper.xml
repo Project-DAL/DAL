@@ -14,8 +14,9 @@
     <!-- 사용가능한 포인트-->
     <select id="pointGross" resultType="int">
         SELECT
-            CAST(SUM(CASE WHEN pt.point_stat = 1 THEN ot.od_sell_price * 0.01 ELSE 0 END) -
-                 SUM(CASE WHEN pt.point_stat IN (0, 2) THEN pt.od_use_point ELSE 0 END) AS SIGNED) AS point_calu
+                SUM(CASE WHEN pt.point_rdate IS NOT NULL THEN ot.od_sell_price * 0.01 ELSE 0 END) -
+                SUM(CASE WHEN pt.point_stat = 0 THEN ot.od_sell_price * 0.01 ELSE 0 END) -
+                SUM(CASE WHEN pt.point_stat = 2 THEN pt.od_use_point ELSE 0 END) AS point_calu
         FROM
             point_tb pt
                 JOIN
@@ -24,6 +25,7 @@
                 pt.od_id = ot.od_id
         WHERE
             pt.user_id = 1;
+
     </select>
 
     <!-- 사용가능한 쿠폰 개수-->
