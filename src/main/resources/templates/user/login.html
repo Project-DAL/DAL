@@ -32,104 +32,75 @@ Ver.   Date          Revised By    Description
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+    <script type="text/javascript" th:src="@{/user/js/login.js}"></script>
 </th:block>
 
-
-
 <th:block layout:fragment="content">
-
-        <div id="wrapper">
-<!--            &lt;!&ndash; 3. Header &ndash;&gt;-->
-<!--            <header>-->
-<!--                <div class="user-wrap">-->
-<!--                    <div>-->
-<!--                        <a class="clicked" href="/loginForm">LOGIN</a>-->
-<!--                        <a>JOIN</a>-->
-<!--                        <a>MY PAGE</a>-->
-<!--                        <a>CART</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="cate-wrap">-->
-<!--                    <div class="cate-logo">Drink All Liquor</div>-->
-<!--                    <div class="cate-menu">-->
-<!--                        <a>홈</a>-->
-<!--                        <a>스토어</a>-->
-<!--                        <a>커뮤니티</a>-->
-<!--                        <a>주류박물관</a>-->
-<!--                    </div>-->
-<!--                    -->
-<!--                </div>-->
-<!--            </header>-->
-
-            <!-- 4. Main -->
-
-                <div>
-                    <div class="ct_login-wrap">
-                        <div class="login-title">LOGIN</div>
-                        <form class="login-form" action="/login" method="POST">
-                            <!-- 일반 회원 로그인 -->
-                            <div class="login-id">
-                                <input type="text" name="email" placeholder="이메일을 입력하세요">
-                            </div>
-                            <div class="login-pw">
-                                <input type="text" name="password" placeholder="비밀번호">
-                            </div>
-                            <div class="remember-id">
-                                <label>
-                                    <input type="checkbox">
-                                </label>
-                                아이디 기억하기
-                            </div>
-                            <button type="submit" class="loginBtn">
-                                로그인
-                            </button>
-                            <div class="login-find">
-                                <div class="find-id">
-                                    <a class="btn" href="/findIdForm">아이디 찾기</a>
-                                </div>
-                                <div>|</div>
-                                <div class="find-pw">
-                                    <a class="btn" href="/findPwForm">비밀번호 찾기</a>
-                                </div>
-                                <div>|</div>
-                                <div class="register">
-                                    <a class="btn" href="/joinForm">회원가입</a>
-                                </div>
-                            </div>
-                            <!-- SNS 연동 로그인 -->
-                            <div class="login-sns">SNS계정 간편 로그인</div>
-                            <div class="other-login-wrap mt5">
-                                <a href="/oauth2/authorization/kakao">
-                                    <div class="other-login login-kakao">
-                                        <div>
-                                            <img src="/user/img/kakao_icon.png" alt="카카오로그인">
-
-                                        </div>
-                                        <strong>카카오로 로그인</strong>
-                                    </div>
-                                </a>
-                                <a href="/oauth2/authorization/naver">
-                                    <div class="other-login login-naver">
-                                        <div>
-                                            <img src="/user/img/naver_icon.png" alt="네이버로그인">
-                                        </div>
-                                        <strong>네이버로 로그인</strong>
-                                    </div>
-                                </a>
-                                <a href="/oauth2/authorization/google">
-                                    <div class="other-login login-google">
-                                        <div>
-                                            <img src="/user/img/google_icon.png" alt="구글로그인">
-                                        </div>
-                                        <strong>구글로 로그인</strong>
-                                    </div>
-                                </a>
-                            </div>
-                        </form>
+    <main>
+        <div class="ct_login-wrap">
+            <div class="login-title">LOGIN</div>
+            <form class="login-form" action="/login" method="POST">
+                <!-- 일반 회원 로그인 -->
+                <div class="login-id">
+                    <input type="text" name="email" placeholder="이메일을 입력하세요">
+                </div>
+                <div class="login-pw">
+                    <input type="password" name="password" placeholder="비밀번호">
+                    <i class="fa fa-eye fa-lg"></i>
+                </div>
+                <div class="remember-id">
+                    <label>
+                        <input type="checkbox">
+                    </label>
+                    아이디 기억하기
+                </div>
+                <button type="submit" class="loginBtn">
+                    로그인
+                </button>
+                <div class="login-find">
+                    <div class="find-id">
+                        <a class="btn" href="/findIdForm">아이디 찾기</a>
+                    </div>
+                    <div>|</div>
+                    <div class="find-pw">
+                        <a class="btn" href="/findPwForm">비밀번호 찾기</a>
+                    </div>
+                    <div>|</div>
+                    <div class="register">
+                        <a class="btn" href="/joinForm">회원가입</a>
                     </div>
                 </div>
+                <!-- SNS 연동 로그인 -->
+                <div class="login-sns">SNS계정 간편 로그인</div>
+                <div class="other-login-wrap mt5">
+                    <a href="/oauth2/authorization/kakao">
+                        <div class="other-login login-kakao">
+                            <div>
+                                <img src="/user/img/kakao_icon.png" alt="카카오로그인">
 
-
+                            </div>
+                            <strong>카카오로 로그인</strong>
+                        </div>
+                    </a>
+                    <a href="/oauth2/authorization/naver">
+                        <div class="other-login login-naver">
+                            <div>
+                                <img src="/user/img/naver_icon.png" alt="네이버로그인">
+                            </div>
+                            <strong>네이버로 로그인</strong>
+                        </div>
+                    </a>
+                    <a href="/oauth2/authorization/google">
+                        <div class="other-login login-google">
+                            <div>
+                                <img src="/user/img/google_icon.png" alt="구글로그인">
+                            </div>
+                            <strong>구글로 로그인</strong>
+                        </div>
+                    </a>
+                </div>
+            </form>
         </div>
+    </main>
 </th:block>>
 </html>

@@ -137,3 +137,14 @@ div.login-pw i{
     top: 27px;
     color: orange;
 }
+
+div.login-pw{
+    position: relative;
+}
+
+div.login-pw i{
+    position: absolute;
+    left: 90%;
+    top: 27px;
+    color: #d3d3d3;
+}

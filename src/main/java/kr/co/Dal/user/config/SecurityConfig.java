@@ -26,11 +26,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.headers().frameOptions().sameOrigin();
-        http.csrf().disable();
+//        http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers( "/rest/**","/user/**","/common/**","/main/**","/test/**","/smarteditor/**").permitAll()
                 .antMatchers("/","/joinForm","/loginForm","/user/logout","/check/findPw","/check/findId","/check/findId/successId","/check/findPw/sendEmail","/auth/**", "/oauth2/**","/my/**","/join","/findIdForm","/findPwForm", "/comm/**").permitAll() // 회원가입 접근 가능
                 .anyRequest().authenticated()
+                .and()
+                .csrf().ignoringAntMatchers("/check/findPw/sendEmail","/login") // csrf disable 설정
                 .and()
                 .formLogin()
                 .loginPage("/loginForm")
