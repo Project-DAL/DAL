@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="20230123 wonjeong main kakao map ~ing">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/admin/web/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/admin/web/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/js/store/storeList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/js/store/storeList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/store/storeList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/store/storeList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/store/storeWrite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/store/storeWrite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/admin-layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/admin-layout.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,17 +73,12 @@
   "keyToString": {
     "Application.DAL.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DalApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "20240206jay",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/study/hello-spring/build.gradle",
-    "list.type.of.created.stylesheet": "CSS",
+    "last_opened_file_path": "/Users/parkjehyeong/Desktop/File/workspace/DAL/src/main/resources/mappers/my",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,15 +87,18 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "spring.configuration.checksum": "0db51ae58b2870e9ccbdc1bb0fc045f8",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/mappers/my" />
+      <recent name="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/service" />
+      <recent name="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/model" />
+      <recent name="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper" />
       <recent name="D:\study\DAL\src\main\resources\static\comm\js" />
-      <recent name="D:\study\DAL\src\main\resources\static\smarteditor" />
-      <recent name="D:\study\DAL\src\main\java\kr\co\Dal\cmmn" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/mappers/preferTest" />
@@ -163,7 +158,9 @@
       <workItem from="1701750788528" duration="4339000" />
       <workItem from="1705913814373" duration="40250000" />
       <workItem from="1706092684149" duration="15246000" />
-      <workItem from="1707147244690" duration="8424000" />
+      <workItem from="1707114082417" duration="28794000" />
+      <workItem from="1707147084550" duration="30000" />
+      <workItem from="1707147174912" duration="219000" />
     </task>
     <task id="LOCAL-00001" summary="진형 push">
       <created>1700461796485</created>
