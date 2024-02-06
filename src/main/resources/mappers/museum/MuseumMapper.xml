@@ -10,4 +10,11 @@
           AND liq_stts = '1'
     </select>
 
+    <!-- 술 정보 가져오기 -->
+    <select id="selectLiq" resultType="kr.co.Dal.museum.model.MuseumVO">
+        SELECT liq_id, liq_nm, liq_hash, liq_memo  FROM liq_tb
+        WHERE liq_stts = '1'
+        AND liq_id = #{liq_id}
+    </select>
+
 </mapper>
