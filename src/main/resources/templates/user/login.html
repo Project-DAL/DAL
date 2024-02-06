@@ -32,6 +32,7 @@ Ver.   Date          Revised By    Description
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+    <script type="text/javascript" th:src="@{/user/js/login.js}"></script>
 </th:block>
 
 <th:block layout:fragment="content">
@@ -44,7 +45,8 @@ Ver.   Date          Revised By    Description
                     <input type="text" name="email" placeholder="이메일을 입력하세요">
                 </div>
                 <div class="login-pw">
-                    <input type="text" name="password" placeholder="비밀번호">
+                    <input type="password" name="password" placeholder="비밀번호">
+                    <i class="fa fa-eye fa-lg"></i>
                 </div>
                 <div class="remember-id">
                     <label>
