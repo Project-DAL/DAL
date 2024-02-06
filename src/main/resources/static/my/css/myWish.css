@@ -24,8 +24,15 @@
     margin-left: 60px;
     margin-top: 40px;
     gap: 5px;
-
 }
+
+
+
+.card-wrap:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 조절 가능한 그림자 값 */
+}
+
+
 
 .card-prod {
     display: flex;
@@ -61,11 +68,15 @@
 }
 
 
+.prod-like{
+    padding-bottom: 3px;
+
+}
+
 
 .prodInfo {
     display: flex;
     flex-direction: column;
-    padding-top: 13px;
     padding-left: 10px;
     width: 157px;
     gap: 10px;
@@ -74,7 +85,6 @@
 
 .wonFlex{
     display: flex;
-    gap: 3px;
     align-items: center;
 }
 

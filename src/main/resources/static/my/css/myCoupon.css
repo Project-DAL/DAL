@@ -7,8 +7,26 @@
     font-size: 30px;
 }
 
+
+.ct-top{
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
+.top-bottom-border{
+    border-bottom: 1px solid #e8e8e8;
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+
 .ct-middle{
-    padding: 30px 30px;
+    padding: 10px 30px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -31,6 +49,11 @@
 
 
 
+.ct-middle-box:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 조절 가능한 그림자 값 */
+}
+
+
 .ct-middle-tit{
     font-size: 30px;
     font-weight: 600;
@@ -40,7 +63,7 @@
 
 .ct-middle-flex{
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
 }
 
@@ -52,6 +75,12 @@
 }
 
 
+.ct-middle-flex span{
+     font-size: 25px;
+
+ }
+
+
 
 .ct-middle-till{
     color:darkgray;
@@ -61,6 +90,31 @@
 
 .ct-middle-get{
     background-color: #03012D;
+    color: white;
+    width: 100%;
+    height: 50px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 50px;
+
+
+}
+
+
+.till-flex{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.till-flex span{
+    color:darkgray;
+    font-size: 15px;
+}
+
+
+.ct-middle-own{
+    background-color: darkgray;
     color: white;
     width: 100%;
     height: 50px;

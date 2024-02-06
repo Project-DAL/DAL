@@ -20,9 +20,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CommController {
 
-    @Autowired
-    private CommService commService;
-
     /**
      *  게시판 페이지
      */
@@ -31,6 +28,7 @@ public class CommController {
         return "comm/commList";
     }
 
+
     /**
      * 게시판 등록/수정 페이지
      */
@@ -38,24 +36,5 @@ public class CommController {
     public String commWrite() {
         return "comm/commWrite";
     }
-
-
-    /**
-     * 게시판 목록
-     */
-    @RequestMapping("/commSelectList")
-    public ResponseEntity<List<CommVO>> commList(CommVO commVO) throws Exception {
-        return ResponseEntity.ok(commService.commList(commVO));
-    }
-    
-    
-    
-    
-    /**
-     * 게시판 등록
-     */
-/*    public void insertComm(CommVO comm) throws Exception {
-        return commService.insertComm(comm);
-    }*/
 
 }

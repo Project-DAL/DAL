@@ -1,4 +1,16 @@
-.btn {
+/*
+File Name      : storeQnaWrite.css
+Program Name   : 상품 문의글 작성 스타일시트
+Draft Author   : 김석진
+Draft Date     : 2024.01.23
+
+Revision History
+Ver.  Date          Revised By   Description
+------------------------------------------------------------------------------------------------------------------------
+0.1   2024.01.14    김석진       최초개발
+----------------------------------------------------------------------------------------------------------------------->
+*/
+.qna-btn {
     display: block;
     height: 40px;
     width: 130px;
@@ -9,57 +21,72 @@
     border-radius: 20px;
     color: #fff;
 }
-.font {
+.qna-font {
     font-weight: 600;
 }
-.sub-font {
+.qna-sub-font {
     color: rgb(200, 200, 200);
 }
-.ct_main {
-    width: 90%;
+
+/* 모달영역 css */
+#ct_qna {
+    width: 300px;
+    display: none;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 3px;
 }
-.ct_main-topbar {
+.ct_qna-topbar {
     display: flex;
     justify-content: space-between;
-    background-color: greenyellow;
+    background-color: #03012D;
     height: 40px;
     font-size: 20px;
     line-height: 40px;
 }
-.ct_main-prod-wrap {
+.ct_qna-mid {
+    padding: 20px 60px;
+}
+.ct_qna-topbar > span {
+    color: #FFFFFF;
+}
+.modal_close_btn {
+    color: #ffffff;
+}
+.ct_qna-prod-wrap {
     height: 100px;
     border: 1px solid black;
     display: flex;
     align-items: center;
     padding: 10px;
 }
-.prod-img {
+.qna-prod-img {
     height: 100%;
     width: 100px;
 }
-.ct_main-cate {
+.ct_qna-cate {
     width: 200px;
     height: 30px;
     outline: none;
 }
-.ct_main-tit {
+.ct_qna-tit {
     width: 100%;
     height: 30px;
     outline: none;
 }
-.ct_main-tit::placeholder {
+.ct_qna-tit::placeholder {
     color: rgb(200, 200, 200);
 }
-.ct_main-cn {
+.ct_qna-cn {
     resize: none;
     outline: none;
     width: 100%;
     height: 180px;
 }
-.ct_main-cn::placeholder {
+.ct_qna-cn::placeholder {
     color: rgb(200, 200, 200);
 }
-.ct_main-btn-wrap {
+.ct_qna-btn-wrap {
     display: flex;
     justify-content: center;
 }

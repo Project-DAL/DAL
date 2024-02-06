@@ -8,6 +8,7 @@
 <th:block layout:fragment="css-js">
     <link rel="stylesheet" type="text/css" th:href="@{/my/css/my-layout.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/my/css/myPageMain.css}">
+    <script src="/my/js/myMain.js" defer></script>
     <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
 </th:block>
 
@@ -18,90 +19,90 @@
         <div class="title-area">
             주문 배송
         </div>
-          <div class="summary-wrap">
-              <a class="summary-content">
+        <div class="summary-wrap">
+            <a class="summary-content">
                 <div class="summary-img">
-                    <img class="size" th:src="@{/my/img/ranking.png}" alt="">                </div>
+                    <img class="size" th:src="@{/my/img/ranking.png}" alt=""></div>
                 <div class="summary-text">
                     <span>등급</span>
                     <span class="summary-value">골드</span>
                 </div>
-              </a>
-              <a class="summary-content" th:href="@{/my/MyCoupon}">
-                  <div class="summary-img">
-                      <img class="size" th:src="@{/my/img/coupon.png}" alt="">                  </div>
-                  <div class="summary-text">
-                      <span>쿠폰</span>
-                      <span class="summary-value">0</span>
-                      <span class="summary-value">개</span>
-                  </div>
-              </a>
-              <a class="summary-content" th:href="@{/my/MyPoint}">
-                  <div class="summary-img">
-                      <img class="size" th:src="@{/my/img/coin.png}" alt="">                  </div>
-                  <div class="summary-text">
-                      <span>적립금</span>
-                      <span class="summary-value">0</span>
-                      <span class="summary-value">P</span>
-                  </div>
-              </a>
-              <a class="summary-content" th:href="@{/my/MyWish}">
-                  <div class="summary-img">
-                      <img class="size" th:src="@{/my/img/shopping.png}" alt="">                  </div>
-                  <div class="summary-text">
-                      <span>위시리스트</span>
-                      <span class="summary-value">0</span>
-                      <span class="summary-value">개</span>
-                  </div>
-              </a>
-          </div>
-          <div class="order-select">
-              <select class="order-date">
-                  <option>전체</option>
-                  <option>1개월 전</option>
-                  <option>3개월 전</option>
-                  <option>6개월 전</option>
-                  <option>1년 전</option>
-                  <option>2년 전</option>
-                  <option>3년 전</option>
-              </select>
-              <select class="order-stts">
-                  <option>입금대기</option>
-                  <option>결제완료</option>
-                  <option>배송준비중</option>
-                  <option>배송중</option>
-                  <option>배송완료</option>
-                  <option>구매확정</option>
-                  <option>취소</option>
-                  <option>교환</option>
-                  <option>반품</option>
-              </select>
-              <div id="btnEnter" class="enter-btn">
-                  조회
-              </div>
-          </div>
-          <div class="order-info">
-              <div class="order-info-date">
-                  2024.02.02
-              </div>
-              <div class="order-box">
-              <div class="order-info-spec">
-                  <div class="order-info-spec-stts">입금대기</div>
-                  <div class="order-info-spec-view">배송조회</div>
-              </div>
-                  <div class="order-info-spec-detail">
-                      <div class="order-info-spec-pic">
-                          <img class="order-img" th:src="@{/my/img/soju.png}" alt="">
-                      </div>
-                      <div class="order-info-spec-specinfo">
-                          <p>처음처럼</p>
-                          <p>2,500<span>원</span></p>
-                          <p><span>총</span>1<span>개</span></p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-     </section>
+            </a>
+            <a class="summary-content" th:href="@{/my/MyCoupon}">
+                <div class="summary-img">
+                    <img class="size" th:src="@{/my/img/coupon.png}" alt=""></div>
+                <div class="summary-text">
+                    <span>쿠폰</span>
+                    <span class="summary-value" th:text="${couponGross}"></span>
+                    <span class="summary-value">개</span>
+                </div>
+            </a>
+            <a class="summary-content" th:href="@{/my/MyPoint}">
+                <div class="summary-img">
+                    <img class="size" th:src="@{/my/img/coin.png}" alt=""></div>
+                <div class="summary-text">
+                    <span>적립금</span>
+                    <span class="summary-value" th:text="${pointGross}"></span>
+                    <span class="summary-value">P</span>
+                </div>
+            </a>
+            <a class="summary-content" th:href="@{/my/MyWish}">
+                <div class="summary-img">
+                    <img class="size" th:src="@{/my/img/shopping.png}" alt=""></div>
+                <div class="summary-text">
+                    <span>위시리스트</span>
+                    <span class="summary-value" th:text="${wishGross}"></span>
+                    <span class="summary-value">개</span>
+                </div>
+            </a>
+        </div>
+        <div class="order-select">
+            <select class="order-date">
+                <option>전체</option>
+                <option>1개월 전</option>
+                <option>3개월 전</option>
+                <option>6개월 전</option>
+                <option>1년 전</option>
+                <option>2년 전</option>
+                <option>3년 전</option>
+            </select>
+            <select class="order-stts">
+                <option>입금대기</option>
+                <option>결제완료</option>
+                <option>배송준비중</option>
+                <option>배송중</option>
+                <option>배송완료</option>
+                <option>구매확정</option>
+                <option>취소</option>
+                <option>교환</option>
+                <option>반품</option>
+            </select>
+            <div id="btnEnter" class="enter-btn">
+                조회
+            </div>
+        </div>
+        <div class="order-info">
+            <div class="order-info-date">
+                2024.02.02
+            </div>
+            <div class="order-box">
+                <div class="order-info-spec">
+                    <div class="order-info-spec-stts">입금대기</div>
+                    <div class="order-info-spec-view">배송조회</div>
+                </div>
+                <div class="order-info-spec-detail">
+                    <div class="order-info-spec-pic">
+                        <img class="order-img" th:src="@{/my/img/soju.png}" alt="">
+                    </div>
+                    <div class="order-info-spec-specinfo">
+                        <p>처음처럼</p>
+                        <p>2,500<span>원</span></p>
+                        <p><span>총</span>1<span>개</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </th:block>
 
 

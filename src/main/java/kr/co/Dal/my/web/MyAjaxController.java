@@ -9,10 +9,7 @@ package kr.co.Dal.my.web;
 
 
 import kr.co.Dal.my.model.*;
-import kr.co.Dal.my.service.MyBoardService;
-import kr.co.Dal.my.service.MyInfoService;
-import kr.co.Dal.my.service.MyWishService;
-import kr.co.Dal.my.service.MyWithdrawService;
+import kr.co.Dal.my.service.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +27,7 @@ public class MyAjaxController {
     private final MyWishService myWishService;
     private final MyWithdrawService myWithdrawService;
     private final MyInfoService myInfoService;
+    private final MyCouponService myCouponService;
 
 
     /* 내 게시글 삭제 */
@@ -86,5 +84,13 @@ public class MyAjaxController {
     }
 
 
+    /* 쿠폰 받기 버튼 */
+    @PostMapping("/my/MyCoupon/insert")
+    public ResponseEntity<MyCouponVO> insertCoupon(@RequestBody MyCouponVO mycouponVO){
+        log.warn("Received cpId: {}" , mycouponVO.getCp_id());
+
+        myCouponService.insertCoupon(mycouponVO);
+        return ResponseEntity.ok(mycouponVO);
+    }
 
 }

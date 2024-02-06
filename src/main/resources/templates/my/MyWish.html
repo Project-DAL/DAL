@@ -11,52 +11,52 @@
       layout:decorate="~{layouts/my-layout}">
 
 
-    <!-- 2. Page JS, CSS -->
-    <th:block layout:fragment="css-js">
-        <link rel="stylesheet" type="text/css" th:href="@{/my/css/my-layout.css}">
-        <link rel="stylesheet" type="text/css" th:href="@{/my/css/myWish.css}">
-        <script src="/my/js/myWish.js" defer></script>
-        <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
-    </th:block>
+<!-- 2. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+    <link rel="stylesheet" type="text/css" th:href="@{/my/css/my-layout.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/my/css/myWish.css}">
+    <script src="/my/js/myWish.js" defer></script>
+    <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+</th:block>
 
 
-    <th:block layout:fragment="content">
-        <!-- 4.2 Content -->
-        <section>
-            <div class="ct_content-wrap">
-                <div class="ct_subtitle">
-                    위시 리스트
-                </div>
-                <div class="content-middle">
-                    <div th:each="wish : ${wishList}" class="card-wrap">
-                        <input type="checkbox" class="checkboxes" th:data-prodid="${wish.prod_id}" style="display: none;">
-                        <div class="card-prod" id="clickContent" th:data-prodid="${wish.prod_id}" onclick="fnClickContent(this.getAttribute('data-prodid'))">
-                            <div th:text="${wish.prod_img}" class="prod-pic"></div>
+<th:block layout:fragment="content">
+    <!-- 4.2 Content -->
+    <section>
+        <div class="ct_content-wrap">
+            <div class="ct_subtitle">
+                위시 리스트
+            </div>
+            <div class="content-middle">
+                <div th:each="wish : ${wishList}" class="card-wrap">
+                    <input type="checkbox" class="checkboxes" th:data-prodid="${wish.prod_id}" style="display: none;">
+                    <div class="card-prod" id="clickContent" th:data-prodid="${wish.prod_id}" onclick="fnClickContent(this.getAttribute('data-prodid'))">
+                        <div th:text="${wish.prod_img}" class="prod-pic"></div>
+                    </div>
+                    <div class="prodInfo">
+                        <div th:text="${wish.prod_tit}" class="prod-tit"></div>
+                        <div class="wonFlex">
+                            <div th:text="${wish.prod_ori_price}" class="prod-ori"></div>
+                            <div class="prod-ori">원</div>
                         </div>
-                        <div class="prodInfo">
-                            <div th:text="${wish.prod_tit}" class="prod-tit"></div>
-                            <div class="wonFlex">
-                                <div th:text="${wish.prod_ori_price}" class="prod-ori"></div>
-                                <div class="prod-ori">원</div>
-                            </div>
-                            <div class="wonFlex">
-                                <div th:text="${wish.prod_sale_price}" class="prod-name"></div>
-                                <div>원</div>
-                            </div>
-                            <div class="wonFlex">
-                                <div><img class="img-size-wish" th:src="@{/my/img/heart.png}"></div>
-                                <div th:text="${wish.prod_like}" class="prod-name"></div>
-                            </div>
+                        <div class="wonFlex">
+                            <div th:text="${wish.prod_sale_price}" class="prod-name"></div>
+                            <div>원</div>
+                        </div>
+                        <div class="wonFlex">
+                            <img class="img-size-wish" th:src="@{/my/img/heart.png}">
+                            <div th:text="${wish.prod_like}" class="prod-like"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="btnBottomArea" th:if="${#lists.size(wishList) > 0}">
-                <a id="btnEdit" class="btn">편집</a>
-                <a id="btnDel" class="btn" style="display: none;">삭제</a>
-                <a id="btnCancel" class="btn" style="display: none;">취소</a>
-            </div>
-        </section>
-    </th:block>
+        </div>
+        <div class="btnBottomArea" th:if="${#lists.size(wishList) > 0}">
+            <a id="btnEdit" class="btn">편집</a>
+            <a id="btnDel" class="btn" style="display: none;">삭제</a>
+            <a id="btnCancel" class="btn" style="display: none;">취소</a>
+        </div>
+    </section>
+</th:block>
 
 </html>

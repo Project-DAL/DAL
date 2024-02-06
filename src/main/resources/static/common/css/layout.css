@@ -75,6 +75,7 @@ header {
     flex-direction: row;
     align-items: center;
     gap: 25px;
+    position: relative;
 }
 
 /* TOOLTIP */
@@ -86,8 +87,40 @@ header {
 [data-tooltip]:not([data-tooltip=""]):hover:before{visibility:visible;opacity:1;top:-30px}
 [data-tooltip]:not([data-tooltip=""]):hover:after{visibility:visible;opacity:1;top:-8px}
 
+/* dropdown menu */
+.dropdown {
+    position: relative;
+}
+.dropdownMenu {
+    position: absolute;
+    background: #FFF;
+    top: 32px;
+    right: -3px;
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+    box-shadow: rgba(63, 71, 77, 0.2) 0px 4px 10px 0px;
+    transition: transform 0.2s ease 0s;
+    border: 1px solid rgb(218, 221, 224);
+    border-radius: 5px;
+}
+.dropdownMenu a {
+    padding: 15px 10px;
+    color: rgb(47, 52, 56);
+    cursor: pointer;
+}
+.dropdownMenu a:hover {
+    background: rgb(247, 249, 250);
+}
+.dropdownMenu button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    color: rgb(47, 52, 56);
+}
 
-/* 3. main ************************************************************************************************************/
+    /* 3. main ************************************************************************************************************/
 main {
     width: 100%;
     height: auto;
