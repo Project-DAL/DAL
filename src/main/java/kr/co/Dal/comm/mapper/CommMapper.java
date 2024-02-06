@@ -9,6 +9,6 @@ public interface CommMapper {
 
     List<CommVO> commList(CommVO commVO);
 
+    void commInsert(CommVO commVO) throws Exception;		//게시판 쓰기
 
-    // public void insertComm(CommVO comm) throws Exception;
 }

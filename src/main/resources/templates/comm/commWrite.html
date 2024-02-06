@@ -1,135 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-    <!-- 1. Common Head -->
-    <head>
-        <script type="text/javascript" src="/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    </head>
+<!----------------------------------------------------------------------------------------------------------------------
+©Copyright 2023. DAL. All rights reserved.
 
-    <!-- 2. Page JS, CSS -->
-    <link rel="stylesheet" href="/common/css/layout.css" />
-    <link rel="stylesheet" href="/common/css/reset.css" />
-    <link rel="stylesheet" href="/common/css/element.css" />
-    <link rel="stylesheet" href="/comm/css/comm-layout.css" />
-    <link rel="stylesheet" href="/comm/css/commList.css" />
-    <script src="/comm/js/commWrite.js"></script>
+File Name       : commList.html
+Program Name    : 커뮤니티
+Description     :
+Draft Author    :
+Draft Date      : 2023.11.10
+----------------------------------------------------------------------------------------------------------------------->
 
-    <body>
-        <div id="wrapper">
-            <!-- 3. Header -->
-            <header>
-                <div class="user-wrap">사용자 관련 바로가기 영역</div>
-                <div class="cate-wrap">로고 및 카테고리 영역</div>
-            </header>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main-layout}">
 
-            <!-- 4. Main -->
-            <main>
-                <div class="ct_main">
-                    <!-- 4.1 Aside -->
-                    <aside>
-                        <div class="ct_left-menu">
-                            <h4 class="menu-tit">CATEGORY</h4>
-                            <ul>
-                                <li><a href="#">ALL</a></li>
-                                <li><a href="#">NOTICE</a></li>
-                                <li><a href="#">REVIEW</a></li>
-                                <li><a href="#">DAILY</a></li>
-                            </ul>
-                        </div>
-                    </aside>
-                    <!-- 4.2 Content -->
-                    <section>
-                        <div class="ct_content-wrap">
-                            <!-- 4.2.1 Subtitle -->
-                            <div class="ct_subtitle">
-                                <h3>게시물 등록</h3>
-                            </div>
+<!-- 1. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+    <link rel="stylesheet" type="text/css" th:href="@{/comm/css/commWrite.css}">
+    <script type="text/javascript" src="/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
+    <script src="/comm/js/commWrite.js" defer></script>
+</th:block>
 
-                            <!-- 4.2.2 Board Content -->
-                            <div class="ct_content">
-                                <!-- 제목 -->
-                                <label for="bard_tit">제목:</label>
-                                <input type="text" id="bard_tit" name="bard_tit" placeholder="제목을 입력해주세요" style="width: 531px; margin-bottom: 10px;">
-
-                                <!-- 내용 -->
-                                <textarea id="bard_cn" name="bard_cn" rows="20" cols="10" placeholder="내용을 입력해주세요" style="width: 500px"></textarea>
-
-                                <!-- 등록 또는 수정 버튼 -->
-                                <input type="submit" id="submit" value="저장" class="btn">
-                            </div>
-                        </div>
-                    </section>
+<!-- 2. Page Content -->
+<th:block layout:fragment="content">
+    <!-- 3. Main -->
+    <!-- 4. Main -->
+    <main>
+        <div class="ct_main">
+            <!-- 4.1 Aside -->
+            <aside>
+                <div class="ct_left-menu">
+                    <h4 class="menu-tit">CATEGORY</h4>
+                    <ul>
+                        <li><a href="#">ALL</a></li>
+                        <li><a href="#">NOTICE</a></li>
+                        <li><a href="#">REVIEW</a></li>
+                        <li><a href="#">DAILY</a></li>
+                    </ul>
                 </div>
-            </main>
+            </aside>
+            <!-- 4.2 Content -->
+            <section>
+                <div class="ct_content-wrap">
+                    <!-- 4.2.1 Subtitle -->
+                    <div class="ct_subtitle">
+                        <h3>게시물 등록</h3>
+                    </div>
 
-            <!-- 5. Footer -->
-            <footer>
-                <div class="ct_footer">
-                    <div class="footer-menu">
-                        <div class="footer-shortcut">
-                            <table>
+                    <!-- 4.2.2 Board Content -->
+                    <div class="ct_content">
+                        <form action="/comm/commAjaxWrite" method="post">
+                            <table class="tb tb_row">
+                                <colgroup>
+                                    <col style="width:15%;" /><col style="width:35%;" /><col style="width:15%;" /><col style="width:35%;" />
+                                </colgroup>
+                                <tbody>
                                 <tr>
-                                    <td><a href="#">ABOUT</a></td>
-                                    <td><a href="#">NOTICE</a></td>
-                                    <td><a href="#">CS CENTER</a></td>
+                                    <th scope="row">카테고리</th>
+                                    <td>
+                                        <select id="bard_type" name="bard_type">
+                                            <option value="ALL">ALL</option>
+                                            <option value="NOTICE">NOTICE</option>
+                                            <option value="REVIEW">REVIEW</option>
+                                            <option value="DAILY">DAILY</option>
+                                        </select>
+                                    </td>
+                                    <th>제목 <span>*</span></th>
+                                    <td colspan="3"><input type="text" id="bard_tit" name="bard_tit" placeholder="제목을 입력해 주세요." /></td>
                                 </tr>
+                                <tr>
+                                    <th>내용 <span>*</span></th>
+                                    <td colspan="3"><textarea id="bard_cn" name="bard_cn" cols="50" rows="10" placeholder="내용을 입력해 주세요."></textarea></td>
+                                </tr>
+                                </tbody>
                             </table>
-                        </div>
-                        <div class="footer-sns">
-                            <a href="#"><img src="./img/instagram.png" alt="인스타그램" /></a>
-                            <a href="#"><img src="./img/facebook.png" alt="페이스북" /></a>
-                            <a href="#"><img src="./img/youtube.png" alt="유튜브" /></a>
-                        </div>
-                    </div>
-                    <div class="footer-block">
-                        <div class="footer-block-left">
-                            <ul>
-                                <h4>INFORMATION</h4>
-                                <li><i>company.</i>&nbsp;&nbsp;주식회사 달</li>
-                                <li><i>owner.</i>&nbsp;&nbsp;김문</li>
-                                <li><i>email.</i>&nbsp;&nbsp;drinkallliquor@gmail.com</li>
-                                <li>
-                                    <i>corporate registration num.</i>&nbsp;&nbsp;123-45-67890
-                                </li>
-                                <li><i>online license.</i>&nbsp;&nbsp;제 2023-달구-0123호</li>
-                                <li><i>address.</i>&nbsp;&nbsp;서울특별시 서초구 서운로 22</li>
-                                <br />
-                                <li class="footer-right">
-                                    copyright© drinkallliquor All rights reserved.
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-block-right">
-                            <ul>
-                                <h4>C/S CENTER</h4>
-                                <li class="cs_tel">070-1234-1234</li>
-                                <li>MON - FRI AM 09:00 - PM 17:00</li>
-                                <li>BREAK PM 12:00 - PM 13:00</li>
-                                <li>
-                                    SAT, SUN, HOLIDAY
-                                    <span style="color: #ce5c5c">closed</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer-guide">
-                        <div><a href="#">ABOUT US</a></div>
-                        <div>|</div>
-                        <div><a href="#">TERMS</a></div>
-                        <div>|</div>
-                        <div><a href="#">FINANCE POLICY</a></div>
-                        <div>|</div>
-                        <div><a href="#">LOCATION POLICY</a></div>
-                        <div>|</div>
-                        <div><a href="#">PRIVACY POLICY</a></div>
-                        <div>|</div>
-                        <div><a href="#">SHOPPING GUIDE</a></div>
+
+                            <!-- 등록 또는 수정 버튼 -->
+                            <button type="submit">등록</button>
+                        </form>
                     </div>
                 </div>
-            </footer>
+            </section>
         </div>
-    </body>
+    </main>
+</th:block>
 </html>
 
 <script>

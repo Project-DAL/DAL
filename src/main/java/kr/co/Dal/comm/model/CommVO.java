@@ -5,11 +5,12 @@ import lombok.*;
 
 import java.sql.Date;
 
-@Getter
+/*@Getter
 @Setter
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor*/
+@Data
 public class CommVO extends CmmnVO {
     private Integer bard_id;        // 게시글ID
     private Integer user_id;        // 회원ID
