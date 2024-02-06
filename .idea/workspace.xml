@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="20230123 wonjeong main kakao map ~ing">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/service/CommService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/service/CommService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/web/CommController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/web/CommController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/comm/Commmapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/comm/Commmapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/comm/js/commList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/comm/js/commList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/comm/js/commWrite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/comm/js/commWrite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/comm/commList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/comm/commList.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +70,13 @@
   "keyToString": {
     "Application.DAL.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.DalApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/study/hello-spring/build.gradle",
@@ -108,12 +106,20 @@
       <recent name="$PROJECT_DIR$/src/main/resources/mappers/admin" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.DalApplication">
     <configuration name="DAL" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="kr.co.Dal.DalApplication" />
       <module name="kr.co.Dal.DAL.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="DAL.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="kr.co.Dal.DalApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
