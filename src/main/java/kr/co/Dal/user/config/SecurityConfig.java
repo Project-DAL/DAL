@@ -32,6 +32,8 @@ public class SecurityConfig {
                 .antMatchers("/","/joinForm","/loginForm","/user/logout","/check/findPw","/check/findId","/check/findId/successId","/check/findPw/sendEmail","/auth/**", "/oauth2/**","/my/**","/join","/findIdForm","/findPwForm", "/comm/**").permitAll() // 회원가입 접근 가능
                 .anyRequest().authenticated()
                 .and()
+                .csrf().ignoringAntMatchers("/check/findPw/sendEmail","/login") // csrf disable 설정
+                .and()
                 .formLogin()
                 .loginPage("/loginForm")
                 .loginProcessingUrl("/login") // login 주소가 호출이 되면 시큐리티가 낚아채서 대신 로그인을 진행해준다.
