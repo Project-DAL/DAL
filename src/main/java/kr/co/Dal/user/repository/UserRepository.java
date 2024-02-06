@@ -16,9 +16,9 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Integer> {
     // findBy규칙 -> Username문법
     // select * from user where  username =? 조회한다.
-     User findByEmail(String email);
+     User findByUserLginId(String userLginId);
 
-     User findByUsername(String username);
+     User findByUserNick(String userNick);
 
 
     // SELECT * FROM user WHERE provider = ?1 and providerId = ?2
@@ -27,7 +27,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     // 비밀번호찾기 임시 비밀번호로 변경되는 쿼리문
     @Modifying
     @Transactional
-    @Query(value = "UPDATE User u SET u.password = :password WHERE u.email = :email" )
+    @Query(value = "UPDATE User u SET u.userPw = :password WHERE u.userLginId = :email" )
     void updatePw(@Param("password") String password,@Param("email") String email);
 
 }

@@ -45,10 +45,11 @@ public class UserController {
     @PostMapping("/join")
     public  String join(User user){
         System.out.println(user);
-        user.setRole("ROLE_USER");
-        String rawPassword = user.getPassword();
+        user.setUserRole("ROLE_USER");
+        user.setUserType(0);
+        String rawPassword = user.getUserPw();
         String encPassword = bCryptPasswordEncoder.encode(rawPassword);
-        user.setPassword(encPassword);
+        user.setUserPw(encPassword);
         userRepository.save(user);// 회원가입 잘됨. 비밀번호: 1234=> 시큐리티로 로그인을 할 수 없음. 이유는 패스워드가 암호화가 안되있어서
         return "redirect:/loginForm";
     }
@@ -66,9 +67,9 @@ public class UserController {
 
     //Email과 name의 일치여부를 check하는 컨트롤러
     @GetMapping("/check/findPw")
-    public @ResponseBody Map<String, Boolean> pw_find(String email){
+    public @ResponseBody Map<String, Boolean> pw_find(String userLginId){
         Map<String,Boolean> json = new HashMap<>();
-        boolean pwFindCheck = userService.userEmailCheck(email);
+        boolean pwFindCheck = userService.userEmailCheck(userLginId);
 
         System.out.println(pwFindCheck);
         json.put("check", pwFindCheck);
@@ -76,21 +77,21 @@ public class UserController {
     }
 
     @GetMapping("/check/findId")
-    public @ResponseBody Map<String, Boolean> id_find(String username){
+    public @ResponseBody Map<String, Boolean> id_find(String userNick){
         Map<String,Boolean> json = new HashMap<>();
-        boolean idFindCheck = userService.userUsernameCheck(username);
+        boolean idFindCheck = userService.userUsernameCheck(userNick);
 
         System.out.println(idFindCheck);
         json.put("check", idFindCheck);
         return json;
     }
 @PostMapping("/check/findId/successId")
-    public ResponseEntity<?> getSuccessId(@RequestParam String username) {
-        User user = userService.findUserByUsername(username);
+    public ResponseEntity<?> getSuccessId(@RequestParam String userNick) {
+        User user = userService.findUserByUsername(userNick);
 
         if (user != null) {
             Map<String, Object> result = new HashMap<>();
-            result.put("email", user.getEmail());
+            result.put("userLginId", user.getUserLginId());
             return ResponseEntity.ok(result);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
