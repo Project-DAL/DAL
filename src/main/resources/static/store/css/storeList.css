@@ -1,3 +1,15 @@
+/*
+File Name      : storeList.css
+Program Name   : 상품 리스트 페이지 스타일시트
+Draft Author   : 김석진
+Draft Date     : 2024.01.14
+
+Revision History
+Ver.  Date          Revised By   Description
+------------------------------------------------------------------------------------------------------------------------
+0.1   2024.01.14    김석진       최초개발
+----------------------------------------------------------------------------------------------------------------------->
+*/
 /* 전체 페이지 영역 */
 .ct_main {
     padding-left: 50px;
@@ -45,7 +57,16 @@
     padding: 5px;
     box-shadow: 2px 3px 5px 0px gray;
 }
-
+.prod-wrap2 {
+    margin-top: 100px;
+    padding: 5px;
+    border: 1px solid gray;
+}
+.prod-wrap3 {
+    margin-top: 100px;
+    padding: 5px;
+    border: none;
+}
 /* 상품 썸네일 이미지*/
 .prod-card {
     border-radius: 15px;

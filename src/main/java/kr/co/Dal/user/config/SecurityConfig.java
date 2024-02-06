@@ -26,17 +26,24 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.headers().frameOptions().sameOrigin();
-        //http.csrf().disable();
+//        http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers( "/rest/**","/user/**","/common/**","/main/**","/test/**","/smarteditor/**").permitAll()
-                .antMatchers("/joinForm","/loginForm","/check/findPw","/check/findPw/sendEmail","/auth/**", "/oauth2/**","/my/**","/join","/findIdForm","/findPwForm", "/comm/**").permitAll() // 회원가입 접근 가능
+                .antMatchers("/","/joinForm","/loginForm","/user/logout","/check/findPw","/check/findId","/check/findId/successId","/check/findPw/sendEmail","/auth/**", "/oauth2/**","/my/**","/join","/findIdForm","/findPwForm", "/comm/**").permitAll() // 회원가입 접근 가능
                 .anyRequest().authenticated()
+                .and()
+                .csrf().ignoringAntMatchers("/check/findPw/sendEmail","/login") // csrf disable 설정
                 .and()
                 .formLogin()
                 .loginPage("/loginForm")
                 .loginProcessingUrl("/login") // login 주소가 호출이 되면 시큐리티가 낚아채서 대신 로그인을 진행해준다.
                 .usernameParameter("email")
                 .defaultSuccessUrl("/")
+                .and()
+                .logout() // 로그아웃 구성
+                .logoutUrl("/user/logout") // 로그아웃 URL
+                .logoutSuccessUrl("/") // 로그아웃 성공 후 이 URL로 리디렉션
+                .invalidateHttpSession(true) // HTTP 세션 무효화
                 .and()
                 .oauth2Login()
                 .loginPage("/loginForm")

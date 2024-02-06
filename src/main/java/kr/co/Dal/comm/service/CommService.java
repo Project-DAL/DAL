@@ -11,14 +11,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CommService {
 
-    @Autowired
-    private CommMapper commMapper;
-
-    public List<CommVO> commList(CommVO commVO) {
-        return commMapper.commList(commVO);
-    }
-
-
    /* public void insertComm(CommVO comm) throws Exception {
         return commMapper.insertComm(CommVO comm);
     }*/
