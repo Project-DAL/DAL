@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="20230123 wonjeong main kakao map ~ing">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +68,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.DAL.executor": "Run",
+    "Application.DalApplication.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -79,7 +79,7 @@
     "Spring Boot.DalApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/study/hello-spring/build.gradle",
+    "last_opened_file_path": "C:/DAL/src/main/resources/static/comm/css",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -94,36 +94,38 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\DAL\src\main\resources\static\comm\css" />
       <recent name="D:\study\DAL\src\main\resources\static\comm\js" />
       <recent name="D:\study\DAL\src\main\resources\static\smarteditor" />
       <recent name="D:\study\DAL\src\main\java\kr\co\Dal\cmmn" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\DAL\src\main\resources\static" />
       <recent name="$PROJECT_DIR$/src/main/resources/mappers/preferTest" />
       <recent name="$PROJECT_DIR$/src/main/resources/mappers/my" />
       <recent name="$PROJECT_DIR$/src/main/resources/mappers/main" />
       <recent name="$PROJECT_DIR$/src/main/resources/mappers/comm" />
-      <recent name="$PROJECT_DIR$/src/main/resources/mappers/admin" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.DalApplication">
-    <configuration name="DAL" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+  <component name="RunManager">
+    <configuration name="DalApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kr.co.Dal.DalApplication" />
       <module name="kr.co.Dal.DAL.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kr.co.Dal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="DAL.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="kr.co.Dal.DalApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DalApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
