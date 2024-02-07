@@ -10,6 +10,8 @@ package kr.co.Dal.my.mapper;
 import kr.co.Dal.my.model.MyMainVO;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface MyMainMapper {
 
@@ -24,4 +26,10 @@ public interface MyMainMapper {
 
     /* 등급 보기 */
     String rankView(MyMainVO myMainVO);
+
+    /* 주문 배송 목록 */
+    List<MyMainVO> orderViewList(MyMainVO myMainVO);
+
+
+
 }

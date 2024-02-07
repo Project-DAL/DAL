@@ -62,7 +62,7 @@
         </div>
         <div class="order-select">
             <select class="order-date">
-                <option>전체</option>
+                <option>전체 기간</option>
                 <option>1개월 전</option>
                 <option>3개월 전</option>
                 <option>6개월 전</option>
@@ -71,6 +71,7 @@
                 <option>3년 전</option>
             </select>
             <select class="order-stts">
+                <option>전체 상태</option>
                 <option>입금대기</option>
                 <option>결제완료</option>
                 <option>배송준비중</option>
@@ -81,17 +82,13 @@
                 <option>교환</option>
                 <option>반품</option>
             </select>
-            <div id="btnEnter" class="enter-btn">
-                조회
-            </div>
+            <div id="btnEnter" class="enter-btn">조회</div>
         </div>
-        <div class="order-info">
-            <div class="order-info-date">
-                2024.02.02
-            </div>
+        <div class="order-info" th:each="orderViewList : ${orderViewList}">
+            <div class="order-info-date" th:text="${orderViewList.order_rdate}"></div>
             <div class="order-box">
                 <div class="order-info-spec">
-                    <div class="order-info-spec-stts">입금대기</div>
+                    <div class="order-info-spec-stts" th:text="${orderViewList.order_stts}"></div>
                     <div class="order-info-spec-view">배송조회</div>
                 </div>
                 <div class="order-info-spec-detail">
@@ -99,9 +96,13 @@
                         <img class="order-img" th:src="@{/my/img/soju.png}" alt="">
                     </div>
                     <div class="order-info-spec-specinfo">
-                        <p>처음처럼</p>
-                        <p>2,500<span>원</span></p>
-                        <p><span>총</span>1<span>개</span></p>
+                        <p th:text="${orderViewList.prod_tit}"></p>
+                      <div class="f-flex">
+                        <p th:text="${orderViewList.od_sell_price}"></p><span>원</span>
+                      </div>
+                      <div class="f-flex">
+                        <span>총</span><p th:text="${orderViewList.od_cnt}"></p><span>개</span>
+                      </div>
                     </div>
                 </div>
             </div>

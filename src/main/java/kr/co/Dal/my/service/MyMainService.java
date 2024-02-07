@@ -6,6 +6,7 @@ import kr.co.Dal.my.model.MyMainVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -36,14 +37,11 @@ public class MyMainService {
         return myMainMapper.rankView(myMainVO);
     }
 
+    /* 주문 배송 목록 */
+    public List<MyMainVO> orderViewList(MyMainVO myMainVO) {
+    return myMainMapper.orderViewList(myMainVO);
 
-
-
-
-
-
-
-
+    }
 
 
 

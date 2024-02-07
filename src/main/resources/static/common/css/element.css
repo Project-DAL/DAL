@@ -45,3 +45,25 @@ a {
 li {
     list-style: none;
 }
+
+
+
+.pagination{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3px;
+}
+
+.num{
+    border: 1px solid #e8e8e8;
+    padding: 5px 12px;
+    border-radius: 3px;
+
+}
+
+.num.current{
+    background-color: #03012D;
+    color: white;
+}

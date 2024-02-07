@@ -20,6 +20,7 @@ public class SearchCondition {
     private String title;
     private String uid;
 
+
     public String getQueryString(Integer page) {
         return getQueryString(page, no);
     }

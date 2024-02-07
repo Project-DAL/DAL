@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class MyAjaxController {
 
     private final MyBoardService myBoardService;
+    private final MyAnsService myAnsService;
     private final MyWishService myWishService;
     private final MyWithdrawService myWithdrawService;
     private final MyInfoService myInfoService;
@@ -43,7 +44,7 @@ public class MyAjaxController {
     @PostMapping("/my/MyBoard/deleteAns")
     public ResponseEntity<MyAnsVO> deleteAns(@RequestBody MyAnsVO myAnsVO) {
 
-        myBoardService.deleteAns(myAnsVO);
+        myAnsService.deleteAns(myAnsVO);
         return ResponseEntity.ok(myAnsVO);
     }
 
