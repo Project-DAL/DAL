@@ -28,11 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let divObjDropdown = document.getElementById("dropdown");   // 드롭다운
     let divObjDropdownMenu = document.getElementById("dropdownMenu");
 
-    divObjDropdown.addEventListener("click", function (){
-        if(divObjDropdownMenu.style.display === "") {
-            divObjDropdownMenu.style.display = "none";
-        }else {
-            divObjDropdownMenu.style.display = "";
-        }
-    });
+    if(divObjDropdown !== null) {
+        divObjDropdown.addEventListener("click", function (){
+            if(divObjDropdownMenu.style.display === "") {
+                divObjDropdownMenu.style.display = "none";
+            }else {
+                divObjDropdownMenu.style.display = "";
+            }
+        });
+    }
 });

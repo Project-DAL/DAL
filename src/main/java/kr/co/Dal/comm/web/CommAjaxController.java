@@ -32,7 +32,7 @@ public class CommAjaxController {
     /**
      * 게시판 등록
      */
-    @RequestMapping("/comm/commAjaxWrite")
+    @PostMapping("/comm/commAjaxWrite")
     public String commWrite(CommVO commVO) throws Exception{
         commAjaxService.commInsert(commVO);
         return "redirect:/comm/commList";	//게시글 리스트로 이동
