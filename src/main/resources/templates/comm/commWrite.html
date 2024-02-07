@@ -89,12 +89,13 @@ Draft Date      : 2023.11.10
     let oEditors = []
 
     smartEditor = function() {
-      nhn.husky.EZCreator.createInIFrame({
-        oAppRef: oEditors,
-        elPlaceHolder: "bard_cn",
-        sSkinURI: "/smarteditor/SmartEditor2Skin.html",
-        fCreator: "createSEditor2"
-      })
+        nhn.husky.EZCreator.createInIFrame({
+            oAppRef: oEditors,
+            elPlaceHolder: "bard_cn",
+            sSkinURI: "/smarteditor/SmartEditor2Skin.html",
+            fCreator: "createSEditor2",
+            tParams: { fOnBeforeUnload : function(){}}
+        })
     }
 
     document.addEventListener('DOMContentLoaded', function() {
