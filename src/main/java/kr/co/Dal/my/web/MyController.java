@@ -79,9 +79,9 @@ public class MyController {
     // MY Ans
     @GetMapping("/my/MyAns")
     public String myAns(Model model,
-                          @RequestParam Map map,
-                          MyAnsVO myAnsVO,
-                          @ModelAttribute SearchCondition sc){
+                        @RequestParam Map map,
+                        MyAnsVO myAnsVO,
+                        @ModelAttribute SearchCondition sc){
 
         // 검색어
         sc.setMap(map);
