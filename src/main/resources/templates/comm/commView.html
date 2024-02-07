@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!----------------------------------------------------------------------------------------------------------------------
+©Copyright 2023. DAL. All rights reserved.
+
+File Name       : commView.html
+Program Name    : 게시판 상세
+Description     :
+Draft Author    :
+Draft Date      : 2023.11.10
+----------------------------------------------------------------------------------------------------------------------->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main-layout}">
+
+<!-- 1. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+    <link rel="stylesheet" type="text/css" th:href="@{/comm/css/commView.css}">
+    <script src="/comm/js/commView.js" defer></script>
+</th:block>
+
+<!-- 2. Page Content -->
+<th:block layout:fragment="content">
+    <!-- 3. Main -->
+    <main>
+        <div class="ct_main">
+            <!-- 4.1 Aside -->
+            <aside>
+                <div class="ct_left-menu">
+                    <h4 class="menu-tit">CATEGORY</h4>
+                    <ul>
+                        <li><a href="#">ALL</a></li>
+                        <li><a href="#">NOTICE</a></li>
+                        <li><a href="#">REVIEW</a></li>
+                        <li><a href="#">DAILY</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <!-- 4.2 Content -->
+            <section>
+                <h1>게시판 상세보기</h1>
+
+                <div class="post">
+                    <h2 class="post-title">게시물 제목</h2>
+                    <p class="post-meta">작성자: John Doe | 작성일: 2024-02-07</p>
+                    <div class="post-content">
+                        <p>게시물 내용이 여기에 들어갑니다. 내용이 많을 경우 스크롤이 생깁니다.</p>
+                        <!-- 추가적인 내용이 필요하다면 여기에 작성 -->
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+</th:block>
+
+</html>

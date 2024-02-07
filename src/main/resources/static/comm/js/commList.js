@@ -29,11 +29,25 @@ function fnAjaxCommList() {
             response.forEach(function (result, index) {
                 let template = `
                     <td><p>${result.bard_id}</p></td>
+                    <td><p>${result.bard_type}</p></td>
                     <td><p>${result.bard_tit}</p></td>
                     <td><p>${result.bard_cn}</p></td>
+                    <td><p>${result.user_id}</p></td>
+                    <td><p>${result.bard_like_cnt}</p></td>
                     <td><p>${result.bard_rdate}</p></td>
                 `;
                 element.insertAdjacentHTML('beforeend', template);
+
+                let rows = document.querySelectorAll("tr");
+
+                rows.forEach(function(row) {
+                    row.addEventListener("click", function() {
+                        var postId = row.cells[0].textContent;
+
+                        window.location.href = "/comm/commView?bard_id=" + postId;
+                    });
+                });
+
             });
         }else {
              let template = `
