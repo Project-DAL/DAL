@@ -14,8 +14,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 
 @Slf4j
@@ -29,6 +33,7 @@ public class MyAjaxController {
     private final MyWithdrawService myWithdrawService;
     private final MyInfoService myInfoService;
     private final MyCouponService myCouponService;
+    private final MyMainService myMainService;
 
 
     /* 내 게시글 삭제 */
@@ -93,5 +98,18 @@ public class MyAjaxController {
         myCouponService.insertCoupon(mycouponVO);
         return ResponseEntity.ok(mycouponVO);
     }
+
+
+    /* 주문 배송 */
+    @GetMapping("/my/MyPageMain/order")
+    @ResponseBody
+    public ResponseEntity<List<MyMainVO>> orderViewList(MyMainVO myMainVO){
+
+        log.warn("orderViewList");
+
+        List<MyMainVO> list = myMainService.orderViewList(myMainVO);
+        return ResponseEntity.ok().body(list);
+    }
+
 
 }
