@@ -241,6 +241,9 @@ function fnDelete2(){
       });
 }
 
+function changePageAndTab(num){
+    console.log("num: " + num);
+}
 
 
 
