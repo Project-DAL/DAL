@@ -27,19 +27,6 @@
 }
 
 
-.tabs .tab-link1:focus,
-.tabs .tab-link1:hover,
-.tabs .tab-link1:active,
-.tabs .tab-link1.active {
-    border-bottom: 2px solid #03012D; /* 선택된 탭에 밑줄 스타일 지정 */
-}
-
-.tabs .tab-link2:focus,
-.tabs .tab-link2:hover,
-.tabs .tab-link2:active,
-.tabs .tab-link2.active {
-    border-bottom: 2px solid #03012D; /* 선택된 탭에 밑줄 스타일 지정 */
-}
 
 /* 게시판 관련 */
 .board-write{

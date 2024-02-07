@@ -53,7 +53,15 @@
 
 
 
-
+    <!-- 등급 보기 -->
+    <select id="rankView" resultType="String">
+        SELECT
+            user_grade
+        FROM
+            user_tb
+        WHERE
+            user_id = 1
+    </select>
 
 
 

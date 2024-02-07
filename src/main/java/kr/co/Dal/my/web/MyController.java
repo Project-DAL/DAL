@@ -31,6 +31,7 @@ public class MyController {
     private final MyWishService myWishService;
     private final MyWithdrawService myWithdrawService;
     private final MyMainService myMainService;
+    private final MyRankService myRankService;
 
 
     // My Page Main
@@ -40,10 +41,12 @@ public class MyController {
         int pointGross = myMainService.pointGross(myMainVO);
         int couponGross = myMainService.couponGross(myMainVO);
         int wishGross = myMainService.wishGross(myMainVO);
+        String rankView = myMainService.rankView(myMainVO);
 
         model.addAttribute("pointGross", pointGross);
         model.addAttribute("couponGross", couponGross);
         model.addAttribute("wishGross", wishGross);
+        model.addAttribute("rankView", rankView);
 
         return "my/MyPageMain";
     }
@@ -149,8 +152,9 @@ public class MyController {
 
     /* My rank*/
     @GetMapping("/my/MyRank")
-    public String myrank(Model model){
-
+    public String myrank(Model model, MyRankVO myRankVO){
+        List<MyRankVO> rankList = myRankService.viewRank(myRankVO);
+        model.addAttribute("rankList", rankList);
         return "my/MyRank";
 
     }
