@@ -1,5 +1,11 @@
 "use strict";
 
+/*
+    파일명        : main.js
+    최초 작성자    : 이원정
+    최초 작성날짜   : 
+*/
+
 /* 1. Variables *******************************************************************************************************/
 /* 1.1 Service Url String */
 const strProvinceList = '/rest/provinceList';    // 셀렉트 지역 목록 URL
