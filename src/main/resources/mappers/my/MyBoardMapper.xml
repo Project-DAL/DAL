@@ -71,7 +71,7 @@
 
 
     <!-- 내 댓글 목록 -->
-    <select id="selectAnsList" resultType="kr.co.Dal.my.model.MyAnsVO">
+    <select id="selectAnsList" parameterType="kr.co.Dal.util.SearchCondition" resultType="kr.co.Dal.my.model.MyAnsVO">
         SELECT
             ans_id,
             user_id,
@@ -84,8 +84,40 @@
             ans_tb
         WHERE
             ans_stts = 1
+        <if test="searchField != null and searchWord != null">
+            <choose>
+                <when test='searchField == "title"'>
+                    AND TITLE LIKE CONCAT('%', #{searchWord}, '%')
+                </when>
+                <when test='searchField == "uid"'>
+                    AND UID LIKE CONCAT('%', #{searchWord}, '%')
+                </when>
+            </choose>
+        </if>
+        ORDER BY ans_rdate DESC
+        LIMIT #{offset}, 10
     </select>
 
+
+    <!-- 내 댓글 목록 개수 -->
+    <select id="countAns" parameterType="kr.co.Dal.util.SearchCondition" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            ans_tb
+        WHERE
+            ans_stts = 1
+        <if test="searchField != null and searchWord != null">
+            <choose>
+                <when test='searchField == "title"'>
+                    AND TITLE LIKE CONCAT('%', #{searchWord}, '%')
+                </when>
+                <when test='searchField == "uid"'>
+                    AND UID LIKE CONCAT('%', #{searchWord}, '%')
+                </when>
+            </choose>
+        </if>
+    </select>
 
     <!-- 내 댓글 삭제 -->
     <update id="deleteAns" parameterType="kr.co.Dal.my.model.MyAnsVO">
