@@ -5,52 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0489b6d0-177e-4746-b601-6b90e715772b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Crud/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/CrudApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/controller/BoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/dao/BoardDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/dao/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/domain/BoardVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/domain/CommentVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/domain/FileVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/domain/UserVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/entity/UserEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/repository/UserRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/service/BoardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/utils/PageHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/utils/SearchCondition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/resources/static/images/google.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/resources/static/images/kakao-talk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Crud/src/main/resources/static/images/naver.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NoticeBoard/src/main/resources/templates/bard/NoticeBoardList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML" beforeDir="false" afterPath="$PROJECT_DIR$/../HTML" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper/MyMainMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper/MyMainMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/model/MyMainVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/model/MyMainVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/service/MyMainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/service/MyMainService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/my/MyMainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/my/MyMainMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/my/css/myBoard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/my/css/myBoard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/my/css/myRank.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/my/css/myRank.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/my/css/myWithdraw.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/my/css/myWithdraw.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyBoard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyBoard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyPageMain.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyPageMain.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyRank.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyRank.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2aIeAoV5khUBDpG0wgFQz5NRtaA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "jay",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/yiwonjeong/Desktop/Workspace/main",
     "node.js.detected.package.eslint": "true",
@@ -59,9 +63,30 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "0db51ae58b2870e9ccbdc1bb0fc045f8",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="DalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="DAL.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="kr.co.Dal.DalApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kr.co.Dal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.DalApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,6 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1704010379426</updated>
       <workItem from="1705925876046" duration="22669000" />
+      <workItem from="1707285315470" duration="4502000" />
     </task>
     <servers />
   </component>
@@ -83,7 +109,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/resources/static/bard/js/BoardList.js</url>
           <line>125</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
