@@ -35,7 +35,7 @@
           </div>
        </div>
       <div class="content-middle">적립금 내역</div>
-        <div class="middle-wrap" th:each="point : ${pointList}">
+        <div class="middle-wrap" th:each="point : ${selectPointList}">
             <div class="content-middle-box">
               <div class="content-middle-box-date" th:if="${point.point_stat != 2}" th:text="${point.point_rdate}"></div>
                 <div class="content-middle-box-date" th:if="${point.point_stat == 2}" th:text="${point.point_edate}"></div>
@@ -61,7 +61,34 @@
               <span class="color-use" th:if="${point.point_stat == 2}">P</span>
               <span class="box-gone" th:if="${point.point_stat == 0}">P</span>
             </div>
+
+
+
+
+
+
+
+
          </div>
+
+
+        <!-- Pagination -->
+        <div class="pagination" th:object="${ph}" th:style="${#lists.size(selectPointList) == 0 ? 'visibility:hidden;':''}">
+            <th:block th:if="*{showPrev}">
+                <a th:href="@{/my/MyPoint} + ${ph.sc.getQueryString(ph.beginPage-1)}" class="prev">< </a>
+            </th:block>
+            <th:block th:each="num:${#numbers.sequence(ph.beginPage, ph.endPage)}">
+                <a th:href="@{/my/MyPoint} + ${ph.sc.getQueryString(num)}" th:class="${num == ph.sc.page ? 'num current':'num'}">
+                    [[${num}]]
+                </a>
+            </th:block>
+            <th:block th:if="*{showNext}">
+                <a th:href="@{/my/MyPoint} + ${ph.sc.getQueryString(ph.endPage+1)}" class="next"> ></a>
+            </th:block>
+        </div>
+
+
+
     </section>
   </th:block>
 
