@@ -27,19 +27,5 @@ public interface MyBoardMapper {
     public void deleteBoard(MyBoardVO myBoardVO);
 
 
-    /* 내가 쓴 댓글 조회 */
-    List<MyAnsVO> selectAnsList(SearchCondition sc);
-
-    /*  내가 쓴 목록 개수 */
-    int countAns(SearchCondition sc);
-
-    /* 댓글 삭제 */
-    public void deleteAns(MyAnsVO myAnsVO);
-
-
-
-
-
-
 
 }

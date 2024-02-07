@@ -36,7 +36,11 @@ public class MyBoardService {
         int totalPage = (int)Math.ceil(totalCnt / (double)sc.getPageSize());
         if(sc.getPage() > totalPage) sc.setPage(totalPage);
 
-        PageHandler pageHandler = new PageHandler(totalCnt, sc);
+
+        // 한 페이지에 보일 건수
+        int naviSize = 10;
+
+        PageHandler pageHandler = new PageHandler(totalCnt, sc, naviSize);
 
         // model 전송
         List<MyBoardVO> boardList = myBoardMapper.selectBoardList(sc);
@@ -69,48 +73,6 @@ public class MyBoardService {
             myBoardMapper.deleteBoard(myBoardVO);
         }
 
-
-    }
-
-
-    /* 내가 쓴 댓글 조회 */
-    public List<MyAnsVO> selectAnsList(Model model, MyAnsVO myAnsVO, SearchCondition sc){
-
-        // pagination
-        int totalCnt = myBoardMapper.countAns(sc);
-
-        log.warn("totalCnt: " + totalCnt);
-
-        int totalPage = (int)Math.ceil(totalCnt / (double)sc.getPageSize());
-        if(sc.getPage() > totalPage) sc.setPage(totalPage);
-
-        PageHandler pageHandler = new PageHandler(totalCnt, sc);
-
-        // model 전송
-        List<MyAnsVO> ansList = myBoardMapper.selectAnsList(sc);
-
-        model.addAttribute("ansList", ansList);
-        model.addAttribute("phAns", pageHandler);
-
-        log.warn("phAns: " + pageHandler);
-
-        return ansList;
-    }
-
-
-
-    /* 댓글 삭제 */
-    public void deleteAns(MyAnsVO myAnsVO) {
-
-        log.warn("ansid length: " + myAnsVO.getAnsidArray().length);
-
-        for (int i = 0; i < myAnsVO.getAnsidArray().length; i++) {
-            log.warn("ansid:" + myAnsVO.getAnsidArray()[i]);
-
-            int ansId = Integer.parseInt(myAnsVO.getAnsidArray()[i]);
-            myAnsVO.setAns_id(ansId);
-            myBoardMapper.deleteAns(myAnsVO);
-        }
 
     }
 

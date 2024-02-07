@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!--
+    파일명        : MyBoardMapper.xml
+    최초 작성자    : 박제형
+    최초 작성날짜   : 2024.01.22
+-->
+
+<mapper namespace="kr.co.Dal.my.mapper.MyAnsMapper">
+
+
+    <!-- 내 댓글 목록 -->
+    <select id="selectAnsList" parameterType="kr.co.Dal.util.SearchCondition" resultType="kr.co.Dal.my.model.MyAnsVO">
+        SELECT
+        ans_id,
+        user_id,
+        ans_cn,
+        ans_rdate,
+        ans_udate,
+        ans_stts,
+        ans_type
+        FROM
+        ans_tb
+        WHERE
+        ans_stts = 1
+        ORDER BY ans_rdate DESC
+        LIMIT #{offset}, 10
+    </select>
+
+
+    <!-- 내 댓글 목록 개수 -->
+    <select id="countAns" parameterType="kr.co.Dal.util.SearchCondition" resultType="int">
+        SELECT
+        COUNT(*)
+        FROM
+        ans_tb
+        WHERE
+        ans_stts = 1
+    </select>
+
+    <!-- 내 댓글 삭제 -->
+    <update id="deleteAns" parameterType="kr.co.Dal.my.model.MyAnsVO">
+        UPDATE
+            ans_tb
+        SET
+            ans_stts = 0
+        WHERE
+            ans_id = #{ans_id}
+    </update>
+
+
+
+
+
+
+</mapper>

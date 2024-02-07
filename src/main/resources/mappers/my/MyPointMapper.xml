@@ -32,7 +32,7 @@
                 ot.prod_id = prt.prod_id
         ORDER BY
             pt.od_id DESC
-            LIMIT #{offset}, 10
+            LIMIT #{offset}, 3
     </select>
 
 
@@ -44,14 +44,14 @@
             COUNT(*)
         FROM
             point_tb pt
-                JOIN
+        JOIN
             od_tb ot
             ON
                 pt.od_id = ot.od_id
-                JOIN
+        JOIN
             prod_tb prt
-            ON
-                ot.prod_id = prt.prod_id
+        ON
+          ot.prod_id = prt.prod_id
     </select>
 
 

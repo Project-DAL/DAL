@@ -25,14 +25,10 @@
         <div class="ct_content-wrap">
             <div class="ct_subtitle">
                 <div class="title" id="title1">내 게시글</div>
-                <div class="title" id="title2" style="display: none;">내 댓글</div>
             </div>
             <div class="content-top">
-                <ul class="tabs">
-                    <li id="myBoardTab" class="tab-link1">내가 쓴 게시글</li>
-                    <li id="myReplyTab" class="tab-link2">내가 쓴 댓글</li>
-                </ul>
-                <!-- 내가 쓴 게시글  -->
+
+
                 <div id="boardTab" class="content-middle">
                     <table class="board-write">
                         <colgroup>
@@ -67,38 +63,10 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- 내가 쓴 댓글  -->
-                <div id="replyTab" class="content-middle" style="display: none;">
-                    <table class="board-reply">
-                        <colgroup>
-                            <col style="width: 50px;">
-                            <col style="width: 70px;">
-                            <col style="width: 250px;">
-                            <col style="width: 100px;">
-                        </colgroup>
-                        <thead>
-                        <tr>
-                            <th><input type="checkbox" id="all_checkboxes2"></th>
-                            <th>카테고리</th>
-                            <th>댓글 내용</th>
-                            <th>작성일시</th>
-                        </tr>
-                        </thead>
-                        <tbody th:each="ans : ${ansList}">
-                        <tr>
-                            <td><input type="checkbox" th:data-ansid="${ans.ans_id}" class="checkboxes2"></td>
-                            <td th:text="${ans.ans_type}"></td>
-                            <td th:text="${ans.ans_cn}"></td>
-                            <td th:text="${ans.ans_rdate}"></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
 
             <div class="content-bottom">
                     <a id="btnDelete" class="btn-delete">삭제하기</a>
-                    <a id="btnDelete2" class="btn-delete" style="display: none;">삭제하기</a>
                 </div>
 
             <!-- Pagination -->
@@ -116,19 +84,6 @@
                 </th:block>
             </div>
 
-            <div class="pagination" th:object="${phAns}" th:style="${#lists.size(ansList) == 0 ? 'visibility:hidden;':''}">
-                <th:block th:if="*{showPrev}">
-                    <a th:href="@{/my/MyBoard} + ${ph.sc.getQueryString(ph.beginPage-1)}" class="prev">< </a>
-                </th:block>
-                <th:block th:each="num:${#numbers.sequence(ph.beginPage, ph.endPage)}">
-                    <a th:href="@{/my/MyBoard} + ${ph.sc.getQueryString(num)}" th:class="${num == ph.sc.page ? 'num current':'num'}">
-                        [[${num}]]
-                    </a>
-                </th:block>
-                <th:block th:if="*{showNext}">
-                    <a th:href="@{/my/MyBoard} + ${ph.sc.getQueryString(ph.endPage+1)}" class="next"> ></a>
-                </th:block>
-            </div>
 
         </div>
     </section>
