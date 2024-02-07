@@ -15,7 +15,9 @@ public class MyMainVO{
 
 
     private String user_grade;
-
+    private String order_rdate;
+    private int order_stts;
+    private String prod_tit;
 
     /*order 상세 VO*/
     private int od_id; // 주문상세번호

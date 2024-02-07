@@ -67,6 +67,36 @@
 
 
 
+    <!-- 주문 배송 목록 -->
+    <select id="orderViewList" resultType="kr.co.Dal.my.model.MyMainVO">
+        SELECT
+            odt.order_rdate,
+            odt.order_stts,
+            ot.prod_id,
+            pt.prod_tit,
+            ot.od_sell_price,
+            ot.od_cnt,
+            ot.od_stts
+        FROM
+            od_tb ot
+                JOIN
+            order_tb odt
+            ON
+                ot.order_id = odt.order_id
+                JOIN
+            prod_tb pt
+            ON
+                ot.prod_id = pt.prod_id
+        WHERE
+            ot.user_id = 1
+        ORDER BY order_rdate DESC;
+    </select>
+
+
+
+
+
+
 
 
 
