@@ -13,6 +13,10 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class MyMainVO{
 
+
+    private String user_grade;
+
+
     /*order 상세 VO*/
     private int od_id; // 주문상세번호
     private int prod_id; // 술 번호

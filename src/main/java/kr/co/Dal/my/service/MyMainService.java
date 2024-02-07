@@ -31,7 +31,10 @@ public class MyMainService {
         return myMainMapper.wishGross(myMainVO);
     }
 
-
+    /* 등급 보기 */
+    public String rankView(MyMainVO myMainVO){
+        return myMainMapper.rankView(myMainVO);
+    }
 
 
 

@@ -25,7 +25,11 @@
                     <img class="size" th:src="@{/my/img/ranking.png}" alt=""></div>
                 <div class="summary-text">
                     <span>등급</span>
-                    <span class="summary-value">골드</span>
+                        <span class="summary-value" th:if="${rankView == '1'}" th:text="브론즈"></span>
+                        <span class="summary-value" th:if="${rankView == '2'}" th:text="실버"></span>
+                        <span class="summary-value" th:if="${rankView == '3'}" th:text="골드"></span>
+                        <span class="summary-value" th:if="${rankView == '4'}" th:text="플래티넘"></span>
+                        <span class="summary-value" th:if="${rankView == '5'}" th:text="다이아"></span>
                 </div>
             </a>
             <a class="summary-content" th:href="@{/my/MyCoupon}">

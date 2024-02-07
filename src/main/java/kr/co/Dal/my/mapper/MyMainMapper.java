@@ -22,5 +22,6 @@ public interface MyMainMapper {
     /* 위시리스트 개수 */
     int wishGross(MyMainVO myMainVO);
 
-
+    /* 등급 보기 */
+    String rankView(MyMainVO myMainVO);
 }
