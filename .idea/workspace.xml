@@ -7,6 +7,12 @@
     <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="20230123 wonjeong main kakao map ~ing">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/web/CommAjaxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/web/CommAjaxController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/comm/Commmapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/comm/Commmapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/common/js/Common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/common/js/Common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/comm/commWrite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/comm/commWrite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/_header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +75,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.DAL.executor": "Run",
+    "Application.Unnamed.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -116,7 +123,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="DalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="DAL.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="kr.co.Dal.DalApplication" />
@@ -124,6 +131,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.DAL" />
+      <item itemvalue="Spring Boot.DalApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
