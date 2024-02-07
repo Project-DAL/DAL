@@ -11,7 +11,7 @@
 <mapper namespace="kr.co.Dal.my.mapper.MyBoardMapper">
 
     <!-- 내 게시글 목록 -->
-    <select id="selectBoardList" resultType="kr.co.Dal.my.model.MyBoardVO">
+    <select id="selectBoardList" parameterType="kr.co.Dal.util.SearchCondition" resultType="kr.co.Dal.my.model.MyBoardVO">
         SELECT
             bard_id,
             user_id,
@@ -24,6 +24,36 @@
             bard_tb
         WHERE
             bard_stts = 1
+            <if test="searchField != null and searchWord != null">
+                <choose>
+                    <when test='searchField == "title"'>
+                        AND TITLE LIKE CONCAT('%', #{searchWord}, '%')
+                    </when>
+                    <when test='searchField == "uid"'>
+                        AND UID LIKE CONCAT('%', #{searchWord}, '%')
+                    </when>
+                </choose>
+            </if>
+        ORDER BY bard_rdate DESC
+        LIMIT #{offset}, 10
+    </select>
+
+    <!-- 내 게시글 목록 개수 -->
+    <select id="countBoard" parameterType="kr.co.Dal.util.SearchCondition" resultType="int">
+        SELECT COUNT(*)
+        FROM bard_tb
+        WHERE
+            bard_stts = 1
+        <if test="searchField != null and searchWord != null">
+            <choose>
+                <when test='searchField == "title"'>
+                    AND TITLE LIKE CONCAT('%', #{searchWord}, '%')
+                </when>
+                <when test='searchField == "uid"'>
+                    AND UID LIKE CONCAT('%', #{searchWord}, '%')
+                </when>
+            </choose>
+        </if>
     </select>
 
 

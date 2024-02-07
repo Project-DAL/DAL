@@ -9,9 +9,12 @@ package kr.co.Dal.my.service;
 import kr.co.Dal.my.mapper.MyBoardMapper;
 import kr.co.Dal.my.model.MyAnsVO;
 import kr.co.Dal.my.model.MyBoardVO;
+import kr.co.Dal.util.PageHandler;
+import kr.co.Dal.util.SearchCondition;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import java.util.List;
 
@@ -23,8 +26,25 @@ public class MyBoardService {
     private final MyBoardMapper myBoardMapper;
 
     /* 내가 쓴 게시글 조회 */
-    public List<MyBoardVO> selectBoardList(MyBoardVO myBoardVO){
-        return myBoardMapper.selectBoardList(myBoardVO);
+    public List<MyBoardVO> selectBoardList(Model model, MyBoardVO myBoardVO, SearchCondition sc){
+
+        // pagination
+        int totalCnt = myBoardMapper.countBoard(sc);
+
+        log.warn("totalCnt: " + totalCnt);
+
+        int totalPage = (int)Math.ceil(totalCnt / (double)sc.getPageSize());
+        if(sc.getPage() > totalPage) sc.setPage(totalPage);
+
+        PageHandler pageHandler = new PageHandler(totalCnt, sc);
+
+        // model 전송
+        List<MyBoardVO> boardList = myBoardMapper.selectBoardList(sc);
+
+        model.addAttribute("boardList", boardList);
+        model.addAttribute("ph", pageHandler);
+
+        return boardList;
     }
 
 

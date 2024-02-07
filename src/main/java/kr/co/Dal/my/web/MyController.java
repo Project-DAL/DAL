@@ -9,15 +9,19 @@ package kr.co.Dal.my.web;
 
 import kr.co.Dal.my.model.*;
 import kr.co.Dal.my.service.*;
+import kr.co.Dal.util.SearchCondition;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Controller
@@ -50,11 +54,21 @@ public class MyController {
 
     // MY Board
     @GetMapping("/my/MyBoard")
-    public String myboard(Model model, MyBoardVO myBoardVO, MyAnsVO myAnsVO){
-        List<MyBoardVO> boardList = myBoardService.selectBoardList(myBoardVO);
+    public String myboard(Model model,
+                          @RequestParam Map map,
+                          MyBoardVO myBoardVO, MyAnsVO myAnsVO,
+                          @ModelAttribute SearchCondition sc){
+
+        // 검색어
+        sc.setMap(map);
+
+        myBoardService.selectBoardList(model, myBoardVO, sc);
+        myBoardService.selectAnsList(myAnsVO);
+
+        /*List<MyBoardVO> boardList = myBoardService.selectBoardList(myBoardVO, sc);
         List<MyAnsVO> ansList = myBoardService.selectAnsList(myAnsVO);
         model.addAttribute("boardList", boardList);
-        model.addAttribute("ansList", ansList);
+        model.addAttribute("ansList", ansList);*/
         return "my/MyBoard";
     }
 

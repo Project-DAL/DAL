@@ -58,7 +58,9 @@
                             <td><input type="checkbox" th:data-bardid="${board.bard_id}" th:data-bardtype="${board.bard_type}" class="checkboxes"></td>
                             <td th:text="${board.bard_id}"></td>
                             <td th:text="${board.bard_type}"></td>
-                            <td th:text="${board.bard_tit}"></td>
+                            <td>
+                                <a href="#" th:text="${board.bard_tit}" th:data="${board.bard_id}"></a>
+                            </td>
                             <td th:text="${board.bard_rdate}"></td>
                             <td th:text="${board.bard_cnt}"></td>
                         </tr>
@@ -99,15 +101,20 @@
                     <a id="btnDelete2" class="btn-delete" style="display: none;">삭제하기</a>
                 </div>
 
-                <!--
-                <div class="paging-area">
-                    <a href="#" class="paging-before5"><<</a> &nbsp;&nbsp;
-                    <a href="#" class="paging-before"><</a> &nbsp;&nbsp;
-                    <div class="current-page">1</div> &nbsp;&nbsp;
-                    <a href="#" class="paging-foward">></a> &nbsp;&nbsp;
-                    <a href="#" class="paging-foward5">>></a>
-                </div>-->
-
+            <!-- Pagination -->
+            <div class="pagination" th:object="${ph}" th:style="${#lists.size(boardList) == 0 ? 'visibility:hidden;':''}">
+                <th:block th:if="*{showPrev}">
+                    <a th:href="@{/my/MyBoard} + ${ph.sc.getQueryString(ph.beginPage-1)}" class="prev">< </a>
+                </th:block>
+                <th:block th:each="num:${#numbers.sequence(ph.beginPage, ph.endPage)}">
+                    <a th:href="@{/my/MyBoard} + ${ph.sc.getQueryString(num)}" th:class="${num == ph.sc.page ? 'num current':'num'}">
+                        [[${num}]]
+                    </a>
+                </th:block>
+                <th:block th:if="*{showNext}">
+                    <a th:href="@{/my/MyBoard} + ${ph.sc.getQueryString(ph.endPage+1)}" class="next"> ></a>
+                </th:block>
+            </div>
 
             </div>
         </div>
