@@ -27,17 +27,16 @@ public class SendEmailService {
     public MailDto createMailAndChangePassword(User user) {
         String str = getTempPassword();
         MailDto dto = new MailDto();
-        dto.setAddress(user.getEmail());
-        dto.setTitle(user.getUsername() + "님의 DAL 임시비밀번호 안내 이메일 입니다.");
-        dto.setMessage("안녕하세요.  임시비밀번호 안내 관련 이메일 입니다." + "[" + user.getUsername() + "]" + "님의 임시 비밀번호는 "
-                + str + " 입니다.");
+        dto.setAddress(user.getUserLginId());
+        dto.setTitle(user.getUserName() + "님의 DAL 임시비밀번호 안내 이메일 입니다.");
+        dto.setMessage("안녕하세요.  임시비밀번호 안내 관련 이메일 입니다." + "[" + user.getUserName() + "]" + "님의 임시 비밀번호는 "+str+"입니다.");
        updatePassword(str, user);
         return dto;
     }
 
     public void updatePassword(String str, User user) {
         String password = bCryptPasswordEncoder.encode(str);
-        String email = user.getEmail(); // 이 부분 수정
+        String email = user.getUserLginId(); // 이 부분 수정
         userRepository.updatePw(password, email);
     }
 
@@ -58,6 +57,7 @@ public class SendEmailService {
         }
         return str;
     }
+
 
     public void mailSend(MailDto mailDto) {
         System.out.println("이멜 전송 완료!");

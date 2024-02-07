@@ -10,9 +10,9 @@
 .summary-wrap {
     width: 100%;
     display: flex;
-    justify-content: space-around;
     align-items: center;
     margin-top: 15px;
+    justify-content: space-evenly;
 }
 
 .summary-content {
@@ -31,7 +31,6 @@
 .size{
     width: 30px;
     height: 30px;
-    margin-left: 22px;
 
 }
 

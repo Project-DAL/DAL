@@ -1,0 +1,147 @@
+/*
+파일명        : myRank.css
+최초 작성자    : 박제형
+최초 작성날짜   : 2024.02.06
+*/
+
+
+.my-info{
+    border: 1px solid #e8e8e8;
+    padding: 50px 50px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+
+}
+
+
+.my-name{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+
+.my-rank{
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 5px;
+    color: #2E3888;
+
+}
+
+
+.rank-info{
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+
+}
+
+.rank-info1{
+
+}
+
+.rank-info2{
+
+}
+
+.rank-info3{
+    margin-left:5px;
+    color: #2E3888;
+
+}
+
+.rank-info4{
+
+}
+
+.rank-info5{
+    margin-left:5px;
+
+}
+
+.rank-info6{
+
+}
+
+.rank-info7{
+    margin-left:5px;
+
+}
+
+
+.middle{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.rank-money{
+    border: 1px solid #e8e8e8;
+    padding: 10px 50px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.bronze{
+    display: flex;
+    border: 1px solid #e8e8e8;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.sliver{
+    display: flex;
+    border: 1px solid #e8e8e8;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.gold{
+    display: flex;
+    border: 1px solid #e8e8e8;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.platinum{
+    display: flex;
+    border: 1px solid #e8e8e8;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+
+}
+
+.diamond{
+    display: flex;
+    border: 1px solid #e8e8e8;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+
+}
+
+
+.mine{
+    font-size: 25px;
+    color: #2E3888;
+}
+
+.mine-info{
+    color: gray;
+    font-size: 20px;
+}
