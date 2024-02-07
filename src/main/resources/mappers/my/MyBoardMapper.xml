@@ -34,9 +34,12 @@
                     </when>
                 </choose>
             </if>
-        ORDER BY bard_rdate DESC
-        LIMIT #{offset}, 10
+        ORDER BY
+            bard_rdate DESC
+            LIMIT #{offset}, 10
     </select>
+
+
 
     <!-- 내 게시글 목록 개수 -->
     <select id="countBoard" parameterType="kr.co.Dal.util.SearchCondition" resultType="int">

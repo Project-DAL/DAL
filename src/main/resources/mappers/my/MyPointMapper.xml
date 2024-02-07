@@ -22,6 +22,28 @@
             pt.od_use_point
         FROM
             point_tb pt
+        JOIN
+            od_tb ot
+        ON
+                pt.od_id = ot.od_id
+        JOIN
+            prod_tb prt
+        ON
+                ot.prod_id = prt.prod_id
+        ORDER BY
+            pt.od_id DESC
+            LIMIT #{offset}, 10
+    </select>
+
+
+
+
+    <!-- 포인트 목록 개수 -->
+    <select id="countPointList" parameterType="kr.co.Dal.util.SearchCondition" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            point_tb pt
                 JOIN
             od_tb ot
             ON
@@ -30,9 +52,11 @@
             prod_tb prt
             ON
                 ot.prod_id = prt.prod_id
-        ORDER BY
-            pt.od_id DESC;
     </select>
+
+
+
+
 
 
     <!-- 사용가능한 포인트-->

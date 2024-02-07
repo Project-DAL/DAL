@@ -68,14 +68,30 @@ public class MyController {
         myBoardService.selectBoardList(model, myBoardVO, sc);
         myBoardService.selectAnsList(model, myAnsVO, sc);
 
-        /*List<MyBoardVO> boardList = myBoardService.selectBoardList(myBoardVO, sc);
-        List<MyAnsVO> ansList = myBoardService.selectAnsList(myAnsVO);
-        model.addAttribute("boardList", boardList);
-        model.addAttribute("ansList", ansList);*/
 
         return "my/MyBoard";
     }
 
+
+
+
+    // My Point
+    @GetMapping("/my/MyPoint")
+    public String mypoint(Model model,
+                          MyPointVO myPointVO,
+                          @ModelAttribute SearchCondition sc){
+
+
+        int pointGross = myPointService.pointGross(myPointVO);
+        int pointGross30 = myPointService.pointGross30(myPointVO);
+
+        model.addAttribute("pointGross", pointGross);
+        model.addAttribute("pointGross30", pointGross30);
+
+        myPointService.selectPointList(model, myPointVO, sc);
+
+        return "my/MyPoint";
+    }
 
     // My Coupon
     @GetMapping("/my/MyCoupon")
@@ -128,19 +144,6 @@ public class MyController {
     }
 
 
-
-    // My Point
-    @GetMapping("/my/MyPoint")
-    public String mypoint(Model model, MyPointVO myPointVO){
-        List<MyPointVO> pointList = myPointService.selectPointList(myPointVO);
-        int pointGross = myPointService.pointGross(myPointVO);
-        int pointGross30 = myPointService.pointGross30(myPointVO);
-
-        model.addAttribute("pointList", pointList);
-        model.addAttribute("pointGross", pointGross);
-        model.addAttribute("pointGross30", pointGross30);
-        return "my/MyPoint";
-    }
 
 
     // My Wish
