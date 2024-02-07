@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="20230123 wonjeong main kakao map ~ing">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/my/css/myPageMain.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/my/css/myPageMain.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/my-layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/my-layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyPageMain.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyPageMain.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,10 +75,14 @@
   "keyToString": {
     "Application.DAL.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "20240206jay",
+    "git-widget-placeholder": "jay20240206jay",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/parkjehyeong/Desktop/File/workspace/DAL/src/main/resources/mappers/my",
     "node.js.detected.package.eslint": "true",
@@ -161,6 +167,9 @@
       <workItem from="1707114082417" duration="28794000" />
       <workItem from="1707147084550" duration="30000" />
       <workItem from="1707147174912" duration="219000" />
+      <workItem from="1707191416939" duration="116000" />
+      <workItem from="1707191535305" duration="7496000" />
+      <workItem from="1707226554507" duration="4494000" />
     </task>
     <task id="LOCAL-00001" summary="진형 push">
       <created>1700461796485</created>
