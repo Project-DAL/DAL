@@ -46,13 +46,13 @@ Ver.   Date          Revised By    Description
                             <tr>
                                 <th>이름</th>
                                 <td>
-                                    <input class="input" type="text" id="username" required>
+                                    <input class="input" type="text" id="userNick" required>
                                 </td>
                             </tr>
                             <tr>
                                 <th>이메일</th>
                                 <td>
-                                    <input class="input" type="text" id="email" required>
+                                    <input class="input" type="text" id="userLginId" required>
                                 </td>
                             </tr>
 
@@ -115,14 +115,14 @@ Ver.   Date          Revised By    Description
     // });
 
     $("#checkEmail").click(function () {
-        let username = $("#username").val();
-        let email = $("#email").val();
-
+        // let userName = $("#userName").val();
+        let userLginId = $("#userLginId").val();
+        let userNick = $("#userNick").val();
         $.ajax({
             type: "GET",
             url: "/check/findPw",
             data: {
-                "email": email
+                "userLginId": userLginId
             },
             success: function (res) {
                 if (res['check']) {
@@ -136,8 +136,8 @@ Ver.   Date          Revised By    Description
                                 type: "POST",
                                 url: "/check/findPw/sendEmail",
                                 data: {
-                                    "email": email,
-                                    "username": username
+                                    "userLginId": userLginId,
+                                    "userNick": userNick
                                 },
                                 success: function (response) {
                                     window.location = "/loginForm";

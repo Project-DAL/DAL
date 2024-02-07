@@ -64,8 +64,10 @@ Contents
                     <div class="dropdownMenu" id="dropdownMenu" style="display: none;">
                         <a th:href="@{/my/MyPageMain}">마이페이지</a>
                         <a href="#">고객센터</a>
-                        <a th:href="@{/user/logout}">
+                        <a href="#">
+                            <form th:action="@{/logout}" method="post">
                                 <button type="submit">로그아웃</button>
+                            </form>
                         </a>
                     </div>
                 </th:block>

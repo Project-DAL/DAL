@@ -12,9 +12,7 @@
         FROM bard_tb
     </select>
 
-
-<!--
-    <insert id="insertComm">
+    <insert id="commInsert" parameterType="kr.co.Dal.comm.model.CommVO">
         insert into bard_tb
         (
          BARD_ID
@@ -42,7 +40,5 @@
         ,#{CATE_TYPE}
         )
     </insert>
--->
-
 
 </mapper>

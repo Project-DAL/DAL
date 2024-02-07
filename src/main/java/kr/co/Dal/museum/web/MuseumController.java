@@ -38,4 +38,14 @@ public class MuseumController {
         return ResponseEntity.ok().body(liqList);
     }
 
+    /* 술 정보 가져오기 */
+    @GetMapping("/museum/liq")
+    @ResponseBody
+    public ResponseEntity<List<MuseumVO>> selectLiq(MuseumVO museumVO,
+                                                    @RequestParam(name = "liqId") int liqId){
+        museumVO.setLiq_id(liqId);
+        List<MuseumVO> liq = museumService.selectLiq(museumVO);
+        return ResponseEntity.ok().body(liq);
+    }
+
 }

@@ -4,232 +4,89 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="20230123 wonjeong main kakao map ~ing">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/my/css/myPageMain.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/my/css/myPageMain.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layouts/my-layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layouts/my-layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyPageMain.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyPageMain.html" afterDir="false" />
+    <list default="true" id="0489b6d0-177e-4746-b601-6b90e715772b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Crud/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/CrudApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/controller/BoardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/dao/BoardDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/domain/BoardVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/domain/CommentVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/domain/FileVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/domain/UserVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/entity/UserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/repository/UserRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/service/BoardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/utils/PageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/java/kr/co/crud/utils/SearchCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/resources/static/images/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/resources/static/images/kakao-talk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Crud/src/main/resources/static/images/naver.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NoticeBoard/src/main/resources/templates/bard/NoticeBoardList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML" beforeDir="false" afterPath="$PROJECT_DIR$/../HTML" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
-  </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DAL" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="HTML File" />
-        <option value="JavaScript File" />
-        <option value="Class" />
-        <option value="CSS File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="king" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectColorInfo">{
-    &quot;associatedIndex&quot;: 5
-    }</component>
-  <component name="ProjectId" id="2WVy5LOyZqwrYkBgRPxwgMijDq1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2aIeAoV5khUBDpG0wgFQz5NRtaA" />
   <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.DAL.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "jay20240206jay",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/parkjehyeong/Desktop/File/workspace/DAL/src/main/resources/mappers/my",
+    "last_opened_file_path": "/Users/yiwonjeong/Desktop/Workspace/main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "spring.configuration.checksum": "0db51ae58b2870e9ccbdc1bb0fc045f8",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/mappers/my" />
-      <recent name="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/service" />
-      <recent name="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/model" />
-      <recent name="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper" />
-      <recent name="D:\study\DAL\src\main\resources\static\comm\js" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/mappers/preferTest" />
-      <recent name="$PROJECT_DIR$/src/main/resources/mappers/my" />
-      <recent name="$PROJECT_DIR$/src/main/resources/mappers/main" />
-      <recent name="$PROJECT_DIR$/src/main/resources/mappers/comm" />
-      <recent name="$PROJECT_DIR$/src/main/resources/mappers/admin" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Spring Boot.DalApplication">
-    <configuration name="DAL" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="kr.co.Dal.DalApplication" />
-      <module name="kr.co.Dal.DAL.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="DAL.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="kr.co.Dal.DalApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="889702df-19f0-4247-83ea-50808e4c1ce5" name="Changes" comment="" />
-      <created>1696831860332</created>
+      <changelist id="0489b6d0-177e-4746-b601-6b90e715772b" name="Changes" comment="" />
+      <created>1704010379426</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1696831860332</updated>
-      <workItem from="1696831861836" duration="390000" />
-      <workItem from="1696832264829" duration="1239000" />
-      <workItem from="1696834848062" duration="153000" />
-      <workItem from="1699330884891" duration="4774000" />
-      <workItem from="1699339408727" duration="3017000" />
-      <workItem from="1699345688217" duration="1481000" />
-      <workItem from="1699348786288" duration="4878000" />
-      <workItem from="1699421827262" duration="2518000" />
-      <workItem from="1699489233153" duration="3268000" />
-      <workItem from="1700443647083" duration="12215000" />
-      <workItem from="1701066906959" duration="1187000" />
-      <workItem from="1701158556845" duration="1493000" />
-      <workItem from="1701220194912" duration="1094000" />
-      <workItem from="1701750788528" duration="4339000" />
-      <workItem from="1705913814373" duration="40250000" />
-      <workItem from="1706092684149" duration="15246000" />
-      <workItem from="1707114082417" duration="28794000" />
-      <workItem from="1707147084550" duration="30000" />
-      <workItem from="1707147174912" duration="219000" />
-      <workItem from="1707191416939" duration="116000" />
-      <workItem from="1707191535305" duration="7496000" />
-      <workItem from="1707226554507" duration="4494000" />
+      <updated>1704010379426</updated>
+      <workItem from="1705925876046" duration="22669000" />
     </task>
-    <task id="LOCAL-00001" summary="진형 push">
-      <created>1700461796485</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1700461796485</updated>
-    </task>
-    <task id="LOCAL-00002" summary="20231205 yiwonjeong git ignore">
-      <created>1701737223704</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1701737223704</updated>
-    </task>
-    <task id="LOCAL-00003" summary="20230106 스마트에디터 추가">
-      <option name="closed" value="true" />
-      <created>1705393721798</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1705393721798</updated>
-    </task>
-    <task id="LOCAL-00004" summary="20230106 스마트에디터 추가">
-      <option name="closed" value="true" />
-      <created>1705481624900</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1705481624900</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="진형 push" />
-    <MESSAGE value="20231205 yiwonjeong git ignore" />
-    <MESSAGE value="20230106 스마트에디터 추가" />
-    <MESSAGE value="20230123 wonjeong main kakao map ~ing" />
-    <option name="LAST_COMMIT_MESSAGE" value="20230123 wonjeong main kakao map ~ing" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DAL$DAL.ic" NAME="DAL Coverage Results" MODIFIED="1707051853826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/static/bard/js/BoardList.js</url>
+          <line>125</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
