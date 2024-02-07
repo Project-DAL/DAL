@@ -19,8 +19,8 @@ public class PrincipalDetailsService implements UserDetailsService {
 
     // 시큐리티 session = Authentication = UserDetails
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        User userEntity = userRepository.findByEmail(email);
+    public UserDetails loadUserByUsername(String userLginId) throws UsernameNotFoundException {
+        User userEntity = userRepository.findByUserLginId(userLginId);
         if(userEntity !=  null){
             return new PrincipalDetails(userEntity);
         }

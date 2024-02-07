@@ -15,9 +15,9 @@ public class UserService {
     @Autowired
     private  UserRepository userRepository;
 
-    public boolean userEmailCheck(String email) {
+    public boolean userEmailCheck(String userLginId) {
 
-        User user = userRepository.findByEmail(email);
+        User user = userRepository.findByUserLginId(userLginId);
         if(user!=null) {
             return true;
         }
@@ -26,9 +26,9 @@ public class UserService {
         }
     }
 
-    public boolean userUsernameCheck(String username) {
+    public boolean userUsernameCheck(String userNick) {
 
-        User user = userRepository.findByUsername(username);
+        User user = userRepository.findByUserNick(userNick);
         if(user!=null) {
             return true;
         }
@@ -37,8 +37,8 @@ public class UserService {
         }
     }
 
-    public User findUserByUsername(String username) {
-        return userRepository.findByUsername(username);
+    public User findUserByUsername(String userNick) {
+        return userRepository.findByUserNick(userNick);
     }
 
 }

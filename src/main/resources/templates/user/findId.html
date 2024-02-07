@@ -45,7 +45,7 @@ Ver.   Date          Revised By    Description
                             <tr>
                                 <th>이름</th>
                                 <td>
-                                    <input class="input" type="text" id="username" required>
+                                    <input class="input" type="text" id="userNick" required>
                                 </td>
                             </tr>
 <!--                            <tr>-->
@@ -80,14 +80,15 @@ Ver.   Date          Revised By    Description
     // });
 
     $("#checkName").click(function () {
-        let username = $("#username").val();
+        let userNick = $("#userNick").val();
+        // let userName = $("#userName").val();
         // let email = $("#email").val();
 
         $.ajax({
             type: "GET",
             url: "/check/findId",
             data: {
-                "username": username
+                "userNick": userNick
             },
             success: function (res) {
                 if (res['check']) {
@@ -95,13 +96,13 @@ Ver.   Date          Revised By    Description
                         type: "POST",
                         url: "/check/findId/successId",
                         data: {
-                            "username": username
+                            "userNick": userNick
                         },
                         success: function (response) {
                             // 서버에서 받은 이메일 정보를 동적으로 업데이트
                             $('#findIdContent').html('<div class="findId-content-title">아이디찾기</div>' +
                                 '<div class="findId-content mt25">' +
-                                '    <p class="mt15">이메일: ' + response.email + '</p>' +
+                                '    <p class="mt15">이메일: ' + response.userLginId + '</p>' +
                                 '</div>');
                         },
                         error: function (error) {
