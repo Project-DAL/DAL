@@ -31,6 +31,7 @@ public class MyController {
     private final MyCouponService myCouponService;
     private final MyPointService myPointService;
     private final MyBoardService myBoardService;
+    private final MyAnsService myAnsService;
     private final MyInfoService myInfoService;
     private final MyWishService myWishService;
     private final MyWithdrawService myWithdrawService;
@@ -46,11 +47,14 @@ public class MyController {
         int couponGross = myMainService.couponGross(myMainVO);
         int wishGross = myMainService.wishGross(myMainVO);
         String rankView = myMainService.rankView(myMainVO);
+        List<MyMainVO> orderViewList = myMainService.orderViewList(myMainVO);
 
         model.addAttribute("pointGross", pointGross);
         model.addAttribute("couponGross", couponGross);
         model.addAttribute("wishGross", wishGross);
         model.addAttribute("rankView", rankView);
+        model.addAttribute("orderViewList", orderViewList);
+
 
         return "my/MyPageMain";
     }
@@ -59,17 +63,33 @@ public class MyController {
     @GetMapping("/my/MyBoard")
     public String myboard(Model model,
                           @RequestParam Map map,
-                          MyBoardVO myBoardVO, MyAnsVO myAnsVO,
+                          MyBoardVO myBoardVO,
                           @ModelAttribute SearchCondition sc){
 
         // 검색어
         sc.setMap(map);
 
         myBoardService.selectBoardList(model, myBoardVO, sc);
-        myBoardService.selectAnsList(model, myAnsVO, sc);
 
 
         return "my/MyBoard";
+    }
+
+
+    // MY Ans
+    @GetMapping("/my/MyAns")
+    public String myAns(Model model,
+                        @RequestParam Map map,
+                        MyAnsVO myAnsVO,
+                        @ModelAttribute SearchCondition sc){
+
+        // 검색어
+        sc.setMap(map);
+
+        myAnsService.selectAnsList(model, myAnsVO, sc);
+
+
+        return "my/MyAns";
     }
 
 
