@@ -66,12 +66,13 @@ public class MyController {
         sc.setMap(map);
 
         myBoardService.selectBoardList(model, myBoardVO, sc);
-        myBoardService.selectAnsList(myAnsVO);
+        myBoardService.selectAnsList(model, myAnsVO, sc);
 
         /*List<MyBoardVO> boardList = myBoardService.selectBoardList(myBoardVO, sc);
         List<MyAnsVO> ansList = myBoardService.selectAnsList(myAnsVO);
         model.addAttribute("boardList", boardList);
         model.addAttribute("ansList", ansList);*/
+
         return "my/MyBoard";
     }
 

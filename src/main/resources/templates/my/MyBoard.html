@@ -116,7 +116,20 @@
                 </th:block>
             </div>
 
+            <div class="pagination" th:object="${phAns}" th:style="${#lists.size(ansList) == 0 ? 'visibility:hidden;':''}">
+                <th:block th:if="*{showPrev}">
+                    <a th:href="@{/my/MyBoard} + ${ph.sc.getQueryString(ph.beginPage-1)}" class="prev">< </a>
+                </th:block>
+                <th:block th:each="num:${#numbers.sequence(ph.beginPage, ph.endPage)}">
+                    <a th:href="@{/my/MyBoard} + ${ph.sc.getQueryString(num)}" th:class="${num == ph.sc.page ? 'num current':'num'}">
+                        [[${num}]]
+                    </a>
+                </th:block>
+                <th:block th:if="*{showNext}">
+                    <a th:href="@{/my/MyBoard} + ${ph.sc.getQueryString(ph.endPage+1)}" class="next"> ></a>
+                </th:block>
             </div>
+
         </div>
     </section>
 </th:block>

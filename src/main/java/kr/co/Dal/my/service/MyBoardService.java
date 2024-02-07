@@ -44,6 +44,8 @@ public class MyBoardService {
         model.addAttribute("boardList", boardList);
         model.addAttribute("ph", pageHandler);
 
+        log.warn("ph: " + pageHandler);
+
         return boardList;
     }
 
@@ -72,8 +74,27 @@ public class MyBoardService {
 
 
     /* 내가 쓴 댓글 조회 */
-    public List<MyAnsVO> selectAnsList(MyAnsVO myAnsVO){
-        return myBoardMapper.selectAnsList(myAnsVO);
+    public List<MyAnsVO> selectAnsList(Model model, MyAnsVO myAnsVO, SearchCondition sc){
+
+        // pagination
+        int totalCnt = myBoardMapper.countAns(sc);
+
+        log.warn("totalCnt: " + totalCnt);
+
+        int totalPage = (int)Math.ceil(totalCnt / (double)sc.getPageSize());
+        if(sc.getPage() > totalPage) sc.setPage(totalPage);
+
+        PageHandler pageHandler = new PageHandler(totalCnt, sc);
+
+        // model 전송
+        List<MyAnsVO> ansList = myBoardMapper.selectAnsList(sc);
+
+        model.addAttribute("ansList", ansList);
+        model.addAttribute("phAns", pageHandler);
+
+        log.warn("phAns: " + pageHandler);
+
+        return ansList;
     }
 
 
