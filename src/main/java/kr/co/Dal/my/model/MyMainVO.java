@@ -22,8 +22,8 @@ public class MyMainVO{
     private String od_cnts;
     private String od_sttss;
 
-
-
+    private String odDateValue;
+    private String odSttsValue;
 
     private String user_grade;
     private String order_rdate;

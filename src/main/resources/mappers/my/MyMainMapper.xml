@@ -73,6 +73,8 @@
             ot.order_id,
             GROUP_CONCAT(odt.order_rdate) AS order_rdates,
             GROUP_CONCAT(odt.order_stts) AS order_sttss,
+            odt.order_rdate,
+            odt.order_stts,
             GROUP_CONCAT(ot.prod_id) AS prod_ids,
             GROUP_CONCAT(pt.prod_tit) AS prod_tits,
             GROUP_CONCAT(ot.od_sell_price) AS od_sell_prices,
@@ -86,19 +88,58 @@
             prod_tb pt ON ot.prod_id = pt.prod_id
         WHERE
             ot.user_id = 1
+        <choose>
+            <when test="odDateValue == 1">
+                AND odt.order_rdate >= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+            </when>
+            <when test="odDateValue == 2">
+                AND odt.order_rdate >= DATE_SUB(NOW(), INTERVAL 3 MONTH)
+            </when>
+            <when test="odDateValue == 3">
+                AND odt.order_rdate >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
+            </when>
+            <when test="odDateValue == 4">
+                AND odt.order_rdate >= DATE_SUB(NOW(), INTERVAL 1 YEAR)
+            </when>
+            <when test="odDateValue == 5">
+                AND odt.order_rdate >= DATE_SUB(NOW(), INTERVAL 2 YEAR)
+            </when>
+            <when test="odDateValue == 6">
+                AND odt.order_rdate >= DATE_SUB(NOW(), INTERVAL 3 YEAR)
+            </when>
+        </choose>
+        <choose>
+            <when test="odSttsValue == 1">
+                AND odt.order_stts = 1
+            </when>
+            <when test="odSttsValue == 2">
+                AND odt.order_stts = 2
+            </when>
+            <when test="odSttsValue == 3">
+                AND odt.order_stts = 3
+            </when>
+            <when test="odSttsValue == 4">
+                AND odt.order_stts = 4
+            </when>
+            <when test="odSttsValue == 5">
+                AND odt.order_stts = 5
+            </when>
+            <when test="odSttsValue == 6">
+                AND odt.order_stts = 6
+            </when>
+            <when test="odSttsValue == 7">
+                AND odt.order_stts = 7
+            </when>
+            <when test="odSttsValue == 8">
+                AND odt.order_stts = 8
+            </when>
+            <when test="odSttsValue == 9">
+                AND odt.order_stts = 9
+            </when>
+        </choose>
         GROUP BY
             ot.order_id
     </select>
-
-
-
-
-
-
-
-
-
-
 
 
 </mapper>
