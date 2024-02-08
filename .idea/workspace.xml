@@ -7,17 +7,6 @@
     <list default="true" id="0489b6d0-177e-4746-b601-6b90e715772b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper/MyMainMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper/MyMainMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/model/MyMainVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/model/MyMainVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/service/MyMainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/service/MyMainService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/my/MyMainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/my/MyMainMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/my/css/myBoard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/my/css/myBoard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/my/css/myRank.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/my/css/myRank.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/my/css/myWithdraw.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/my/css/myWithdraw.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyBoard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyBoard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyPageMain.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyPageMain.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyRank.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyRank.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +16,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -38,7 +28,7 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2aIeAoV5khUBDpG0wgFQz5NRtaA" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -53,8 +43,9 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.DalApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "jay",
+    "git-widget-placeholder": "ava",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/yiwonjeong/Desktop/Workspace/main",
     "node.js.detected.package.eslint": "true",
@@ -62,7 +53,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propCompiler",
     "spring.configuration.checksum": "0db51ae58b2870e9ccbdc1bb0fc045f8",
     "vue.rearranger.settings.migration": "true"
   }
@@ -87,6 +81,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-203781b8" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -97,6 +98,8 @@
       <updated>1704010379426</updated>
       <workItem from="1705925876046" duration="22669000" />
       <workItem from="1707285315470" duration="4502000" />
+      <workItem from="1707294855780" duration="66000" />
+      <workItem from="1707294927156" duration="17056000" />
     </task>
     <servers />
   </component>
@@ -113,5 +116,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
