@@ -51,6 +51,9 @@ header {
     align-items: center;
     justify-content: space-between;
 }
+.user-menu a {
+    padding-top: 5px;
+}
 .user-menu a img {
     width: 20px;
 }
