@@ -7,17 +7,17 @@
     <list default="true" id="0489b6d0-177e-4746-b601-6b90e715772b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper/MyMainMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/mapper/MyMainMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/model/MyMainVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/model/MyMainVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/service/MyMainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/service/MyMainService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/my/web/MyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/my/MyMainMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/my/MyMainMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/my/css/myBoard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/my/css/myBoard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/my/css/myRank.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/my/css/myRank.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/my/css/myWithdraw.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/my/css/myWithdraw.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyBoard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyBoard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyPageMain.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyPageMain.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/my/MyRank.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/my/MyRank.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/model/CommVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/web/CommController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/comm/web/CommController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/Dal/user/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/comm/Commmapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/comm/Commmapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/comm/css/comm-layout.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/comm/css/commList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/comm/css/commList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/comm/js/commList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/comm/js/commList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/comm/js/commWrite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/comm/js/commWrite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/comm/commList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/comm/commList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/comm/commView.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/comm/commView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/comm/commWrite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/comm/commWrite.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,11 +34,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kingkinguser&quot;
+  }
 }</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bc6547eb-9ffc-4bbb-821f-a659348d5331" />
+        <option name="url" value="https://github.com/Project-DAL/DAL.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+        &quot;associatedIndex&quot;: 8
+        }</component>
   <component name="ProjectId" id="2aIeAoV5khUBDpG0wgFQz5NRtaA" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -47,6 +61,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.DalApplication.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -54,9 +69,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "jay",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/yiwonjeong/Desktop/Workspace/main",
+    "last_opened_file_path": "C:/DAL/src/main/resources/static/comm/css",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,10 +82,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\DAL\src\main\resources\static\comm\css" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="DalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="DAL.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="kr.co.Dal.DalApplication" />
+    <configuration name="DalApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kr.co.Dal.DalApplication" />
+      <module name="kr.co.Dal.DAL.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="kr.co.Dal.*" />
@@ -83,9 +103,16 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.DalApplication" />
+        <item itemvalue="Application.DalApplication" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-8336523bb0d9-657b72ed" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -102,16 +129,5 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/static/bard/js/BoardList.js</url>
-          <line>125</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

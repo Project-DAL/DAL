@@ -28,6 +28,13 @@ public class CommController {
         return "comm/commList";
     }
 
+    /**
+     * 게시판 상세 페이지
+     */
+    @GetMapping("/commView")
+    public String commView() {
+        return "comm/commView";
+    }
 
     /**
      * 게시판 등록/수정 페이지
