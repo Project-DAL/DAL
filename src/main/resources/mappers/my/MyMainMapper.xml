@@ -67,6 +67,34 @@
 
 
 
+    <!-- 주문 배송 목록 -->
+    <select id="orderViewList" resultType="kr.co.Dal.my.model.MyMainVO">
+        SELECT
+            ot.order_id,
+            GROUP_CONCAT(odt.order_rdate) AS order_rdates,
+            GROUP_CONCAT(odt.order_stts) AS order_sttss,
+            GROUP_CONCAT(ot.prod_id) AS prod_ids,
+            GROUP_CONCAT(pt.prod_tit) AS prod_tits,
+            GROUP_CONCAT(ot.od_sell_price) AS od_sell_prices,
+            GROUP_CONCAT(ot.od_cnt) AS od_cnts,
+            GROUP_CONCAT(ot.od_stts) AS od_sttss
+        FROM
+            od_tb ot
+                JOIN
+            order_tb odt ON ot.order_id = odt.order_id
+                JOIN
+            prod_tb pt ON ot.prod_id = pt.prod_id
+        WHERE
+            ot.user_id = 1
+        GROUP BY
+            ot.order_id
+    </select>
+
+
+
+
+
+
 
 
 

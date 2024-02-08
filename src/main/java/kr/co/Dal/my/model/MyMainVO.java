@@ -14,8 +14,21 @@ import lombok.EqualsAndHashCode;
 public class MyMainVO{
 
 
-    private String user_grade;
+    private String order_rdates;
+    private String order_sttss;
+    private String prod_ids;
+    private String prod_tits;
+    private String od_sell_prices;
+    private String od_cnts;
+    private String od_sttss;
 
+
+
+
+    private String user_grade;
+    private String order_rdate;
+    private int order_stts;
+    private String prod_tit;
 
     /*order 상세 VO*/
     private int od_id; // 주문상세번호

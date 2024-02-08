@@ -29,11 +29,14 @@ public class MyPointService {
 
         // pagination
         int totalCnt = myPointMapper.countPointList(sc);
+        // 한 페이지에 보일 건수
+        int naviSize = 3;
+        sc.setPageSize(3);
 
         int totalPage = (int)Math.ceil(totalCnt / (double)sc.getPageSize());
         if(sc.getPage() > totalPage) sc.setPage(totalPage);
 
-        PageHandler pageHandler = new PageHandler(totalCnt, sc);
+        PageHandler pageHandler = new PageHandler(totalCnt, sc, naviSize);
 
         // model 전송
         List<MyPointVO> selectPointList = myPointMapper.selectPointList(sc);
