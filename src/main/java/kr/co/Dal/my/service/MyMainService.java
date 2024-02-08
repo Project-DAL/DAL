@@ -39,8 +39,8 @@ public class MyMainService {
 
     /* 주문 배송 목록 */
     public List<MyMainVO> orderViewList(MyMainVO myMainVO) {
-    return myMainMapper.orderViewList(myMainVO);
-
+        log.warn("myMainVO: " + myMainVO);
+        return myMainMapper.orderViewList(myMainVO);
     }
 
 

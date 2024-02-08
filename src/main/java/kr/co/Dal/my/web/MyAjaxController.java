@@ -14,10 +14,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -104,8 +101,21 @@ public class MyAjaxController {
     @GetMapping("/my/MyPageMain/order")
     @ResponseBody
     public ResponseEntity<List<MyMainVO>> orderViewList(MyMainVO myMainVO){
+        List<MyMainVO> list = myMainService.orderViewList(myMainVO);
+        return ResponseEntity.ok().body(list);
+    }
 
-        log.warn("orderViewList");
+    @GetMapping("/my/MyPageMain/orderValue")
+    @ResponseBody
+    public ResponseEntity<List<MyMainVO>> orderValueViewList(MyMainVO myMainVO,
+                                                             @RequestParam(name = "odDateValue") String odDateValue,
+                                                             @RequestParam(name = "odSttsValue") String odSttsValue){
+
+        log.warn("odDateValue: " + odDateValue);
+        log.warn("odSttsValue: " + odSttsValue);
+
+        myMainVO.setOdDateValue(odDateValue);
+        myMainVO.setOdSttsValue(odSttsValue);
 
         List<MyMainVO> list = myMainService.orderViewList(myMainVO);
         return ResponseEntity.ok().body(list);

@@ -61,32 +61,58 @@
             </a>
         </div>
         <div class="order-select">
-            <select class="order-date">
-                <option>전체 기간</option>
-                <option>1개월 전</option>
-                <option>3개월 전</option>
-                <option>6개월 전</option>
-                <option>1년 전</option>
-                <option>2년 전</option>
-                <option>3년 전</option>
+            <select id="order-date" class="order-date">
+                <option value="0">전체 기간</option>
+                <option value="1">1개월 전</option>
+                <option value="2">3개월 전</option>
+                <option value="3">6개월 전</option>
+                <option value="4">1년 전</option>
+                <option value="5">2년 전</option>
+                <option value="6">3년 전</option>
             </select>
-            <select class="order-stts">
-                <option>전체 상태</option>
-                <option>입금대기</option>
-                <option>결제완료</option>
-                <option>배송준비중</option>
-                <option>배송중</option>
-                <option>배송완료</option>
-                <option>구매확정</option>
-                <option>취소</option>
-                <option>교환</option>
-                <option>반품</option>
+            <select id="order-stts" class="order-stts">
+                <option value="0">전체 상태</option>
+                <option value="1">입금대기</option>
+                <option value="2">결제완료</option>
+                <option value="3">배송준비중</option>
+                <option value="4">배송중</option>
+                <option value="5">배송완료</option>
+                <option value="6">구매확정</option>
+                <option value="7">취소</option>
+                <option value="8">교환</option>
+                <option value="9">반품</option>
             </select>
             <div id="btnEnter" class="enter-btn">조회</div>
         </div>
         <div class="order-info" id="order-info">
 
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!--
         <div class="order-info" th:each="orderViewList : ${orderViewList}">
             <div class="order-info-date" th:text="${orderViewList.order_rdate}"></div>
