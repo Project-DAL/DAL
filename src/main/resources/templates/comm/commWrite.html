@@ -3,7 +3,7 @@
 ©Copyright 2023. DAL. All rights reserved.
 
 File Name       : commList.html
-Program Name    : 커뮤니티
+Program Name    : 게시판
 Description     :
 Draft Author    :
 Draft Date      : 2023.11.10
@@ -23,7 +23,6 @@ Draft Date      : 2023.11.10
 <!-- 2. Page Content -->
 <th:block layout:fragment="content">
     <!-- 3. Main -->
-    <!-- 4. Main -->
     <main>
         <div class="ct_main">
             <!-- 4.1 Aside -->
@@ -48,7 +47,12 @@ Draft Date      : 2023.11.10
 
                     <!-- 4.2.2 Board Content -->
                     <div class="ct_content">
-                        <form action="/comm/commAjaxWrite" method="post">
+                        <form action="/comm/commAjaxWrite" method="post" id="frm">
+                            <!-- CSRF 토큰을 input으로 추가 -->
+                            <input type="hidden" name="_csrf" th:value="${_csrf.token}" th:if="${_csrf}" />
+                            <!-- CSRF 헤더를 input으로 추가 -->
+                            <input type="hidden" name="header" th:value="${_csrf.headerName}" th:if="${_csrf}" />
+
                             <table class="tb tb_row">
                                 <colgroup>
                                     <col style="width:15%;" /><col style="width:35%;" /><col style="width:15%;" /><col style="width:35%;" />
@@ -58,7 +62,6 @@ Draft Date      : 2023.11.10
                                     <th scope="row">카테고리</th>
                                     <td>
                                         <select id="bard_type" name="bard_type">
-                                            <option value="ALL">ALL</option>
                                             <option value="NOTICE">NOTICE</option>
                                             <option value="REVIEW">REVIEW</option>
                                             <option value="DAILY">DAILY</option>
@@ -75,7 +78,7 @@ Draft Date      : 2023.11.10
                             </table>
 
                             <!-- 등록 또는 수정 버튼 -->
-                            <button type="submit">등록</button>
+                            <input type="button" id="save">등록</input>
                         </form>
                     </div>
                 </div>
@@ -89,13 +92,13 @@ Draft Date      : 2023.11.10
     let oEditors = []
 
     smartEditor = function() {
-        nhn.husky.EZCreator.createInIFrame({
-            oAppRef: oEditors,
-            elPlaceHolder: "bard_cn",
-            sSkinURI: "/smarteditor/SmartEditor2Skin.html",
-            fCreator: "createSEditor2",
-            tParams: { fOnBeforeUnload : function(){}}
-        })
+      nhn.husky.EZCreator.createInIFrame({
+        oAppRef: oEditors,
+        elPlaceHolder: "bard_cn",
+        sSkinURI: "/smarteditor/SmartEditor2Skin.html",
+        fCreator: "createSEditor2",
+        htParams: { fOnBeforeUnload : function(){}}
+      })
     }
 
     document.addEventListener('DOMContentLoaded', function() {

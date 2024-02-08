@@ -26,60 +26,77 @@ Draft Date      : 2023.11.10
         <div class="ct_main">
             <!-- 4.1 Aside -->
             <aside>
+                <div class="ct_subtitle">
+                    <h3>CATEGORY</h3>
+                </div>
                 <div class="ct_left-menu">
-                    <h4 class="menu-tit">CATEGORY</h4>
                     <ul>
                         <li><a href="#">ALL</a></li>
+                    </ul>
+                    <ul>
                         <li><a href="#">NOTICE</a></li>
+                    </ul>
+                    <ul>
                         <li><a href="#">REVIEW</a></li>
+                    </ul>
+                    <ul>
                         <li><a href="#">DAILY</a></li>
                     </ul>
                 </div>
             </aside>
             <!-- 4.2 Content -->
             <section>
-                <div class="ct_content-wrap">
-                    <!-- 4.2.1 Subtitle -->
-                    <div class="ct_subtitle">
-                        <h3>COMMUNITY</h3>
-                    </div>
+                <!-- 4.2.1 Subtitle -->
+                <div class="ct_subtitle">
+                    <h3>COMMUNITY</h3>
+                </div>
+                <!-- 4.2.2 Board Content -->
+                <div class="ct_content">
+                    <table class="board-list">
+                        <thead>
+                        <colgroup>
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 15%;">
+                            <col style="width: 30%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 15%;">
+                        </colgroup>
+                        <tr>
+                            <th>번호</th>
+                            <th>카테고리</th>
+                            <th>제목</th>
+                            <th>내용</th>
+                            <th>작성자</th>
+                            <th>조회수</th>
+                            <th>등록일</th>
+                        </tr>
+                        </thead>
+                        <tbody id="fieldListBody">
+                        </tbody>
+                    </table>
 
-                    <!-- 4.2.2 Board Content -->
-                    <div class="ct_content">
-                        <table class="board-list">
-                            <thead>
-                            <tr>
-                                <th>번호</th>
-                                <th>제목</th>
-                                <th>작성자</th>
-                                <th>등록일</th>
-                            </tr>
-                            </thead>
-                            <tbody id="fieldListBody">
-                            </tbody>
-                        </table>
+                    <input type="button" id="REG" value="등록">
+                </div>
 
-                        <input type="button" id="REG" value="등록">
-                    </div>
+                <!-- 4.2.3 Pagination -->
+                <ul class="pagination">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                </ul>
 
-                    <!-- 4.2.3 Pagination -->
-                    <ul class="pagination">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                    </ul>
-
-                    <!-- 4.2.4 Search -->
-                    <div class="ct_search-wrap">
-                        <select>
-                            <option>제목</option>
-                            <option>내용</option>
-                        </select>
-                        <input type="text">
-                        <a href="#" class="btn btnSearch">검색</a>
-                    </div>
+                <!-- 4.2.4 Search -->
+                <div class="ct_search-wrap">
+                    <select>
+                        <option>제목</option>
+                        <option>내용</option>
+                    </select>
+                    <input type="text">
+                    <a href="#" class="btn btnSearch">검색</a>
                 </div>
             </section>
         </div>
