@@ -12,5 +12,28 @@ Ver.  Date          Revised By   Description
 */
 package kr.co.Dal.store.web;
 
+import kr.co.Dal.store.model.QnaVO;
+import kr.co.Dal.store.service.QnaService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Slf4j
+@Controller
+@RequestMapping("/store")
+@RequiredArgsConstructor
 public class StoreAjaxController {
+
+    private final QnaService qnaService;
+
+    @PostMapping("/insertQna")
+    public ResponseEntity<QnaVO> insertQna(@RequestBody QnaVO qnaVO) {
+        qnaService.insertQna(qnaVO);
+
+        return ResponseEntity.ok(qnaVO);
+    }
 }
