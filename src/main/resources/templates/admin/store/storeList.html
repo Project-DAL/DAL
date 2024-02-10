@@ -62,29 +62,29 @@
                         <div class="card-body p-0" style="display: block;">
                             <ul class="nav nav-pills flex-column">
                                 <li class="nav-item active">
-                                    <a href="#" class="nav-link">
+                                    <a id="allProd" class="nav-link">
                                         <i class="fas fa-inbox"></i> ALL
 <!--                                        <span class="badge bg-primary float-right">12</span>-->
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a id="sojuProd" class="nav-link" data-th-type="soju">
                                         <i class="far fa-envelope"></i> 소주
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a id="beerProd" class="nav-link" data-th-type="beer">
                                         <i class="far fa-file-alt"></i> 맥주
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a id="liquorProd" class="nav-link" data-th-type="liquor">
                                         <i class="fas fa-filter"></i> 양주
 <!--                                        <span class="badge bg-warning float-right">65</span>-->
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a id="traditionalProd" class="nav-link" data-th-type="traditional">
                                         <i class="far fa-trash-alt"></i> 전통주
                                     </a>
                                 </li>
@@ -146,26 +146,6 @@
                                     </tr>
                                     </thead>
                                     <tbody id="main-table-tbody">
-                                    <tr>
-                                        <td>1</td>
-                                        <td>상품 1</td>
-                                        <td>10000원</td>
-                                        <td>의류</td>
-                                        <td>판매 중</td>
-                                        <td>50</td>
-                                        <td>2022-01-01</td>
-                                        <td>2022-01-02</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>상품 2</td>
-                                        <td>20000원</td>
-                                        <td>전자제품</td>
-                                        <td>품절</td>
-                                        <td>20</td>
-                                        <td>2022-01-03</td>
-                                        <td>2022-01-04</td>
-                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -191,16 +171,6 @@
             //             });
             //     });
             // });
-
-            $(function () {
-                $("#main-table").DataTable({
-                    "responsive": true, "lengthChange": false, "autoWidth": false,
-                    "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-                    "pageLength": 10
-                }).buttons().container().appendTo('#main-table_wrapper .col-md-6:eq(0)'); // main-table_wrapper ID는 플러그인에 의해 자동 생성됨
-            });
-
-
         </script>
     </th:block>
 

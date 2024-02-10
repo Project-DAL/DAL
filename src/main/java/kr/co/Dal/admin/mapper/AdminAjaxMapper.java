@@ -2,6 +2,7 @@ package kr.co.Dal.admin.mapper;
 
 import kr.co.Dal.admin.model.AdminStoreVO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -9,4 +10,6 @@ import java.util.List;
 public interface AdminAjaxMapper {
 
     List<AdminStoreVO> selectStoreList();
+
+    List<AdminStoreVO> selectCategoryList(@Param("prodType") String prodType);
 }

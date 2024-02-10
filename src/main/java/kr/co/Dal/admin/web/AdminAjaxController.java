@@ -50,6 +50,18 @@ public class AdminAjaxController {
         return ResponseEntity.ok().body(result);
     }
 
-
+    /**
+     * category 별 조회
+     * @param prodType
+     * @return
+     */
+    @GetMapping("/storeCategoryList")
+    public ResponseEntity<Map<String, Object>> findStoreCategoryList(String prodType) {
+        Map<String, Object> result = new HashMap<>();
+        result.put("list", adminAjaxService.findStoreCategoryList(prodType));
+        // result에 "list" 키로 저장된 값을 로그로 출력
+        log.warn("Store List: {}", result.get("list"));
+        return ResponseEntity.ok().body(result);
+    }
 
 }

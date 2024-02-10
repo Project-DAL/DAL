@@ -31,4 +31,24 @@ Ver.  Date          Revised By   Description
              prod_cn_file
             FROM prod_tb
     </select>
+
+    <select id="selectCategoryList" resultType="kr.co.Dal.admin.model.AdminStoreVO">
+        SELECT
+            prod_id,
+            prod_tit,
+            prod_type,
+            prod_cnt,
+            prod_ori_price,
+            prod_sale_price,
+            prod_img,
+            prod_stts,
+            prod_like,
+            prod_rdate,
+            prod_udate,
+            prod_cn_file
+        FROM prod_tb
+        WHERE
+            prod_type = #{prodType}
+    </select>
+
 </mapper>

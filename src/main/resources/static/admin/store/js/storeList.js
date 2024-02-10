@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // addEventListenerSearchCondition();
 
     /** 3) 최초 목록조회 실행 */
-    fnaAjaxList();
+    fnAjaxList();
 });
 
 
@@ -38,11 +38,30 @@ function fnInsert() {
     window.location.href = "/admin/store/storeWrite";
 }
 
-function fnaAjaxList() {
+function fnAjaxList() {
+    let table = $('#main-table').DataTable();
+
+    table.clear().destroy(); // 기존 데이터를 지우고 DataTable 인스턴스를 파괴합니다.
     ajaxAPI('/admin/storeList',null,"GET").then(response => {
         console.log("response: ", response);
 
         jsonGridList = response.list;
+
+        appendGridListHtml();
+    })
+}
+
+function fnAJaxCategoryList(dataType) {
+    let table = $('#main-table').DataTable();
+
+    table.clear().destroy(); // 기존 데이터를 지우고 DataTable 인스턴스를 파괴합니다.
+    console.log("dataType : " + dataType)
+    ajaxAPI('/admin/storeCategoryList?prodType=' + dataType,null,"GET").then(response => {
+        console.log("response: ", response);
+
+        jsonGridList = response.list;
+
+        console.log("jsonGridList : " + jsonGridList)
 
         appendGridListHtml();
     })
@@ -53,6 +72,24 @@ function fnaAjaxList() {
 /*  4.1 Event Listener - Process(CRUD) Button */
 function addEventListenerCRUDBtn() {
     document.getElementById("InsertProd").addEventListener('click', fnInsert);    // 초기화
+    document.getElementById('allProd').addEventListener('click', fnAjaxList);     // 모든 파일 불러오기
+    document.getElementById('sojuProd').addEventListener('click', () => {
+        const dataType = '2';
+        fnAJaxCategoryList(dataType);
+    });
+    document.getElementById('beerProd').addEventListener('click', () => {
+        const dataType = 'beer';
+        fnAJaxCategoryList(dataType);
+    });
+    document.getElementById('liquorProd').addEventListener('click', () => {
+        const dataType = 'liquor';
+        fnAJaxCategoryList(dataType);
+    });
+    document.getElementById('traditionalProd').addEventListener('click', () => {
+        const dataType = 'traditional';
+        fnAJaxCategoryList(dataType);
+        console.log(dataType)
+    });
 }
 
 /*  4.2 Event Listener - Search Condition Select Input */
@@ -70,13 +107,16 @@ function addEventListenerCRUDBtn() {
 /* 5. Functions - Html Creator ****************************************************************************************/
 /* 5.1 appendGridListHtml() - 목록 html 생성 */
 function appendGridListHtml() {
+    console.log("jsonGridListHTMl : " + jsonGridList);
     /** 1) 각 btn, inputText, label, editor 값 초기화 */
     iSelectedId                 = '';       // 선택된 ID 초기화
     document.getElementById("main-table-tbody").innerHTML     = '';       // 게시물 제목 초기화
+    console.log(document.getElementById("main-table-tbody").innerHTML);
 
     /** 2) 목록 생성 */
     if(jsonGridList.length > 0) {
         for(let item of jsonGridList) {
+            console.log("item : " + item.prodTit)
             document.getElementById("main-table-tbody").insertAdjacentHTML('beforeend', `
                  <tr>
                                         <td>${item.prodId}</td>
@@ -88,48 +128,34 @@ function appendGridListHtml() {
                                         <td>${item.prodRdate}</td>
                                         <td>${item.prodUdate}</td>
                                     </tr>`);
-            document.getElementById('tr:last-child').addEventListener('click', function () {
 
-            })
-            // /** 2-1) gridArea에 <tr> 요소생성 및 추가 */
-            // tbodyObjGridArea.insertAdjacentHTML('beforeend', `
-            //     <tr>
-            //         <td class="label-td"><input type="checkbox" name="chk" class="ck"></td>
-            //         <td class="label-td left"><div class="ellp">${htmlStrImg} ${item.bardSbjt}</div></td>
-            //         <td class="label-td">${item.rgstId}</td>
-            //         <td class="label-td">${item.rgstDt}</td>
-            //     </tr>`);
-            //
-            // /** 2-2) gridArea에 Event Listener 등록 */
-            // tbodyObjGridArea.querySelector('tr:last-child').addEventListener('click', function() {
-            //     /** 2-2-1) 전체 checkbox cheked 해제 */
-            //     tbodyObjGridArea.querySelectorAll('input[type="checkbox"]')
-            //         .forEach((checkbox) => { checkbox.checked = false; })
-            //
-            //     /** 2-2-2) 전체 checkbox 하일라이트 calss 해제 */
-            //     tbodyObjGridArea.querySelectorAll('tr')
-            //         .forEach((tr) => { tr.classList.remove('active'); });
-            //
-            //     /** 2-2-3) 현재 행 체크박스 하이라이트 설정 */
-            //     this.querySelector('input[type="checkbox"]').checked = true;
-            //     this.classList.add('active');
-            //
-            //     /** 2-2-4) 전역변수로 선택된 item 번호 세팅 */
-            //     iSelectedId = item.bardId;
-            //
-            //     if(inputObjGblAuthCd.value == "USER"){
-            //         btnUpdate.style.display     = 'none';   // 수정버튼 숨김
-            //         btnDelete.style.display     = 'none';   // 삭제버튼 숨김
-            //     }else {
-            //         btnUpdate.style.display     = 'inline-block';   // 수정버튼
-            //         btnDelete.style.display     = 'inline-block';   // 삭제버튼
-            //     }
-            //     /** 2-2-5) 상세조회 실행 */
-            //     fnView();
-            // });
+            }
         }
-        /** 3) gridArea에 검색결과 없음 <tr> 추가 */
+    console.log(document.getElementById("main-table-tbody").innerHTML);
+    // DataTable 초기화 또는 업데이트
+    initializeDataTable();
+}
+
+function initializeDataTable() {
+    // 기존에 DataTable 인스턴스가 있으면 파괴
+    console.log("main-table : " + $.fn.DataTable.isDataTable('#main-table'))
+    if ($.fn.DataTable.isDataTable('#main-table')) {
+        $('#main-table').DataTable().destroy();
     }
+    let table = $("#main-table").DataTable({
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+        "pageLength": 10
+    });
+
+    // DataTable 초기화 완료 후 콜백
+    table.on('init', function () {
+        console.log('DataTable initialization complete');
+        // 여기에 DOM 상태를 확인하는 코드를 추가하세요
+        console.log(document.getElementById("main-table-tbody").innerHTML);
+    }).buttons().container().appendTo('#main-table_wrapper .col-md-6:eq(0)');
 }
 
 
