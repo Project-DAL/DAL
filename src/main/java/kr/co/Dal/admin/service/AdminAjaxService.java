@@ -28,4 +28,8 @@ public class AdminAjaxService {
     public List<AdminStoreVO> findStoreList() {
         return adminAjaxMapper.selectStoreList();
     }
+
+    public List<AdminStoreVO> findStoreCategoryList(String prodType) {
+        return adminAjaxMapper.selectCategoryList(prodType);
+    }
 }
