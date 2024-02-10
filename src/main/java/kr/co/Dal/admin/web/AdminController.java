@@ -82,4 +82,9 @@ public class AdminController {
         return "admin/stas/stasMain";
     }
 
+    @GetMapping("/starter")
+    public String starter() {
+        return "starter";
+    }
+
 }
