@@ -20,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -40,9 +41,12 @@ public class AdminAjaxController {
      * Store 목록 조회
      * @return
      */
+    @GetMapping("/storeList")
     public ResponseEntity<Map<String, Object>> findStoreList() {
         Map<String, Object> result = new HashMap<>();
-        result.put("storeList", adminAjaxService.findStoreList());
+        result.put("list", adminAjaxService.findStoreList());
+        // result에 "list" 키로 저장된 값을 로그로 출력
+        log.warn("Store List: {}", result.get("list"));
         return ResponseEntity.ok().body(result);
     }
 

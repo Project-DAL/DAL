@@ -16,6 +16,19 @@ Ver.  Date          Revised By   Description
 
 <mapper namespace="kr.co.Dal.admin.mapper.AdminAjaxMapper">
     <select id="selectStoreList" resultType="kr.co.Dal.admin.model.AdminStoreVO">
-
+        SELECT
+            prod_id,
+            prod_tit,
+            prod_type,
+            prod_cnt,
+            prod_ori_price,
+            prod_sale_price,
+             prod_img,
+             prod_stts,
+             prod_like,
+             prod_rdate,
+             prod_udate,
+             prod_cn_file
+            FROM prod_tb
     </select>
 </mapper>

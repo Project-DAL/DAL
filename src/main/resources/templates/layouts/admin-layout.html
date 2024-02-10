@@ -9,6 +9,44 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DAL Admin Page</title>
 
+  <!-- Ajax Token -->
+  <meta name="_csrf" th:if="${_csrf}" th:content="${_csrf.token}" />
+  <meta name="_csrf_header" th:if="${_csrf}" th:content="${_csrf.headerName}" />
+  <script>
+    const tokenMeta = document.head.querySelector("meta[name='_csrf']");
+    const headerMeta = document.head.querySelector("meta[name='_csrf_header']");
+
+    const token = tokenMeta ? tokenMeta.content : '';
+    const header = headerMeta ? headerMeta.content : '';
+
+    console.log("header: " + header);
+    console.log("token: " + token);
+  </script>
+  <script type="text/javascript" th:src="@{/common/js/ajaxAPI.js}"></script>
+
+  <!-- Common CSS -->
+  <!-- media="all" : 모든 미디어 유형(컴퓨터 모니터, 태블릿, 스마트폰 등)에 스타일을 적용 (모든 기기와 미디어에 동일 적용 ) -->
+  <!-- media="screen" : 스크린 미디어 타입에 따라 웹 페이지가 해당 기기에 맞게 최적화된 스타일로 표현 -->
+  <link rel="stylesheet" type="text/css" th:href="@{/common/css/common.css}" media="all">
+
+  <!-- Jquery, Jquery-UI -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+  <!-- Common JS -->
+  <link rel="shortcut icon" type="image/x-icon" href="" />
+  <script type="text/javascript" th:src="@{/common/js/Common.js}"></script>
+
+  <!-- Font Icon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
