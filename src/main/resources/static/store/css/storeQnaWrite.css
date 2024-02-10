@@ -40,9 +40,9 @@ Ver.  Date          Revised By   Description
     display: flex;
     justify-content: space-between;
     background-color: #03012D;
-    height: 40px;
+    height: 60px;
     font-size: 20px;
-    line-height: 40px;
+    line-height: 60px;
 }
 .ct_qna-mid {
     padding: 20px 60px;
@@ -52,6 +52,9 @@ Ver.  Date          Revised By   Description
 }
 .modal_close_btn {
     color: #ffffff;
+}
+.modal_close_btn:hover {
+    cursor: pointer;
 }
 .ct_qna-prod-wrap {
     height: 100px;

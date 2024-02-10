@@ -92,6 +92,7 @@ Ver.  Date          Revised By   Description
     display: flex;
     width: 100%;
     height: 20px;
+    justify-content: space-between;
 }
 .heart-icon {
     width: 20px;
@@ -99,6 +100,7 @@ Ver.  Date          Revised By   Description
 }
 .star-area {
     margin-right: 35px;
+    display: flex;
 }
 /*
 .card-title {

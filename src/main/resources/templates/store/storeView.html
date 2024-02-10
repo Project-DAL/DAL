@@ -12,7 +12,7 @@
   <link rel="stylesheet"  href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
 
   <script type="text/javascript" th:src="@{/store/js/storeView.js}"></script>
-  <script type="text/javascript" th:src="@{/store/js/storeQnaWrite.js}"></script>
+  <script type="text/javascript" th:src="@{/store/js/storeQnaWrite.js}" defer></script>
 </th:block>
 /*
 File Name      : storeView.html
@@ -52,14 +52,19 @@ Ver.  Date          Revised By   Description
           </div>
           <div class="prod-like-wrap">
             <div style="display: flex; align-items: center">
-              <img src="../../css/img/store/free-icon-love-4397571.png" /
-              style="height: 30px; width: 30px; margin-right: 10px;">
-              <span>777</span>
+              <div class="star-area">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="25" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="25" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="25" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="25" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="25" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+              </div>
+              <span>4.3(117개)</span>
             </div>
             <div style="display: flex; align-items: center">
-              <img src="../../css/img/store/free-icon-star-4369505.png" /
+              <img th:src="@{/my/img/heart.png}"
               style="height: 30px; width: 30px; margin-right: 10px;">
-              <span>4.3(113개)</span>
+              <span>777</span>
             </div>
           </div>
           <div class="prod-price-wrap">
@@ -84,8 +89,9 @@ Ver.  Date          Revised By   Description
                 href="#"
                 class="btn"
                 style="
-                    background-color: black;
+                    background-color: #fff;
                     display: inline-block;
+                    color: #0f1e57;
                     width: 100px;
                   "
             >장바구니</a
@@ -154,9 +160,9 @@ Ver.  Date          Revised By   Description
       </div>
     </div>
     <div id="ct_qna">
-      <div class="ct_qna-topbar mb15">
-        <span>상품 문의하기</span>
-        <a class="modal_close_btn">X</a>
+      <div class="ct_qna-topbar">
+        <span class="ml10">상품 문의하기</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 24 24" width="40" fill="white" class="modal_close_btn"><path d="M7.314 5.9l3.535-3.536A1 1 0 1 0 9.435.95L5.899 4.485 2.364.95A1 1 0 1 0 .95 2.364l3.535 3.535L.95 9.435a1 1 0 1 0 1.414 1.414l3.535-3.535 3.536 3.535a1 1 0 1 0 1.414-1.414L7.314 5.899z"></path></svg>
       </div>
       <div class="ct_qna-mid">
         <div class="mb15">
@@ -180,7 +186,7 @@ Ver.  Date          Revised By   Description
           <input
               type="text"
               placeholder="제목을 입력해주세요."
-              class="ct_qna-tit"
+              class="ct_qna-tit" id="qnaTit"
           />
         </div>
         <div class="mb15">
@@ -193,7 +199,7 @@ Ver.  Date          Revised By   Description
           <span>비공개</span>
         </div>
         <div class="ct_qna-btn-wrap mb15">
-          <a href="#" class="qna-btn" onclick="fnInsertQna()">등록하기</a>
+          <a href="#" class="qna-btn" id="qnaSave">등록하기</a>
         </div>
         <div>
           <span>상품문의 시 주의사항</span>
