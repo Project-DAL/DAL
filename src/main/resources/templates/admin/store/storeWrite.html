@@ -4,278 +4,31 @@
       layout:decorate="~{layouts/admin-layout}">
 <th:block layout:fragment="content">
     <th:block layout:fragment="css-js">
-        <link rel="stylesheet" type="text/css" th:href="@{/admin/css/grid/write-grid.css}">
-        <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
-        <script type="text/javascript" th:src="@{/admin/js/store/storeList.js}"></script>
+<!--        <link rel="stylesheet" type="text/css" th:href="@{/admin/css/grid/write-grid.css}">-->
+<!--        <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">-->
+<!--        <script type="text/javascript" th:src="@{/admin/js/store/storeList.js}"></script>-->
     </th:block>
-    <div class="ct_content">
-        <div class="mTitle">상품 등록</div>
-        <div class="section">
-            <div class="mToggleBar">
-                <h2 class="eToggleTitle">표시 설정</h2>
-            </div>
-            <div class="toggleArea">
-                <div class="mBoard typeProduct">
-                    <table class="gDivision">
-                        <colgroup>
-                            <col class="product">
-                            <col style="width: auto">
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th scope="row">진열 상태</th>
-                                <td>
-                                    <label class="gLabel">
-                                        <input type="radio" class="fChk eMarketChecker">
-                                        진열함
-                                    </label>
-                                    <label class="gLabel eSelected">
-                                        <input type="radio" class="fChk eMarketChecker">
-                                        진열안함
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    판매 상태
-                                </th>
-                                <td>
-                                    <label class="gLabel">
-                                        <input type="radio" class="fChk eMarketChecker">
-                                        판매함
-                                    </label>
-                                    <label class="gLabel eSelected">
-                                        <input type="radio" class="fChk eMarketChecker">
-                                        판매안함
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    상품분류 선택
-                                </th>
-                                <td>
-                                    <div class="button">
-                                        <a href="#" class="btnNormal eModal">
-                                            <span>자주쓰는 분류</span>
-                                        </a>
-                                        <a href="#" class="btnNormal eModal">
-                                            <span>최근 등록 분류</span>
-                                        </a>
-                                    </div>
-                                    <div class="mSearchSelect typeCategory theme1">
-                                        <div class="state">
-                                            <strong class="txtEm">
-                                                <!--어쩌구저쩌구
-                                                <span class="right"> ></span> -->
-                                            </strong>
-                                            <span>상품분류를 선택 후 상품분류 적용 버튼을 눌러주세요</span>
-                                        </div>
-                                        <table>
-                                            <colgroup>
-                                                <col style="width: auto" span="4">
-                                                <col style="width: 150px;">
-                                            </colgroup>
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="list">
-                                                        <ul depth="1" class="eExposureCategory">
-                                                            <li>(대분류) 미진열
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li class="selected">
-                                                                (대분류) 소주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 전통주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 양주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 맥주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 맥주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 맥주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                                <td class="displaynone">
-                                                    <div class="list">
-                                                        <ul depth="2" class="eExposureCategory">
-                                                            <li>(대분류) 미진열
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li class="selected">
-                                                                (대분류) 소주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 전통주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 양주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 맥주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 맥주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 맥주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                                <td class="displaynone">
-                                                    <div class="list">
-                                                        <ul depth="3" class="eExposureCategory">
-                                                            <li>(대분류) 미진열
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li class="selected">
-                                                                (대분류) 소주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 전통주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 양주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 맥주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 맥주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 맥주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                                <td class="displaynone">
-                                                    <div class="list">
-                                                        <ul depth="4" class="eExposureCategory">
-                                                            <li>(대분류) 미진열
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li class="selected">
-                                                                (대분류) 소주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 전통주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 양주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 맥주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 맥주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                            <li>(대분류) 맥주
-                                                                <span class="right"> ></span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="mNewRemind">
-                                                        <a href="#" class="btnCtrl">
-                                                            <span>
-                                                                적용
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="mBoard gDouble">
-                                        <table>
-                                            <colgroup>
-                                                <col style="width:50px">
-                                                <col style="width:auto">
-                                                <col style="width:180px">
-                                                <col style="width:140px">
-                                                <col style="width:140px">
-                                            </colgroup>
-                                            <thead>
-                                            <tr>
-                                                <th scope="col">고정</th>
-                                                <th scope="col">선택된 상품분류</th>
-                                                <th scope="col">표시 쇼핑몰</th>
-                                                <th scope="col">진열영역 선택</th>
-                                                <th scope="col">설정</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody class="eSelectedCategoryTbody">
-                                            <tr class="eSelectedCategoryRow" id="eSelectedCategoryTemplate">
-                                                <td><span class="icoFix undo eCategoryFix">고정</span></td>
-                                                <td class="left eSelectedCategoryName">대분류 &gt; 중분류 &gt; 소분류 &gt; 상세분류</td>
-                                                <td class="left">
-                                                    <ul class="mList typeMore eCategoryShopList">
-                                                    </ul>
-                                                </td>
-                                                <td class="left">
-                                                    <input type="hidden" name="addCategoryNum[]">
-                                                    <input type="hidden" name="category_product[group1][#NUM#]" value="T">
-                                                    <ul class="mForm typeVer">
-                                                        <li><label class=" eSelected"><input type="checkbox" class="fChk" checked="checked" disabled="disabled"> 일반상품 영역</label></li>
-                                                        <li><label><input type="checkbox" class="fChk" name="category_product[group3][#NUM#]" value="T"> 신상품 영역</label></li>
-                                                        <li><label><input type="checkbox" class="fChk" name="category_product[group2][#NUM#]" value="T"> 추천상품 영역</label></li>
-                                                    </ul>
-                                                </td>
-                                                <td>
-                                                    <a href="#none" class="btnNormal eDeleteSelectedCategory"><span><em class="icoDel"></em> 선택된 분류 삭제</span></a>
-                                                    <p class="gSingle"><a href="#none" class="btnNormal eCategoryOften"><span>자주쓰는 분류 등록</span></a></p>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="empty" id="eEmptyCategoryList" style="display: none;">
-                                                <td colspan="5">선택된 상품분류 내역이 없습니다.</td>
-                                            </tr>
-                                            <!-- fixed -->
-                                            <tr class="eSelectedCategoryRow" categorynum="24">
-                                                <td><span class="icoFix undo eCategoryFix">고정</span></td>
-                                                <td class="left eSelectedCategoryName" categorynum="24" clearance_category_code="null">(대분류) Outerwear &gt;</td>
-                                                <td class="left">
-                                                    <ul class="mList typeMore eCategoryShopList">
-                                                        <li class="empty">한국어 쇼핑몰<span class="icoDefault gMiniSide"></span></li></ul>
-                                                </td>
-                                                <td class="left">
-                                                    <input type="hidden" name="addCategoryNum[]" value="24">
-                                                    <input type="hidden" name="category_product[group1][24]" value="T">
-                                                    <ul class="mForm typeVer">
-                                                        <li><label class=" eSelected"><input type="checkbox" class="fChk" checked="checked" disabled="disabled"> 일반상품 영역</label></li>
-                                                        <li><label><input type="checkbox" class="fChk" name="category_product[group3][24]" value="T"> 신상품 영역</label></li>
-                                                        <li><label><input type="checkbox" class="fChk" name="category_product[group2][24]" value="T"> 추천상품 영역</label></li>
-                                                    </ul>
-                                                </td>
-                                                <td>
-                                                    <a href="#none" class="btnNormal eDeleteSelectedCategory" categorynum="24"><span><em class="icoDel"></em> 선택된 분류 삭제</span></a>
-                                                    <p class="gSingle"><a href="#none" class="btnNormal eCategoryOften"><span>자주쓰는 분류 등록</span></a></p>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">스토어 등록</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">스토어</a></li>
+                        <li class="breadcrumb-item active">스토어 관리</li>
+                        <li class="breadcrumb-item active">스토어 등록</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-gray">
+                    <h3 class="card-title">상품 등록</h3>
                 </div>
             </div>
         </div>
