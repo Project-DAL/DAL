@@ -205,164 +205,332 @@
         <!-- Second Prod Row-->
         <div class="sale-tit">sub title</div>
         <ul class="bxslider">
-          <li>
+          <li class="prod-wrap">
             <img
                 src="http://placehold.it/630x700&text=Prod1"
                 class="bxslider-card"
             />
-            <div>
-              <p>진로소주</p>
+            <div class="ct_prod">
+              <p class="prod-title mb10">진로소주</p>
               <p>#해시태그1</p>
               <p>#해시태그2</p>
-              <p>10,000원 - 할인가격</p>
-              <p>20,000원 - 정상가격</p>
+              <div class="ct_price">
+                <span class="price-area">10,000원</span>
+                <span class="discount-area">50%</span>
+              </div>
+              <div class="ct_icon">
+                <div class="star-area">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                </div>
+                <div class="heart-area">
+                  <img class="heart-icon" th:src="@{/my/img/heart.png}" />
+                </div>
+              </div>
             </div>
           </li>
-          <li>
+          <li class="prod-wrap">
             <img
-                src="http://placehold.it/630x700&text=Prod2"
+                src="http://placehold.it/630x700&text=Prod1"
                 class="bxslider-card"
             />
-            <div>
-              <p>진로소주</p>
+            <div class="ct_prod">
+              <p class="prod-title mb10">진로소주</p>
               <p>#해시태그1</p>
               <p>#해시태그2</p>
-              <p>10,000원 - 할인가격</p>
-              <p>20,000원 - 정상가격</p>
+              <div class="ct_price">
+                <span class="price-area">10,000원</span>
+                <span class="discount-area">50%</span>
+              </div>
+              <div class="ct_icon">
+                <div class="star-area">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                </div>
+                <div class="heart-area">
+                  <img class="heart-icon" th:src="@{/my/img/heart.png}" />
+                </div>
+              </div>
             </div>
           </li>
-          <li>
+          <li class="prod-wrap">
             <img
-                src="http://placehold.it/630x700&text=Prod3"
+                src="http://placehold.it/630x700&text=Prod1"
                 class="bxslider-card"
             />
-            <div>
-              <p>진로소주</p>
+            <div class="ct_prod">
+              <p class="prod-title mb10">진로소주</p>
               <p>#해시태그1</p>
               <p>#해시태그2</p>
-              <p>10,000원 - 할인가격</p>
-              <p>20,000원 - 정상가격</p>
+              <div class="ct_price">
+                <span class="price-area">10,000원</span>
+                <span class="discount-area">50%</span>
+              </div>
+              <div class="ct_icon">
+                <div class="star-area">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                </div>
+                <div class="heart-area">
+                  <img class="heart-icon" th:src="@{/my/img/heart.png}" />
+                </div>
+              </div>
             </div>
           </li>
-          <li>
+          <li class="prod-wrap">
             <img
-                src="http://placehold.it/630x700&text=Prod4"
+                src="http://placehold.it/630x700&text=Prod1"
                 class="bxslider-card"
             />
-            <div>
-              <p>진로소주</p>
+            <div class="ct_prod">
+              <p class="prod-title mb10">진로소주</p>
               <p>#해시태그1</p>
               <p>#해시태그2</p>
-              <p>10,000원 - 할인가격</p>
-              <p>20,000원 - 정상가격</p>
+              <div class="ct_price">
+                <span class="price-area">10,000원</span>
+                <span class="discount-area">50%</span>
+              </div>
+              <div class="ct_icon">
+                <div class="star-area">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                </div>
+                <div class="heart-area">
+                  <img class="heart-icon" th:src="@{/my/img/heart.png}" />
+                </div>
+              </div>
             </div>
           </li>
-          <li>
+          <li class="prod-wrap">
             <img
-                src="http://placehold.it/630x700&text=Prod5"
+                src="http://placehold.it/630x700&text=Prod1"
                 class="bxslider-card"
             />
-            <div>
-              <p>진로소주</p>
+            <div class="ct_prod">
+              <p class="prod-title mb10">진로소주</p>
               <p>#해시태그1</p>
               <p>#해시태그2</p>
-              <p>10,000원 - 할인가격</p>
-              <p>20,000원 - 정상가격</p>
+              <div class="ct_price">
+                <span class="price-area">10,000원</span>
+                <span class="discount-area">50%</span>
+              </div>
+              <div class="ct_icon">
+                <div class="star-area">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                </div>
+                <div class="heart-area">
+                  <img class="heart-icon" th:src="@{/my/img/heart.png}" />
+                </div>
+              </div>
             </div>
           </li>
-          <li>
+          <li class="prod-wrap">
             <img
-                src="http://placehold.it/630x700&text=Prod6"
+                src="http://placehold.it/630x700&text=Prod1"
                 class="bxslider-card"
             />
-            <div>
-              <p>진로소주</p>
+            <div class="ct_prod">
+              <p class="prod-title mb10">진로소주</p>
               <p>#해시태그1</p>
               <p>#해시태그2</p>
-              <p>10,000원 - 할인가격</p>
-              <p>20,000원 - 정상가격</p>
+              <div class="ct_price">
+                <span class="price-area">10,000원</span>
+                <span class="discount-area">50%</span>
+              </div>
+              <div class="ct_icon">
+                <div class="star-area">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                </div>
+                <div class="heart-area">
+                  <img class="heart-icon" th:src="@{/my/img/heart.png}" />
+                </div>
+              </div>
             </div>
           </li>
         </ul>
       <!-- Third Prod Row-->
         <div class="sale-tit">sub title</div>
           <ul class="bxslider">
-            <li>
+            <li class="prod-wrap">
               <img
-              src="http://placehold.it/630x700&text=Prod1"
-              class="bxslider-card"
+                  src="http://placehold.it/630x700&text=Prod1"
+                  class="bxslider-card"
               />
-              <div>
-                <p>진로소주</p>
+              <div class="ct_prod">
+                <p class="prod-title mb10">진로소주</p>
                 <p>#해시태그1</p>
                 <p>#해시태그2</p>
-                <p>10,000원 - 할인가격</p>
-                <p>20,000원 - 정상가격</p>
+                <div class="ct_price">
+                  <span class="price-area">10,000원</span>
+                  <span class="discount-area">50%</span>
+                </div>
+                <div class="ct_icon">
+                  <div class="star-area">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                  </div>
+                  <div class="heart-area">
+                    <img class="heart-icon" th:src="@{/my/img/heart.png}" />
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
+            <li class="prod-wrap">
               <img
-              src="http://placehold.it/630x700&text=Prod2"
-              class="bxslider-card"
+                  src="http://placehold.it/630x700&text=Prod1"
+                  class="bxslider-card"
               />
-              <div>
-                <p>진로소주</p>
+              <div class="ct_prod">
+                <p class="prod-title mb10">진로소주</p>
                 <p>#해시태그1</p>
                 <p>#해시태그2</p>
-                <p>10,000원 - 할인가격</p>
-                <p>20,000원 - 정상가격</p>
+                <div class="ct_price">
+                  <span class="price-area">10,000원</span>
+                  <span class="discount-area">50%</span>
+                </div>
+                <div class="ct_icon">
+                  <div class="star-area">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                  </div>
+                  <div class="heart-area">
+                    <img class="heart-icon" th:src="@{/my/img/heart.png}" />
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
+            <li class="prod-wrap">
               <img
-              src="http://placehold.it/630x700&text=Prod3"
-              class="bxslider-card"
+                  src="http://placehold.it/630x700&text=Prod1"
+                  class="bxslider-card"
               />
-              <div>
-                <p>진로소주</p>
+              <div class="ct_prod">
+                <p class="prod-title mb10">진로소주</p>
                 <p>#해시태그1</p>
                 <p>#해시태그2</p>
-                <p>10,000원 - 할인가격</p>
-                <p>20,000원 - 정상가격</p>
+                <div class="ct_price">
+                  <span class="price-area">10,000원</span>
+                  <span class="discount-area">50%</span>
+                </div>
+                <div class="ct_icon">
+                  <div class="star-area">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                  </div>
+                  <div class="heart-area">
+                    <img class="heart-icon" th:src="@{/my/img/heart.png}" />
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
+            <li class="prod-wrap">
               <img
-              src="http://placehold.it/630x700&text=Prod4"
-              class="bxslider-card"
+                  src="http://placehold.it/630x700&text=Prod1"
+                  class="bxslider-card"
               />
-              <div>
-                <p>진로소주</p>
+              <div class="ct_prod">
+                <p class="prod-title mb10">진로소주</p>
                 <p>#해시태그1</p>
                 <p>#해시태그2</p>
-                <p>10,000원 - 할인가격</p>
-                <p>20,000원 - 정상가격</p>
+                <div class="ct_price">
+                  <span class="price-area">10,000원</span>
+                  <span class="discount-area">50%</span>
+                </div>
+                <div class="ct_icon">
+                  <div class="star-area">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                  </div>
+                  <div class="heart-area">
+                    <img class="heart-icon" th:src="@{/my/img/heart.png}" />
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
+            <li class="prod-wrap">
               <img
-              src="http://placehold.it/630x700&text=Prod5"
-              class="bxslider-card"
+                  src="http://placehold.it/630x700&text=Prod1"
+                  class="bxslider-card"
               />
-              <div>
-                <p>진로소주</p>
+              <div class="ct_prod">
+                <p class="prod-title mb10">진로소주</p>
                 <p>#해시태그1</p>
                 <p>#해시태그2</p>
-                <p>10,000원 - 할인가격</p>
-                <p>20,000원 - 정상가격</p>
+                <div class="ct_price">
+                  <span class="price-area">10,000원</span>
+                  <span class="discount-area">50%</span>
+                </div>
+                <div class="ct_icon">
+                  <div class="star-area">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                  </div>
+                  <div class="heart-area">
+                    <img class="heart-icon" th:src="@{/my/img/heart.png}" />
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
+            <li class="prod-wrap">
               <img
-              src="http://placehold.it/630x700&text=Prod6"
-              class="bxslider-card"
+                  src="http://placehold.it/630x700&text=Prod1"
+                  class="bxslider-card"
               />
-              <div>
-                <p>진로소주</p>
+              <div class="ct_prod">
+                <p class="prod-title mb10">진로소주</p>
                 <p>#해시태그1</p>
                 <p>#해시태그2</p>
-                <p>10,000원 - 할인가격</p>
-                <p>20,000원 - 정상가격</p>
+                <div class="ct_price">
+                  <span class="price-area">10,000원</span>
+                  <span class="discount-area">50%</span>
+                </div>
+                <div class="ct_icon">
+                  <div class="star-area">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="17" fill="gold"><path d="M10 16.379l-6.173 3.245 1.179-6.874L.01 7.882l6.902-1.003L10 .624l3.087 6.255 6.902 1.003-4.995 4.868 1.18 6.874z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold" transform="scale(-1, 1)"><path d="M10 15.814L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814zm0-2.26l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zM10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814V.06z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2.5 24 24" width="17" fill="gold"><path d="M10 13.554l3.517 1.85-.672-3.917 2.846-2.774-3.932-.571L10 4.579 8.241 8.142l-3.932.571 2.846 2.774-.672 3.916L10 13.554zm0 2.26L3.827 19.06l1.179-6.875L.01 7.317l6.902-1.003L10 .06l3.087 6.254 6.902 1.003-4.995 4.868 1.18 6.875L10 15.814z"></path></svg>
+                  </div>
+                  <div class="heart-area">
+                    <img class="heart-icon" th:src="@{/my/img/heart.png}" />
+                  </div>
+                </div>
               </div>
             </li>
           </ul>
