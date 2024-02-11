@@ -17,4 +17,12 @@ public interface AdminAjaxMapper {
     void insertStore(AdminStoreVO adminStoreVO);
 
     void insertProdImg(ProdImgVO prodImgVO);
+
+    List<ProdImgVO> selectProdImagesByProdId(int prodId);
+
+    void deleteProdImagesByProdId(int prodId);
+
+    void deleteStore(int prodId);
+
+    AdminStoreVO selectStoreById(int prodId);
 }

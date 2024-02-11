@@ -24,7 +24,7 @@
             <script th:src="@{/admin/adminlte3/plugins/pdfmake/pdfmake.min.js}" ></script>
             <script th:src="@{/admin/adminlte3/plugins/pdfmake/vfs_fonts.js}" ></script>
             <script th:src="@{/admin/adminlte3/plugins/datatables-buttons/js/buttons.html5.min.js}" ></script>
-            <script th:src="@{/admin/adminlte3/plugins/datatables-buttons/js/buttons.html5.min.js}" ></script>
+            <script th:src="@{/admin/adminlte3/plugins/jsgrid/jsgrid.min.js}" ></script>
             <script th:src="@{/admin/adminlte3/dist/js/demo.js}" defer></script>
             <script type="text/javascript" th:src="@{/admin/store/js/storeList.js}" defer></script>
         </th:block>
@@ -143,6 +143,7 @@
                                         <th>재고</th>
                                         <th>등록일</th>
                                         <th>수정일</th>
+                                        <th></th>
                                     </tr>
                                     </thead>
                                     <tbody id="main-table-tbody">
@@ -154,24 +155,24 @@
                 </div>
             </div>
         </div>
-        <script defer>
-            // $(document).ready(() => {
-            //     $('#layout-modal').on('show.bs.modal', (event) => {
-            //         const id = $(event.relatedTarget).data('id');
-            //
-            //         fetch(`/management/articles/${id}`)
-            //             .then(response => response.json())
-            //             .then(data => {
-            //                 $('.modal-title').text(data.title);
-            //                 $('.modal-body pre').text(data.content);
-            //                 $('.modal-footer form').attr('action', `/management/articles/${id}`);
-            //             })
-            //             .catch(error => {
-            //                 console.error('게시글 로딩 실패: ', error);
-            //             });
-            //     });
-            // });
-        </script>
+<!--        <script defer>-->
+<!--            $(document).ready(() => {-->
+<!--                $('#layout-modal').on('show.bs.modal', (event) => {-->
+<!--                    const id = $(event.relatedTarget).data('id');-->
+
+<!--                    fetch(`/management/articles/${id}`)-->
+<!--                        .then(response => response.json())-->
+<!--                        .then(data => {-->
+<!--                            $('.modal-title').text(data.title);-->
+<!--                            $('.modal-body pre').text(data.content);-->
+<!--                            $('.modal-footer form').attr('action', `/management/articles/${id}`);-->
+<!--                        })-->
+<!--                        .catch(error => {-->
+<!--                            console.error('게시글 로딩 실패: ', error);-->
+<!--                        });-->
+<!--                });-->
+<!--            });-->
+<!--        </script>-->
     </th:block>
 
 </html>

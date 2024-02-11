@@ -17,7 +17,7 @@ function ajaxAPI(url, jsonData, method) {
         xhr.setRequestHeader(header, token);
         xhr.responseType = "json";
 
-        if(method == "get" || method == "GET")
+        if(method == "get" || method == "GET" || method === "DELETE")
             xhr.send();
         else
             xhr.send(JSON.stringify(jsonData)); //post body json 방식 일때

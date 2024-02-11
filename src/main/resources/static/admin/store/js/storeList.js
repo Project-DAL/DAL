@@ -121,13 +121,17 @@ function appendGridListHtml() {
             document.getElementById("main-table-tbody").insertAdjacentHTML('beforeend', `
                  <tr>
                                         <td>${item.prodId}</td>
-                                        <td>${item.prodTit}</td>
+                                        <td><a href="#">${item.prodTit}</a></td>
                                         <td>${item.prodSalePrice}</td>
                                         <td>${item.prodType}</td>
                                         <td>${item.prodStts}</td>
                                         <td>${item.prodCnt}</td>
                                         <td>${item.prodRdate}</td>
                                         <td>${item.prodUdate}</td>
+                                        <td class="modi-layout">
+                                            <button class="btn btn-primary btn-sm d-inline-block mr2" data-id="${item.prodId}" onclick="modifyProduct(${item.prodId})"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-danger btn-sm d-inline-block" data-id="${item.prodId}" onclick="deleteProduct(${item.prodId})"><i class="fas fa-trash"></i></button>
+                                        </td>
                                     </tr>`);
 
             }
@@ -157,6 +161,29 @@ function initializeDataTable() {
         // 여기에 DOM 상태를 확인하는 코드를 추가하세요
         console.log(document.getElementById("main-table-tbody").innerHTML);
     }).buttons().container().appendTo('#main-table_wrapper .col-md-6:eq(0)');
+}
+
+function deleteProduct(prodId) {
+    if (confirm("해당 상품을 삭제하시겠습니까?")) {
+        console.log(prodId);
+
+        ajaxAPI('/admin/deleteProduct/' + prodId,null,"DELETE").then(response => {
+            if(response.status === 'success') {
+                alert('상품이 삭제되었습니다.');
+                // 여기에 상품 목록을 다시 로드하는 로직 추가
+                fnAjaxList();
+            } else {
+                alert('상품 삭제에 실패했습니다.');
+            }
+        }).catch(error => {
+            console.error('Error deleting product:', error);
+            alert('상품 삭제 중 오류가 발생했습니다.');
+        });
+    }
+}
+
+function modifyProduct(prodId) {
+    window.location.href = "/admin/storeModify/" + prodId;
 }
 
 

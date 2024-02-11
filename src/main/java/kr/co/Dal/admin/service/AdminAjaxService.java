@@ -90,4 +90,35 @@ public class AdminAjaxService {
             }
         });
     }
+
+    @Transactional
+    public void deleteStoreAndRelatedFiles(int prodId) {
+        // 상품과 연관된 이미지 정보 조회
+        List<ProdImgVO> images = adminAjaxMapper.selectProdImagesByProdId(prodId);
+        // 파일 시스템에서 이미지 파일들 삭제
+        for (ProdImgVO image : images) {
+            Path imagePath = Paths.get(image.getImgPath());
+            try {
+                Files.deleteIfExists(imagePath);
+            } catch (IOException e) {
+                throw new RuntimeException("Failed to delete image file: " + imagePath, e);
+            }
+        }
+        // 데이터베이스에서 상품 이미지 정보 삭제
+        adminAjaxMapper.deleteProdImagesByProdId(prodId);
+        // 데이터베이스에서 상품 정보 삭제
+        adminAjaxMapper.deleteStore(prodId);
+    }
+
+    // 상품 ID를 사용하여 상품 정보와 상품 이미지 정보 조회
+    public AdminStoreVO findProductById(int prodId) {
+        // 상품 정보 조회
+        AdminStoreVO product = adminAjaxMapper.selectStoreById(prodId);
+        if (product != null) {
+            // 상품 이미지 정보 조회
+            List<ProdImgVO> images = adminAjaxMapper.selectProdImagesByProdId(prodId);
+            product.setImages(images); // 상품 객체에 이미지 정보 설정
+        }
+        return product;
+    }
 }

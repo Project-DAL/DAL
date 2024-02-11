@@ -67,4 +67,24 @@ Ver.  Date          Revised By   Description
         VALUES (#{prodId}, #{imgPath}, #{originalName}, #{saveName})
     </insert>
 
+    <!-- 상품 이미지 정보 조회 -->
+    <select id="selectProdImagesByProdId" parameterType="int" resultType="kr.co.Dal.admin.model.ProdImgVO">
+        SELECT * FROM prod_img_tb WHERE prod_id = #{prodId}
+    </select>
+
+    <!-- 상품 이미지 정보 삭제 -->
+    <delete id="deleteProdImagesByProdId" parameterType="int">
+        DELETE FROM prod_img_tb WHERE prod_id = #{prodId}
+    </delete>
+
+    <!-- 상품 정보 삭제 -->
+    <delete id="deleteStore" parameterType="int">
+        DELETE FROM prod_tb WHERE prod_id = #{prodId}
+    </delete>
+
+    <!-- 상품 정보 단일 조회 -->
+    <select id="selectStoreById" parameterType="int" resultType="kr.co.Dal.admin.model.AdminStoreVO">
+        SELECT * FROM prod_tb WHERE prod_id = #{prodId}
+    </select>
+
 </mapper>

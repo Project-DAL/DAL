@@ -1,7 +1,7 @@
 "use strict";
 /*
 File Name      : storeWrite.js
-Program Name   : 관리자스토어목록
+Program Name   : 관리자스토어등록
 Draft Author   : 김진형
 Draft Date     : 2024.02.12
 

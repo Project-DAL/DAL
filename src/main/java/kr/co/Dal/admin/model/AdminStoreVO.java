@@ -3,6 +3,8 @@ package kr.co.Dal.admin.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.List;
+
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class AdminStoreVO {
@@ -17,4 +19,6 @@ public class AdminStoreVO {
     private String prodRdate;
     private String prodUdate;
     private String prodCnFile;
+
+    private List<ProdImgVO> images;
 }
