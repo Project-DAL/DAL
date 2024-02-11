@@ -102,6 +102,17 @@ Ver.  Date          Revised By   Description
     margin-right: 35px;
     display: flex;
 }
+.heart-area {
+    display: flex;
+}
+.star-avg {
+    font-size: 14px;
+    line-height: 20px;
+}
+.heart-cnt {
+    font-size: 14px;
+    line-height: 20px;
+}
 /*
 .card-title {
     text-align: center;

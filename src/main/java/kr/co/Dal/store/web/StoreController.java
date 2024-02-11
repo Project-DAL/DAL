@@ -30,26 +30,11 @@ public class StoreController {
     }
 
     // 스토어 메인 목록 조회
-    @GetMapping("/selectProdList")
-    public ResponseEntity<Map<String, Object>> selectProdList(StoreVO storeVO){
+    @GetMapping("/selectMainList")
+    public ResponseEntity<Map<String, Object>> selectMainList(StoreVO storeVO){
         Map<String, Object> result = new HashMap<>();
-        result.put("list", storeService.selectStoreList(storeVO));
+        result.put("list", storeService.selectMainList(storeVO));
         return ResponseEntity.ok().body(result);
-    }
-
-    // 스토어 문의글 작성 url 매핑
-    @GetMapping("/storeQnaWrite")
-    public String storeQnaWrite()
-    {
-//        model.addAttribute("item", storeService.selectProdQna(qnaVO));
-        return "store/storeQnaWrite";
-    }
-
-    @ResponseBody
-    @RequestMapping("/insertProdQna")
-    public ResponseEntity<QnaVO> insertProdQna(QnaVO qnaVO) {
-        storeService.insertStoreQna(qnaVO);
-        return ResponseEntity.ok().body(qnaVO);
     }
 
     @GetMapping("/storeList")
