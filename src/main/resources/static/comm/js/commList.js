@@ -6,21 +6,45 @@ Draft Author   :
 Draft Date     : 2023.12.04
 */
 
-/* 1. Variables *******************************************************************************************************/
-
-/* 2. Functions - Initialize ******************************************************************************************/
-/* 2.1 Initialize */
+// document.addEventListener
 document.addEventListener('DOMContentLoaded', function() {
   fnAjaxCommList();
   fnBtn();
 });
 
-/* 3. Functions - Process(CRUD) ***************************************************************************************/
-
-/* 3.1 fnAjaxList() - 목록조회 */
+// function
 function fnAjaxCommList() {
 
-   ajaxAPI('/comm/commAjaxList', null, "GET").then(response => {
+    document.getElementById('0').classList.add('selected');
+
+    let bardType = event.currentTarget.id;
+    if (bardType) {
+        document.querySelectorAll('.ct_left-menu ul').forEach(function (ul) {
+            ul.classList.remove('selected');
+        });
+
+        document.getElementById(bardType).classList.add('selected');
+
+    }else if(!bardType) {
+       bardType = 0;
+    }
+
+
+
+    let searchKeyword = document.getElementById('searchKeyword').value;
+    let searchValue = document.getElementById('searchValue').value;
+
+    console.log("bardType   " + bardType)
+     console.log("searchKeyword    " + searchKeyword)
+      console.log("searchValue    " + searchValue)
+
+   let jsonData = {
+       bardType: bardType,
+       searchKeyword: searchKeyword,
+       searchValue: searchValue
+   }
+
+   ajaxAPI('/comm/commAjaxList', jsonData, "POST").then(response => {
 
         document.querySelector("#fieldListBody").innerHTML = "";
         let element = document.querySelector("#fieldListBody");
@@ -28,13 +52,14 @@ function fnAjaxCommList() {
         if (response.length > 0) {
             response.forEach(function (result, index) {
                 let template = `
-                    <td><p>${result.bard_id}</p></td>
-                    <td><p>${result.bard_type}</p></td>
-                    <td><p>${result.bard_tit}</p></td>
-                    <td><p>${result.bard_cn}</p></td>
-                    <td><p>${result.user_id}</p></td>
-                    <td><p>${result.bard_like_cnt}</p></td>
-                    <td><p>${result.bard_rdate}</p></td>
+                    <tr>
+                        <td><p>${result.bardId}</p></td>
+                        <td><p>${result.bardTit}</p></td>
+                        <td><p>${result.bardCn}</p></td>
+                        <td><p>${result.userId}</p></td>
+                        <td><p>${result.bardCnt}</p></td>
+                        <td><p>${result.bardRdate}</p></td>
+                    </tr>
                 `;
                 element.insertAdjacentHTML('beforeend', template);
 
@@ -42,9 +67,8 @@ function fnAjaxCommList() {
 
                 rows.forEach(function(row) {
                     row.addEventListener("click", function() {
-                        var postId = row.cells[0].textContent;
-
-                        window.location.href = "/comm/commView?bard_id=" + postId;
+                        var bardId = row.cells[0].textContent;
+                        window.location.href = "/comm/commView?bardId=" + bardId;
                     });
                 });
 
@@ -59,16 +83,10 @@ function fnAjaxCommList() {
 
 }
 
-/* 4. Functions - Event Listener **************************************************************************************/
 function fnBtn() {
-	document.getElementById("REG").addEventListener('click',e=>{
+	document.getElementById("REG").addEventListener('click',function() {
     	window.location = '/comm/commWrite';
     });
 }
 
 
-/* 5. Functions - Html Creator ****************************************************************************************/
-
-
-
-/* 5.4 appendFileListHtml() - 첨부파일 생성 */

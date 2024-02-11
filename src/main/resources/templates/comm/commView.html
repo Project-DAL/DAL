@@ -23,31 +23,39 @@ Draft Date      : 2023.11.10
     <!-- 3. Main -->
     <main>
         <div class="ct_main">
-            <!-- 4.1 Aside -->
-            <aside>
-                <div class="ct_left-menu">
-                    <h4 class="menu-tit">CATEGORY</h4>
-                    <ul>
-                        <li><a href="#">ALL</a></li>
-                        <li><a href="#">NOTICE</a></li>
-                        <li><a href="#">REVIEW</a></li>
-                        <li><a href="#">DAILY</a></li>
-                    </ul>
-                </div>
-            </aside>
-            <!-- 4.2 Content -->
             <section>
-                <h1>게시판 상세보기</h1>
-
-                <div class="post">
-                    <h2 class="post-title">게시물 제목</h2>
-                    <p class="post-meta">작성자: John Doe | 작성일: 2024-02-07</p>
-                    <div class="post-content">
-                        <p>게시물 내용이 여기에 들어갑니다. 내용이 많을 경우 스크롤이 생깁니다.</p>
-                        <!-- 추가적인 내용이 필요하다면 여기에 작성 -->
-                    </div>
+                <!-- 4.2.1 Subtitle -->
+                <div class="ct_subtitle">
+                    <h3>COMMUNITY</h3>
                 </div>
+                <!-- 4.2.2 Board Content -->
+                <div class="ct_content">
+                    <div class="comm-comment">
+                        <table id="fieldListBody"></table>
+                        <div class="button-container">
+                            <input type="button" class="edit-button" id="btnUpdate" value="수정">
+                            <input type="button" class="delete-button" id="btnDelete" value="삭제">
+                        </div>
+                    </div>
 
+                    <div class="ct_subtitle">
+                        <h3>댓글</h3>
+                    </div>
+                    <div class="comment">
+                        <div id="fieldReplyBody"></div>
+                    </div>
+
+                    <form action="/comm/commAjaxReplyInsert" method="post" id="frm">
+                        <!-- CSRF 토큰을 input으로 추가 -->
+                        <input type="hidden" name="_csrf" th:value="${_csrf.token}" th:if="${_csrf}" />
+                        <!-- CSRF 헤더를 input으로 추가 -->
+                        <input type="hidden" name="header" th:value="${_csrf.headerName}" th:if="${_csrf}" />
+                        <input type="hidden" id="bardId" name="bardId" th:value="${bardId}" />
+                        <label for="replyCn">댓글 작성:</label>
+                        <textarea id="replyCn" name="replyCn" rows="4" cols="50"></textarea>
+                        <input type="submit" id="save" class="save" value="저장">
+                    </form>
+                </div>
             </section>
         </div>
     </main>
