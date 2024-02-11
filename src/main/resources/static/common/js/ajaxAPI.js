@@ -55,5 +55,26 @@ function ajaxFile(url, method){
         // FormData를 전송
         xhr.send(formData);
     })
+}
 
+// 멀티파일 업로드
+
+function ajaxMultiFile(url, formData, method){
+    return new Promise(function(resolve, reject){
+        const xhr = new XMLHttpRequest();
+
+        xhr.onload = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                resolve(JSON.parse(xhr.response)); // 응답을 JSON으로 파싱
+            } else {
+                reject({ status: xhr.status, statusText: xhr.statusText });
+            }
+        }
+
+        xhr.open(method, url);
+        xhr.setRequestHeader(header, token);
+        // CSRF 토큰 등의 보안 관련 헤더 설정이 필요한 경우
+        // 파일 업로드 시에는 Content-Type을 설정하지 않습니다. 브라우저가 자동으로 처리하게 합니다.
+        xhr.send(formData);
+    });
 }

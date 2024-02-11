@@ -16,6 +16,7 @@ Ver.  Date          Revised By   Description
 /* 1.1 Etc Variables (Json Object, HTML String, Temporary) */
 let iSelectedId     = null; // 선택된 행의 ID
 let jsonGridList    = null;
+let jsonData = {};
 
 
 /* 2. Functions - Initialize ******************************************************************************************/

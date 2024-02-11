@@ -12,7 +12,6 @@ public class AdminStoreVO {
     private int prodCnt;
     private int prodOriPrice;
     private int prodSalePrice;
-    private String prodImg;
     private int prodStts;
     private int prodLike;
     private String prodRdate;
