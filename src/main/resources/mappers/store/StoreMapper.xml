@@ -4,8 +4,10 @@
 
 <mapper namespace="kr.co.Dal.store.mapper.StoreMapper">
 
-  <select id="selectStoreList" resultType="kr.co.Dal.store.model.StoreVO">
-    SELECT * FROM prod_tb
+  <select id="selectMainList" resultType="kr.co.Dal.store.model.StoreVO">
+    SELECT prod_tit, prod_type, prod_sale_price, prod_img, prod_stts, prod_like
+    FROM prod_tb
+    where prod_stts != 0
   </select>
 
   <insert id="insertStoreQna" parameterType="kr.co.Dal.store.model.QnaVO">

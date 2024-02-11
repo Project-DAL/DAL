@@ -123,34 +123,34 @@ Ver.  Date          Revised By   Description
           <h1>상품문의</h1>
           <a href="javascript:void(0);" id="popup_btn" class="btn qnaBtn mb15" style="width: 100px" onclick="modal('ct_qna');">문의 남기기</a>
           <table style="border: 1px solid black; width: 100%;" class="center">
+            <colgroup>
+              <col style="width: 20%;" />
+              <col style="width: "></col>
+              <col></col>
+              <col></col>
+            </colgroup>
             <tr>
-              <th>
+              <th colspan="3">
                 <input type="checkbox">
                 <span>답변완료만 보기</span>
               </th>
-              <th></th>
-              <th colspan="2"></th>
             </tr>
             <tr>
-              <td></td>
               <td>답변완료</td>
               <td>비밀글입니다.</td>
               <td>2024.01.17</td>
             </tr>
             <tr>
-              <td></td>
               <td>답변완료</td>
               <td>비밀글입니다.</td>
               <td>2024.01.17</td>
             </tr>
             <tr>
-              <td></td>
               <td>답변완료</td>
               <td>비밀글입니다.</td>
               <td>2024.01.17</td>
             </tr>
             <tr>
-              <td></td>
               <td>답변완료</td>
               <td>비밀글입니다.</td>
               <td>2024.01.17</td>
@@ -174,11 +174,12 @@ Ver.  Date          Revised By   Description
         </div>
         <div class="mb15">
           <p class="qna-font mb10">문의유형</p>
-          <select class="ct_qna-cate">
+          <select id="qna-cate" class="ct_qna-cate">
             <option disabled hidden selected>문의유형을 선택해주세요.</option>
-            <option>배송</option>
-            <option>교환</option>
-            <option>상품</option>
+            <option th:value="1">배송문의</option>
+            <option th:value="2">교환 및 환불</option>
+            <option th:value="3">상품문의</option>
+            <option th:value="4">기타</option>
           </select>
         </div>
         <div class="mb15">
@@ -199,7 +200,7 @@ Ver.  Date          Revised By   Description
           <span>비공개</span>
         </div>
         <div class="ct_qna-btn-wrap mb15">
-          <a href="#" class="qna-btn" id="qnaSave">등록하기</a>
+          <a href="javascript:void(0);" class="qna-btn" id="qnaSave">등록하기</a>
         </div>
         <div>
           <span>상품문의 시 주의사항</span>
