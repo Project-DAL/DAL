@@ -26,9 +26,9 @@ public class UserService {
         }
     }
 
-    public boolean userUsernameCheck(String userNick) {
+    public boolean userUsernameCheck(String userName) {
 
-        User user = userRepository.findByUserNick(userNick);
+        User user = userRepository.findByUserName(userName);
         if(user!=null) {
             return true;
         }
@@ -38,7 +38,7 @@ public class UserService {
     }
 
     public User findUserByUsername(String userNick) {
-        return userRepository.findByUserNick(userNick);
+        return userRepository.findByUserName(userNick);
     }
 
 }
