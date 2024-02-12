@@ -14,8 +14,77 @@ Ver.  Date          Revised By   Description
 ==================================================================================================
 -->
 
-<mapper namespace="kr.co.Dal.admin.mapper.AdminMapper">
-    <select id="selectStoreList" resultType="kr.co.Dal.admin.model.AdminVO">
-
+<mapper namespace="kr.co.Dal.admin.mapper.AdminAjaxMapper">
+    <select id="selectStoreList" resultType="kr.co.Dal.admin.model.AdminStoreVO">
+        SELECT
+            prod_id,
+            prod_tit,
+            prod_type,
+            prod_cnt,
+            prod_ori_price,
+            prod_sale_price,
+            prod_stts,
+            prod_like,
+            prod_rdate,
+            prod_udate,
+            prod_cn_file
+        FROM prod_tb
     </select>
+
+    <select id="selectCategoryList" resultType="kr.co.Dal.admin.model.AdminStoreVO">
+        SELECT
+            prod_id,
+            prod_tit,
+            prod_type,
+            prod_cnt,
+            prod_ori_price,
+            prod_sale_price,
+            prod_stts,
+            prod_like,
+            prod_rdate,
+            prod_udate,
+            prod_cn_file
+        FROM prod_tb
+        WHERE
+            prod_type = #{prodType}
+    </select>
+
+    <!-- MyBatis mapper XML 파일 내에 위치 -->
+    <insert id="insertStore" parameterType="kr.co.Dal.admin.model.AdminStoreVO">
+        INSERT INTO prod_tb
+        (prod_tit, prod_type, prod_cnt, prod_ori_price, prod_sale_price, prod_stts,prod_cn_file)
+        VALUES
+        (#{prodTit}, #{prodType}, #{prodCnt}, #{prodOriPrice}, #{prodSalePrice}, #{prodStts},#{prodCnFile})
+
+        <selectKey keyProperty="prodId" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <!-- 상품 이미지 정보를 저장하는 SQL -->
+    <insert id="insertProdImg" parameterType="kr.co.Dal.admin.model.ProdImgVO">
+        INSERT INTO prod_img_tb (prod_id, img_path, original_name, save_name)
+        VALUES (#{prodId}, #{imgPath}, #{originalName}, #{saveName})
+    </insert>
+
+    <!-- 상품 이미지 정보 조회 -->
+    <select id="selectProdImagesByProdId" parameterType="int" resultType="kr.co.Dal.admin.model.ProdImgVO">
+        SELECT * FROM prod_img_tb WHERE prod_id = #{prodId}
+    </select>
+
+    <!-- 상품 이미지 정보 삭제 -->
+    <delete id="deleteProdImagesByProdId" parameterType="int">
+        DELETE FROM prod_img_tb WHERE prod_id = #{prodId}
+    </delete>
+
+    <!-- 상품 정보 삭제 -->
+    <delete id="deleteStore" parameterType="int">
+        DELETE FROM prod_tb WHERE prod_id = #{prodId}
+    </delete>
+
+    <!-- 상품 정보 단일 조회 -->
+    <select id="selectStoreById" parameterType="int" resultType="kr.co.Dal.admin.model.AdminStoreVO">
+        SELECT * FROM prod_tb WHERE prod_id = #{prodId}
+    </select>
+
 </mapper>

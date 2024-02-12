@@ -20,11 +20,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -62,6 +63,67 @@ public class AdminAjaxController {
         // result에 "list" 키로 저장된 값을 로그로 출력
         log.warn("Store List: {}", result.get("list"));
         return ResponseEntity.ok().body(result);
+    }
+
+    /**
+     * 상품 정보 등록
+     */
+    @PostMapping("/storeInsert")
+    public ResponseEntity<Map<String, Object>> storeInsert(@RequestBody AdminStoreVO adminStoreVO) {
+        Map<String, Object> result = new HashMap<>();
+        log.warn("여기확인" + adminStoreVO.getProdTit());
+        try {
+            // 상품 정보 등록 로직 실행
+            int prodId = adminAjaxService.insertStore(adminStoreVO);
+            result.put("prodId", prodId);
+            result.put("status", "success");
+            log.info("Product inserted successfully: {}", prodId);
+        } catch (Exception e) {
+            log.error("Error inserting product", e);
+            result.put("status", "error");
+        }
+        return ResponseEntity.ok(result);
+    }
+
+    /**
+     * 상품 이미지 파일 업로드
+     */
+    @PostMapping("/storeUploadFiles")
+    public ResponseEntity<Map<String, Object>> storeUploadFiles(
+            @RequestParam("prodId") int prodId,
+            @RequestParam("files") List<MultipartFile> files) {
+        Map<String, Object> result = new HashMap<>();
+        log.warn("여기확인" + files.toString());
+        try {
+            // 파일 업로드 로직 실행
+            adminAjaxService.uploadProductFiles(prodId, files);
+            result.put("status", "success");
+            log.info("Files uploaded successfully for product: {}", prodId);
+        } catch (Exception e) {
+            log.error("Error uploading files for product: {}", prodId, e);
+            result.put("status", "error");
+        }
+        return ResponseEntity.ok(result);
+    }
+
+    /**
+     * 상품 삭제
+     * @param prodId 상품 ID
+     * @return ResponseEntity 상품 삭제 결과를 담은 응답 엔티티
+     */
+    @DeleteMapping("/deleteProduct/{prodId}")
+    public ResponseEntity<Map<String, Object>> deleteStore(@PathVariable int prodId) {
+        Map<String, Object> result = new HashMap<>();
+        try {
+            // 상품 삭제 로직 실행
+            adminAjaxService.deleteStoreAndRelatedFiles(prodId);
+            result.put("status", "success");
+            log.info("Product deleted successfully: {}", prodId);
+        } catch (Exception e) {
+            log.error("Error deleting product: {}", prodId, e);
+            result.put("status", "error");
+        }
+        return ResponseEntity.ok(result);
     }
 
 }
