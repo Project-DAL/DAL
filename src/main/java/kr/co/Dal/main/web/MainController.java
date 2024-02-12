@@ -15,6 +15,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/*
+File Name      : MainController.java
+Program Name   : 메인 검색 서비스 Controller
+Draft Author   : 이원정
+Draft Date     : 2024.01.22
+
+Revision History
+Ver.  Date          Revised By   Description
+————————————————————————————————————————————————————————————
+0.1   2024.01.22    이원정       최초개발
+————————————————————————————————————————————————————————————
+*/
+
+
 @Slf4j
 @Controller
 @RequiredArgsConstructor
@@ -27,15 +41,15 @@ public class MainController {
     @ResponseBody
     public ResponseEntity<List<MainVO>> selectStoreList(@Param("swLat") String swLat, @Param("swLng") String swLng,
                                                         @Param("neLat") String neLat, @Param("neLng") String neLng,
-                                                        @Param("prod_tit") String prod_tit) {
+                                                        @Param("prodTit") String prodTit) {
 
         log.warn("selectStoreList controller");
 
         log.warn("param : " + swLat + "," + swLng + "," + neLat + "," + neLng);
-        log.warn("prod_tit: " + prod_tit);
+        log.warn("prod_tit: " + prodTit);
 
 
-        List<MainVO> storeList = mainService.selectStoreList(swLat, swLng, neLat, neLng, prod_tit);
+        List<MainVO> storeList = mainService.selectStoreList(swLat, swLng, neLat, neLng, prodTit);
 
         return ResponseEntity.ok().body(storeList);
     }
@@ -49,15 +63,15 @@ public class MainController {
     }
     @GetMapping("/rest/cityList")
     @ResponseBody
-    public ResponseEntity<List<MainVO>> selectCityList(@RequestParam("province_id") String province_id) {
-        List<MainVO> cityList = mainService.selectCityList(province_id);
+    public ResponseEntity<List<MainVO>> selectCityList(@RequestParam("provinceId") String provinceId) {
+        List<MainVO> cityList = mainService.selectCityList(provinceId);
         return ResponseEntity.ok().body(cityList);
     }
     @GetMapping("/rest/townList")
     @ResponseBody
-    public ResponseEntity<List<MainVO>> selectTownList(@RequestParam("province_id") String province_id,
-                                                       @RequestParam("city_id") String city_id) {
-        List<MainVO> townList = mainService.selectTownList(province_id, city_id);
+    public ResponseEntity<List<MainVO>> selectTownList(@RequestParam("provinceId") String provinceId,
+                                                       @RequestParam("cityId") String cityId) {
+        List<MainVO> townList = mainService.selectTownList(provinceId, cityId);
         return ResponseEntity.ok().body(townList);
     }
 }

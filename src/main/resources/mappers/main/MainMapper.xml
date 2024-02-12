@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<!--
+File Name      : MainMapper
+Program Name   : 메인 검색 서비스 Mapper
+Draft Author   : 이원정
+Draft Date     : 2024.01.22
+
+Revision History
+Ver.  Date          Revised By   Description
+————————————————————————————————————————————————————————————
+0.1   2024.01.22    이원정       최초개발
+————————————————————————————————————————————————————————————
+-->
+
+
 <mapper namespace="kr.co.Dal.main.mapper.MainMapper">
 
     <!-- 위치+주류 검색에 따른 검색 - 지도 각 모서리 좌표를 통해 데이터 검색 (Point type 사용) -->
@@ -12,7 +26,7 @@
                           INNER JOIN prod_tb ON st_liquorNo = prod_id
         WHERE MBRContains(ST_GeomFromText
                           ('LineString(${swLng} ${swLat}, ${neLng} ${neLat})'), st_xy)
-          AND prod_tit LIKE CONCAT('%', #{prod_tit}, '%')
+          AND prod_tit LIKE CONCAT('%', #{prodTit}, '%')
         ]]>
     </select>
 
@@ -23,14 +37,14 @@
     </select>
     <select id="selectCityList" parameterType="String" resultType="kr.co.Dal.main.model.MainVO">
         SELECT city_id, city_nm FROM location_tb
-        WHERE province_id = #{province_id}
+        WHERE province_id = #{provinceId}
         GROUP BY city_id
         ORDER BY city_nm
     </select>
     <select id="selectTownList" parameterType="map" resultType="kr.co.Dal.main.model.MainVO">
         SELECT town_id, town_nm FROM location_tb
-        WHERE province_id = #{province_id}
-          AND city_id = #{city_id}
+        WHERE province_id = #{provinceId}
+          AND city_id = #{cityId}
         GROUP BY town_id
         ORDER BY town_id
     </select>
