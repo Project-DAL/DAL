@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" th:href="@{/store/css/storeQnaWrite.css}">
   <link rel="stylesheet"  href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
 
-  <script type="text/javascript" th:src="@{/store/js/storeView.js}"></script>
+  <script type="text/javascript" th:src="@{/store/js/storeView.js}" defer></script>
   <script type="text/javascript" th:src="@{/store/js/storeQnaWrite.js}" defer></script>
 </th:block>
 /*
@@ -100,7 +100,7 @@ Ver.  Date          Revised By   Description
         </div>
       </div>
       <!-- 4.3 Prod Detail, Delivery Info -->
-      <div class="ct_midbar mt40">
+      <div id="ct_midbar" class="ct_midbar mt40">
         <!-- <ul class="ct_midbar mt40">
           <li><a href="#">상품상세정보</a></li>
           <li><a href="#">배송안내</a></li>
@@ -114,7 +114,7 @@ Ver.  Date          Revised By   Description
         <div class="ct_cate-title"><a href="#">상품후기</a></div>
         <div class="ct_cate-title"><a href="#">상품문의</a></div>
       </div>
-      <div>
+      <div id="ct_prod">
         <div class="prod-detail"><h1>상세정보 이미지</h1></div>
         <div class="prod-detail"><h1>배송안내</h1></div>
         <div class="prod-detail"><h1>교환 및 환불안내</h1></div>
@@ -124,35 +124,34 @@ Ver.  Date          Revised By   Description
           <a href="javascript:void(0);" id="popup_btn" class="btn qnaBtn mb15" style="width: 100px" onclick="modal('ct_qna');">문의 남기기</a>
           <table style="border: 1px solid black; width: 100%;" class="center">
             <colgroup>
+              <col style="width: 15%;" />
+              <col style="width: 65%;" />
               <col style="width: 20%;" />
-              <col style="width: "></col>
-              <col></col>
-              <col></col>
             </colgroup>
             <tr>
-              <th colspan="3">
+              <th colspan="3" style="float: left; padding-left: 10px;">
                 <input type="checkbox">
                 <span>답변완료만 보기</span>
               </th>
             </tr>
             <tr>
               <td>답변완료</td>
-              <td>비밀글입니다.</td>
+              <td style="text-align: left;">비밀글입니다.</td>
               <td>2024.01.17</td>
             </tr>
             <tr>
               <td>답변완료</td>
-              <td>비밀글입니다.</td>
+              <td style="text-align: left;">비밀글입니다.</td>
               <td>2024.01.17</td>
             </tr>
             <tr>
               <td>답변완료</td>
-              <td>비밀글입니다.</td>
+              <td style="text-align: left;">비밀글입니다.</td>
               <td>2024.01.17</td>
             </tr>
             <tr>
               <td>답변완료</td>
-              <td>비밀글입니다.</td>
+              <td style="text-align: left;">비밀글입니다.</td>
               <td>2024.01.17</td>
             </tr>
           </table>
@@ -194,10 +193,10 @@ Ver.  Date          Revised By   Description
           <p class="qna-font mb10">문의내용</p>
           <textarea
               placeholder="내용을 입력해주세요."
-              class="ct_qna-cn"
+              class="ct_qna-cn" id="qnaCn"
           ></textarea>
-          <input type="checkbox" />
-          <span>비공개</span>
+          <input type="checkbox" id="secret-box"/>
+          <span>비밀글</span>
         </div>
         <div class="ct_qna-btn-wrap mb15">
           <a href="javascript:void(0);" class="qna-btn" id="qnaSave">등록하기</a>

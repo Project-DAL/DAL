@@ -6,6 +6,6 @@
 
   <insert id="insertQna" parameterType="kr.co.Dal.store.model.QnaVO">
     INSERT INTO qna_tb (user_id, qna_type, qna_secret, qna_tit, qna_cn)
-    VALUES ('1', #{qna_type}, 0, '제목입니다.', '환불하고 싶은데 접수는 어떻게 하면 되나요?')
+    VALUES ('1', #{qna_type}, #{qna_secret}, #{qna_tit}, #{qna_cn})
   </insert>
 </mapper>

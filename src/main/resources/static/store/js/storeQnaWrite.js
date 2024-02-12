@@ -7,7 +7,7 @@ Draft Date     : 2024.01.23
 Revision History
 Ver.  Date          Revised By   Description
 ------------------------------------------------------------------------------------------------------------------------
-0.1   2024.01.14    김석진       최초개발
+0.1   2024.02.09    김석진       최초개발
 ----------------------------------------------------------------------------------------------------------------------->
 */
 "use strict";
@@ -84,10 +84,49 @@ function addEventListenerBtn(){
 }
 
 function fnInsertQna() {
+    let qnaTit = document.getElementById("qnaTit").value;
+    let qnaCn = document.getElementById("qnaCn").value;
+    let qnaType = document.getElementById("qna-cate");
+
+    // 유효성 체크
+    if(qnaType.selectedIndex == 0) {
+        alert('문의유형을 선택해주세요.');
+        return false;
+    }
+
+    // 유효성 체크
+    if(qnaTit == "") {
+        document.getElementById("qnaTit").focus();
+        alert('제목을 입력해주세요.');
+        return false;
+    }
+
+    // 유효성 체크
+    if(qnaCn == "") {
+        document.getElementById("qnaCn").focus();
+        alert('내용을 입력해주세요.');
+        return false;
+    }
+
     if(confirm("저장하시겠습니까?")) {
         let qnaType = document.getElementById("qna-cate").value;
+        let qnaSecret;
+        let secretYn = document.getElementById("secret-box");
+
+        // 비밀글 여부 체크
+        if (secretYn.checked) {
+            qnaSecret = 2;
+            console.log(secretYn + ", " + qnaSecret);
+        } else {
+            qnaSecret = 1;
+            console.log(secretYn + ", " + qnaSecret);
+        }
+
         let jsonData = {
-            qna_type: qnaType
+            qna_type : qnaType,
+            qna_secret : qnaSecret,
+            qna_tit: qnaTit,
+            qna_cn: qnaCn
         };
 
         ajaxAPI("/store/insertQna", jsonData, "POST").then(response => {
