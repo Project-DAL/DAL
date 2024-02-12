@@ -21,7 +21,7 @@ function fnAjaxWrite() {
            document.getElementById("bardTit").value = ""
            oEditors.getById["bardCn"].exec("SET_IR", [""]);
 
-           document.getElementById("bardTit").value = response.bard_tit;
+           document.getElementById("bardTit").value = response.bardTit;
            oEditors.getById["bardCn"].exec("PASTE_HTML", [response.bardCn]);
        });
     }
