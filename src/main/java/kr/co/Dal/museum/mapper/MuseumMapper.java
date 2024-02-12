@@ -6,6 +6,19 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+/*
+File Name      : MuseumMapper.java
+Program Name   : 주류 박물관 Mapper
+Draft Author   : 이원정
+Draft Date     : 2024.01.22
+
+Revision History
+Ver.  Date          Revised By   Description
+————————————————————————————————————————————————————————————
+0.1   2024.01.22    이원정       최초개발
+————————————————————————————————————————————————————————————
+*/
+
 @Mapper
 public interface MuseumMapper {
 

@@ -12,6 +12,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
+/*
+File Name      : MuseumController.java
+Program Name   : 주류 박물관 Controller
+Draft Author   : 이원정
+Draft Date     : 2024.01.22
+
+Revision History
+Ver.  Date          Revised By   Description
+————————————————————————————————————————————————————————————
+0.1   2024.01.22    이원정       최초개발
+————————————————————————————————————————————————————————————
+*/
+
 @Slf4j
 @Controller
 @RequiredArgsConstructor
@@ -32,7 +45,7 @@ public class MuseumController {
 
         log.warn("liqType: " + liqType);
 
-        museumVO.setLiq_type(liqType);
+        museumVO.setLiqType(liqType);
 
         List<MuseumVO> liqList = museumService.selectLiqList(museumVO);
         return ResponseEntity.ok().body(liqList);
@@ -43,7 +56,7 @@ public class MuseumController {
     @ResponseBody
     public ResponseEntity<List<MuseumVO>> selectLiq(MuseumVO museumVO,
                                                     @RequestParam(name = "liqId") int liqId){
-        museumVO.setLiq_id(liqId);
+        museumVO.setLiqId(liqId);
         List<MuseumVO> liq = museumService.selectLiq(museumVO);
         return ResponseEntity.ok().body(liq);
     }
