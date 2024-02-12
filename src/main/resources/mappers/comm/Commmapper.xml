@@ -7,7 +7,7 @@
 
 <mapper namespace="kr.co.Dal.comm.mapper.CommMapper">
     <!-- 게시판 조회 -->
-    <select id="commList" parameterType="kr.co.Dal.comm.model.CommVO" resultType="kr.co.Dal.comm.model.CommVO">
+    <select id="commList" parameterType="kr.co.Dal.util.SearchCondition" resultType="kr.co.Dal.comm.model.CommVO">
         SELECT  bard_id,
                 bard_type,
                 user_id,
@@ -31,6 +31,25 @@
                 </if>
             </if>
         ORDER BY bard_rdate DESC
+        LIMIT #{offset}, 10
+    </select>
+
+    <!-- 게시판 목록 개수 -->
+    <select id="commCnt" parameterType="kr.co.Dal.util.SearchCondition" resultType="int">
+        SELECT COUNT(*)
+        FROM bard_tb
+        WHERE bard_stts = 1
+        <if test="bardType != null and !bardType.equals('')">
+            AND (bard_type = #{bardType} OR (#{bardType} = 0 AND bard_type IN (1, 2, 3)))
+        </if>
+        <if test="searchValue != null and !searchValue.equals('')">
+            <if test="searchKeyword == 'bard_tit'">
+                AND bard_tit LIKE CONCAT('%', #{searchValue}, '%')
+            </if>
+            <if test="searchKeyword == 'bard_cn'">
+                AND bard_cn LIKE CONCAT('%', #{searchValue}, '%')
+            </if>
+        </if>
     </select>
 
     <!-- 게시판 등록, 수정 -->

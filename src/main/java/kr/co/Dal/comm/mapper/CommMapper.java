@@ -2,6 +2,7 @@ package kr.co.Dal.comm.mapper;
 
 import kr.co.Dal.comm.model.CommVO;
 import kr.co.Dal.comm.model.ReplyVO;
+import kr.co.Dal.util.SearchCondition;
 import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
@@ -11,8 +12,13 @@ public interface CommMapper {
     /**
      * 게시판 목록
      */
-    List<CommVO> commList(CommVO commVO);
+    List<CommVO> commList(SearchCondition sc);
 
+    /**
+     * 게시판 목록 개수
+     */
+    int commCnt(SearchCondition sc);
+    
     /**
      * 게시판 등록, 수정
      */

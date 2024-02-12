@@ -11,14 +11,19 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SearchCondition {
+    protected Map<String, String> map;
+    
+    //페이징 관련
     private Integer page = 1;
     private Integer pageSize = 10;
     private Integer no = 0;
-    private String searchField;
-    private String searchWord;
-    protected Map<String, String> map;
     private String title;
     private String uid;
+
+    //검색 관련
+    private String searchKeyword;
+    private String searchValue;
+    private int bardType;
 
 
     public String getQueryString(Integer page) {
@@ -32,7 +37,7 @@ public class SearchCondition {
             for (String key : map.keySet()) {
                 String value = map.get(key);
 
-                if (!"page".equals(key) && !"no".equals(key) && !"searchField".equals(key) && !"searchWord".equals(key)) {
+                if (!"page".equals(key) && !"no".equals(key) && !"searchKeyword".equals(key) && !"searchValue".equals(key)) {
                     if (value != null && !value.isBlank())
                         builder.queryParam(key, value);
                 }
@@ -53,9 +58,10 @@ public class SearchCondition {
             builder.queryParam("no", no);
         }
 
-        if (searchField != null && !searchField.isBlank()) {
-            builder.queryParam("searchField", getSearchField())
-                    .queryParam("searchWord", getSearchWord());
+        if (searchKeyword != null && !searchKeyword.isBlank()) {
+            builder.queryParam("searchField", getSearchKeyword())
+                   .queryParam("searchWord", getSearchValue())
+                   .queryParam("bardType", getSearchValue());
         }
 
         return builder;

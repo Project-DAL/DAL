@@ -7,7 +7,7 @@ import java.sql.Date;
 
 
 @Data
-public class CommVO extends PageVO {
+public class CommVO {
     private Integer bardId;        // 게시글ID
     private Integer userId;        // 회원ID
     private Integer bardType;      // 게시글 유형
@@ -17,6 +17,7 @@ public class CommVO extends PageVO {
     private Integer bardCnt;       // 조회수
     private Integer bardLike_cnt;  // 좋아요수
     private Integer bardStts;      // 게시글상태(1:유효/0:무효)
-    private Integer cateType;      // 카테고리 유형
+    private String searchKeyword;
+    private String searchValue;
 
 }

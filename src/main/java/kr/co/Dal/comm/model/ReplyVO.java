@@ -5,7 +5,7 @@ import org.springframework.data.relational.core.sql.In;
 import java.sql.Date;
 
 @Data
-public class ReplyVO {
+public class ReplyVO{
     private Integer replyId;
     private Integer bardId;
     private String replyUserId;
@@ -15,4 +15,5 @@ public class ReplyVO {
     private Integer replyGp;
     private Integer replyGpSeq;
     private Integer replyDepth;
+    private Integer totalDataCnt;
 }

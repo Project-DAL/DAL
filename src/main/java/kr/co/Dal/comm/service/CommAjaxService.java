@@ -20,13 +20,6 @@ public class CommAjaxService {
     private final CommMapper commMapper;
 
     /**
-     * 게시판 목록
-     */
-    public List<CommVO> commList(CommVO commVO) {
-        return commMapper.commList(commVO);
-    }
-
-    /**
      * 게시판 등록, 수정
      */
     public void commInsert(CommVO commVO) throws Exception {
