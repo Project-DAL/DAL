@@ -14,25 +14,29 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class MyInfoVO {
 
-    private int user_id;
-    private String user_lgin_id;
-    private String user_pw;
-    private String user_nick;
-    private int user_type;
-    private String user_role;
-    private int user_grade;
-    private int user_point;
-    private int user_stts;
-    private int user_lc_yn;
-    private int user_priv_yn;
-    private String user_rdate;
-    private String user_udate;
-    private String user_wdate;
-    private int user_gender;
-    private String user_hp;
-    private String user_email;
+    private int userId;
+    private String userLginId;
+    private String userPw;
+    private String userNick;
+    private int userType;
+    private String userRole;
+    private int userGrade;
+    private int userPoint;
+    private int userStts;
+    private int userLcYn;
+    private int userPrivYn;
+    private String userRdate;
+    private String userUdate;
+    private String userWdate;
+    private int userGender;
+    private String userHp;
+    private String userEmail;
     private String zip;
     private String addr1;
     private String addr2;
+    private String provider;
+    private String providerId;
+    private String userName;
+
 
 }

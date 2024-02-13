@@ -23,24 +23,24 @@
     <!-- 4.2 Content -->
     <section>
         <div class="my-info" th:each="rank : ${rankList}">
-                <div class="my-name" th:text="${rank.user_nick}">박허디</div>
-                <div class="my-rank" th:if="${rank.user_grade == 1}" th:text="브론즈"></div>
-                <div class="my-rank" th:if="${rank.user_grade == 2}" th:text="실버"></div>
-                <div class="my-rank" th:if="${rank.user_grade == 3}" th:text="골드"></div>
-                <div class="my-rank" th:if="${rank.user_grade == 4}" th:text="플래티넘"></div>
-                <div class="my-rank" th:if="${rank.user_grade == 5}" th:text="다이아"></div>
+                <div class="my-name" th:text="${rank.userNick}">박허디</div>
+                <div class="my-rank" th:if="${rank.userGrade == 1}" th:text="브론즈"></div>
+                <div class="my-rank" th:if="${rank.userGrade == 2}" th:text="실버"></div>
+                <div class="my-rank" th:if="${rank.userGrade == 3}" th:text="골드"></div>
+                <div class="my-rank" th:if="${rank.userGrade == 4}" th:text="플래티넘"></div>
+                <div class="my-rank" th:if="${rank.userGrade == 5}" th:text="다이아"></div>
             <div class="rank-info">
-                <div class="rank-info1" th:text="${rank.user_nick}"></div>
+                <div class="rank-info1" th:text="${rank.userNick}"></div>
                 <div class="rank-info2">님 다음 등급인</div>
-                <div class="rank-info3" th:if="${rank.user_grade == 1}" th:text="실버"></div>
-                <div class="rank-info3" th:if="${rank.user_grade == 2}" th:text="골드"></div>
-                <div class="rank-info3" th:if="${rank.user_grade == 3}" th:text="플래티넘"></div>
-                <div class="rank-info3" th:if="${rank.user_grade == 4}" th:text="다이아"></div>
+                <div class="rank-info3" th:if="${rank.userGrade == 1}" th:text="실버"></div>
+                <div class="rank-info3" th:if="${rank.userGrade == 2}" th:text="골드"></div>
+                <div class="rank-info3" th:if="${rank.userGrade == 3}" th:text="플래티넘"></div>
+                <div class="rank-info3" th:if="${rank.userGrade == 4}" th:text="다이아"></div>
                 <div class="rank-info4">까지</div>
-                <div class="rank-info5" th:if="${rank.user_grade == 1}" th:text="'50000' - ${rank.od_sell_price}"></div>
-                <div class="rank-info5" th:if="${rank.user_grade == 2}" th:text="'150000' - ${rank.od_sell_price}"></div>
-                <div class="rank-info5" th:if="${rank.user_grade == 3}" th:text="'250000' - ${rank.od_sell_price}"></div>
-                <div class="rank-info5" th:if="${rank.user_grade == 4}" th:text="'400000' - ${rank.od_sell_price}"></div>
+                <div class="rank-info5" th:if="${rank.userGrade == 1}" th:text="'50000' - ${rank.odSellPrice}"></div>
+                <div class="rank-info5" th:if="${rank.userGrade == 2}" th:text="'150000' - ${rank.odSellPrice}"></div>
+                <div class="rank-info5" th:if="${rank.userGrade == 3}" th:text="'250000' - ${rank.odSellPrice}"></div>
+                <div class="rank-info5" th:if="${rank.userGrade == 4}" th:text="'400000' - ${rank.odSellPrice}"></div>
                 <div class="rank-info6">원</div>
                 <div class="rank-info7">남았습니다.</div>
             </div>

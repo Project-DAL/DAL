@@ -67,8 +67,8 @@ public class MyBoardService {
             int bardId = Integer.parseInt(myBoardVO.getBardidArray()[i]);
             int bardType = Integer.parseInt(myBoardVO.getBardtypeArray()[i]);
 
-            myBoardVO.setBard_id(bardId);
-            myBoardVO.setBard_type(bardType);
+            myBoardVO.setBardId(bardId);
+            myBoardVO.setBardType(bardType);
 
             myBoardMapper.deleteBoard(myBoardVO);
         }

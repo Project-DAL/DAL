@@ -90,7 +90,7 @@ public class MyAjaxController {
     /* 쿠폰 받기 버튼 */
     @PostMapping("/my/MyCoupon/insert")
     public ResponseEntity<MyCouponVO> insertCoupon(@RequestBody MyCouponVO mycouponVO){
-        log.warn("Received cpId: {}" , mycouponVO.getCp_id());
+        log.warn("Received cpId: {}" , mycouponVO.getCpId());
 
         myCouponService.insertCoupon(mycouponVO);
         return ResponseEntity.ok(mycouponVO);
