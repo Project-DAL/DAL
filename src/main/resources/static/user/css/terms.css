@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 20px;
+    padding-left: 250px;
 }
 .terms-title {
     width: 100%;
@@ -40,9 +40,10 @@
     overflow: hidden;
     height: 200px;
     margin-top: 10px;
+    margin-left: 30px;
     padding: 12px;
     box-sizing: border-box;
-    width: 98%;
+    width: 70%;
     border: 1px solid #cdcdcd;
     resize: none;
 }
@@ -55,6 +56,7 @@
 .terms-box p {
     width: 100%;
     text-align: center;
+    margin-left: -180px;
 }
 .btn {
     display: inline-block;

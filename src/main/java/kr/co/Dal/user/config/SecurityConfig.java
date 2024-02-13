@@ -31,10 +31,10 @@ public class SecurityConfig {
         http.headers().frameOptions().sameOrigin();
         http.authorizeRequests()
                 .antMatchers( "/rest/**","/user/**","/common/**","/main/**","/test/**","/smarteditor/**").permitAll()
-                .antMatchers("/","/joinForm","/loginForm","/user/logout","/check/findPw","/check/findId","/check/findId/successId","/check/findPw/sendEmail","/auth/**", "/oauth2/**","/my/**","/join","/findIdForm","/findPwForm", "/comm/**").permitAll() // 회원가입 접근 가능
+                .antMatchers("/","/joinForm","/termsForm","/loginForm","/user/logout","/check/findPw","/check/findId","/check/findId/successId","/check/findPw/sendEmail","/auth/**", "/oauth2/**","/my/**","/join","/findIdForm","/findPwForm", "/comm/**").permitAll() // 회원가입 접근 가능
                 .anyRequest().authenticated()
                 .and()
-                .csrf().ignoringAntMatchers("/check/findPw/sendEmail","/login","/logout","/join","/check/findId/successId") // csrf disable 설정
+                .csrf().ignoringAntMatchers("/check/findPw/sendEmail","/login","/logout","/join","/check/findId/successId","/joinForm") // csrf disable 설정
                 .and()
                 .formLogin()
                 .loginPage("/loginForm")
