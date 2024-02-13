@@ -1,260 +1,384 @@
+<!--
+파일명        : admin-layout.html
+최초 작성자    : 김진형
+최초 작성날짜   : 2024.02.08
+사용 목적     : admin layout
+-->
+
 <!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
 <html lang="en">
-<!-- 1. Common Head -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Main</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DAL Admin Page</title>
+
+  <!-- Ajax Token -->
+  <meta name="_csrf" th:if="${_csrf}" th:content="${_csrf.token}" />
+  <meta name="_csrf_header" th:if="${_csrf}" th:content="${_csrf.headerName}" />
+  <script>
+    const tokenMeta = document.head.querySelector("meta[name='_csrf']");
+    const headerMeta = document.head.querySelector("meta[name='_csrf_header']");
+
+    const token = tokenMeta ? tokenMeta.content : '';
+    const header = headerMeta ? headerMeta.content : '';
+
+    console.log("header: " + header);
+    console.log("token: " + token);
+  </script>
+  <script type="text/javascript" th:src="@{/common/js/ajaxAPI.js}"></script>
+
+  <!-- Common CSS -->
+  <!-- media="all" : 모든 미디어 유형(컴퓨터 모니터, 태블릿, 스마트폰 등)에 스타일을 적용 (모든 기기와 미디어에 동일 적용 ) -->
+  <!-- media="screen" : 스크린 미디어 타입에 따라 웹 페이지가 해당 기기에 맞게 최적화된 스타일로 표현 -->
+  <link rel="stylesheet" type="text/css" th:href="@{/common/css/common.css}" media="all">
+
+  <!-- Jquery, Jquery-UI -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+  <!-- Common JS -->
+  <link rel="shortcut icon" type="image/x-icon" href="" />
+  <script type="text/javascript" th:src="@{/common/js/Common.js}"></script>
+
+  <!-- Font Icon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" type="text/css" th:href="@{/admin/adminlte3/plugins/fontawesome-free/css/all.min.css}">
+  <!-- Theme style -->
+  <link rel="stylesheet" type="text/css" th:href="@{/admin/adminlte3/dist/css/adminlte.min.css}">
+  <!-- sweet alarm -->
+  <link rel="stylesheet" type="text/css" th:href="@{/admin/adminlte3/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css}">
+
+  <!-- REQUIRED SCRIPTS -->
+
+  <!-- 페이지 스크립트 -->
+  <!-- jQuery -->
+  <script type="text/javascript" th:src="@{/admin/adminlte3/plugins/jquery/jquery.min.js}"></script>
+  <!-- Bootstrap 4 -->
+  <script type="text/javascript" th:src="@{/admin/adminlte3/plugins/bootstrap/js/bootstrap.bundle.min.js}" ></script>
+  <!-- AdminLTE App -->
+  <script type="text/javascript" th:src="@{/admin/adminlte3/dist/js/adminlte.min.js}" ></script>
+  <!-- sweet alarm -->
+  <script type="text/javascript" th:src="@{/admin/adminlte3/plugins/sweetalert2/sweetalert2.min.js}" ></script>
 </head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
 
-<!-- 2. Page JS, CSS -->
-<link rel="stylesheet" type="text/css" th:href="@{/common/css/reset.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/common/vendor/bootstrap.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/common/vendor/bootstrap-icons.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/common/css/helper.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/button.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/grid.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/paging.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/popup.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/search.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/table.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/layout/css/aside.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/layout/css/font.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/layout/css/header.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/layout/css/main.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/cate-sidebar.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/admin/common/css/admin-layout.css}">
-<link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a th:href="@{/}" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
 
-<script type="text/javascript" th:src="@{/admin/common/vendor/jquery-3.6.0.min.js}"></script>
-<script type="text/javascript" th:src="@{/admin/common/vendor/bootstrap-treeview.min.js}"></script>
-<script type="text/javascript" th:src="@{/admin/common/vendor/bootstrap.js}"></script>
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
 
-<body>
-    <header class="lay_hd" xmlns:sec="http://www.w3.org/1999/xhtml">
-      <div class="lay_hd_toggle">
-        <span class="bi bi-list" id="headerToggle" aria-expanded="false"></span>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="false" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a th:href="@{/admin/adminMain}" class="brand-link">
+      <img th:src="@{/admin/images/dalLogo.png}" alt="DAL Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">DAL Admin Page</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img th:src="@{/admin/images/user.png}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Pulunick</a>
+        </div>
       </div>
 
-      <div class="lay_hd_title">
-        <span onclick="location.href='/admin/adminMain'">Dal Home</span>
-      </div>
-      <div class="lay_hd_icons" style="float:right">
-        <div>
-          <span style="font-size:14px; margin-right:80px">DAL 관리자페이지</span>
-          <div style="cursor:pointer; margin-right:0" onclick="fnMenuToggle()">
-            <i class="bi bi-person"></i>&nbsp;
-            <span sec:authentication="name"></span>&nbsp;
-            <i id="tgBtnUp" class="bi bi-chevron-up" style="display:none"></i>
-            <i id="tgBtnDown" class="bi bi-chevron-down"></i>
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
           </div>
         </div>
       </div>
 
-      <div class="lay_tg" id="tgMenu">
-        <div class="lay_tg_body">
-          <div style="cursor:pointer" onclick="location.href='/logout'">로그아웃</div>
-          <div style="cursor:pointer" onclick="location.href='https://i.kakao.com/'">관리자센터</div>
-        </div>
-      </div>
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
 
-      <div class="aic-loading-bar">
-        <div class="spinner"></div>
-      </div>
-    </header>
-    <aside class="lay_sd" id="sidebar" aria-expanded="false">
-      <ul>
-        <li>
-          <a class="collapsed" data-bs-target="#asideScn" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-book side-icon"></i>
-            <span>스토어관리</span>
-            <i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="asideScn" class="collapse" data-bs-parent="#sidebar" aria-visible="false">
-            <li onclick="location.href='/admin/store/storeList'"><span>스토어목록</span></li>
-            <li onclick="location.href='/admin/store/storeOrder'"><span>스토어주문목록</span></li>
-          </ul>
-        </li>
-        <li>
-          <a class="collapsed" data-bs-target="#asideQna" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-question-circle side-icon"></i>
-            <span>주류관리</span>
-            <i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="asideQna" class="collapse" data-bs-parent="#sidebar" aria-collapsed="true">
-            <li onclick="location.href='/admin/liquor/liquorList'"><span>주류목록</span></li>
-          </ul>
-        </li>
-        <li>
-          <a class="collapsed" data-bs-target="#asideBotAns" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-body-text side-icon"></i>
-            <span>고객관리</span>
-            <i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="asideBotAns" class="collapse" data-bs-parent="#sidebar">
-            <li onclick="location.href='/admin/user/userList'"><span>고객목록</span></li>
-          </ul>
-        </li>
-        <li>
-          <a class="collapsed" data-bs-target="#asideCnt" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-body-text side-icon"></i>
-            <span>메인관리</span>
-            <i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="asideCnt" class="collapse" data-bs-parent="#sidebar">
-            <li onclick="location.href='/cnt/cntsList'"><span>메인</span></li>
-            <li onclick="location.href='/tmpl/tmplList'"><span>선호도관리</span></li>
-          </ul>
-        </li>
-        <li>
-          <a class="collapsed" data-bs-target="#asideSdb" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-clipboard-data side-icon"></i>
-            <span>통계관리</span>
-            <i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="asideSdb" class="collapse" data-bs-parent="#sidebar">
-            <li onclick="location.href='/admin/stas/stasMain'"><span>메인통계</span></li>
-            <li onclick="location.href='/admin/stas/stasLiquor'"><span>주류통계</span></li>
-          </ul>
-        </li>
-        <li>
-          <a class="collapsed" data-bs-target="#asideCbt" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-chat-dots side-icon"></i>
-            <span>정산관리</span>
-            <i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="asideCbt" class="collapse" data-bs-parent="#sidebar">
-            <li onclick="location.href='/admin/ws/wsMain'"><span>정산메인</span></li>
-            <li onclick="location.href='/admin/ws/wsRept'"><span>영수증관리</span></li>
-          </ul>
-        </li>
-        <li>
-          <a class="collapsed" data-bs-target="#asideStt" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-bar-chart-line side-icon"></i>
-            <span>고객센터관리</span>
-            <i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="asideStt" class="collapse" data-bs-parent="#sidebar">
-            <li onclick="location.href='/admin/cs/csMain'"><span>고객센터</span></li>
-          </ul>
-        </li>
-        <li>
-          <a class="collapsed" data-bs-target="#asidechn" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-megaphone side-icon"></i>
-            <span>커뮤니티관리</span>
-            <i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="asidechn" class="collapse" data-bs-parent="#sidebar">
-            <li onclick="location.href='/admin/comm/commList'"><span>커뮤니티목록</span></li>
-          </ul>
-        </li>
-        <li>
-          <a class="collapsed" data-bs-target="#asideSys" data-bs-toggle="collapse" href="#">
-            <i class="bi bi bi-motherboard side-icon"></i>
-            <span>dddd</span>
-            <i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="asideSys" class="collapse" data-bs-parent="#sidebar">
-            <li onclick="location.href=''"><span>ddd</span></li>
-            <li onclick="location.href=''"><span>ddd</span></li>
-          </ul>
-        </li>
-      </ul>
-    </aside>
-    <main class="lay_ma" id="main" aria-expanded="false">
-      <th:block layout:fragment="content"></th:block>
-    </main>
-    <script type="text/javascript">
-      function fnMenuToggle() {
-        let tgMenu = $("#tgMenu");
-        if(tgMenu.is(":visible")) {
-          tgMenu.hide();
-          $("#tgBtnUp").hide();
-          $("#tgBtnDown").show();
-        } else {
-          tgMenu.show();
-          $("#tgBtnUp").show();
-          $("#tgBtnDown").hide();
-        }
-      }
+          <!-- 1. store management -->
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-solid fa-store"></i>
+              <p>
+                스토어
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a th:href="@{/admin/store/storeList}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>스토어 관리</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>스토어 배송 관리</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
+          <!-- 2. liquor mangement -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-solid fa-wine-bottle"></i>
+              <p>
+                주류
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>주류 관리</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
+          <!-- 3. cust mangement -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-solid fa-users"></i>
+              <p>
+                고객
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>고객 관리</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
-      /*** Global Variable **********************************************************/
+          <!-- 4. Main mangement -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                메인
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>메인 관리</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>선호도 관리</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
+          <!-- 6. state mangement -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                통계
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>메인 통계</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>주류 통계</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
-      let headerToggle = document.getElementById('headerToggle');
-      let sidebar = document.getElementById('sidebar');
-      let main = document.getElementById('main');
-      let sideIcons = document.querySelectorAll('.side-icon');
-      let windowWidth;
+          <!-- 7. ws mangement -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-solid fa-money-bill"></i>
+              <p>
+                정산
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>정산 관리</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>영수증 관리</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
+          <!-- 8. cs mangement -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-regular fa-hospital"></i>
+              <p>
+                고객센터
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>고객센터 관리</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
-      /*** Event ********************************************************************/
+          <!-- 9. commu mangement -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-solid fa-pager"></i>
+              <p>
+                커뮤니티
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>커뮤니티 관리</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
 
-      try {
-        headerToggle.addEventListener('click',setToggle)
-      } catch(e) {
-        // header.html을 사용하지 않는 화면을 위한 예외처리
-      }
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <th:block layout:fragment="content"></th:block>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 
-      sideIcons.forEach( (e) => {
-        e.addEventListener('click', setToggle)
-      });
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+    <div class="p-3">
+      <h5>Title</h5>
+      <p>Sidebar content</p>
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
 
-      window.addEventListener('resize', computeWindow);
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-inline">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+  </footer>
+</div>
+<!-- ./wrapper -->
 
-
-      /*** Function *****************************************************************/
-
-
-      function setToggle() {
-        let isToggled = sidebar.getAttribute('aria-expanded');
-        if( isToggled === 'true') {
-          openToggle()
-        } else {
-          closeToggle()
-        }
-      }
-
-      function computeWindow() {
-        if(window.innerWidth < 900) {
-          if(window.innerWidth < windowWidth) {
-            closeToggle()
-            windowWidth = window.innerWidth
-          }
-        } else {
-          windowWidth = 900
-        }
-      }
-
-      function openToggle() {
-        headerToggle.setAttribute('aria-expanded', false);
-        sidebar.setAttribute('aria-expanded', false);
-        main.setAttribute('aria-expanded', false);
-      }
-
-      function closeToggle() {
-        headerToggle.setAttribute('aria-expanded', true);
-        sidebar.setAttribute('aria-expanded', true);
-        main.setAttribute('aria-expanded', true);
-      }
-    </script>
-    <style>
-      .lay_tg {
-        display:none; position: absolute; right:28px; top:50px
-      }
-      .lay_tg_body {
-        width:120px; height:100px; border:0; border-radius:4px; background-color: #fff; box-shadow: 0 0 8px 2px rgb(3 9 35 / 15%);
-      }
-      .lay_tg_body div {
-        color:#222222; font-size:14px; font-weight:bold; padding-left:20px; height:40px
-      }
-      .lay_tg_body div:hover {
-        color:gray;
-      }
-    </style>
 </body>
 </html>

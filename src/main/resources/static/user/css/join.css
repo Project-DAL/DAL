@@ -74,3 +74,12 @@
     padding: 8px;
     margin-right: 10px;
 }
+
+label {
+    display: inline-flex;
+    font-size: 15px;
+    line-height: 2rem;
+    padding: 0.2em 0.4em;
+    align-items: center;
+
+}

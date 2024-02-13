@@ -190,18 +190,16 @@ function fnSelectProvince(){
         for(let i = 0; i < response.length; i++) {
             // option add
             let optionElement = document.createElement('option');
-            optionElement.value = response[i].province_id;
-            optionElement.text = response[i].province_nm;
+            optionElement.value = response[i].provinceId;
+            optionElement.text = response[i].provinceNm;
             selectObjProvince.add(optionElement);
         }
     });
 }
 // 시/도 선택에 따른 시/군/구 목록
 function  fnSelectCity() {
-    console.log("selectObjProvince id : " + selectObjProvince.value);
-    console.log("selectObjProvince text : " + selectObjProvince.options[selectObjProvince.selectedIndex].text);
 
-    jsonData.province_id = selectObjProvince.value;
+    jsonData.provinceId = selectObjProvince.value;
 
     // 기존 시/군/구 비우기
     while (selectObjCity.options.length > 1) {
@@ -213,34 +211,33 @@ function  fnSelectCity() {
         selectObjTown.remove(1);
     }
 
-    ajaxAPI('/rest/cityList?province_id='+selectObjProvince.value, null, "GET").then(response => {
+    ajaxAPI('/rest/cityList?provinceId='+selectObjProvince.value, null, "GET").then(response => {
         for(let i=0; i < response.length; i++){
             // option add
             let optionElement = document.createElement('option');
-            optionElement.value = response[i].city_id;
-            optionElement.text = response[i].city_nm;
+            optionElement.value = response[i].cityId;
+            optionElement.text = response[i].cityNm;
             selectObjCity.add(optionElement);
         }
     });
 }
 // 시/군/구 선택에 따른 읍/면/동 목록
 function fnSelectTown () {
-    console.log("fnSelectTown");
 
     // 기존 읍/면/동 비우기
     while (selectObjTown.options.length > 1) {
         selectObjTown.remove(1);
     }
 
-    console.log("province_id: " +  selectObjProvince.value);
-    console.log("city_id: " +  selectObjCity.value);
+    console.log("provinceId: " + selectObjProvince.value);
+    console.log("cityId: " + selectObjCity.value);
 
-    ajaxAPI('/rest/townList?province_id=' + selectObjProvince.value + '&city_id=' + selectObjCity.value, null, "GET").then(response => {
+    ajaxAPI('/rest/townList?provinceId=' + selectObjProvince.value + '&cityId=' + selectObjCity.value, null, "GET").then(response => {
         for(let i=0; i < response.length; i++){
             // option add
             let optionElement = document.createElement('option');
-            optionElement.value = response[i].town_id;
-            optionElement.text = response[i].town_nm;
+            optionElement.value = response[i].townId;
+            optionElement.text = response[i].townNm;
             selectObjTown.add(optionElement);
         }
     })
@@ -256,8 +253,6 @@ function fnAjaxList(){
     let town_ = selectObjTown.options[selectObjTown.selectedIndex].text;
     let locationText = province_ + " " + city_ + " " + town_;
 
-    console.log("locationText:  " + locationText);
-    console.log("inputObjSearchText: " + inputObjSearchText.value);
     //console.log("swLatlng: " + swLatlng);
     //console.log("neLatlng: " + neLatlng);
 
@@ -317,7 +312,7 @@ function fnAjaxList(){
             var resultDiv = document.getElementById('result');
             resultDiv.innerHTML = message;
 
-            ajaxAPI('/rest/storeList?swLat='+ swLat + '&swLng='+ swLng + '&neLat='+ neLat + '&neLng='+ neLng + '&prod_tit='+ inputObjSearchText.value, null, "GET").then(response => {
+            ajaxAPI('/rest/storeList?swLat='+ swLat + '&swLng='+ swLng + '&neLat='+ neLat + '&neLng='+ neLng + '&prodTit='+ inputObjSearchText.value, null, "GET").then(response => {
                 console.log("storeList ajax success");
                 console.log("response: ", response);
 
@@ -332,9 +327,9 @@ function fnAjaxList(){
 
                     // positions에 검색 결과 가게 정보 추가하기
                     positions.push({
-                        stId: response[i].st_id,
-                        content: '<div>' + response[i].st_nm + '</div>',
-                        latlng: new kakao.maps.LatLng(response[i].st_lattitude, response[i].st_longtitude)
+                        stId: response[i].stId,
+                        content: '<div>' + response[i].stNm + '</div>',
+                        latlng: new kakao.maps.LatLng(response[i].stLattitude, response[i].stLongtitude)
                     })
 
                     // 가게 목록 HTML 추가하기
@@ -345,11 +340,11 @@ function fnAjaxList(){
                             <div class="store-info">
                                 <div class="store-info-img">img</div>
                                 <div class="store-info-txt">
-                                    <a name="${response[i].st_id}">
-                                        <div class="store-info-name">${response[i].st_nm}</div>
+                                    <a name="${response[i].stId}">
+                                        <div class="store-info-name">${response[i].stNm}</div>
                                     </a>
                                     <div class="store-info-hour">
-                                        <div class="store-info-hours">${response[i].st_hours}</div>
+                                        <div class="store-info-hours">${response[i].stHours}</div>
                                         <div class="store-info-open">OPEN</div>
                                         <div class="store-info-closed">CLOSED</div>
                                     </div>
@@ -382,10 +377,10 @@ function fnAjaxList(){
 
                     marker.stId = positions[i].stId;
 
-                    console.log("marker stId: " + marker.stId);
+                    //console.log("marker stId: " + marker.stId);
 
                     // 마커에 스토어 아이디 추가하기
-                    console.log("marker: ", marker);
+                    //console.log("marker: ", marker);
 
                     // 커스텀 오버레이에 표시할 내용입니다
                     // HTML 문자열 또는 Dom Element 입니다
@@ -450,8 +445,8 @@ function makeClickListener(clickedStId, response) {
         console.log('마커를 클릭했습니다2', response);
 
         for(let i=0; i<response.length; i++) {
-            if(clickedStId == response[i].st_id){
-                console.log("st_id: " + clickedStId + ", " + response[i].st_id);
+            if(clickedStId == response[i].stId){
+                console.log("st_id: " + clickedStId + ", " + response[i].stId);
 
                 // 해당 st_id를 가진 a 태그를 찾아서 스크롤
                 let anchorElement = document.querySelector(`a[name="${clickedStId}"]`);

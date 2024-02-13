@@ -40,9 +40,9 @@ Ver.  Date          Revised By   Description
     display: flex;
     justify-content: space-between;
     background-color: #03012D;
-    height: 40px;
+    height: 60px;
     font-size: 20px;
-    line-height: 40px;
+    line-height: 60px;
 }
 .ct_qna-mid {
     padding: 20px 60px;
@@ -52,6 +52,9 @@ Ver.  Date          Revised By   Description
 }
 .modal_close_btn {
     color: #ffffff;
+}
+.modal_close_btn:hover {
+    cursor: pointer;
 }
 .ct_qna-prod-wrap {
     height: 100px;
@@ -73,18 +76,26 @@ Ver.  Date          Revised By   Description
     width: 100%;
     height: 30px;
     outline: none;
+    border: solid 1px gray;
 }
 .ct_qna-tit::placeholder {
     color: rgb(200, 200, 200);
+}
+.ct_qna-tit:focus {
+    border: solid 1px #0c53c4;
 }
 .ct_qna-cn {
     resize: none;
     outline: none;
     width: 100%;
     height: 180px;
+    border: solid 1px gray;
 }
 .ct_qna-cn::placeholder {
     color: rgb(200, 200, 200);
+}
+.ct_qna-cn:focus {
+    border: solid 1px #0c53c4;
 }
 .ct_qna-btn-wrap {
     display: flex;

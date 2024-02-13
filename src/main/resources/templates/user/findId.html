@@ -45,7 +45,7 @@ Ver.   Date          Revised By    Description
                             <tr>
                                 <th>이름</th>
                                 <td>
-                                    <input class="input" type="text" id="userNick" required>
+                                    <input class="input" type="text" id="userName" required>
                                 </td>
                             </tr>
 <!--                            <tr>-->
@@ -80,7 +80,7 @@ Ver.   Date          Revised By    Description
     // });
 
     $("#checkName").click(function () {
-        let userNick = $("#userNick").val();
+        let userName = $("#userName").val();
         // let userName = $("#userName").val();
         // let email = $("#email").val();
 
@@ -88,7 +88,7 @@ Ver.   Date          Revised By    Description
             type: "GET",
             url: "/check/findId",
             data: {
-                "userNick": userNick
+                "userName": userName
             },
             success: function (res) {
                 if (res['check']) {
@@ -96,14 +96,16 @@ Ver.   Date          Revised By    Description
                         type: "POST",
                         url: "/check/findId/successId",
                         data: {
-                            "userNick": userNick
+                            "userName": userName
                         },
                         success: function (response) {
                             // 서버에서 받은 이메일 정보를 동적으로 업데이트
-                            $('#findIdContent').html('<div class="findId-content-title">아이디찾기</div>' +
-                                '<div class="findId-content mt25">' +
-                                '    <p class="mt15">이메일: ' + response.userLginId + '</p>' +
-                                '</div>');
+                            $('#findIdContent').html( '<div class="findId-content mt25">'+'<table>'+'<tr>' +
+                                '<th style="width: 25%; text-align: center">회원님의 아이디</th>' +
+                                '<td style="color: blue; text-align: center">' +
+                                response.userLginId +
+                                '</td>' +
+                                '</tr>'+'</table>'+'</div>');
                         },
                         error: function (error) {
                             console.error("Error sending email:", error);

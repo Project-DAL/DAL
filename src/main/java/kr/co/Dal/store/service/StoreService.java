@@ -15,8 +15,8 @@ public class StoreService {
 
     private final StoreMapper storeMapper;
 
-    public List<StoreVO> selectStoreList(StoreVO storeVO) {
-        return storeMapper.selectStoreList(storeVO);
+    public List<StoreVO> selectMainList(StoreVO storeVO) {
+        return storeMapper.selectMainList(storeVO);
     }
 
     public void insertStoreQna(QnaVO qnaVO) {

@@ -13,10 +13,14 @@ Ver.  Date          Revised By   Description
 ----------------------------------------------------------------------------------------------------------------------->
 */
 
+import kr.co.Dal.admin.model.AdminStoreVO;
+import kr.co.Dal.admin.service.AdminAjaxService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -25,6 +29,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/admin")
 @RequiredArgsConstructor
 public class AdminController {
+
+    private final AdminAjaxService adminAjaxService;
+
     /**
      * 관리자 메인 페이지
      */
@@ -80,6 +87,29 @@ public class AdminController {
     @GetMapping("/stas/stasMain")
     public String stasMain() {
         return "admin/stas/stasMain";
+    }
+
+    @GetMapping("/starter")
+    public String starter() {
+        return "starter";
+    }
+
+    /**
+     * 상품 수정 페이지로 이동
+     * @param prodId 상품 ID
+     * @param model 모델 객체
+     * @return 상품 수정 페이지 경로
+     */
+    @GetMapping("/storeModify/{prodId}")
+    public String modifyProduct(@PathVariable("prodId") int prodId, Model model) {
+        try {
+            AdminStoreVO product = adminAjaxService.findProductById(prodId);
+            model.addAttribute("product", product);
+            return "/admin/store/storeModify"; // 상품 수정 페이지 경로
+        } catch (Exception e) {
+            log.error("Error loading product for modification: {}", prodId, e);
+            return "redirect:/errorPage"; // 오류 발생 시 리다이렉트할 경로
+        }
     }
 
 }

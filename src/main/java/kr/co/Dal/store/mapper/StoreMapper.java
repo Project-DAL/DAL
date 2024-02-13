@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface StoreMapper {
 
-    List<StoreVO> selectStoreList(StoreVO storeVO);
+    List<StoreVO> selectMainList(StoreVO storeVO);
 
     void insertStoreQna(QnaVO qnaVO);
 

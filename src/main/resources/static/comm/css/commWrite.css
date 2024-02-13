@@ -1,86 +1,98 @@
-/* ct_main */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+main {
+    justify-content: center;
+    margin: 100px 0px 20px 0px;
+}
+
 .ct_main {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    width: 95%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/*  aside */
-aside {
-    width: 200px;
-    border: 1px solid;
-}
-
-.ct_left-menu {
-    padding-top: 30px;
-}
-
-.menu-tit {
-    font-size: 25px;
-    font-weight: 700;
-    text-align: center;
-    width: 80%;
-    margin: 0 auto;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #555;
-    font-weight: bold;
-    display: block;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-ul li a:hover {
-    background-color: #5d78e2;
-    color: #fff;
-}
-
-/* content */
 section {
-    width: calc(100vw - 400px);
-    border: 1px solid;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
 }
 
-.ct_subtitle {
-    min-height: 30px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 700;
-    width: 80%;
-    margin: 25px auto;
-
+.ct_subtitle h3 {
+    color: #333;
+    margin: 0 0 20px 10px;
 }
 
 table {
-    width: 80%;
-    margin: auto;
+    width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    font-family: 'Arial', sans-serif;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #bdc3c7;
 }
 
 th {
-    background-color: #5d78e2;
+    width: 20%;
+    background-color: #f8f8f8;
+}
+
+.ct_content {
+    width: 100%;
+}
+
+.comm-comment {
+    border: 3px solid #f8f8f8;
+    padding:  0 20px 20px 20px;
+    margin-bottom: 40px;
+}
+
+.comment {
+    border: 3px solid #f8f8f8;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form#comment-form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+textarea {
+    width: 100%;
+    min-height:350px;
+    padding: 8px;
+    margin-bottom: 10px;
+    resize: vertical;
+}
+
+.save {
+    background-color: #007bff;
     color: #fff;
-    padding: 15px;
-    text-align: left;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
 }
 
-td {
-    padding: 12px;
+.save:hover {
+    background-color: #0056b3;
 }
 
-tr {
-    border-bottom: 1px solid #bdc3c7;
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
 }
-
-

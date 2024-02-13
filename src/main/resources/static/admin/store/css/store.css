@@ -1,0 +1,30 @@
+/***********************************************************************************************************************
+©Copyright 2023. DAL. All rights reserved.
+
+File Name       : store.css
+Description     : 관리자 스토어 css
+Draft Author    : 김진형
+Draft Date      : 2023.02.10
+
+Revision History
+Ver.    Date         Revised By   Description
+------------------------------------------------------------------------------------------------------------------------
+0.1     2023.02.10   김진형        최초개발
+
+------------------------------------------------------------------------------------------------------------------------
+
+***********************************************************************************************************************/
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+}
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap;
+    justify-content: flex-end;
+}
+
+.modi-layout {
+    display: flex;
+}

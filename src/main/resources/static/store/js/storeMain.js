@@ -23,5 +23,6 @@ $(document).ready(function () {
         maxSlides: 4,
         slideWidth: 1376,
         slideMargin: 50,
+        moveSlides: 1
     });
 });

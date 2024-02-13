@@ -35,6 +35,10 @@ Ver.  Date          Revised By   Description
     border-radius: 15px;
     /* width: 300px; */
 }
+.star-area {
+    margin-right: 10px;
+    display: flex;
+}
 .ct_prod-info {
     display: flex;
     flex-direction: column;

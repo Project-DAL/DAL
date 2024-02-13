@@ -37,7 +37,7 @@ function addEventListenerType(){
                 divObjLiqList.innerHTML = "";
                 for(let i=0; i<response.length; i++) {
                     divObjLiqList.insertAdjacentHTML('beforeend', `
-                        <div class="liquor" data-liq-id="${response[i].liq_id}">${response[i].liq_nm}</div>
+                        <div class="liquor" data-liq-id="${response[i].liqId}">${response[i].liqNm}</div>
                     `);
                 }
 
@@ -52,18 +52,18 @@ function addEventListenerType(){
 function fnAjaxLiquor(){
 
     let divObjLiquor = document.querySelectorAll('.liquor');
-    console.log("liquor size: " + divObjLiquor.length);
+    //console.log("liquor size: " + divObjLiquor.length);
     for (let liq of divObjLiquor) {
         liq.addEventListener("click", function(){
             // HTML: 케밥 표기법(kebab-case) - data-liq-id
             // JS: 카멜 표기법 - liqId
-            console.log("liquor id: " + liq.dataset.liqId);
+            //console.log("liquor id: " + liq.dataset.liqId);
             ajaxAPI('/museum/liq?liqId=' + liq.dataset.liqId, null, "GET").then(response => {
-                console.log("response: " , response);
+                //console.log("response: " , response);
                 divObjLiqNm.innerHTML = "";
                 divObjLiqMemo.innerHTML  = "";
-                divObjLiqNm.innerHTML = response[0].liq_nm;
-                divObjLiqMemo.innerHTML = response[0].liq_memo;
+                divObjLiqNm.innerHTML = response[0].liqNm;
+                divObjLiqMemo.innerHTML = response[0].liqMemo;
             });
         });
     }
