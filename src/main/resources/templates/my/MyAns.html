@@ -47,10 +47,14 @@
                         </thead>
                         <tbody th:each="ans : ${ansList}">
                         <tr>
-                            <td><input type="checkbox" th:data-ansid="${ans.ans_id}" class="checkboxes2"></td>
-                            <td th:text="${ans.ans_type}"></td>
-                            <td th:text="${ans.ans_cn}"></td>
-                            <td th:text="${ans.ans_rdate}"></td>
+                            <td><input type="checkbox" th:data-ansid="${ans.replyId}" class="checkboxes2"></td>
+                            <td th:if="${ans.replyStts == 1}" th:text="공지"></td>
+                            <td th:if="${ans.replyStts == 2}" th:text="리뷰"></td>
+                            <td th:if="${ans.replyStts == 3}" th:text="일상"></td>
+                            <td>
+                                <a th:href="@{/comm/commView(bardId=${ans.bardId})}" th:text="${ans.replyCn}"></a>
+                            </td>
+                            <td th:text="${ans.replyRdate}"></td>
                         </tr>
                         </tbody>
                     </table>

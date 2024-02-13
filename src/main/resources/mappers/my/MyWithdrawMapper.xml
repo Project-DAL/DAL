@@ -50,7 +50,7 @@
             user_stts = 0,
             user_wdate = NOW()
         WHERE
-            user_id = #{user_id}
+            user_id = #{userId}
     </update>
 
 

@@ -14,13 +14,16 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class MyAnsVO {
 
-    private int ans_id; // 답글번호
-    private int user_id; // 회원아이디
-    private String ans_cn; // 내용
-    private String ans_rdate; // 등록일
-    private String ans_udate; // 수정일
-    private int ans_stts; // 삭제 여부
-    private int ans_type; // 답글 종류
+    private int replyId;
+    private int bardId;
+    private String replyUserId;
+    private String replyCn;
+    private String replyRdate;
+    private int replyStts;
+    private int replyGp;
+    private int replyGpSeq;
+    private int replyDepth;
+
 
     public String[] ansidArray;
 

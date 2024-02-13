@@ -24,19 +24,19 @@
 
             <div th:if="${getCouponList != null and not #lists.isEmpty(getCouponList)}" class="ct-top">
                 <div class="ct-middle-box" th:each="getcoupon : ${getCouponList}">
-                    <div class="ct-middle-tit" th:text="${getcoupon.cp_name}"></div>
+                    <div class="ct-middle-tit" th:text="${getcoupon.cpName}"></div>
                     <div class="ct-middle-flex">
-                        <th:block th:if="${getcoupon.cp_disct_type == '1'}">
-                            <div class="ct-middle-per" th:text="${getcoupon.cp_disct}"></div>
+                        <th:block th:if="${getcoupon.cpDisctType == '1'}">
+                            <div class="ct-middle-per" th:text="${getcoupon.cpDisct}"></div>
                             <span>%</span>
                         </th:block>
-                        <th:block th:if="${getcoupon.cp_disct_type == '2'}">
-                            <div class="ct-middle-per" th:text="${getcoupon.cp_disct}"></div>
+                        <th:block th:if="${getcoupon.cpDisctType == '2'}">
+                            <div class="ct-middle-per" th:text="${getcoupon.cpDisct}"></div>
                             <span>원</span>
                         </th:block>
                     </div>
                     <div class="till-flex">
-                        <div class="ct-middle-till" th:text="${getcoupon.cp_wdate}"></div>
+                        <div class="ct-middle-till" th:text="${getcoupon.cpWdate}"></div>
                         <span>까지</span>
                     </div>
                     <div class="ct-middle-own" id="btnOwn">보유중</div>
@@ -50,22 +50,22 @@
 
             <div class="ct-middle">
                 <div class="ct-middle-box" th:each="coupon : ${couponList}">
-                    <div class="ct-middle-tit" th:text="${coupon.cp_name}"></div>
+                    <div class="ct-middle-tit" th:text="${coupon.cpName}"></div>
                     <div class="ct-middle-flex">
-                        <th:block th:if="${coupon.cp_disct_type == '1'}">
-                            <div class="ct-middle-per" th:text="${coupon.cp_disct}"></div>
+                        <th:block th:if="${coupon.cpDisctType == '1'}">
+                            <div class="ct-middle-per" th:text="${coupon.cpDisct}"></div>
                             <span>%</span>
                         </th:block>
-                        <th:block th:if="${coupon.cp_disct_type == '2'}">
-                            <div class="ct-middle-per" th:text="${coupon.cp_disct}"></div>
+                        <th:block th:if="${coupon.cpDisctType == '2'}">
+                            <div class="ct-middle-per" th:text="${coupon.cpDisct}"></div>
                             <span>원</span>
                         </th:block>
                     </div>
                     <div class="till-flex">
-                        <div class="ct-middle-till" th:text="${coupon.cp_wdate}"></div>
+                        <div class="ct-middle-till" th:text="${coupon.cpWdate}"></div>
                         <span>까지</span>
                     </div>
-                    <div class="ct-middle-get" id="btnGet" th:data-cpid="${coupon.cp_id}">받기</div>
+                    <div class="ct-middle-get" id="btnGet" th:data-cpid="${coupon.cpId}">받기</div>
                 </div>
             </div>
         </div>

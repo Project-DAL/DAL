@@ -13,17 +13,17 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class MyPointVO {
 
-    private String point_id;             // 적립금ID
-    private int user_id;                 // 회원ID
-    private String point_price;          // 적립 금액
-    private String point_type;           // 적립 유형 (1:등급 / 2:사용)
-    private int point_stat;              // 적립 상태 (0:무효 / 1:적립 / 2:사용)
-    private String point_edate;          // 적립금 사용일
-    private String point_rdate;         //적립일
+    private String pointId;             // 적립금ID
+    private int userId;                 // 회원ID
+    private String pointPrice;          // 적립 금액
+    private String pointType;           // 적립 유형 (1:등급 / 2:사용)
+    private int pointStat;              // 적립 상태 (0:무효 / 1:적립 / 2:사용)
+    private String pointEdate;          // 적립금 사용일
+    private String pointRdate;         //적립일
 
 
 
-    private String point_till;           //유효기간 +60일
-    private String od_use_point;
-    private String prod_tit;
+    private String pointTill;           //유효기간 +60일
+    private String odUsePoint;
+    private String prodTit;
 }

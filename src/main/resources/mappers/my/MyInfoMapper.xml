@@ -10,36 +10,47 @@
 <mapper namespace="kr.co.Dal.my.mapper.MyInfoMapper">
     <select id="selectMyInfoList" resultType="kr.co.Dal.my.model.MyInfoVO">
         SELECT
-            user_lgin_id,
-            user_pw,
-            user_nick,
-            user_hp,
-            user_email,
-            zip,
+            user_id,
             addr1,
-            addr2
+            addr2,
+            provider,
+            providerId,
+            user_gender,
+            user_grade,
+            user_hp,
+            user_lc_yn,
+            user_lgin_id,
+            user_nick,
+            user_point,
+            user_priv_yn,
+            user_pw,
+            user_rdate,
+            user_role,
+            user_stts,
+            user_type,
+            user_udate,
+            user_wdate,
+            user_name,
+            zip
         FROM
-            user_tb
+            User
         WHERE
-            user_id = 1
+            user_id = 32
     </select>
 
 
     <update id="updateMyInfoList" parameterType="kr.co.Dal.my.model.MyInfoVO">
         UPDATE
-             user_tb
+            User
         SET
-            user_lgin_id = #{user_lgin_id},
-            user_pw = #{user_pw},
-            user_nick = #{user_nick},
-            user_hp = #{user_hp},
-            user_email = #{user_email},
+            user_nick = #{userNick},
+            user_hp = #{userHp},
             zip = #{zip},
             addr1 = #{addr1},
             addr2 = #{addr2},
             user_udate = NOW()
         WHERE
-            user_id = 1
+            user_id = 32
     </update>
 
 

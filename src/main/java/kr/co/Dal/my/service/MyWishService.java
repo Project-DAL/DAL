@@ -34,7 +34,7 @@ public class MyWishService {
 
         for (int i = 0; i < myWishVO.getProdidArray().length; i++){
             int prodId = Integer.parseInt(myWishVO.getProdidArray()[i]);
-            myWishVO.setProd_id(prodId);
+            myWishVO.setProdId(prodId);
             myWishMapper.deleteWish(myWishVO);
         }
     }
