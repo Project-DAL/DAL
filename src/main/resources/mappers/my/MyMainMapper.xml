@@ -43,12 +43,27 @@
 
     <!-- 위시리스트 목록 개수-->
     <select id="wishGross" resultType="int">
-        SELECT
-            COUNT(*)
+        SELECT COUNT(*)
         FROM
-            like_tb
+        (
+        SELECT
+            lt.prod_id
+        FROM
+            like_tb lt
+        JOIN
+            prod_tb pt
+        ON
+            lt.prod_id = pt.prod_id
+        JOIN
+            prod_img_tb pit
+        ON
+            lt.prod_id = pit.prod_id
         WHERE
-            user_id = 1
+            lt.user_id = 1
+        GROUP BY
+            pit.prod_id
+        )
+        AS subquery;
     </select>
 
 

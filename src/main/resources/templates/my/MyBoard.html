@@ -51,14 +51,16 @@
                         </thead>
                         <tbody th:each="board : ${boardList}">
                         <tr>
-                            <td><input type="checkbox" th:data-bardid="${board.bard_id}" th:data-bardtype="${board.bard_type}" class="checkboxes"></td>
-                            <td th:text="${board.bard_id}"></td>
-                            <td th:text="${board.bard_type}"></td>
+                            <td><input type="checkbox" th:data-bardid="${board.bardId}" th:data-bardtype="${board.bardType}" class="checkboxes"></td>
+                            <td th:text="${board.bardId}"></td>
+                            <td th:if="${board.bardType == 1}" th:text="공지"></td>
+                            <td th:if="${board.bardType == 2}" th:text="리뷰"></td>
+                            <td th:if="${board.bardType == 3}" th:text="일상"></td>
                             <td>
-                                <a href="#" th:text="${board.bard_tit}" th:data="${board.bard_id}"></a>
+                                <a th:href="@{/comm/commView(bardId=${board.bardId})}" th:text="${board.bardTit}" th:data="${board.bardId}"></a>
                             </td>
-                            <td th:text="${board.bard_rdate}"></td>
-                            <td th:text="${board.bard_cnt}"></td>
+                            <td th:text="${board.bardRdate}"></td>
+                            <td th:text="${board.bardCnt}"></td>
                         </tr>
                         </tbody>
                     </table>

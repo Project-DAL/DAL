@@ -58,7 +58,7 @@ public class MyAnsService {
         for (int i = 0; i < myAnsVO.getAnsidArray().length; i++) {
 
             int ansId = Integer.parseInt(myAnsVO.getAnsidArray()[i]);
-            myAnsVO.setAns_id(ansId);
+            myAnsVO.setReplyId(ansId);
             myAnsMapper.deleteAns(myAnsVO);
         }
 

@@ -58,7 +58,7 @@
         INSERT INTO cp_user_tb (cp_id, use_stat, user_id)
         VALUES
             (
-             #{cp_id},
+             #{cpId},
              1,
              '1'
             )

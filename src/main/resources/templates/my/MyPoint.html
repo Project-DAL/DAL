@@ -37,29 +37,29 @@
       <div class="content-middle">적립금 내역</div>
         <div class="middle-wrap" th:each="point : ${selectPointList}">
             <div class="content-middle-box">
-              <div class="content-middle-box-date" th:if="${point.point_stat != 2}" th:text="${point.point_rdate}"></div>
-                <div class="content-middle-box-date" th:if="${point.point_stat == 2}" th:text="${point.point_edate}"></div>
+              <div class="content-middle-box-date" th:if="${point.pointStat != 2}" th:text="${point.pointRdate}"></div>
+                <div class="content-middle-box-date" th:if="${point.pointStat == 2}" th:text="${point.pointEdate}"></div>
                 <div class="content-middle-box-info">
                 <div class="box-info-wrap">
-                    <div class="box-gone" th:if="${point.point_stat == 0}">유효기간 만료</div>
-                    <div class="box-point" th:if="${point.point_stat == 1}">적립</div>
-                    <div class="box-use" th:if="${point.point_stat == 2}">사용</div>
-                    <div class="box-stts" th:if="${point.point_stat != 0 and point.point_stat != 2}">구매</div>
+                    <div class="box-gone" th:if="${point.pointStat == 0}">유효기간 만료</div>
+                    <div class="box-point" th:if="${point.pointStat == 1}">적립</div>
+                    <div class="box-use" th:if="${point.pointStat == 2}">사용</div>
+                    <div class="box-stts" th:if="${point.pointStat != 0 and point.pointStat != 2}">구매</div>
                 </div>
-                <div class="box-info-name" th:text="${point.prod_tit}">상품명</div>
+                <div class="box-info-name" th:text="${point.prodTit}">상품명</div>
                   <div class="f-flex">
-                    <div class="box-info-till" th:if="${point.point_stat != 2}"  th:text="${point.point_till}"></div>
-                    <span th:if="${point.point_stat != 2}">까지</span>
+                    <div class="box-info-till" th:if="${point.pointStat != 2}"  th:text="${point.pointTill}"></div>
+                    <span th:if="${point.pointStat != 2}">까지</span>
                   </div>
                </div>
-              <span class="color" th:if="${point.point_stat == 1}">+</span>
-              <span class="color-use" th:if="${point.point_stat == 2}">-</span>
-              <div class="content-middle-box-point" th:if="${point.point_stat == 1}" th:text="${point.point_price}"></div>
-              <div class="box-gone" th:if="${point.point_stat == 0}" th:text="${point.point_price}"></div>
-              <div class="color-use" th:if="${point.point_stat == 2}" th:text="${point.od_use_point}"></div>
-              <span class="color" th:if="${point.point_stat == 1}">P</span>
-              <span class="color-use" th:if="${point.point_stat == 2}">P</span>
-              <span class="box-gone" th:if="${point.point_stat == 0}">P</span>
+              <span class="color" th:if="${point.pointStat == 1}">+</span>
+              <span class="color-use" th:if="${point.pointStat == 2}">-</span>
+              <div class="content-middle-box-point" th:if="${point.pointStat == 1}" th:text="${point.pointPrice}"></div>
+              <div class="box-gone" th:if="${point.pointStat == 0}" th:text="${point.pointPrice}"></div>
+              <div class="color-use" th:if="${point.pointStat == 2}" th:text="${point.odUsePoint}"></div>
+              <span class="color" th:if="${point.pointStat == 1}">P</span>
+              <span class="color-use" th:if="${point.pointStat == 2}">P</span>
+              <span class="box-gone" th:if="${point.pointStat == 0}">P</span>
             </div>
 
 

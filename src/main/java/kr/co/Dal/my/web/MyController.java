@@ -135,11 +135,11 @@ public class MyController {
         List<MyInfoVO> infoList = myInfoService.selectMyInfoList(myInfoVO);
 
         log.warn("infoList: " + infoList);
-        log.warn("infoList hp: " + infoList.get(0).getUser_hp());
+        log.warn("infoList hp: " + infoList.get(0).getUserHp());
 
-        String hp1 = infoList.get(0).getUser_hp().substring(0,3);
-        String hp2 = infoList.get(0).getUser_hp().substring(3,7);
-        String hp3 = infoList.get(0).getUser_hp().substring(7);
+        String hp1 = infoList.get(0).getUserHp().substring(0,3);
+        String hp2 = infoList.get(0).getUserHp().substring(4,8);
+        String hp3 = infoList.get(0).getUserHp().substring(9);
 
         log.warn("hp1: " + hp1);
         log.warn("hp2: " + hp2);
