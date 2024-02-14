@@ -198,7 +198,11 @@ public class MyController {
     }
 
 
-
+    /* My Ask */
+    @GetMapping("/my/MyAsk")
+    public String myask(){
+        return "my/MyAsk";
+    }
 
 
 }
