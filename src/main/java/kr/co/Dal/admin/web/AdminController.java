@@ -74,6 +74,14 @@ public class AdminController {
     }
 
     /**
+     * 관리자 주류 등록
+     */
+    @GetMapping("/liquor/liquorWrite")
+    public String liquorWrite() {
+        return "admin/liquor/liquorWrite";
+    }
+
+    /**
      * 관리자 고객 목록
      */
     @GetMapping("/user/userList")

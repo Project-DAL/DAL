@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+
+File Name      : AdminAjaxMapper.xml
+Program Name   : 관리자 비동기방식 xml
+Draft Author   : 김진형
+Draft Date     : 2024.02.15
+
+Revision History
+Ver.  Date          Revised By   Description
+==================================================================================================
+0.1   2024.02.15    김진형       최초개발
+==================================================================================================
+-->
+
+<mapper namespace="kr.co.Dal.admin.mapper.AdminAjaxLiquorMapper">
+    <select id="selectLiquorList" resultType="kr.co.Dal.admin.model.LiquorVO">
+        SELECT liq_id,
+               liq_nm,
+               liq_type,
+               liq_place,
+               liq_cp,
+               liq_alc,
+               liq_hash,
+               liq_stts,
+               liq_memo,
+               liq_cn
+        FROM liq_tb
+    </select>
+
+    <select id="selectLiquorCategoryList" resultType="kr.co.Dal.admin.model.LiquorVO">
+        SELECT liq_id,
+               liq_nm,
+               liq_type,
+               liq_place,
+               liq_cp,
+               liq_alc,
+               liq_hash,
+               liq_stts,
+               liq_memo,
+               liq_cn
+        FROM liq_tb
+        WHERE
+            liq_type = #{liqType}
+    </select>
+
+    <insert id="insertLiquor" parameterType="kr.co.Dal.admin.model.LiquorVO">
+        INSERT INTO liq_tb
+        (liq_nm,
+        liq_type,
+        liq_place,
+        liq_cp,
+        liq_alc,
+        liq_hash,
+        liq_memo,
+        liq_cn)
+        VALUES
+        (#{liqNm}, #{liqType}, #{liqPlace}, #{liqCp}, #{liqAlc}, #{liqHash},#{liqMemo}, #{liqCn})
+
+        <selectKey keyProperty="liqId" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <insert id="insertLiquorImg" parameterType="kr.co.Dal.admin.model.LiqImgVO">
+        INSERT INTO liq_img_tb
+        (liq_id,
+         img_path,
+         original_name,
+         save_name)
+        VALUES
+            (#{liqId},
+             #{imgPath},
+             #{originalName},
+             #{saveName})
+    </insert>
+
+    <!-- 주류 이미지 정보 조회 -->
+    <select id="selectLiquorImagesByLiqId" parameterType="int" resultType="kr.co.Dal.admin.model.LiqImgVO">
+        SELECT * FROM liq_img_tb WHERE liq_id = #{liqId}
+    </select>
+
+    <!-- 주류 이미지 정보 삭제 -->
+    <delete id="deleteLiquorImagesByProdId" parameterType="int">
+        DELETE FROM liq_img_tb WHERE liq_id = #{liqId}
+    </delete>
+
+    <!-- 주류 정보 삭제 -->
+    <delete id="deleteLiquor" parameterType="int">
+        DELETE FROM liq_tb WHERE liq_id = #{liqId}
+    </delete>
+
+
+</mapper>
