@@ -33,7 +33,7 @@
             user_name,
             zip
         FROM
-            User
+            user_tb
         WHERE
             user_id = 32
     </select>
@@ -41,7 +41,7 @@
 
     <update id="updateMyInfoList" parameterType="kr.co.Dal.my.model.MyInfoVO">
         UPDATE
-            User
+            user_tb
         SET
             user_nick = #{userNick},
             user_hp = #{userHp},

@@ -67,10 +67,10 @@
             SUM(CASE WHEN pt.point_stat = 2 THEN pt.od_use_point ELSE 0 END) AS point_calu
         FROM
             point_tb pt
-                JOIN
+        JOIN
             od_tb ot
-            ON
-                pt.od_id = ot.od_id
+        ON
+            pt.od_id = ot.od_id
         WHERE
             pt.user_id = 1;
 
@@ -86,13 +86,13 @@
             SUM(CASE WHEN pt.point_stat = 2 THEN pt.od_use_point ELSE 0 END) AS point_calu
         FROM
             point_tb pt
-                JOIN
+        JOIN
             od_tb ot
-            ON
-                pt.od_id = ot.od_id
+        ON
+            pt.od_id = ot.od_id
         WHERE
-            pt.point_stat =1
-          AND
+            pt.point_stat = 1
+        AND
             (pt.point_rdate + INTERVAL 60 DAY) < (CURRENT_DATE + INTERVAL 30 DAY)
         ]]>
     </select>

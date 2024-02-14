@@ -13,6 +13,7 @@
         <th:block th:replace="~{fragments/_header::headerFragment}"></th:block>
         <!-- 3. 개별 Content -->
         <th:block layout:fragment="content"></th:block>
+        <th:block th:replace="~{fragments/_quick::quickFragment}"></th:block>
         <!-- 4. 공통 Footer-->
         <th:block th:replace="~{fragments/_footer::footerFragment}"></th:block>
       </div>

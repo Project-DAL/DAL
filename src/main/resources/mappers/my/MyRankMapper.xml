@@ -23,9 +23,9 @@
         ON
             ut.user_id = ot.user_id
         WHERE
-            ut.user_id = 1
+            ut.user_id = 32
         GROUP BY
-            ut.user_id =1
+            ut.user_id = 32
     </select>
 
 
