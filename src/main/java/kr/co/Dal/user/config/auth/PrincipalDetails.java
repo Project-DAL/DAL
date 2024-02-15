@@ -76,7 +76,7 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return user.getUserStts() != 0;
     }
 
 

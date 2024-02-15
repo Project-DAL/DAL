@@ -39,7 +39,11 @@ public class UserController {
 
 
     @GetMapping("/loginForm")
-    public String login(){
+    public String login(@RequestParam(value = "error", required = false) String error,
+                        @RequestParam(value = "exception", required = false) String exception,
+                        Model model){
+        model.addAttribute("error", error);
+        model.addAttribute("exception", exception);
         return "user/login";
     }
 
@@ -81,7 +85,8 @@ public class UserController {
                         @RequestParam(name = "addr_dtl") String addr_dtl){
         System.out.println(user);
         user.setUserRole("ROLE_USER");
-        user.setUserType(0);
+        user.setUserType(1);
+        user.setUserStts(1);
         String rawPassword = user.getUserPw();
         String encPassword = bCryptPasswordEncoder.encode(rawPassword);
         user.setUserPw(encPassword);

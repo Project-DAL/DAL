@@ -54,7 +54,11 @@ Ver.   Date          Revised By    Description
                     </label>
                     아이디 기억하기
                 </div>
-                <button type="submit" class="loginBtn">
+                <span th:if="${error}">
+                    <p id="valid" class="alert alert-danger" style="color:red" th:text="${exception}"></p>
+                </span>
+
+                <button type="submit" class="loginBtn" onclick="handleLogin()">
                     로그인
                 </button>
                 <div class="login-find">
