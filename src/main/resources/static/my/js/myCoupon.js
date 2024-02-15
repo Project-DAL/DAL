@@ -27,6 +27,8 @@ function fnBtnGet() {
 
     let cpId = this.getAttribute('data-cpid'); // cp_id 값
     console.log("cpId=" + cpId);
+
+
     let jsonData ={
         cpId : cpId
     }

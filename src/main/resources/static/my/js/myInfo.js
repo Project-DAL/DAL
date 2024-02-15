@@ -55,7 +55,7 @@ function fnUpdate(){
     let jsonData ={
         userNick: nick.value,
         userHp: userHp,
-        zip: post_code.value,
+        zip: regist_postcode.value,
         addr1: regist_addr.value,
         addr2: regist_addr2.value
     }

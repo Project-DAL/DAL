@@ -12,24 +12,21 @@
         SELECT
             ct.cp_id,
             ct.cp_name,
-            DATE_FORMAT(ct.cp_wdate, '%Y-%m-%d') AS cp_wdate,
             ct.cp_disct,
-            ct.cp_disct_type
+            ct.cp_disct_type,
+            ct.cp_wdate
         FROM
             cp_tb ct
-                JOIN
-            user_tb ut
-            ON
-                ct.cp_grade = ut.user_grade
-                LEFT JOIN
+        LEFT JOIN
             cp_user_tb cut
-            ON
-                ct.cp_id = cut.cp_id
+        ON
+            ct.cp_id = cut.cp_id
+        AND
+            cut.user_id = #{userId}
         WHERE
-            cut.cp_id IS NULL
-          AND
             ct.cp_grade = #{userGrade}
-
+        AND
+            cut.cp_user_id IS NULL
     </select>
 
 
@@ -42,13 +39,13 @@
             ct.cp_disct_type
         FROM
             cp_user_tb cut
-                JOIN
+        JOIN
             cp_tb ct
-            ON
-                cut.cp_id = ct.cp_id
+        ON
+            cut.cp_id = ct.cp_id
         WHERE
             cut.use_stat = 1
-          AND
+        AND
             cut.user_id = #{userId}
     </select>
 

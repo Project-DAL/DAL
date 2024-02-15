@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
 <!--
@@ -21,14 +21,14 @@
             pt.prod_like
         FROM
             like_tb lt
-                JOIN
+        JOIN
             prod_tb pt
-            ON
-                lt.prod_id = pt.prod_id
-                JOIN
+        ON
+            lt.prod_id = pt.prod_id
+        JOIN
             prod_img_tb pit
-            ON
-                lt.prod_id = pit.prod_id
+        ON
+            lt.prod_id = pit.prod_id
         WHERE
             lt.user_id = #{userId}
         GROUP BY
