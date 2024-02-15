@@ -15,9 +15,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Controller
 public class UserController {
@@ -52,11 +55,13 @@ public class UserController {
         return "user/terms";
     }
 
+    @GetMapping("/oauth2termsForm")
+    public String oauth2termsForm(){
+        return "user/sns/oauth2terms";
+    }
 
-//    @GetMapping("/joinForm")
-//    public String joinForm(){
-//        return "user/join";
-//    }
+
+
 
     @PostMapping("/joinForm")
     public String handleJoinFormPost(int agreeValueChk1, int agreeValueChk2, Model model) {
@@ -70,6 +75,23 @@ public class UserController {
         // 회원가입 페이지로 이동
         return "user/join";
     }
+
+    @PostMapping("/oauth2joinForm")
+    public String oauth2joinForm(int agreeValueChk1, int agreeValueChk2, Model model) {
+        // 여기에 회원가입 페이지로 넘어가기 전에 수행할 로직을 추가할 수 있습니다.
+        System.out.println("Agree Value from Client: " + agreeValueChk1 + agreeValueChk2);
+
+        // 모델에 값 추가
+        model.addAttribute("agreeValueChk1", agreeValueChk1);
+        model.addAttribute("agreeValueChk2", agreeValueChk2);
+
+        // 회원가입 페이지로 이동
+        return "user/sns/oauth2join";
+    }
+
+
+
+
 
 
     @PostMapping("/join")
@@ -87,6 +109,7 @@ public class UserController {
         user.setUserRole("ROLE_USER");
         user.setUserType(1);
         user.setUserStts(1);
+        user.setUserGrade(1);
         String rawPassword = user.getUserPw();
         String encPassword = bCryptPasswordEncoder.encode(rawPassword);
         user.setUserPw(encPassword);
@@ -101,6 +124,56 @@ public class UserController {
         userRepository.save(user);// 회원가입 잘됨. 비밀번호: 1234=> 시큐리티로 로그인을 할 수 없음. 이유는 패스워드가 암호화가 안되있어서
         return "redirect:/loginForm";
     }
+
+    @PostMapping("/oauth2join")
+    public String oauth2join(@RequestParam(name = "userName") String userName,
+                             @RequestParam(name = "userNick") String userNick,
+                            @RequestParam(name = "agreeValueChk1") int agreeValueChk1,
+                             @RequestParam(name = "agreeValueChk2") int agreeValueChk2,
+                            @RequestParam(name = "mobile1") String mobile1,
+                             @RequestParam(name = "mobile2") String mobile2,
+                             @RequestParam(name = "mobile3") String mobile3,
+                             @RequestParam(name = "gender") int gender,
+                             @RequestParam(name = "zip_code") String zip_code,
+                             @RequestParam(name = "addr") String addr,
+                             @RequestParam(name = "addr_dtl") String addr_dtl,
+                             HttpSession session) {
+        // 세션에서 OAuth2 정보 가져오기
+        String provider = (String) session.getAttribute("oauth2Provider");
+        String providerId = (String) session.getAttribute("oauth2ProviderId");
+
+        // 세션 값이 정상적으로 설정되었는지 확인
+        if (provider == null || providerId == null) {
+            // 세션 값이 없으면 처리 로직 추가
+            return "redirect:/oauth2joinForm"; // 또는 다른 경로로 리다이렉트
+        }
+
+        // 기존에 생성된 OAuth2 계정이 있는지 확인
+        Optional<User> existingUserOptional = userRepository.findByProviderAndProviderId(provider, providerId);
+
+        if (existingUserOptional.isPresent()) {
+            // 기존 계정이 있다면 업데이트
+            User existingUser = existingUserOptional.get();
+            existingUser.setUserName(userName);
+            existingUser.setUserNick(userNick);
+            existingUser.setUserPrivYn(agreeValueChk1);
+            existingUser.setUserLcYn(agreeValueChk2);
+            String userHp = mobile1 + "-" + mobile2 + "-" + mobile3;
+            existingUser.setUserHp(userHp);
+            existingUser.setUserGender(gender);
+            existingUser.setZip(zip_code);
+            existingUser.setAddr1(addr);
+            existingUser.setAddr2(addr_dtl);
+
+            // Save the existing user
+            userRepository.save(existingUser);
+        }
+
+        return "redirect:/";
+    }
+
+
+
 
     @GetMapping("/findIdForm")
     public  String findIdForm(){
