@@ -24,8 +24,8 @@
             bard_tb
         WHERE
             bard_stts = 1
-        AND
-            user_id = 1
+          AND
+            user_id = #{userId}
         ORDER BY
             bard_rdate DESC
             LIMIT #{offset}, 10
@@ -39,8 +39,8 @@
         FROM bard_tb
         WHERE
             bard_stts = 1
-        AND
-            user_id = 1
+          AND
+            user_id = #{userId}
     </select>
 
 
@@ -52,7 +52,7 @@
             bard_stts = 0
         WHERE
             bard_id = #{bardId}
-        AND
+          AND
             bard_type = #{bardType}
     </update>
 

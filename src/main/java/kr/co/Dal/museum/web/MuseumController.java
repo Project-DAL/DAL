@@ -4,12 +4,22 @@ import kr.co.Dal.museum.model.MuseumVO;
 import kr.co.Dal.museum.service.MuseumService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -31,6 +41,11 @@ Ver.  Date          Revised By   Description
 public class MuseumController {
 
     private final MuseumService museumService;
+
+
+    @Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
+
 
     @GetMapping("/museum/MuseumMain")
     public String selectLiquorList() {
@@ -56,8 +71,44 @@ public class MuseumController {
     @ResponseBody
     public ResponseEntity<List<MuseumVO>> selectLiq(MuseumVO museumVO,
                                                     @RequestParam(name = "liqId") int liqId){
+
+        log.warn("selectLiq Controller");
+        FileInputStream fis = null;
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
         museumVO.setLiqId(liqId);
         List<MuseumVO> liq = museumService.selectLiq(museumVO);
+
+        for (MuseumVO vo : liq) {
+            log.warn("--------------------------------");
+            log.warn("liqId: " + vo.getLiqId());
+            log.warn("liqNm: " + vo.getLiqNm());
+            log.warn("liqNm: " + vo.getImgId());
+            log.warn("uploadDate: " + vo.getUploadDate());
+            log.warn("uploadDate format: " + sdf.format(vo.getUploadDate()));
+            log.warn("saveName: " + vo.getSaveName());
+
+            String filePath = uploadPath + "/" + sdf.format(vo.getUploadDate()) + "/" + vo.getSaveName();
+            Path file = Paths.get(filePath);
+            log.warn("File path: " + file.toString());
+
+            try {
+                String contentType = Files.probeContentType(file);  // MIME content type 결정 (ex: png)
+
+                HttpHeaders headers = new HttpHeaders();
+                headers.add("Content-Type", contentType);
+
+                fis = new FileInputStream(filePath);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            //Path rootLocation = Paths.get(uploadPath + "/" + sdf.format(vo.getUploadDate()), vo.getSaveName());
+
+        }
+
         return ResponseEntity.ok().body(liq);
     }
 

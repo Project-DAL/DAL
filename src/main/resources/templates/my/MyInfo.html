@@ -24,7 +24,7 @@
 <th:block layout:fragment="content">
     <!-- 4.2 Content -->
     <div class="ct_join-wrap">
-      <div class="join-title">내 정보 수정</div>
+        <div class="join-title">내 정보 수정</div>
         <div class="join-content mt25">
             <section>
                 <table th:each="info : ${infoList}">
@@ -43,7 +43,7 @@
                     <tr>
                         <th>닉네임</th>
                         <td>
-                            <input class="input" type="text" name="nick" required th:value="${info.userNick}">
+                            <input class="input" type="text" name="nick" id="nick" required th:value="${info.userNick}">
                         </td>
                     </tr>
                     <tr>
@@ -54,9 +54,9 @@
                                 <option value="011" th:selected="${hp1 == '011'}">011</option>
                             </select>
                             &nbsp;&nbsp;&nbsp;-&nbsp;
-                            <input class="input" type="text" th:value="${hp2}" required>
+                            <input class="input" type="text" id="mobile2" th:value="${hp2}" required>
                             &nbsp;-&nbsp;
-                            <input class="input" type="text" th:value="${hp3}" required>
+                            <input class="input" type="text" id="mobile3" th:value="${hp3}" required>
                             <span class="join-msg">&nbsp;&nbsp;(미기입 시 SMS 수신이 불가합니다.)</span>
                         </td>
                     </tr>

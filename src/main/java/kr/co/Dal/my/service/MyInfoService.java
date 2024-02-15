@@ -31,7 +31,7 @@ public class MyInfoService {
 
     /* 회원 정보 수정 */
     public void updateMyInfoList(MyInfoVO myInfoVO){
-        myInfoMapper.selectMyInfoList(myInfoVO);
+        myInfoMapper.updateMyInfoList(myInfoVO);
     }
 
 

@@ -12,7 +12,7 @@ import java.util.Map;
 @AllArgsConstructor
 public class SearchCondition {
     protected Map<String, String> map;
-    
+
     //페이징 관련
     private Integer page = 1;
     private Integer pageSize = 10;
@@ -24,6 +24,9 @@ public class SearchCondition {
     private String searchKeyword;
     private String searchValue;
     private int bardType;
+
+    //추가
+    private int userId;
 
 
     public String getQueryString(Integer page) {
@@ -60,8 +63,8 @@ public class SearchCondition {
 
         if (searchKeyword != null && !searchKeyword.isBlank()) {
             builder.queryParam("searchField", getSearchKeyword())
-                   .queryParam("searchWord", getSearchValue())
-                   .queryParam("bardType", getSearchValue());
+                    .queryParam("searchWord", getSearchValue())
+                    .queryParam("bardType", getSearchValue());
         }
 
         return builder;

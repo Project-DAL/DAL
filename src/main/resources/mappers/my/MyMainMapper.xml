@@ -19,16 +19,19 @@
         WHERE
             use_stat = 1
           AND
-            user_id = 1
+            user_id = #{userId}
     </select>
 
 
     <!-- 사용가능한 적립금-->
     <select id="pointGross" resultType="int">
         SELECT
-                SUM(CASE WHEN pt.point_rdate IS NOT NULL THEN ot.od_sell_price * 0.01 ELSE 0 END) -
-                SUM(CASE WHEN pt.point_stat = 0 THEN ot.od_sell_price * 0.01 ELSE 0 END) -
-                SUM(CASE WHEN pt.point_stat = 2 THEN pt.od_use_point ELSE 0 END) AS point_calu
+            COALESCE(
+                    SUM(CASE WHEN pt.point_rdate IS NOT NULL THEN ot.od_sell_price * 0.01 ELSE 0 END) -
+                    SUM(CASE WHEN pt.point_stat = 0 THEN ot.od_sell_price * 0.01 ELSE 0 END) -
+                    SUM(CASE WHEN pt.point_stat = 2 THEN pt.od_use_point ELSE 0 END),
+                    0
+            ) AS point_calu
         FROM
             point_tb pt
                 JOIN
@@ -36,7 +39,7 @@
             ON
                 pt.od_id = ot.od_id
         WHERE
-            pt.user_id = 1;
+            pt.user_id = #{userId}
     </select>
 
 
@@ -45,25 +48,25 @@
     <select id="wishGross" resultType="int">
         SELECT COUNT(*)
         FROM
-        (
-        SELECT
-            lt.prod_id
-        FROM
-            like_tb lt
-        JOIN
-            prod_tb pt
-        ON
-            lt.prod_id = pt.prod_id
-        JOIN
-            prod_img_tb pit
-        ON
-            lt.prod_id = pit.prod_id
-        WHERE
-            lt.user_id = 1
-        GROUP BY
-            pit.prod_id
-        )
-        AS subquery;
+            (
+                SELECT
+                    lt.prod_id
+                FROM
+                    like_tb lt
+                        JOIN
+                    prod_tb pt
+                    ON
+                        lt.prod_id = pt.prod_id
+                        JOIN
+                    prod_img_tb pit
+                    ON
+                        lt.prod_id = pit.prod_id
+                WHERE
+                    lt.user_id = #{userId}
+                GROUP BY
+                    pit.prod_id
+            )
+                AS subquery;
     </select>
 
 
@@ -75,7 +78,7 @@
         FROM
             user_tb
         WHERE
-            user_id = 32
+            user_id = #{userId}
     </select>
 
 
@@ -85,24 +88,24 @@
     <!-- 주문 배송 목록 -->
     <select id="orderViewList" resultType="kr.co.Dal.my.model.MyMainVO">
         SELECT
-            ot.order_id,
-            GROUP_CONCAT(odt.order_rdate) AS order_rdates,
-            GROUP_CONCAT(odt.order_stts) AS order_sttss,
-            odt.order_rdate,
-            odt.order_stts,
-            GROUP_CONCAT(ot.prod_id) AS prod_ids,
-            GROUP_CONCAT(pt.prod_tit) AS prod_tits,
-            GROUP_CONCAT(ot.od_sell_price) AS od_sell_prices,
-            GROUP_CONCAT(ot.od_cnt) AS od_cnts,
-            GROUP_CONCAT(ot.od_stts) AS od_sttss
+        ot.order_id,
+        GROUP_CONCAT(odt.order_rdate) AS order_rdates,
+        GROUP_CONCAT(odt.order_stts) AS order_sttss,
+        odt.order_rdate,
+        odt.order_stts,
+        GROUP_CONCAT(ot.prod_id) AS prod_ids,
+        GROUP_CONCAT(pt.prod_tit) AS prod_tits,
+        GROUP_CONCAT(ot.od_sell_price) AS od_sell_prices,
+        GROUP_CONCAT(ot.od_cnt) AS od_cnts,
+        GROUP_CONCAT(ot.od_stts) AS od_sttss
         FROM
-            od_tb ot
-                JOIN
-            order_tb odt ON ot.order_id = odt.order_id
-                JOIN
-            prod_tb pt ON ot.prod_id = pt.prod_id
+        od_tb ot
+        JOIN
+        order_tb odt ON ot.order_id = odt.order_id
+        JOIN
+        prod_tb pt ON ot.prod_id = pt.prod_id
         WHERE
-            ot.user_id = 1
+        ot.user_id = #{userId}
         <choose>
             <when test="odDateValue == 1">
                 AND odt.order_rdate >= DATE_SUB(NOW(), INTERVAL 1 MONTH)
@@ -153,7 +156,7 @@
             </when>
         </choose>
         GROUP BY
-            ot.order_id
+        ot.order_id
     </select>
 
 
