@@ -25,9 +25,11 @@ Ver.  Date          Revised By   Description
 
     <!-- 술 정보 가져오기 -->
     <select id="selectLiq" resultType="kr.co.Dal.museum.model.MuseumVO">
-        SELECT liq_id, liq_nm, liq_hash, liq_memo  FROM liq_tb
+        SELECT lt.liq_id, liq_nm, liq_hash, liq_memo, img_id, img_path, original_name, save_name, upload_date  FROM liq_tb lt
+            JOIN liq_img_tb lit ON lt.liq_id = lit.liq_id
         WHERE liq_stts = '1'
-        AND liq_id = #{liqId}
+            AND lt.liq_id = #{liqId}
+        ORDER BY img_id
     </select>
 
 </mapper>

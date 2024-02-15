@@ -76,7 +76,7 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
     @Override
     public boolean isEnabled() {
-        return user.getUserStts() != 0;
+        return true;
     }
 
 
@@ -115,6 +115,8 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
     public String getAddr2() {
         return user.getAddr2();
     }
+
+    public int getUserGrade() { return user.getUserGrade();}
 
 
     // 리소스 서버로 부터 받는 회원정보

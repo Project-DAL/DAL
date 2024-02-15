@@ -3,6 +3,8 @@ package kr.co.Dal.museum.service;
 import kr.co.Dal.museum.mapper.MuseumMapper;
 import kr.co.Dal.museum.model.MuseumVO;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +22,7 @@ Ver.  Date          Revised By   Description
 ————————————————————————————————————————————————————————————
 */
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class MuseumService {
@@ -33,6 +36,8 @@ public class MuseumService {
 
     /* 술 정보 가져오기 */
     public List<MuseumVO> selectLiq(MuseumVO museumVO) {
+        log.warn("selectLiq Service");
+
         return museumMapper.selectLiq(museumVO);
     }
 }

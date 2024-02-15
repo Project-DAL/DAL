@@ -14,9 +14,9 @@
     <!-- 사용가능한 포인트-->
     <select id="pointGross" resultType="int">
         SELECT
-                SUM(CASE WHEN pt.point_rdate IS NOT NULL THEN ot.od_sell_price * 0.01 ELSE 0 END) -
-                SUM(CASE WHEN pt.point_stat = 0 THEN ot.od_sell_price * 0.01 ELSE 0 END) -
-                SUM(CASE WHEN pt.point_stat = 2 THEN pt.od_use_point ELSE 0 END) AS point_calu
+            SUM(CASE WHEN pt.point_rdate IS NOT NULL THEN ot.od_sell_price * 0.01 ELSE 0 END) -
+            SUM(CASE WHEN pt.point_stat = 0 THEN ot.od_sell_price * 0.01 ELSE 0 END) -
+            SUM(CASE WHEN pt.point_stat = 2 THEN pt.od_use_point ELSE 0 END) AS point_calu
         FROM
             point_tb pt
                 JOIN
@@ -24,20 +24,20 @@
             ON
                 pt.od_id = ot.od_id
         WHERE
-            pt.user_id = 1;
+            pt.user_id = #{userId}
 
     </select>
 
     <!-- 사용가능한 쿠폰 개수-->
     <select id="couponGross" resultType="int">
-    SELECT
-        COUNT(*)
-    FROM
-        cp_user_tb cut
-    WHERE
-        use_stat = 1
-    AND
-        user_id = 1
+        SELECT
+            COUNT(*)
+        FROM
+            cp_user_tb cut
+        WHERE
+            use_stat = 1
+          AND
+            user_id = #{userId}
     </select>
 
 

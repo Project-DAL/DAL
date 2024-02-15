@@ -8,11 +8,10 @@ package kr.co.Dal.my.service;
 
 import kr.co.Dal.my.mapper.MyWithdrawMapper;
 import kr.co.Dal.my.model.MyWithdrawVO;
-import kr.co.Dal.user.config.auth.PrincipalDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
@@ -36,8 +35,7 @@ public class MyWithdrawService {
 
 
     /* 회원 탈퇴 */
-    public void myWithdraw(MyWithdrawVO myWithdrawVO){
-        myWithdrawMapper.myWithdraw(myWithdrawVO);
+    public void myWithdraw(MyWithdrawVO myWithdrawVO){ myWithdrawMapper.myWithdraw(myWithdrawVO);
     }
 
 

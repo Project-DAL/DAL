@@ -14,9 +14,9 @@ import kr.co.Dal.user.config.auth.PrincipalDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.util.List;
 
@@ -65,10 +65,17 @@ public class MyAjaxController {
 
 
     /* 회원 탈퇴 */
-    @PostMapping("/my/MyWithdraw/deleteUser")
-    public ResponseEntity<MyWithdrawVO> myWithdraw(@RequestBody MyWithdrawVO myWithdrawVO) {
+    @GetMapping("/my/MyWithdraw/deleteUser")
+    @ResponseBody
+    public ResponseEntity<MyWithdrawVO> myWithdraw(MyWithdrawVO myWithdrawVO, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 
-        /* user_id 불러오고 myWithdrawVO에 저장*/
+        int userId;
+        if(principalDetails != null){
+            userId = principalDetails.getUserId();
+            myWithdrawVO.setUserId(userId);
+            log.warn("userId1 : " + userId);
+        }
+
 
         myWithdrawService.myWithdraw(myWithdrawVO);
         return ResponseEntity.ok(myWithdrawVO);
@@ -78,11 +85,18 @@ public class MyAjaxController {
 
     /* 회원 정보 수정 */
     @PostMapping("/my/MyInfo/update")
-    public ResponseEntity<MyInfoVO> updateMyInfoList(@RequestBody MyInfoVO myInfoVO) {
+    public ResponseEntity<MyInfoVO> updateMyInfoList(@RequestBody MyInfoVO myInfoVO, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 
+        log.warn("updateMyInfoList");
 
-        /* user_id 불러오고 myInfoVO에 저장*/
+        int userId;
+        if(principalDetails != null){
+            userId = principalDetails.getUserId();
+            myInfoVO.setUserId(userId);
+            log.warn("userId1 : " + userId);
+        }
 
+        log.warn("myInfoVO: " + myInfoVO);
 
         myInfoService.updateMyInfoList(myInfoVO);
         return ResponseEntity.ok(myInfoVO);
@@ -91,8 +105,15 @@ public class MyAjaxController {
 
     /* 쿠폰 받기 버튼 */
     @PostMapping("/my/MyCoupon/insert")
-    public ResponseEntity<MyCouponVO> insertCoupon(@RequestBody MyCouponVO mycouponVO){
+    public ResponseEntity<MyCouponVO> insertCoupon(@RequestBody MyCouponVO mycouponVO,  @AuthenticationPrincipal PrincipalDetails principalDetails){
         log.warn("Received cpId: {}" , mycouponVO.getCpId());
+
+        int userId;
+        if(principalDetails != null){
+            userId = principalDetails.getUserId();
+            mycouponVO.setUserId(userId);
+            log.warn("userId1 : " + userId);
+        }
 
         myCouponService.insertCoupon(mycouponVO);
         return ResponseEntity.ok(mycouponVO);
@@ -113,8 +134,9 @@ public class MyAjaxController {
                                                              @RequestParam(name = "odDateValue") String odDateValue,
                                                              @RequestParam(name = "odSttsValue") String odSttsValue){
 
-        log.warn("odDateValue: " + odDateValue);
-        log.warn("odSttsValue: " + odSttsValue);
+        log.warn("orderValueViewList ajax controller");
+        //log.warn("odDateValue: " + odDateValue);
+        //log.warn("odSttsValue: " + odSttsValue);
 
         myMainVO.setOdDateValue(odDateValue);
         myMainVO.setOdSttsValue(odSttsValue);

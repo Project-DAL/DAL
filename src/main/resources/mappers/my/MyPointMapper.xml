@@ -30,6 +30,8 @@
             prod_tb prt
             ON
                 ot.prod_id = prt.prod_id
+        WHERE
+            pt.user_id = #{userId}
         ORDER BY
             pt.od_id DESC
             LIMIT #{offset}, 3
@@ -44,14 +46,16 @@
             COUNT(*)
         FROM
             point_tb pt
-        JOIN
+                JOIN
             od_tb ot
             ON
                 pt.od_id = ot.od_id
-        JOIN
+                JOIN
             prod_tb prt
-        ON
-          ot.prod_id = prt.prod_id
+            ON
+                ot.prod_id = prt.prod_id
+        WHERE
+            pt.user_id = #{userId}
     </select>
 
 
@@ -62,17 +66,20 @@
     <!-- 사용가능한 포인트-->
     <select id="pointGross" resultType="int">
         SELECT
-            SUM(CASE WHEN pt.point_rdate IS NOT NULL THEN ot.od_sell_price * 0.01 ELSE 0 END) -
-            SUM(CASE WHEN pt.point_stat = 0 THEN ot.od_sell_price * 0.01 ELSE 0 END) -
-            SUM(CASE WHEN pt.point_stat = 2 THEN pt.od_use_point ELSE 0 END) AS point_calu
+            COALESCE(
+                    SUM(CASE WHEN pt.point_rdate IS NOT NULL THEN ot.od_sell_price * 0.01 ELSE 0 END) -
+                    SUM(CASE WHEN pt.point_stat = 0 THEN ot.od_sell_price * 0.01 ELSE 0 END) -
+                    SUM(CASE WHEN pt.point_stat = 2 THEN pt.od_use_point ELSE 0 END),
+                    0
+            ) AS point_calu
         FROM
             point_tb pt
-        JOIN
+                JOIN
             od_tb ot
-        ON
-            pt.od_id = ot.od_id
+            ON
+                pt.od_id = ot.od_id
         WHERE
-            pt.user_id = 1;
+            pt.user_id = #{userId}
 
     </select>
 
@@ -86,13 +93,15 @@
             SUM(CASE WHEN pt.point_stat = 2 THEN pt.od_use_point ELSE 0 END) AS point_calu
         FROM
             point_tb pt
-        JOIN
+                JOIN
             od_tb ot
-        ON
-            pt.od_id = ot.od_id
+            ON
+                pt.od_id = ot.od_id
         WHERE
             pt.point_stat = 1
-        AND
+          AND
+            pt.user_id = #{userId}
+          AND
             (pt.point_rdate + INTERVAL 60 DAY) < (CURRENT_DATE + INTERVAL 30 DAY)
         ]]>
     </select>

@@ -37,4 +37,6 @@ public class MyCouponVO {
     private String cpRdate; // 생성날짜
 
 
+    private int userGrade; // 회원등급
+
 }

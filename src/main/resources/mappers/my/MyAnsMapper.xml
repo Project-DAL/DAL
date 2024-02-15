@@ -27,11 +27,11 @@
             reply_tb
         WHERE
             reply_stts = 1
-        AND
-            reply_user_id = 2
+          AND
+            reply_user_id = #{userId}
         ORDER BY
             reply_rdate DESC
-        LIMIT
+            LIMIT
             #{offset}, 10
     </select>
 
@@ -44,9 +44,12 @@
             reply_tb
         WHERE
             reply_stts = 1
-        AND
-            reply_user_id = 2
+          AND
+            reply_user_id = #{userId}
     </select>
+
+
+
 
     <!-- 내 댓글 삭제 -->
     <update id="deleteAns" parameterType="kr.co.Dal.my.model.MyAnsVO">

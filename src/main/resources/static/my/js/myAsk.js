@@ -30,9 +30,9 @@ function addEventListenerBtn(){
 function fnKakaoAsk(){
 
     /* sdk 초기화 */
-/*
-    Kakao.init("663e42ce0c9aff3c878dcb5e58b0c164");
-*/
+    /*
+        Kakao.init("663e42ce0c9aff3c878dcb5e58b0c164");
+    */
 
     /* sdk 초기화 여부 판단 */
     Kakao.isInitialized();
@@ -54,8 +54,8 @@ function fnKakaoAsk(){
 
 function fnNaverTalk(){
 
-/*
-    window.open("https://kakao.com/ask/qa/qa?qa_id=1234567890");
-*/
+
+    window.open("https://talk.naver.com/W5X7M6");
+
 
 }

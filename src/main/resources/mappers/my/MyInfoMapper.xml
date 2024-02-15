@@ -8,7 +8,7 @@
 -->
 
 <mapper namespace="kr.co.Dal.my.mapper.MyInfoMapper">
-    <select id="selectMyInfoList" resultType="kr.co.Dal.my.model.MyInfoVO">
+    <select id="selectMyInfoList" resultType="kr.co.Dal.my.model.MyInfoVO" parameterType="kr.co.Dal.my.model.MyInfoVO">
         SELECT
             user_id,
             addr1,
@@ -35,7 +35,7 @@
         FROM
             user_tb
         WHERE
-            user_id = 32
+            user_id = #{userId}
     </select>
 
 
@@ -50,7 +50,7 @@
             addr2 = #{addr2},
             user_udate = NOW()
         WHERE
-            user_id = 32
+            user_id = #{userId}
     </update>
 
 
