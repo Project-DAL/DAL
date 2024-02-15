@@ -7,6 +7,8 @@ import kr.co.Dal.admin.model.LiqImgVO;
 import kr.co.Dal.admin.model.LiquorVO;
 import kr.co.Dal.admin.model.ProdImgVO;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -33,6 +35,7 @@ Ver.  Date          Revised By   Description
 ———————————————————————————————————————————————————————————>
 */
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class AdminAjaxLiquorService {
@@ -47,6 +50,10 @@ public class AdminAjaxLiquorService {
         return adminAjaxLiquorMapper.selectLiquorCategoryList(liqType);
     }
 
+    @Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
+
+
     public int insertLiquor(LiquorVO liquorVO) {
         adminAjaxLiquorMapper.insertLiquor(liquorVO);
         return liquorVO.getLiqId();
@@ -59,10 +66,15 @@ public class AdminAjaxLiquorService {
      */
     @Transactional
     public void uploadProductFiles(int liqId, List<MultipartFile> files) {
+        log.warn("uploadPath1: " + uploadPath);
+
         files.forEach(file -> {
+
+            log.warn("uploadPath2: " + uploadPath);
+
             // 오늘 날짜를 기준으로 폴더 경로 생성
             String today = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-            Path rootLocation = Paths.get("D:/upload", today);
+            Path rootLocation = Paths.get(uploadPath, today);
 
             // 해당 경로가 존재하지 않으면 생성
             try {

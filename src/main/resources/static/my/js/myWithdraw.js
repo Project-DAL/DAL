@@ -24,9 +24,9 @@ function addEventListenerBtn(){
 
 function fnWidthDraw(){
 
-/*    let jsonData = {
+    /*    let jsonData = {
 
-    }*/
+        }*/
 
     ajaxAPI("/my/MyWithdraw/deleteUser", null, "POST").then(response => {
         if(confirm("정말 삭제 하시겠습니까?")) {
