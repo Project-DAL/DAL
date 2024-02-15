@@ -76,7 +76,7 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return user.getUserStts() != 0;
     }
 
 
@@ -114,6 +114,13 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
     public String getAddr2() {
         return user.getAddr2();
+    }
+
+    public String getProvider() {
+        return user.getProvider();
+    }
+    public String getProviderId() {
+        return user.getProviderId();
     }
 
     public int getUserGrade() { return user.getUserGrade();}

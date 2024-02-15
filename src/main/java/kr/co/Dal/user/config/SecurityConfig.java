@@ -2,6 +2,7 @@ package kr.co.Dal.user.config;
 
 import kr.co.Dal.user.config.auth.PrincipalDetailsService;
 import kr.co.Dal.user.config.handler.CustomAuthenticationFailureHandler;
+import kr.co.Dal.user.config.handler.CustomAuthenticationSuccessHandler;
 import kr.co.Dal.user.config.oauth.PrincipalOauth2UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -28,6 +29,9 @@ public class SecurityConfig {
     @Autowired
     private  AuthenticationFailureHandler userLoginFailHandler;
 
+    @Autowired
+    private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
+
     @Bean
     public BCryptPasswordEncoder encodePwd() {
         return new BCryptPasswordEncoder();
@@ -43,7 +47,7 @@ public class SecurityConfig {
                 .antMatchers("/","/joinForm","/termsForm","/loginForm","/user/logout","/check/findPw","/check/findId","/check/findId/successId","/check/findPw/sendEmail","/auth/**", "/oauth2/**","/my/**","/join","/findIdForm","/findPwForm", "/comm/**").permitAll() // 회원가입 접근 가능
                 .anyRequest().authenticated()
                 .and()
-                .csrf().ignoringAntMatchers("/check/findPw/sendEmail","/login","/logout","/join","/check/findId/successId","/joinForm") // csrf disable 설정
+                .csrf().ignoringAntMatchers("/check/findPw/sendEmail","/login","/logout","/join","/check/findId/successId","/joinForm","/oauth2joinForm","/oauth2join") // csrf disable 설정
                 .and()
                 .formLogin()
                 .loginPage("/loginForm")
@@ -61,7 +65,9 @@ public class SecurityConfig {
                 .failureHandler(userLoginFailHandler)
                 .loginPage("/loginForm")
                 .userInfoEndpoint()
-                .userService(principalOauth2UserService);
+                .userService(principalOauth2UserService)
+                .and()
+                .successHandler(customAuthenticationSuccessHandler);
         // 구글 로그인이 완료된 뒤의 후처리가 필요함. Tip. 코드X(액세스토큰+사용자프로필정보 O)
 
         return http.build();
