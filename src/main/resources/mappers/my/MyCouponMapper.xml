@@ -17,17 +17,18 @@
             ct.cp_disct_type
         FROM
             cp_tb ct
-        JOIN
+                JOIN
             user_tb ut
-        ON
-            ct.cp_grade = ut.user_grade
-        LEFT JOIN
+            ON
+                ct.cp_grade = ut.user_grade
+                LEFT JOIN
             cp_user_tb cut
-        ON
-           ct.cp_id = cut.cp_id
-
+            ON
+                ct.cp_id = cut.cp_id
         WHERE
             cut.cp_id IS NULL
+          AND
+            ct.cp_grade = #{userGrade}
 
     </select>
 
@@ -41,14 +42,14 @@
             ct.cp_disct_type
         FROM
             cp_user_tb cut
-        JOIN
+                JOIN
             cp_tb ct
-        ON
-            cut.cp_id = ct.cp_id
+            ON
+                cut.cp_id = ct.cp_id
         WHERE
             cut.use_stat = 1
-        AND
-            cut.user_id = 1
+          AND
+            cut.user_id = #{userId}
     </select>
 
 
@@ -58,9 +59,9 @@
         INSERT INTO cp_user_tb (cp_id, use_stat, user_id)
         VALUES
             (
-             #{cpId},
-             1,
-             '1'
+                #{cpId},
+                1,
+                #{userId}
             )
     </insert>
 

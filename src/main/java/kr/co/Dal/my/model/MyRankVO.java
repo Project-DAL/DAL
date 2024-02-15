@@ -19,5 +19,4 @@ public class MyRankVO {
     private String odSellPrice;
     private int userGrade;
     private String userNick;
-
 }

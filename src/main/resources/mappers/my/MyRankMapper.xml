@@ -10,22 +10,22 @@
 <mapper namespace="kr.co.Dal.my.mapper.MyRankMapper">
 
 
-    <select id="viewRank" resultType="kr.co.Dal.my.model.MyRankVO">
+    <select id="viewRank" resultType="kr.co.Dal.my.model.MyRankVO" parameterType="kr.co.Dal.my.model.MyRankVO">
         SELECT
             ut.user_id,
             ut.user_nick,
             ut.user_grade,
-            CAST(SUM(ot.od_sell_price) AS INT) AS od_sell_price
+            COALESCE(CAST(SUM(ot.od_sell_price) AS INT), 0) AS od_sell_price
         FROM
             user_tb ut
-        JOIN
+                LEFT JOIN
             od_tb ot
-        ON
-            ut.user_id = ot.user_id
+            ON
+                ut.user_id = ot.user_id
         WHERE
-            ut.user_id = 32
+            ut.user_id = #{userId}
         GROUP BY
-            ut.user_id = 32
+            ut.user_id = #{userId}
     </select>
 
 

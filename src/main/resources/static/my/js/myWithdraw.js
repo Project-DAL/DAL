@@ -27,10 +27,17 @@ function fnWidthDraw(){
     /*    let jsonData = {
 
         }*/
+    if(confirm("정말 탈퇴 하시겠습니까?")) {
+        ajaxAPI("/my/MyWithdraw/deleteUser", null, "GET").then(response => {
 
-    ajaxAPI("/my/MyWithdraw/deleteUser", null, "POST").then(response => {
-        if(confirm("정말 삭제 하시겠습니까?")) {
-            window.location.href = '/';
-        }
-    });
+
+            // Ajax를 통해 로그아웃을 요청
+            ajaxAPI("/logout", null, "POST").then(logoutResponse => {
+                window.location.href = "http://localhost:8282/loginForm"
+            })
+
+        });
+    }
+
+
 }

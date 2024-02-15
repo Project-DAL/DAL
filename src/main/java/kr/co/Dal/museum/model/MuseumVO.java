@@ -20,4 +20,5 @@ Ver.  Date          Revised By   Description
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class MuseumVO extends CmmnVO {
+
 }

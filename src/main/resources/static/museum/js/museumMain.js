@@ -59,7 +59,7 @@ function fnAjaxLiquor(){
             // JS: 카멜 표기법 - liqId
             //console.log("liquor id: " + liq.dataset.liqId);
             ajaxAPI('/museum/liq?liqId=' + liq.dataset.liqId, null, "GET").then(response => {
-                //console.log("response: " , response);
+                console.log("response: " , response);
                 divObjLiqNm.innerHTML = "";
                 divObjLiqMemo.innerHTML  = "";
                 divObjLiqNm.innerHTML = response[0].liqNm;
