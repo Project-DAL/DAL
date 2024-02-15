@@ -15,15 +15,10 @@ public class UserService {
     @Autowired
     private  UserRepository userRepository;
 
-    public boolean userEmailCheck(String userLginId) {
-
-        User user = userRepository.findByUserLginId(userLginId);
-        if(user!=null) {
-            return true;
-        }
-        else {
-            return false;
-        }
+    public boolean userEmailCheck(String userName,String userLginId) {
+        Optional<User> user = userRepository.findByUserNameAndUserLginId(userName,userLginId);
+        return user.isPresent(); // Java 8에서는 isPresent 사용
+        // Java 11 이상에서는 return user.isPresent();
     }
 
     public boolean userUsernameCheck(String userName) {
@@ -37,8 +32,8 @@ public class UserService {
         }
     }
 
-    public User findUserByUsername(String userNick) {
-        return userRepository.findByUserName(userNick);
+    public User findUserByUsername(String userName) {
+        return userRepository.findByUserName(userName);
     }
 
 }

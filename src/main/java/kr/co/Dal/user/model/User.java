@@ -5,11 +5,8 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.AllArgsConstructor;
@@ -25,6 +22,7 @@ import org.springframework.data.annotation.CreatedDate;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name="user_tb")
 public class User {
     @Id // primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)

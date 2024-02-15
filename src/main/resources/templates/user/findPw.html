@@ -46,7 +46,7 @@ Ver.   Date          Revised By    Description
                             <tr>
                                 <th>이름</th>
                                 <td>
-                                    <input class="input" type="text" id="userNick" required>
+                                    <input class="input" type="text" id="userName" required>
                                 </td>
                             </tr>
                             <tr>
@@ -117,11 +117,14 @@ Ver.   Date          Revised By    Description
     $("#checkEmail").click(function () {
         // let userName = $("#userName").val();
         let userLginId = $("#userLginId").val();
-        let userNick = $("#userNick").val();
+        let userName = $("#userName").val();
+        console.log("userName:", userName);
+        console.log("userLginId:", userLginId);
         $.ajax({
             type: "GET",
             url: "/check/findPw",
             data: {
+                "userName": userName,
                 "userLginId": userLginId
             },
             success: function (res) {
@@ -136,8 +139,8 @@ Ver.   Date          Revised By    Description
                                 type: "POST",
                                 url: "/check/findPw/sendEmail",
                                 data: {
-                                    "userLginId": userLginId,
-                                    "userNick": userNick
+                                    "userName": userName,
+                                    "userLginId": userLginId
                                 },
                                 success: function (response) {
                                     window.location = "/loginForm";

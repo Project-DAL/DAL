@@ -22,6 +22,9 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
     private User user; //콤포지션
     private Map<String, Object> attributes;
 
+    private String redirectUrl;
+
+
     //일반로그인
     public PrincipalDetails(User user){
         this.user = user;
@@ -32,8 +35,6 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
         this.user = user;
         this.attributes = attributes;
     }
-
-
 
     // 해당 User의 권한을 리턴하는 곳
     @Override
@@ -77,6 +78,44 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
     public boolean isEnabled() {
         return true;
     }
+
+
+    public int getUserId() {
+        return user.getUserId();
+    }
+
+    public String getUserNick() {
+        return user.getUserNick();
+    }
+
+    public String getUserLginId() {
+        return user.getUserLginId();
+    }
+
+    public String getHp1() {
+        return user.getUserHp().split("-")[0];
+    }
+
+    public String getHp2() {
+        return user.getUserHp().split("-")[1];
+    }
+
+    public String getHp3() {
+        return user.getUserHp().split("-")[2];
+    }
+
+    public String getZip() {
+        return user.getZip();
+    }
+
+    public String getAddr1() {
+        return user.getAddr1();
+    }
+
+    public String getAddr2() {
+        return user.getAddr2();
+    }
+
 
     // 리소스 서버로 부터 받는 회원정보
     @Override
