@@ -116,6 +116,15 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
         return user.getAddr2();
     }
 
+    public String getProvider() {
+        return user.getProvider();
+    }
+    public String getProviderId() {
+        return user.getProviderId();
+    }
+
+    public int getUserGrade() { return user.getUserGrade();}
+
 
     // 리소스 서버로 부터 받는 회원정보
     @Override

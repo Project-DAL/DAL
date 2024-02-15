@@ -28,8 +28,6 @@ public class CustomAuthenticationSuccessHandler extends SavedRequestAwareAuthent
         String provider = principalDetails.getProvider();
         String providerid = principalDetails.getProviderId();
 
-        System.out.println("Username: " + username);
-        System.out.println("Usernick: " + usernick);
 
         // username 또는 usernick이 null인 경우 회원가입 폼으로 리다이렉트
         if (username == null || usernick == null) {
