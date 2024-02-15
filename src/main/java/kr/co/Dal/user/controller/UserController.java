@@ -110,9 +110,9 @@ public class UserController {
 
     //Email과 name의 일치여부를 check하는 컨트롤러
     @GetMapping("/check/findPw")
-    public @ResponseBody Map<String, Boolean> pw_find(String userLginId){
+    public @ResponseBody Map<String, Boolean> pw_find(String userName,String userLginId){
         Map<String,Boolean> json = new HashMap<>();
-        boolean pwFindCheck = userService.userEmailCheck(userLginId);
+        boolean pwFindCheck = userService.userEmailCheck(userName,userLginId);
 
         System.out.println(pwFindCheck);
         json.put("check", pwFindCheck);
