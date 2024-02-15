@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
 <!--
@@ -14,15 +14,18 @@
     <!-- 사용가능한 포인트-->
     <select id="pointGross" resultType="int">
         SELECT
-            SUM(CASE WHEN pt.point_rdate IS NOT NULL THEN ot.od_sell_price * 0.01 ELSE 0 END) -
-            SUM(CASE WHEN pt.point_stat = 0 THEN ot.od_sell_price * 0.01 ELSE 0 END) -
-            SUM(CASE WHEN pt.point_stat = 2 THEN pt.od_use_point ELSE 0 END) AS point_calu
+            COALESCE(
+                SUM(CASE WHEN pt.point_rdate IS NOT NULL THEN ot.od_sell_price * 0.01 ELSE 0 END) -
+                SUM(CASE WHEN pt.point_stat = 0 THEN ot.od_sell_price * 0.01 ELSE 0 END) -
+                SUM(CASE WHEN pt.point_stat = 2 THEN pt.od_use_point ELSE 0 END),
+                0
+            ) AS point_calu
         FROM
             point_tb pt
-                JOIN
+        JOIN
             od_tb ot
-            ON
-                pt.od_id = ot.od_id
+        ON
+            pt.od_id = ot.od_id
         WHERE
             pt.user_id = #{userId}
 

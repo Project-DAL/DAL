@@ -156,7 +156,9 @@
             </when>
         </choose>
         GROUP BY
-        ot.order_id
+            ot.order_id
+        ORDER BY
+            order_rdate DESC
     </select>
 
 
