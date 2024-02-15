@@ -4,6 +4,7 @@ let divObjLiqType = document.querySelectorAll('.liq-type');
 let divObjLiqList = document.getElementById("liq-list");
 let divObjLiqNm = document.getElementById("liq-info-nm");
 let divObjLiqMemo = document.getElementById("liq-info-memo");
+let imgObjLiqImg = document.getElementById("liq-img");
 
 /** Initialize */
 document.addEventListener('DOMContentLoaded', function() {
@@ -62,8 +63,8 @@ function fnAjaxLiquor(){
                 console.log("response: " , response);
                 divObjLiqNm.innerHTML = "";
                 divObjLiqMemo.innerHTML  = "";
-                divObjLiqNm.innerHTML = response[0].liqNm;
-                divObjLiqMemo.innerHTML = response[0].liqMemo;
+                divObjLiqNm.innerHTML = response.liq[0].liqNm;
+                divObjLiqMemo.innerHTML = response.liq[0].liqMemo;
             });
         });
     }
