@@ -65,6 +65,8 @@ function fnAjaxLiquor(){
                 divObjLiqMemo.innerHTML  = "";
                 divObjLiqNm.innerHTML = response.liq[0].liqNm;
                 divObjLiqMemo.innerHTML = response.liq[0].liqMemo;
+
+                imgObjLiqImg.src = 'data:image/jpeg;base64,' + response.base64Images[0];
             });
         });
     }

@@ -85,10 +85,8 @@ public class MuseumController {
         List<MuseumVO> liq = museumService.selectLiq(museumVO);
 
         Map<String, Object> resultMap = new HashMap<>();
-        List<String> filePaths = new ArrayList<>();     // 파일 경로 리스트
         List<String> base64Images = new ArrayList<>(); // base64 이미지 리스트
         Resource resource = null;
-        //Path path = null;
 
         for (MuseumVO vo : liq) {
             log.warn("--------------------------------");
@@ -102,7 +100,6 @@ public class MuseumController {
             // 이미지 파일 경로
             String filePath = uploadPath + "/" + sdf.format(vo.getUploadDate()) + "/" + vo.getSaveName();
             Path path = Paths.get(filePath);
-            filePaths.add(filePath); // 파일 경로를 리스트에 추가
 
             try {
                 // 이미지를 base64 문자열로 변환하여 리스트에 추가
@@ -117,7 +114,6 @@ public class MuseumController {
         }
 
         resultMap.put("liq", liq);
-        resultMap.put("filePaths", filePaths); // 파일 경로 리스트를 resultMap에 추가
         resultMap.put("base64Images", base64Images); // base64 이미지 리스트를 resultMap에 추가
 
         return ResponseEntity.ok().body(resultMap);
