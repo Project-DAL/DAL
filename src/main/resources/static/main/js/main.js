@@ -21,6 +21,8 @@ let selectObjTown     = document.getElementById("search-town");         // 읍/�
 /* 1.5 List & ViewPage Object */
 let divObjStoreList = document.getElementById("store-list");        // 가게 목록 전체 박스
 let divObjStoreBox = document.getElementById("store-box");          // 가게 목록 개별 박스
+let divObjProdPic = document.getElementById("prod-pic");            // 대표 주류 이미지
+let divObjProdImg = document.getElementById("prod-img");
 
 /* 1.6 Process(CRUD) Button Object */
 let btnList     = document.getElementById('btnList');       // 검색 버튼
@@ -34,7 +36,7 @@ let positions = [];     // 검색 결과 가게 장소 표시
 let mapContainer = document.getElementById('map');      //지도를 담을 영역의 DOM 레퍼런스
 let mapOption = {                          //지도를 생성할 때 필요한 기본 옵션
     center: new kakao.maps.LatLng(33.450701, 126.570667),                      //지도의 중심좌표
-    level: 3                                                                   //지도의 레벨(확대, 축소 정도)
+    level: 4                                                                   //지도의 레벨(확대, 축소 정도)
 };
 let map = new kakao.maps.Map(mapContainer, mapOption);         //지도 생성 및 객체 리턴
 let lat = "";           // 위도
@@ -312,50 +314,86 @@ function fnAjaxList(){
             var resultDiv = document.getElementById('result');
             resultDiv.innerHTML = message;
 
+            // 현재 시각 (Fri Feb 16 2024 15:28:48 GMT+0900 (한국 표준시)  -> 15:28)
+            let currentTime = new Date(); // 현재 시간을 가져옴
+
+            // 시간을 문자열로 변환하여 시간 부분만 추출 (예: "15:28")
+            let currentHoursMinutes = ("0" + currentTime.getHours()).slice(-2) + ":" + ("0" + currentTime.getMinutes()).slice(-2);
+            console.log("currentHoursMinutes: " + currentHoursMinutes);
+            console.log("currentHoursMinutes: " + typeof currentHoursMinutes);
+
+            // 검색 조건에 따른 결과(주류 판매 가게) 출력
             ajaxAPI('/rest/storeList?swLat='+ swLat + '&swLng='+ swLng + '&neLat='+ neLat + '&neLng='+ neLng + '&prodTit='+ inputObjSearchText.value, null, "GET").then(response => {
-                console.log("storeList ajax success");
                 console.log("response: ", response);
+                console.log("response st length: " +  response.st.length);
 
                 // 기존 positions 배열 비우기
                 positions = [];
 
                 // 가게 목록 HTML 비우기
                 divObjStoreList.innerHTML = '';
+                // 대표 주류 이미지 HTML 비우기
+                //divObjProdPic.innerHTML = "";
 
                 // 조건에 따른 st_tb의 검색 결과의 개수만큼 가게 표시하기
-                for (let i=0; i < response.length; i++) {
+                for (let i=0; i < response.st.length; i++) {
+
+                    console.log("stId: " + response.st[i].stId);
+                    console.log("stNm: " + response.st[i].stNm);
+                    console.log("stLattitude: " + response.st[i].stLattitude);
+                    console.log("stLongtitude: " + response.st[i].stLongtitude);
 
                     // positions에 검색 결과 가게 정보 추가하기
                     positions.push({
-                        stId: response[i].stId,
-                        content: '<div>' + response[i].stNm + '</div>',
-                        latlng: new kakao.maps.LatLng(response[i].stLattitude, response[i].stLongtitude)
+                        stId: response.st[i].stId,
+                        content: '<div>' + response.st[i].stNm + '</div>',
+                        latlng: new kakao.maps.LatLng(response.st[i].stLattitude, response.st[i].stLongtitude)
                     })
 
+                    // 영업시간 문자열 처리 (ex: 13:00:00 -> 13:00)
+                    let openHours = response.st[i].stHoursOpen.substring(0, 5);
+                    let closedHours = response.st[i].stHoursClosed.substring(0, 5);
+
+                    // 현재 시각과 영업시간 비교
+                    let statDoor = "";
+                    if (currentHoursMinutes >= openHours && currentHoursMinutes <= closedHours) {
+                        console.log("open"); // 현재 시간이 영업시간 사이에 있다면 "open" 출력
+                        statDoor = "OPEN";
+                    } else {
+                        console.log("closed");
+                        statDoor = "CLOSED";
+                    }
+
+                    // statDoor이 OPEN이면 class에 store-info-open를, CLOSED면 class에 store-info-closed를 설정
+                    let storeInfoClass = (statDoor === "OPEN") ? "store-info-open" : "store-info-closed";
+
                     // 가게 목록 HTML 추가하기
-                    // divObjStoreList
-                    // divObjStoreBox
                     divObjStoreList.insertAdjacentHTML('beforeend', `
                         <div class="store-box" id="store-box">
                             <div class="store-info">
-                                <div class="store-info-img">img</div>
+                                <!--<div class="store-info-img">img</div>-->
                                 <div class="store-info-txt">
-                                    <a name="${response[i].stId}">
-                                        <div class="store-info-name">${response[i].stNm}</div>
+                                    <a name="${response.st[i].stId}">
+                                        <div class="store-info-name">${response.st[i].stNm}</div>
                                     </a>
                                     <div class="store-info-hour">
-                                        <div class="store-info-hours">${response[i].stHours}</div>
-                                        <div class="store-info-open">OPEN</div>
-                                        <div class="store-info-closed">CLOSED</div>
+                                        <div class="store-info-hours">${openHours}</div> ~ 
+                                        <div class="store-info-hours">${closedHours}</div>
+                                        <div class="${storeInfoClass}">${statDoor}</div>
+                                        <!--<div class="store-info-closed">CLOSED</div>-->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     `);
 
+                    // 대표 주류 이미지 추가하기
+                    divObjProdImg.src = 'data:image/jpeg;base64,' + response.base64Images[0];
+
                 }
 
-                console.log("positions: ", positions);
+
+                //console.log("positions: ", positions);
 
                 // 마커 이미지의 이미지 주소입니다
                 var imageSrc = "/main/img/marker.png";
@@ -445,8 +483,8 @@ function makeClickListener(clickedStId, response) {
         console.log('마커를 클릭했습니다2', response);
 
         for(let i=0; i<response.length; i++) {
-            if(clickedStId == response[i].stId){
-                console.log("st_id: " + clickedStId + ", " + response[i].stId);
+            if(clickedStId == response.st[i].stId){
+                console.log("st_id: " + clickedStId + ", " + response.st[i].stId);
 
                 // 해당 st_id를 가진 a 태그를 찾아서 스크롤
                 let anchorElement = document.querySelector(`a[name="${clickedStId}"]`);

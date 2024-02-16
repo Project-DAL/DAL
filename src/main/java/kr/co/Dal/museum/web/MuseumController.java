@@ -89,14 +89,6 @@ public class MuseumController {
         Resource resource = null;
 
         for (MuseumVO vo : liq) {
-            log.warn("--------------------------------");
-            log.warn("liqId: " + vo.getLiqId());
-            log.warn("liqNm: " + vo.getLiqNm());
-            log.warn("liqNm: " + vo.getImgId());
-            log.warn("uploadDate: " + vo.getUploadDate());
-            log.warn("uploadDate format: " + sdf.format(vo.getUploadDate()));
-            log.warn("saveName: " + vo.getSaveName());
-
             // 이미지 파일 경로
             String filePath = uploadPath + "/" + sdf.format(vo.getUploadDate()) + "/" + vo.getSaveName();
             Path path = Paths.get(filePath);
