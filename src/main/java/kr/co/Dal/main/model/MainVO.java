@@ -3,6 +3,8 @@ package kr.co.Dal.main.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.Date;
+
 /*
 File Name      : MainVO.java
 Program Name   : 메인 검색 서비스 VO
@@ -38,7 +40,8 @@ public class MainVO {
     private String stRdate;        // 등록일자
     private String stUdate;        // 수정일자
     private String stWdate;        // 삭제일자
-    private String stHours;        // 영업시간
+    private String stHoursOpen;    // 영업시간
+    private String stHoursClosed;  // 영업시간
     private String stLiquorNo;     // 판매주류
 
     /* location_tb */
@@ -51,6 +54,14 @@ public class MainVO {
 
     /* prod_tb */
     private String prodTit;        // 주류명
+
+    /* prod_img_tb */
+    private int imgId;          // 이미지 번호
+    private int prodId;         // 상품번호
+    private String imgPath;     // 이미지 파일 경로
+    private String originalName; // 원본 파일 이름
+    private String saveName;    // 저장된 파일 이름
+    private Date uploadDate;    // 업로드 날짜
 
     /* 추가: 영역정보에 따른 모서리 좌표 */
     private String swLat;           // 영역정보의 남서위도

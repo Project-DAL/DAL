@@ -36,8 +36,6 @@ public class MuseumService {
 
     /* 술 정보 가져오기 */
     public List<MuseumVO> selectLiq(MuseumVO museumVO) {
-        log.warn("selectLiq Service");
-
         return museumMapper.selectLiq(museumVO);
     }
 }
