@@ -27,6 +27,13 @@ public class CommAjaxService {
     }
 
     /**
+     * 게시판 상세 수정 조회
+     */
+    public CommVO commViewSelect(CommVO commVO) {
+        return commMapper.commViewSelect(commVO);
+    }
+
+    /**
      * 게시판 삭제
      */
     public void commDelete(CommVO commVO) throws Exception {
@@ -34,31 +41,26 @@ public class CommAjaxService {
     }
 
     /**
-     * 게시판 조회수
-     */
-    public int commUpdateLike(CommVO commVO) {
-        return commMapper.commUpdateLike(commVO);
-    }
-
-    /**
-     * 게시판 상세
-     */
-    public CommVO commViewSelect(CommVO commVO) {
-        return commMapper.commViewSelect(commVO);
-    }
-
-    /**
-     * 게시판 댓글
+     * 게시판 댓글 등록, 수정
      */
     public void commReplyInsert(ReplyVO replyVO) {
         commMapper.commReplyInsert(replyVO);
     }
 
     /**
-     * 게시판 댓글 목록
+     * 게시판 댓글 삭제
      */
-    public List<ReplyVO> commReplyView(ReplyVO replyVO) {
-        return commMapper.commReplyView(replyVO);
+    public void commReplyDelete(ReplyVO replyVO) {
+        commMapper.commReplyDelete(replyVO);
     }
 
+    /**
+     * 게시판 상세 수정 조회
+     */
+    public ReplyVO commWriteReplyGpSeqMax(ReplyVO replyVO) {
+        return commMapper.replyGpSeqMaxSelect(replyVO);
+    }
+
+
+    
 }

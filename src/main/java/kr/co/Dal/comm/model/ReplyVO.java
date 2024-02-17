@@ -16,4 +16,7 @@ public class ReplyVO{
     private Integer replyGpSeq;
     private Integer replyDepth;
     private Integer totalDataCnt;
+    private int replyGpMax;
+    private int replyIdMax;
+    private int replyGpSeqMax;
 }
