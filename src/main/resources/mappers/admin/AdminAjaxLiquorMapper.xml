@@ -54,9 +54,12 @@ Ver.  Date          Revised By   Description
         liq_alc,
         liq_hash,
         liq_memo,
+        liq_aroma,
+        liq_smooth,
+        liq_body,
         liq_cn)
         VALUES
-        (#{liqNm}, #{liqType}, #{liqPlace}, #{liqCp}, #{liqAlc}, #{liqHash},#{liqMemo}, #{liqCn})
+        (#{liqNm}, #{liqType}, #{liqPlace}, #{liqCp}, #{liqAlc}, #{liqHash},#{liqMemo}, #{liqAroma}, #{liqSmooth}, #{liqBody}, #{liqCn})
 
         <selectKey keyProperty="liqId" resultType="int" order="AFTER">
             SELECT LAST_INSERT_ID()
