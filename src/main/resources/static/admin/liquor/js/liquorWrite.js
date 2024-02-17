@@ -36,6 +36,9 @@ function fnInsert() {
         liqHash: document.getElementById('liqHash').value,
         liqMemo: document.getElementById('liqMemo').value,
         liqCn: document.getElementById('description').value,
+        liqAroma: document.getElementById('liqAroma').value,
+        liqSmooth: document.getElementById('liqSmooth').value,
+        liqBody: document.getElementById('liqBody').value,
         // 기타 필요한 정보 추가
     };
 

@@ -14,4 +14,8 @@ public class LiquorVO {
     private String liqStts; // 삭제여부
     private String liqMemo; // 간략설명
     private String liqCn; // 자세한설명
+    private int liqAroma; // 향
+    private int liqSmooth; // 목넘김
+    private int liqBody; // 바디감
+
 }
