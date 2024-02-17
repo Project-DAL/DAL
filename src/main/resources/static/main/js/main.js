@@ -178,10 +178,12 @@ function fnCornerCoordinates(){
     neLatlng = bounds.getNorthEast();
 
     // 확인용 (개발 완료 이후 삭제)
+    /*
     var message = '<p>영역좌표는 남서쪽 위도, 경도는  ' + swLatlng.toString() + '이고 <br>';
     message += '북동쪽 위도, 경도는  ' + neLatlng.toString() + '입니다 </p>';
     var resultDiv = document.getElementById('result');
     resultDiv.innerHTML = message;
+    */
 
 }
 
@@ -248,7 +250,7 @@ function fnSelectTown () {
 
 /** 지역 및 주류에 따른 검색 결과 조회 */
 function fnAjaxList(){
-    console.log("fnAjaxList");
+    //console.log("fnAjaxList");
 
     let province_ = selectObjProvince.options[selectObjProvince.selectedIndex].text;
     let city_ = selectObjCity.options[selectObjCity.selectedIndex].text;
@@ -281,8 +283,8 @@ function fnAjaxList(){
             let xValue = parseFloat(result[0].x);
             let yValue = parseFloat(result[0].y);
 
-            console.log("xValue: " + xValue);
-            console.log("yValue: " + yValue);
+            //console.log("xValue: " + xValue);
+            //console.log("yValue: " + yValue);
 
             lat = xValue;   // 위도
             lon = yValue;   // 경도
@@ -300,8 +302,8 @@ function fnAjaxList(){
             // 영역정보의 북동쪽 정보를 얻어옵니다
             neLatlng = bounds.getNorthEast();
 
-            console.log("swLatlng2: " + swLatlng);
-            console.log("neLatlng2: " + neLatlng);
+            //console.log("swLatlng2: " + swLatlng);
+            //console.log("neLatlng2: " + neLatlng);
 
             swLat = swLatlng.getLat().toString();         // 영역정보의 남서위도
             swLng = swLatlng.getLng().toString();         // 영역정보의 남서경도
@@ -309,23 +311,25 @@ function fnAjaxList(){
             neLng = neLatlng.getLng().toString();         // 영역정보의 북동경도
 
             // 확인용 (개발 완료 이후 삭제)
+            /*
             var message = '<p>영역좌표는 남서쪽 위도, 경도는  ' + swLatlng.toString() + '이고 <br>';
             message += '북동쪽 위도, 경도는  ' + neLatlng.toString() + '입니다 </p>';
             var resultDiv = document.getElementById('result');
             resultDiv.innerHTML = message;
+            */
 
             // 현재 시각 (Fri Feb 16 2024 15:28:48 GMT+0900 (한국 표준시)  -> 15:28)
             let currentTime = new Date(); // 현재 시간을 가져옴
 
             // 시간을 문자열로 변환하여 시간 부분만 추출 (예: "15:28")
             let currentHoursMinutes = ("0" + currentTime.getHours()).slice(-2) + ":" + ("0" + currentTime.getMinutes()).slice(-2);
-            console.log("currentHoursMinutes: " + currentHoursMinutes);
-            console.log("currentHoursMinutes: " + typeof currentHoursMinutes);
+            //console.log("currentHoursMinutes: " + currentHoursMinutes);
+            //console.log("currentHoursMinutes: " + typeof currentHoursMinutes);
 
             // 검색 조건에 따른 결과(주류 판매 가게) 출력
             ajaxAPI('/rest/storeList?swLat='+ swLat + '&swLng='+ swLng + '&neLat='+ neLat + '&neLng='+ neLng + '&prodTit='+ inputObjSearchText.value, null, "GET").then(response => {
-                console.log("response: ", response);
-                console.log("response st length: " +  response.st.length);
+                //console.log("response: ", response);
+                //console.log("response st length: " +  response.st.length);
 
                 // 기존 positions 배열 비우기
                 positions = [];
@@ -338,10 +342,10 @@ function fnAjaxList(){
                 // 조건에 따른 st_tb의 검색 결과의 개수만큼 가게 표시하기
                 for (let i=0; i < response.st.length; i++) {
 
-                    console.log("stId: " + response.st[i].stId);
-                    console.log("stNm: " + response.st[i].stNm);
-                    console.log("stLattitude: " + response.st[i].stLattitude);
-                    console.log("stLongtitude: " + response.st[i].stLongtitude);
+                    //console.log("stId: " + response.st[i].stId);
+                    //console.log("stNm: " + response.st[i].stNm);
+                    //console.log("stLattitude: " + response.st[i].stLattitude);
+                    //console.log("stLongtitude: " + response.st[i].stLongtitude);
 
                     // positions에 검색 결과 가게 정보 추가하기
                     positions.push({
@@ -357,18 +361,27 @@ function fnAjaxList(){
                     // 현재 시각과 영업시간 비교
                     let statDoor = "";
                     if (currentHoursMinutes >= openHours && currentHoursMinutes <= closedHours) {
-                        console.log("open"); // 현재 시간이 영업시간 사이에 있다면 "open" 출력
-                        statDoor = "OPEN";
+                        statDoor = "OPEN";  // 현재 시간이 영업시간 사이에 있다면 "open" 출력
                     } else {
-                        console.log("closed");
                         statDoor = "CLOSED";
                     }
 
                     // statDoor이 OPEN이면 class에 store-info-open를, CLOSED면 class에 store-info-closed를 설정
                     let storeInfoClass = (statDoor === "OPEN") ? "store-info-open" : "store-info-closed";
 
-                    // 가게 목록 HTML 추가하기
-                    divObjStoreList.insertAdjacentHTML('beforeend', `
+                    // 좌표 -> 법정동 주소 변환 (경도, 위도)
+                    let storeLoadAddr = "";
+                    let storeNumAddr = "";
+
+                    searchDetailAddrFromCoords(response.st[i].stLongtitude, response.st[i].stLattitude, function (result, stats){
+                        if (status === kakao.maps.services.Status.OK) {
+                            //console.log("road addr: " , result[0].road_address.address_name);
+                            //console.log("road 지번: " , result[0].address.address_name);
+                            storeLoadAddr = result[0].road_address.address_name;
+                            storeNumAddr = result[0].address.address_name;
+
+                            // 가게 목록 HTML 추가하기
+                            divObjStoreList.insertAdjacentHTML('beforeend', `
                         <div class="store-box" id="store-box">
                             <div class="store-info">
                                 <!--<div class="store-info-img">img</div>-->
@@ -376,22 +389,32 @@ function fnAjaxList(){
                                     <a name="${response.st[i].stId}">
                                         <div class="store-info-name">${response.st[i].stNm}</div>
                                     </a>
+                                    <div class="store-info-addr">
+                                        <div class="store-info-addr1">${storeLoadAddr}</div>
+                                        <div class="store-info-addr2">(지번) ${storeNumAddr}</div>
+                                    </div>
                                     <div class="store-info-hour">
+                                        <div class="${storeInfoClass}">${statDoor}</div>
                                         <div class="store-info-hours">${openHours}</div> ~ 
                                         <div class="store-info-hours">${closedHours}</div>
-                                        <div class="${storeInfoClass}">${statDoor}</div>
                                         <!--<div class="store-info-closed">CLOSED</div>-->
+                                    </div>
+                                    <div>
+                                        <div class="store-info-tel">${response.st[i].stTel}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     `);
 
-                    // 대표 주류 이미지 추가하기
-                    divObjProdImg.src = 'data:image/jpeg;base64,' + response.base64Images[0];
+                            // 대표 주류 이미지 추가하기
+                            divObjProdImg.src = 'data:image/jpeg;base64,' + response.base64Images[0];
+                        }
+                    });
+
+
 
                 }
-
 
                 //console.log("positions: ", positions);
 
@@ -502,4 +525,11 @@ function makeClickListener(clickedStId, response) {
     };
 }
 
+/** 좌표 -> 법정동 주소 변환 */
+function searchDetailAddrFromCoords(lng, lat, callback) {
+    // 주소-좌표 변환 객체를 생성합니다
+    let geocoder = new kakao.maps.services.Geocoder();
 
+    // 좌표로 법정동 상세 주소 정보를 요청합니다
+    geocoder.coord2Address(lng, lat, callback);
+}
