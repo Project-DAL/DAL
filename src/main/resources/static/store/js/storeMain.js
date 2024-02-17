@@ -26,3 +26,18 @@ $(document).ready(function () {
         moveSlides: 1
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    fnProdList();
+});
+
+function fnProdList() {
+    let lists = document.querySelectorAll(".ct_cate-wrap li");
+
+    lists.forEach(function(list) {
+        list.addEventListener("click", function() {
+            let prodType = list.getAttribute("data-prodType");
+            window.location.href = "/store/storeList?prodType=" + prodType;
+        })
+    })
+}

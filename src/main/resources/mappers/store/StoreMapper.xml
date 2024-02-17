@@ -5,9 +5,45 @@
 <mapper namespace="kr.co.Dal.store.mapper.StoreMapper">
 
   <select id="selectMainList" resultType="kr.co.Dal.store.model.StoreVO">
-    SELECT prod_tit, prod_type, prod_sale_price, prod_img, prod_stts, prod_like
+    SELECT
+           prod_tit,
+           prod_type,
+           prod_sale_price,
+           prod_img,
+           prod_stts,
+           prod_like
     FROM prod_tb
     where prod_stts != 0
   </select>
 
+  <select id="selectProdList" resultType="kr.co.Dal.store.model.StoreVO">
+    SELECT
+           pt.prod_id,
+           pt.prod_tit,
+           pt.prod_type,
+           pt.prod_sale_price,
+           pt.prod_like,
+           pt.prod_cn_file,
+           lt.liq_hash,
+           ROUND((pt.prod_ori_price-pt.prod_sale_price)/pt.prod_ori_price*100) AS discountRate
+    FROM prod_tb pt
+    LEFT JOIN liq_tb lt
+    ON pt.prod_id = lt.liq_id
+    where prod_stts != 0
+    <if test="prodType != null and prodType != 0">
+        AND pt.prod_type = #{prodType}
+    </if>
+  </select>
+
+  <select id="selectProdOne" resultType="kr.co.Dal.store.model.StoreVO">
+    SELECT
+        prod_tit,
+        prod_type,
+        prod_sale_price,
+        prod_cnt,
+        prod_like,
+        prod_cn_file
+    FROM prod_tb
+    where prod_id = #{prodId}
+  </select>
 </mapper>
