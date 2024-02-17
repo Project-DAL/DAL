@@ -30,7 +30,7 @@
                     AND bard_cn LIKE CONCAT('%', #{searchValue}, '%')
                 </if>
             </if>
-        ORDER BY bard_rdate DESC
+        ORDER BY bard_id DESC
         LIMIT #{offset}, 10
     </select>
 
@@ -96,30 +96,30 @@
 
     <!-- 게시판 댓글 등록, 수정 -->
     <insert id="commReplyInsert" parameterType="kr.co.Dal.comm.model.ReplyVO">
-        INSERT INTO reply_tb (
-                    bard_id,
-                    reply_user_id,
-                    reply_cn,
-                    reply_stts,
-                    reply_gp,
-                    reply_gp_seq,
-                    reply_depth
+        INSERT  INTO reply_tb (
+                reply_id,
+                bard_id,
+                reply_user_id,
+                reply_cn,
+                reply_stts,
+                reply_gp,
+                reply_gp_seq,
+                reply_depth
         ) VALUES (
-                    #{bardId},
-                    2,
-                    #{replyCn},
-                    1,
-                    #{replyGp},
-                    COALESCE(
-                    (SELECT MAX(reply_gp_seq) + 1 FROM reply_tb AS sub WHERE sub.reply_gp = #{replyGp}), 1
-                    ),
-                    #{replyDepth}
+                #{replyId},
+                #{bardId},
+                #{replyUserId},
+                #{replyCn},
+                1,
+                #{replyGp},
+                #{replyGpSeq},
+                #{replyDepth}
         ) ON DUPLICATE KEY UPDATE
-             reply_cn = VALUES(reply_cn)
+        reply_cn = VALUES(reply_cn)
     </insert>
 
     <!-- 게시판 댓글 조회 -->
-    <select id="commReplyView" parameterType="kr.co.Dal.comm.model.ReplyVO" resultType="kr.co.Dal.comm.model.ReplyVO">
+    <select id="commReplyView" parameterType="kr.co.Dal.util.SearchCondition"  resultType="kr.co.Dal.comm.model.ReplyVO">
         SELECT  reply_id,
                 reply_user_id,
                 reply_cn,
@@ -129,6 +129,42 @@
                 reply_depth
         FROM reply_tb
         WHERE bard_id = #{bardId} and reply_stts = 1
-        ORDER BY reply_rdate DESC;
+        ORDER BY reply_rdate DESC,
+                 reply_gp,
+                 reply_depth,
+                 reply_gp_seq DESC
+        LIMIT #{offset}, 10
     </select>
+
+    <!-- 게시판 목록 개수 -->
+    <select id="replyCnt" parameterType="kr.co.Dal.comm.model.ReplyVO" resultType="int">
+        SELECT COUNT(*)
+        FROM reply_tb
+        WHERE reply_stts = 1
+          AND bard_id = #{bardId}
+    </select>
+
+    <!-- 게시판 대댓글 MAX -->
+    <select id="replyMax" parameterType="kr.co.Dal.comm.model.ReplyVO"  resultType="kr.co.Dal.comm.model.ReplyVO">
+        SELECT COALESCE(MAX(reply_gp), 0) AS reply_gp_max,
+               COALESCE(MAX(reply_id), 0) AS reply_id_max
+        FROM reply_tb
+        WHERE bard_id = #{bardId}
+    </select>
+
+    <!-- 게시판 댓글 삭제 -->
+    <update id="commReplyDelete" parameterType="kr.co.Dal.comm.model.ReplyVO">
+        UPDATE reply_tb SET reply_stts = 0
+        WHERE reply_id = #{replyId}
+    </update>
+
+    <!-- 게시판 대댓글 MAX -->
+    <select id="replyGpSeqMaxSelect" parameterType="kr.co.Dal.comm.model.ReplyVO"  resultType="kr.co.Dal.comm.model.ReplyVO">
+        SELECT COALESCE(MAX(reply_gp_seq), 0) AS reply_gp_seq_max
+        FROM reply_tb
+        WHERE bard_id = #{bardId} and reply_gp = 1
+    </select>
+
+
+
 </mapper>

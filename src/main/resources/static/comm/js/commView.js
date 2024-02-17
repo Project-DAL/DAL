@@ -7,78 +7,9 @@ Draft Date     : 2023.12.04
 */
 
 document.addEventListener('DOMContentLoaded', function() {
-    fnAjaxCommView();
     fnBtn();
+    fnreplyGpSeqMax();
 });
-
-
-function fnAjaxCommView() {
-   let bardId = document.getElementById("bardId").value;
-
-   ajaxAPI('/comm/commAjaxViewLike?bardId='+bardId, null, "GET").then(response => {});
-
-   let jsonData = {
-       bardId: bardId
-   }
-
-   ajaxAPI("/comm/commAjaxView", jsonData, "POST").then(response => {
-        document.querySelector("#fieldListBody").innerHTML = "";
-        let element = document.querySelector("#fieldListBody");
-
-        let template = `
-                <tr>
-                    <th>작성자</th>
-                    <td>${response.userId}</td>
-                </tr>
-                <tr>
-                    <th>제목</th>
-                    <td>${response.bardTit}</td>
-                </tr>
-                <tr>
-                    <th>등록일</th>
-                    <td>${response.bardRdate}</td>
-                </tr>
-                <tr>
-                    <th>조회수</th>
-                    <td>${response.bardCnt}</td>
-                </tr>
-                <tr>
-                    <th>내용</th>
-                    <td>${response.bardCn}</td>
-                </tr>
-        `;
-        element.insertAdjacentHTML('beforeend', template);
-   });
-
-   console.log(jsonData)
-
-   ajaxAPI("/comm/commAjaxReplyView", jsonData, "POST").then(response => {
-        document.querySelector("#fieldReplyBody").innerHTML = "";
-        let element = document.querySelector("#fieldReplyBody");
-
-        if (response.length > 0) {
-            response.forEach(function (result, index) {
-                let template = `
-                    <div class="reply">
-                        <p>Reply ID: ${result.replyId}</p>
-                        <p>${result.replyCn}</p>
-                        <p>Date: ${result.replyRdate}</p>
-                    </div>
-                `;
-                element.insertAdjacentHTML('beforeend', template);
-
-            });
-        }else {
-             let template = `
-                    <td colspan="4"><p>등록된 글이 없습니다.</p></td>
-                `;
-                element.insertAdjacentHTML('beforeend', template);
-        }
-   });
-
-
-
-}
 
 function fnBtn() {
 	document.getElementById("btnUpdate").addEventListener('click',function() {
@@ -94,5 +25,60 @@ function fnBtn() {
     document.getElementById("save").addEventListener("click", function() {
         document.getElementById("frm").submit();
     });
+}
 
+function editButtonClick(replyId) {
+
+    // 댓글 수정
+    document.getElementById('replyCnView-' + replyId).classList.add('hide');
+    document.getElementById('replyCnInsert-' + replyId).classList.remove('hide');
+
+    // 버튼
+    document.getElementById('btnReplyCancel-' + replyId).classList.remove('hide');
+    document.getElementById('btnReplyDelete-' + replyId).classList.add('hide');
+    document.getElementById('btnReplyUpdate-' + replyId).classList.add('hide');
+    document.getElementById('btnReplyInsert-' + replyId).classList.remove('hide');
+    document.getElementById('btnReplyReply-' + replyId).classList.add('hide');
+}
+
+function cancelButtonClick(replyId) {
+    // 댓글 수정
+    document.getElementById('replyCnView-' + replyId).classList.remove('hide');
+    document.getElementById('replyCnInsert-' + replyId).classList.add('hide');
+
+    // 버튼
+    document.getElementById('btnReplyCancel-' + replyId).classList.add('hide');
+    document.getElementById('btnReplyDelete-' + replyId).classList.remove('hide');
+    document.getElementById('btnReplyUpdate-' + replyId).classList.remove('hide');
+    document.getElementById('btnReplyInsert-' + replyId).classList.add('hide');
+    document.getElementById('btnReplyReply-' + replyId).classList.remove('hide');
+    document.getElementById('commReplyReply-' + replyId).classList.add('hide');
+
+}
+
+function insertButtonClick(replyId) {
+    document.getElementById('btnReplyInsert-' + replyId).addEventListener("click", function() {
+       document.getElementById("commDetailFrm").submit();
+    });
+}
+
+function deleteButtonClick(replyId) {
+       let bardId = document.getElementById("bardId").value
+
+       ajaxAPI("/comm/commAjaxWriteReplyDelete?bardId=" + bardId + "&replyId=" + replyId, null, "GET").then(response => {
+            $('#commDetailFrm-' + replyId).remove();
+
+       });
+}
+
+function replyButtonClick(replyId) {
+    document.getElementById('commReplyReply-' + replyId).classList.remove('hide');
+}
+
+function fnreplyGpSeqMax() {
+    let bardId = document.getElementById("bardId").value
+
+    ajaxAPI("/comm/commAjaxWriteReplyGpSeqMax?bardId=" + bardId, null, "GET").then(response => {
+            document.getElementById('writeReplyGpSeq').value = response.replyGpSeqMax
+    });
 }
