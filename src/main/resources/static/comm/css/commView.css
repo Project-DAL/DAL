@@ -12,7 +12,6 @@ main {
 
 .ct_main {
     display: flex;
-    width: 95%;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -86,14 +85,31 @@ button:hover {
     background-color: #0056b3;
 }
 
-.button-container {
+.styled-input {
+    width: 100%; /* Adjust as needed */
+    height: 120px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* 선택된 상태의 스타일 */
+.styled-input:focus {
+    border-color: #007bff; /* 포커스 시 테두리 색상 변경 */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* 포커스 시 그림자 효과 */
+}
+
+.reply .button-container {
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
 }
 
-.edit-button, .delete-button {
-    background-color: #3498db;
+.edit-button {
+    background-color: #FFB101;
     color: #fff;
     padding: 8px 12px;
     border: none;
@@ -103,11 +119,38 @@ button:hover {
 }
 
 .delete-button {
-    background-color: #e74c3c;
+    background-color: #D00600;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.insert-button {
+    background-color: #2E3888;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: black;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .reply {
-    border-left: 3px solid #3498db;
+    width: 40%;
+    border-left: 3px solid #03012D;
     background-color: #ecf0f1;
     padding: 15px;
     margin-bottom: 20px;
@@ -120,11 +163,39 @@ button:hover {
 }
 
 .reply p:first-child {
-    color: #3498db;
+    color: #03012D;
     font-weight: bold;
 }
 
 .reply p:last-child {
     color: #7f8c8d;
 }
+
+
+.hide {
+    display: none; /* 숨기기 */
+}
+
+.depth-1 {
+    padding-left: 50px; /* depth 1일 때 추가 들여쓰기 */
+}
+
+.depth-2 {
+    padding-left: 100px; /* depth 2일 때 추가 들여쓰기 */
+}
+
+.depth-3 {
+    padding-left: 150px; /* depth 2일 때 추가 들여쓰기 */
+}
+
+.depth-4 {
+    padding-left: 200px; /* depth 2일 때 추가 들여쓰기 */
+}
+
+
+
+
+
+
+
 

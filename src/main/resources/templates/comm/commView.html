@@ -31,7 +31,28 @@ Draft Date      : 2023.11.10
                 <!-- 4.2.2 Board Content -->
                 <div class="ct_content">
                     <div class="comm-comment">
-                        <table id="fieldListBody"></table>
+                        <table id="fieldListBody">
+                            <tr>
+                                <th>작성자</th>
+                                <td th:utext="${commDetail.userId}"></td>
+                            </tr>
+                            <tr>
+                                <th>제목</th>
+                                <td th:utext="${commDetail.bardTit}"></td>
+                            </tr>
+                            <tr>
+                                <th>등록일</th>
+                                <td th:utext="${commDetail.bardRdate}"></td>
+                            </tr>
+                            <tr>
+                                <th>조회수</th>
+                                <td th:utext="${commDetail.bardCnt}"></td>
+                            </tr>
+                            <tr>
+                                <th>내용</th>
+                                <td th:utext="${commDetail.bardCn}"></td>
+                            </tr>
+                        </table>
                         <div class="button-container">
                             <input type="button" class="edit-button" id="btnUpdate" value="수정">
                             <input type="button" class="delete-button" id="btnDelete" value="삭제">
@@ -42,14 +63,90 @@ Draft Date      : 2023.11.10
                         <h3>댓글</h3>
                     </div>
                     <div class="comment">
-                        <div id="fieldReplyBody"></div>
+                        <div id="fieldReplyBody">
+                            <div th:if="${not #lists.isEmpty(replyList)}" th:each="result : ${replyList}" th:attr="data-replyId=${result.replyId}">
+                                <div th:class="'depth-' + ${result.replyDepth}">
+                                    <form th:action="@{/comm/commAjaxReplyInsert}" method="post" th:id="'commDetailFrm-' + ${result.replyId}">
+                                        <!-- CSRF -->
+                                        <input type="hidden" name="_csrf" th:value="${_csrf.token}" th:if="${_csrf}" />
+                                        <input type="hidden" name="header" th:value="${_csrf.headerName}" th:if="${_csrf}" />
+
+                                        <input type="hidden" id="commDetailBardId" name="bardId" th:value="${bardId}" />
+                                        <input type="hidden" id="replyId" name="replyId" th:value="${result.replyId}" />
+
+                                        <input type="hidden" id="replyGp" name="replyGp" th:value="${result.replyGp}" />
+                                        <input type="hidden" id="replyGpSeq" name="replyGpSeq" th:value="${result.replyGpSeq}" />
+                                        <input type="hidden" id="replyDepth" name="replyDepth" th:value="${result.replyDepth}" />
+
+                                        <div class="reply" th:id="'reply-' + ${result.replyId}">
+                                            <p th:text="'Reply ID: ' + ${result.replyId}"></p>
+                                            <p th:id="'replyCnView-' + ${result.replyId}" th:text="${result.replyCn}"></p>
+                                            <input type="text" th:id="'replyCnInsert-' + ${result.replyId}" name="replyCn" class="styled-input hide" th:value="${result.replyCn}">
+                                            <p th:text="'Date: ' + ${result.replyRdate}"></p>
+                                            <div class="button-container">
+                                                <input type="button" class="edit-button" th:id="'btnReplyUpdate-' + ${result.replyId}" value="수정" th:onclick="'editButtonClick(' + ${result.replyId} + ')'">
+                                                <input type="button" class="delete-button" th:id="'btnReplyDelete-' + ${result.replyId}" value="삭제" th:onclick="'deleteButtonClick(' + ${result.replyId} + ')'">
+                                                <input type="submit" class="insert-button hide" th:id="'btnReplyInsert-' + ${result.replyId}" value="저장" th:onclick="'insertButtonClick(' + ${result.replyId} + ')'">
+                                                <input type="button" class="cancel-button hide" th:id="'btnReplyCancel-' + ${result.replyId}" value="취소" th:onclick="'cancelButtonClick(' + ${result.replyId} + ')'">
+                                                <input type="button" class="cancel-button" th:id="'btnReplyReply-' + ${result.replyId}" value="답글" th:onclick="'replyButtonClick(' + ${result.replyId} + ')'">
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form th:action="@{/comm/commAjaxReplyInsert}" method="post" th:class="hide" th:id="'commReplyReply-' + ${result.replyId}">
+                                        <!-- CSRF -->
+                                        <input type="hidden" name="_csrf" th:value="${_csrf.token}" th:if="${_csrf}" />
+                                        <input type="hidden" name="header" th:value="${_csrf.headerName}" th:if="${_csrf}" />
+
+                                        <input type="hidden" id="writeBardId" name="bardId" th:value="${bardId}" />
+                                        <input type="hidden" id="writeReplyIdMax" name="replyId" th:value="${replyMax.replyIdMax}+1" />
+                                        <input type="hidden" id="writeReplyGp" name="replyGp" th:value="${result.replyGp}" />
+                                        <input type="hidden" id="writeReplyGpSeq" name="replyGpSeq" />
+                                        <input type="hidden" id="writeReplyDepth" name="replyDepth" th:value="${result.replyDepth}+1" />
+
+                                        <div class="reply" th:id="'reply-' + ${result.replyId}">
+                                            <p th:text="답글"></p>
+                                            <input type="text" th:id="'replyCnInsert-' + ${result.replyId}" name="replyCn" class="styled-input">
+                                            <div class="button-container">
+                                                <input type="submit" class="insert-button" th:id="'btnReplyInsert-' + ${result.replyId}" value="저장" th:onclick="'insertButtonClick(' + ${result.replyId} + ')'">
+                                                <input type="button" class="cancel-button" th:id="'btnReplyCancel-' + ${result.replyId}" value="취소" th:onclick="'cancelButtonClick(' + ${result.replyId} + ')'">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div th:if="${#lists.isEmpty(replyList)}">
+                                <div>
+                                    <p>등록된 글이 없습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination" th:object="${ph}" th:style="${#lists.size(replyList) == 0 ? 'visibility:hidden;':''}">
+                            <th:block th:if="*{showPrev}">
+                                <a th:href="@{/comm/commView} + ${ph.sc.getQueryString(ph.beginPage-1)}" class="prev">< </a>
+                            </th:block>
+                            <th:block th:each="num:${#numbers.sequence(ph.beginPage, ph.endPage)}">
+                                <a th:href="@{/comm/commView} + ${ph.sc.getQueryString(num)}" th:class="${num == ph.sc.page ? 'num current':'num'}">
+                                    [[${num}]]
+                                </a>
+                            </th:block>
+                            <th:block th:if="*{showNext}">
+                                <a th:href="@{/comm/commView} + ${ph.sc.getQueryString(ph.endPage+1)}" class="next"> ></a>
+                            </th:block>
+                        </div>
+
                     </div>
 
-                    <form action="/comm/commAjaxReplyInsert" method="post" id="frm">
-                        <!-- CSRF 토큰을 input으로 추가 -->
+                    <form th:action="@{/comm/commAjaxReplyInsert}" method="post" id="frm">
+                        <!-- CSRF -->
                         <input type="hidden" name="_csrf" th:value="${_csrf.token}" th:if="${_csrf}" />
-                        <!-- CSRF 헤더를 input으로 추가 -->
                         <input type="hidden" name="header" th:value="${_csrf.headerName}" th:if="${_csrf}" />
+
+                        <input type="hidden" id="firstReplyGpMax" name="replyGp" th:value="${replyMax.replyGpMax}+1" />
+                        <input type="hidden" id="firstReplyGpSeq" name="replyGpSeq" th:value="0" />
+                        <input type="hidden" id="firstReplyDepth" name="replyDepth" th:value="0" />
+
                         <input type="hidden" id="bardId" name="bardId" th:value="${bardId}" />
                         <label for="replyCn">댓글 작성:</label>
                         <textarea id="replyCn" name="replyCn" rows="4" cols="50"></textarea>
