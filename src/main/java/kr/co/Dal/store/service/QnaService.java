@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class QnaService {
@@ -14,5 +16,9 @@ public class QnaService {
 
     public void insertQna(QnaVO qnaVO) {
         qnaMapper.insertQna(qnaVO);
+    }
+
+    public List<QnaVO> selectQna(QnaVO qnaVO) {
+        return qnaMapper.selectQna(qnaVO);
     }
 }

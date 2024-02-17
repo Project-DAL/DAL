@@ -24,26 +24,42 @@ Ver.  Date          Revised By   Description
 .ct_cate-wrap {
     display: flex;
     border: none;
-}
-.ct_cate-title {
-    width: 20%;
+    width: 100%;
     height: 50px;
     text-align: center;
     line-height: 50px;
     background-color: #34315e;
 }
-.ct_cate-title > a {
+.ct_cate-wrap > li {
+    color: #e8e8e8;
     font-weight: bold;
     font-size: x-large;
-    color: #e8e8e8;
+    width: 20%;
 }
-.ct_cate-title:hover {
-    cursor: pointer;
-    background-color: rgb(147, 178, 206);
-}
-.ct_cate-title:hover a {
+.ct_cate-wrap li:hover {
     color: #34315e;
+    background-color: rgb(147, 178, 206);
+    cursor: pointer;
 }
+/*.ct_cate-title {*/
+/*    width: 20%;*/
+/*    height: 50px;*/
+/*    text-align: center;*/
+/*    line-height: 50px;*/
+/*    background-color: #34315e;*/
+/*}*/
+/*.ct_cate-title > a {*/
+/*    font-weight: bold;*/
+/*    font-size: x-large;*/
+/*    color: #e8e8e8;*/
+/*}*/
+/*.ct_cate-title:hover {*/
+/*    cursor: pointer;*/
+/*    background-color: rgb(147, 178, 206);*/
+/*}*/
+/*.ct_cate-title:hover a {*/
+/*    color: #34315e;*/
+/*}*/
 
 .prod-wrap {
     padding: 20px;
