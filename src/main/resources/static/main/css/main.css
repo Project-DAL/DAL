@@ -88,7 +88,7 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 5px;
 }
 .search-location {
 }
@@ -97,20 +97,25 @@ main {
     height: 40px;
     font-size: 15px;
     padding-left: 8px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    color: #333333;
 }
 .search-prod {
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 12px;
-
+    gap: 5px;
 }
 .search-bar .input {
     width: 300px;
     padding: 0 10px 0 43px;
     height: 40px;
     font: 500 14px 'Noto Sans Kr';
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    color: #333333;
 }
 .search-bar i {
     position: absolute;
@@ -160,6 +165,10 @@ main {
 .store-list::-webkit-scrollbar-track {
     backdrop-filter: blur(15px);
 }
+.store-list-msg {
+    margin-top: 20px;
+    color: #333333;
+}
 .store-box {
     background: #ffffff;
     width: 97%;
@@ -192,10 +201,30 @@ main {
 .store-info-txt {
     width: calc(100% - 125px);
 }
+.store-info-name {
+    font-size: 18px;
+}
+.store-info-addr1 {
+    font-size: 13px;
+    color: #222;
+    margin-top: 4px;
+}
+.store-info-addr2 {
+    font-size: 12px;
+    color: #929292;
+    margin-top: 3px;
+}
+.store-info-hours {
+    font-size: 13px;
+    color: #222;
+    font-weight: 200;
+}
 .store-info-hour {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 7px;
 }
 .store-info-open {
     border: 1px solid #FFAE00;
@@ -204,6 +233,7 @@ main {
     border-radius: 9px;
     padding: 1px 10px;
     margin-left: 5px;
+    font-size: 8px;
 }
 .store-info-closed {
     border: 1px solid #D6221E;
@@ -212,6 +242,7 @@ main {
     border-radius: 9px;
     padding: 1px 10px;
     margin-left: 5px;
+    font-size: 8px;
 }
 .store-reviews {
     display: flex;
@@ -228,7 +259,11 @@ main {
     width: 30px;
     height: 24px;
 }
-.store-review .store-review-txt {}
+.store-info-tel {
+    font-size: 13px;
+    color: #288756;
+    margin-top: 5px;
+}
 
 /* Cotent Wrap */
 .ct_content-wrap {
@@ -441,7 +476,10 @@ main {
 .btn.btnList {
     width: 60px;
     height: 40px;
-    line-height: 40px;
+    line-height: 37px;
+    border: 1px solid #03012D;
+    background: #03012D;
+    border-radius: 5px;
 }
 
 /* infoWindow Msg */
