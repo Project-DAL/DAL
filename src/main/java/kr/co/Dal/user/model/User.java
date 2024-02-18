@@ -87,4 +87,93 @@ public class User {
     private String provider;
     private String providerId;
 
+    public int getUserId() {
+    return userId;
+}
+
+public String getUserLginId() {
+    return userLginId;
+}
+
+public String getUserName() {
+    return userName;
+}
+
+public String getUserPw() {
+    return userPw;
+}
+
+public String getUserNick() {
+    return userNick;
+}
+
+public int getUserType() {
+    return userType;
+}
+
+public int getUserGrade() {
+    return userGrade;
+}
+
+public int getUserPoint() {
+    return userPoint;
+}
+
+public int getUserStts() {
+    return userStts;
+}
+
+public int getUserLcYn() {
+    return userLcYn;
+}
+
+public int getUserPrivYn() {
+    return userPrivYn;
+}
+
+public Timestamp getUserRdate() {
+    return userRdate;
+}
+
+public LocalDate getUserUdate() {
+    return userUdate;
+}
+
+public LocalDate getUserWdate() {
+    return userWdate;
+}
+
+public int getUserGender() {
+    return userGender;
+}
+
+public String getUserHp() {
+    return userHp;
+}
+
+public String getZip() {
+    return zip;
+}
+
+public String getAddr1() {
+    return addr1;
+}
+
+public String getAddr2() {
+    return addr2;
+}
+
+public String getUserRole() {
+    return userRole;
+}
+
+public String getProvider() {
+    return provider;
+}
+
+public String getProviderId() {
+    return providerId;
+}
+
+
 }
