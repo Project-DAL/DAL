@@ -5,14 +5,15 @@
 <mapper namespace="kr.co.Dal.store.mapper.QnaMapper">
 
   <insert id="insertQna" parameterType="kr.co.Dal.store.model.QnaVO">
-    INSERT INTO qna_tb (user_id, qna_type, qna_secret, qna_tit, qna_cn)
-    VALUES ('1', #{qnaType}, #{qnaSecret}, #{qnaTit}, #{qnaCn})
+    INSERT INTO qna_tb (user_id, qna_type, qna_secret, qna_tit, qna_cn, prod_id)
+    VALUES ('1', #{qnaType}, #{qnaSecret}, #{qnaTit}, #{qnaCn}, #{prodId})
   </insert>
 
   <select id="selectQna" resultType="kr.co.Dal.store.model.QnaVO">
     SELECT qna_id, user_id, qna_tit, qna_cn, qna_type, qna_ans_yn, qna_ans, qna_udate
     FROM qna_tb
     WHERE qna_stts != 0
+    AND prod_id = #{prodId}
     ORDER BY qna_udate DESC
   </select>
 </mapper>
