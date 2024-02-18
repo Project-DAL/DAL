@@ -18,14 +18,16 @@ Ver.  Date          Revised By   Description
 
     <!-- 분류 선택에 따른 술 목록 가져오기 -->
     <select id="selectLiqList" resultType="kr.co.Dal.museum.model.MuseumVO">
-        SELECT liq_id, liq_nm, liq_hash, liq_memo  FROM liq_tb
+        SELECT lt.liq_id, liq_nm, liq_hash, liq_memo, img_path, save_name,upload_date  FROM liq_tb lt
+            JOIN liq_img_tb lit ON lt.liq_id = lit.liq_id
         WHERE liq_type = #{liqType}
           AND liq_stts = '1'
+        GROUP BY lt.liq_id
     </select>
 
     <!-- 술 정보 가져오기 -->
     <select id="selectLiq" resultType="kr.co.Dal.museum.model.MuseumVO">
-        SELECT lt.liq_id, liq_nm, liq_hash, liq_memo, img_id, img_path, original_name, save_name, upload_date  FROM liq_tb lt
+        SELECT lt.liq_id, liq_nm, liq_hash, liq_memo, img_id, img_path, original_name, save_name, upload_date, liq_aroma, liq_smooth, liq_body  FROM liq_tb lt
             JOIN liq_img_tb lit ON lt.liq_id = lit.liq_id
         WHERE liq_stts = '1'
             AND lt.liq_id = #{liqId}

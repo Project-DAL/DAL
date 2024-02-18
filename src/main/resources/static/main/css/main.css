@@ -150,7 +150,7 @@ main {
     flex-wrap: nowrap;
     align-items: center;
     gap: 3px;
-    height: 555px;
+    height: 595px;
     overflow-y: scroll;
     margin-top: 15px;
 }
@@ -175,19 +175,20 @@ main {
     padding: 15px;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
     border: 1px solid #F7F7F7;
     border-radius: 10px;
     transition: box-shadow 0.3s;
     opacity: 90%;
+    justify-content: space-between;
 }
 .store-box:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     opacity: 100%;
 }
 .store-info {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     gap: 15px;
@@ -264,6 +265,17 @@ main {
     color: #288756;
     margin-top: 5px;
 }
+.store-info-find {}
+.store-info-find a {
+    font-size: 12px;
+    border: 1px solid #d3d3d3;
+    background: #d3d3d3;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 200;
+}
+
 
 /* Cotent Wrap */
 .ct_content-wrap {
@@ -480,6 +492,7 @@ main {
     border: 1px solid #03012D;
     background: #03012D;
     border-radius: 5px;
+    color: #fff;
 }
 
 /* infoWindow Msg */

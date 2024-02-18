@@ -5,6 +5,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: flex-start;
+    justify-content: flex-start;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 20px;
 }
@@ -14,27 +15,68 @@
     height: 750px;
     overflow-y: scroll;
     border-radius: 20px 0 0 20px;
+    margin-right: 10px;
+}
+.liq-typeList::-webkit-scrollbar {
+    display: none;
 }
 .liq-typeList div {
     background: #DDDFEC;
     height: 200px;
     margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10px;
+    gap: 15px;
+}
+.liq-type img {
+    width: 85px;
+}
+.liq-type p {
+    font-size: 17px;
+    color: #464E95;
 }
 /* 술 리스트 */
 .liq-list {
-    width: 10%;
+    width: 13%;
     height: 750px;
     overflow-y: scroll;
+}
+.liq-list::-webkit-scrollbar {
+    display: none;
 }
 .liq-list div {
     background: #C0C3DB;
     height: 160px;
-    border: 1px solid;
+    border-radius: 10px;
     margin-bottom: 5px;
 }
-/* 술 상세보기 */
+.liquor.clicked {
+    border: 1px solid #2E3788;
+    background: #fff;
+    border-radius: 10px;
+    width: 180px;
+    justify-content: flex-end;
+    padding-right: 23px;
+}
+.liquor.clicked img {
+
+}
+.liquor {
+    display: flex;
+    width: 110px;
+    justify-content: center;
+    align-items: center;
+}
+.liquor img {
+    width: 64px;
+    height: 126px;
+}
+    /* 술 상세보기 */
 .liq-box {
-    width: 80%;
+    width: 76.5%;
     height: 750px;
     display: flex;
     flex-direction: column;
@@ -117,5 +159,7 @@
     border-radius: 20px;
     font-size: 14px;
     font-weight: 200;
+    background: #03012D;
+    color: #fff;
 }
 

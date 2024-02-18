@@ -21,6 +21,9 @@ public class CmmnVO {
     private String liqStts;     // 삭제여부 (0:무효/1:유효)
     private String liqMemo;     // 간략 설명
     private String liqCn;       // 상세 설명
+    private int liqAroma;       // 향
+    private int liqSmooth;      // 목넘김
+    private int liqBody;        // 바디감
 
     /* 술 이미지 */
     private int imgId; // 이미지 번호

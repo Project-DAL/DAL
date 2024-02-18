@@ -373,6 +373,9 @@ function fnAjaxList(){
                     let storeLoadAddr = "";
                     let storeNumAddr = "";
 
+                    // 길찾기 링크
+                    let storeLink = `https://map.kakao.com/link/to/${response.st[i].stNm},${response.st[i].stLattitude},${response.st[i].stLongtitude}`;
+
                     searchDetailAddrFromCoords(response.st[i].stLongtitude, response.st[i].stLattitude, function (result, stats){
                         if (status === kakao.maps.services.Status.OK) {
                             //console.log("road addr: " , result[0].road_address.address_name);
@@ -382,30 +385,31 @@ function fnAjaxList(){
 
                             // 가게 목록 HTML 추가하기
                             divObjStoreList.insertAdjacentHTML('beforeend', `
-                        <div class="store-box" id="store-box">
-                            <div class="store-info">
-                                <!--<div class="store-info-img">img</div>-->
-                                <div class="store-info-txt">
-                                    <a name="${response.st[i].stId}">
-                                        <div class="store-info-name">${response.st[i].stNm}</div>
-                                    </a>
-                                    <div class="store-info-addr">
-                                        <div class="store-info-addr1">${storeLoadAddr}</div>
-                                        <div class="store-info-addr2">(지번) ${storeNumAddr}</div>
+                                <div class="store-box" id="store-box">
+                                    <div class="store-info">
+                                        <div class="store-info-txt">
+                                            <a name="${response.st[i].stId}">
+                                                <div class="store-info-name">${response.st[i].stNm}</div>
+                                            </a>
+                                            <div class="store-info-addr">
+                                                <div class="store-info-addr1">${storeLoadAddr}</div>
+                                                <div class="store-info-addr2">(지번) ${storeNumAddr}</div>
+                                            </div>
+                                            <div class="store-info-hour">
+                                                <div class="${storeInfoClass}">${statDoor}</div>
+                                                <div class="store-info-hours">${openHours}</div> ~ 
+                                                <div class="store-info-hours">${closedHours}</div>
+                                            </div>
+                                            <div>
+                                                <div class="store-info-tel">${response.st[i].stTel}</div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="store-info-hour">
-                                        <div class="${storeInfoClass}">${statDoor}</div>
-                                        <div class="store-info-hours">${openHours}</div> ~ 
-                                        <div class="store-info-hours">${closedHours}</div>
-                                        <!--<div class="store-info-closed">CLOSED</div>-->
-                                    </div>
-                                    <div>
-                                        <div class="store-info-tel">${response.st[i].stTel}</div>
+                                    <div class="store-info-find">
+                                        <a href="${storeLink}" target="_blank">길찾기</a>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    `);
+                            `);
 
                             // 대표 주류 이미지 추가하기
                             divObjProdImg.src = 'data:image/jpeg;base64,' + response.base64Images[0];
