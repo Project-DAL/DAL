@@ -14,40 +14,51 @@
     <!-- 내 댓글 목록 -->
     <select id="selectAnsList" parameterType="kr.co.Dal.util.SearchCondition" resultType="kr.co.Dal.my.model.MyAnsVO">
         SELECT
-        ans_id,
-        user_id,
-        ans_cn,
-        ans_rdate,
-        ans_udate,
-        ans_stts,
-        ans_type
+            reply_id,
+            bard_id,
+            reply_user_id,
+            reply_cn,
+            reply_rdate,
+            reply_stts,
+            reply_gp,
+            reply_gp_seq,
+            reply_depth
         FROM
-        ans_tb
+            reply_tb
         WHERE
-        ans_stts = 1
-        ORDER BY ans_rdate DESC
-        LIMIT #{offset}, 10
+            reply_stts = 1
+          AND
+            reply_user_id = #{userId}
+        ORDER BY
+            reply_rdate DESC
+            LIMIT
+            #{offset}, 10
     </select>
 
 
     <!-- 내 댓글 목록 개수 -->
     <select id="countAns" parameterType="kr.co.Dal.util.SearchCondition" resultType="int">
         SELECT
-        COUNT(*)
+            COUNT(*)
         FROM
-        ans_tb
+            reply_tb
         WHERE
-        ans_stts = 1
+            reply_stts = 1
+          AND
+            reply_user_id = #{userId}
     </select>
+
+
+
 
     <!-- 내 댓글 삭제 -->
     <update id="deleteAns" parameterType="kr.co.Dal.my.model.MyAnsVO">
         UPDATE
-            ans_tb
+            reply_tb
         SET
-            ans_stts = 0
+            reply_stts = 0
         WHERE
-            ans_id = #{ans_id}
+            reply_id = #{replyId}
     </update>
 
 

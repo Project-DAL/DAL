@@ -24,28 +24,26 @@
 <th:block layout:fragment="content">
     <!-- 4.2 Content -->
     <div class="ct_join-wrap">
-      <div class="join-title">내 정보 수정</div>
+        <div class="join-title">내 정보 수정</div>
         <div class="join-content mt25">
             <section>
                 <table th:each="info : ${infoList}">
                     <tr>
                         <th>아이디</th>
                         <td>
-                            <input class="input" type="text" name="uid" required th:value="${info.user_lgin_id}">
-                            <span class="join-msg">&nbsp;&nbsp;(영문소문자 4~12자)</span>
+                            <input class="input_address" type="text" name="uid" required th:value="${info.userLginId}" readonly>
                         </td>
                     </tr>
                     <tr>
-                        <th>비밀번호</th>
+                        <th>이름</th>
                         <td>
-                            <input class="input" type="password" name="pass" required th:value="${info.user_pw}">
-                            <span class="join-msg">&nbsp;&nbsp;(영문소문자/숫자/특수문자 조합 8~16자)</span>
+                            <input class="input" type="text" name="uid" required th:value="${info.userName}" readonly>
                         </td>
                     </tr>
                     <tr>
                         <th>닉네임</th>
                         <td>
-                            <input class="input" type="text" name="nick" required th:value="${info.user_nick}">
+                            <input class="input" type="text" name="nick" id="nick" required th:value="${info.userNick}">
                         </td>
                     </tr>
                     <tr>
@@ -56,23 +54,17 @@
                                 <option value="011" th:selected="${hp1 == '011'}">011</option>
                             </select>
                             &nbsp;&nbsp;&nbsp;-&nbsp;
-                            <input class="input" type="text" th:value="${hp2}" required>
+                            <input class="input" type="text" id="mobile2" th:value="${hp2}" required>
                             &nbsp;-&nbsp;
-                            <input class="input" type="text" th:value="${hp3}" required>
+                            <input class="input" type="text" id="mobile3" th:value="${hp3}" required>
                             <span class="join-msg">&nbsp;&nbsp;(미기입 시 SMS 수신이 불가합니다.)</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>이메일</th>
-                        <td>
-                            <input class="input_address" type="email" name="email" required th:value="${info.user_email}">
                         </td>
                     </tr>
                     <tr class="addr">
                         <th>주소</th>
                         <td>
                             <div class="post_code">
-                                <input type="text" id="regist_postcode" class="post_code_write" placeholder="우편번호" th:value="${info.zip}" readonly>
+                                <input type="text" id="regist_postcode" class="post_code_write" th:value="${info.zip}" readonly>
                                 <input type="button" id="post_code" class="post_code_box" value="우편번호">
                             </div>
                         </td>

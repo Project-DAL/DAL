@@ -16,9 +16,11 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class MyWishVO extends StoreVO {
 
-    private int user_id;
-    private int prod_id;
-    private int bard_id;
+    private int userId;
+    private int prodId;
+    private int bardId;
+
+    private int imgId;
 
     private String[] prodidArray;
 

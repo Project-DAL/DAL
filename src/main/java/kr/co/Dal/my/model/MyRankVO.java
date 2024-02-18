@@ -15,9 +15,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class MyRankVO {
 
-    private int user_id;
-    private String od_sell_price;
-    private int user_grade;
-    private String user_nick;
-
+    private int userId;
+    private String odSellPrice;
+    private int userGrade;
+    private String userNick;
 }

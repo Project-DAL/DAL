@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!----------------------------------------------------------------------------------------------------------------------
+©Copyright 2023. DAL. All rights reserved.
+
+File Name       : oauth2join.html
+Program Name    : 회원가입 페이지
+Description     : 일반회원가입을 할 수 있게 하였습니다.
+Draft Author    : 신호준
+Draft Date      : 2024.02.05
+
+Revision History
+Ver.   Date          Revised By    Description
+------------------------------------------------------------------------------------------------------------------------
+0.1    2024.02.05    신호준         최초개발
+----------------------------------------------------------------------------------------------------------------------->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main-layout}">
+
+<th:block th:replace="~{fragments/_head::headFragment}"></th:block>
+<!-- 2. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/layout.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/reset.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/select_input.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/common/css/helper.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/user/css/join.css}">
+    <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+    <script type="text/javascript" th:src="@{/user/js/join.js}"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js" /></script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</th:block>
+
+
+
+<th:block layout:fragment="content">
+
+
+    <!-- 4. Main -->
+    <main>
+        <div class="join_main">
+            <div class="ct_join-wrap">
+                <div class="join-title">회원가입</div>
+                <div class="join-content mt25">
+                    <form method="post" action="/oauth2join">
+                        <!-- 예시: Java로 초기값 생성하여 HTML에 포함 -->
+                        <input type="hidden" id="agreeValueChk1" name="agreeValueChk1" th:value="${agreeValueChk1}">
+                        <input type="hidden" id="agreeValueChk2" name="agreeValueChk2" th:value="${agreeValueChk2}">
+                        <section>
+                            <table>
+                                    <th>이름
+                                        <img src="/user/img/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td>
+                                        <input class="input" type="text" name="userName" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>닉네임
+                                        <img src="/user/img/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td>
+                                        <input class="text" type="text" name="userNick" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>휴대전화
+                                        <img src="/user/img/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td class="mobile">
+                                        <select name="mobile1" id="mobile1">
+                                            <option value="010">010</option>
+                                            <option value="011">011</option>
+                                            <option value="016">016</option>
+                                            <option value="017">017</option>
+                                            <option value="018">018</option>
+                                            <option value="019">019</option>
+                                        </select>
+                                        &nbsp;&nbsp;&nbsp;-&nbsp;
+                                        <input class="input" type="text" name="mobile2" required>
+                                        &nbsp;-&nbsp;
+                                        <input class="input" type="text" name="mobile3" required>
+                                        <span class="join-msg">&nbsp;&nbsp;(미기입 시 SMS 수신이 불가합니다.)</span>
+                                    </td>
+                                </tr>
+
+                                <!-- 성별 라디오 버튼 -->
+                                <tr>
+                                    <th>성별
+                                        <img src="/user/img/register_essential_icon.gif" alt="필수 입력">
+                                    </th>
+                                    <td>
+                                        <label><input type="radio" name="gender" id="man" value="1" required> 남성</label>
+                                        <label><input type="radio" name="gender" id="woman" value="2" required> 여성</label>
+                                    </td>
+                                </tr>
+                                <tr class="addr">
+                                    <th>주소</th>
+                                    <td>
+                                        <div class="post_code">
+                                            <input type="text" id="zip_code" name="zip_code" class="post_code_write" placeholder="우편번호"  readonly>
+                                            <input type="button" id="postcode" class="post_code_box" value="우편번호" onclick="openZipSearch()">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>기본주소</th>
+                                    <td><input type="text" class="addr" id="addr" name="addr" placeholder="기본주소"  readonly></td>
+                                </tr>
+                                <tr>
+                                    <th>상세주소</th>
+                                    <td><input class="addr_dtl" type="text" id="addr_dtl" name="addr_dtl" placeholder="나머지주소 (선택입력 가능)" ></td>
+                                </tr>
+                            </table>
+                        </section>
+                        <p class="mt15">
+                            <input type="submit" class="btn btnJoin" value="회원가입">
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    </div>
+</th:block>
+</html>

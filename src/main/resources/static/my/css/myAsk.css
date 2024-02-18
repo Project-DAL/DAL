@@ -1,0 +1,83 @@
+.container{
+    padding: 150px 100px;
+}
+
+
+.container-main{
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+
+.f-flex1{
+    display: flex;
+    justify-content: center;
+}
+
+
+.day-info{
+
+}
+
+.info{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.time{
+    color: #2E3888;
+    font-size: 20px;
+}
+
+
+.wekday{
+    color: lightgray;
+
+
+}
+
+
+.wekend{
+    color: lightgray;
+
+}
+
+
+
+
+
+
+
+.f-flex2{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    gap: 3px;
+    justify-content: center;
+
+
+}
+
+.naver-talk{
+    width: 15%;
+    text-align: center;
+    background-color: #1DDB16;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 3px;
+    font-weight: 500;
+
+}
+
+.kakao-ask{
+    width: 15%;
+    text-align: center;
+    margin-top: 3px;
+    background-color: #FEE500;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 3px;
+    font-weight: 500;
+}
+

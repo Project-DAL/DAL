@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<th:block th:fragment="quickFragment">
+    <div class="btn_quick">
+        <ul>
+            <li>
+                <a id="naverTalk">
+                    <img th:src="@{/common/img/naverquick.png}">
+                </a>
+            </li>
+            <li>
+                <a id="AskKakao">
+                    <img th:src="@{/common/img/kakaoquick.png}">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js" integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
+    <script>
+        /* sdk 초기화 */
+        Kakao.init("663e42ce0c9aff3c878dcb5e58b0c164");
+
+        /* sdk 초기화 여부 판단 */
+        Kakao.isInitialized();
+
+        AskKakao.addEventListener('click', function() {
+            Kakao.Channel.chat({
+                channelPublicId: '_KLGJG',
+            });
+        });
+
+
+        naverTalk.addEventListener('click', fnNaverTalk);
+
+        function fnNaverTalk(){
+
+
+            window.open("https://talk.naver.com/W5X7M6");
+
+
+        }
+
+    </script>
+</th:block>
+</html>
+
+
+
+
+
+

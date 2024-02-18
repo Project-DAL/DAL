@@ -11,7 +11,12 @@ let postcode_btn = document.getElementById('post_code'); // 우편 번호 버튼
 let regist_postcode = document.getElementById('regist_postcode');   // 우편번호 적는곳
 let regist_addr =document.getElementById("regist_addr");            // 기본주소 적는곳
 
-
+let nick = document.getElementById("nick");
+let mobile1 = document.getElementById("mobile1");
+let mobile2 = document.getElementById("mobile2");
+let mobile3 = document.getElementById("mobile3");
+let post_code = document.getElementById("post_code");
+let regist_addr2 = document.getElementById("regist_addr2");
 
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -45,14 +50,19 @@ function fnPostcode(){
 /* 수정 버튼 함수 */
 function fnUpdate(){
 
-/*
-    let jsonData ={
-    }
-*/
+    let userHp = mobile1.value + '-' + mobile2.value + '-' + mobile3.value;
 
-    ajaxAPI("/my/MyInfo/update", null, "POST").then(response => {
-        if(confirm("정말 수정 하시겠습니까?")) {
+    let jsonData ={
+        userNick: nick.value,
+        userHp: userHp,
+        zip: regist_postcode.value,
+        addr1: regist_addr.value,
+        addr2: regist_addr2.value
+    }
+
+    if(confirm("정말 수정 하시겠습니까?")) {
+        ajaxAPI("/my/MyInfo/update", jsonData, "POST").then(response => {
             window.location.href = '/my/MyInfo';
-        }
-    });
+        })
+    }
 }

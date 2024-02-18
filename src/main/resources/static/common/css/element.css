@@ -28,8 +28,6 @@ Contents
 /* 1. Button **********************************************************************************************************/
 .btn {
     display: inline-block;
-    border: 1px solid #293485;
-    background: #2E3888;
     color: #ffffff;
     text-align: center;
     cursor: pointer;

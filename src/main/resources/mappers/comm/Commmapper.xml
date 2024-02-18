@@ -6,35 +6,165 @@
 -->
 
 <mapper namespace="kr.co.Dal.comm.mapper.CommMapper">
-
-    <select id="commList" resultType="kr.co.Dal.comm.model.CommVO">
-        SELECT *
+    <!-- 게시판 조회 -->
+    <select id="commList" parameterType="kr.co.Dal.util.SearchCondition" resultType="kr.co.Dal.comm.model.CommVO">
+        SELECT  bard_id,
+                bard_type,
+                user_id,
+                bard_tit,
+                bard_cn,
+                bard_rdate,
+                bard_cnt,
+                bard_like_cnt,
+                bard_stts
         FROM bard_tb
+        WHERE bard_stts = 1
+            <if test="bardType != null and !bardType.equals('')">
+                AND (bard_type = #{bardType} OR (#{bardType} = 0 AND bard_type IN (1, 2, 3)))
+            </if>
+            <if test="searchValue != null and !searchValue.equals('')">
+                <if test="searchKeyword == 'bard_tit'">
+                    AND bard_tit LIKE CONCAT('%', #{searchValue}, '%')
+                </if>
+                <if test="searchKeyword == 'bard_cn'">
+                    AND bard_cn LIKE CONCAT('%', #{searchValue}, '%')
+                </if>
+            </if>
+        ORDER BY bard_id DESC
+        LIMIT #{offset}, 10
     </select>
 
+    <!-- 게시판 목록 개수 -->
+    <select id="commCnt" parameterType="kr.co.Dal.util.SearchCondition" resultType="int">
+        SELECT COUNT(*)
+        FROM bard_tb
+        WHERE bard_stts = 1
+        <if test="bardType != null and !bardType.equals('')">
+            AND (bard_type = #{bardType} OR (#{bardType} = 0 AND bard_type IN (1, 2, 3)))
+        </if>
+        <if test="searchValue != null and !searchValue.equals('')">
+            <if test="searchKeyword == 'bard_tit'">
+                AND bard_tit LIKE CONCAT('%', #{searchValue}, '%')
+            </if>
+            <if test="searchKeyword == 'bard_cn'">
+                AND bard_cn LIKE CONCAT('%', #{searchValue}, '%')
+            </if>
+        </if>
+    </select>
+
+    <!-- 게시판 등록, 수정 -->
     <insert id="commInsert" parameterType="kr.co.Dal.comm.model.CommVO">
-        insert into bard_tb
-        (
-         bard_id
-        ,bard_type
-        ,user_id
-        ,bard_tit
-        ,bard_cn
-        ,bard_cnt
-        ,bard_like_cnt
-        ,bard_stts
-        )
-        values
-        (
-         #{bard_id}
-        ,#{bard_type}
-        ,1
-        ,#{bard_tit}
-        ,#{bard_cn}
-        ,10
-        ,10
-        ,1
-        )
+        INSERT INTO bard_tb (
+                    bard_id,
+                    bard_type,
+                    user_id,
+                    bard_tit,
+                    bard_cn,
+                    bard_stts
+        ) VALUES (
+                    #{bardId},
+                    #{bardType},
+                    1,
+                    #{bardTit},
+                    #{bardCn},
+                    1
+        ) ON DUPLICATE KEY UPDATE
+             bard_type = VALUES(bard_type),
+             bard_tit = VALUES(bard_tit),
+             bard_cn = VALUES(bard_cn)
     </insert>
+
+    <!-- 게시판 삭제 -->
+    <update id="commDelete" parameterType="kr.co.Dal.comm.model.CommVO">
+        UPDATE bard_tb SET bard_stts = 0
+        WHERE bard_id = #{bardId}
+    </update>
+
+    <!-- 게시판 조회수 -->
+    <update id="commUpdateLike" parameterType="int">
+        update bard_tb
+        set bard_cnt = bard_cnt + 1
+        where bard_id = #{bardId}
+    </update>
+
+    <!-- 게시판 상세 조회 -->
+    <select id="commViewSelect" parameterType="kr.co.Dal.comm.model.CommVO" resultType="kr.co.Dal.comm.model.CommVO">
+        SELECT *
+        FROM bard_tb
+        WHERE bard_id = #{bardId}
+    </select>
+
+    <!-- 게시판 댓글 등록, 수정 -->
+    <insert id="commReplyInsert" parameterType="kr.co.Dal.comm.model.ReplyVO">
+        INSERT  INTO reply_tb (
+                reply_id,
+                bard_id,
+                reply_user_id,
+                reply_cn,
+                reply_stts,
+                reply_gp,
+                reply_gp_seq,
+                reply_depth
+        ) VALUES (
+                #{replyId},
+                #{bardId},
+                #{replyUserId},
+                #{replyCn},
+                1,
+                #{replyGp},
+                #{replyGpSeq},
+                #{replyDepth}
+        ) ON DUPLICATE KEY UPDATE
+        reply_cn = VALUES(reply_cn)
+    </insert>
+
+    <!-- 게시판 댓글 조회 -->
+    <select id="commReplyView" parameterType="kr.co.Dal.util.SearchCondition"  resultType="kr.co.Dal.comm.model.ReplyVO">
+        SELECT  reply_id,
+                reply_user_id,
+                reply_cn,
+                reply_rdate,
+                reply_gp,
+                reply_gp_seq,
+                reply_depth
+        FROM reply_tb
+        WHERE bard_id = #{bardId} and reply_stts = 1
+        ORDER BY reply_rdate DESC,
+                 reply_gp,
+                 reply_depth,
+                 reply_gp_seq DESC
+        LIMIT #{offset}, 10
+    </select>
+
+    <!-- 게시판 목록 개수 -->
+    <select id="replyCnt" parameterType="kr.co.Dal.comm.model.ReplyVO" resultType="int">
+        SELECT COUNT(*)
+        FROM reply_tb
+        WHERE reply_stts = 1
+          AND bard_id = #{bardId}
+    </select>
+
+    <!-- 게시판 대댓글 MAX -->
+    <select id="replyMax" parameterType="kr.co.Dal.comm.model.ReplyVO"  resultType="kr.co.Dal.comm.model.ReplyVO">
+        SELECT COALESCE(MAX(reply_gp), 0) AS reply_gp_max,
+               COALESCE(MAX(reply_id), 0) AS reply_id_max
+        FROM reply_tb
+        WHERE bard_id = #{bardId}
+    </select>
+
+    <!-- 게시판 댓글 삭제 -->
+    <update id="commReplyDelete" parameterType="kr.co.Dal.comm.model.ReplyVO">
+        UPDATE reply_tb SET reply_stts = 0
+        WHERE reply_id = #{replyId}
+    </update>
+
+    <!-- 게시판 대댓글 MAX -->
+    <select id="replyGpSeqMaxSelect" parameterType="kr.co.Dal.comm.model.ReplyVO"  resultType="kr.co.Dal.comm.model.ReplyVO">
+        SELECT COALESCE(MAX(reply_gp_seq), 0) AS reply_gp_seq_max
+        FROM reply_tb
+        WHERE bard_id = #{bardId} and reply_gp = 1
+    </select>
+
+
 
 </mapper>

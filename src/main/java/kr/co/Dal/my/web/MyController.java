@@ -9,9 +9,11 @@ package kr.co.Dal.my.web;
 
 import kr.co.Dal.my.model.*;
 import kr.co.Dal.my.service.*;
+import kr.co.Dal.user.config.auth.PrincipalDetails;
 import kr.co.Dal.util.SearchCondition;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,18 +45,18 @@ public class MyController {
     @GetMapping("/my/MyPageMain")
     public String mypagemain(Model model, MyMainVO myMainVO) {
 
+        List<MyMainVO> orderViewList = myMainService.orderViewList(myMainVO);
+
         int pointGross = myMainService.pointGross(myMainVO);
         int couponGross = myMainService.couponGross(myMainVO);
         int wishGross = myMainService.wishGross(myMainVO);
         String rankView = myMainService.rankView(myMainVO);
-        List<MyMainVO> orderViewList = myMainService.orderViewList(myMainVO);
 
         model.addAttribute("pointGross", pointGross);
         model.addAttribute("couponGross", couponGross);
         model.addAttribute("wishGross", wishGross);
         model.addAttribute("rankView", rankView);
         model.addAttribute("orderViewList", orderViewList);
-
 
         return "my/MyPageMain";
     }
@@ -64,10 +66,20 @@ public class MyController {
     public String myboard(Model model,
                           @RequestParam Map map,
                           MyBoardVO myBoardVO,
-                          @ModelAttribute SearchCondition sc){
+                          @ModelAttribute SearchCondition sc,
+                          @AuthenticationPrincipal PrincipalDetails principalDetails){
 
         // 검색어
         sc.setMap(map);
+
+
+        int userId;
+        if(principalDetails != null){
+            userId = principalDetails.getUserId();
+            sc.setUserId(userId);
+            log.warn("userId1 : " + userId);
+        }
+
 
         myBoardService.selectBoardList(model, myBoardVO, sc);
 
@@ -81,10 +93,19 @@ public class MyController {
     public String myAns(Model model,
                         @RequestParam Map map,
                         MyAnsVO myAnsVO,
-                        @ModelAttribute SearchCondition sc){
+                        @ModelAttribute SearchCondition sc,
+                        @AuthenticationPrincipal PrincipalDetails principalDetails){
 
         // 검색어
         sc.setMap(map);
+
+        int userId;
+        if(principalDetails != null){
+            userId = principalDetails.getUserId();
+            sc.setUserId(userId);
+            log.warn("userId1 : " + userId);
+        }
+
 
         myAnsService.selectAnsList(model, myAnsVO, sc);
 
@@ -99,8 +120,16 @@ public class MyController {
     @GetMapping("/my/MyPoint")
     public String mypoint(Model model,
                           MyPointVO myPointVO,
-                          @ModelAttribute SearchCondition sc){
+                          @ModelAttribute SearchCondition sc,
+                          @AuthenticationPrincipal PrincipalDetails principalDetails){
 
+        int userId;
+        if(principalDetails != null){
+            userId = principalDetails.getUserId();
+            sc.setUserId(userId);
+            myPointVO.setUserId(userId);
+            log.warn("userId1 : " + userId);
+        }
 
         int pointGross = myPointService.pointGross(myPointVO);
         int pointGross30 = myPointService.pointGross30(myPointVO);
@@ -115,7 +144,21 @@ public class MyController {
 
     // My Coupon
     @GetMapping("/my/MyCoupon")
-    public String mycoupon(Model model, MyCouponVO mycouponVO){
+    public String mycoupon(Model model, MyCouponVO mycouponVO,
+                           @AuthenticationPrincipal PrincipalDetails principalDetails){
+
+
+        int userId;
+        int userGrade;
+        if(principalDetails != null){
+            userId = principalDetails.getUserId();
+            userGrade = principalDetails.getUserGrade();
+            mycouponVO.setUserId(userId);
+            mycouponVO.setUserGrade(userGrade);
+            log.warn("userId1 : " + userId);
+        }
+
+
         List<MyCouponVO> couponList = myCouponService.selectCouponList(mycouponVO);
         List<MyCouponVO> getCouponList = myCouponService.getCouponList(mycouponVO);
 
@@ -131,19 +174,22 @@ public class MyController {
 
     // My Info
     @GetMapping("/my/MyInfo")
-    public String myinfo(Model model, MyInfoVO myInfoVO){
+    public String myinfo(Model model, MyInfoVO myInfoVO, @AuthenticationPrincipal PrincipalDetails principalDetails){
+
+        log.warn("myinfo");
+
+        int userId;
+        if(principalDetails != null){
+            userId = principalDetails.getUserId();
+            myInfoVO.setUserId(userId);
+            log.warn("userId1 : " + userId);
+        }
+
         List<MyInfoVO> infoList = myInfoService.selectMyInfoList(myInfoVO);
 
-        log.warn("infoList: " + infoList);
-        log.warn("infoList hp: " + infoList.get(0).getUser_hp());
-
-        String hp1 = infoList.get(0).getUser_hp().substring(0,3);
-        String hp2 = infoList.get(0).getUser_hp().substring(3,7);
-        String hp3 = infoList.get(0).getUser_hp().substring(7);
-
-        log.warn("hp1: " + hp1);
-        log.warn("hp2: " + hp2);
-        log.warn("hp3: " + hp3);
+        String hp1 = infoList.get(0).getUserHp().substring(0,3);
+        String hp2 = infoList.get(0).getUserHp().substring(4,8);
+        String hp3 = infoList.get(0).getUserHp().substring(9);
 
 
         model.addAttribute("infoList", infoList);
@@ -168,15 +214,34 @@ public class MyController {
 
     // My Wish
     @GetMapping("/my/MyWish")
-    public String mywish(Model model, MyWishVO myWishVO){
+    public String mywish(Model model, MyWishVO myWishVO,
+                         @AuthenticationPrincipal PrincipalDetails principalDetails){
+
+        int userId;
+        if(principalDetails != null){
+            userId = principalDetails.getUserId();
+            myWishVO.setUserId(userId);
+            log.warn("userId1 : " + userId);
+        }
+
         List<MyWishVO> wishList = myWishService.selectWishList(myWishVO);
         model.addAttribute("wishList", wishList);
         return "my/MyWish";
     }
 
+
+
     // My Withdraw
     @GetMapping("/my/MyWithdraw")
-    public String mywithdraw(Model model, MyWithdrawVO myWithdrawVO){
+    public String mywithdraw(Model model, MyWithdrawVO myWithdrawVO, @AuthenticationPrincipal PrincipalDetails principalDetails){
+
+        int userId;
+        if(principalDetails != null){
+            userId = principalDetails.getUserId();
+            myWithdrawVO.setUserId(userId);
+            log.warn("userId1 : " + userId);
+        }
+
         int pointGross = myWithdrawService.pointGross(myWithdrawVO);
         int couponGross = myWithdrawService.couponGross(myWithdrawVO);
 
@@ -190,7 +255,16 @@ public class MyController {
 
     /* My rank*/
     @GetMapping("/my/MyRank")
-    public String myrank(Model model, MyRankVO myRankVO){
+    public String myrank(Model model, MyRankVO myRankVO, @AuthenticationPrincipal PrincipalDetails principalDetails){
+
+
+        int userId;
+        if(principalDetails != null){
+            userId = principalDetails.getUserId();
+            myRankVO.setUserId(userId);
+            log.warn("userId1 : " + userId);
+        }
+
         List<MyRankVO> rankList = myRankService.viewRank(myRankVO);
         model.addAttribute("rankList", rankList);
         return "my/MyRank";
@@ -198,7 +272,11 @@ public class MyController {
     }
 
 
-
+    /* My Ask */
+    @GetMapping("/my/MyAsk")
+    public String myask(){
+        return "my/MyAsk";
+    }
 
 
 }

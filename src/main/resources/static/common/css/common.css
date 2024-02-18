@@ -38,4 +38,5 @@ Contents
 /* 5. 공통 reset css */
 @import url(reset.css);
 
-
+/* 6. 공통 quick css */
+@import url(quick.css);

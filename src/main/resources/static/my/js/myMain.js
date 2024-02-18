@@ -42,29 +42,29 @@ function fnselectData(){
 
         for(let i = 0; i < response.length; i++) {
             // 주문일자
-            let rdateLength = response[i].order_rdates.split(",").length;
+            let rdateLength = response[i].orderRdates.split(",").length;
             // 주문 상품 이름
-            let prodTits = response[i].prod_tits;
+            let prodTits = response[i].prodTits;
 
             let orderSttsTxt = "";
 
-            if (response[i].order_stts === 1) {
+            if (response[i].orderStts === 1) {
                 orderSttsTxt = "입금대기";
-            } else if (response[i].order_stts === 2) {
+            } else if (response[i].orderStts === 2) {
                 orderSttsTxt = "결제완료";
-            }else if (response[i].order_stts === 3) {
+            }else if (response[i].orderStts === 3) {
                 orderSttsTxt = "배송준비중";
-            }else if (response[i].order_stts === 4) {
+            }else if (response[i].orderStts === 4) {
                 orderSttsTxt = "배송중";
-            }else if (response[i].order_stts === 5) {
+            }else if (response[i].orderStts === 5) {
                 orderSttsTxt = "배송완료";
-            }else if (response[i].order_stts === 6) {
+            }else if (response[i].orderStts === 6) {
                 orderSttsTxt = "구매확정";
-            }else if (response[i].order_stts === 7) {
+            }else if (response[i].orderStts === 7) {
                 orderSttsTxt = "취소";
-            }else if (response[i].order_stts === 8) {
+            }else if (response[i].orderStts === 8) {
                 orderSttsTxt = "교환";
-            }else if (response[i].order_stts === 9) {
+            }else if (response[i].orderStts === 9) {
                 orderSttsTxt = "반품";
             }
 
@@ -75,10 +75,12 @@ function fnselectData(){
                     <div class="order-box">
                         <div class="order-info-spec">
                             <div class="order-info-spec1">
-                                <div>${response[i].order_rdate}</div>
+                                <div>${response[i].orderRdate}</div>
                                 <div class="order-info-spec-stts">${orderSttsTxt}</div>
                             </div>
-                            <div class="order-info-spec-view">배송조회</div>
+                            <div class="order-info-spec-view">
+                                 <a href="#">주문상세</a> 
+                            </div>
                         </div>    
                     </div> 
             `);
@@ -93,10 +95,10 @@ function fnselectData(){
                         <div class="order-info-spec-specinfo">
                             <p>${prodTits.split(",")[j]}</p>
                             <div class="f-flex">
-                               <p>${response[i].od_sell_prices.split(",")[j]}</p><span>원</span>
+                               <p>${response[i].odSellPrices.split(",")[j]}</p><span>원</span>
                             </div>
                             <div class="f-flex">
-                               <span>총</span><p>${response[i].od_cnts.split(",")[j]}</p><span>개</span>
+                               <span>총</span><p>${response[i].odCnts.split(",")[j]}</p><span>개</span>
                             </div>
                         </div>
                     </div>
@@ -122,31 +124,34 @@ function fnAjaxList() {
 
     ajaxAPI("/my/MyPageMain/order", null, "GET").then(response => {
 
+
+
+
         for(let i = 0; i < response.length; i++) {
             // 주문일자
-            let rdateLength = response[i].order_rdates.split(",").length;
+            let rdateLength = response[i].orderRdates.split(",").length;
             // 주문 상품 이름
-            let prodTits = response[i].prod_tits;
+            let prodTits = response[i].prodTits;
 
             let orderSttsTxt = "";
 
-            if (response[i].order_stts === 1) {
+            if (response[i].orderStts === 1) {
                 orderSttsTxt = "입금대기";
-            } else if (response[i].order_stts === 2) {
+            } else if (response[i].orderStts === 2) {
                 orderSttsTxt = "결제완료";
-            }else if (response[i].order_stts === 3) {
+            }else if (response[i].orderStts === 3) {
                 orderSttsTxt = "배송준비중";
-            }else if (response[i].order_stts === 4) {
+            }else if (response[i].orderStts === 4) {
                 orderSttsTxt = "배송중";
-            }else if (response[i].order_stts === 5) {
+            }else if (response[i].orderStts === 5) {
                 orderSttsTxt = "배송완료";
-            }else if (response[i].order_stts === 6) {
+            }else if (response[i].orderStts === 6) {
                 orderSttsTxt = "구매확정";
-            }else if (response[i].order_stts === 7) {
+            }else if (response[i].orderStts === 7) {
                 orderSttsTxt = "취소";
-            }else if (response[i].order_stts === 8) {
+            }else if (response[i].orderStts === 8) {
                 orderSttsTxt = "교환";
-            }else if (response[i].order_stts === 9) {
+            }else if (response[i].orderStts === 9) {
                 orderSttsTxt = "반품";
             }
 
@@ -155,10 +160,12 @@ function fnAjaxList() {
                     <div class="order-box">
                         <div class="order-info-spec">
                             <div class="order-info-spec1">
-                                <div>${response[i].order_rdate}</div>
+                                <div>${response[i].orderRdate}</div>
                                 <div class="order-info-spec-stts">${orderSttsTxt}</div>
                             </div>
-                            <div class="order-info-spec-view">배송조회</div>
+                            <div class="order-info-spec-view">
+                                 <a href="#"">주문상세</a> 
+                            </div>
                         </div>    
                     </div> 
                 `);
@@ -173,10 +180,10 @@ function fnAjaxList() {
                         <div class="order-info-spec-specinfo">
                             <p>${prodTits.split(",")[j]}</p>
                             <div class="f-flex">
-                               <p>${response[i].od_sell_prices.split(",")[j]}</p><span>원</span>
+                               <p>${response[i].odSellPrices.split(",")[j]}</p><span>원</span>
                             </div>
                             <div class="f-flex">
-                               <span>총</span><p>${response[i].od_cnts.split(",")[j]}</p><span>개</span>
+                               <span>총</span><p>${response[i].odCnts.split(",")[j]}</p><span>개</span>
                             </div>
                         </div>
                     </div>

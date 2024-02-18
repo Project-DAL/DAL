@@ -1,3 +1,4 @@
+/* 리셋 및 기본 스타일 */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -5,13 +6,16 @@ body {
     background-color: #f4f4f4;
 }
 
+/* 메인 컨테이너 */
 main {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+    margin: 100px 0 20px 0;
 }
 
+/* 콘텐츠 래퍼 */
 .ct_main {
     display: flex;
     width: 95%;
@@ -20,93 +24,115 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Aside */
-aside {
-    width: 20%;
-    padding: 20px;
-}
-
-.menu-tit {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.ct_left-menu ul {
-    list-style-type: none;
-    background-color: #f8f8f8;
-    padding: 52px;
-    margin: 10px;
-}
-
-.ct_left-menu li {
-    margin-bottom: 10px;
-}
-
-.ct_left-menu a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-/* Content */
+/* 메인 섹션 스타일 */
 section {
     width: 80%;
     padding: 20px;
+    margin: auto;
 }
 
+/* 소제목 스타일 */
 .ct_subtitle h3 {
     color: #333;
     margin: 0 0 20px 10px;
 }
 
-.board-list {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+/* 게시물 내용 스타일 */
+.ct_content {
+    border: 3px solid #f8f8f8;
+    margin-top: 20px;
 }
 
-#REG {
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-table {
+/* 테이블 스타일 */
+table, .board-list {
     width: 80%;
     margin: auto;
     border-collapse: collapse;
-    margin-top: 20px;
-    font-family: 'Arial', sans-serif;
 }
 
+/* 테이블 헤더 스타일 */
 th {
     padding: 15px;
     text-align: left;
 }
 
+/* 테이블 셀 스타일 */
 td {
     padding: 12px;
 }
 
+/* 테이블 행 스타일 */
 tr {
     border-bottom: 1px solid #bdc3c7;
 }
 
+/* 테이블 행 호버 효과 */
 tbody tr:hover {
     background-color: #d4e6f1;
+    cursor: pointer;
 }
 
-/* Pagination */
+/* 검색 래퍼 스타일 */
+.ct_search-wrap {
+    text-align: center;
+}
+
+/* 검색 폼 스타일 */
+.ct_search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* 입력 및 선택 스타일 */
+select, input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* 버튼 스타일 */
+.btnSearch, .REG {
+    padding: 8px;
+    border-radius: 3px;
+    background-color: #2E3888;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 버튼 호버 효과 */
+.btnSearch:hover, .REG:hover {
+    background-color: #03012D;
+    color: #fff;
+}
+
+/* 페이징 스타일 */
 .pagination {
     list-style-type: none;
     padding: 0;
     display: flex;
+    justify-content: center;
 }
 
+/* 페이징 아이템 스타일 */
 .pagination li {
     margin-right: 10px;
 }
 
+/* 페이징 링크 스타일 */
 .pagination a {
-    text
+    text-decoration: none;
+    color: #333;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* 현재 페이지 스타일 */
+.pagination a.current {
+    background-color: #2E3888;
+    color: #fff;
+}

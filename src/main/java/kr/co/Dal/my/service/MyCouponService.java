@@ -39,7 +39,7 @@ public class MyCouponService {
     /* 3. 쿠폰 받기 버튼 */
     public void insertCoupon(MyCouponVO mycouponVO){
 
-        log.warn("Received cpId2: {}" , mycouponVO.getCp_id());
+        log.warn("Received cpId2: {}" , mycouponVO.getCpId());
         myCouponMapper.insertCoupon(mycouponVO);
         }
 

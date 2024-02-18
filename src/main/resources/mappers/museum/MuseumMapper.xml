@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<!--
+File Name      : MuseumMapper.xml
+Program Name   : 주류 박물관 Mapper
+Draft Author   : 이원정
+Draft Date     : 2024.01.22
+
+Revision History
+Ver.  Date          Revised By   Description
+————————————————————————————————————————————————————————————
+0.1   2024.01.22    이원정       최초개발
+————————————————————————————————————————————————————————————
+-->
+
 <mapper namespace="kr.co.Dal.museum.mapper.MuseumMapper">
 
     <!-- 분류 선택에 따른 술 목록 가져오기 -->
     <select id="selectLiqList" resultType="kr.co.Dal.museum.model.MuseumVO">
         SELECT liq_id, liq_nm, liq_hash, liq_memo  FROM liq_tb
-        WHERE liq_type = #{liq_type}
+        WHERE liq_type = #{liqType}
           AND liq_stts = '1'
     </select>
 
     <!-- 술 정보 가져오기 -->
     <select id="selectLiq" resultType="kr.co.Dal.museum.model.MuseumVO">
-        SELECT liq_id, liq_nm, liq_hash, liq_memo  FROM liq_tb
+        SELECT lt.liq_id, liq_nm, liq_hash, liq_memo, img_id, img_path, original_name, save_name, upload_date  FROM liq_tb lt
+            JOIN liq_img_tb lit ON lt.liq_id = lit.liq_id
         WHERE liq_stts = '1'
-        AND liq_id = #{liq_id}
+            AND lt.liq_id = #{liqId}
+        ORDER BY img_id
     </select>
 
 </mapper>

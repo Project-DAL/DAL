@@ -1,0 +1,54 @@
+<!--
+파일명        : MyAsk.html
+최초 작성자    : 박제형
+최초 작성날짜   : 2024.02.14
+-->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/my-layout}">
+
+
+
+
+
+<!-- 2. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+    <link rel="stylesheet" type="text/css" th:href="@{/my/css/my-layout.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/my/css/myAsk.css}">
+    <script src="/my/js/myAsk.js" defer></script>
+    <!-- 카카오 sdk -->
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js" integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
+    <link rel="stylesheet"  th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap}">
+</th:block>
+
+
+<th:block layout:fragment="content">
+    <!-- 4.2 Content -->
+    <section>
+        <div class="container">
+            <div class="container-main">
+                <div class="f-flex1">
+                    <div class="day-info">
+                        <span class="info">고객센터</span>
+                        <span class="time">09:00 ~ 18:00</span>
+                        <p class="wekday">평일: 전체 문의 상담
+                        <p class="wekend">주말 : 휴무
+                    </div>
+                </div>
+                <div class="f-flex2">
+                    <div class="naver-talk">
+                        <a id="naverTalk"><div>네이버톡톡 문의</div></a>
+                    </div>
+                    <div class="kakao-ask">
+                        <a id="kakaoAsk"><div>카카오챗 문의</div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</th:block>
+
+</html>

@@ -54,7 +54,11 @@ Ver.   Date          Revised By    Description
                     </label>
                     아이디 기억하기
                 </div>
-                <button type="submit" class="loginBtn">
+                <span th:if="${error}">
+                    <p id="valid" class="alert alert-danger" style="color:red" th:text="${exception}"></p>
+                </span>
+
+                <button type="submit" class="loginBtn" onclick="handleLogin()">
                     로그인
                 </button>
                 <div class="login-find">
@@ -67,7 +71,7 @@ Ver.   Date          Revised By    Description
                     </div>
                     <div>|</div>
                     <div class="register">
-                        <a class="btn" href="/joinForm">회원가입</a>
+                        <a class="btn" href="/termsForm">회원가입</a>
                     </div>
                 </div>
                 <!-- SNS 연동 로그인 -->

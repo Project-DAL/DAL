@@ -78,14 +78,17 @@ public class AdminAjaxLiquorController {
             @RequestParam("liqId") int liqId,
             @RequestParam("files") List<MultipartFile> files) {
         Map<String, Object> result = new HashMap<>();
+        log.warn("liquorUploadFiles Controller");
         log.warn("여기확인" + files.toString());
         try {
+            log.warn("try");
             // 파일 업로드 로직 실행
             adminAjaxLiquorService.uploadProductFiles(liqId, files);
             result.put("status", "success");
-            log.info("Files uploaded successfully for product: {}", liqId);
+            log.warn("Files uploaded successfully for product: {}", liqId);
         } catch (Exception e) {
-            log.error("Error uploading files for product: {}", liqId, e);
+            log.warn("error");
+            log.warn("Error uploading files for product: {}", liqId, e);
             result.put("status", "error");
         }
         return ResponseEntity.ok(result);

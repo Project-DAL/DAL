@@ -13,6 +13,7 @@ Ver.  Date          Revised By   Description
 ———————————————————————————————————————————————————————————>
 */
 
+import com.google.api.client.util.Value;
 import kr.co.Dal.admin.mapper.AdminAjaxMapper;
 import kr.co.Dal.admin.model.AdminStoreVO;
 import kr.co.Dal.admin.model.ProdImgVO;
@@ -42,6 +43,9 @@ public class AdminAjaxService {
     public List<AdminStoreVO> findStoreCategoryList(String prodType) {
         return adminAjaxMapper.selectCategoryList(prodType);
     }
+
+    @Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 
     /**
      * 상품 정보 등록 및 상품 ID 반환

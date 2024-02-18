@@ -44,7 +44,7 @@ Contents
                 <a  sec:authorize="isAnonymous()" th:href="@{/loginForm}">로그인</a>
                 <th:block sec:authorize="isAuthenticated()">
                     <div>
-                        <span sec:authentication="name"></span> 님
+                        <a th:text="${#authentication.principal.userNick}"></a> 님
                     </div>
                     <a th:href="@{/my/MyWish}">
                         <span data-tooltip="위시리스트">

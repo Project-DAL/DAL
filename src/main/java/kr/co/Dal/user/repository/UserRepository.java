@@ -18,7 +18,10 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     // select * from user where  username =? 조회한다.
      User findByUserLginId(String userLginId);
 
-     User findByUserNick(String userNick);
+     User findByUserName(String userName);
+
+
+    Optional<User> findByUserNameAndUserLginId(String userName, String userLginId);
 
 
     // SELECT * FROM user WHERE provider = ?1 and providerId = ?2

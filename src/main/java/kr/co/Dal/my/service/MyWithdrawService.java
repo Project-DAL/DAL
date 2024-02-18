@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 
 @Slf4j
@@ -34,8 +35,7 @@ public class MyWithdrawService {
 
 
     /* 회원 탈퇴 */
-    public void myWithdraw(MyWithdrawVO myWithdrawVO){
-        myWithdrawMapper.myWithdraw(myWithdrawVO);
+    public void myWithdraw(MyWithdrawVO myWithdrawVO){ myWithdrawMapper.myWithdraw(myWithdrawVO);
     }
 
 
