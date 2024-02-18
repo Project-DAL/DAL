@@ -112,6 +112,7 @@ function fnInsertQna() {
         let qnaType = document.getElementById("qna-cate").value;
         let qnaSecret;
         let secretYn = document.getElementById("secret-box");
+        let prodId = document.querySelector("input[data-prodId]").getAttribute("data-prodId");
 
         // 비밀글 여부 체크
         if (secretYn.checked) {
@@ -126,7 +127,8 @@ function fnInsertQna() {
             qnaType : qnaType,
             qnaSecret : qnaSecret,
             qnaTit: qnaTit,
-            qnaCn: qnaCn
+            qnaCn: qnaCn,
+            prodId: prodId
         };
 
         ajaxAPI("/store/insertQna", jsonData, "POST").then(response => {

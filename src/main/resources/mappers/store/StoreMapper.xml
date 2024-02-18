@@ -42,7 +42,8 @@
         prod_sale_price,
         prod_cnt,
         prod_like,
-        prod_cn_file
+        prod_cn_file,
+        prod_id
     FROM prod_tb
     where prod_id = #{prodId}
   </select>
