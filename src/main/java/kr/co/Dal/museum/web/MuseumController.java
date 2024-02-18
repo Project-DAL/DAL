@@ -60,15 +60,39 @@ public class MuseumController {
     /* 분류 선택에 따른 술 목록 가져오기 */
     @GetMapping("/museum/liqList")
     @ResponseBody
-    public ResponseEntity<List<MuseumVO>> selectLiqList(MuseumVO museumVO,
+    public ResponseEntity<Map<String, Object>> selectLiqList(MuseumVO museumVO,
                                                         @RequestParam(name = "liqType") String liqType) {
 
-        log.warn("liqType: " + liqType);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
         museumVO.setLiqType(liqType);
-
         List<MuseumVO> liqList = museumService.selectLiqList(museumVO);
-        return ResponseEntity.ok().body(liqList);
+
+        Map<String, Object> resultMap = new HashMap<>();
+        List<String> base64Images = new ArrayList<>(); // base64 이미지 리스트
+        Resource resource = null;
+
+        for (MuseumVO vo : liqList) {
+            // 이미지 파일 경로
+            String filePath = uploadPath + sdf.format(vo.getUploadDate()) + "/" + vo.getSaveName();
+            Path path = Paths.get(filePath);
+
+            try {
+                // 이미지를 base64 문자열로 변환하여 리스트에 추가
+                byte[] imageBytes = Files.readAllBytes(path);
+                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+                base64Images.add(base64Image);
+                resource = new InputStreamResource(Files.newInputStream(path));
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        resultMap.put("liqList", liqList);
+        resultMap.put("base64Images", base64Images); // base64 이미지 리스트를 resultMap에 추가
+
+        return ResponseEntity.ok().body(resultMap);
     }
 
     /* 술 정보 가져오기 */
@@ -76,8 +100,6 @@ public class MuseumController {
     @ResponseBody
     public ResponseEntity<Map<String, Object>> selectLiq(MuseumVO museumVO,
                                                          @RequestParam(name = "liqId") int liqId) throws Exception {
-
-        log.warn("selectLiq Controller");
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -90,7 +112,7 @@ public class MuseumController {
 
         for (MuseumVO vo : liq) {
             // 이미지 파일 경로
-            String filePath = uploadPath + "/" + sdf.format(vo.getUploadDate()) + "/" + vo.getSaveName();
+            String filePath = uploadPath + sdf.format(vo.getUploadDate()) + "/" + vo.getSaveName();
             Path path = Paths.get(filePath);
 
             try {

@@ -49,19 +49,42 @@ https://www.kalia.or.kr:9118/sub03/sub02.php
             <div class="ct_liq-main">
                 <!-- 대분류 -->
                 <div class="liq-typeList" id="liq-typeList">
-                    <div class="liq-type" th:data-value="1">소주</div>
-                    <div class="liq-type" th:data-value="2">리큐르</div>
-                    <div class="liq-type" th:data-value="3">막걸리</div>
-                    <div class="liq-type" th:data-value="4">탁주</div>
-                    <div class="liq-type" th:data-value="5">약/청주</div>
-                    <div class="liq-type" th:data-value="6">과실주</div>
-                    <div class="liq-type" th:data-value="7">와인</div>
-                    <div class="liq-type" th:data-value="8">위스키</div>
+                    <div class="liq-type" th:data-value="1">
+                        <img th:src="@{/museum/img/soju.png}">
+                        <p>소주</p>
+                    </div>
+                    <div class="liq-type" th:data-value="2">
+                        <img th:src="@{/museum/img/liquer.png}">
+                        <p>리큐르</p>
+                    </div>
+                    <div class="liq-type" th:data-value="3">
+                        <img th:src="@{/museum/img/makgeolli.png}">
+                        <p>막걸리</p>
+                    </div>
+                    <div class="liq-type" th:data-value="4">
+                        <img th:src="@{/museum/img/beer.png}">
+                        <p>맥주</p>
+                    </div>
+                    <div class="liq-type" th:data-value="5">
+                        <img th:src="@{/museum/img/yakju.png}">
+                        <p>약/청주</p>
+                    </div>
+                    <div class="liq-type" th:data-value="6">
+                        <img th:src="@{/museum/img/fruit.png}">
+                        <p>과실주</p>
+                    </div>
+                    <div class="liq-type" th:data-value="7">
+                        <img th:src="@{/museum/img/wine.png}">
+                        <p>와인</p>
+                    </div>
+                    <div class="liq-type" th:data-value="8">
+                        <img th:src="@{/museum/img/wiskey.png}">
+                        <p>위스키</p>
+                    </div>
                 </div>
                 <!-- 소분류 : 술 -->
                 <div class="liq-list" id="liq-list"></div>
                 <div class="liq-box">
-                    <div class="liq-msg" id="liq-msg">탁주: 녹말이 포함된 재료와 국 및 물을 원료로 하여 발효시킨 술덧을 여과하지 않고 혼탁하게 만든 것</div>
                     <div class="liq-view">
                         <div class="liq-pic">
                             <img id="liq-img" >
@@ -73,19 +96,19 @@ https://www.kalia.or.kr:9118/sub03/sub02.php
                                 <div class="liq-features">
                                     <div class="liq-feature">
                                         <div>향</div>
-                                        <div>■ ■ □ □ □</div>
+                                        <div class="liq-aroma" id="liq-aroma">■ ■ □ □ □</div>
                                     </div>
                                     <div class="liq-feature">
                                         <div>바디감</div>
-                                        <div>■ ■ ■ □ □</div>
+                                        <div class="liq-body" id="liq-body">■ ■ ■ □ □</div>
                                     </div>
                                     <div class="liq-feature">
                                         <div>목넘김</div>
-                                        <div>■ ■ □ □ □</div>
+                                        <div class="liq-smooth" id="liq-smooth">■ ■ □ □ □</div>
                                     </div>
                                 </div>
                                 <div class="liq-info-view">
-                                    <a href="#" class="btn btnView">상품 상세 정보 →</a>
+                                    <a href="#" class="btn btnView">상품 구매 →</a>
                                 </div>
                             </div>
                         </div>
