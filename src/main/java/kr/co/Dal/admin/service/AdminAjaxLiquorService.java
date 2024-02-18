@@ -21,6 +21,7 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Map;
 
 /*
 File Name      : AdminAjaxLiquorService.js
@@ -42,12 +43,29 @@ public class AdminAjaxLiquorService {
 
     private final AdminAjaxLiquorMapper adminAjaxLiquorMapper;
 
+    // 술 종류 ID와 타이틀을 매핑
+    private static final Map<String, String> LIQUOR_TYPES = Map.of(
+            "1", "소주",
+            "2", "리큐르",
+            "3", "막걸리",
+            "4", "맥주",
+            "5", "약주/청주",
+            "6", "과실주",
+            "7", "와인",
+            "8", "위스키"
+            // 추가 매핑 필요시 여기에 추가
+    );
+
     public List<LiquorVO> findLiquorList() {
-        return adminAjaxLiquorMapper.selectLiquorList();
+        List<LiquorVO> liquorList = adminAjaxLiquorMapper.selectLiquorList();
+        liquorList.forEach(this::convertLiquorType);
+        return liquorList;
     }
 
     public List<LiquorVO> findLiquorCategoryList(String liqType) {
-        return adminAjaxLiquorMapper.selectLiquorCategoryList(liqType);
+        List<LiquorVO> liquorList = adminAjaxLiquorMapper.selectLiquorCategoryList(liqType);
+        liquorList.forEach(this::convertLiquorType);
+        return liquorList;
     }
 
     @Value("${spring.servlet.multipart.location}")
@@ -57,6 +75,12 @@ public class AdminAjaxLiquorService {
     public int insertLiquor(LiquorVO liquorVO) {
         adminAjaxLiquorMapper.insertLiquor(liquorVO);
         return liquorVO.getLiqId();
+    }
+
+    // 술 종류 ID를 타이틀로 변환하는 메소드
+    private void convertLiquorType(LiquorVO liquorVO) {
+        String liquorTypeTitle = LIQUOR_TYPES.getOrDefault(liquorVO.getLiqType(), "알 수 없음");
+        liquorVO.setLiqType(liquorTypeTitle);
     }
 
     /**

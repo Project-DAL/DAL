@@ -11,15 +11,13 @@ Ver.  Date          Revised By   Description
 ----------------------------------------------------------------------------------------------------------------------->
 */
 .qna-btn {
-    display: block;
-    height: 40px;
+    /*display: block;*/
+    /*height: 40px;*/
     width: 130px;
-    line-height: 40px;
-    text-align: center;
-    background-color: #0f1e57;
-    border: solid 1px #0f1e57;
+    /*line-height: 40px;*/
+    background-color: #03012D;
+    border: solid 1px #03012D;
     border-radius: 20px;
-    color: #fff;
 }
 .qna-font {
     font-weight: 600;

@@ -123,10 +123,10 @@ function fnInsertQna() {
         }
 
         let jsonData = {
-            qna_type : qnaType,
-            qna_secret : qnaSecret,
-            qna_tit: qnaTit,
-            qna_cn: qnaCn
+            qnaType : qnaType,
+            qnaSecret : qnaSecret,
+            qnaTit: qnaTit,
+            qnaCn: qnaCn
         };
 
         ajaxAPI("/store/insertQna", jsonData, "POST").then(response => {

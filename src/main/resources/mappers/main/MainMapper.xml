@@ -22,12 +22,13 @@ Ver.  Date          Revised By   Description
     <!-- swLng swLat neLng neLat -->
     <select id="selectStoreList" parameterType="map" resultType="kr.co.Dal.main.model.MainVO">
     <![CDATA[
-        SELECT * FROM st_tb
-                          INNER JOIN prod_tb ON st_liquorNo = prod_id
-        WHERE MBRContains(ST_GeomFromText
-                          ('LineString(${swLng} ${swLat}, ${neLng} ${neLat})'), st_xy)
-          AND prod_tit LIKE CONCAT('%', #{prodTit}, '%')
-        ]]>
+    SELECT * FROM st_tb st
+        INNER JOIN prod_tb pt ON st.st_liquorNo = pt.prod_id
+        JOIN prod_img_tb pit ON pt.prod_id = pit.prod_id
+    WHERE MBRContains(ST_GeomFromText
+    ('LineString(${swLng} ${swLat}, ${neLng} ${neLat})'), st.st_xy)
+    AND prod_tit LIKE CONCAT('%', #{prodTit}, '%')
+    ]]>
     </select>
 
     <!-- 셀렉트: 지역 가져오기 (location_tb) -->

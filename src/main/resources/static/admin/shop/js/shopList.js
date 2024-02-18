@@ -1,14 +1,14 @@
 "use strict";
 /*
-File Name      : storeList.js
-Program Name   : 주류목록
+File Name      : shopList.js
+Program Name   : 가게목록
 Draft Author   : 김진형
-Draft Date     : 2024.02.15
+Draft Date     : 2024.02.17
 
 Revision History
 Ver.  Date          Revised By   Description
 ------------------------------------------------------------------------------------------------------------------------
-0.1   2024.02.15    김진형       최초개발
+0.1   2024.02.17    김진형       최초개발
 ----------------------------------------------------------------------------------------------------------------------->
 */
 
@@ -33,14 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* 3. Functions - Process(CRUD) ***************************************************************************************/
 function fnInsert() {
-    window.location.href = "/admin/liquor/liquorWrite";
+    window.location.href = "/admin/shop/shopWrite";
 }
 
 function fnAjaxList() {
     let table = $('#main-table').DataTable();
 
     table.clear().destroy(); // 기존 데이터를 지우고 DataTable 인스턴스를 파괴합니다.
-    ajaxAPI('/admin/liquorList',null,"GET").then(response => {
+    ajaxAPI('/admin/shopList',null,"GET").then(response => {
         console.log("response: ", response);
 
         jsonGridList = response.list;
@@ -48,6 +48,7 @@ function fnAjaxList() {
         appendGridListHtml();
     })
 }
+
 
 function fnAJaxCategoryList(dataType) {
     let table = $('#main-table').DataTable();
@@ -65,51 +66,29 @@ function fnAJaxCategoryList(dataType) {
     })
 }
 
-
 function addEventListenerCRUDBtn() {
-    document.getElementById("InsertLiquor").addEventListener('click', fnInsert);    // 초기화
+    document.getElementById("InsertStore").addEventListener('click', fnInsert);    // 초기화
+    /*
     document.getElementById('allProd').addEventListener('click', fnAjaxList);     // 모든 파일 불러오기
-    document.getElementById('soju').addEventListener('click', () => {
+    document.getElementById('sojuProd').addEventListener('click', () => {
         const dataType = '1';
         fnAJaxCategoryList(dataType);
     });
-    document.getElementById('liquor').addEventListener('click', () => {
+    document.getElementById('beerProd').addEventListener('click', () => {
         const dataType = '2';
         fnAJaxCategoryList(dataType);
     });
-    document.getElementById('makgeolli').addEventListener('click', () => {
+    document.getElementById('liquorProd').addEventListener('click', () => {
         const dataType = '3';
         fnAJaxCategoryList(dataType);
     });
-    document.getElementById('beer').addEventListener('click', () => {
+    document.getElementById('traditionalProd').addEventListener('click', () => {
         const dataType = '4';
         fnAJaxCategoryList(dataType);
         console.log(dataType)
     });
-    document.getElementById('yakju').addEventListener('click', () => {
-        const dataType = '5';
-        fnAJaxCategoryList(dataType);
-        console.log(dataType)
-    });
-    document.getElementById('fruitWine').addEventListener('click', () => {
-        const dataType = '6';
-        fnAJaxCategoryList(dataType);
-        console.log(dataType)
-    });
-    document.getElementById('wine').addEventListener('click', () => {
-        const dataType = '7';
-        fnAJaxCategoryList(dataType);
-        console.log(dataType)
-    });
-    document.getElementById('whiskey').addEventListener('click', () => {
-        const dataType = '8';
-        fnAJaxCategoryList(dataType);
-        console.log(dataType)
-    });
+    */
 }
-
-
-
 
 /* 5. Functions - Html Creator ****************************************************************************************/
 /* 5.1 appendGridListHtml() - 목록 html 생성 */
@@ -126,25 +105,27 @@ function appendGridListHtml() {
             console.log("item : " + item.prodTit)
             document.getElementById("main-table-tbody").insertAdjacentHTML('beforeend', `
                  <tr>
-                                        <td>${item.liqId}</td>
-                                        <td><a href="#">${item.liqNm}</a></td>
-                                        <td>${item.liqType}</td>
-                                        <td>${item.liqPlace}</td>
-                                        <td>${item.liqCp}</td>
-                                        <td>${item.liqAlc}</td>
-                                        <td>${item.liqHash}</td>
+                                        <td>${item.stId}</td>
+                                        <td><a href="#">${item.stNm}</a></td>
+                                        <td>${item.stAddr}</td>
+                                        <td>${item.stStts}</td>
+                                        <td>${item.stTel}</td>
+                                        <td>${item.stLiquorNo}</td>
+                                        <td>${item.stHoursOpen}</td>
+                                        <td>${item.stHoursClosed}</td>
+                                        <td>${item.stRdate}</td>
                                         <td class="modi-layout">
-                                            <button class="btn btn-primary btn-sm d-inline-block mr2" data-id="${item.liqId}" onclick="modifyProduct(${item.liqId})"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-danger btn-sm d-inline-block" data-id="${item.liqId}" onclick="deleteProduct(${item.liqId})"><i class="fas fa-trash"></i></button>
+                                            <button class="btn btn-primary btn-sm d-inline-block mr2" data-id="${item.stId}" onclick="modifyProduct(${item.stId})"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-danger btn-sm d-inline-block" data-id="${item.stId}" onclick="deleteProduct(${item.stId})"><i class="fas fa-trash"></i></button>
                                         </td>
                                     </tr>`);
-
         }
     }
     console.log(document.getElementById("main-table-tbody").innerHTML);
     // DataTable 초기화 또는 업데이트
     initializeDataTable();
 }
+
 
 function initializeDataTable() {
     // 기존에 DataTable 인스턴스가 있으면 파괴
@@ -168,26 +149,21 @@ function initializeDataTable() {
     }).buttons().container().appendTo('#main-table_wrapper .col-md-6:eq(0)');
 }
 
-function deleteProduct(liqId) {
-    if (confirm("해당 주류를 삭제하시겠습니까?")) {
-        console.log(liqId);
+function deleteProduct(stId) {
+    if (confirm("해당 가게를 삭제하시겠습니까?")) {
+        console.log(stId);
 
-        ajaxAPI('/admin/deleteLiquor/' + liqId,null,"DELETE").then(response => {
+        ajaxAPI('/admin/deleteShop/' + stId,null,"DELETE").then(response => {
             if(response.status === 'success') {
-                alert('주류가 삭제되었습니다.');
+                alert('가게가 삭제되었습니다.');
                 // 여기에 상품 목록을 다시 로드하는 로직 추가
                 fnAjaxList();
             } else {
-                alert('주류 삭제에 실패했습니다.');
+                alert('가게 삭제에 실패했습니다.');
             }
         }).catch(error => {
             console.error('Error deleting product:', error);
-            alert('주류 삭제 중 오류가 발생했습니다.');
+            alert('가게 삭제 중 오류가 발생했습니다.');
         });
     }
 }
-
-function modifyProduct(liqId) {
-    window.location.href = "/admin/storeModify/" + liqId;
-}
-

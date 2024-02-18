@@ -29,7 +29,6 @@ function fnAjaxWrite() {
 
 
 document.getElementById("save").addEventListener("click", function() {
-    // "bard_cn" 에디터의 내용을 업데이트
     oEditors.getById["bardCn"].exec("UPDATE_CONTENTS_FIELD", []);
 
     // 폼 제출

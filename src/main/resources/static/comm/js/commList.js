@@ -14,21 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // function
 function fnAjaxCommList() {
-
-/*   document.getElementById('0').classList.add('selected');
-
-    let bardType = event.currentTarget.id;
-    if (bardType) {
-        document.querySelectorAll('.ct_left-menu ul').forEach(function (ul) {
-            ul.classList.remove('selected');
-        });
-
-        document.getElementById(bardType).classList.add('selected');
-
-    }else if(!bardType) {
-       bardType = 0;
-    }*/
-
    let rows = document.querySelectorAll("tr[data-bardId]");
 
    rows.forEach(function(row) {

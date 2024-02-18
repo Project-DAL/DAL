@@ -92,17 +92,14 @@ Ver.  Date          Revised By   Description
     color: #34315e;
 }
 .prod-detail {
-    height: 400px;
+    min-height: 400px;
     border: 1px solid black;
 }
 .btn {
-    display: block;
-    width: 60px;
+    width: 100px;
     line-height: 30px;
-    text-align: center;
-    background-color: #0f1e57;
-    border: solid 1px #0f1e57;
-    color: #fff;
+    background-color: #03012D;
+    border: solid 1px #03012D;
 }
 .prod-count {
     display: block;
@@ -116,6 +113,54 @@ Ver.  Date          Revised By   Description
     display: flex;
     justify-content: space-around;
 }
-.qnaBtn {
-    margin: 0 auto;
+.qnaBtn-wrap {
+    display: flex;
+    justify-content: center;
+}
+/* 문의글 목록 */
+.qnaList-wrap {
+    border-bottom: 1px solid #e6e6e6;
+    height: 50px;
+    line-height: 50px;
+}
+.qnaList-wrap:hover {
+    cursor: pointer;
+}
+.ansOnly:hover {
+    cursor: pointer;
+}
+
+.qnaList-dropdown {
+    background-color: #fafafa;
+    transition: .4s;
+    opacity: 0;
+    display: none;
+}
+.qnaList-dropdown.active {
+    min-height: 150px;
+    display: table-row;
+    opacity: 1;
+}
+.qnaList-dropdown:hover {
+    cursor:pointer;
+}
+
+/* 문의글 내용 */
+.qnaList-dropdown-que {
+    display: flex;
+    justify-content: flex-start;
+    min-height: 75px;
+    align-items: center;
+    padding-left: 15%;
+    border-bottom: 1px solid #E6E6E6;
+    cursor: auto;
+}
+.qnaList-dropdown-que > svg {
+    vertical-align: middle;
+}
+
+/* 문의글 내용, 답변 */
+.qnaList-dropdown-que > p {
+    font-size: 15px;
+    vertical-align: middle;
 }

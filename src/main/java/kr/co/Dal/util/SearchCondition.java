@@ -27,7 +27,7 @@ public class SearchCondition {
 
     //추가
     private int userId;
-
+    private int bardId;
 
     public String getQueryString(Integer page) {
         return getQueryString(page, no);

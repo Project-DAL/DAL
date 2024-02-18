@@ -79,12 +79,12 @@ Draft Date      : 2023.11.10
                         </thead>
                         <tbody id="fieldListBody">
                             <tr th:each="result : ${commList}" th:attr="data-bardId=${result.bardId}">
-                                <td><p th:text="${result.bardId}"></p></td>
-                                <td><p th:text="${result.bardTit}"></p></td>
-                                <td><p th:text="${result.bardCn}"></p></td>
-                                <td><p th:text="${result.userId}"></p></td>
-                                <td><p th:text="${result.bardCnt}"></p></td>
-                                <td><p th:text="${result.bardRdate}"></p></td>
+                                <td th:utext="${result.bardId}"></td>
+                                <td th:utext="${result.bardTit}"></td>
+                                <td th:utext="${result.bardCn}"></td>
+                                <td th:utext="${result.userId}"></td>
+                                <td th:utext="${result.bardCnt}"></td>
+                                <td th:utext="${result.bardRdate}"></td>
                             </tr>
                             <tr th:if="${#lists.isEmpty(commList)}">
                                 <td colspan="6"><p>등록된 글이 없습니다.</p></td>
@@ -93,19 +93,20 @@ Draft Date      : 2023.11.10
                     </table>
                 </div>
                 <!-- Pagination -->
-                <div class="pagination" th:object="${ph}" th:style="${#lists.isEmpty(commList) ? 'visibility:hidden;' : ''}">
-                    <th:block th:if="${showPrev}">
-                        <a th:href="@{/comm/commList} + ${ph.sc.getQueryString(ph.beginPage-1)}" class="prev">&lt;</a>
+                <div class="pagination" th:object="${ph}" th:style="${#lists.size(commList) == 0 ? 'visibility:hidden;':''}">
+                    <th:block th:if="*{showPrev}">
+                        <a th:href="@{/comm/commList} + ${ph.sc.getQueryString(ph.beginPage-1)}" class="prev">< </a>
                     </th:block>
                     <th:block th:each="num:${#numbers.sequence(ph.beginPage, ph.endPage)}">
                         <a th:href="@{/comm/commList} + ${ph.sc.getQueryString(num)}" th:class="${num == ph.sc.page ? 'num current':'num'}">
                             [[${num}]]
                         </a>
                     </th:block>
-                    <th:block th:if="${showNext}">
-                        <a th:href="@{/comm/commList} + ${ph.sc.getQueryString(ph.endPage+1)}" class="next">&gt;</a>
+                    <th:block th:if="*{showNext}">
+                        <a th:href="@{/comm/commList} + ${ph.sc.getQueryString(ph.endPage+1)}" class="next"> ></a>
                     </th:block>
                 </div>
+
             </section>
         </div>
     </main>
