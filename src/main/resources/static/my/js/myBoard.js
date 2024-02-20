@@ -12,7 +12,6 @@ let checkboxes = document.querySelectorAll('.checkboxes');           // 개별 �
 let bardidArray = [];                                                        // 체크박스에 대한 bardid
 let bardtypeArray = [];                                                      // 체크박스에 대한 bardtype
 
-
 document.addEventListener('DOMContentLoaded', function(){
     addEventListenerBtn();
 })
@@ -26,7 +25,6 @@ function addEventListenerBtn(){
         checkbox.addEventListener('change', fnCheckBox);
     })
     btnDelete.addEventListener('click', fnDelete);
-
 }
 
 

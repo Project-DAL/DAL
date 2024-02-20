@@ -21,6 +21,7 @@ public class SearchCondition {
     private String uid;
 
     //검색 관련
+    private String searchField;
     private String searchKeyword;
     private String searchValue;
     private int bardType;

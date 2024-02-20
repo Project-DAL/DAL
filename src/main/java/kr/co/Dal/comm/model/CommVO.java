@@ -17,7 +17,8 @@ public class CommVO {
     private Integer bardCnt;       // 조회수
     private Integer bardLike_cnt;  // 좋아요수
     private Integer bardStts;      // 게시글상태(1:유효/0:무효)
-    private String searchKeyword;
+    private String searchKeyword1;
+    private String searchKeyword2;
     private String searchValue;
 
 }

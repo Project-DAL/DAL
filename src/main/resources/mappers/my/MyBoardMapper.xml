@@ -24,8 +24,16 @@
             bard_tb
         WHERE
             bard_stts = 1
-          AND
-            user_id = #{userId}
+            AND
+                user_id = #{userId}
+            <if test="searchField != null and !searchField.equals('')">
+                <if test="searchField != 0">
+                    AND bard_type = #{searchField}
+                </if>
+            </if>
+            <if test="searchKeyword != null and !searchKeyword.equals('')">
+                AND bard_tit LIKE CONCAT('%', #{searchKeyword}, '%')
+            </if>
         ORDER BY
             bard_rdate DESC
             LIMIT #{offset}, 10
@@ -41,6 +49,14 @@
             bard_stts = 1
           AND
             user_id = #{userId}
+        <if test="searchField != null and !searchField.equals('')">
+          <if test="searchField != 0">
+              AND bard_type = #{searchField}
+          </if>
+        </if>
+        <if test="searchKeyword != null and !searchKeyword.equals('')">
+            AND bard_tit LIKE CONCAT('%', #{searchKeyword}, '%')
+        </if>
     </select>
 
 

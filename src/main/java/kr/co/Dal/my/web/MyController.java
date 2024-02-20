@@ -69,6 +69,8 @@ public class MyController {
                           @ModelAttribute SearchCondition sc,
                           @AuthenticationPrincipal PrincipalDetails principalDetails){
 
+        log.warn("sc: " + sc);
+
         // 검색어
         sc.setMap(map);
 
