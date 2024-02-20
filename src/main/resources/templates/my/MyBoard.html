@@ -26,9 +26,21 @@
             <div class="ct_subtitle">
                 <div class="title" id="title1">내 게시글</div>
             </div>
+            <div class="ct_search-wrap">
+                <form th:action="@{/my/MyBoard}" >
+                    <div>
+                        <select name="searchField">
+                            <option th:value="0" th:selected="${ph.sc.searchField == '0'}">ALL</option>
+                            <option th:value="1" th:selected="${ph.sc.searchField == '1'}">NOTICE</option>
+                            <option th:value="2" th:selected="${ph.sc.searchField == '2'}">REVIEW</option>
+                            <option th:value="3" th:selected="${ph.sc.searchField == '3'}">DAILY</option>
+                        </select>
+                        <input type="text" id="searchKeyword" name="searchKeyword"  placeholder="검색어를 입력하세요" th:value="${ph.sc.searchKeyword}">
+                    </div>
+                    <button type="submit" class="btn btnSearch" id="btnSearch">검색</button>
+                </form>
+            </div>
             <div class="content-top">
-
-
                 <div id="boardTab" class="content-middle">
                     <table class="board-write">
                         <colgroup>

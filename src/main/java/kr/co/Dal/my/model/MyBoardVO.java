@@ -25,4 +25,7 @@ public class MyBoardVO {
 
     private String[] bardidArray;
     private String[] bardtypeArray;
+
+    private String searchKeyword;
+    private String searchValue;
 }
