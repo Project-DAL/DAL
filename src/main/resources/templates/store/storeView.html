@@ -99,27 +99,100 @@ Ver.  Date          Revised By   Description
         </div>
       </div>
       <!-- 4.3 Prod Detail, Delivery Info -->
-      <div id="ct_midbar" class="ct_midbar mt40">
-        <!-- <ul class="ct_midbar mt40">
-          <li><a href="#">상품상세정보</a></li>
-          <li><a href="#">배송안내</a></li>
-          <li><a href="#">교환 및 환불안내</a></li>
-          <li><a href="#">상품후기</a></li>
-          <li><a href="#">상품문의</a></li>
-        </ul> -->
-        <div class="ct_cate-title"><a>상품상세정보</a></div>
-        <div class="ct_cate-title"><a>배송안내</a></div>
-        <div class="ct_cate-title"><a href="#">교환 및 환불안내</a></div>
-        <div class="ct_cate-title"><a href="#">상품후기</a></div>
-        <div class="ct_cate-title"><a href="#">상품문의</a></div>
-      </div>
+<!--      <div id="ct_midbar" class="ct_midbar mt40">-->
+        <ul id="ct_midbar" class="ct_midbar mt40">
+          <li class="midbar-title" th:attr="data-target='prod-1'">상품상세정보</li>
+          <li class="midbar-title" th:attr="data-target='prod-2'">배송안내</li>
+          <li class="midbar-title" th:attr="data-target='prod-3'">교환 및 환불안내</li>
+          <li class="midbar-title" th:attr="data-target='prod-4'">상품후기</li>
+          <li class="midbar-title" th:attr="data-target='prod-5'">상품문의</li>
+        </ul>
       <div id="ct_prod">
-        <div class="prod-detail"><h1>상세정보 이미지</h1></div>
-        <div class="prod-detail"><h1>배송안내</h1></div>
-        <div class="prod-detail">
+        <div class="prod-detail" id="prod-1"><h1>상세정보 이미지</h1></div>
+        <div class="prod-detail" id="prod-2">
+          <h1 class="mb10 mt10" style="font-size: x-large">배송 정보</h1>
+          <div>
+            <table style="border-top: 1px solid black; width:100%; border-bottom: 1px solid black; font-size: smaller;">
+              <colgroup>
+                <col style="width: 200px;">
+                <col>
+              </colgroup>
+              <tr class="info" style="border-bottom: 1px solid #e6e6e6;">
+                <th>
+                  <span>배송택배사</span>
+                </th>
+                <td>
+                  <div class="mt10 mb10">
+                    DAL Express
+                  </div>
+                </td>
+              </tr>
+              <tr class="info">
+                <th>
+                  <span>배송료</span>
+                </th>
+                <td>
+                  <div class="mt10 mb10">
+                    4,000원
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <h1 class="mb10 mt30" style="font-size: x-large">반품 정보</h1>
+          <div class="mb40">
+            <table style="border-top: 1px solid black; width:100%; border-bottom: 1px solid black; font-size: smaller;">
+              <colgroup>
+                <col style="width: 200px;">
+                <col>
+              </colgroup>
+              <tr class="info" style="border-bottom: 1px solid #e6e6e6;">
+                <th>
+                  <span>업체명</span>
+                </th>
+                <td>
+                  <div class="mt10 mb10">
+                    DAL Corporation
+                  </div>
+                </td>
+              </tr>
+              <tr class="info" style="border-bottom: 1px solid #e6e6e6;">
+                <th>
+                  <span>연락처</span>
+                </th>
+                <td>
+                  <div class="mt10 mb10">
+                    2311 - 2403
+                  </div>
+                </td>
+              </tr>
+              <tr class="info" style="border-bottom: 1px solid #e6e6e6;">
+                <th>
+                  <span>택배사</span>
+                </th>
+                <td>
+                  <div class="mt10 mb10">
+                    DAL Express
+                  </div>
+                </td>
+              </tr>
+              <tr class="info">
+                <th>
+                  <span>반품주소</span>
+                </th>
+                <td>
+                  <div class="mt10 mb10">
+                    서울특별시 OO구 OO동 DAL 빌딩
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="prod-detail" id="prod-3">
           <h1 class="mb10" style="font-size: x-large">교환/반품/환불/취소 안내</h1>
           <div>
-            <table style="border-top: 1px solid black; border-bottom: 1px solid black; font-size: smaller;">
+            <table style="border-top: 1px solid black; width:100%; border-bottom: 1px solid black; font-size: smaller;">
               <colgroup>
                 <col style="width: 200px;">
                 <col>
@@ -132,7 +205,7 @@ Ver.  Date          Revised By   Description
                   <div style="margin: 10px 0px;">
                     <ul class="ul">
                       <li>
-                        교환/반품/환불 기간: 상품 수령 후 7일 이내 청약 철회(교환/반품)가 가능합니다(단, 재화 등의 내용이 표시ㆍ광고 내용과 다르거나 계약 내용과 다르게 이행된 때에는 당해 재화 등을 공급받은 날로부터 3월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약철회가 가능합니다)
+                        교환/반품/환불 기간: 상품 수령 후 7일 이내 청약 철회(교환/반품)가 가능합니다(단, 재화 등의 내용이 표시ㆍ광고 내용과 다르거나 계약 내용과 다르게 이행된 때에는 당해 재화 등을 공급<br>&nbsp; 받은 날로부터 3월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약철회가 가능합니다)
                       </li>
                       <li>
                         교환/반품 방법: 마이페이지를 통해 접수 부탁 드립니다
@@ -141,7 +214,7 @@ Ver.  Date          Revised By   Description
                         교환/반품 처리 과정: [교환/반품신청내역]에서 확인 가능합니다
                       </li>
                       <li>
-                        교환/반품비 : 고객님의 단순 변심에 의한 교환/반품 시 왕복 배송비는 고객 부담 입니다
+                        교환/반품비: 고객님의 단순 변심에 의한 교환/반품 시 왕복 배송비는 고객 부담 입니다
                       </li>
                     </ul>
                   </div>
@@ -162,7 +235,7 @@ Ver.  Date          Revised By   Description
                             복제가 가능한 재화 등의 포장이 훼손된 경우
                           </li>
                           <li>
-                            소비자의 책임 있는 사유로 상품 등이 멸실 또는 훼손된 경우(단, 상품 확인을 위한 포장 훼손 제외)
+                            소비자의 책임 있는 사유로 상품 등이 개봉 또는 훼손된 경우(단, 상품 확인을 위한 포장 훼손 제외)
                           </li>
                           <li>
                             소비자의 주문에 따라 개별적으로 생산되는 상품이 제작에 들어간 경우
@@ -180,15 +253,15 @@ Ver.  Date          Revised By   Description
                 <td>
                   <ul class="ul" style="margin: 10px 0px;">
                     <li>모든 상품은 배송준비중 단계까지 취소 신청 가능합니다.</li>
-                    <li>주문제작/해외배송 상품의 경우 취소 신청 후 판매자의 주문 취소 확인이 필요합니다.</li>
+                    <li>주문제작/해외배송 상품의 경우 취소 신청 후 관리자의 주문 취소 확인이 필요합니다.</li>
                   </ul>
                 </td>
               </tr>
             </table>
           </div>
         </div>
-        <div class="prod-detail"><h1>상품후기</h1></div>
-        <div class="prod-detail">
+        <div class="prod-detail" id="prod-4"><h1>상품후기</h1></div>
+        <div class="prod-detail" id="prod-5">
           <h1>상품문의</h1>
           <div class="qnaBtn-wrap">
             <a href="javascript:void(0);" id="popup_btn" class="btn mb15" onclick="modal('ct_qna');">문의 남기기</a>
@@ -227,8 +300,8 @@ Ver.  Date          Revised By   Description
               </tr>
             </tbody>
           </table>
-          <div>
-            <ol style="display: flex; justify-content: center;">
+          <div style="display: flex; justify-content: center" >
+            <ol style="display: flex; justify-content: space-around; width: 30%; margin-top: 60px;">
               <li>
                 <a href="#">1</a>
               </li>

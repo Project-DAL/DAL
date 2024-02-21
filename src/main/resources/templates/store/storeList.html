@@ -38,11 +38,11 @@
 <!--      <div class="ct_cate-wrap">-->
 <!--        <div class="ct_cate-title">-->
           <ul class="ct_cate-wrap">
-            <li>전체</li>
-            <li>탁주</li>
-            <li>증류주</li>
-            <li>과실주</li>
-            <li>와인</li>
+            <li data-prodType="0">전체</li>
+            <li data-prodType="4">탁주</li>
+            <li data-prodType="5">증류주</li>
+            <li data-prodType="6">과실주</li>
+            <li data-prodType="7">와인</li>
           </ul>
 <!--        </div>-->
 <!--        <div class="ct_cate-title"><li>탁주</li></div>-->
@@ -86,6 +86,11 @@
                   </div>
                 </div>
               </div>
+            </li>
+            <li th:if="${#lists.isEmpty(prodList)}">
+              <img class="no-prod" th:src="@{/store/img/no-prod.png}" />
+              <img class="no-prod" th:src="@{/store/img/no-prod2.png}" />
+              <p>현재 등록된 상품이 없습니다.</p>
             </li>
           </ul>
         </div>

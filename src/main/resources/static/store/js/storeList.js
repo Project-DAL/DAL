@@ -14,6 +14,7 @@ Ver.  Date          Revised By   Description
 
 document.addEventListener('DOMContentLoaded', function() {
     fnProdDetail();
+    addEventListenerBtn();
 });
 
 function fnProdDetail() {
@@ -24,5 +25,26 @@ function fnProdDetail() {
             let prodId = list.getAttribute("data-prodId");
             window.location.href = "/store/storeView?prodId=" + prodId;
         })
+    })
+}
+
+let prodType = "";
+
+function addEventListenerBtn(){
+    document.querySelectorAll(".ct_cate-wrap li").forEach(li => {
+        li.addEventListener("click", function() {
+            prodType = this.getAttribute("data-prodType");
+            console.log(prodType);
+        });
+    });
+    prodType.addEventListener('click', fnSelectProdList);
+}
+
+function fnSelectProdList() {
+    let jsonData = {
+        prodType : prodType
+    };
+    ajaxAPI("/store/selectListAjax", jsonData, "GET").then(response => {
+        console.log("되는건가");
     })
 }

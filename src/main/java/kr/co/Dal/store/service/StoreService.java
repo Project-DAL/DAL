@@ -4,6 +4,7 @@ import kr.co.Dal.store.mapper.StoreMapper;
 import kr.co.Dal.store.model.QnaVO;
 import kr.co.Dal.store.model.StoreVO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.mail.Store;
@@ -28,13 +29,9 @@ public class StoreService {
         return storeMapper.selectProdOne(storeVO);
     }
 
-//    public void insertStoreQna(QnaVO qnaVO) {
-//        storeMapper.insertStoreQna(qnaVO);
-//    }
-
-//    public QnaVO selectProdQna(QnaVO qnaVO) {
-//        storeMapper.selectStoreList(qnaVO);
-//    }
+    public ResponseEntity<StoreVO> selectStoreListAjax(StoreVO storeVO) {
+        return storeMapper.selectProdListAjax(storeVO);
+    }
 
 
 }

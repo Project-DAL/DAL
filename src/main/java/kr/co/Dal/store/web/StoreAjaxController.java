@@ -13,15 +13,20 @@ Ver.  Date          Revised By   Description
 package kr.co.Dal.store.web;
 
 import kr.co.Dal.store.model.QnaVO;
+import kr.co.Dal.store.model.StoreVO;
 import kr.co.Dal.store.service.QnaService;
+import kr.co.Dal.store.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -30,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class StoreAjaxController {
 
     private final QnaService qnaService;
+    private final StoreService storeService;
 
     @PostMapping("/insertQna")
     public ResponseEntity<QnaVO> insertQna(@RequestBody QnaVO qnaVO) {
@@ -43,5 +49,13 @@ public class StoreAjaxController {
         qnaService.selectQna(qnaVO);
 
         return ResponseEntity.ok(qnaVO);
+    }
+
+
+    @GetMapping("/selectListAjax")
+    public ResponseEntity<StoreVO> selectStoreListAjax(@RequestBody StoreVO storeVO, Model model) {
+        ResponseEntity<StoreVO> prodList = storeService.selectStoreListAjax(storeVO);
+        model.addAttribute("prodList", prodList);
+        return ResponseEntity.ok(storeVO);
     }
 }
