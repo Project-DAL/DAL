@@ -5,19 +5,15 @@ package kr.co.Dal.comm.web;
 
 import kr.co.Dal.comm.model.CommVO;
 import kr.co.Dal.comm.model.ReplyVO;
-import kr.co.Dal.comm.service.CommAjaxService;
 import kr.co.Dal.comm.service.CommService;
-import kr.co.Dal.my.model.MyBoardVO;
 import kr.co.Dal.util.SearchCondition;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -51,7 +47,7 @@ public class CommController {
      */
     @RequestMapping("/commView")
     public String commView(Model model,
-                           @RequestParam(name = "bardId", required = false) String bardId,
+                           @RequestParam(name = "bardId", required = false) int bardId,
                            @RequestParam Map map,
                            CommVO commVO,
                            ReplyVO replyVO,
@@ -78,7 +74,7 @@ public class CommController {
      * 게시판 등록/수정 페이지
      */
     @RequestMapping("/commWrite")
-    public String commWrite(Model model, @RequestParam(name = "bardId", required = false) String bardId) {
+    public String commWrite(Model model, @RequestParam(name = "bardId", required = false, defaultValue = "0") int bardId) {
         model.addAttribute("bardId", bardId);
         return "/comm/commWrite";
     }

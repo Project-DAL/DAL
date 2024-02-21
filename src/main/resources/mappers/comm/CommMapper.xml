@@ -103,7 +103,6 @@
                 reply_cn,
                 reply_stts,
                 reply_gp,
-                reply_gp_seq,
                 reply_depth
         ) VALUES (
                 #{replyId},
@@ -112,7 +111,6 @@
                 #{replyCn},
                 1,
                 #{replyGp},
-                #{replyGpSeq},
                 #{replyDepth}
         ) ON DUPLICATE KEY UPDATE
         reply_cn = VALUES(reply_cn)
@@ -125,14 +123,12 @@
                 reply_cn,
                 reply_rdate,
                 reply_gp,
-                reply_gp_seq,
                 reply_depth
         FROM reply_tb
         WHERE bard_id = #{bardId} and reply_stts = 1
-        ORDER BY reply_rdate DESC,
-                 reply_gp,
+        ORDER BY reply_gp,
                  reply_depth,
-                 reply_gp_seq DESC
+                 reply_rdate
         LIMIT #{offset}, 10
     </select>
 
@@ -157,14 +153,5 @@
         UPDATE reply_tb SET reply_stts = 0
         WHERE reply_id = #{replyId}
     </update>
-
-    <!-- 게시판 대댓글 MAX -->
-    <select id="replyGpSeqMaxSelect" parameterType="kr.co.Dal.comm.model.ReplyVO"  resultType="kr.co.Dal.comm.model.ReplyVO">
-        SELECT COALESCE(MAX(reply_gp_seq), 0) AS reply_gp_seq_max
-        FROM reply_tb
-        WHERE bard_id = #{bardId} and reply_gp = 1
-    </select>
-
-
 
 </mapper>

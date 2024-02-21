@@ -1,127 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-<!-- 1. Common Head -->
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>술 TEST: 내 맛을 찾아서</title>
-</head>
+<!----------------------------------------------------------------------------------------------------------------------
+©Copyright 2023. DAL. All rights reserved.
 
-<!-- 2. Page JS, CSS -->
-<link rel="stylesheet" href="/common/css/layout.css" />
-<link rel="stylesheet" href="/common/css/reset.css" />
-<link rel="stylesheet" href="/common/css/element.css" />
-<link rel="stylesheet" href="/preferTest/css/comm-layout.css" />
-<link rel="stylesheet" href="/preferTest/css/preferTest.css" />
-<link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet"
-/>
+File Name       : preferTest.html
+Program Name    : 술테스트
+Description     :
+Draft Author    :
+Draft Date      : 2024.01.01
+----------------------------------------------------------------------------------------------------------------------->
 
-<body>
-<div id="wrapper">
-  <!-- 3. Header -->
-  <header>
-    <div class="user-wrap">사용자 관련 바로가기 영역</div>
-    <div class="cate-wrap">로고 및 카테고리 영역</div>
-  </header>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main-layout}">
 
-  <!-- 4. Main -->
+<!-- 1. Page JS, CSS -->
+<th:block layout:fragment="css-js">
+  <link rel="stylesheet" type="text/css" th:href="@{/preferTest/css/preferTest.css}">
+  <script src="/preferTest/js/preferTest.js" defer></script>
+</th:block>
+
+<!-- 2. Page Content -->
+<th:block layout:fragment="content">
+  <!-- 3. Main -->
   <main>
     <div class="ct_main">
-      <section>
-        <div class="ct_content-wrap">
+        <!-- 4.2 Content -->
+        <section>
+          <!-- 4.2.1 Subtitle -->
           <div class="ct_subtitle">
-            <h3>술 TEST: 내 맛을 찾아서</h3>
+            <h3>술 MBTI</h3>
           </div>
 
           <div class="ct_content">
-            <table class="test-list">
-              <tr>
+            <div class="prefer-img">
+              <img th:src="@{/preferTest/img/dalLogo.png}">
+            </div>
+
+
+              <div>
+                <input type="button" value="시작" th:onclick="'fnBtn(\'start\')'" />
+              </div>
+
+
+            <table id="preferTable" th:each="result : ${preferList}" class="test-list">
+              <tr th:class="'prefer-row' + ${result.srvQueId}" style="display: none;">
+                <input type="text" id="srvQueId" th:value="${result.srvQueId}">
+                <th colspan="2" th:text="${result.srvQue}"></th>
+              </tr>
+              <tr th:class="'prefer-row' + ${result.srvQueId}" style="display: none;">
                 <td>
-                  <label><img src="http://placehold.it/200x200&text=Prod2" alt="Image 1"><br><input type="radio" class="radioGroup" name="testType"> 탁주</label>
-                  <label><img src="http://placehold.it/200x200&text=Prod2" alt="Image 2"><br><input type="radio" class="radioGroup" name="testType"> 증류주</label>
-                  <label><img src="http://placehold.it/200x200&text=Prod2" alt="Image 3"><br><input type="radio" class="radioGroup" name="testType"> 과실주</label>
-                  <label><img src="http://placehold.it/200x200&text=Prod2" alt="Image 4"><br><input type="radio" class="radioGroup" name="testType"> 와인</label>
+                  <label th:attr="for='testType' + ${result.srvQueId}">
+                    <input type="radio" th:attr="name='testType' + ${result.srvQueId}, class='radioGroup' + ${result.srvQueId}, value='Y'">
+                    <span th:text="${result.srvAns1}" class="label-text"></span>
+                  </label>
+                </td>
+                <td>
+                  <label th:attr="for='testType' + ${result.srvQueId}">
+                    <input type="radio" th:attr="name='testType' + ${result.srvQueId}, class='radioGroup' + ${result.srvQueId}, value='N'">
+                    <span th:text="${result.srvAns2}" class="label-text"></span>
+                  </label>
+                </td>
+              </tr>
+              <tr th:class="'prefer-row' + ${result.srvQueId}" style="display: none;">
+                <td colspan="2" class="styled-button">
+                  <input type="button" value="다음" th:onclick="'fnBtn(' + ${result.srvQueId} + ')'" />
                 </td>
               </tr>
             </table>
-
-            <div class="button-container">
-              <a href="#" class="styled-button">결과 보기</a>
-            </div>
-
           </div>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <!-- 5. Footer -->
-  <footer>
-    <div class="ct_footer">
-      <div class="footer-menu">
-        <div class="footer-shortcut">
-          <table>
-            <tr>
-              <td><a href="#">ABOUT</a></td>
-              <td><a href="#">NOTICE</a></td>
-              <td><a href="#">CS CENTER</a></td>
-            </tr>
-          </table>
-        </div>
-        <div class="footer-sns">
-          <a href="#"><img src="./img/instagram.png" alt="인스타그램" /></a>
-          <a href="#"><img src="./img/facebook.png" alt="페이스북" /></a>
-          <a href="#"><img src="./img/youtube.png" alt="유튜브" /></a>
-        </div>
+        </section>
       </div>
-      <div class="footer-block">
-        <div class="footer-block-left">
-          <ul>
-            <h4>INFORMATION</h4>
-            <li><i>company.</i>&nbsp;&nbsp;주식회사 달</li>
-            <li><i>owner.</i>&nbsp;&nbsp;김문</li>
-            <li><i>email.</i>&nbsp;&nbsp;drinkallliquor@gmail.com</li>
-            <li>
-              <i>corporate registration num.</i>&nbsp;&nbsp;123-45-67890
-            </li>
-            <li><i>online license.</i>&nbsp;&nbsp;제 2023-달구-0123호</li>
-            <li><i>address.</i>&nbsp;&nbsp;서울특별시 서초구 서운로 22</li>
-            <br />
-            <li class="footer-right">
-              copyright© drinkallliquor All rights reserved.
-            </li>
-          </ul>
-        </div>
-        <div class="footer-block-right">
-          <ul>
-            <h4>C/S CENTER</h4>
-            <li class="cs_tel">070-1234-1234</li>
-            <li>MON - FRI AM 09:00 - PM 17:00</li>
-            <li>BREAK PM 12:00 - PM 13:00</li>
-            <li>
-              SAT, SUN, HOLIDAY
-              <span style="color: #ce5c5c">closed</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-guide">
-        <div><a href="#">ABOUT US</a></div>
-        <div>|</div>
-        <div><a href="#">TERMS</a></div>
-        <div>|</div>
-        <div><a href="#">FINANCE POLICY</a></div>
-        <div>|</div>
-        <div><a href="#">LOCATION POLICY</a></div>
-        <div>|</div>
-        <div><a href="#">PRIVACY POLICY</a></div>
-        <div>|</div>
-        <div><a href="#">SHOPPING GUIDE</a></div>
-      </div>
-    </div>
-  </footer>
-</div>
-</body>
+    </main>
+  </th:block>
 </html>

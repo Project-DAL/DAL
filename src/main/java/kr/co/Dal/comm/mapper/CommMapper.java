@@ -60,12 +60,6 @@ public interface CommMapper {
     ReplyVO replyMax(ReplyVO replyVO);
 
     /**
-     * 게시판 댓글 MAX
-     */
-    ReplyVO replyGpSeqMaxSelect(ReplyVO replyVO);
-
-
-    /**
      * 게시판 댓글 삭제
      */
     void commReplyDelete(ReplyVO replyVO);
