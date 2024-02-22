@@ -28,7 +28,7 @@ window.addEventListener("scroll", function() {
 
     // 스크롤하는 위치가 메뉴바보다 클 경우 (더 아래로 스크롤 할 경우)
     if (scrollPosition + 60 >= midbarTop) {
-        // console.log("midbarTop = " + midbarTop + ", scroll = " + scrollPosition);
+        console.log("midbarTop = " + midbarTop + ", scroll = " + scrollPosition);
         midbar.style.position = "fixed";
         midbar.style.width = midbarWidth + "px";
         midbar.style.top = "40px";
@@ -59,3 +59,30 @@ for(let i = 0; i < dropdownTit.length; i++){
         }
     })
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // fnMoveCategory();
+    let categories = document.querySelectorAll('.midbar-title');
+
+    categories.forEach(function(category) {
+        category.addEventListener("click", function() {
+            let targetId = category.getAttribute('data-target');
+            console.log(targetId);
+            document.getElementById(targetId).scrollIntoView({
+                block: "center"
+            });
+        });
+    });
+});
+
+// function fnMoveCategory() {
+//     let category = document.querySelectorAll('.midbar-title li');
+//
+//     category.forEach(function(list) {
+//         list.addEventListener("click", function() {
+//             let targetId = list.getAttribute('data-target');
+//             console.log(targetId);
+//             document.querySelector(targetId).scrollIntoView();
+//         })
+//     })
+// }
