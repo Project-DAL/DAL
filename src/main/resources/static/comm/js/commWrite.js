@@ -27,10 +27,7 @@ function fnAjaxWrite() {
     }
 }
 
-
 document.getElementById("save").addEventListener("click", function() {
     oEditors.getById["bardCn"].exec("UPDATE_CONTENTS_FIELD", []);
-
-    // 폼 제출
     document.getElementById("frm").submit();
 });

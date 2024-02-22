@@ -3,17 +3,14 @@ package kr.co.Dal.comm.web;
 import kr.co.Dal.comm.model.CommVO;
 import kr.co.Dal.comm.model.ReplyVO;
 import kr.co.Dal.comm.service.CommAjaxService;
-import kr.co.Dal.util.SearchCondition;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @Slf4j
@@ -66,15 +63,6 @@ public class CommAjaxController {
         commAjaxService.commReplyDelete(replyVO);
         return "redirect:/comm/commView?bardId=" + replyVO.getBardId();
     }
-
-    /**
-     * 게시판 replyGpSeqMax
-     */
-    @RequestMapping("/comm/commAjaxWriteReplyGpSeqMax")
-    public ResponseEntity<ReplyVO> commWriteReplyGpSeqMax(ReplyVO replyVO) throws Exception {
-        return ResponseEntity.ok(commAjaxService.commWriteReplyGpSeqMax(replyVO));
-    }
-
 
 
 

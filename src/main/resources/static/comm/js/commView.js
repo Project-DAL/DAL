@@ -8,7 +8,6 @@ Draft Date     : 2023.12.04
 
 document.addEventListener('DOMContentLoaded', function() {
     fnBtn();
-    fnreplyGpSeqMax();
 });
 
 function fnBtn() {
@@ -73,12 +72,5 @@ function deleteButtonClick(replyId) {
 
 function replyButtonClick(replyId) {
     document.getElementById('commReplyReply-' + replyId).classList.remove('hide');
-}
-
-function fnreplyGpSeqMax() {
-    let bardId = document.getElementById("bardId").value
-
-    ajaxAPI("/comm/commAjaxWriteReplyGpSeqMax?bardId=" + bardId, null, "GET").then(response => {
-            document.getElementById('writeReplyGpSeq').value = response.replyGpSeqMax
-    });
+        let bardId = document.getElementById("bardId").value
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+
+-->
+
+<mapper namespace="kr.co.Dal.preferTest.mapper.PreferTestMapper">
+
+    <!-- 게시판 상세 조회 -->
+    <select id="preferList" parameterType="kr.co.Dal.preferTest.model.SrvQaVO" resultType="kr.co.Dal.preferTest.model.SrvQaVO">
+        SELECT srv_que_id,
+               srv_que,
+               srv_ans_1,
+               srv_ans_2
+        FROM srv_qa_tb
+    </select>
+
+</mapper>

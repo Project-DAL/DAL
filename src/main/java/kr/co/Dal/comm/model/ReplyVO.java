@@ -6,17 +6,15 @@ import java.sql.Date;
 
 @Data
 public class ReplyVO{
-    private Integer replyId;
-    private Integer bardId;
+    private int replyId;
+    private int bardId;
     private String replyUserId;
     private String replyCn;
     private Date replyRdate;
-    private Integer replyStts;
-    private Integer replyGp;
-    private Integer replyGpSeq;
-    private Integer replyDepth;
-    private Integer totalDataCnt;
+    private int replyStts;
+    private int replyGp;
+    private int replyDepth;
+    private int totalDataCnt;
     private int replyGpMax;
     private int replyIdMax;
-    private int replyGpSeqMax;
 }

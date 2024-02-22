@@ -52,6 +52,10 @@ Draft Date      : 2023.11.10
                                 <th>내용</th>
                                 <td th:utext="${commDetail.bardCn}"></td>
                             </tr>
+                            <tr>
+                                <th>첨부파일</th>
+                                <td id="files"></td>
+                            </tr>
                         </table>
                         <div class="button-container">
                             <input type="button" class="edit-button" id="btnUpdate" value="수정">
@@ -73,9 +77,7 @@ Draft Date      : 2023.11.10
 
                                         <input type="hidden" id="commDetailBardId" name="bardId" th:value="${bardId}" />
                                         <input type="hidden" id="replyId" name="replyId" th:value="${result.replyId}" />
-
                                         <input type="hidden" id="replyGp" name="replyGp" th:value="${result.replyGp}" />
-                                        <input type="hidden" id="replyGpSeq" name="replyGpSeq" th:value="${result.replyGpSeq}" />
                                         <input type="hidden" id="replyDepth" name="replyDepth" th:value="${result.replyDepth}" />
 
                                         <div class="reply" th:id="'reply-' + ${result.replyId}">
@@ -100,7 +102,6 @@ Draft Date      : 2023.11.10
                                         <input type="hidden" id="writeBardId" name="bardId" th:value="${bardId}" />
                                         <input type="hidden" id="writeReplyIdMax" name="replyId" th:value="${replyMax.replyIdMax}+1" />
                                         <input type="hidden" id="writeReplyGp" name="replyGp" th:value="${result.replyGp}" />
-                                        <input type="hidden" id="writeReplyGpSeq" name="replyGpSeq" />
                                         <input type="hidden" id="writeReplyDepth" name="replyDepth" th:value="${result.replyDepth}+1" />
 
                                         <div class="reply" th:id="'reply-' + ${result.replyId}">
@@ -144,9 +145,7 @@ Draft Date      : 2023.11.10
                         <input type="hidden" name="header" th:value="${_csrf.headerName}" th:if="${_csrf}" />
 
                         <input type="hidden" id="firstReplyGpMax" name="replyGp" th:value="${replyMax.replyGpMax}+1" />
-                        <input type="hidden" id="firstReplyGpSeq" name="replyGpSeq" th:value="0" />
                         <input type="hidden" id="firstReplyDepth" name="replyDepth" th:value="0" />
-
                         <input type="hidden" id="bardId" name="bardId" th:value="${bardId}" />
                         <label for="replyCn">댓글 작성:</label>
                         <textarea id="replyCn" name="replyCn" rows="4" cols="50"></textarea>
