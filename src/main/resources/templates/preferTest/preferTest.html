@@ -35,38 +35,43 @@ Draft Date      : 2024.01.01
             <div class="prefer-img">
               <img th:src="@{/preferTest/img/dalLogo.png}">
             </div>
-
-
-              <div>
-                <input type="button" value="시작" th:onclick="'fnBtn(\'start\')'" />
-              </div>
-
+            <div>
+              <input type="button" value="시작" class="prefer-row0" style="margin-top:30px" th:onclick="'fnBtn(\'start\')'" />
+            </div>
+            <div class="status" style="display: none;">
+              <div class="statusBar" id="progressBar"></div>
+            </div>
 
             <table id="preferTable" th:each="result : ${preferList}" class="test-list">
               <tr th:class="'prefer-row' + ${result.srvQueId}" style="display: none;">
-                <input type="text" id="srvQueId" th:value="${result.srvQueId}">
-                <th colspan="2" th:text="${result.srvQue}"></th>
+                <th colspan="2" th:text="'Q' + ${result.srvQueId} + '.  ' + ${result.srvQue}"></th>
               </tr>
               <tr th:class="'prefer-row' + ${result.srvQueId}" style="display: none;">
                 <td>
-                  <label th:attr="for='testType' + ${result.srvQueId}">
-                    <input type="radio" th:attr="name='testType' + ${result.srvQueId}, class='radioGroup' + ${result.srvQueId}, value='Y'">
+                  <label th:attr="for='radioGroup' + ${result.srvQueId} + 'A'">
+                    <input type="radio" th:attr="name='testType' + ${result.srvQueId}, id='radioGroup' + ${result.srvQueId} + 'A',
+                           class='radioGroup' + ${result.srvQueId}, value='Y', style='display: none;'" th:onclick="'fnClick(' + ${result.srvQueId} + ')'">
                     <span th:text="${result.srvAns1}" class="label-text"></span>
                   </label>
                 </td>
                 <td>
-                  <label th:attr="for='testType' + ${result.srvQueId}">
-                    <input type="radio" th:attr="name='testType' + ${result.srvQueId}, class='radioGroup' + ${result.srvQueId}, value='N'">
+                  <label th:attr="for='radioGroup' + ${result.srvQueId} + 'B'">
+                    <input type="radio" th:attr="name='testType' + ${result.srvQueId}, id='radioGroup' + ${result.srvQueId} + 'B',
+                           class='radioGroup' + ${result.srvQueId}, value='N', style='display: none;'" th:onclick="'fnClick(' + ${result.srvQueId} + ')'">
                     <span th:text="${result.srvAns2}" class="label-text"></span>
                   </label>
                 </td>
               </tr>
               <tr th:class="'prefer-row' + ${result.srvQueId}" style="display: none;">
                 <td colspan="2" class="styled-button">
-                  <input type="button" value="다음" th:onclick="'fnBtn(' + ${result.srvQueId} + ')'" />
+                  <input type="button" value="다음"  th:attr="id='nextButton'" th:onclick="'fnBtn(' + ${result.srvQueId} + ')'" />
                 </td>
               </tr>
             </table>
+
+            <div>
+              <input type="button" value="결과" th:attr="id='lastButton'"  th:onclick="fnResult()" style="display: none; margin-top:30px; " />
+            </div>
           </div>
         </section>
       </div>

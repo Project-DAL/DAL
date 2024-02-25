@@ -1,11 +1,8 @@
 package kr.co.Dal.preferTest.service;
 
-import kr.co.Dal.comm.mapper.CommMapper;
-import kr.co.Dal.comm.model.CommVO;
 import kr.co.Dal.preferTest.mapper.PreferTestMapper;
 import kr.co.Dal.preferTest.model.SrvQaVO;
-import kr.co.Dal.util.PageHandler;
-import kr.co.Dal.util.SearchCondition;
+import kr.co.Dal.preferTest.model.SrvResVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,9 +17,9 @@ public class PreferService {
     private final PreferTestMapper preferTestMapper;
 
     /**
-     * 게시판 페이지, 목록
+     * 술 MBTI 문제
      */
-    public List<SrvQaVO> preferList(Model model,  SrvQaVO srvQaVO) {
+    public List<SrvQaVO> preferList(Model model, SrvQaVO srvQaVO) {
 
         // model 전송
         List<SrvQaVO> preferList = preferTestMapper.preferList(srvQaVO);
@@ -31,5 +28,19 @@ public class PreferService {
 
         return preferList;
     }
+
+    /**
+     * 술 MBTI 결과
+     */
+    public SrvResVO preferResult(Model model, SrvResVO srvResVO) {
+
+        // model 전송
+        SrvResVO preferResult = preferTestMapper.preferResult(srvResVO);
+
+        model.addAttribute("preferResult", preferResult);
+
+        return preferResult;
+    }
+
 
 }

@@ -1,4 +1,4 @@
-/* 리셋 및 기본 스타일 */
+/* 기본 스타일 및 리셋 */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -6,7 +6,7 @@ body {
     background-color: #f4f4f4;
 }
 
-/* 메인 컨테이너 */
+/* 메인 컨테이너 스타일 */
 main {
     display: flex;
     flex-direction: column;
@@ -14,29 +14,36 @@ main {
     justify-content: center;
 }
 
-/* 콘텐츠 래퍼 */
+/* 일반적인 컨테이너 스타일 */
+div {
+    text-align: center;
+}
+
+/* 주요 섹션 스타일 */
 .ct_main {
     display: flex;
+    padding: 100px 0px;
     width: 95%;
     margin: 10px auto;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* 메인 섹션 스타일 */
+/* 섹션 내부 스타일 */
 section {
     width: 80%;
     padding: 20px;
     margin: auto;
 }
 
-  /* 소제목 스타일 */
-  .ct_subtitle {
+/* 섹션 소제목 스타일 */
+.ct_subtitle {
     text-align: center;
     margin: 20px 0;
-  }
+}
 
-  .ct_subtitle h3 {
+/* 섹션 소제목 내 h3 스타일 */
+.ct_subtitle h3 {
     font-size: 28px;
     color: #293485;
     font-weight: bold;
@@ -45,11 +52,11 @@ section {
     background-color: #f2f2f2;
     display: inline-block;
     border-radius: 8px;
-  }
+}
 
 /* 테이블 스타일 */
 table {
-    width: 80%;
+    width: 50%;
     margin: auto;
     border-collapse: collapse;
     border-radius: 10px;
@@ -65,71 +72,93 @@ th {
     color: #293485;
 }
 
-
+/* 테이블 셀 스타일 */
 td {
-    padding: 12px;
+    padding: 50px;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
+/* 버튼 컨테이너 스타일 */
 .button-container {
     text-align: center;
     margin-top: 20px;
 }
 
+/* 일반 버튼 스타일 */
 .styled-button {
     padding: 10px;
 }
 
-/* Style the input buttons */
-.styled-button input {
+/* 입력 버튼 스타일 */
+input[type="button"] {
     background-color: #293485;
     color: white;
     border: none;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
     margin: 5px;
 }
 
-.styled-button input:hover {
+/* 입력 버튼 호버 효과 스타일 */
+input[type="button"]:hover {
     background-color: #03012D;
 }
 
-
-
+/* 테스트 목록 스타일 */
 .test-list {
     text-align: center;
 }
 
+/* 테스트 목록 라벨 스타일 */
 .test-list label {
-    display: inline-block;
-    margin: 0 10px;
+    margin: 30px 10px;
     cursor: pointer;
     border: 1px solid #ddd;
-    border-radius: 10px;
+    border-radius: 50px;
     padding: 20px 40px;
 }
 
+/* 선호 이미지 스타일 */
+.prefer-img {
+    margin-top: 50px;
+    text-align: center;
+}
 
-/*
-  .radioGroup {
-    display: none; */
-/* 기본 라디오 버튼 감추기 *//*
+/* 선호 이미지 내 이미지 스타일 */
+.prefer-img img {
+    width: 400px;
+}
 
-  }
-*/
+/* 상태 스타일 */
+.status {
+    height: 20px;
+    width: 50%;
+    background-color: #999;
+    border-radius: 20px;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
-  .prefer-img{
-      margin-top:50px;
-      text-align: center;
-  }
+/* 상태 바 스타일 */
+.statusBar {
+    height: 100%;
+    width: 0;
+    background-color: #03012D;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
 
-
-  .prefer-img img{
-      width:400px;
-  }
+/* 선택된 라디오 버튼 스타일 */
+.selected-radio {
+    background-color: #293485;
+    color: #fff;
+    border: 2px solid #999;
+    border-radius: 5px;
+    padding: 10px;
+}

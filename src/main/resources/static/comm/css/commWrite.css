@@ -1,3 +1,4 @@
+/* 전체 body 스타일 설정 */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -5,11 +6,13 @@ body {
     background-color: #f4f4f4;
 }
 
+/* 메인 설정 */
 main {
     justify-content: center;
     margin: 100px 0px 20px 0px;
 }
 
+/* 메인 콘텐츠 래퍼 스타일 */
 .ct_main {
     display: flex;
     width: 95%;
@@ -17,68 +20,73 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* 섹션 스타일 */
 section {
     width: 80%;
     margin: auto;
     padding: 20px;
 }
 
+/* 소제목 내의 헤딩 스타일 */
 .ct_subtitle h3 {
     color: #333;
     margin: 0 0 20px 10px;
 }
 
+/* 테이블 스타일 */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
+/* 테이블 헤더와 데이터 셀 스타일 */
 th, td {
     padding: 15px;
     text-align: left;
     border: 1px solid #bdc3c7;
 }
 
+/* 테이블 헤더 스타일 */
 th {
     width: 20%;
     background-color: #f8f8f8;
 }
 
+/* 콘텐츠 내용 스타일 */
 .ct_content {
     width: 100%;
 }
 
-.comm-comment {
+/* 댓글 공통 스타일 */
+.comm-comment, .comment {
     border: 3px solid #f8f8f8;
-    padding:  0 20px 20px 20px;
-    margin-bottom: 40px;
-}
-
-.comment {
-    border: 3px solid #f8f8f8;
-    padding: 10px;
+    padding: 10px 20px;
     margin-bottom: 10px;
 }
 
+/* 댓글 폼 스타일 */
 form#comment-form {
     margin-top: 20px;
 }
 
+/* 라벨 스타일 */
 label {
     display: block;
     margin-bottom: 5px;
     color: #333;
 }
 
+/* 텍스트 에어리어 스타일 */
 textarea {
     width: 100%;
-    min-height:350px;
+    min-height: 350px;
     padding: 8px;
     margin-bottom: 10px;
     resize: vertical;
 }
 
+/* 저장 버튼 스타일 */
 .save {
     background-color: #007bff;
     color: #fff;
@@ -87,10 +95,12 @@ textarea {
     cursor: pointer;
 }
 
+/* 저장 버튼 호버 효과 스타일 */
 .save:hover {
     background-color: #0056b3;
 }
 
+/* 버튼 컨테이너 스타일 */
 .button-container {
     display: flex;
     justify-content: flex-end;

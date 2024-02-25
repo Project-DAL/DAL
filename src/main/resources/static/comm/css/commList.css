@@ -6,7 +6,7 @@ body {
     background-color: #f4f4f4;
 }
 
-/* 메인 컨테이너 */
+/* 메인 컨테이너 스타일 */
 main {
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@ main {
     margin: 100px 0 20px 0;
 }
 
-/* 콘텐츠 래퍼 */
+/* 콘텐츠 래퍼 스타일 */
 .ct_main {
     display: flex;
     width: 95%;
@@ -43,7 +43,7 @@ section {
     margin-top: 20px;
 }
 
-/* 테이블 스타일 */
+/* 테이블 및 게시물 목록 스타일 */
 table, .board-list {
     width: 80%;
     margin: auto;
