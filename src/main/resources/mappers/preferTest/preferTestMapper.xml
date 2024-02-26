@@ -7,13 +7,23 @@
 
 <mapper namespace="kr.co.Dal.preferTest.mapper.PreferTestMapper">
 
-    <!-- 게시판 상세 조회 -->
+    <!-- 술 MBTI 문제 -->
     <select id="preferList" parameterType="kr.co.Dal.preferTest.model.SrvQaVO" resultType="kr.co.Dal.preferTest.model.SrvQaVO">
         SELECT srv_que_id,
                srv_que,
                srv_ans_1,
                srv_ans_2
         FROM srv_qa_tb
+    </select>
+
+    <!-- 술 MBTI 결과 -->
+    <select id="preferResult" parameterType="kr.co.Dal.preferTest.model.SrvResVO" resultType="kr.co.Dal.preferTest.model.SrvResVO">
+        SELECT srv_res_id,
+               srv_res_img,
+               srv_res_type,
+               srv_res_cn
+        FROM srv_res_tb
+        WHERE srv_res_id = #{srvResId}
     </select>
 
 </mapper>

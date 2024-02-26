@@ -17,52 +17,50 @@ Draft Date      : 2024.01.01
 <th:block layout:fragment="css-js">
   <link rel="stylesheet" type="text/css" th:href="@{/preferTest/css/preferResult.css}">
   <script src="/preferTest/js/preferResult.js" defer></script>
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <script>
+    Kakao.init('617c64aeafcfa7bd484ea2b0d79f230b');
+    Kakao.isInitialized();
+  </script>
 </th:block>
 
-<!-- 2. Page Content -->
-<th:block layout:fragment="content">
-  <!-- 3. Main -->
-  <main>
-    <div class="ct_main">
-      <!-- 4.2 Content -->
-      <section>
-        <!-- 4.2.1 Subtitle -->
-        <div class="ct_subtitle">
-          <h3>COMMUNITY</h3>
-        </div>
-          <div class="ct_content-wrap">
+  <!-- 2. Page Content -->
+  <th:block layout:fragment="content">
+    <!-- 3. Main -->
+    <main>
+      <div class="ct_main">
+        <!-- 4.2 Content -->
+        <section>
+          <!-- 4.2.1 Subtitle -->
+          <div class="ct_subtitle">
+            <h3>당신의 유형은?</h3>
+          </div>
+          <div class="ct_content">
 
-            <div class="ct_content">
-              <table>
-                <thead>
-                <th>
-                  <div class="name-result">술고래</div>
-                </th>
-                </thead>
-                <tbody class="result-list">
-                <tr>
-                  <td>
-                    <div class="prod-list">
-                      <ul class="prod-row">
-                        <li>
-                          <img src="http://placehold.it/630x630&text=Prod1" class="prod-card" />
-                        </li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
+            <input type="hidden" id="srvResType" th:value="${preferResult.srvResType}">
+            <input type="hidden" id="srvResImg" th:value="${preferResult.srvResImg}">
+            <input type="hidden" id="srvResCn" th:value="${preferResult.srvResCn}">
 
-              <div class="button-container">
-                <a href="#" class="styled-button">다시하기</a>
-              </div>
+            <table id="preferTable" class="test-list">
+              <tr>
+                <th th:text="${preferResult.srvResType}"></th>
+              </tr>
+              <tr>
+                <td>
+                  <img th:src="@{'/preferTest/img/' + ${preferResult.srvResImg}}" th:width="400" th:height="400" alt="Result Image">
+                </td>
+              </tr>
+              <tr>
+                <td th:text="${preferResult.srvResCn}"></td>
+              </tr>
+            </table>
 
-              <div class="button-container">
-                <a href="#" class="styled-button">카톡공유</a>
-              </div>
+            <div class="button-container">
+              <a id="kakaotalk-sharing-btn" href="javascript:kakaoShare()">
+                <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+                     alt="카카오톡 공유 보내기 버튼" />
+              </a>
             </div>
-
           </div>
         </section>
       </div>
