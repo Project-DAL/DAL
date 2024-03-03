@@ -103,7 +103,6 @@
                 reply_cn,
                 reply_stts,
                 reply_gp,
-                reply_gp_seq,
                 reply_depth
         ) VALUES (
                 #{replyId},
@@ -112,7 +111,6 @@
                 #{replyCn},
                 1,
                 #{replyGp},
-                #{replyGpSeq},
                 #{replyDepth}
         ) ON DUPLICATE KEY UPDATE
         reply_cn = VALUES(reply_cn)
@@ -125,14 +123,12 @@
                 reply_cn,
                 reply_rdate,
                 reply_gp,
-                reply_gp_seq,
                 reply_depth
         FROM reply_tb
         WHERE bard_id = #{bardId} and reply_stts = 1
         ORDER BY reply_rdate DESC,
                  reply_gp,
-                 reply_depth,
-                 reply_gp_seq DESC
+                 reply_depth
         LIMIT #{offset}, 10
     </select>
 

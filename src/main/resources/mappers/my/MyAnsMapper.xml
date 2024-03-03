@@ -21,7 +21,6 @@
             reply_rdate,
             reply_stts,
             reply_gp,
-            reply_gp_seq,
             reply_depth
         FROM
             reply_tb
