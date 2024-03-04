@@ -6,7 +6,7 @@ spring:
           google:
             client-id: 353201099261-g6otgm10jjrkmphkvfcdmnqt22gtnihs.apps.googleusercontent.com
             client-secret: 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
-            redirect-uri: https://drinkallliquors.shop:8282/login/oauth2/code/google
+            redirect-uri: https://drinkallliquors.shop/login/oauth2/code/google
             scope: profile, email
 
           naver:
@@ -20,7 +20,7 @@ spring:
           kakao:
             client-id: d84bfc873870332092e20fa92e5bbac7
             client-secret: Czc3GYn78M76ZCrcOqzYsJLk58O4IzMn
-            redirect-uri: http://drinkallliquors.shop:8282/login/oauth2/code/kakao
+            redirect-uri: https://drinkallliquors.shop/login/oauth2/code/kakao
             client-authentication-method: client_secret_post
             authorization-grant-type: authorization_code
             scope: profile_nickname, account_email
