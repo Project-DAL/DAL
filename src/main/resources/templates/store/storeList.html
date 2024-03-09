@@ -87,9 +87,11 @@
                 </div>
               </div>
             </li>
-            <li th:if="${#lists.isEmpty(prodList)}">
-              <img class="no-prod" th:src="@{/store/img/no-prod.png}" />
-              <img class="no-prod" th:src="@{/store/img/no-prod2.png}" />
+          </ul>
+          <ul>
+            <li th:if="${#lists.isEmpty(prodList)}" style="text-align: center; font-size: 25px; color: gray;">
+              <!--<img class="no-prod" th:src="@{/my/img/sad.png}" />-->
+              <!--<img class="no-prod" th:src="@{/store/img/no-prod2.png}" />-->
               <p>현재 등록된 상품이 없습니다.</p>
             </li>
           </ul>

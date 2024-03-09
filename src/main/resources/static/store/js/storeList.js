@@ -23,6 +23,20 @@ function fnProdDetail() {
     lists.forEach(function (list) {
         list.addEventListener("click", function() {
             let prodId = list.getAttribute("data-prodId");
+            // switch (prodId) {
+            //     case "4" :
+            //         prodId = "탁주";
+            //         break;
+            //     case "5" :
+            //         prodId = "증류주";
+            //         break;
+            //     case "6" :
+            //         prodId = "과실주";
+            //         break;
+            //     case "7" :
+            //         prodId = "와인";
+            //         break;
+            // }
             window.location.href = "/store/storeView?prodId=" + prodId;
         })
     })
@@ -35,9 +49,10 @@ function addEventListenerBtn(){
         li.addEventListener("click", function() {
             prodType = this.getAttribute("data-prodType");
             console.log(prodType);
+            fnSelectProdList();
         });
     });
-    prodType.addEventListener('click', fnSelectProdList);
+    // prodType.addEventListener('click', fnSelectProdList);
 }
 
 function fnSelectProdList() {

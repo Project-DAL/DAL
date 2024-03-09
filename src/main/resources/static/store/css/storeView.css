@@ -128,6 +128,11 @@ Ver.  Date          Revised By   Description
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
+.prod_like {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
 .prod-like-wrap {
     display: flex;
     justify-content: space-around;
@@ -202,4 +207,13 @@ div .ul > li {
 .qnaList-dropdown-que > p {
     font-size: 15px;
     vertical-align: middle;
+}
+
+/* 상품후기 영역 */
+.review-wrap {
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+}
+.review-sort {
 }
