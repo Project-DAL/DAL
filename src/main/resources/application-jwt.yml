@@ -1,0 +1,10 @@
+jwt:
+  secretKey: asgsag12ASG23t126yjkl@%245jkdsglljkl;wqejldf@##kjlsdfgjiov33jl125SDAG0346tkmlHGldfhgk0fl23fDSG#5342HGHDSfg343421452tdgdsgfdghjkldsfjektjwqkrwqeljklrjklsd
+
+  access:
+    expiration: 3600000 # 1시간(60분) (1000L(ms -> s) * 60L(s -> m) * 60L(m -> h))
+    header: Authorization
+
+  refresh:
+    expiration: 1209600000 #  (1000L(ms -> s) * 60L(s -> m) * 60L(m -> h) * 24L(h -> 하루) * 14(2주))
+    header: Authorization-refresh

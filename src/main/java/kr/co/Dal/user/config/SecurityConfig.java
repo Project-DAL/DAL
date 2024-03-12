@@ -4,6 +4,10 @@ import kr.co.Dal.user.config.auth.PrincipalDetailsService;
 import kr.co.Dal.user.config.handler.CustomAuthenticationFailureHandler;
 import kr.co.Dal.user.config.handler.CustomAuthenticationSuccessHandler;
 import kr.co.Dal.user.config.oauth.PrincipalOauth2UserService;
+import kr.co.Dal.user.jwt.filter.JwtAuthenticationProcessingFilter;
+import kr.co.Dal.user.jwt.service.JwtService;
+import kr.co.Dal.user.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +24,7 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 
 @Configuration
 @EnableWebSecurity // 스프링시큐리티 필터가 스프링 필터체인에 등록이 됩니다.
+@RequiredArgsConstructor
 public class SecurityConfig {
 
     @Autowired
@@ -31,6 +36,10 @@ public class SecurityConfig {
 
     @Autowired
     private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
+    @Autowired
+    private  JwtService jwtService;
+    @Autowired
+    private  UserRepository userRepository;
 
     @Bean
     public BCryptPasswordEncoder encodePwd() {
@@ -59,17 +68,22 @@ public class SecurityConfig {
                 .logout() // 로그아웃 구성
                 .logoutUrl("/logout") // 로그아웃 URL
                 .logoutSuccessUrl("/") // 로그아웃 성공 후 이 URL로 리디렉션
-                .invalidateHttpSession(true) // HTTP 세션 무효화
                 .and()
                 .oauth2Login()
-                .failureHandler(userLoginFailHandler)
+                .successHandler(customAuthenticationSuccessHandler)
                 .loginPage("/loginForm")
                 .userInfoEndpoint()
                 .userService(principalOauth2UserService)
                 .and()
-                .successHandler(customAuthenticationSuccessHandler);
+                .failureHandler(userLoginFailHandler);
         // 구글 로그인이 완료된 뒤의 후처리가 필요함. Tip. 코드X(액세스토큰+사용자프로필정보 O)
 
         return http.build();
+    }
+
+    @Bean
+    public JwtAuthenticationProcessingFilter jwtAuthenticationProcessingFilter() {
+        JwtAuthenticationProcessingFilter jwtAuthenticationFilter = new JwtAuthenticationProcessingFilter(jwtService, userRepository);
+        return jwtAuthenticationFilter;
     }
 }

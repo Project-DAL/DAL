@@ -6,7 +6,7 @@ spring:
           google:
             client-id: 353201099261-g6otgm10jjrkmphkvfcdmnqt22gtnihs.apps.googleusercontent.com
             client-secret: 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
-            redirect-uri: https://drinkallliquors.shop:8282/login/oauth2/code/google
+            redirect-uri: http://localhost:8282/login/oauth2/code/google
             scope: profile, email
 
           naver:
