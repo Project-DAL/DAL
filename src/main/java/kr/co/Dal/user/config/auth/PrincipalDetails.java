@@ -115,6 +115,9 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
     public String getAddr2() {
         return user.getAddr2();
     }
+    public String getUserRole() {
+        return user.getUserRole();
+    }
 
     public String getProvider() {
         return user.getProvider();

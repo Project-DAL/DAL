@@ -77,7 +77,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
                     .userType(2)
                     .userStts(1)
                     .userGrade(1)
-                    .userRole("ROLE_USER")
+                    .userRole("ROLE_GUEST")
                     .provider(oAuth2UserInfo.getProvider())
                     .providerId(oAuth2UserInfo.getProviderId())
                     .build();

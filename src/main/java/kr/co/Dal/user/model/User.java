@@ -79,6 +79,7 @@ public class User {
     private String zip;
     private String addr1;
     private String addr2;
+    private String refreshToken; // 리프레시 토큰
 
 //    private String email;
     @Column(name="user_role")
@@ -174,6 +175,10 @@ public String getProvider() {
 public String getProviderId() {
     return providerId;
 }
+
+    public void updateRefreshToken(String updateRefreshToken) {
+        this.refreshToken = updateRefreshToken;
+    }
 
 
 }

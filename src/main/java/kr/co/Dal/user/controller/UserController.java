@@ -160,6 +160,7 @@ public class UserController {
             existingUser.setUserLcYn(agreeValueChk2);
             String userHp = mobile1 + "-" + mobile2 + "-" + mobile3;
             existingUser.setUserHp(userHp);
+            existingUser.setUserRole("ROLE_USER");
             existingUser.setUserGender(gender);
             existingUser.setZip(zip_code);
             existingUser.setAddr1(addr);
