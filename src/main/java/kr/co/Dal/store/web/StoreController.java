@@ -53,9 +53,32 @@ public class StoreController {
     public String storeView(Model model, StoreVO storeVO, QnaVO qnaVO) {
         StoreVO prod = storeService.selectProdOne(storeVO);
         List<QnaVO> qnaList = qnaService.selectQna(qnaVO);
+        String prodType = typeToString(prod.getProdType());
         model.addAttribute("qnaList", qnaList);
         model.addAttribute("prod", prod);
+        model.addAttribute("prodType", prodType);
         return "store/storeView";
+    }
+
+    private String typeToString(int prodType) {
+        switch (prodType) {
+            case 1:
+                return "소주";
+            case 2:
+                return "리쿠르";
+            case 3:
+                return "막걸리";
+            case 4:
+                return "탁주";
+            case 5:
+                return "증류주";
+            case 6:
+                return "과실주";
+            case 7:
+                return "와인";
+            default:
+                return "위스키";
+        }
     }
 
     @GetMapping("/storeCart")
