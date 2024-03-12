@@ -34,8 +34,9 @@ Ver.  Date          Revised By   Description
       <!-- 4.1 Main Topbar -->
       <div class="ct_topbar">
         <a href="#">전체</a>
-        <span>-></span>
-        <a href="#" th:text="${prod.prodType}"></a>
+        <img th:src="@{/store/img/next.png}" style="width: 27px;"/>
+        <a href="#" th:text="${prodType}">
+        </a>
       </div>
       <!-- 4.2 Prod Thumbnail, Prod Info -->
       <div class="ct_thumbnail-wrap w100ph">
@@ -64,8 +65,7 @@ Ver.  Date          Revised By   Description
               <span>4.3(117개)</span>
             </div>
             <div style="display: flex; align-items: center">
-              <img th:src="@{/my/img/heart.png}"
-              style="height: 30px; width: 30px; margin-right: 10px;">
+              <img th:src="@{/store/img/like_empty.png}" class="prod_like">
               <span th:text="${prod.prodLike}"></span>
             </div>
           </div>
@@ -74,6 +74,15 @@ Ver.  Date          Revised By   Description
               <a href="#" class="btn" style="width: 60px">-</a>
               <span class="prod-count">3</span>
               <a href="#" class="btn" style="width: 60px">+</a>
+<!--              <div>-->
+<!--                <img th:src="@{/store/img/minus.png}" style="width: 30px; height: 30px;">-->
+<!--              </div>-->
+<!--              <div>-->
+<!--                <span class="prod-count">5</span>-->
+<!--              </div>-->
+<!--              <div>-->
+<!--                <img th:src="@{/store/img/plus.png}" style="width: 30px; height: 30px;">-->
+<!--              </div>-->
             </div>
             <div class="prod-price">
               <p th:text="${prod.prodSalePrice} + '원'"></p>
@@ -260,7 +269,57 @@ Ver.  Date          Revised By   Description
             </table>
           </div>
         </div>
-        <div class="prod-detail" id="prod-4"><h1>상품후기</h1></div>
+        <div class="prod-detail" id="prod-4">
+          <h1>상품후기</h1>
+          <!--<table style="width: 100%;" class="center">
+            <colgroup>
+              <col style="width: 15%;" />
+              <col style="width: 65%;" />
+              <col style="width: 20%;" />
+            </colgroup>
+            <thead>
+            <tr>
+              <th colspan="3" style="float: left; padding-left: 10px;">
+                <ul class="review-wrap">
+                  <li class="review-sort">
+                    <a href="javascript:void(0);">최신순</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);">별점높은순</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);">별점낮은순</a>
+                  </li>
+                </ul>
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+              </tr>
+            </tbody>
+          </table>
+          <div style="display: flex; justify-content: center" >
+            <ol style="display: flex; justify-content: space-around; width: 30%; margin-top: 60px;">
+              <li>
+                <a href="#">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+              <li>
+                <a href="#">4</a>
+              </li>
+              <li>
+                <a href="#">5</a>
+              </li>
+            </ol>
+          </div>-->
+        </div>
         <div class="prod-detail" id="prod-5">
           <h1>상품문의</h1>
           <div class="qnaBtn-wrap">

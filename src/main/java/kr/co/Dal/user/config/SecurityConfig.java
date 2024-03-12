@@ -52,7 +52,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.headers().frameOptions().sameOrigin();
         http.authorizeRequests()
-                .antMatchers( "/rest/**","/user/**","/common/**","/main/**","/test/**","/smarteditor/**").permitAll()
+                .antMatchers( "/rest/**","/user/**","/common/**","/main/**","/test/**","/smarteditor/**","/store/**").permitAll()
                 .antMatchers("/","/joinForm","/termsForm","/loginForm","/user/logout","/check/findPw","/check/findId","/check/findId/successId","/check/findPw/sendEmail","/auth/**", "/oauth2/**","/my/**","/join","/findIdForm","/findPwForm", "/comm/**", "/preferTest/**").permitAll() // 회원가입 접근 가능
                 .anyRequest().authenticated()
                 .and()

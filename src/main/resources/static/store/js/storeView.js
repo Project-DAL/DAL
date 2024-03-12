@@ -27,7 +27,7 @@ window.addEventListener("scroll", function() {
     let scrollPosition = window.scrollY;
 
     // 스크롤하는 위치가 메뉴바보다 클 경우 (더 아래로 스크롤 할 경우)
-    if (scrollPosition + 60 >= midbarTop) {
+    if (scrollPosition >= midbarTop) {
         console.log("midbarTop = " + midbarTop + ", scroll = " + scrollPosition);
         midbar.style.position = "fixed";
         midbar.style.width = midbarWidth + "px";
